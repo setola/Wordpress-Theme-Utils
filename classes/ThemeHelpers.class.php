@@ -78,6 +78,7 @@ EOF;
 		
 		$gallery = new MinigalleryBigImageWithThumbs();
 		$gallery
+			->set_big_sizes(460, 280)
 			->set_markup('next', '<div class="next small sprite"></div>')
 			->set_markup('prev', '<div class="prev small sprite"></div>')
 			->add_images($images);

@@ -31,10 +31,21 @@ EOF
 		$markup_images = '';
 		if(count($this->images)>0){
 			$this->load_assets();
+			$images_per_line = 4;
 			foreach ($this->images as $k => $image){
-				$classes = array('grid_4');
-				if($k%4==0 && $classes[] = 'alpha');
-				if($k%3==0 && $classes[] = 'omega');
+				$classes = array('grid_4', 'image_'.$k);
+				
+				if($images_per_line == 0){
+					$images_per_line = 4;
+				}
+				if($images_per_line == 4){
+					$classes[] = 'alpha';
+				}
+				if($images_per_line == 1){
+					$classes[] = 'omega';
+				}
+				$images_per_line--;
+				
 				
 				$markup_images .= 
 					'<div class="'.implode(' ', $classes).'">'.

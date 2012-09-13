@@ -4,7 +4,7 @@
  * Manages the markup for a generic set of images
  * Extend this with your nice and candy classes!
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
  */
 abstract class GalleryHelper{
 	public $textdomain = 'theme';
@@ -29,7 +29,31 @@ abstract class GalleryHelper{
 	 * @var array Stores some static html
 	 */
 	public $static_markup;
-
+	
+	/**
+	 * 
+	 * @var array options for timthumb
+	 */
+	public $timthumb_opts;
+	
+	/**
+	 * Set the unique id for this gallery
+	 * @param string $unid the unique
+	 * @return GalleryHelper $this for chainability
+	 */
+	public function set_uid($unid){
+		$this->unid = $unid;
+		return $this;
+	}
+	
+	/**
+	 * Set the timthumb options
+	 * @param array $options
+	 */
+	public function set_timthumb_options($options){
+		$this->timthumb_opts = $options;
+		return $this;
+	}
 
 	/**
 	 * Set the html template for this gallery
@@ -105,9 +129,105 @@ abstract class GalleryHelper{
 		} elseif(is_object($this->images[$index])){
 			$toret = wp_get_attachment_url($this->images[$index]->ID);
 		}
+		
+		
+		if($this->timthumb_opts){
+			if(is_array($this->timthumb_opts) && !isset($this->timthumb_opts['render'])){
+				$this->timthumb_opts['render'] = http_build_query($this->timthumb_opts);
+			}
+			
+			$toret = $toret.'?'.$this->timthumb_opts['render'];
+		}
 
 		return $toret;
 	}
+	
+	protected function get_image_width($index){
+		if(isset($this->timthumb_opts['w'])){
+			return $this->timthumb_opts['w'];
+		}
+		$image = wp_get_attachment_image($this->images[$index]);
+		return $image[1];
+	}
+	
+	protected function get_image_height($index){
+		if(isset($this->timthumb_opts['h'])){
+			return $this->timthumb_opts['h'];
+		}
+		$image = wp_get_attachment_image($this->images[$index]);
+		return $image[2];
+	}
+	
+	/**
+	 * Checks if the $index image of the list is
+	 * a wordpress media id or an image object
+	 * @returns the id attribute for the $index image of the set
+	 * @param int $index the index of the images list
+	 */
+	protected function get_image_id($index){
+		if(is_integer($this->images[$index])){
+			return $index;
+		} elseif(is_object($this->images[$index])){
+			return $this->images[$index]->ID;
+		}
+	}
+	
+	/**
+	 * Checks if the $index image of the list is
+	 * a wordpress media id or an image object
+	 * @returns the alt attribute for the $index image of the set
+	 * @param int $index the index of the images list
+	 */
+	protected function get_image_alt($index){
+		$toret = $this->images[$index];
+
+		if(is_integer($this->images[$index])){
+			$toret = get_post_meta($this->images[$index], '_wp_attachment_image_alt', true);
+		} elseif(is_object($this->images[$index])){
+			$toret = get_post_meta($this->images[$index]->ID, '_wp_attachment_image_alt', true);
+		}
+
+		return $toret;
+	}
+	
+	/**
+	 * Checks if the $index image of the list is
+	 * a wordpress media id or an image object
+	 * @returns the caption for the $index image of the set
+	 * @param int $index the index of the images list
+	 */
+	protected function get_image_caption($index){
+		$toret = $this->images[$index];
+
+		if(is_integer($this->images[$index])){
+			$post = get_post($this->images[$index]);
+			$toret = $post->post_excerpt;
+		} elseif(is_object($this->images[$index])){
+			$toret = $this->images[$index]->post_excerpt;
+		}
+
+		return $toret;
+	}
+	
+	/**
+	 * Checks if the $index image of the list is
+	 * a wordpress media id or an image object
+	 * @returns the description for the $index image of the set
+	 * @param int $index the index of the images list
+	 */
+	protected function get_image_description($index){
+		$toret = $this->images[$index];
+
+		if(is_integer($this->images[$index])){
+			$post = get_post($this->images[$index]);
+			$toret = $post->post_content;
+		} elseif(is_object($this->images[$index])){
+			$toret = $this->images[$index]->post_content;
+		}
+
+		return $toret;
+	}
+	
 
 	/**
 	 * @return the markup for the current gallery
