@@ -1,48 +1,44 @@
 <?php 
-
-class SpecialOffersSnippet {
+/**
+ * Manages the integration of the special offers snippet
+ * @author etessore
+ * @version 1.0.1
+ */
+class SpecialOffersSnippet extends FeatureWithAssets{
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/promotions.php';
+	const default_divdest = 'FB_so';
 	
-	private $params;
+	public $params;
 	private $url;
-	private $assets = array('js', 'css');
+	public $index;
+	public $templates;
+	//private $assets = array('js', 'css');
 
 	public function __construct($hid){
-		$this
-			->add_param('hid', $hid)
-			->add_param('nb', 1)
-			->add_param('order', 'random');
-		if(!is_admin() && $this->load_assets());
-	}
-	
-	/**
-	 * Enqueues the needed js and css 
-	 * to the wordpress assets queue
-	 * @return SpecialOffersSnippet $this for chainability
-	 */
-	public function load_assets(){
-		wp_enqueue_script(
+		$tpl = <<< EOF
+	<div id="%divdest%">
+		<div class="loading">%loading%</div>
+	</div>
+	<iframe id="iframe_%divdest%" src="%iframe%" style="display:none"></iframe>
+EOF;
+		
+		$this->templates = new SubstitutionTemplate();
+		$this->templates
+			->set_tpl($tpl)
+			->set_markup('loading', __('Loading Offers...', ThemeHelpers::textdomain));
+		wp_register_script(
 			'snippet-com', 
-			get_template_directory_uri().'/js/com.js',
-			array('jquery'),
+			'http://hotelsitecontents.fastbooking.com/js/com.js',
+			null,
 			'0.1',
 			true
 		);
-		wp_enqueue_script(
-			'snippet-fbso', 
-			'http://static.fbwebprogram.com/fbcdn/jquery_plugins/fbspecialoffers/1.1/jquery.fbspecialoffers.js',
-			array('jquery'),
-			'1.1',
-			true
-		);
-		wp_enqueue_style(
-			'snippet', 
-			get_template_directory_uri().'/css/snippet.css', 
-			null, 
-			'0.1', 
-			'screen'
-		);
-		return $this;
+		$this
+			->add_asset('snippet-com', 'js')
+			->add_param('hid', $hid)
+			->add_param('divdest', self::default_divdest);
+		$this->index = 0;
+		if(!is_admin() && $this->load_assets());
 	}
 
 	/**
@@ -79,7 +75,7 @@ class SpecialOffersSnippet {
 	}
 
 	/**
-	 * Adds a new parameter
+	 * Adds a new parameter or update if exists
 	 * @param string $key
 	 * @param int|string $value
 	 * @return SpecialOffersSnippet $this for chainability
@@ -87,6 +83,14 @@ class SpecialOffersSnippet {
 	public function add_param($key, $value){
 		$this->params[$key] = $value;
 		return $this;
+	}
+	
+	/**
+	 * Retrives the $key param for this snippet
+	 * @param string $key name of the parameter
+	 */
+	public function get_param($key){
+		return $this->params[$key];
 	}
 	
 	/**
@@ -104,10 +108,39 @@ class SpecialOffersSnippet {
 	 * @return string the url
 	 */
 	public function get_iframe_src(){
-		$url_arr = parse_url(admin_url('admin-ajax.php'));
-		$this->add_param('action', SpecialOffersSnippetAjax::ajax_action);
+		$url_arr = parse_url(self::baseurl);
 		$url_arr['query'] = http_build_query($this->params);
 		return self::build_url($url_arr);
+	}
+	
+	/**
+	 * Calculates the divdest for the current iframe integration
+	 * First time it will be self::default_divdest
+	 * For the other an "_<number>" will be appended
+	 * If the parameter divdest is customized it will return that one
+	 */
+	protected function get_divdest(){
+		if(substr($this->get_param('divdest'), 0, strlen(self::default_divdest)) ==  self::default_divdest){
+			if($this->index == 0){
+				return self::default_divdest;
+			} else {
+				return self::default_divdest.'_'.$this->index;
+			}
+		}
+		return $this->get_param('divdest');
+	}
+	
+	/**
+	 * Retrieves the markup for the offers
+	 */
+	public function get_markup(){
+		$this->add_param('divdest', $this->get_divdest());
+		$this->index++;
+		
+		return $this->templates
+			->set_markup('iframe', $this->get_iframe_src())
+			->set_markup('divdest', $this->get_param('divdest'))
+			->replace_markup();
 	}
 	
 	/**

@@ -6,20 +6,9 @@
  */
 class ImagePreload extends GalleryHelper{
 	
-	
 	/**
-	 * Loads needed scripts and css
-	 */
-	public function load_assets(){
-		wp_enqueue_script('jquery.imagesloaded');
-		wp_enqueue_script('cycle');
-	}
-	
-	/**
-	 * Initializes the javascript array 
-	 * with the list of images to be preloaded
-	 * @param string $mod a modificator for the current 
-	 * javascript array. Useful if you have more than one slideshow
+	 * (non-PHPdoc)
+	 * @see GalleryHelper::get_markup()
 	 */
 	public function get_markup(){
 		if(empty($this->images)){ return ''; }
@@ -42,7 +31,7 @@ class ImagePreload extends GalleryHelper{
 		$json = json_encode(
 			array(
 				'images'	=>	$toret,
-				'loading'	=>	$this->static_markup['loading'],
+				//'loading'	=>	$this->static_markup['loading'],
 				'uid'		=>	$this->unid
 			)
 		);

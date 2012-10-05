@@ -1,25 +1,15 @@
 <?php 
+
+/**
+ * Stores some static methods that may be useful for html management
+ * @author etessore
+ * @version 1.0.2
+ */
 class ThemeHelpers{
-	/**
-	 * @var boolean true if the debug is enabled, false otherwise
-	 */
-	const debug = true;
 	/**
 	 * @var string Stores the name of the gettext domain for this theme
 	 */
 	const textdomain = 'theme';
-	
-	/**
-	 * @var string the author
-	 */
-	const author = 'Emanuele \'Tex\' Tessore';
-	
-	/**
-	 * Lock variable: enables or disables the filter
-	 * to get the permalink with hash or not
-	 * @var boolean
-	 */
-	//static $use_hash_permalink = true;
 	
 	/**
 	 * This filter callback adds some usefull classes to the body
@@ -28,7 +18,11 @@ class ThemeHelpers{
 	 * @param array $classes the classes already added by wordpress or some other plugin
 	 */
 	public static function body_class($classes){
-		$tags = fb_get_systags(get_the_ID(), false);
+		if(function_exists('fb_get_systags')){
+			$tags = fb_get_systags(get_the_ID(), false);
+		} else {
+			$tags = array();
+		}
 		foreach($tags as $k => $tag){
 			$tags[$k] = 'tag-'.$tag;
 		}
@@ -40,109 +34,19 @@ class ThemeHelpers{
 	}
 	
 	/**
-	 * @return some usefull meta tags for the <head>
+	 * Get the markup for the browse happy 
 	 */
-	public static function head(){
-		$tempate_directory_uri = get_template_directory_uri();
-		$charset = get_bloginfo('charset');
-		$author = self::author;
-		$title = fbseo_get_title();
-		$description = fbseo_get_metadescription();
-		
-		echo <<<EOF
-	<title>$title</title>
-	<meta name="description" value="$description" />
-    <meta charset="$charset">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="$author">
-    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
+	public static function browse_happy(){
+		return <<< EOF
+  <!--[if lt IE 7]>
+    <p class="chromeframe">
+    	You are using an outdated browser. 
+    	<a href="http://browsehappy.com/">Upgrade your browser today</a> 
+    	or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> 
+    	to better experience this site.
+    </p>
+  <![endif]-->	
 EOF;
-		if(self::debug){
-			echo <<<EOF
-
-	<style>
-		.debug{margin:10px;border:1px solid red;font-size:150%;}
-	</style>
-EOF;
-		}
-	}
-	
-	/**
-	 * @return the markup for the mini gallery
-	 * @param object $post the post object of wich get the gallery
-	 */
-	public static function get_gallery($post=null){
-		if(!isset($post)) global $post;
-		$images = fb_get_all_images($post->ID, array(), array('slideshow', 'nogallery', 'highlight'), false);
-		
-		$gallery = new MinigalleryBigImageWithThumbs();
-		$gallery
-			->set_big_sizes(460, 280)
-			->set_markup('next', '<div class="next small sprite"></div>')
-			->set_markup('prev', '<div class="prev small sprite"></div>')
-			->add_images($images);
-		return $gallery->get_markup();
-
-	}
-	
-	public static function get_photogallery($post=null){
-		if(!isset($post)) global $post;
-		$images = fb_get_all_images($post->ID, array(), array('slideshow', 'nogallery', 'highlight'), false);
-		
-		$gallery = new PhotogalleryThumbWithFancybox();
-		$gallery
-			->set_markup('next', '<div class="next small sprite"></div>')
-			->set_markup('prev', '<div class="prev small sprite"></div>')
-			->add_images($images);
-		return $gallery->get_markup();
-		
-	}
-	
-	/**
-	 * Retrieves the markup for the go to top button
-	 * If $k is 0 returns an empty string
-	 * @param int $k the counter, generally a foreach($arr as $k=>$v)
-	 */
-	public static function go_to_top($k=null){
-		if(is_null($k)){ global $k; }
-		if(!$k) return '';
-		return '<div class="top sprite"></div>';
-	}
-
-	/**
-	 * @return the markup for the 404 menu
-	 */
-	public static function get_404_escape_route(){
-		$tokens = array();
-		$tokens['back'] 		= self::anchor('javascript:history.back();', __('Back', self::textdomain));
-		$tokens['home']			=	self::anchor(get_home_url(), __('Home', self::textdomain));
-		$tokens['contact']	=	self::anchor(get_permalink(get_page_by_title('Contacts')->ID), __('Contacts', self::textdomain));
-		return __('Maybe those links will be usefull: ', self::textdomain).'<br>'.implode(' - ', $tokens);
-	}
-
-	/**
-	 * Util to debug some variable when you are going mad 
-	 * about something you can't understand withou knowing the value of it.
-	 * 
-	 * @param mixed $var the variable to be exported
-	 * @param string $title the title or keywork: usefull if you hit ctrl+f on the source code :)
-	 * @param boolean $echo true if you want to echo the variable value
-	 * @param boolean $comment true if you want to wrap the echo on an html comment: very usefull in production mode
-	 * @param boolean $die true if you want to stop execution after dumping the variable.
-	 */
-	public static function debug($var, $title='DEBUG', $echo=true, $comment=true, $die=false){
-		$tpl = <<<EOF
-		<div class="debug">
-			<h1>%title%</h1>
-			<pre>%debug%</pre>
-		</div>
-EOF;
-		$render = str_replace(array('%debug%','%title%'), array(var_export($var, true), $title), $tpl);
-		if($comment) $render = '<!-- '.$render.' -->';
-		if($die) die($render);
-		if($echo) echo $render;
-		return $render;
 	}
 	
 	/**
@@ -231,6 +135,28 @@ EOF;
 	}
 	
 	/**
+	 * Retrieves the correct DOCTYPE
+	 * @param string $type the type, default is html5
+	 */
+	static function doctype($type = 'html5') {
+		$doctypes = array(
+			'html5'			=> '<!DOCTYPE html>',
+			'xhtml11'		=> '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',
+			'xhtml1-strict'	=> '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">',
+			'xhtml1-trans'	=> '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">',
+			'xhtml1-frame'	=> '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">',
+			'html4-strict'	=> '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">',
+			'html4-trans'	=> '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+			'html4-frame'	=> '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">',
+		);
+	
+		if (isset($doctypes[$type])) {
+			return $doctypes[$type] . "\n";
+		}
+		return '';
+	}
+	
+	/**
 	 * Get the markup for an <a> tag
 	 * @return the markup for an html <a> tag
 	 * @param string $href the url to be pointed
@@ -240,8 +166,7 @@ EOF;
 	public static function anchor($href, $label, $parms=''){
 		$href 	= esc_attr($href);
 		//$label 	= esc_html($label); //i want the possibility to insert an inner <img>
-		$parms 	= trim(self::array_to_html_attributes('=', $parms));
-		if(!empty($parms)) $parms = ' '.$parms;
+		$parms 	= self::params($parms);
 		return <<< EOF
 		<a href="$href"$parms>$label</a>
 EOF;
@@ -254,10 +179,18 @@ EOF;
 	 */
 	public static function image($src, $parms=''){
 		$src = esc_attr($src);
-		$parms 	= trim(self::array_to_html_attributes('=', $parms));
-		if(!empty($parms)) $parms = ' '.$parms;
+		$parms 	= self::params($parms);
 		return <<< EOF
 		<img src="$src"$parms >
+EOF;
+	}
+	
+	public static function script($content, $parms=''){
+		$parms 	= self::params($parms);
+		return <<< EOF
+	<script type="text/javascript"$parms>
+		$content
+	</script>
 EOF;
 	}
 	
@@ -283,49 +216,15 @@ EOF;
 	}
 	
 	/**
-	 * Retrieves the markup for printing offers
-	 * @param array $attr attributes for the current offer set
-	 * TODO: move the default hid to the cms
+	 * Prepare the $parms to be printed as html attributes
+	 * @param string|array $parms list of html attributes
 	 */
-	public static function iframe_offers($attr=array()){ 
-		$attr = array_merge(array(
-			'hid'		=>	'itfin24605',
-			'nb'		=>	1,
-			'order'		=>	'random',
-			'cta'		=>	__('Check Availability', self::textdomain),	
-			'ctam'		=>	__('Info', self::textdomain),
-			'displayPrice'	=>	'1',
-			'apd'		=>	__('From', self::textdomain),
-			'pn'		=>	__('Per Night', self::textdomain),
-			'pb_flag'	=>	1
-		), $attr);
-		wp_enqueue_style(
-			'snippet', 
-			get_template_directory_uri().'/css/snippet.css', 
-			null, 
-			'0.1', 
-			'screen'
-		);
-		$url_arr = parse_url('http://hotelsitecontents.fastbooking.com/promotions.php');
-		$url_arr['query'] = http_build_query($attr);
-		$url = self::build_url($url_arr);
-		return <<< EOF
-	<div id="FB_so" class="clearfix"></div>
-	<iframe id="iframe_FB_so" src="$url" style="display:none"></iframe>
-	<script type="text/javascript" src="http://hotelsitecontents.fastbooking.com/js/com.js"></script>
-EOF;
+	public static function params($parms=''){
+		$parms 	= trim(self::array_to_html_attributes('=', $parms));
+		if(!empty($parms)) $parms = ' '.$parms;
+		return $parms;
 	}
 	
-	public static function fbqs(){
-		wp_enqueue_script('fbqs');
-		wp_enqueue_style('datepicker');
-		wp_enqueue_style('fbqs');
-		return '<div id="fastbooking_qs" class="grid_4 alpha omega">'.self::loading().'</div>';
-	}
-	
-	public static function loading(){
-		return '<div class="loading">'.__('Loading...', ThemeHelpers::textdomain).'</div>';
-	}
 	
 	/**
 	 * Retrieves the url from array $url_arr
@@ -363,6 +262,9 @@ EOF;
 EOF;
 	}
 	
+	/**
+	 * Retrieves the markup for the Add This widget
+	 */
 	public static function add_this(){
 		wp_enqueue_script(
 				'addthis', 
@@ -389,22 +291,3 @@ EOF;
 }
 
 
-
-
-/**
- * Quick and dirty way to know a variable value
- * vd stand for <strong>v</strong>ar_dump() and <strong>d</storng>ie()
- * @param mixed $var the variable to be dumped
- */
-function vd($var){
-	ThemeHelpers::debug($var, 'DEBUG', true, false, true);
-}
-
-/**
- * Quick and dirty way to know a variable value
- * Usefull in a loop cause it doesn't break the execution with die
- * @param mixed $var the variable to be dumped
- */
-function v($var){
-	ThemeHelpers::debug($var, 'DEBUG', true, false, false);
-}

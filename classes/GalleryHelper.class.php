@@ -6,7 +6,7 @@
  * @author etessore
  * @version 1.0.1
  */
-abstract class GalleryHelper{
+abstract class GalleryHelper extends FeatureWithAssets{
 	public $textdomain = 'theme';
 
 	/**
@@ -74,6 +74,21 @@ abstract class GalleryHelper{
 		$this->static_markup[$key] = $markup;
 		return $this;
 	}
+	
+	/**
+	 * Replaces the markup in $this->tpl %tag%s with the one
+	 * in the corresponding value of $this->static_markup[tag].
+	 */
+	public function replace_markup(){
+		return str_replace(
+			array_map(
+				create_function('$k', 'return "%".$k."%";'), 
+				array_keys($this->static_markup)
+			),
+			array_values($this->static_markup),
+			$this->tpl
+		);
+	}
 
 	/**
 	 * Adds an image to the current set
@@ -92,17 +107,11 @@ abstract class GalleryHelper{
 	 * @return GalleryHelper $this for chainability
 	 */
 	public function add_images($images){
-		foreach($images as $img){
-			$this->add_image($img);
+		if(count($images)){
+			foreach($images as $img){
+				$this->add_image($img);
+			}
 		}
-		return $this;
-	}
-
-	/**
-	 * Loads the needed assets
-	 * @return GalleryHelper $this for chainability
-	 */
-	public function load_assets(){
 		return $this;
 	}
 
@@ -135,27 +144,53 @@ abstract class GalleryHelper{
 			if(is_array($this->timthumb_opts) && !isset($this->timthumb_opts['render'])){
 				$this->timthumb_opts['render'] = http_build_query($this->timthumb_opts);
 			}
-			
+				
 			$toret = $toret.'?'.$this->timthumb_opts['render'];
 		}
 
 		return $toret;
 	}
 	
+	/**
+	 * Get the width for the n-th image of the list
+	 * @param int $index the index of the images list
+	 */
 	protected function get_image_width($index){
 		if(isset($this->timthumb_opts['w'])){
 			return $this->timthumb_opts['w'];
+		} elseif(is_int($this->images[$index])){
+			$image = wp_get_attachment_metadata($this->images[$index], 'large');
+			if(!empty($image['width'])){
+				return $image['width'];
+			}
+		} elseif(is_object($this->images[$index])){
+			$image = wp_get_attachment_metadata($this->images[$index]->ID, 'large');
+			if(!empty($image['width'])){
+				return $image['width'];
+			}
 		}
-		$image = wp_get_attachment_image($this->images[$index]);
-		return $image[1];
+		return '100%';
 	}
-	
+
+	/**
+	 * Get the height for the n-th image of the list
+	 * @param int $index the index of the images list
+	 */
 	protected function get_image_height($index){
 		if(isset($this->timthumb_opts['h'])){
 			return $this->timthumb_opts['h'];
+		} elseif(is_int($this->images[$index])){
+			$image = wp_get_attachment_metadata($this->images[$index], 'large');
+			if(!empty($image['height'])){
+				return $image['height'];
+			}
+		} elseif(is_object($this->images[$index])){
+			$image = wp_get_attachment_metadata($this->images[$index]->ID, 'large');
+			if(!empty($image['height'])){
+				return $image['height'];
+			}
 		}
-		$image = wp_get_attachment_image($this->images[$index]);
-		return $image[2];
+		return '100%';
 	}
 	
 	/**
