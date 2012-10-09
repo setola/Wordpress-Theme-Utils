@@ -25,16 +25,16 @@ EOF;
 		$this->templates = new SubstitutionTemplate();
 		$this->templates
 			->set_tpl($tpl)
-			->set_markup('title', __('The page was not found', ThemeHelpers::textdomain))
-			->set_markup('subtitle', __('I\'m sorry but the page you were looking for is not available', ThemeHelpers::textdomain))
-			->set_markup('desc', __('Maybe one of these links will be usefull', ThemeHelpers::textdomain));
+			->set_markup('title', __('The page was not found', 'theme'))
+			->set_markup('subtitle', __('I\'m sorry but the page you were looking for is not available', 'theme'))
+			->set_markup('desc', __('Maybe one of these links will be usefull', 'theme'));
 		
 		$this
 			->set_template($tpl)
 			->set_separator(' - ')
-			->add_link('javascript:history.back();', __('Back', ThemeHelpers::textdomain))
-			->add_link(home_url(), __('Homepage', ThemeHelpers::textdomain))
-			->add_link('javascript:void();', __('Book Now', ThemeHelpers::textdomain), 'class="book-action"');
+			->add_link('javascript:history.back();', __('Back', 'theme'))
+			->add_link(home_url(), __('Homepage', 'theme'))
+			->add_link('javascript:void();', __('Book Now', 'theme'), 'class="book-action"');
 	}
 	
 	/**

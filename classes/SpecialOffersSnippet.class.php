@@ -25,7 +25,7 @@ EOF;
 		$this->templates = new SubstitutionTemplate();
 		$this->templates
 			->set_tpl($tpl)
-			->set_markup('loading', __('Loading Offers...', ThemeHelpers::textdomain));
+			->set_markup('loading', __('Loading Offers...', 'theme'));
 		wp_register_script(
 			'snippet-com', 
 			'http://hotelsitecontents.fastbooking.com/js/com.js',

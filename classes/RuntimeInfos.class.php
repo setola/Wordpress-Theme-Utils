@@ -84,7 +84,7 @@ class RuntimeInfos{
 	 */
 	public function load_assets(){
 		if(!isset($this->id)){
-			wp_die(__('You have to call RuntimeInfos::generate_unique_id() before RuntimeInfos::load_assets()'));
+			wp_die('You have to call RuntimeInfos::generate_unique_id() before RuntimeInfos::load_assets()');
 		}
 		$nonce = wp_create_nonce("runtime_infos_nonce");
 		$src = 

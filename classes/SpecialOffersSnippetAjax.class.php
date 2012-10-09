@@ -20,7 +20,7 @@ class SpecialOffersSnippetAjax{
 	 * Function called by admin-ajax.php
 	 */
 	public static function ajax_callback(){
-		if(empty($_GET['hid'])){ wp_die(__('hid is needed')); }
+		if(empty($_GET['hid'])){ wp_die('hid is required'); }
 		unset($_GET['action']);
 		die(file_get_contents(SpecialOffersSnippet::calculate_url($_GET)));
 	}

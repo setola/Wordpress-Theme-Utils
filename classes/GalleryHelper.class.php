@@ -5,6 +5,7 @@
  * Extend this with your nice and candy classes!
  * @author etessore
  * @version 1.0.1
+ * TODO: switch to choose timthumb or wp sizes
  */
 abstract class GalleryHelper extends FeatureWithAssets{
 	public $textdomain = 'theme';
