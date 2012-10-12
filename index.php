@@ -1,0 +1,1 @@
+Customize the default post by editing index.php

@@ -1,0 +1,1 @@
+Customize the default page by editing index.php

@@ -1,0 +1,103 @@
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+
+
+// Some Standard fonts
+// -------------------
+@fontOpenSans:		'Open Sans Condensed', sans-serif;
+@fontLucidaSans:	'Lucida Sans Unicode','Lucida Grande',Garuda,sans-serif;
+@fontArial:			Arial, Helvetica, sans-serif;
+@fontGeorgia:		Georgia, serif;
+@fontTahoma:		Tahoma, Geneva, sans-serif;
+@fontVerdana:		Verdana, Geneva, sans-serif;
+@fontTrebuchet:		'Trebuchet MS', Helvetica, sans-serif;
+@fontPalatino:		'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+@fontTimes:			'Times New Roman', Times, serif;
+@fontImpact:		Impact, sans-serif;
+@fontLucida:		'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+@fontMonaco:		Monaco, Menlo, Consolas, "Courier New", monospace;
+
+
+
+
+// Grays
+// -------------------------
+@black:				#000;
+@grayDarker:		#222;
+@grayDark:			#333;
+@gray:				#555;
+@grayLight:			#999;
+@grayLighter:		#eee;
+@white:				#fff;
+
+
+// Accent colors
+// -------------------------
+@blue:				#049cdb;
+@blueDark:			#0064cd;
+@green:				#46a546;
+@red:				#9d261d;
+@yellow:			#ffc40d;
+@orange:			#f89406;
+@pink:				#c3325f;
+@purple:			#7a43b6;
+
+@placeholderText:	@grayLight;
+
+
+// Scaffolding
+// -------------------------
+@bodyBackground:	@white;
+@textColor:			@grayDark;
+
+
+// Links
+// -------------------------
+@linkColor:			#08c;
+@linkColorHover:	darken(@linkColor, 15%);
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexBackground:		1000;
+@zindexslideShow:		1100;
+@zindexMenu:			1200;
+@zindexText:			1300;
+@zindexQs:				1400;
+@zindexModalBackground:	1500;
+@zindexModal:			1600;
+
+
+// Sprites path
+// -------------------------
+@spriteUrl: 				"../images/sprite.png";
+
+
+// Typography
+// -------------------------
+@sansFontFamily:		@fontArial;
+@serifFontFamily:		@fontGeorgia;
+@monoFontFamily:		@fontMonaco;
+
+@baseFontSize:			14px;
+@baseFontFamily:		@sansFontFamily;
+@baseLineHeight:		20px;
+@altFontFamily:			@serifFontFamily;
+
+@headingsFontFamily:	inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:	bold; // instead of browser default, bold
+@headingsColor:			inherit; // empty to use BS default, @textColor
+
+
+// 960 Grid System
+// -------------------------
+
+@gs960Width:			960px;
+@gs960NumCols:			12;
+@gs960ColMargin:		10px;

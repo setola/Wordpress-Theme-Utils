@@ -1,0 +1,43 @@
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compile: NO
+ * Include: YES
+ * 
+ */
+/*!
+ * mixins.less
+ * UTILITY MIXINS
+ * 
+ * Please note that this file should NOT contain
+ * any css definition, only less mixins.
+ * You can check if this is true by compiling
+ * css/mixins.css which have to be empty!
+ * 
+ * 
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compile: NO
+ * Include: YES
+ * 
+ */
+.room {
+  border-bottom: 1px solid #333;
+}
+.room:last-child {
+  border-bottom: 0 none;
+}
+.room .image {
+  float: left;
+  width: 340px;
+  height: 220px;
+}
+.room .text {
+  float: left;
+  width: 580px;
+  margin-left: 20px;
+}

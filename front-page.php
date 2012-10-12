@@ -1,0 +1,1 @@
+Customize you Front Page by editing front-page.php

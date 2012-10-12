@@ -1,0 +1,109 @@
+.open-details .description {
+  display: none;
+}
+.open-details .buttons {
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.open-details .buttons a {
+  heigth: 30px;
+  min-width: 120px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.open-details .buttons a.open-details-toggler {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-shadow: 0 1px 0 #111111;
+  background-color: #303030;
+  background-image: -moz-linear-gradient(top, #444444, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#111111));
+  background-image: -webkit-linear-gradient(top, #444444, #111111);
+  background-image: -o-linear-gradient(top, #444444, #111111);
+  background-image: linear-gradient(to bottom, #444444, #111111);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff111111', GradientType=0);
+  border-color: #111111 #111111 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #111111;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.open-details .buttons a.open-details-toggler:hover,
+.open-details .buttons a.open-details-toggler:active,
+.open-details .buttons a.open-details-toggler.active,
+.open-details .buttons a.open-details-toggler.disabled,
+.open-details .buttons a.open-details-toggler[disabled] {
+  color: #ffffff;
+  background-color: #111111;
+  *background-color: #040404;
+}
+.open-details .buttons a.open-details-toggler:active,
+.open-details .buttons a.open-details-toggler.active {
+  background-color: #000000 \9;
+}
+.open-details .buttons a.open-details-toggler:hover {
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+  background-position: 0 -15px;
+}
+.open-details .buttons a.book-room {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #333333;
+  text-shadow: 0 1px 0 #ffffb5;
+  background-color: #eedf93;
+  background-image: -moz-linear-gradient(top, #ffffb5, #d5af60);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffb5), to(#d5af60));
+  background-image: -webkit-linear-gradient(top, #ffffb5, #d5af60);
+  background-image: -o-linear-gradient(top, #ffffb5, #d5af60);
+  background-image: linear-gradient(to bottom, #ffffb5, #d5af60);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffb5', endColorstr='#ffd5af60', GradientType=0);
+  border-color: #d5af60 #d5af60 #b88c31;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d5af60;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.open-details .buttons a.book-room:hover,
+.open-details .buttons a.book-room:active,
+.open-details .buttons a.book-room.active,
+.open-details .buttons a.book-room.disabled,
+.open-details .buttons a.book-room[disabled] {
+  color: #333333;
+  background-color: #d5af60;
+  *background-color: #d0a54c;
+}
+.open-details .buttons a.book-room:active,
+.open-details .buttons a.book-room.active {
+  background-color: #ca9b38 \9;
+}
+.open-details .buttons a.book-room:hover {
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+  background-position: 0 -15px;
+}

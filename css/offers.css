@@ -1,0 +1,32 @@
+/*!
+ * offers.less
+ * Put here the style for the offers
+ * 
+ * Compiled on Fri, 12 Oct 2012 14:53:25 GMT
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+/*!
+ * mixins.less
+ * UTILITY MIXINS
+ * 
+ * Please note that this file should NOT contain
+ * any css definition, only less mixins.
+ * You can check if this is true by compiling
+ * css/mixins.css which have to be empty!
+ * 
+ * 
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+.price_rate_strike {
+  text-decoration: line-through;
+}

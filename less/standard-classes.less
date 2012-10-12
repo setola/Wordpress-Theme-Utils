@@ -1,0 +1,46 @@
+/*!
+ * standard-classes.less
+ * Store here some css classes you use almost on every page
+ * 
+ * Compiled on :compileTime:
+ */
+
+@import "variables";
+@import "mixins";
+
+.clearfix {
+	*zoom: 1;
+	&:before , &:after {
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+body{
+	background: @bodyBackground;
+	color: @textColor;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @baseFontFamily;
+}
+
+a {
+	cursor: pointer;
+	color: @linkColor;
+	&:hover{
+		color: @linkColorHover;
+	}
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+strong , b {
+	font-weight: bold;
+}
