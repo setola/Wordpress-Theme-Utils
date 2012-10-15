@@ -22,13 +22,21 @@ class ForceDownload{
 		if(!$this->check_request()){
 			wp_die('Unauthorized Resource');
 		}
-
-		$file = get_attached_file($_REQUEST[$this->request_field]);
+		
+		$post = get_post($_GET['id']);
+		$file = get_attached_file($post->ID);
 		if(file_exists($file)){
 			header("Cache-Control: public");
 			header("Content-Description: File Transfer");
 			header("Content-Disposition: attachment; filename= " . basename($file));
 			header("Content-Transfer-Encoding: binary");
+			header("Content-Type: ". 
+					(empty($post->post_mime_type) 
+							? "application/octet-stream;" 
+							: $post->post_mime_type
+					)
+			);
+		
 			die(file_get_contents($file));
 		} else {
 			header('HTTP/1.0 404 Not Found');
