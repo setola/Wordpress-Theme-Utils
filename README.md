@@ -3,6 +3,19 @@ Wordpress-Theme-Utils
 
 A little collection of utils i use while developing themes for WP.
 
+Usage
+-----
+
+1 Go to your theme directory: usually <wordpress-base-dir>/wp-content/themes/
+2 clone this repository with 
+```bash
+	git clone https://github.com/setola/Wordpress-Theme-Utils.git
+```
+3 Rename your new theme folder
+```bash
+	mv Wordpress-Theme-Utils my-new-theme-name
+```
+4 Start writing down your theme
 
 Classes
 -------

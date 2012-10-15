@@ -4,8 +4,7 @@
  * Manages the markup for a generic set of images
  * Extend this with your nice and candy classes!
  * @author etessore
- * @version 1.0.1
- * TODO: switch to choose timthumb or wp sizes
+ * @version 1.0.2
  */
 abstract class GalleryHelper extends FeatureWithAssets{
 	public $textdomain = 'theme';
@@ -38,6 +37,11 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	public $timthumb_opts;
 	
 	/**
+	 * @var string WordPress media size name
+	 */
+	public $media_dimension;
+	
+	/**
 	 * Set the unique id for this gallery
 	 * @param string $unid the unique
 	 * @return GalleryHelper $this for chainability
@@ -49,10 +53,22 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	
 	/**
 	 * Set the timthumb options
+	 * If set_wp_media_dimension() is called it will prevale on this.
 	 * @param array $options
 	 */
 	public function set_timthumb_options($options){
 		$this->timthumb_opts = $options;
+		return $this;
+	}
+	
+	/**
+	 * Sets the dimension for this gallery.
+	 * If set this option will prevale on timthumb
+	 * @param string $dimension WordPress media dimension name
+	 * @return GalleryHelper $this for chainability
+	 */
+	public function set_wp_media_dimension($dimension){
+		$this->media_dimension = $dimension;
 		return $this;
 	}
 
@@ -135,18 +151,25 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		$toret = $this->images[$index];
 
 		if(is_integer($this->images[$index])){
-			$toret = wp_get_attachment_url($this->images[$index]);
+			//$toret = wp_get_attachment_url($this->images[$index]);
+			$image = wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
 		} elseif(is_object($this->images[$index])){
-			$toret = wp_get_attachment_url($this->images[$index]->ID);
+			//$toret = wp_get_attachment_url($this->images[$index]->ID);
+			$image = wp_get_attachment_image_src($this->images[$index]->ID, $this->media_dimension);
 		}
 		
+		$toret = $image[0];
 		
-		if($this->timthumb_opts){
+		if($this->timthumb_opts && empty($this->media_dimension)){
 			if(is_array($this->timthumb_opts) && !isset($this->timthumb_opts['render'])){
 				$this->timthumb_opts['render'] = http_build_query($this->timthumb_opts);
 			}
 				
 			$toret = $toret.'?'.$this->timthumb_opts['render'];
+		}
+		
+		if($this->media_dimension){
+			wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
 		}
 
 		return $toret;
