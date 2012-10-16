@@ -2,7 +2,7 @@
  * front-page.less
  * Put here the style for the homepage
  * 
- * Compiled on Fri, 12 Oct 2012 14:53:25 GMT
+ * Compiled on Tue, 16 Oct 2012 14:25:15 GMT
  */
 /*!
  * variables.less
@@ -219,4 +219,19 @@ p {
 strong,
 b {
   font-weight: bold;
+}
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
 }

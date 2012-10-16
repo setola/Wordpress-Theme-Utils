@@ -7,7 +7,6 @@
 
 @import "variables";
 @import "mixins";
-
 .clearfix {
 	*zoom: 1;
 	&:before , &:after {
@@ -21,7 +20,7 @@
 	}
 }
 
-body{
+body {
 	background: @bodyBackground;
 	color: @textColor;
 	font-size: @baseFontSize;
@@ -32,15 +31,35 @@ body{
 a {
 	cursor: pointer;
 	color: @linkColor;
-	&:hover{
+	&:hover {
 		color: @linkColorHover;
 	}
 }
 
 p {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 strong , b {
 	font-weight: bold;
+}
+
+
+// WordPress default classes
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
 }
