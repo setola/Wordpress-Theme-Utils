@@ -35,10 +35,16 @@ FblibConf.googleAnalytics = {
 
 var _gaq = _gaq || [];
 
-BF_languages.lingue.it.booknow = 'Verifica disponibilità';
-BF_languages.lingue.en.booknow = 'Check Availability';
+/**
+ * Example of custom labels
+ */
+//BF_languages.lingue.it.booknow = 'Verifica disponibilità';
+//BF_languages.lingue.en.booknow = 'Check Availability';
 
-(function(){
+(function(){	
+	for(language in BF_languages.lingue){
+		BF_languages.lingue[language].fblangcode = '';
+	}
 	BookingForm.renderAll();
 	jQuery('.book-action').live('click', function(){
 		jQuery('#defaultBf .bf_booknow').trigger('click');

@@ -5,22 +5,23 @@
 if(!is_admin()){
 	
 	/**
-	 * Some usefull libraries
+	 * Jquery UI replacement for the conflicting simlinked js in the wp installation
 	 */
 	wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', null, '1.7.2', true);
+	wp_register_script('jquery-ui-core', get_template_directory_uri().'/js/jquery.ui.core.min.js', array('jquery'), '1.8.20', true);
+	wp_register_script('jquery.ui.selectmenu', get_template_directory_uri().'/js/jquery.ui.selectmenu.js', array('jquery','jquery-ui-core','jquery-ui-position','jquery-ui-widget'), '1.2.1', true);
+	wp_register_script('jquery-ui-position', get_template_directory_uri().'/js/jquery.ui.position.min.js', array('jquery','jquery-ui-core'), '1.8.20', true);
+	wp_register_script('jquery-ui-widget', get_template_directory_uri().'/js/jquery.ui.widget.min.js', array('jquery','jquery-ui-core'), '1.8.20', true);
+	
+	
+	/**
+	 * Some usefull libraries
+	 */
 	wp_register_script('jquery.imagesloaded', get_template_directory_uri().'/js/jquery.imagesloaded.js', array('jquery'), '2.0.1', true);
 	wp_register_script('jquery.cycle', get_template_directory_uri().'/js/jquery.cycle.js', array('jquery'), '2.0.1', true);
 	wp_register_script('jquery.scrollto', get_template_directory_uri().'/js/jquery.scrollTo.js', array('jquery'), '1.4.2', true);
 	wp_register_script('jquery-fancybox', get_template_directory_uri().'/js/jquery.fancybox.js', array('jquery'), '2.1.0', true);
 	
-	
-	/**
-	 * Jquery UI replacement for the conflicting simlinked js in the wp installation
-	 */
-	wp_register_script('jquery-ui-core', get_template_directory_uri().'/js/jquery.ui.core.min.js', array('jquery'), '1.8.20', true);
-	wp_register_script('jquery.ui.selectmenu', get_template_directory_uri().'/js/jquery.ui.selectmenu.js', array('jquery','jquery-ui-core','jquery-ui-position','jquery-ui-widget'), '1.2.1', true);
-	wp_register_script('jquery-ui-position', get_template_directory_uri().'/js/jquery.ui.position.min.js', array('jquery','jquery-ui-core'), '1.8.20', true);
-	wp_register_script('jquery-ui-widget', get_template_directory_uri().'/js/jquery.ui.widget.min.js', array('jquery','jquery-ui-core'), '1.8.20', true);
 	
 	
 	/**
