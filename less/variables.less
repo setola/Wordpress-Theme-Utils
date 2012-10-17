@@ -48,17 +48,6 @@
 
 
 
-// Scaffolding
-// -------------------------
-@bodyBackground:	@white;
-@textColor:			@grayDark;
-
-
-// Links
-// -------------------------
-@linkColor:			#08c;
-@linkColorHover:	darken(@linkColor, 15%);
-
 
 // Z-index master list
 // -------------------------
@@ -80,20 +69,33 @@
 
 // Typography
 // -------------------------
-@sansFontFamily:		@fontArial;
-@serifFontFamily:		@fontGeorgia;
-@monoFontFamily:		@fontMonaco;
+//@sansFontFamily:		@fontArial;
+//@serifFontFamily:		@fontGeorgia;
+//@monoFontFamily:		@fontMonaco;
 
 @baseFontSize:			14px;
-@baseFontFamily:		@sansFontFamily;
+@baseFontFamily:		@fontArial;
 @baseLineHeight:		1.4;
-@altFontFamily:			@serifFontFamily;
+@altFontFamily:			@fontPalatino;
 
-@headingsFontFamily:	inherit; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:	bold; // instead of browser default, bold
-@headingsColor:			inherit; // empty to use BS default, @textColor
+//@headingsFontFamily:	inherit; // empty to use BS default, @baseFontFamily
+//@headingsFontWeight:	bold; // instead of browser default, bold
+//@headingsColor:			inherit; // empty to use BS default, @textColor
 
 @placeholderText:		@grayLight;
-@gridGutterWidth:		10px;
-@gridColumnWidth:		100px;
+//@gridGutterWidth:		10px;
+//@gridColumnWidth:		100px;
 
+
+
+// Theme dependent variables
+// -------------------------
+@baseColor:			@white;
+@textColor:			@grayDark;
+@highlightColor:	#fff;
+
+
+// Links
+// -------------------------
+@linkColor:			#08c;
+@linkColorHover:	darken(@linkColor, 15%);
