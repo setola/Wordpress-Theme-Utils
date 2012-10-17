@@ -1,0 +1,194 @@
+// 960 Grid System
+// -------------------------
+
+#gs960 {
+
+	#pixel {
+	@width: 960px;
+	@num_cols: 16;
+	@col_margin: 10px;
+	
+		@col_width: @width / @num_cols;
+		.container () {
+			clear: both;
+			margin: 0 auto;
+			width: @width;
+		}
+
+		/*.grid (@cols: 1 , @float: left , @display: inline) {
+			display: @display;
+			float: @float;
+			margin: 0 @col_margin;
+			width: (@col_width * @cols) - (2 * @col_margin);
+		} */
+		
+		.all_cols(@float: left , @display: inline){
+			display: @display;
+			float: @float;
+			margin: 0 @col_margin;
+		}
+		
+		.single_col(@col_number: 1){
+			width: (@col_width * @col_number) - (2 * @col_margin);
+		}
+
+		.prefix (@col_number: 1) {
+			padding-left: (@col_width * @col_number);
+		}
+
+		.suffix (@col_number: 1) {
+			padding-right: (@col_width * @col_number);
+		}
+
+		.alpha () {
+			margin-left: 0;
+		}
+
+		.omega () {
+			margin-right: 0;
+		}
+
+		.push (@move: 1) {
+			left: (@col_width * @move);
+		}
+
+		.pull (@move: 1) {
+			left: (@col_width * @move) * -1;
+		}
+		
+		.all_push_pull(){
+			position: relative;
+		}
+		
+		//TODO: call thi for initialize the full grid system
+		.init(){
+			
+			[class*="grid_"] {
+				#gs960 > #pixel > .all_cols();
+			}
+			
+			/* 
+			 * .spanX (@index) when (@index > 0) {
+				( ~ ".span@{index}" ) { .single_col(@index); }
+				.spanX(@index - 1);
+			}
+			.spanX (0) {} */
+		}
+	}
+
+	#percent {
+		@width: 90%;
+		@def_grid: 16;
+		@col_margin: 10px;
+		
+		.container () {
+			margin: 0 auto;
+			width: @width;
+		}
+
+		.grid (@grid: @def_grid , @cols: '' , @float: left , @display: inline) {
+			display: @display;
+			float: @float;
+			margin: 0 @col_margin;
+			width: (100% / @grid * @cols) - (@col_margin * 2);
+		}
+
+		.prefix (@grid: @def_grid , @cols: '') {
+			padding-left: (100% / @grid * @cols);
+		}
+
+		.suffix (@grid: @def_grid , @cols: '') {
+			padding-right: (100% / @grid * @cols);
+		}
+
+		.alpha () {
+			margin-left: 0;
+		}
+
+		.omega () {
+			margin-right: 0;
+		}
+
+		.push (@grid: @def_grid , @move: '') {
+			position: relative;
+			left: (100% / @grid * @move);
+		}
+
+		.pull (@grid: @def_grid , @move: '') {
+			position: relative;
+			left: (100% / @grid * @move) * -1;
+		}
+	}
+	
+}
+
+//#gs960 > #pixel > .init()
+
+[class*="grid_"] {
+	#gs960 > #pixel > .all_cols();
+}
+[class*="push_"], [class*="pull_"] {
+	#gs960 > #pixel > .all_push_pull();
+}
+
+.container{
+	#gs960 > #pixel > .container();
+}
+
+.alpha{
+	#gs960 > #pixel > .alpha();
+}
+
+.omega{
+	#gs960 > #pixel > .omega();
+}
+
+.grid_1{
+	#gs960 > #pixel > .single_col(1);
+}
+.grid_2{
+	#gs960 > #pixel > .single_col(2);
+}
+.grid_3{
+	#gs960 > #pixel > .single_col(3);
+}
+.grid_4{
+	#gs960 > #pixel > .single_col(4);
+}
+.grid_5{
+	#gs960 > #pixel > .single_col(5);
+}
+.grid_6{
+	#gs960 > #pixel > .single_col(6);
+}
+.grid_7{
+	#gs960 > #pixel > .single_col(7);
+}
+.grid_8{
+	#gs960 > #pixel > .single_col(8);
+}
+.grid_9{
+	#gs960 > #pixel > .single_col(9);
+}
+.grid_10{
+	#gs960 > #pixel > .single_col(10);
+}
+.grid_11{
+	#gs960 > #pixel > .single_col(11);
+}
+.grid_12{
+	#gs960 > #pixel > .single_col(12);
+}
+.grid_13{
+	#gs960 > #pixel > .single_col(13);
+}
+.grid_14{
+	#gs960 > #pixel > .single_col(14);
+}
+.grid_15{
+	#gs960 > #pixel > .single_col(15);
+}
+.grid_16{
+	#gs960 > #pixel > .single_col(16);
+}
+

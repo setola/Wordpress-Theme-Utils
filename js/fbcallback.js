@@ -1,12 +1,17 @@
-var fbqs = {
+fbqs = fbqs || {
 	hotelname	:	'ITVENHTLPJunior',
 };
 
+/**
+ * Example of how to customize the qs markup
+ */
+/*
 BookingFormType.types.one_line_simplest	= {
 	'html'				: '<div class="bookingform one_line_nbdays"><h2 class=bf_title></h2><form class=bf_form target=dispoprice><input class=bf_showpromotions type=hidden name=showPromotions><input class=bf_langue type=hidden name=langue><input class=bf_clusternames type=hidden name=Clusternames><input class=bf_hotelnames type=hidden name=Hotelnames><select class=bf_hotel_list name=useless style=display:none></select><select style="display:none;" class=bf_from_day name=fromday></select><select style="display:none;" class=bf_from_month name=frommonth></select><select style="display:none;" class=bf_from_year name=fromyear></select><span class=bf_datepicker_wrapper><input class=datepicker_from ><span class=datepicker_button></span></span><select class=bf_nbdays name=nbdays></select><select class=bf_adulteresa name=adulteresa></select><select style="display:none;" class=bf_enfantresa name=enfantresa></select><input class=bf_accesscode name=AccessCode><input type=button class=bf_booknow name=B1><div class="links"><a href="javascript:;" class=bf_options></a><a href="javascript:;" class=bf_cancel></a></div></form></div>',
 	'select_type'	: 'select',
 	'nbdays'			: true
 };
+*/
 
 new SingleBookingForm({
 	'id' 				:	'fastbooking_qs',

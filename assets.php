@@ -69,19 +69,26 @@ if(!is_admin()){
 	
 	
 	/**
-	 * Theme Specific CSS
+	 * Theme Specific CSS for part of page
 	 */
 	wp_register_style('reset', get_template_directory_uri().'/css/reset.css', null, '2.0', 'screen');
 	wp_register_style('sprite', get_template_directory_uri().'/css/sprite.css', null, '0.1', 'screen');
+	wp_register_style('grid-960', get_template_directory_uri().'/css/grid-960.css', null, '0.1', 'screen');
 	wp_register_style('fbqs', get_template_directory_uri().'/css/fbqs.css', null, '0.1', 'screen');
+	wp_register_style('standard-style', get_template_directory_uri().'/css/standard-style.css', null, '0.1', 'screen');
 	wp_register_style('room', get_template_directory_uri().'/css/room.css', null, '0.1', 'screen');
 	wp_register_style('offers', get_template_directory_uri().'/css/offers.css', null, '0.1', 'screen');
 	wp_register_style('location', get_template_directory_uri().'/css/location.css', null, '0.1', 'screen');
 	wp_register_style('photogallery', get_template_directory_uri().'/css/photogallery.css', null, '0.1', 'screen');
 	wp_register_style('open-details', get_template_directory_uri().'/css/open-details.css', null, '0.1', 'screen');
-	wp_register_style('front-page', get_template_directory_uri().'/css/front-page.css', array('reset', 'fbqs', 'offers'), '0.1', 'screen');
 	wp_register_style('jquery-fancybox', get_template_directory_uri().'/css/jquery.fancybox.css', null, '2.1.0', 'screen');
-	wp_register_style('main', get_template_directory_uri().'/css/main.css', array('reset','sprite', 'fbqs'), '0.1', 'screen');
+	
+	
+	/**
+	 * Theme Specific CSS for entire page
+	 */
+	wp_register_style('front-page', get_template_directory_uri().'/css/front-page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
+	wp_register_style('page', get_template_directory_uri().'/css/page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
 
 }
 

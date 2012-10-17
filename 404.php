@@ -1,16 +1,12 @@
-<?php wp_enqueue_style('main'); ?>
+<?php wp_enqueue_style('page'); ?>
 <?php get_header(); ?>
 
-<div id="main-container">
-	<div class="overflow-shadows clearfix">
-		<div id="main-content" class="clarfix two-cols w940 content">
-			<div class="right column">
-				<?php the_404_image(); ?>
-			</div>
-			<div class="left column">
-				<?php the_404_escape_route(); ?>
-			</div>
-		</div>
+<div id="main-content" class="container">
+	<div class="grid_6 alpha">
+		<?php the_404_image(); ?>
+	</div>
+	<div class="grid_6 omega">
+		<?php the_404_escape_route(); ?>
 	</div>
 </div>
 

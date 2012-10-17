@@ -1,7 +1,29 @@
 /*!
  * fbqs.less
  * Put here the style for the Quick Search Booking Form
- * This file should NOT be compiled.
  * 
- * Compiled on Thu, 11 Oct 2012 10:00:53 GMT
+ * Compiled on Wed, 17 Oct 2012 13:59:13 GMT
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+/*!
+ * mixins.less
+ * UTILITY MIXINS
+ * 
+ * Please note that this file should NOT contain
+ * any css definition, only less mixins.
+ * You can check if this is true by compiling
+ * css/mixins.css which have to be empty!
+ * 
+ * 
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
  */

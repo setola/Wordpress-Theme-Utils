@@ -2,7 +2,7 @@
  * front-page.less
  * Put here the style for the homepage
  * 
- * Compiled on Tue, 16 Oct 2012 14:25:15 GMT
+ * Compiled on Wed, 17 Oct 2012 13:59:13 GMT
  */
 /*!
  * variables.less
@@ -203,7 +203,7 @@ body {
   background: #ffffff;
   color: #333333;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.4;
   font-family: Arial, Helvetica, sans-serif;
 }
 a {
@@ -234,4 +234,9 @@ b {
   clear: both;
   display: block;
   margin: 0 auto;
+}
+.heading * {
+  *display: inline;
+  display: inline-block;
+  font-size: 14px;
 }

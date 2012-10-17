@@ -89,10 +89,15 @@ define(ICL_DONT_LOAD_LANGUAGES_JS, true);
 define(ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS, true);
 define(ICL_DONT_LOAD_NAVIGATION_CSS, true);
 
-
+/**
+ * Prints the language menu
+ */
+function the_language_menu(){
+	do_action('icl_language_selector');
+}
 
 /**
- * Print the slideshow
+ * Prints the slideshow
  */
 function the_slideshow(){
 	$preloader = new Slideshow();
@@ -228,12 +233,13 @@ function the_browse_happy(){
  */
 function the_404_escape_route(){
 	$escape = new EscapeRoute();
+	$escape->templates->set_markup('class', 'grid_6');
 	echo $escape->get_markup();
 }
 
 function the_404_image(){
-	//echo ThemeHelpers::image(get_template_directory_uri().'/images/404.png');
-	echo wp_get_attachment_image(4, 'two-columns');
+	echo ThemeHelpers::image(get_template_directory_uri().'/images/error_404.gif');
+	//echo wp_get_attachment_image(4, 'two-columns');
 }
 
 function the_post_image(){

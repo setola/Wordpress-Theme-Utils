@@ -15,12 +15,10 @@ class EscapeRoute{
 	 */
 	public function __construct(){
 		$tpl = <<<EOF
-	<div class="escape-route">
 		<h1>%title%</h1>
 		<h2>%subtitle%</h2>
 		<p>%desc%</p>
 		%list%
-	</div>
 EOF;
 		$this->templates = new SubstitutionTemplate();
 		$this->templates
