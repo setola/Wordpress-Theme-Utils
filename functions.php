@@ -78,9 +78,9 @@ add_filter('body_class', array('ThemeHelpers', 'body_class'));
 /**
  * Image sizes for this theme
  */
-//add_theme_support('post-thumbnails');
+add_theme_support('post-thumbnails');
 //set_post_thumbnail_size(940, 220, true);
-//add_image_size('rooms', 340, 220, true);
+add_image_size('slideshow', 940, 400, true);
 
 /**
  * Remove some useless css and js by wpml

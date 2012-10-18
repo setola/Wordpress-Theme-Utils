@@ -11,3 +11,7 @@
 			<?php the_language_menu(); ?>
 		</div>
 	</div>
+	
+	<div id="main-menu" class="container">
+		<?php get_template_part('menu'); ?>
+	</div>
