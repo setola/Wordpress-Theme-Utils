@@ -287,7 +287,7 @@ EOF;
 		if(function_exists('fbseo_get_metadescription'))
 			fbseo_get_metadescription();
 		
-		return get_option('blogdescription');
+		return get_the_excerpt();
 	}
 	
 	/**
@@ -313,7 +313,7 @@ EOF;
 		if(function_exists('fbseo_get_h1_extra'))
 			fbseo_get_h1_extra();
 		
-		return get_the_excerpt();
+		return get_option('blogdescription');
 	}
 		
 	/**

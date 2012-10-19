@@ -74,12 +74,18 @@ add_filter('body_class', array('ThemeHelpers', 'body_class'));
  */
 //add_action('wp', array('ThemeHelpers', 'head'));
 
-
 /**
  * Image sizes for this theme
  */
 add_theme_support('post-thumbnails');
 //set_post_thumbnail_size(940, 220, true);
+
+/**
+ * @var int define here the id of the logo uploaded in the media library.
+ */
+define(LOGO_MEDIA_ID, 121);
+add_image_size('logo', 220, 87, true);
+
 add_image_size('slideshow', 940, 400, true);
 
 /**
@@ -119,13 +125,6 @@ class Slideshow extends ImagePreload{
 			%images_list%
 			%loading%
 EOF;
-	
-		/*$images = fb_get_all_images(
-			get_the_ID(),
-			array('slideshow'),
-			array(),
-			false
-		);*/
 		
 		$images = get_posts(
 			array(
@@ -142,7 +141,7 @@ EOF;
 		
 		$this
 			->add_images($images)
-			//->set_timthumb_options(array('q'=>50,'w'=>1980,'h'=>1080))
+			->set_wp_media_dimension('slideshow')
 			->add_asset('slideshow', 'js')
 			->set_uid('slideshow')
 			->set_markup(
@@ -338,4 +337,11 @@ function the_content_before_more(){
 function has_more_tag(){
 	global $post;
 	return strpos($post->post_content, '<!--more-->')!==false;
+}
+
+/**
+ * Prints the logo
+ */
+function the_logo(){
+	echo wp_get_attachment_image(LOGO_MEDIA_ID, 'logo');
 }

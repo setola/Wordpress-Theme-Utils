@@ -28,6 +28,7 @@ if(!is_admin()){
 	 * Initialization scripts
 	 */
 	wp_register_script('slideshow', get_template_directory_uri().'/js/slideshow.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
+	wp_register_script('slideshow-fullscreen', get_template_directory_uri().'/js/slideshow-fullscreen.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
 	wp_register_script('social', get_template_directory_uri().'/js/social.js', array('jquery'), '0.1', true);
 	wp_register_script('cycle', get_template_directory_uri().'/js/cycle.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);
 	wp_register_script('crs', get_template_directory_uri().'/js/crs.js', array('jquery'), '0.1', true);

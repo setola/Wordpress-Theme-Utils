@@ -2,7 +2,17 @@
 <?php get_header(); ?>
 	
 	<div id="main-container" class="container">
-		<h1>Customize you Front Page by editing front-page.php</h1>
+		<div id="slideshow">
+			<?php the_slideshow(); ?>
+		</div>
+		<div id="front-page-text">
+			<div class="title">
+				<?php the_logo(); ?>
+			</div>
+			<div class="body">
+				<?php the_content(); ?>
+			</div>
+		</div>
 	</div>
 	
 <?php get_footer(); ?>
