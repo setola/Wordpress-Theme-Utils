@@ -167,6 +167,7 @@ EOF;
 
 
 
+
 /**
  * Print the <head> inner content
  */
@@ -174,11 +175,11 @@ function the_head(){
 	echo '<head>';
 	$header = new HeadHelper();
 	$header
-		->set_title(fbseo_get_title())
+		->set_title(ThemeHelpers::get_the_seo_title())
 		->set_meta_tag(
 			array(
 				'name'		=>	'description',
-				'content'	=>	fbseo_get_metadescription()
+				'content'	=>	ThemeHelpers::get_the_seo_description()
 			)
 		)
 		->the_head();

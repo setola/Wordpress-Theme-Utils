@@ -253,8 +253,8 @@ EOF;
 	 * Retrives the markup for the default seo heading (h1+span) 
 	 */
 	public static function heading(){
-		$h1		=	fbseo_get_h1();
-		$extra	=	fbseo_get_h1_extra();
+		$h1		=	(function_exists('fbseo_get_h1')) ? fbseo_get_h1() : self::get_the_seo_title();
+		$extra	=	(function_exists('fbseo_get_h1_extra')) ? fbseo_get_h1_extra() : self::get_the_seo_description();
 		return <<< EOF
 	<h1>$h1</h1>
 	<span>$extra</span>
@@ -262,6 +262,34 @@ EOF;
 EOF;
 	}
 	
+	/**
+	 * Returns the title of the page.
+	 * Choose in order from: 
+	 * FB SEO Plugin
+	 * YOAST Seo TODO
+	 * Blog Name
+	 */
+	public static function get_the_seo_title(){
+		if(function_exists('fbseo_get_title')) 
+			return fbseo_get_title();
+		
+		return get_option('blogname');
+	}
+	
+	/**
+	 * Returns the description of the page
+	 * Choose in order from:
+	 * FB SEO Plugin
+	 * YOAST Seo TODO
+	 * Blog Name
+	 */
+	public static function get_the_seo_description(){
+		if(function_exists('fbseo_get_metadescription'))
+			fbseo_get_metadescription();
+		
+		return get_option('blogdescription');
+	}
+		
 	/**
 	 * Retrieves the markup for the Add This widget
 	 */
