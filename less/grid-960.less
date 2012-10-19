@@ -1,42 +1,51 @@
 // 960 Grid System
 // -------------------------
 
+
+
 #gs960 {
 
-	#pixel {
-	@width: 960px;
-	@num_cols: 16;
-	@col_margin: 10px;
+	.clearfix(){
+		*zoom: 1;
+		&:before , &:after {
+			display: table;
+			content: "";
+			line-height: 0;
+		}
 	
-		@col_width: @width / @num_cols;
-		.container () {
+		&:after {
 			clear: both;
-			margin: 0 auto;
+		}
+	}
+	
+	#pixel {
+		
+		.container (@width) {
+			clear: both;
+			margin-left: auto;
+			margin-right: auto;
 			width: @width;
-		}
-
-		/*.grid (@cols: 1 , @float: left , @display: inline) {
-			display: @display;
-			float: @float;
-			margin: 0 @col_margin;
-			width: (@col_width * @cols) - (2 * @col_margin);
-		} */
-		
-		.all_cols(@float: left , @display: inline){
-			display: @display;
-			float: @float;
-			margin: 0 @col_margin;
+			#gs960 > .clearfix();
 		}
 		
-		.single_col(@col_number: 1){
-			width: (@col_width * @col_number) - (2 * @col_margin);
+		.all_cols(@col_margin){
+			display: inline;
+			float: left;
+			position: relative;
+			margin-left: @col_margin;
+			margin-right: @col_margin;
+		}
+		
+		.single_col(@col_number, @col_width, @col_margin){
+			debug1: @col_width;
+			width: (@col_width * @col_number) - ( @col_margin * 2) ;
 		}
 
-		.prefix (@col_number: 1) {
+		.prefix (@col_number, @col_width) {
 			padding-left: (@col_width * @col_number);
 		}
 
-		.suffix (@col_number: 1) {
+		.suffix (@col_number, @col_width) {
 			padding-right: (@col_width * @col_number);
 		}
 
@@ -48,11 +57,11 @@
 			margin-right: 0;
 		}
 
-		.push (@move: 1) {
+		.push (@move, @col_width) {
 			left: (@col_width * @move);
 		}
 
-		.pull (@move: 1) {
+		.pull (@move, @col_width) {
 			left: (@col_width * @move) * -1;
 		}
 		
@@ -60,37 +69,71 @@
 			position: relative;
 		}
 		
-		//TODO: call thi for initialize the full grid system
-		.init(){
+		.init(@num_cols, @width, @col_margin){
+			@col_width: @width / @num_cols;
 			
+			body {
+				min-width: @width;
+				debug: @col_width;
+			}
+
 			[class*="grid_"] {
-				#gs960 > #pixel > .all_cols();
+				#gs960 > #pixel > .all_cols(@col_margin);
 			}
 			
-			/* 
-			 * .spanX (@index) when (@index > 0) {
-				( ~ ".span@{index}" ) { .single_col(@index); }
-				.spanX(@index - 1);
+			[class*="push_"], [class*="pull_"] {
+				#gs960 > #pixel > .all_push_pull();
 			}
-			.spanX (0) {} */
+			
+			(~".container_@{num_cols}"){
+				#gs960 > #pixel > .container(@width);
+				
+				// thank you twitter bootstrap :)
+				.gridX (@index) when (@index > 0) {
+					(~".grid_@{index}") { #gs960 > #pixel > .single_col(@index, @col_width, @col_margin); }
+					(~".push_@{index}") { #gs960 > #pixel > .push(@index, @col_width); }
+					(~".pull_@{index}") { #gs960 > #pixel > .pull(@index, @col_width); }
+					(~".prefix_@{index}") { #gs960 > #pixel > .prefix(@index, @col_width); }
+					(~".suffix_@{index}") { #gs960 > #pixel > .suffix(@index, @col_width); }
+					.gridX(@index - 1);
+				}
+				.gridX (0) {}
+				
+				.gridX (@num_cols);
+			}
+			
+			.alpha{
+				#gs960 > #pixel > .alpha();
+			}
+			
+			.omega{
+				#gs960 > #pixel > .omega();
+			}
 		}
 	}
 
+	// TODO: need some testing here...
 	#percent {
-		@width: 90%;
-		@def_grid: 16;
-		@col_margin: 10px;
 		
-		.container () {
-			margin: 0 auto;
+		.container (@width, @margin) {
 			width: @width;
+			margin-left: @margin;
+			margin-right: @margin;
 		}
 
-		.grid (@grid: @def_grid , @cols: '' , @float: left , @display: inline) {
-			display: @display;
-			float: @float;
+		.grid (@grid: @def_grid , @cols: '') {
+			display: inline;
+			float: left;
 			margin: 0 @col_margin;
 			width: (100% / @grid * @cols) - (@col_margin * 2);
+		}
+		
+		.all_cols(@col_margin){
+			display: inline;
+			float: left;
+			position: relative;
+			margin-left: @col_margin;
+			margin-right: @col_margin;
 		}
 
 		.prefix (@grid: @def_grid , @cols: '') {
@@ -118,77 +161,53 @@
 			position: relative;
 			left: (100% / @grid * @move) * -1;
 		}
+		
+		.init(@num_cols, @width, @col_margin){
+			@col_width: @width / @num_cols;
+			
+			body {
+				min-width: @width;
+				debug: @col_width;
+			}
+
+			[class*="grid_"] {
+				#gs960 > #percent > .all_cols(@col_margin);
+			}
+			
+			[class*="push_"], [class*="pull_"] {
+				#gs960 > #percent > .all_push_pull();
+			}
+			
+			(~".container_@{num_cols}"){
+				#gs960 > #percent > .container(@width, @col_margin);
+				
+				// thank you twitter bootstrap :)
+				.gridX (@index) when (@index > 0) {
+					(~".grid_@{index}") { #gs960 > #percent > .single_col(@index, @col_width, @col_margin); }
+					(~".push_@{index}") { #gs960 > #percent > .push(@index, @col_width); }
+					(~".pull_@{index}") { #gs960 > #percent > .pull(@index, @col_width); }
+					(~".prefix_@{index}") { #gs960 > #percent > .prefix(@index, @col_width); }
+					(~".suffix_@{index}") { #gs960 > #percent > .suffix(@index, @col_width); }
+					.gridX(@index - 1);
+				}
+				.gridX (0) {}
+				
+				.gridX (@num_cols);
+			}
+			
+			.alpha{
+				#gs960 > #percent > .alpha();
+			}
+			
+			.omega{
+				#gs960 > #percent > .omega();
+			}
+		}
 	}
 	
 }
 
-//#gs960 > #pixel > .init()
-
-[class*="grid_"] {
-	#gs960 > #pixel > .all_cols();
-}
-[class*="push_"], [class*="pull_"] {
-	#gs960 > #pixel > .all_push_pull();
-}
-
-.container{
-	#gs960 > #pixel > .container();
-}
-
-.alpha{
-	#gs960 > #pixel > .alpha();
-}
-
-.omega{
-	#gs960 > #pixel > .omega();
-}
-
-.grid_1{
-	#gs960 > #pixel > .single_col(1);
-}
-.grid_2{
-	#gs960 > #pixel > .single_col(2);
-}
-.grid_3{
-	#gs960 > #pixel > .single_col(3);
-}
-.grid_4{
-	#gs960 > #pixel > .single_col(4);
-}
-.grid_5{
-	#gs960 > #pixel > .single_col(5);
-}
-.grid_6{
-	#gs960 > #pixel > .single_col(6);
-}
-.grid_7{
-	#gs960 > #pixel > .single_col(7);
-}
-.grid_8{
-	#gs960 > #pixel > .single_col(8);
-}
-.grid_9{
-	#gs960 > #pixel > .single_col(9);
-}
-.grid_10{
-	#gs960 > #pixel > .single_col(10);
-}
-.grid_11{
-	#gs960 > #pixel > .single_col(11);
-}
-.grid_12{
-	#gs960 > #pixel > .single_col(12);
-}
-.grid_13{
-	#gs960 > #pixel > .single_col(13);
-}
-.grid_14{
-	#gs960 > #pixel > .single_col(14);
-}
-.grid_15{
-	#gs960 > #pixel > .single_col(15);
-}
-.grid_16{
-	#gs960 > #pixel > .single_col(16);
-}
+//#gs960 > #pixel > .init(12, 960px, 10px);
+#gs960 > #pixel > .init(16, 960px, 10px);
+//#gs960 > #percent > .init(16, 960px, 10px);
 

@@ -5,7 +5,7 @@
 		<div id="slideshow">
 			<?php the_slideshow(); ?>
 		</div>
-		<div id="front-page-text">
+		<div id="front-page-text" class="grid_6 push_10">
 			<div class="title">
 				<?php the_logo(); ?>
 			</div>
