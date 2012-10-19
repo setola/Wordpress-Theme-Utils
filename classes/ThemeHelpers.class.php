@@ -253,8 +253,8 @@ EOF;
 	 * Retrives the markup for the default seo heading (h1+span) 
 	 */
 	public static function heading(){
-		$h1		=	(function_exists('fbseo_get_h1')) ? fbseo_get_h1() : self::get_the_seo_title();
-		$extra	=	(function_exists('fbseo_get_h1_extra')) ? fbseo_get_h1_extra() : self::get_the_seo_description();
+		$h1		=	self::get_the_seo_h1();
+		$extra	=	self::get_the_seo_span();
 		return <<< EOF
 	<h1>$h1</h1>
 	<span>$extra</span>
@@ -288,6 +288,32 @@ EOF;
 			fbseo_get_metadescription();
 		
 		return get_option('blogdescription');
+	}
+	
+	/**
+	 * Returns the H1 for this page
+	 * Choose in order from:
+	 * FB SEO Plugin
+	 * Post Title
+	 */
+	public static function get_the_seo_h1(){
+		if(function_exists('fbseo_get_h1'))
+			fbseo_get_h1();
+		
+		return get_the_title();
+	}
+	
+	/**
+	 * Returns the SPAN for this page
+	 * Choose in order from:
+	 * FB SEO Plugin
+	 * Post Title
+	 */
+	public static function get_the_seo_span(){
+		if(function_exists('fbseo_get_h1_extra'))
+			fbseo_get_h1_extra();
+		
+		return get_the_excerpt();
 	}
 		
 	/**
