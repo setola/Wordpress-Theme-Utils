@@ -1,5 +1,5 @@
-fbqs = fbqs || {
-	hotelname	:	'ITVENHTLPJunior',
+var fbqs = fbqs || {
+	hotelname	:	'ITROMHTLDomusAustral',
 };
 
 /**

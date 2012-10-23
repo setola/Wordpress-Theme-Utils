@@ -1,11 +1,7 @@
 jQuery(document).ready(function(){
 	jQuery('#slideshow').doSlideshow();
-	jQuery('a.go-down-arrow').manageNavArrow(); 
 });
 
-jQuery(window).resize(function(){
-	jQuery('#slideshow').doSlideshow();
-});
 
 jQuery.fn.doSlideshow = function() {
 	var slideshow = jQuery(this);

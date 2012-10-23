@@ -141,6 +141,6 @@ class RuntimeInfos{
 	public static function ajax_callback(){
 		$data = get_transient(intval($_GET['id']));
 		header("Content-type: text/javascript");
-		echo 'runtimeInfos='.json_encode($data);
+		die('var runtimeInfos='.json_encode($data).';');
 	}
 }
