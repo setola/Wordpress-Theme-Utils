@@ -38,7 +38,7 @@ FblibConf.googleAnalytics = {
 		"varName"		: "pageTracker"
 };
 
-var _gaq = _gaq || [];
+var _gaq = _gaq || []; // without this the lib will give an erro i f setted to use analytics
 
 /**
  * Example of custom labels
@@ -68,13 +68,4 @@ var _gaq = _gaq || [];
 	jQuery('.bookingform').fadeIn('slow');
 })();
 
-(function(){
-	jQuery('.bf_form select:visible').wrap(jQuery('<span>', {'class':'bf_container'})).selectmenu({maxHeight: 150});
-})();
 
-
-(function() {
-   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
