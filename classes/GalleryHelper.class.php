@@ -183,14 +183,14 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		if(isset($this->timthumb_opts['w'])){
 			return $this->timthumb_opts['w'];
 		} elseif(is_int($this->images[$index])){
-			$image = wp_get_attachment_metadata($this->images[$index], 'large');
-			if(!empty($image['width'])){
-				return $image['width'];
+			$image = wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
+			if(!empty($image[1])){
+				return $image[1];
 			}
 		} elseif(is_object($this->images[$index])){
-			$image = wp_get_attachment_metadata($this->images[$index]->ID, 'large');
-			if(!empty($image['width'])){
-				return $image['width'];
+			$image = wp_get_attachment_image_src($this->images[$index]->ID, $this->media_dimension);
+			if(!empty($image[1])){
+				return $image[1];
 			}
 		}
 		return '100%';
@@ -204,14 +204,14 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		if(isset($this->timthumb_opts['h'])){
 			return $this->timthumb_opts['h'];
 		} elseif(is_int($this->images[$index])){
-			$image = wp_get_attachment_metadata($this->images[$index], 'large');
-			if(!empty($image['height'])){
-				return $image['height'];
+			$image = wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
+			if(!empty($image[2])){
+				return $image[2];
 			}
 		} elseif(is_object($this->images[$index])){
-			$image = wp_get_attachment_metadata($this->images[$index]->ID, 'large');
-			if(!empty($image['height'])){
-				return $image['height'];
+			$image = wp_get_attachment_image_src($this->images[$index]->ID, $this->media_dimension);
+			if(!empty($image[2])){
+				return $image[2];
 			}
 		}
 		return '100%';

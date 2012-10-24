@@ -15,13 +15,13 @@ BookingFormType.types.one_line_simplest	= {
 
 new SingleBookingForm({
 	'id' 				:	'fastbooking_qs',
-	'type'				:	'one_line_simplest',
+	'type'				:	'one_line_nbdays_with_labels',
 	'where'				:	'before',
 	'cname'				:	fbqs.hotelname,
 	'lang'				:	runtimeInfos.currentLanguage,
 	'FB_nb_delay'		:	7,
 	'customizations'	:	[
-		new LabelOnSelects_customization({'iata':true,'adults':true,'nights':true,'children':true}),
+		//new LabelOnSelects_customization({'iata':true,'adults':true,'nights':true,'children':true}),
 		new Datepicker_customization().setFromDatepickerConfig({dateFormat: 'dd.mm.yy'}).setToDatepickerConfig({dateFormat: 'dd.mm.yy'})
 	],
 	'numberOfPeople'	:	{
@@ -43,8 +43,8 @@ var _gaq = _gaq || []; // without this the lib will give an erro i f setted to u
 /**
  * Example of custom labels
  */
-//BF_languages.lingue.it.booknow = 'Verifica disponibilità';
-//BF_languages.lingue.en.booknow = 'Check Availability';
+BF_languages.lingue.it.onlinebooking = 'Verifica disponibilità';
+BF_languages.lingue.en.onlinebooking = 'Check Availability';
 
 (function(){	
 	for(language in BF_languages.lingue){
