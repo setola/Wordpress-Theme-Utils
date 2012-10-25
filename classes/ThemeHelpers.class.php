@@ -3,7 +3,7 @@
 /**
  * Stores some static methods that may be useful for html management
  * @author etessore
- * @version 1.0.2
+ * @version 1.0.3
  */
 class ThemeHelpers{
 	/**
@@ -296,9 +296,20 @@ EOF;
 	 * FB SEO Plugin
 	 * Post Title
 	 */
-	public static function get_the_seo_h1(){
-		if(function_exists('fbseo_get_h1'))
-			fbseo_get_h1();
+	public static function get_the_seo_h1($post = null){
+		if(is_null($post)){
+			global $post;
+		}
+		if(is_numeric($post)){
+			$id = $post;
+			global $post;
+			$post = get_post($id);
+		}
+		if(function_exists('fbseo_get_h1')){
+			//fbseo_get_h1();
+			global $fbseoManager,$post;
+			return $fbseoManager->getSeo($post, 'h1');
+		}
 		
 		return get_the_title();
 	}
@@ -309,9 +320,20 @@ EOF;
 	 * FB SEO Plugin
 	 * Post Title
 	 */
-	public static function get_the_seo_span(){
-		if(function_exists('fbseo_get_h1_extra'))
-			fbseo_get_h1_extra();
+	public static function get_the_seo_span($post = null){
+		if(is_null($post)){
+			global $post;
+		}
+		if(is_numeric($post)){
+			$id = $post;
+			global $post;
+			$post = get_post($id);
+		}
+		if(function_exists('fbseo_get_h1_extra')){
+			//fbseo_get_h1_extra();
+			global $fbseoManager;
+			return $fbseoManager->getSeo($post, 'h1_extra');
+		}
 		
 		return get_option('blogdescription');
 	}
