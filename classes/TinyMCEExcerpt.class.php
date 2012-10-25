@@ -86,8 +86,3 @@ class TinyMCEExcerptCustomization{
 		update_post_meta($post_id, self::custom_exceprt_slug, $_POST[self::custom_exceprt_slug]);
 	}
 }
-
-global $tinymce_excerpt;
-$tinymce_excerpt = new TinyMceExcerptCustomization(array('post','page','managers', 'recruitments', 'contacts'));
-
-
