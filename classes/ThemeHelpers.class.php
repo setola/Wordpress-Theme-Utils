@@ -296,21 +296,11 @@ EOF;
 	 * FB SEO Plugin
 	 * Post Title
 	 */
-	public static function get_the_seo_h1($post = null){
-		if(is_null($post)){
-			global $post;
-		}
-		if(is_numeric($post)){
-			$post = get_post($post);
-		}
-		if(function_exists('fbseo_get_h1')){
-			//fbseo_get_h1();
-			vd($post);
-			global $fbseoManager;
-			return $fbseoManager->getSeo($post, 'h1');
-		}
+	public static function get_the_seo_h1(){
+		if(function_exists('fbseo_get_h1'))
+			fbseo_get_h1();
 		
-		return get_the_title($post->ID);
+		return get_the_title();
 	}
 	
 	/**
@@ -319,18 +309,9 @@ EOF;
 	 * FB SEO Plugin
 	 * Post Title
 	 */
-	public static function get_the_seo_span($post = null){
-		if(is_null($post)){
-			global $post;
-		}
-		if(is_numeric($post)){
-			$post = get_post($post);
-		}
-		if(function_exists('fbseo_get_h1_extra')){
-			//fbseo_get_h1_extra();
-			global $fbseoManager;
-			return $fbseoManager->getSeo($post, 'h1_extra');
-		}
+	public static function get_the_seo_span(){
+		if(function_exists('fbseo_get_h1_extra'))
+			fbseo_get_h1_extra();
 		
 		return get_option('blogdescription');
 	}
