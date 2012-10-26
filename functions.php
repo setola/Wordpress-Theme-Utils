@@ -117,18 +117,76 @@ function the_slideshow(){
  * @version 1.0.0
  */
 class Slideshow extends ImagePreload{
+	public $post_id;
+	public $images;
+	
 	/**
 	 * Initializes the parent object to the default values
 	 */
 	function __construct(){
-		$tpl = <<< EOF
-			%images_list%
+		$tpl = (is_front_page() || has_post_thumbnail()) 
+		? <<< EOF
+			<div class="images_list">%images_list%</div>
 			%loading%
+EOF
+		: <<< EOF
+			<div class="images_list">%images_list%</div>
+			%loading%
+			%next%
+			%prev%
 EOF;
 		
-		$images = get_posts(
+		$this
+			->get_the_images()
+			->add_images($this->images)
+			->set_wp_media_dimension($this->get_slideshow_dimension())
+			->add_asset('slideshow', 'js')
+			->set_uid('slideshow')
+			->set_markup(
+				'loading',
+				'<div class="loading" data-description="'
+					.__('Loading image %number% of %total%', 'theme')
+					.'"></div>'
+			)
+			->set_markup('next', '<div id="go-next" class="sprite next"></div>')
+			->set_markup('prev', '<div id="go-prev" class="sprite prev"></div>')
+			->set_template($tpl);
+		
+		if(has_post_thumbnail(get_the_ID()));
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see ImagePreload::get_markup()
+	 */
+	function get_markup(){
+		$images_list = 
+			(has_post_thumbnail()) 
+			? get_the_post_thumbnail(get_the_ID(), $this->get_slideshow_dimension())
+			: parent::get_markup();
+		
+		$this->set_markup('images_list', $images_list);
+		return $this->replace_markup();
+	}
+	
+	/**
+	 * @return string the media gallery size for the slideshow
+	 */
+	function get_slideshow_dimension(){
+		return is_front_page() ? 'slideshow-home' : 'slideshow';
+	}
+	
+	/**
+	 * Retrives the images for the slideshow
+	 * @param int $post_id the post id to dig in
+	 * @return Slideshow $this for chainability
+	 */
+	function get_the_images($post_id = null){
+		
+		$this->post_id = ($post_id) ? $post_id : get_the_ID();
+		$this->images = get_posts(
 			array(
-				'post_parent'	=> get_the_ID(),
+				'post_parent'	=> $this->post_id,
 				'post_type'		=> 'attachment',
 				'tax_query' 	=>	array(
 					'taxonomy'		=> 'media_tag',
@@ -139,28 +197,22 @@ EOF;
 			)
 		);
 		
-		$this
-			->add_images($images)
-			->set_wp_media_dimension('slideshow')
-			->add_asset('slideshow', 'js')
-			->set_uid('slideshow')
-			->set_markup(
-				'loading',
-				'<div class="loading" data-description="'
-					.__('Loading image %number% of %total%', 'theme')
-					.'"></div>'
-			)
-			->set_template($tpl);
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see ImagePreload::get_markup()
-	 */
-	function get_markup(){
-		$images_list = parent::get_markup();
-		$this->set_markup('images_list', $images_list);
-		return $this->replace_markup();
+		if(empty($this->images)){
+			$this->images = get_posts(
+				array(
+					'post_parent'	=> get_option('page_on_front'),
+					'post_type'		=> 'attachment',
+					'tax_query' 	=>	array(
+						'taxonomy'		=> 'media_tag',
+						'field'			=> 'slug',
+						'terms'			=> 'slideshow',
+						'operator'		=> 'IN'
+					)
+				)
+			);
+		}
+		
+		return $this;
 	}
 }
 
