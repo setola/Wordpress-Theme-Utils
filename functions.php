@@ -217,7 +217,52 @@ EOF;
 }
 
 
+/**
+ * Prints the sub pages
+ */
+function the_children(){
+	$children = get_pages(
+			array(
+					'child_of' 		=>	get_the_ID(),
+					'sort_column' 	=>	'menu_order',
+					'sort_order' 	=>	'desc'
+			)
+	);
 
+	if(count($children)) :
+
+	$subs = new SubstitutionTemplate();
+	$subs->set_tpl(<<<EOF
+	<div class="sub-item %column%-col" id="page_%item-id%">
+		<div class="inner">
+			<div class="title">%title%</div>
+			<div class="body">%body%</div>
+			<div class="more">%button%</div>
+		</div>
+	</div>
+EOF
+	);
+
+	$columns = array('left', 'center', 'right');
+
+	echo '<div id="sub-items" class="three-cols clearfix">';
+	foreach($children as $k => $post){
+		global $post;
+		setup_postdata($post);
+		echo $subs
+		->set_markup('item-id', get_the_ID())
+		->set_markup('title', 	ThemeHelpers::anchor(get_permalink(), get_the_title()))
+		->set_markup('column', 	$columns[$k%3])
+		->set_markup('body', 	get_the_excerpt())
+		->set_markup('button', 	ThemeHelpers::anchor(get_permalink(), __('Details', 'theme')))
+		->replace_markup();
+		;
+	}
+	wp_reset_postdata();
+
+	echo '</div>';
+	endif;
+}
 
 /**
  * Print the <head> inner content
