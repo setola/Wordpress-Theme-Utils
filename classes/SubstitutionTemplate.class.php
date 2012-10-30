@@ -39,7 +39,29 @@ class SubstitutionTemplate{
 	 * @return SubstitutionTemplate $this for chainability
 	 */
 	public function set_markup($key, $markup){
-		$this->static_markup[$key] = $markup;
+		$key = (array) $key;
+		$markup = (array) $markup;
+		
+		if(count($markup) == 1 && count($key) > 1){
+			foreach($key as $k => $v){
+				$this->static_markup[$v] = $markup[0];
+			}
+		} elseif(count($markup) != count($key)){
+			throw new Exception('$key and $markup have different number of elements'); 
+		} else {
+			foreach($key as $k => $v){
+				$this->static_markup[$v] = $markup[$k];
+			}
+		}
+		
+		//$this->static_markup[$key] = $markup;
+		return $this;
+	}
+	
+	public function set_multi_markup($ass_array){
+		vd($ass_array);
+		$ass_array = (array) $ass_array;
+		$this->set_markup(array_keys($ass_array), array_values($ass_array));
 		return $this;
 	}
 	
