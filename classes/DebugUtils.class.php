@@ -102,7 +102,7 @@ EOF;
 				break;
 				
 			case self::H1_PRE:
-				
+				echo $render;
 				break;
 				
 			case self::H1_PRE_DIE:
@@ -111,6 +111,16 @@ EOF;
 		}
 		
 		return $render;
+	}
+	
+	/**
+	 * Sets the title of the box
+	 * @param string $title
+	 * @return DebugUtils for chaining
+	 */
+	public function set_title($title){
+		$this->title = $title;
+		return $this;
 	}
 	
 }
@@ -127,6 +137,7 @@ if(!function_exists('vd')):
 function vd($var){
 	DebugUtils::get_instance()
 		->set_level(DebugUtils::H1_PRE_DIE)
+		->set_title(__('Debug'))
 		->debug($var);
 }
 endif;
@@ -140,6 +151,7 @@ if(!function_exists('v')):
 function v($var){
 	DebugUtils::get_instance()
 		->set_level(DebugUtils::H1_PRE)
+		->set_title(__('Debug'))
 		->debug($var);
 }
 endif;
@@ -153,6 +165,7 @@ if(!function_exists('vc')):
 function vc($var){
 	DebugUtils::get_instance()
 		->set_level(DebugUtils::COMMENT)
+		->set_title(__('Debug'))
 		->debug($var);
 }
 endif;
@@ -164,6 +177,8 @@ if(!function_exists('debug')):
  * @param mixed $var the variable to be dumped
  */
 function debug($var){
-	DebugUtils::get_instance()->debug($var);
+	DebugUtils::get_instance()
+		->set_title(__('Debug'))
+		->debug($var);
 }
 endif;
