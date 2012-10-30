@@ -59,7 +59,6 @@ class SubstitutionTemplate{
 	}
 	
 	public function set_multi_markup($ass_array){
-		vd($ass_array);
 		$ass_array = (array) $ass_array;
 		$this->set_markup(array_keys($ass_array), array_values($ass_array));
 		return $this;
