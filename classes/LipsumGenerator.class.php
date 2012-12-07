@@ -1,0 +1,585 @@
+<?php
+
+/**
+ * Generates Lorem Ipsum text
+ * @author etessore
+ */
+class LipsumGenerator {
+
+	/**
+	 * @const int use html tag <p> to separate paragraphs
+	 */
+	const FORMAT_HTML  = 0;
+
+	/**
+	 * @const int use 2 newlines to separate paragraphs 
+	 * and a tab before the first word of every paragraph
+	 */
+	const FORMAT_TEXT  = 1;
+
+	/**
+	 * @const int generates plain text with a 
+	 * newline as separation between paragraphs
+	 */
+	const FORMAT_PLAIN = 2;
+
+	/**
+	 * @const int generates html with <strong> <em> <a> and <p> tags
+	 */
+	const FORMAT_RICH_HTML = 3;
+
+	private $format;
+	private $number_of_paragraphs;
+	private $words_per_paragraph;
+	private $words_per_sentence;
+	private $beginning;
+	private $dictionary;
+	private $min_repeat_count;
+	private $rich_html_config;
+
+	//TODO: still to be checked
+	private $render;
+	private $gaussian_math;
+	//public $count;
+
+
+	/**
+	 * Initializes the current object with default settings
+	 * @param int $words_per_paragraph the number of words per paragraph
+	 */
+	public function __construct(){
+		$this
+			->set_format(self::FORMAT_TEXT)
+			->set_number_of_paragraphs(5)
+			->set_words_per_paragraph(100)
+			->set_words_per_sentence(24.460)
+			->set_dictionary(new LoremIpsumDictionary)
+			->set_begins_with(array('lorem', 'ipsum'))
+			->set_min_repeat_count(5);
+		
+		$this->gaussian_math = new GaussianMath();
+	}
+
+	/**
+	 * Set the format for the current object
+	 * use only self::FORMAT_* constants
+	 * @see self::FORMAT_RICH_HTML
+	 * @see self::FORMAT_HTML
+	 * @see self::FORMAT_TEXT
+	 * @see self::FORMAT_PLAIN
+	 * @param int $format the format
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_format($format){
+		$format = intval($format);
+		switch($format){
+			case self::FORMAT_HTML:
+			case self::FORMAT_PLAIN:
+			case self::FORMAT_RICH_HTML:
+			case self::FORMAT_TEXT:
+				$this->format = $format;
+				break;
+			default:
+				throw new InvalidArgumentException(sprintf("Unsupported format '%s'", $format));
+				break;
+		}
+		return $this;
+	}
+
+	/**
+	 * Sets the number of paragraphs for the current object
+	 * @param int $number_of_paragraphs the number
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_number_of_paragraphs($number_of_paragraphs){
+		$this->number_of_paragraphs = $number_of_paragraphs;
+		return $this;
+	}
+	
+	/**
+	 * Sets how many words a paragraph is made by.
+	 * @param int $words_per_paragraph the number of words
+	 */
+	public function set_words_per_paragraph($words_per_paragraph){
+		$this->words_per_paragraph = intval($words_per_paragraph);
+		return $this;
+	}
+	
+	/**
+	 * Sets how many words a sentence is made by
+	 * @param int $words_per_sentence number of words
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_words_per_sentence($words_per_sentence){
+		$this->words_per_sentence = intval($words_per_sentence);
+		return $this;
+	}
+	
+	/**
+	 * Sets the first n words of the generated text.
+	 * Usually they are 'Lorem ipsum'.
+	 * @param array $beginning list of first n words
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_begins_with($beginning){
+		$this->beginning = (array) $beginning;
+		return $this;
+	}
+	
+	/**
+	 * Sets the dictionary for the current generator
+	 * @param GeneratorDictionary $dictionary the dictionary
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_dictionary(GeneratorDictionary $dictionary){
+		$this->dictionary = $dictionary;
+		return $this;
+	}
+	
+	/**
+	 * Sets the minimum amount of words until a single word can be repeated
+	 * @param $min_repeat_count the number of words withour repetitions
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function set_min_repeat_count($min_repeat_count){
+		$this->min_repeat_count = intval($min_repeat_count);
+		return $this;
+	}
+
+	/**
+	 * @return array a list of random words
+	 * @param $count int the number of words to ber retrieved
+	 */
+	private function get_words($count){
+		$toret = array();
+		$words = $this->dictionary->get_all_words();
+
+		while(count($toret)<$count){
+			$word  = $words[array_rand($words)];
+			// do not repeat the same word in a 5 words group
+			if(!in_array($word, array_slice($toret, $this->min_repeat_count*-1))){
+				$toret[] = $word;
+			}
+		}
+
+		return $toret;
+	}
+
+	/**
+	 * Returns a number on a gaussian distribution based
+	 * on the average word length of an english sentence.
+	 * Statistics Source:
+	 * 	http://hearle.nahoo.net/Academic/Maths/Sentence.html
+	 * 	Average: 24.46
+	 * 	Standard Deviation: 5.08
+	 */
+	private function gaussian_sentence(){
+		$avg		=	(float) 24.460;
+		$std_dev	=	(float) 5.080;
+		return (int) round($this->gaussian_math->gauss_ms($avg, $std_dev));
+	}
+
+	/**
+	 * Builds a single paragraph
+	 */
+	private function get_paragraph(){
+		$count = $this->words_per_paragraph;
+		$words = $this->get_words($count);
+
+		$delta = $count;
+		$curr = 0;
+		$sentences = array();
+		while ($delta > 0) {
+			$senSize = $this->gaussian_sentence();
+
+			if (($delta - $senSize) < 4) {
+				$senSize = $delta;
+			}
+
+			$delta -= $senSize;
+
+			$sentence = array();
+			for ($i = $curr; $i < ($curr + $senSize); $i++) {
+				$sentence[] = $words[$i];
+			}
+			$sentence[0] = ucfirst($sentence[0]);
+
+			$this->punctuate($sentence);
+			$curr = $curr + $senSize;
+			$sentences[] = $sentence;
+		}
+
+		/*if ($returnStr) {
+			$output = '';
+		foreach ($sentences as $s) {
+		foreach ($s as $w) {
+		$output .= $w . ' ';
+		}
+		}
+
+		return trim($output);
+		}*/
+
+		return $sentences;
+	}
+
+	/**
+	 * Renders the current object according to the current format
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function render(){
+		if(empty($this->render)){
+			switch($this->format){
+				case self::FORMAT_HTML:
+					$this->render_html();
+					break;
+
+				case self::FORMAT_PLAIN:
+					$this->render_plain();
+					break;
+
+				case self::FORMAT_RICH_HTML:
+					$this->render_rich_html();
+					break;
+
+				case self::FORMAT_TEXT:
+					$this->render_text();
+					break;
+
+				default:
+					throw new InvalidArgumentException(sprintf("Unsupported format '%s'", $format));
+			}
+		}
+		return $this;
+	}
+
+	/**
+	 * Magic method called when the current object is casted to string
+	 */
+	public function __toString(){
+		return $this->render()->render;
+	}
+	
+	/**
+	 * Generates and renders in plain forma
+	 * @see LipsumGenerator::FORMAT_PLAIN
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function render_plain(){
+		$this->render = '';
+		$is_first_p = true;
+		for($i=0; $i<$this->number_of_paragraphs; $i++){
+			$paragraph = $this->get_paragraph();
+			$rendered_p = '';
+			
+			if($is_first_p){
+				$this->force_beginning(&$paragraph);
+			} else {
+				$rendered_p .= "\n";
+			}
+			
+			foreach($paragraph as $sentence){
+				$rendered_p .= implode(' ', $sentence).' ';
+			}
+			$this->render .= $rendered_p;
+			$is_first_p = false;
+		}
+		return $this;
+	}
+	
+	/**
+	 * Generates and render in text format
+	 * @see LipsumGenerator::FORMAT_TEXT
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function render_text(){
+		$this->render = '';
+		$is_first_p = true;
+		for($i=0; $i<$this->number_of_paragraphs; $i++){
+			$paragraph = $this->get_paragraph();
+			$rendered_p = '';
+			
+			if($is_first_p){
+				$this->force_beginning(&$paragraph);
+			} else {
+				$rendered_p .= "\n\n\t";
+			}
+			
+			foreach($paragraph as $sentence){
+				$rendered_p .= implode(' ', $sentence).' ';
+			}
+			$this->render .= $rendered_p;
+			$is_first_p = false;
+		}
+		return $this;
+	}
+
+	/**
+	 * Generates and renders in html format
+	 * @see LipsumGenerator::FORMAT_HTML
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function render_html(){
+		$this->render = '';
+		$is_first_p = true;
+		for($i=0; $i<$this->number_of_paragraphs; $i++){
+			$paragraph = $this->get_paragraph();
+			$rendered_p = '';
+			
+			if($is_first_p){
+				$this->force_beginning(&$paragraph);
+			} else {
+				$rendered_p .= "\n";
+			}
+			
+			$rendered_p .= '<p>';
+			foreach($paragraph as $sentence){
+				$rendered_p .= implode(' ', $sentence);
+			}
+			$rendered_p .= "</p>";
+			
+			$this->render .= $rendered_p;
+			$is_first_p = false;
+		}
+		return $this;
+	}
+	
+	/**
+	 * Sets the configuration for the rich html generation
+	 * @param array $config an array of parameters:
+	 * <code>
+	 * $default = array(
+			'strong'	=>	array(
+				'percent'	=>	2,
+				'max_words'	=>	5,
+				'params'	=>	''
+			),
+			'a'			=>	array(
+				'percent' 	=>	5,
+				'max_words' =>	5,
+				'params'	=>	'href="#"'
+			),
+			'em'		=>	array(
+				'percent'	=>	10,
+				'max_words'	=>	5,
+				'params'	=>	''
+			)
+		);
+		<code>
+	 */
+	public function set_rich_html_config($config=array()){
+		$default = array(
+			'strong'	=>	array(
+				'percent'	=>	10,
+				'max_words'	=>	5,
+				'params'	=>	''
+			),
+			'a'			=>	array(
+				'percent' 	=>	5,
+				'max_words' =>	5,
+				'params'	=>	'href="#"'
+			),
+			'em'		=>	array(
+				'percent'	=>	2,
+				'max_words'	=>	5,
+				'params'	=>	''
+			)
+		);
+		
+		$this->rich_html_config = array_merge($default, (array)$config);
+		return $this;
+	}
+	
+	/**
+	 * Generates and renders in rich html format
+	 * @todo
+	 * @see LipsumGenerator::FORMAT_RICH_HTML
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function render_rich_html(){
+		$this->render = '';
+		$is_first_p = true;
+		$this->stats = array();
+		// useful to avoid the same tag to be repeated without plain text between
+		$last_closed_tag = false;
+		
+		if(empty($this->rich_html_config)) $this->set_rich_html_config();
+		
+		for($i=0; $i<$this->number_of_paragraphs; $i++){
+			$paragraph = $this->get_paragraph();
+			$rendered_p = '';
+			
+			if($is_first_p){
+				$this->force_beginning(&$paragraph);
+			} else {
+				$rendered_p .= "\n";
+			}
+			
+			$rendered_p .= '<p>';
+			foreach($paragraph as $sentence){
+				// stores the currently opened html tag
+				$current_tag = '';
+				// stores how many words are left before the current tag have to be closed
+				$words_until_close_tag = 0;
+				foreach($sentence as $index => $word){
+					if($words_until_close_tag < 0){
+						$words_until_close_tag = 0;
+					}
+					
+					if(empty($current_tag) && empty($last_closed_tag)){
+						$tag_to_add = '';
+						foreach($this->rich_html_config as $tag => $tag_config){
+							$rnd = rand(0, 99);
+							if($rnd < $tag_config['percent']){
+								//v(array($rnd, $tag, $index));
+								if($this->rich_html_config[$tag_to_add]['percent'] < $tag_config['percent']){
+									$tag_to_add = $tag;
+									$this->stats[$tag]++;
+								}
+							}
+						}
+					}
+					
+					if(!empty($tag_to_add)){
+						// insert the current tag!
+						$current_tag = $tag_to_add;
+						$rendered_p .= $this->open_tag($tag_to_add);
+						$words_until_close_tag = rand(1, $this->rich_html_config[$tag_to_add]['max_words']);
+						$tag_to_add = '';
+					}
+					
+					
+					$rendered_p .= $word;
+					
+					$last_closed_tag = '';
+					
+					if(!empty($current_tag)){
+						if($words_until_close_tag == 0){
+							$rendered_p .= $this->close_tag($current_tag);
+							$last_closed_tag = $current_tag;
+							$current_tag = '';
+						} else {
+							$words_until_close_tag--;
+						}
+					}
+					
+					/*
+					$rnd = rand(1, 100);
+					if(empty($current_tag) && $rnd > 98){
+						//em
+						$words_until_close_tag = rand(1, 2);
+						$rendered_p .= '<em>'.$word;
+						$current_tag = '</em>';
+					} elseif(empty($current_tag) && $rnd > 95){
+						//a
+						$words_until_close_tag = rand(1, 2);
+						$rendered_p .= '<a href="#">'.$word;
+						$current_tag = '</a>';
+					} elseif(empty($current_tag) && $rnd > 90){
+						//strong
+						$words_until_close_tag = rand(1, 5);
+						$rendered_p .= '<strong>'.$word;
+						$current_tag = '</strong>';
+					} else {
+						//plain text
+						$rendered_p .= $word;
+						if($words_until_close_tag == 0){
+							$rendered_p .= $current_tag;
+							$current_tag = '';
+						} else {
+							$words_until_close_tag--;
+						}
+					}*/
+					
+					$rendered_p .= ' ';
+					
+					
+				}
+				// close the last tag if it's still open at the paragraph end
+				$rendered_p .= $this->close_tag($current_tag);
+			}
+			$rendered_p .= "</p>";
+			
+			$this->render .= $rendered_p;
+			$is_first_p = false;
+		}
+		//vd($this->stats);
+		return $this;
+	}
+	
+	/**
+	 * Gets the opening html tag for the given one
+	 * @return string the opening tag
+	 * @param string $tag the html tag
+	 */
+	private function open_tag($tag=''){
+		if(empty($tag)) return '';
+		return "<$tag>";
+	}
+	
+	/**
+	 * Gets the closing html tag for the given one
+	 * @return string the closing tag
+	 * @param string $tag the html tag
+	 */
+	private function close_tag($tag=''){
+		if(empty($tag)) return '';
+		return "</$tag>";
+	}
+	
+	/**
+	 * Forces the given sentences (paragraph) 
+	 * to start with $this->beginning list of words.
+	 * @param array $sentences the list of sentences
+	 */
+	private function force_beginning(&$sentences){
+		if(count($this->beginning)){
+			foreach($this->beginning as $k => $v){
+				$sentences[0][$k] = $v;
+			}
+			$sentences[0][0] = ucfirst($sentences[0][0]);
+		}
+	}
+
+	
+	/**
+	 * Inserts commas and periods in the given array of words.
+	 */
+	private function punctuate(& $sentence){
+		$count = count($sentence);
+		$sentence[$count - 1] .= '.';
+	
+		if ($count < 4) {
+			return $sentence;
+		}
+	
+		$commas = $this->numberOfCommas($count);
+	
+		for ($i = 1; $i <= $commas; $i++) {
+			$index = (int) round($i * $count / ($commas + 1));
+	
+			if ($index < ($count - 1) && $index > 0) {
+				$sentence[$index] .= ',';
+			}
+		}
+	}
+	
+	/**
+	 * Determines the number of commas for a
+	 * sentence of the given length. Average and
+	 * standard deviation are determined superficially
+	 */
+	private function numberOfCommas($len){
+		$avg    = (float) log($len, 6);
+		$stdDev = (float) $avg / 6.000;
+	
+		return (int) round($this->gaussian_math->gauss_ms($avg, $stdDev));
+	}
+	
+
+
+}
+
+
+
+
