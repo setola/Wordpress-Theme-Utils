@@ -27,6 +27,18 @@ class LipsumGenerator {
 	 * @const int generates html with <strong> <em> <a> and <p> tags
 	 */
 	const FORMAT_RICH_HTML = 3;
+	
+	/**
+	 * @const string the WP option name where 
+	 * the generator can store his config
+	 */
+	const OPTION_NAME = 'lipsum_generator_config';
+	
+	/**
+	 * @const string the WP options name where 
+	 * the generator can store the rendered text
+	 */
+	//const OPTION_NAME_RENDER = 'lipsum_generator_render';
 
 	private $format;
 	private $number_of_paragraphs;
@@ -36,6 +48,7 @@ class LipsumGenerator {
 	private $dictionary;
 	private $min_repeat_count;
 	private $rich_html_config;
+	private $seed;
 
 	//TODO: still to be checked
 	private $render;
@@ -44,20 +57,30 @@ class LipsumGenerator {
 
 
 	/**
-	 * Initializes the current object with default settings
-	 * @param int $words_per_paragraph the number of words per paragraph
+	 * Look for a config stored in the db
+	 * If it doesn't exist it will load the default one
+	 * @return LipsumGenerator $this for chainability
 	 */
-	public function __construct(){
-		$this
-			->set_format(self::FORMAT_TEXT)
+	public function init(){
+		$this->seed = rand(0, 1000000);
+		if(!$this->load()){ $this->defaults(); } 
+		return $this;
+	}
+	
+	/**
+	 * Initializes the current object with default settings
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function defaults(){
+		return $this
+			->set_format(self::FORMAT_RICH_HTML)
 			->set_number_of_paragraphs(5)
 			->set_words_per_paragraph(100)
 			->set_words_per_sentence(24.460)
 			->set_dictionary(new LoremIpsumDictionary)
 			->set_begins_with(array('lorem', 'ipsum'))
-			->set_min_repeat_count(5);
-		
-		$this->gaussian_math = new GaussianMath();
+			->set_min_repeat_count(5)
+			->set_math(new GaussianMath);
 	}
 
 	/**
@@ -137,6 +160,15 @@ class LipsumGenerator {
 	}
 	
 	/**
+	 * Sets the mathematical object used for count words and punctuage distribution
+	 * @param GaussianMath $math
+	 */
+	public function set_math(GaussianMath $math){
+		$this->gaussian_math = $math;
+		return $this;
+	}
+	
+	/**
 	 * Sets the minimum amount of words until a single word can be repeated
 	 * @param $min_repeat_count the number of words withour repetitions
 	 * @return LipsumGenerator $this for chainability
@@ -155,7 +187,9 @@ class LipsumGenerator {
 		$words = $this->dictionary->get_all_words();
 
 		while(count($toret)<$count){
-			$word  = $words[array_rand($words)];
+			//$word  = $words[array_rand($words)];
+			$word  = $words[rand(0, $this->dictionary->number_of_words()-1)];
+			
 			// do not repeat the same word in a 5 words group
 			if(!in_array($word, array_slice($toret, $this->min_repeat_count*-1))){
 				$toret[] = $word;
@@ -209,17 +243,6 @@ class LipsumGenerator {
 			$sentences[] = $sentence;
 		}
 
-		/*if ($returnStr) {
-			$output = '';
-		foreach ($sentences as $s) {
-		foreach ($s as $w) {
-		$output .= $w . ' ';
-		}
-		}
-
-		return trim($output);
-		}*/
-
 		return $sentences;
 	}
 
@@ -227,7 +250,8 @@ class LipsumGenerator {
 	 * Renders the current object according to the current format
 	 * @return LipsumGenerator $this for chainability
 	 */
-	private function render(){
+	public function render(){
+		srand($this->seed);
 		if(empty($this->render)){
 			switch($this->format){
 				case self::FORMAT_HTML:
@@ -463,34 +487,6 @@ class LipsumGenerator {
 						}
 					}
 					
-					/*
-					$rnd = rand(1, 100);
-					if(empty($current_tag) && $rnd > 98){
-						//em
-						$words_until_close_tag = rand(1, 2);
-						$rendered_p .= '<em>'.$word;
-						$current_tag = '</em>';
-					} elseif(empty($current_tag) && $rnd > 95){
-						//a
-						$words_until_close_tag = rand(1, 2);
-						$rendered_p .= '<a href="#">'.$word;
-						$current_tag = '</a>';
-					} elseif(empty($current_tag) && $rnd > 90){
-						//strong
-						$words_until_close_tag = rand(1, 5);
-						$rendered_p .= '<strong>'.$word;
-						$current_tag = '</strong>';
-					} else {
-						//plain text
-						$rendered_p .= $word;
-						if($words_until_close_tag == 0){
-							$rendered_p .= $current_tag;
-							$current_tag = '';
-						} else {
-							$words_until_close_tag--;
-						}
-					}*/
-					
 					$rendered_p .= ' ';
 					
 					
@@ -514,7 +510,7 @@ class LipsumGenerator {
 	 */
 	private function open_tag($tag=''){
 		if(empty($tag)) return '';
-		return "<$tag>";
+		return '<' . $tag . ThemeHelpers::params($this->rich_html_config[$tag]['params']) . '>';
 	}
 	
 	/**
@@ -574,6 +570,83 @@ class LipsumGenerator {
 		$stdDev = (float) $avg / 6.000;
 	
 		return (int) round($this->gaussian_math->gauss_ms($avg, $stdDev));
+	}
+	
+	/**
+	 * Retrieves the config set for this generator
+	 * @return array the list of settings
+	 */
+	private function get_config(){
+		$fields = array_keys(get_class_vars(__CLASS__));
+		$config = array();
+		foreach($fields as $field){
+			$config[$field] = $this->{$field};
+		}
+		// avoid waste of memory in the db
+		unset($config['render']);
+		return $config;
+	}
+	
+	/**
+	 * Bulk configure the generator.
+	 * @param array $config the list of settings pairs name=>value
+	 * @return LipsumGenerator $this for chainability
+	 */
+	private function set_config($config){
+		$fields = array_keys(get_class_vars(__CLASS__));
+		foreach($fields as $field){
+			$this->{$field} = $config[$field];
+		}
+		return $this;
+	/*		->set_math(new GaussianMath())
+			->set_dictionary(new LoremIpsumDictionary());*/
+	}
+	
+	/**
+	 * Store config into WP options system
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function save(){
+		add_option(self::OPTION_NAME, $this->get_config(), null, false);
+		return $this;
+	}
+	
+	/**
+	 * Retrives config from WP options system
+	 * @return boolean false if config is not present
+	 */
+	public function load(){
+		$config = get_option(self::OPTION_NAME, false);
+		if(!$config) return false;
+		$this->set_config($config);
+		return true;
+	}
+	
+	/**
+	 * Removes current config from WP options system
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function flush(){
+		delete_option(self::OPTION_NAME);
+		return $this;
+	}
+	
+	/**
+	 * Hooks to 'the_content' hook.
+	 * If the page has no content it will fill it with the generated text.
+	 * @return LipsumGenerator $this for chainability
+	 */
+	public function hook(){
+		add_filter('the_content', array($this, 'the_content'));
+		return $this;
+	}
+	
+	/**
+	 * Hook for the_content: 
+	 * if there is no content it appends the generated
+	 */
+	public function the_content($content){
+		return (empty($content)) ? $this->__toString() : $content;
 	}
 	
 

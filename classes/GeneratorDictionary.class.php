@@ -9,8 +9,10 @@
  */
 class GeneratorDictionary{
 	private $words;
+	private $count;
 
 	public function __construct(){
+		$this->count = 0;
 		$this
 			->add_word('lorem')
 			->add_word('ipsum');
@@ -23,6 +25,7 @@ class GeneratorDictionary{
 	 */
 	public function add_word($word){
 		$this->words[] = $word;
+		$this->count++;
 		return $this;
 	}
 	
@@ -35,6 +38,7 @@ class GeneratorDictionary{
 		foreach($this->words as $k => $v){
 			if($v==$word){
 				unset($this->words[$k]);
+				$this->count--;
 			}
 		}
 		return $this;
@@ -45,5 +49,12 @@ class GeneratorDictionary{
 	 */
 	public function get_all_words(){
 		return $this->words;
+	}
+	
+	/**
+	 * @return the number of words in the current dictionary
+	 */
+	public function number_of_words(){
+		return $this->count;
 	}
 }
