@@ -12,10 +12,13 @@ Usage
 ````bash
 	git clone https://github.com/setola/Wordpress-Theme-Utils.git
 ````
+
 3. Make a new directory with the name of your theme
 ````bash
+
 	mkdir my-new-theme-name
 ````
+
 4. Start writing down your theme with this parameter in style.css header
 ````css
 	/*
