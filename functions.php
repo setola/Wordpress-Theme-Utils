@@ -1,5 +1,5 @@
 <?php
-include_once dirname(__FILE__) . '/assets.php';
+//include_once dirname(__FILE__) . '/assets.php';
 include_once dirname(__FILE__) . '/classes/ClassAutoloader.class.php';
 
 /**
@@ -11,6 +11,11 @@ new ClassAutoloader();
  * Initialize the debug utils vd() v() vc()
  */
 new DebugUtils();
+
+/**
+ * Register some standard assets
+ */
+new DefaultAssets();
 
 /**
  * Iframe system
@@ -83,7 +88,7 @@ add_theme_support('post-thumbnails');
 /**
  * @var int define here the id of the logo uploaded in the media library.
  */
-define(LOGO_MEDIA_ID, 121);
+define('LOGO_MEDIA_ID', 121);
 add_image_size('logo', 220, 87, true);
 
 add_image_size('slideshow', 940, 400, true);
@@ -91,9 +96,9 @@ add_image_size('slideshow', 940, 400, true);
 /**
  * Remove some useless css and js by wpml
  */
-define(ICL_DONT_LOAD_LANGUAGES_JS, true);
-define(ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS, true);
-define(ICL_DONT_LOAD_NAVIGATION_CSS, true);
+define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
 
 /**
  * Prints the language menu

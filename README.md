@@ -2,6 +2,7 @@ Wordpress-Theme-Utils
 =====================
 
 A little collection of utils i use while developing themes for WP.
+Originally developed to be used as a Parent Theme. 
 
 Usage
 -----
@@ -11,11 +12,16 @@ Usage
 ```bash
 	git clone https://github.com/setola/Wordpress-Theme-Utils.git
 ```
-3. Rename your new theme folder
+3. Make a new directory with the name of your theme
 ```bash
-	mv Wordpress-Theme-Utils my-new-theme-name
+	mkdir my-new-theme-name
 ```
-4. Start writing down your theme
+4. Start writing down your theme with this parameter in style.css header
+```css
+	/*
+	TEMPLATE: Wordpress-Theme-Utils
+	*/
+```
 
 Classes
 -------

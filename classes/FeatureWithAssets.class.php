@@ -5,7 +5,12 @@
  * WARNING: this method doesn't register the asset:
  * You have to take care of it by yourself (tipically in assets.php)
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
+ * 
+ * 1.0.1
+ * 	Fixed Notice: wp_enqueue_script was called incorrectly
+ * 1.0.0
+ * 	Initial release
  */
 class FeatureWithAssets{
 	
@@ -47,12 +52,22 @@ class FeatureWithAssets{
 		}
 		return $this;
 	}
-	
 	/**
 	 * Loads needed scripts and css
 	 * @return FeatureWithAssets $this for chainability
 	 */
 	public function load_assets(){
+		if(!is_admin()){
+			add_action('wp_enqueue_scripts', array($this, 'load_assets_callback'));
+		}
+		return $this;
+	}
+	
+	/**
+	 * Loads needed scripts and css
+	 * @return FeatureWithAssets $this for chainability
+	 */
+	public function load_assets_callback(){
 		foreach($this->assets['js'] as $js){
 			wp_enqueue_script($js);
 		}

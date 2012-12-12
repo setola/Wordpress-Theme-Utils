@@ -356,11 +356,11 @@ class LipsumGenerator {
 				$rendered_p .= "\n";
 			}
 			
-			$rendered_p .= '<p>';
+			$rendered_p .= HtmlHelper::open_tag('p'); //'<p>';
 			foreach($paragraph as $sentence){
 				$rendered_p .= implode(' ', $sentence);
 			}
-			$rendered_p .= "</p>";
+			$rendered_p .= HtmlHelper::close_tag('p'); //"</p>";
 			
 			$this->render .= $rendered_p;
 			$is_first_p = false;
@@ -416,7 +416,6 @@ class LipsumGenerator {
 	
 	/**
 	 * Generates and renders in rich html format
-	 * @todo
 	 * @see LipsumGenerator::FORMAT_RICH_HTML
 	 * @return LipsumGenerator $this for chainability
 	 */
@@ -439,7 +438,7 @@ class LipsumGenerator {
 				$rendered_p .= "\n";
 			}
 			
-			$rendered_p .= '<p>';
+			$rendered_p .= HtmlHelper::open_tag('p'); //'<p>';
 			foreach($paragraph as $sentence){
 				// stores the currently opened html tag
 				$current_tag = '';
@@ -456,7 +455,10 @@ class LipsumGenerator {
 							$rnd = rand(0, 99);
 							if($rnd < $tag_config['percent']){
 								//v(array($rnd, $tag, $index));
-								if($this->rich_html_config[$tag_to_add]['percent'] < $tag_config['percent']){
+								if(
+										isset($this->rich_html_config[$tag_to_add]['percent']) 
+										&& $this->rich_html_config[$tag_to_add]['percent'] < $tag_config['percent']
+								){
 									$tag_to_add = $tag;
 									$this->stats[$tag]++;
 								}
@@ -467,7 +469,8 @@ class LipsumGenerator {
 					if(!empty($tag_to_add)){
 						// insert the current tag!
 						$current_tag = $tag_to_add;
-						$rendered_p .= $this->open_tag($tag_to_add);
+						//$rendered_p .= $this->open_tag($tag_to_add);
+						$rendered_p .= HtmlHelper::open_tag($tag_to_add, $this->rich_html_config[$tag_to_add]['params']);
 						$words_until_close_tag = rand(1, $this->rich_html_config[$tag_to_add]['max_words']);
 						$tag_to_add = '';
 					}
@@ -479,7 +482,7 @@ class LipsumGenerator {
 					
 					if(!empty($current_tag)){
 						if($words_until_close_tag == 0){
-							$rendered_p .= $this->close_tag($current_tag);
+							$rendered_p .= HtmlHelper::close_tag($current_tag);
 							$last_closed_tag = $current_tag;
 							$current_tag = '';
 						} else {
@@ -492,35 +495,14 @@ class LipsumGenerator {
 					
 				}
 				// close the last tag if it's still open at the paragraph end
-				$rendered_p .= $this->close_tag($current_tag);
+				$rendered_p .= HtmlHelper::close_tag($current_tag);
 			}
-			$rendered_p .= "</p>";
+			$rendered_p .= HtmlHelper::close_tag('p'); //"</p>";
 			
 			$this->render .= $rendered_p;
 			$is_first_p = false;
 		}
-		//vd($this->stats);
 		return $this;
-	}
-	
-	/**
-	 * Gets the opening html tag for the given one
-	 * @return string the opening tag
-	 * @param string $tag the html tag
-	 */
-	private function open_tag($tag=''){
-		if(empty($tag)) return '';
-		return '<' . $tag . ThemeHelpers::params($this->rich_html_config[$tag]['params']) . '>';
-	}
-	
-	/**
-	 * Gets the closing html tag for the given one
-	 * @return string the closing tag
-	 * @param string $tag the html tag
-	 */
-	private function close_tag($tag=''){
-		if(empty($tag)) return '';
-		return "</$tag>";
 	}
 	
 	/**

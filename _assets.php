@@ -1,8 +1,9 @@
 <?php 
 /**
  * Register here your theme assets, only for the frontend!
+ * @deprecated use DefaultAssets class instead
  */
-if(!is_admin()){
+if(false && !is_admin()){
 	
 	/**
 	 * Jquery UI replacement for the conflicting simlinked js in the wp installation

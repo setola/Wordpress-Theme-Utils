@@ -3,7 +3,20 @@
 /**
  * Stores some static methods that may be useful for html management
  * @author etessore
- * @version 1.0.3
+ * @version 1.0.4
+ * 
+ * Changelog
+ * 
+ * 1.0.4 
+ * 	moved some html dom functions to HtmlHelper class
+ * 1.0.3
+ * 	added support for FB Seo plugin
+ * 1.0.2
+ * 	code refactoring and some minor design modifications
+ * 1.0.1
+ * 	do not remember, sorry
+ * 1.0.0
+ * 	first release
  */
 class ThemeHelpers{
 	/**
@@ -31,6 +44,28 @@ class ThemeHelpers{
 		if(!is_user_logged_in()) $classes[] = 'logged-out';
 		
 		return $classes;
+	}
+	
+	/**
+	 * Enqueue a JavaScript in WordPress init action
+	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
+	 */
+	public static function load_js($handle, $src, $deps = array(), $ver = null, $in_footer = false){
+		function my_scripts_method() {
+			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+		}
+		add_action('wp_enqueue_scripts', 'my_scripts_method');
+	}
+	
+	/**
+	 * Enqueue a StyleSheet in WordPress init action
+	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
+	 */
+	public static function load_css($handle, $src, $deps = array(), $ver = null, $media = false){
+		function my_scripts_method() {
+			wp_enqueue_style($handle, $src, $deps, $ver, $media);
+		}
+		add_action('wp_enqueue_scripts', 'my_scripts_method');
 	}
 	
 	/**
@@ -139,6 +174,7 @@ EOF;
 	 * @param string $type the type, default is html5
 	 */
 	static function doctype($type = 'html5') {
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4', 'HtmlHelper::doctype');
 		$doctypes = array(
 			'html5'			=> '<!DOCTYPE html>',
 			'xhtml11'		=> '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',
@@ -164,6 +200,7 @@ EOF;
 	 * @param array|string $parms some html attributes in key=>value pairs or a plain string
 	 */
 	public static function anchor($href, $label, $parms=''){
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4', 'HtmlHelper::anchor');
 		$href 	= esc_attr($href);
 		//$label 	= esc_html($label); //i want the possibility to insert an inner <img>
 		$parms 	= self::params($parms);
@@ -178,6 +215,7 @@ EOF;
 	 * @param array|string $parms additional parameters
 	 */
 	public static function image($src, $parms=''){
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4', 'HtmlHelper::image');
 		$src = esc_attr($src);
 		$parms 	= self::params($parms);
 		return <<< EOF
@@ -186,6 +224,7 @@ EOF;
 	}
 	
 	public static function script($content, $parms=''){
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4', 'HtmlHelper::script');
 		$parms 	= self::params($parms);
 		return <<< EOF
 	<script type="text/javascript"$parms>
@@ -202,6 +241,7 @@ EOF;
 	 * @author http://blog.teknober.com/2011/04/13/php-array-to-html-attributes/
 	 */
 	public static function array_to_html_attributes($glue, $pieces) {
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4');
 		$str = $pieces;
 		if (is_array($pieces)) {
 			$str = " ";
@@ -220,6 +260,7 @@ EOF;
 	 * @param string|array $parms list of html attributes
 	 */
 	public static function params($parms=''){
+		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4');
 		$parms 	= trim(self::array_to_html_attributes('=', $parms));
 		if(!empty($parms)) $parms = ' '.$parms;
 		return $parms;

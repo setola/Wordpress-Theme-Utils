@@ -2,7 +2,14 @@
 /**
  * Manages the integration of the special offers snippet
  * @author etessore
- * @version 1.0.1
+ * @version 1.0.2
+ * 
+ * 1.0.2
+ * 	Fixed Notice: wp_enqueue_script was called incorrectly
+ * 1.0.1
+ * 	Added support for multiple iframes
+ * 1.0.0
+ * 	Initial Release
  */
 class SpecialOffersSnippet extends FeatureWithAssets{
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/promotions.php';
@@ -26,13 +33,16 @@ EOF;
 		$this->templates
 			->set_tpl($tpl)
 			->set_markup('loading', __('Loading Offers...', 'theme'));
-		wp_register_script(
-			'snippet-com', 
-			'http://hotelsitecontents.fastbooking.com/js/com.js',
-			null,
-			'0.1',
-			true
-		);
+		function my_scripts_method(){
+			wp_register_script(
+				'snippet-com', 
+				'http://hotelsitecontents.fastbooking.com/js/com.js',
+				null,
+				'0.1',
+				true
+			);
+		}
+		add_action('wp_enqueue_scripts', 'my_scripts_method');
 		$this
 			->add_asset('snippet-com', 'js')
 			->add_param('hid', $hid)
