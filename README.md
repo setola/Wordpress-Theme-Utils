@@ -44,7 +44,7 @@ JS
 --
 
 In this fonder there is a collection of JavaScript used in many themes.
-They're registered in asset.php, you can find there the handle for the js
+They're registered in DefaultAssets object, you can find there the handle for the js
 you need and enqueue it where you need it by using wp_enqueue_script() function.
 
 
