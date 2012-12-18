@@ -4,6 +4,7 @@ jQuery(document).ready(function(){
 		var thumbs 		=	container.find('.thumb-link');
 		var big_img 	=	container.find('.big-image');
 		var thumbs_list	=	container.find('.thumbs-list');
+		var caption		=	container.find('.caption');
 		
 		thumbs.click(function(e){
 			e.preventDefault();
@@ -13,14 +14,19 @@ jQuery(document).ready(function(){
 			
 			container.find('.current').removeClass('current');
 			anchor.addClass('current');
-			
+			caption.fadeOut();
 			big_img.fadeOut('slow', function(){
+				caption.html('').html(anchor.attr('data-caption')).hide(0);
 				big_img.html(
 					jQuery('<img>',{
 						"src":anchor.attr('href'),
 						"alt":anchor.attr('title')
 					})
-				).fadeIn('slow');
+				).fadeIn('slow', function(){
+					if(caption.html()){
+						caption.slideDown();
+					}
+				});
 			});
 		}).eq(0).click();
 		

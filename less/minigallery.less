@@ -7,27 +7,42 @@
 
 @import "variables";
 @import "mixins";
-@border-color: #333;
+@border-color: #ccc;
 @border-width: 2px;
-@color: #666;
-@big-image-width: 460px;
-@big-image-height: 220px;
-@thumbnails-width: 90px;
-@thumbnails-height: 70px;
+@color: darken(@border-color, 60%);
+@big-image-width: 580px;
+@big-image-height: 290px;
+@thumbnails-width: 120px;
+@thumbnails-height: 80px;
 @thumbnails-margin: 5px;
 @prev-next-width: 20px;
 .minigallery {
+	color: @color;
 	.big-image-container {
 		background-color: @border-color;
 		padding: 0;
-		.size (@big-image-height , @big-image-width);
+		.size (@big-image-height + (@border-width * 2) , @big-image-width + (@border-width * 2));
 		overflow: hidden;
 		position: relative;
+		z-index: @zindexMenu;
+	}
+	
+	.caption{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		.size(20px, 100%);
+		line-height: 20px;
+		text-indent: 10px;
+		color: @white;
+		#gradient .horizontal(rgba(125,125,125,.5), rgba(125,125,125,.5));
+		z-index: @zindexText;
 	}
 
 	.big-image {
 		position: relative;
 		z-index: 10;
+		border: @border-width solid @border-color;
 	}
 
 	.big-image img {
@@ -53,7 +68,7 @@
 		text-align: center;
 		margin-top: @thumbnails-margin * 2;
 		&:hover {
-			background-color: lighten(@border-color, 20%);
+			background-color: darken(@border-color, 20%);
 		}
 	}
 

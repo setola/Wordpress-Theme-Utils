@@ -36,11 +36,13 @@ class MinigalleryBigImageWithThumbs extends GalleryHelper{
 			->set_markup('next', '<div class="next">'.__('Next', $this->textdomain).'</div>')
 			->set_markup('prev', '<div class="next">'.__('Prev', $this->textdomain).'</div>')
 			->set_markup('big-image', '<div class="big-image"></div>')
+			->set_markup('caption', '<div class="caption"></div>')
 			->set_template(<<< EOF
 	<div id="%minigallery-id%" class="minigallery">
 		<div class="big-image-container">
 			%big-image%
 			%loading%
+			%caption%
 		</div>
 		<div class="thumbs">
 			%prev%
@@ -144,7 +146,10 @@ EOF
 						$src.'?'.http_build_query($this->sizes['small']), 
 						'class="image"'
 					),
-					'class="thumb-link"'
+					array(
+						'class' 		=>	'thumb-link',
+						'data-caption'	=>	$this->get_image_caption($k)
+					)
 				);
 			}
 			if(!$this->unid) {
