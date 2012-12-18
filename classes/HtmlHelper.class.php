@@ -24,7 +24,7 @@ class HtmlHelper extends HtmlBuilder{
 	 */
 	public static function image($src, $parms=array()){
 		$parms['src'] 	= esc_attr($src);
-		return self::standard_tag('img');
+		return self::standard_tag('img', '', $parms);
 	}
 	
 	/**
