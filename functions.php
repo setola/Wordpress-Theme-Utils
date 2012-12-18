@@ -4,7 +4,6 @@ if(!defined('WORDPRESS_THEME_UTILS_PATH'))
 
 include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
 
-die('ASDASDASD');
 /**
  * Initialize the autoloader
  */
