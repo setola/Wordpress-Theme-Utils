@@ -1,5 +1,15 @@
 <?php 
 
+/**
+ * Generates paceholder images
+ * @author etessore
+ * @version 1.0.1
+ * 
+ * 1.0.1
+ * 	added hooks into wordpress
+ * 1.0.0
+ * 	Initial release
+ */
 class ImageGenerator{
 	public $settings;
 	
@@ -140,6 +150,66 @@ class ImageGenerator{
 	}
 	
 	/**
+	 * Hooks into WordPress to serve a generated image when no one is available
+	 */
+	public function hook(){
+		get_the_post_thumbnail();
+		add_filter( "get_post_metadata", array($this, 'get_post_metadata_callback'), 10, 4);
+		add_action( "post_thumbnail_html", array($this, 'post_thumbnail_html_callback'), 10, 5);
+	}
+	
+	/**
+	 * Callback for 'get_post_metadata' hook.
+	 * Returns -1 if post image is not set, else the id of the image
+	 * @param int $value the ID of the post thumbnail
+	 * @param int $object_id ID of the object metadata is for
+	 * @param string $meta_key Optional.  Metadata key.  
+	 * 		If not specified, retrieve all metadata for the specified object.
+	 * @param bool $single Optional, default is false.  
+	 * 		If true, return only the first value of the specified meta_key.  
+ 	 * 		This parameter has no effect if meta_key is not specified.
+	 */
+	public function get_post_metadata_callback($value, $object_id, $meta_key, $single){
+		if($meta_key=='_thumbnail_id' && is_null($value)){
+			return -1;
+		}
+		
+		return $object_id;
+	}
+	
+	/**
+	 * Callback for 'post_thumbnail_html' hook.
+	 * Changes the html markup if the post thumbnail is not set
+	 * @param string $html
+	 * @param unknown_type $post_id
+	 * @param unknown_type $post_thumbnail_id
+	 * @param unknown_type $size
+	 * @param unknown_type $attr
+	 */
+	public function post_thumbnail_html_callback($html, $post_id, $post_thumbnail_id, $size, $attr){
+		if($post_thumbnail_id==-1){
+			$sizes = self::get_all_image_sizes();
+			if(empty($size) || !in_array($size, array_keys($sizes))){
+				$size = 'medium';
+			}
+			return HtmlHelper::image(
+				admin_url('admin-ajax.php')
+				.'?'.build_query(array(
+					'action'	=>	'placeholder',
+					'w'			=>	$sizes[$size]['width'],
+					'h'			=>	$sizes[$size]['height']
+				),
+				array(
+					'alt'		=>	__('Placeholder post thumbnail'),
+					'width'		=>	$sizes[$size]['width'],
+					'height'	=>	$sizes[$size]['height']		
+				))
+			);
+		}
+		return $html;
+	}
+	
+	/**
 	 * outputs the raw image with appropriate header.
 	 * @return ImageGenerator $this for chainability
 	 */
@@ -165,5 +235,29 @@ class ImageGenerator{
 			'green'	=>	base_convert(substr($hex, 2, 2), 16, 10),
 			'blue'	=>	base_convert(substr($hex, 4, 2), 16, 10),
 		);
+	}
+	
+	/**
+	 * @return all the image sizes registered in WordPress
+	 */
+	public static function get_all_image_sizes(){
+		global $_wp_additional_image_sizes;
+		return array_merge($_wp_additional_image_sizes, array(
+			'thumbnail'	=>	array(
+				'width'		=>	get_option('thumbnail_size_w'),
+				'height'	=>	get_option('thumbnail_size_h'),
+				'crop'		=>	get_option('thumbnail_crop')
+			),
+			'medium'	=>	array(
+				'width'		=>	get_option('medium_size_w'),
+				'height'	=>	get_option('medium_size_h'),
+				'crop'		=>	false	
+			),
+			'large'	=>	array(
+				'width'		=>	get_option('large_size_w'),
+				'height'	=>	get_option('large_size_h'),
+				'crop'		=>	false	
+			),
+		));
 	}
 }
