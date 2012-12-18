@@ -1,7 +1,10 @@
 <?php
-//include_once dirname(__FILE__) . '/assets.php';
-include_once dirname(__FILE__) . '/classes/ClassAutoloader.class.php';
+if(!defined('WORDPRESS_THEME_UTILS_PATH')) 
+	define('WORDPRESS_THEME_UTILS_PATH', dirname(__FILE__));
 
+include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
+
+die('ASDASDASD');
 /**
  * Initialize the autoloader
  */
@@ -32,6 +35,9 @@ $offers
 	->add_param('cta', __('Check Availability', 'theme'))
 	->add_param('ctam', __('More Info', 'theme'));
 
+/**
+ * Runtime infos
+ */
 global $runtime_infos;
 $runtime_infos = new RuntimeInfos();
 $runtime_infos->hook();
@@ -99,6 +105,11 @@ add_image_size('slideshow', 940, 400, true);
 define('ICL_DONT_LOAD_LANGUAGES_JS', true);
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
+
+
+
+
+// TODO: move this into ThemeHelpers to allow overloading in child theme 
 
 /**
  * Prints the language menu
