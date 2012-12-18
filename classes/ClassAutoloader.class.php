@@ -2,17 +2,32 @@
 /**
  * Autoload needed classes
  * @author etessore
- *
+ * @version 1.0.1
+ * 
+ * 1.0.1
+ * 	support multiple search path to allow children theme to extend classes
+ * 1.0.0
+ * 	Initial release
  */
 class ClassAutoloader {
 	const WORDPRESS_THEME_UTILS_CLASS_DIR = 'classes';
 	public $loading_template;
 	
 	public function __construct() {
-		$this->add_loading_template(
-			WORDPRESS_THEME_UTILS_PATH.'/'.self::WORDPRESS_THEME_UTILS_CLASS_DIR.'/%classname%.class.php'
-		);
-		//spl_autoload_register(array($this, 'loader'));
+		$this
+			// First search in the child theme dir
+			->add_loading_template(
+				get_stylesheet_directory().'/'
+				.self::WORDPRESS_THEME_UTILS_CLASS_DIR
+				.'/%classname%.class.php'
+			)
+			// then search into the parent theme dir
+			->add_loading_template(
+				get_template_directory().'/'
+				.self::WORDPRESS_THEME_UTILS_CLASS_DIR
+				.'/%classname%.class.php'
+			)
+			->register_autoload();
 	}
 	
 	/**
@@ -23,13 +38,6 @@ class ClassAutoloader {
 	public function add_loading_template($tpl){
 		$this->loading_template[] = $tpl;
 		return $this;
-	}
-	
-	/**
-	 * Hook to the WordPress init
-	 */
-	public function hook(){
-		add_action('init', array($this, 'register_autoload'));
 	}
 	
 	/**
