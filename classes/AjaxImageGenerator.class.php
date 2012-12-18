@@ -30,11 +30,13 @@ class AjaxImageGenerator{
 	 */
 	public static function ajax_callback(){
 		$image = new ImageGenerator();
-		echo $image
+		
+		$image
 			->set('width', intval($_REQUEST['w']))
 			->set('height', intval($_REQUEST['h']))
 			->set('bg_color', 'cccccc')
 			->set('text_color', '222222')
-			->get_image();
+			->flush(isset($_REQUEST['refresh']))
+			->image();
 	}
 }

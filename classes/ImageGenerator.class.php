@@ -35,6 +35,7 @@ class ImageGenerator{
 	 * Sets a parameter for the current generator
 	 * @param string $param the name of the parameter
 	 * @param string $value the value of the parameter
+	 * @return ImageGenerator $this for chainability
 	 */
 	public function set($param, $value){
 		$this->settings[$param] = $value;
@@ -50,13 +51,15 @@ class ImageGenerator{
 			$this->cache['url'], 
 			array(
 				'width'		=>	$this->settings['width'],
-				'height'	=>	$this->settings['height']
+				'height'	=>	$this->settings['height'],
+				'alt'		=>	'Placeholder image '.$this->settings['width'].'x'.$this->settings['height']
 			)
 		);
 	}
 	
 	/**
 	 * Generates an image
+	 * @return ImageGenerator $this for chainability
 	 */
 	private function generate_image(){
 		$this->image = imagecreate($this->settings['width'], $this->settings['height']);
@@ -113,6 +116,7 @@ class ImageGenerator{
 	
 	/**
 	 * Saves the image into the upload directory
+	 * @return ImageGenerator $this for chainability
 	 */
 	private function save_image(){
 		$this->init();
@@ -121,9 +125,25 @@ class ImageGenerator{
 	}
 	
 	/**
-	 * outputs the raw image with appropriate header.
+	 * Flush the cache file and regenerate it
+	 * @param bool $check false only if you don't want to delete the cache file.
+	 * Useful to pass isset($_REQUEST['refresh']) in the ajax implementation
+	 * @return ImageGenerator $this for chainability
 	 */
-	public function get_image(){
+	public function flush($check=true){
+		if($check){
+			$this->init();
+			@unlink($this->cache['path'].'/'.$this->cache['name']);
+			$this->init();
+		}
+		return $this;
+	}
+	
+	/**
+	 * outputs the raw image with appropriate header.
+	 * @return ImageGenerator $this for chainability
+	 */
+	public function image(){
 		$this->init();
 		header("Content-Type: image/png");
 		if(empty($this->image)){
