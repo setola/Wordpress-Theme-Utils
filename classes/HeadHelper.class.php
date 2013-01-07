@@ -21,6 +21,11 @@ class HeadHelper{
 	 */
 	public $charset;
 	
+	/**
+	 * @var string Google Analytics tracking code
+	 */
+	public $ua;
+	
 	
 	/**
 	 * Initializes this object to default data
@@ -50,6 +55,27 @@ class HeadHelper{
 		$meta_tags = $this->render_meta_tags();
 		$title = esc_html($this->title);
 		$desc = $this->render_meta_tag('description');
+		$ga_tracking = '';
+		if(!empty($this->ua)){
+		$ga_tracking = HtmlHelper::script(<<< EOF
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', '{$this->ua}'],
+     ['_setDomainName', 'none'],
+     ['_setAllowLinker', true ],
+     ['_trackPageview'],
+     ['_trackPageLoadTime'],
+     ['second._setAccount', 'UA-4717938-7'],
+     ['second._setDomainName', 'none'],
+     ['second._trackPageview'],
+     ['second._trackPageLoadTime']
+      );
+     (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+EOF
+		);
 
 		echo <<<EOF
 	<title>$title</title>
@@ -58,6 +84,15 @@ class HeadHelper{
     $meta_tags
     <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
 EOF;
+	}
+	
+	/**
+	 * Sets the Google Analytics tracking code
+	 * @param string $ga UA-XXXXXX
+	 */
+	public function set_ga($ga){
+		$this->ua = $ga;
+		return $this;
 	}
 	
 	/**
