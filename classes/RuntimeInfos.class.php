@@ -3,7 +3,11 @@
 /**
  * Manages a set of info to be printed as a json generally at the endo of the page
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
+ * 
+ * Changelog
+ * 1.0.1
+ * 	solved notice of undefined post on 404 pages
  */
 class RuntimeInfos{
 	public $infos = array();
@@ -30,7 +34,7 @@ class RuntimeInfos{
 		$uploadDir = $uploadDir['baseurl'];
 		$this
 			->set_type(self::TYPE_AJAX)
-			->add_info('postID', get_the_ID())
+			->add_info('postID', $this->get_the_ID())
 			->add_info('theme_url', get_template_directory_uri())
 			->add_info('upload_dir', $uploadDir)
 			->add_info('home_url', get_bloginfo('url'))
@@ -41,6 +45,14 @@ class RuntimeInfos{
 		if($this->type == self::TYPE_AJAX){
 			$this->load_assets();
 		}
+	}
+	
+	/**
+	 * Get the ID for the current post
+	 */
+	private function get_the_ID(){
+		if(is_404()) return '';
+		return get_the_ID();
 	}
 	
 	/**
