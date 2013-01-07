@@ -2,7 +2,11 @@
 /**
  * Manages the navigation links on a 404 page
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
+ * 
+ * Changelog
+ * 1.0.1
+ * 	moved from ThemeHelpers to HtmlHelper class
  */
 class EscapeRoute{
 	public $links = array();
@@ -80,7 +84,7 @@ EOF;
 			if(!$first){
 				$toret .= $this->list_separator;
 			}
-			$toret .= ThemeHelpers::anchor($link->href, $link->label, $link->params);
+			$toret .= HtmlHelper::anchor($link->href, $link->label, $link->params);
 			$first = false;
 		}
 		return $toret;
