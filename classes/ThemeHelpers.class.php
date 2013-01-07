@@ -3,10 +3,11 @@
 /**
  * Stores some static methods that may be useful for html management
  * @author etessore
- * @version 1.0.4
+ * @version 1.0.5
  * 
  * Changelog
- * 
+ * 1.0.5
+ * 	added support for title in 404 pages
  * 1.0.4 
  * 	moved some html dom functions to HtmlHelper class
  * 1.0.3
@@ -311,6 +312,9 @@ EOF;
 	 * Blog Name
 	 */
 	public static function get_the_seo_title(){
+		if(is_404()){
+			return 'asdlalla';
+		}
 		if(function_exists('fbseo_get_title')) 
 			return fbseo_get_title();
 		
@@ -325,8 +329,12 @@ EOF;
 	 * Blog Name
 	 */
 	public static function get_the_seo_description(){
+		if(is_404()){
+			return 'asdlalla';
+		}
+		
 		if(function_exists('fbseo_get_metadescription'))
-			fbseo_get_metadescription();
+			return fbseo_get_metadescription();
 		
 		return get_the_excerpt();
 	}
@@ -340,6 +348,9 @@ EOF;
 	public static function get_the_seo_h1($post = null){
 		if(is_null($post)){
 			global $post;
+		}
+		if(is_404()){
+			return __('Error 404');
 		}
 		if(is_numeric($post)){
 			$id = $post;
@@ -364,6 +375,9 @@ EOF;
 	public static function get_the_seo_span($post = null){
 		if(is_null($post)){
 			global $post;
+		}
+		if(is_404()){
+			return __('page not found');
 		}
 		if(is_numeric($post)){
 			$id = $post;
