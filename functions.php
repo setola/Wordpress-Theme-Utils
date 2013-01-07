@@ -2,6 +2,9 @@
 if(!defined('WORDPRESS_THEME_UTILS_PATH')) 
 	define('WORDPRESS_THEME_UTILS_PATH', dirname(__FILE__));
 
+if(!defined('WORDPRESS_THEME_UTILS_DEBUG'))
+	define('WORDPRESS_THEME_UTILS_DEBUG', true);
+
 include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
 
 /**
@@ -13,6 +16,7 @@ new ClassAutoloader();
  * Initialize the debug utils vd() v() vc()
  */
 new DebugUtils();
+
 
 /**
  * Register some standard assets

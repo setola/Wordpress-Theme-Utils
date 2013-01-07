@@ -89,6 +89,8 @@ EOF;
 	 * @param mixed $var the variable to be dumped
 	 */
 	public function debug($var){
+		if(!WORDPRESS_THEME_UTILS_DEBUG) return '';
+		
 		$render = str_replace(
 			array(	'%debug%',								'%title%'), 
 			array(	var_export($var, true), 	$this->title), 
