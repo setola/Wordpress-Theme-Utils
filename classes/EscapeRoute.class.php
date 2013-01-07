@@ -36,7 +36,7 @@ EOF;
 			->set_separator(' - ')
 			->add_link('javascript:history.back();', __('Back', 'theme'))
 			->add_link(home_url(), __('Homepage', 'theme'))
-			->add_link('javascript:void();', __('Book Now', 'theme'), 'class="book-action"');
+			->add_link('javascript.void();', __('Book Now', 'theme'), array('class'=>'book-action2'));
 	}
 	
 	/**
