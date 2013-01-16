@@ -1,6 +1,20 @@
-<?php the_doctype(); ?>
+<?php echo HtmlHelper::doctype('html5'); ?>
 <?php the_html(); ?>
-<?php the_head(); ?>
+<head>
+	<?php 
+		$header = new HeadHelper();
+		$header
+		->set_title(ThemeHelpers::get_the_seo_title())
+		->set_meta_tag(
+				array(
+						'name'		=>	'description',
+						'content'	=>	ThemeHelpers::get_the_seo_description()
+				)
+		)
+		->the_head();
+		wp_head();
+	?>
+</head>
 <body <?php body_class(); ?>>
 	<?php the_browse_happy(); ?>
 	<div id="head-container" class="container">
