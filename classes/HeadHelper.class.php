@@ -84,6 +84,7 @@ EOF
     $meta_tags
     <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
 EOF;
+		}
 	}
 	
 	/**
