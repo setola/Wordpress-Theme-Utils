@@ -1,0 +1,29 @@
+/*!
+ * linear-menu.less
+ * Put here the style for a linear menu
+ * 
+ * Compiled on :compileTime:
+ * 
+ */
+
+@bg_color: #ddd;
+@bg_color_hover: darken(@bg_color, 20%);
+@inner_padding: 5px 10px;
+
+.linear-menu ul, ul.linear-menu{
+	width: 100%;
+	min-heigth: 2em;
+	list-style: none;
+	li{
+		float: left;
+		a{
+			text-decoration: none;
+			padding: @inner_padding;
+			display: block;
+			background-color: @bg_color;
+			&:hover{
+				background-color: @bg_color_hover;
+			}
+		}
+	}
+}
