@@ -23,6 +23,8 @@ new DebugUtils();
  */
 new DefaultAssets();
 
+//TODO: clean useless initializations
+
 /**
  * Iframe system
  */
@@ -283,31 +285,7 @@ EOF
 	endif;
 }
 
-/**
- * Print the <head> inner content
- */
-function the_head(){
-	echo '<head>';
-	$header = new HeadHelper();
-	$header
-		->set_title(ThemeHelpers::get_the_seo_title())
-		->set_meta_tag(
-			array(
-				'name'		=>	'description',
-				'content'	=>	ThemeHelpers::get_the_seo_description()
-			)
-		)
-		->the_head();
-	wp_head();
-	echo '</head>';
-}
 
-/**
- * Print the doctype
- */
-function the_doctype(){
-	echo ThemeHelpers::doctype('html5');
-}
 
 /**
  * Print the <html> opening tag
@@ -343,20 +321,7 @@ function the_browse_happy(){
 }
 
 
-/**
- * Prints some text and some links 
- * to get out of the 404 page not found.
- */
-function the_404_escape_route(){
-	$escape = new EscapeRoute();
-	$escape->templates->set_markup('class', 'grid_6');
-	echo $escape->get_markup();
-}
 
-function the_404_image(){
-	echo ThemeHelpers::image(get_template_directory_uri().'/images/error_404.gif');
-	//echo wp_get_attachment_image(4, 'two-columns');
-}
 
 function the_post_image(){
 	$images = get_posts(
