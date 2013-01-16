@@ -70,22 +70,6 @@ class ThemeHelpers{
 	}
 	
 	/**
-	 * Get the markup for the browse happy 
-	 */
-	public static function browse_happy(){
-		return <<< EOF
-  <!--[if lt IE 7]>
-    <p class="chromeframe">
-    	You are using an outdated browser. 
-    	<a href="http://browsehappy.com/">Upgrade your browser today</a> 
-    	or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> 
-    	to better experience this site.
-    </p>
-  <![endif]-->	
-EOF;
-	}
-	
-	/**
 	 * Merges some images to a single big one to save some http connections.
 	 * Stores it in a cache folder.
 	 * To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true

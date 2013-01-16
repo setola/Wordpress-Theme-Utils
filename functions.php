@@ -311,14 +311,7 @@ function the_fb_seo(){
 	echo ThemeHelpers::heading();
 }
 
-/**
- * Tells the guest his browser is too old
- * and he should upgrade to browse this website
- * with his heart full of happiness
- */
-function the_browse_happy(){
-	echo ThemeHelpers::browse_happy();
-}
+
 
 
 
