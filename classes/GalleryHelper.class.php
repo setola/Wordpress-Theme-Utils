@@ -167,10 +167,6 @@ abstract class GalleryHelper extends FeatureWithAssets{
 				
 			$toret = $toret.'?'.$this->timthumb_opts['render'];
 		}
-		
-		if($this->media_dimension){
-			wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
-		}
 
 		return $toret;
 	}
