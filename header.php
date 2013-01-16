@@ -16,7 +16,6 @@
 	?>
 </head>
 <body <?php body_class(); ?>>
-	<?php the_browse_happy(); ?>
 	<div id="head-container" class="container_16">
 		<div id="heading" class="grid_12 heading">
 			<?php the_fb_seo(); ?>
