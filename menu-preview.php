@@ -5,7 +5,11 @@
 			'theme_location'	=>	'pages-preview',
 			'container'			=>	'',
 			'depth'				=>	1,
-			'walker'			=>	new HashAnchorWalkerNavMenu()
+			'walker'			=>	new HashAnchorWalkerNavMenu(),
+			'before'			=>	'',
+			'after'				=>	'',
+			'link_before'		=>	'',
+			'link_after'		=>	''
 		)
 	);
 	
