@@ -1,13 +1,16 @@
 <?php wp_enqueue_style('page'); ?>
 <?php get_header(); ?>
-
 	<div id="main-content" class="container">
 		<div class="grid_8 alpha">
-			<?php the_404_image(); ?>
+			<?php echo HtmlHelper::image(get_template_directory_uri().'/images/error_404.gif'); ?>
 			<?php the_widget('WP_Widget_Search'); ?>
 		</div>
 		<div class="grid_8 omega">
-			<?php the_404_escape_route(); ?>
+			<?php 
+				$escape = new EscapeRoute();
+				$escape->templates->set_markup('class', 'grid_6');
+				echo $escape->get_markup();
+			 ?>
 		</div>
 	</div>
 	
