@@ -50,23 +50,41 @@ class ThemeHelpers{
 	/**
 	 * Enqueue a JavaScript in WordPress init action
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
+	 * according to this we have to:
+	 * Use the wp_enqueue_scripts action to call this function, 
+	 * or admin_enqueue_scripts to call it on the admin side. 
+	 * Calling it outside of an action can lead to problems. 
+	 * @see @link http://core.trac.wordpress.org/ticket/11526 #11526 for details.
 	 */
-	public static function load_js($handle, $src, $deps = array(), $ver = null, $in_footer = false){
-		function my_scripts_method() {
+	public static function load_js($handle, $src = null, $deps = array(), $ver = null, $in_footer = false){
+		// anonimous functions are available only from 5.3.0
+		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
 			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+			return;
 		}
-		add_action('wp_enqueue_scripts', 'my_scripts_method');
+		
+		add_action('wp_enqueue_scripts', function($handle, $src, $deps, $ver, $in_footer){
+			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
+		});
 	}
 	
 	/**
 	 * Enqueue a StyleSheet in WordPress init action
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
+	 * according to this we have to:
+	 * Use the wp_enqueue_scripts action to call this function. 
+	 * Calling it outside of an action can lead to problems. 
+	 * @see @link http://core.trac.wordpress.org/ticket/17916 #17916 for details.
 	 */
-	public static function load_css($handle, $src, $deps = array(), $ver = null, $media = false){
-		function my_scripts_method() {
+	public static function load_css($handle, $src = null, $deps = array(), $ver = null, $media = false){
+		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
 			wp_enqueue_style($handle, $src, $deps, $ver, $media);
+			return;
 		}
-		add_action('wp_enqueue_scripts', 'my_scripts_method');
+		
+		add_action('wp_enqueue_scripts', function($handle, $src, $deps, $ver, $media){
+			wp_enqueue_style($handle, $src, $deps, $ver, $media);
+		});
 	}
 	
 	/**
