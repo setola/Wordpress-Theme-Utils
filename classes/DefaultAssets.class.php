@@ -83,6 +83,7 @@ class DefaultAssets{
 		$this->add_css('photogallery', get_template_directory_uri().'/css/photogallery.css', null, '0.1', 'screen');
 		$this->add_css('open-details', get_template_directory_uri().'/css/open-details.css', null, '0.1', 'screen');
 		$this->add_css('jquery-fancybox', get_template_directory_uri().'/css/jquery.fancybox.css', null, '2.1.0', 'screen');
+		$this->add_css('linear-menu', get_template_directory_uri().'/css/linear-menu.css', null, '0.1', 'screen');
 		
 		
 		/**
