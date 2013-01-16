@@ -35,7 +35,7 @@ class HtmlHelper extends HtmlBuilder{
 	 * @param array $parms some html attributes in key=>value pairs or a plain string
 	 */
 	public static function anchor($href, $label, $parms=array()){
-		$parms['href'] = esc_attr($href);
+		$parms['href'] = $href;
 		return self::standard_tag('a', $label, $parms);
 	}
 	
@@ -205,7 +205,7 @@ class HtmlBuilder {
 	 * @param string $inner_html the inner html
 	 * @param array $parms the additional html tag parameters
 	 */
-	public static function standard_tag($tag, $inner_html = '', $parms = array()){
+	public static function standard_tag($tag, $inner_html = '', array $parms = array()){
 		return 
 			self::open_tag($tag, $parms) 
 			. $inner_html 
