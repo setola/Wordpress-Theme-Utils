@@ -26,9 +26,11 @@ class ImageGenerator{
 	public function init(){
 		$path = wp_upload_dir();
 		
-		$this->cache['path']	=	$path['basedir'] . '/placeholders/';
+		$subdir = '/placeholders/';
+		
+		$this->cache['path']	=	$path['basedir'] . $subdir;
 		$this->cache['name']	=	md5(serialize($this->settings)).'.png';
-		$this->cache['url']		=	$path['url'] . '/' . $this->cache['name'];
+		$this->cache['url']		=	$path['baseurl'] . $subdir . $this->cache['name'];
 		
 		if(!is_dir($this->cache['path'])){
 			mkdir($this->cache['path']);
@@ -104,21 +106,33 @@ class ImageGenerator{
 			$border
 		);
 		
-		$fontsize = 
+		$fontsize = $this->settings['font_size'];
+		if(empty($fontsize) || !is_numeric($fontsize)) $fontsize = 
 			($this->settings['width'] > $this->settings['height'])
 			? ($this->settings['height'] / 10) 
 			: ($this->settings['width'] / 10);
 		
+		$image_text = (isset($this->settings['image_text']))
+			? $this->settings['image_text']
+			: $this->settings['width'].' X '.$this->settings['height'];
+		
+		$text_position_x = $this->settings['text_position_x'];
+		if(empty($text_position_x) || !is_numeric($text_position_x))
+			$text_position_x = ($this->settings['width']/2) - ($fontsize * 2.75);
+		
+		$text_position_y = $this->settings['text_position_y'];
+		if(empty($text_position_y) || !is_numeric($text_position_y))
+			$text_position_y = ($this->settings['height']/2) + ($fontsize* 0.2);
 		
 		imagettftext(
 			$this->image,
 			$fontsize, 
 			0,
-			($this->settings['width']/2) - ($fontsize * 2.75),
-			($this->settings['height']/2) + ($fontsize* 0.2),
+			$text_position_x,
+			$text_position_y,
 			imagecolorallocate($this->image, $text_color['red'], $text_color['green'], $text_color['blue']), 
 			WORDPRESS_THEME_UTILS_PATH . '/fonts/DS-Digital.ttf', 
-			$this->settings['width'].' X '.$this->settings['height']
+			$image_text
 		);
 		
 		return $this;
