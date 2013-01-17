@@ -158,6 +158,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			//$toret = wp_get_attachment_url($this->images[$index]->ID);
 			$image = wp_get_attachment_image_src($this->images[$index]->ID, $this->media_dimension);
 			$toret = $image[0];
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['src']))
+				$toret = $this->images[$index]['src'];
 		}
 		
 		if($this->timthumb_opts && empty($this->media_dimension)){
@@ -188,6 +191,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			if(!empty($image[1])){
 				return $image[1];
 			}
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['width']))
+				return $this->images[$index]['width'];
 		}
 		return '100%';
 	}
@@ -209,6 +215,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			if(!empty($image[2])){
 				return $image[2];
 			}
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['height']))
+				return $this->images[$index]['height'];
 		}
 		return '100%';
 	}
@@ -224,6 +233,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			return $index;
 		} elseif(is_object($this->images[$index])){
 			return $this->images[$index]->ID;
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['id']))
+				return $this->images[$index]['id'];
 		}
 	}
 	
@@ -240,6 +252,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			$toret = get_post_meta($this->images[$index], '_wp_attachment_image_alt', true);
 		} elseif(is_object($this->images[$index])){
 			$toret = get_post_meta($this->images[$index]->ID, '_wp_attachment_image_alt', true);
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['alt']))
+				$toret = $this->images[$index]['alt'];
 		}
 
 		return $toret;
@@ -259,6 +274,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			$toret = $post->post_excerpt;
 		} elseif(is_object($this->images[$index])){
 			$toret = $this->images[$index]->post_excerpt;
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['caption']))
+				$toret = $this->images[$index]['caption'];
 		}
 
 		return $toret;
@@ -278,6 +296,9 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			$toret = $post->post_content;
 		} elseif(is_object($this->images[$index])){
 			$toret = $this->images[$index]->post_content;
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['description']))
+				$toret = $this->images[$index]['description'];
 		}
 
 		return $toret;
