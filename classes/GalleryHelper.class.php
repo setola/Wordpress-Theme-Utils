@@ -153,12 +153,12 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		if(is_integer($this->images[$index])){
 			//$toret = wp_get_attachment_url($this->images[$index]);
 			$image = wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
+			$toret = $image[0];
 		} elseif(is_object($this->images[$index])){
 			//$toret = wp_get_attachment_url($this->images[$index]->ID);
 			$image = wp_get_attachment_image_src($this->images[$index]->ID, $this->media_dimension);
+			$toret = $image[0];
 		}
-		
-		$toret = $image[0];
 		
 		if($this->timthumb_opts && empty($this->media_dimension)){
 			if(is_array($this->timthumb_opts) && !isset($this->timthumb_opts['render'])){
