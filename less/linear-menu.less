@@ -6,21 +6,32 @@
  * 
  */
 
-@bg_color: #ddd;
+@bg_color: #eee;
 @bg_color_hover: darken(@bg_color, 20%);
 @inner_padding: 5px 10px;
+@border_color_1: #0088CC;
+@border_color_2: darken(@border_color_1, 10%);
 
 .linear-menu ul, ul.linear-menu{
 	width: 100%;
 	min-heigth: 2em;
 	list-style: none;
+	background-color: @bg_color;
+	padding: 0;
 	li{
 		float: left;
+		border-left: 1px solid @border_color_1;
+		border-right: 1px solid @border_color_2;
+		&:first-child{
+			border-left: none;
+		}
+		&:last-child{
+			border-right: none;
+		}
 		a{
 			text-decoration: none;
 			padding: @inner_padding;
 			display: block;
-			background-color: @bg_color;
 			&:hover{
 				background-color: @bg_color_hover;
 			}
