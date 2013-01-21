@@ -6,10 +6,25 @@
  * @version 1.0.0
  */
 class DefaultAssets{
-	private $assets;
+	private $assets = array('css' => array(), 'js' => array());
 	
 	function __construct(){
-		$this->assets = array('css' => array(), 'js' => array());
+		
+		$this->register_standard();
+		
+		/**
+		 * Theme Specific CSS for entire page
+		 */
+		$this->add_css('front-page', get_template_directory_uri().'/css/front-page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
+		$this->add_css('page', get_template_directory_uri().'/css/page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
+		
+		$this->hook();
+	}
+	
+	/**
+	 * Register some assets for generic use
+	 */
+	public function register_standard(){
 		
 		/**
 		 * Jquery UI replacement for the conflicting simlinked js in the wp installation
@@ -77,6 +92,7 @@ class DefaultAssets{
 		$this->add_css('grid-960', get_template_directory_uri().'/css/grid-960.css', null, '0.1', 'screen');
 		$this->add_css('fbqs', get_template_directory_uri().'/css/fbqs.css', null, '0.1', 'screen');
 		$this->add_css('standard-style', get_template_directory_uri().'/css/standard-style.css', null, '0.1', 'screen');
+		$this->add_css('slideshow-fullscreen', get_template_directory_uri().'/css/slideshow-fullscreen.css', null, '0.1', 'screen');
 		$this->add_css('room', get_template_directory_uri().'/css/room.css', null, '0.1', 'screen');
 		$this->add_css('offers', get_template_directory_uri().'/css/offers.css', null, '0.1', 'screen');
 		$this->add_css('location', get_template_directory_uri().'/css/location.css', null, '0.1', 'screen');
@@ -85,14 +101,6 @@ class DefaultAssets{
 		$this->add_css('jquery-fancybox', get_template_directory_uri().'/css/jquery.fancybox.css', null, '2.1.0', 'screen');
 		$this->add_css('linear-menu', get_template_directory_uri().'/css/linear-menu.css', null, '0.1', 'screen');
 		
-		
-		/**
-		 * Theme Specific CSS for entire page
-		 */
-		$this->add_css('front-page', get_template_directory_uri().'/css/front-page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
-		$this->add_css('page', get_template_directory_uri().'/css/page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
-		
-		$this->hook();
 	}
 	
 	/**
