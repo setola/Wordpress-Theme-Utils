@@ -164,8 +164,15 @@ class DefaultAssets{
 					$asset['ver'], 
 					$asset['in_footer']
 				);
+			} else {
+				wp_register_script(
+					$asset['handle'], 
+					$asset['src'], 
+					$asset['deps'], 
+					$asset['ver'], 
+					$asset['in_footer']
+				);
 			}
-			
 		}
 		foreach($this->assets['css'] as $asset){
 			
@@ -181,6 +188,14 @@ class DefaultAssets{
 				wp_register_style(
 					$asset['handle'], 
 					get_template_directory_uri().$asset['src'], 
+					$asset['deps'], 
+					$asset['ver'], 
+					$asset['media']
+				);
+			} else {
+				wp_register_style(
+					$asset['handle'], 
+					$asset['src'], 
 					$asset['deps'], 
 					$asset['ver'], 
 					$asset['media']
