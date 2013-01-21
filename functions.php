@@ -21,7 +21,7 @@ new DebugUtils();
 /**
  * Register some standard assets
  */
-new DefaultAssets();
+//new DefaultAssets();
 
 //TODO: clean useless initializations
 
