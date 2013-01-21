@@ -9,20 +9,12 @@ class DefaultAssets{
 	private $assets = array('css' => array(), 'js' => array());
 	
 	function __construct(){
-		
-		$this->register_standard();
-		
-		/**
-		 * Theme Specific CSS for entire page
-		 */
-		$this->add_css('front-page', get_template_directory_uri().'/css/front-page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
-		$this->add_css('page', get_template_directory_uri().'/css/page.css', array('reset', 'grid-960', 'sprite', 'fbqs', 'standard-style'), '0.1', 'screen');
-		
-		$this->hook();
+		$this->register_standard()->hook();
 	}
 	
 	/**
 	 * Register some assets for generic use
+	 * @return DefaultAssets $this for chainability
 	 */
 	public function register_standard(){
 		
@@ -101,6 +93,7 @@ class DefaultAssets{
 		$this->add_css('jquery-fancybox', get_template_directory_uri().'/css/jquery.fancybox.css', null, '2.1.0', 'screen');
 		$this->add_css('linear-menu', get_template_directory_uri().'/css/linear-menu.css', null, '0.1', 'screen');
 		
+		return $this;
 	}
 	
 	/**
