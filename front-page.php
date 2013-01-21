@@ -1,8 +1,8 @@
 <?php wp_enqueue_style('front-page'); ?>
 <?php get_header(); ?>
 	
-	<div id="main-container" class="container">
-		<div id="slideshow">
+	<div id="main-container" class="container_16">
+		<div id="slideshow" class="grid_16">
 			<?php get_template_part('slideshow'); ?>
 		</div>
 		<div id="page-text" class="grid_10">
