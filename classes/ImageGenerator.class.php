@@ -70,11 +70,19 @@ class ImageGenerator{
 	}
 	
 	/**
+	 * Retrieves the image src attribute
+	 */
+	public function get_image_src(){
+		$this->init();
+		return $this->cache['url'];
+	}
+	
+	/**
 	 * Generates an image
 	 * @return ImageGenerator $this for chainability
 	 */
 	private function generate_image(){
-		$this->image = imagecreate($this->settings['width'], $this->settings['height']);
+		$this->image = imagecreate($this->get_image_width(), $this->get_image_height());
 		
 		$bg_color = self::get_rgb($this->settings['bg_color']);
 		$text_color = self::get_rgb($this->settings['text_color']);
@@ -101,28 +109,28 @@ class ImageGenerator{
 		imagerectangle(
 			$this->image, 
 			0, 0, 
-			$this->settings['width'] - 1, 
-			$this->settings['height'] - 1, 
+			$this->get_image_width() - 1, 
+			$this->get_image_height() - 1, 
 			$border
 		);
 		
 		$fontsize = $this->settings['font_size'];
 		if(empty($fontsize) || !is_numeric($fontsize)) $fontsize = 
 			($this->settings['width'] > $this->settings['height'])
-			? ($this->settings['height'] / 10) 
-			: ($this->settings['width'] / 10);
+			? ($this->get_image_height() / 10) 
+			: ($this->get_image_width() / 10);
 		
 		$image_text = (isset($this->settings['image_text']))
 			? $this->settings['image_text']
-			: $this->settings['width'].' X '.$this->settings['height'];
+			: $this->get_image_width().' X '.$this->get_image_height();
 		
 		$text_position_x = $this->settings['text_position_x'];
 		if(empty($text_position_x) || !is_numeric($text_position_x))
-			$text_position_x = ($this->settings['width']/2) - ($fontsize * 2.75);
+			$text_position_x = ($this->get_image_width()/2) - ($fontsize * 2.75);
 		
 		$text_position_y = $this->settings['text_position_y'];
 		if(empty($text_position_y) || !is_numeric($text_position_y))
-			$text_position_y = ($this->settings['height']/2) + ($fontsize* 0.2);
+			$text_position_y = ($this->get_image_height()/2) + ($fontsize* 0.2);
 		
 		imagettftext(
 			$this->image,
@@ -136,6 +144,27 @@ class ImageGenerator{
 		);
 		
 		return $this;
+	}
+	
+	/**
+	 * Gets the image width
+	 */
+	public function get_image_width(){
+		return $this->settings['width'];
+	}
+	
+	/**
+	 * Get the image height
+	 */
+	public function get_image_height(){
+		return $this->settings['height'];
+	}
+	
+	/**
+	 * Generates an alternative text for this image
+	 */
+	public function get_image_alt(){
+		return 'Placeholder image '.$this->get_image_width().'x'.$this->get_image_height();
 	}
 	
 	/**
@@ -221,6 +250,19 @@ class ImageGenerator{
 			);
 		}
 		return $html;
+	}
+	
+	/**
+	 * Finds width and height of a media size
+	 * @param string $media_dimensions the media size
+	 * @return array array('width'=>'','height'=>'','crop'=>'')
+	 */
+	public static function get_dimensions($media_dimensions){
+		$sizes = self::get_all_image_sizes();
+		if(isset($sizes[$media_dimensions]))
+			return $sizes[$media_dimensions];
+		
+		return array('width'=>'unknown','height'=>'unknown','crop'=>'unknown');;
 	}
 	
 	/**
