@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('open-details'); ?>>
+<article id="page-content-openclose-<?php the_ID(); ?>" <?php post_class('open-details'); ?>>
 	
 	<header class="header">
 		<?php the_post_thumbnail(); ?>
@@ -10,16 +10,16 @@
 			wp_enqueue_script('open-details');
 	?>
 	<div class="excerpt">
-		<?php echo ThemeHelpers::get_the_content_before_more(__('Continue reading <span class="meta-nav">&rarr;</span>', 'theme')); ?>
+		<?php echo ThemeHelpers::get_the_content_before_more(); ?>
 	</div>
 	
-	<div class="content openclose">
-		<?php echo ThemeHelpers::get_the_content_after_more(__('Continue reading <span class="meta-nav">&rarr;</span>', 'theme')); ?>
+	<div class="description openclose">
+		<?php echo ThemeHelpers::get_the_content_after_more(); ?>
 	</div>
 	
 	<div class="buttons">
 		<a 
-			data-id="page-content-openclose" 
+			data-id="page-content-openclose-<?php the_ID(); ?>" 
 			data-open="<?php _e('More Info', 'theme'); ?>" 
 			data-close="<?php _e('Close', 'theme'); ?>" 
 			class="open-details-toggler" 
