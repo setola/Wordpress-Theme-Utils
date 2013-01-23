@@ -275,33 +275,6 @@ function the_post_head_image(){
 }
 
 /**
- * Prints the content after the mode tag
- */
-function the_content_after_more(){
-	the_content(null, true);
-}
-
-/**
- * Prints the content before the more tag
- * If the tag is not present it will print the entire body
- */
-function the_content_before_more(){
-	global $more;
-	$swap = $more; 
-	$more = 0; 
-	the_content('', false); 
-	$more = $swap;
-}
-
-/**
- * Checks if the current post has the <!--more--> tag
- */
-function has_more_tag(){
-	global $post;
-	return strpos($post->post_content, '<!--more-->')!==false;
-}
-
-/**
  * Prints the logo
  */
 function the_logo(){

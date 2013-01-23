@@ -173,6 +173,61 @@ class ThemeHelpers{
 	}
 	
 	/**
+	 * Returns the content after the more tag for the given post
+	 * @param int|object $post_id Post ID or post object.
+	 */
+	static function get_the_content_after_more($more_link_text = null, $post_id = null){
+		$toret = '';
+		
+		if(isset($post_id)){
+			global $post;
+			$post = get_post($post_id);
+			setup_postdata($post);
+			$toret = get_the_content($more_link_text, true);
+			wp_reset_postdata();
+		} else {
+			$toret = get_the_content($more_link_text, true);
+		}
+		
+		return $toret;
+	}
+	
+	/**
+	 * Prints the content before the more tag for the given post
+	 * If the tag is not present it will print the entire body
+	 * @param int|object $post_id Post ID or post object.
+	 * @param string $more_link_text Optional. Content for when there is more text.
+	 */
+	static function get_the_content_before_more($more_link_text = null, $post_id = null){
+		global $more, $post;
+		
+		$swap = $more;
+		$more = 0;
+		
+		if(isset($post_id)){
+			$post = get_post($post_id);
+			setup_postdata($post);
+			
+			$toret = get_the_content($more_link_text, false);
+			wp_reset_postdata();
+		} else {
+			$toret = get_the_content($more_link_text, false);
+		}
+		
+		$more = $swap;
+		
+		return $toret;
+	}
+	
+	/**
+	 * Checks if the current post has the <!--more--> tag
+	 */
+	static function has_more_tag(){
+		global $post;
+		return strpos($post->post_content, '<!--more-->')!==false;
+	}
+	
+	/**
 	 * Retrieves the correct DOCTYPE
 	 * @param string $type the type, default is html5
 	 */
