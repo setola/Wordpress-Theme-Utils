@@ -174,9 +174,11 @@ class ThemeHelpers{
 	
 	/**
 	 * Returns the content after the more tag for the given post
+	 * @param string $more_link_text Optional. Content for when there is more text
 	 * @param int|object $post_id Post ID or post object.
+	 * @param bool $apply_filters true if you want the_content filter applyed on the return value
 	 */
-	static function get_the_content_after_more($more_link_text = null, $post_id = null){
+	static function get_the_content_after_more($more_link_text = '', $post_id = null, $apply_filters = true){
 		$toret = '';
 		
 		if(isset($post_id)){
@@ -189,16 +191,22 @@ class ThemeHelpers{
 			$toret = get_the_content($more_link_text, true);
 		}
 		
+		if($apply_filters){
+			$toret = apply_filters('the_content', $toret);
+			$toret = str_replace(']]>', ']]&gt;', $toret);
+		}
+		
 		return $toret;
 	}
 	
 	/**
 	 * Prints the content before the more tag for the given post
 	 * If the tag is not present it will print the entire body
+	 * @param string $more_link_text Optional. Content for when there is more text
 	 * @param int|object $post_id Post ID or post object.
-	 * @param string $more_link_text Optional. Content for when there is more text.
+	 * @param bool $apply_filters true if you want the_content filter applyed on the return value
 	 */
-	static function get_the_content_before_more($more_link_text = null, $post_id = null){
+	static function get_the_content_before_more($more_link_text = '', $post_id = null, $apply_filters = true){
 		global $more, $post;
 		
 		$swap = $more;
@@ -215,6 +223,11 @@ class ThemeHelpers{
 		}
 		
 		$more = $swap;
+		
+		if($apply_filters){
+			$toret = apply_filters('the_content', $toret);
+			$toret = str_replace(']]>', ']]&gt;', $toret);
+		}
 		
 		return $toret;
 	}
