@@ -1,0 +1,35 @@
+/*!
+ * open-details.less
+ * style for page body open\close feature
+ * 
+ * Compiled on :compileTime:
+ */
+
+@import-once "variables";
+@import-once "mixins";
+
+
+@startColor: #FFFFB5;
+@endColor: #D5AF60;
+@textColor: #fff;
+@textShadow: 0 -1px 0 rgba(0, 0, 0, .25);
+
+.open-details {
+	.description {
+		display: none;
+	}
+
+	.buttons {
+		a {
+			margin-right: 10px;
+
+			&.book-room {
+				heigth: 30px;
+				line-height: 30px;
+				min-width: 120px;
+				display: inline-block;
+				.defaultButton(@startColor, @endColor, @textColor, @textShadow);
+			}
+		}
+	}
+}
