@@ -2,7 +2,7 @@
  * linear-menu.less
  * Put here the style for a linear menu
  * 
- * Compiled on Wed, 16 Jan 2013 15:22:28 GMT
+ * Compiled on Wed, 23 Jan 2013 14:13:30 GMT
  * 
  */
 .linear-menu ul,
@@ -10,19 +10,30 @@ ul.linear-menu {
   width: 100%;
   min-heigth: 2em;
   list-style: none;
+  background-color: #eeeeee;
+  padding: 0;
 }
 .linear-menu ul li,
 ul.linear-menu li {
   float: left;
+  border-left: 1px solid #0088cc;
+  border-right: 1px solid #006699;
+}
+.linear-menu ul li:first-child,
+ul.linear-menu li:first-child {
+  border-left: none;
+}
+.linear-menu ul li:last-child,
+ul.linear-menu li:last-child {
+  border-right: none;
 }
 .linear-menu ul li a,
 ul.linear-menu li a {
   text-decoration: none;
   padding: 5px 10px;
   display: block;
-  background-color: #dddddd;
 }
 .linear-menu ul li a:hover,
 ul.linear-menu li a:hover {
-  background-color: #aaaaaa;
+  background-color: #bbbbbb;
 }

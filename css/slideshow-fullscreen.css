@@ -1,6 +1,6 @@
 /*!
- * offers.less
- * Put here the style for the photogallery
+ * sprite.less
+ * Put here the style for the sprite
  * 
  * Compiled on Wed, 23 Jan 2013 14:13:30 GMT
  */
@@ -27,3 +27,11 @@
  * 
  * Compiled on :compileTime:
  */
+#slideshow.fullscreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 1100;
+}
