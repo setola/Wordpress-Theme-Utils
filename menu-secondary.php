@@ -2,9 +2,9 @@
 	wp_nav_menu(
 		array(
 			'theme_location'	=>	'secondary',
+			'menu_class'		=>	'linear-menu clearfix',
 			'container'			=>	'',
 			'depth'				=>	1,
-			//'walker'			=>	new RemoveSpacesWalkerNavMenu(),
 			'before'			=>	'',
 			'after'				=>	'',
 			'link_before'		=>	'',
