@@ -28,7 +28,7 @@ new DebugUtils();
 /**
  * Iframe system
  */
-global $offers;
+/*global $offers;
 $offers = new SpecialOffersSnippet('itqua22319');
 $offers
 	->add_param('displayPrice', 1)
@@ -39,14 +39,14 @@ $offers
 	->add_param('pn', __(' per night', 'theme'))
 	->add_param('cta', __('Check Availability', 'theme'))
 	->add_param('ctam', __('More Info', 'theme'));
-
+*/
 /**
  * Runtime infos
  */
-global $runtime_infos;
+/*global $runtime_infos;
 $runtime_infos = new RuntimeInfos();
 $runtime_infos->hook();
-
+*/
 /**
  * PECT_HTTP is usually missing...
  * @param array $parsed_url the array to be merged
@@ -85,43 +85,14 @@ add_filter('show_admin_bar', '__return_false');
  */
 add_filter('body_class', array('ThemeHelpers', 'body_class'));
 
-/**
- * Hook some functions to wp (After WP object is set up)
- */
-//add_action('wp', array('ThemeHelpers', 'head'));
 
-/**
- * Image sizes for this theme
- */
-add_theme_support('post-thumbnails');
-//set_post_thumbnail_size(940, 220, true);
 
-/**
- * @var int define here the id of the logo uploaded in the media library.
- */
-define('LOGO_MEDIA_ID', 121);
-add_image_size('logo', 220, 87, true);
-
-add_image_size('slideshow', 940, 400, true);
-
-/**
- * Remove some useless css and js by wpml
- */
-define('ICL_DONT_LOAD_LANGUAGES_JS', true);
-define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
-define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
 
 
 
 
 // TODO: move this into ThemeHelpers to allow overloading in child theme 
 
-/**
- * Prints the language menu
- */
-function the_language_menu(){
-	do_action('icl_language_selector');
-}
 
 
 
@@ -129,6 +100,7 @@ function the_language_menu(){
 /**
  * Prints the sub pages
  */
+/*
 function the_children(){
 	$children = get_pages(
 			array(
@@ -172,30 +144,32 @@ EOF
 	echo '</div>';
 	endif;
 }
-
+*/
 
 
 /**
  * Print the <html> opening tag
  * @param string|array $class some additional classes
  */
-function the_html($class=''){
-	if(is_array($class)){
-		$class = ' '.join(' ', $class);
+if(!function_exists('the_html')) { 
+	function the_html($class=''){
+		if(is_array($class)){
+			$class = ' '.join(' ', $class);
+		}
+		$class = ' '.trim($class);
+		?>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js<?php echo $class; ?>" <?php language_attributes(); ?>> <!--<![endif]-->
+		<?php 
 	}
-	$class = ' '.trim($class);
-	?>
-	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-	<!--[if IE 8]>         <html class="no-js lt-ie9<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-	<!--[if gt IE 8]><!--> <html class="no-js<?php echo $class; ?>" <?php language_attributes(); ?>> <!--<![endif]-->
-	<?php 
 }
 
 /**
  * Print the markup from the FBSeo plugin
  */
-function the_fb_seo(){
+/*function the_fb_seo(){
 	echo ThemeHelpers::heading();
 }
 
@@ -273,10 +247,10 @@ function the_post_head_image(){
 		}
 	}
 }
-
+*/
 /**
  * Prints the logo
  */
-function the_logo(){
+/*function the_logo(){
 	echo wp_get_attachment_image(LOGO_MEDIA_ID, 'logo');
-}
+}*/

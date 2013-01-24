@@ -88,6 +88,16 @@ class ThemeHelpers{
 	}
 	
 	/**
+	 * Remove some useless css and js by wpml
+	 * @see @link http://wpml.org/documentation/support/wpml-coding-api/
+	 */
+	public static function remove_wpml_assets(){
+		define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+		define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+		define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
+	}
+
+	/**
 	 * Merges some images to a single big one to save some http connections.
 	 * Stores it in a cache folder.
 	 * To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true
