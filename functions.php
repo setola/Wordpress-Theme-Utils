@@ -43,10 +43,10 @@ $offers
 /**
  * Runtime infos
  */
-/*global $runtime_infos;
+global $runtime_infos;
 $runtime_infos = new RuntimeInfos();
 $runtime_infos->hook();
-*/
+
 /**
  * PECT_HTTP is usually missing...
  * @param array $parsed_url the array to be merged
