@@ -56,9 +56,10 @@ class DefaultAssets{
 		
 		
 		/**
-		 * Fblib
+		 * Fblib, remember to fill the fbcallback.js in your child theme!
 		 */
-		$this->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='.'/js/fbcallback.js', array('jquery','jquery.ui.selectmenu'), '1', true);
+		$this->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='
+				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery','jquery.ui.selectmenu'), '1', true);
 		
 		
 		
