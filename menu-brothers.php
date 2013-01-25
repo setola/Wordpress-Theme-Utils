@@ -1,10 +1,6 @@
 <?php 
 global $post;
 
-if(empty($post->ancestors)){
-	return;
-}
-
 $children = get_pages(
 	array(
 		'child_of' 		=>	$post->post_parent,
