@@ -15,7 +15,7 @@ if(count($children)){
 		$list[] = HtmlHelper::anchor(
 			get_permalink($child->ID), 
 			get_the_title($child->ID),
-			array('class'=>'brother-anchor post-'.$child->ID)
+			array('class'=>'brother-anchor post-'.$child->ID.(($child->ID == get_the_ID())?' current':''))
 		);
 	}
 	echo HtmlHelper::unorderd_list($list, array('class'=>'brothers clearfix'));
