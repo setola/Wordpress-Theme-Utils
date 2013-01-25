@@ -42,9 +42,9 @@ class HtmlHelper extends HtmlBuilder{
 	/**
 	 * Retrieves a <li> tag
 	 * @param string $inner_html the inner html
-	 * @param string|array $parms the optional attributes for the <li>
+	 * @param array $parms the optional attributes for the <li>
 	 */
-	public static function list_item($inner_html, $parms=''){
+	public static function list_item($inner_html, $parms=array()){
 		return self::standard_tag('li', $inner_html, $parms);
 EOF;
 	}
