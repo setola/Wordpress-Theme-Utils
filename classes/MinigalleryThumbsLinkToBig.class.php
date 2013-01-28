@@ -1,5 +1,11 @@
 <?php 
-
+/**
+ * Generates a list of thumbnail each one is an anchor 
+ * to the image with 'full' media dimensions.
+ * By default loads FancyBox so to have an eye candy popup effect.
+ * @author etessore
+ * @version 1.0.0
+ */
 class MinigalleryThumbsLinkToBig extends GalleryHelper{
 	public $tpl;
 	
