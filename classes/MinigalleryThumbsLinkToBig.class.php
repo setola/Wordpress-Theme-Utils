@@ -1,9 +1,17 @@
 <?php 
 
 class MinigalleryThumbsLinkToBig extends GalleryHelper{
+	public $tpl;
+	
+	public function __construct(){
+		$this->set_template('<div class="images-container">%list%</div>');
+	}
+	
 	public function get_markup(){
 		$toret = '';
 		if(count($this->images)>0){
+			$subs = new SubstitutionTemplate();
+			$subs->set_tpl($this->tpl);
 			ThemeHelpers::load_js('minigallery-thumbs-link-to-big');
 			ThemeHelpers::load_css('jquery-fancybox');
 			foreach($this->images as $index => $image){
@@ -20,6 +28,7 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 					array('class'=>'fancybox','rel'=>'group')
 				);
 			}
+			$toret = $subs->set_markup('list', $toret)->replace_markup();
 		}
 		return $toret;
 	}
