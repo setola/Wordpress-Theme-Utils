@@ -14,7 +14,7 @@ class HtmlHelper extends HtmlBuilder{
 	 */
 	public static function script($content, $parms=array()){
 		$parms['type'] 	= 'text/javascript';
-		return self::standard_tag('script', $content);
+		return self::standard_tag('script', $content, $parms);
 	}
 	
 	/**
