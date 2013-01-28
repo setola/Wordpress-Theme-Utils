@@ -31,7 +31,11 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 							'data-caption'	=>	$this->get_image_caption($index)
 						)
 					), 
-					array('class'=>'fancybox','rel'=>'group')
+					array(
+							'class'	=>	'fancybox',
+							'rel'	=>	'group',
+							'title'	=>	$this->get_image_caption($index)
+					)
 				);
 			}
 			$toret = $subs->set_markup('list', $toret)->replace_markup();
