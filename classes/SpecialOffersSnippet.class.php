@@ -2,8 +2,10 @@
 /**
  * Manages the integration of the special offers snippet
  * @author etessore
- * @version 1.0.2
+ * @version 1.0.3
  * 
+ * 1.0.3
+ * 	remove dependency from FeatureWithAsset and used ThemeHelpers::load_js()
  * 1.0.2
  * 	Fixed Notice: wp_enqueue_script was called incorrectly
  * 1.0.1
@@ -11,7 +13,7 @@
  * 1.0.0
  * 	Initial Release
  */
-class SpecialOffersSnippet extends FeatureWithAssets{
+class SpecialOffersSnippet {
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/promotions.php';
 	const default_divdest = 'FB_so';
 	
@@ -33,22 +35,21 @@ EOF;
 		$this->templates
 			->set_tpl($tpl)
 			->set_markup('loading', __('Loading Offers...', 'theme'));
-		function my_scripts_method(){
-			wp_register_script(
-				'snippet-com', 
-				'http://hotelsitecontents.fastbooking.com/js/com.js',
-				null,
-				'0.1',
-				true
+		
+		$this->add_param('hid', $hid)
+			->add_param('divdest', self::default_divdest);
+		
+		$this->index = 0;
+		
+		if(!is_admin()){
+			ThemeHelpers::load_js(
+					'snippet-com',
+					'http://hotelsitecontents.fastbooking.com/js/com.js',
+					null,
+					'0.1',
+					true
 			);
 		}
-		add_action('wp_enqueue_scripts', 'my_scripts_method');
-		$this
-			->add_asset('snippet-com', 'js')
-			->add_param('hid', $hid)
-			->add_param('divdest', self::default_divdest);
-		$this->index = 0;
-		if(!is_admin() && $this->load_assets());
 	}
 
 	/**
