@@ -71,20 +71,29 @@ EOF;
 	 * Retrieves a <ul> tag
 	 * @param string|array $inner_html the inner html.
 	 * If an array is passed, every element will be wrapped inside a <li> tag
-	 * @param string|array $parms the optional attributes for the <ul>
+	 * @param array $parms the optional attributes for the <ul>
 	 */
-	public static function unorderd_list($inner_html, $parms=''){
+	public static function unorderd_list($inner_html, $parms=array()){
 		return self::standard_tag('ul', self::list_inner_html($inner_html), $parms);
 	}
 	
 	/**
 	 * Retrieves a <ol> tag
 	 * @param string|array $inner_html the inner html.
-	 * If is an array every element will be brapped inside a <li> tag
-	 * @param string|array $parms the optional attributes for the <ol>
+	 * If is an array every element will be wrapped inside a <li> tag
+	 * @param array $parms the optional attributes for the <ol>
 	 */
-	public static function ordered_list($inner_html, $parms=''){
+	public static function ordered_list($inner_html, $parms=array()){
 		return self::standard_tag('ol', self::list_inner_html($inner_html), $parms);
+	}
+	
+	/**
+	 * Get the markup for a <span> tag
+	 * @param string $src the image source
+	 * @param array $parms additional parameters
+	 */
+	public static function span($inner_html, $parms=array()){
+		return self::standard_tag('span', self::list_inner_html($inner_html), $parms);
 	}
 }
 
