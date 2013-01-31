@@ -3,6 +3,9 @@ jQuery(document).ready(function(){
 	jQuery.each(window.preload_images, function(index, value){
 		var slideshow = jQuery('#'+value.uid+' .cycle');
 		var loading = slideshow.closest('.loading');
+		if(typeof(value.loading)=='undefined'){
+			value.loading = '';
+		}
 		var placeholder_text = value.loading.replace(/%lenght%/, value.lenght);
 		
 		jQuery.each(window.preload_images.slideshow.images, function(index, value){
