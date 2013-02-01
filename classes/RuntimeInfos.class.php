@@ -38,8 +38,13 @@ class RuntimeInfos{
 			->add_info('theme_url', get_template_directory_uri())
 			->add_info('upload_dir', $uploadDir)
 			->add_info('home_url', get_bloginfo('url'))
-			->add_info('ajaxurl', admin_url('admin-ajax.php'))
-			->generate_unique_id();
+			->add_info('ajaxurl', admin_url('admin-ajax.php'));
+		
+		if(defined('ICL_LANGUAGE_CODE')){
+			$this->add_info('currentLanguage', substr(ICL_LANGUAGE_CODE, 0, 2));
+		}
+		
+		$this->generate_unique_id();
 
 		set_transient($this->id, $this->infos);
 		if($this->type == self::TYPE_AJAX){
