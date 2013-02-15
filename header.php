@@ -22,7 +22,7 @@
 			<span><?php echo ThemeHelpers::get_the_seo_span(); ?></span>
 		</div>
 		<div id="language-menu" class="grid_4">
-			<?php the_language_menu(); ?>
+			<?php do_action('icl_language_selector'); ?>
 		</div>
 	</div>
 	
