@@ -18,7 +18,8 @@
 <body <?php body_class(); ?>>
 	<div id="head-container" class="container_16">
 		<div id="heading" class="grid_12 heading">
-			<?php the_fb_seo(); ?>
+			<h1><?php echo ThemeHelpers::get_the_seo_h1(); ?></h1>
+			<span><?php echo ThemeHelpers::get_the_seo_span(); ?></span>
 		</div>
 		<div id="language-menu" class="grid_4">
 			<?php the_language_menu(); ?>
