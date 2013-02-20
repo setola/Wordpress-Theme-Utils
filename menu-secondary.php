@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The Template part for displaying the footer menu
+ * 
+ * @since 0.1
+ */
+
 	wp_nav_menu(
 		array(
 			'theme_location'	=>	'secondary',

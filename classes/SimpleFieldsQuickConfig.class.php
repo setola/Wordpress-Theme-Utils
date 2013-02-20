@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains SimpleFieldsQuickConfig class definition
+ */
 
 /**
  * Perform a quick configuration for Simple Fields plugin
@@ -9,8 +12,20 @@
  * @version 1.0
  */
 class SimpleFieldsQuickConfig{
+	
+	/**
+	 * @var string the post type
+	 */
 	private $post_type;
+	
+	/**
+	 * @var array stores the Simple Fields groups
+	 */
 	private $groups;
+	
+	/**
+	 * @var array Simple Fields connectors
+	 */
 	private $connectors;
 	
 	/**

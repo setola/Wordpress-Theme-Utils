@@ -1,5 +1,14 @@
-<?php wp_enqueue_style('page'); ?>
-<?php get_header(); ?>
+<?php 
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @since 0.1
+ */
+
+wp_enqueue_style('page');
+get_header(); 
+
+?>
 	<div id="main-content" class="container_16">
 		<div class="grid_8 alpha">
 			<?php 

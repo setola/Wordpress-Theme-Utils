@@ -1,5 +1,14 @@
-<?php wp_enqueue_style('front-page'); ?>
-<?php get_header(); ?>
+<?php 
+/**
+ * The Template for displaying the home page
+ * 
+ * @since 0.1
+ */
+
+wp_enqueue_style('front-page');
+get_header(); 
+
+?>
 	
 	<div id="main-container" class="container_16">
 		<div id="slideshow" class="grid_16">

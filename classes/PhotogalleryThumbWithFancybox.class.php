@@ -1,8 +1,23 @@
 <?php 
+/**
+ * stores the PhotogalleryThumbWithFancybox class 
+ */
 
+/**
+ * Manages images and markup for a photogallery where 
+ * clicking on a little thumb opens the big image in fancybox 
+ * @author etessore
+ */
 class PhotogalleryThumbWithFancybox extends GalleryHelper{
+	
+	/**
+	 * @var array stores the sizes of the images
+	 */
 	public $sizes;
 
+	/**
+	 * Initializes the photogallery
+	 */
 	public function __construct(){
 		$this
 		->set_markup('loading', '<div class="loading">'.__('Loading...', $this->textdomain).'</div>')
@@ -17,16 +32,28 @@ EOF
 		);
 	}
 	
+	/**
+	 * Sets the images sizes: array('w'=>xxx, 'h'=>yyy)
+	 * @param array $sizes
+	 */
 	public function set_sizes($sizes){
 		$this->sizes = $sizes;
 		return $this;
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see FeatureWithAssets::load_assets()
+	 */
 	public function load_assets(){
 		wp_enqueue_style('photogallery');
 		wp_enqueue_script('photogallery');
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see GalleryHelper::get_markup()
+	 */
 	public function get_markup(){
 		$markup_images = '';
 		if(count($this->images)>0){

@@ -1,4 +1,13 @@
 <?php 
+/**
+ * stores the HeadHelper class declaration
+ */
+
+/**
+ * Some helper for the code inside <head> tag
+ * @author etessore
+ *
+ */
 class HeadHelper{
 	
 	/**
@@ -49,6 +58,7 @@ class HeadHelper{
 	}
 	
 	/**
+	 * Retrieves some usefull meta tags for the <head>
 	 * @return some usefull meta tags for the <head>
 	 */
 	public function get_head(){

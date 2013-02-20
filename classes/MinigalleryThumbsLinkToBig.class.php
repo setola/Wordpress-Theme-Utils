@@ -1,5 +1,9 @@
 <?php 
 /**
+ * storest MinigalleryThumbsLinkToBig class definition
+ */
+
+/**
  * Generates a list of thumbnail each one is an anchor 
  * to the image with 'full' media dimensions.
  * By default loads FancyBox so to have an eye candy popup effect.
@@ -7,12 +11,22 @@
  * @version 1.0.0
  */
 class MinigalleryThumbsLinkToBig extends GalleryHelper{
+	/**
+	 * @var string the substitution template
+	 */
 	public $tpl;
 	
+	/**
+	 * Initializes the minigallery
+	 */
 	public function __construct(){
 		$this->set_template('<div class="images-container">%list%</div>');
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see GalleryHelper::get_markup()
+	 */
 	public function get_markup(){
 		$toret = '';
 		if(count($this->images)>0){

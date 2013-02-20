@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \OneImageForAll</title>
+<title>WP Theme Utils » \OneImageForAll</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -106,17 +106,16 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
 <li class="property public inherited"><a href="#property_assets" title="$assets :: "><span class="description">the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</span><pre>$assets</pre></a></li>
-<li class="property public "><a href="#property_cache_dir" title="$cache_dir :: "><span class="description"></span><pre>$cache_dir</pre></a></li>
-<li class="property public "><a href="#property_cache_name" title="$cache_name :: "><span class="description"></span><pre>$cache_name</pre></a></li>
-<li class="property public "><a href="#property_cache_path" title="$cache_path :: "><span class="description"></span><pre>$cache_path</pre></a></li>
-<li class="property public "><a href="#property_cache_url" title="$cache_url :: "><span class="description"></span><pre>$cache_url</pre></a></li>
-<li class="property public "><a href="#property_config" title="$config :: "><span class="description"></span><pre>$config</pre></a></li>
-<li class="property public "><a href="#property_force_image_refresh" title="$force_image_refresh :: "><span class="description"></span><pre>$force_image_refresh</pre></a></li>
+<li class="property public "><a href="#property_cache_dir" title="$cache_dir :: "><span class="description">stores the base directory of the cache file</span><pre>$cache_dir</pre></a></li>
+<li class="property public "><a href="#property_cache_name" title="$cache_name :: "><span class="description">stores the name of the cache file</span><pre>$cache_name</pre></a></li>
+<li class="property public "><a href="#property_cache_path" title="$cache_path :: "><span class="description">stores the path of the cache file</span><pre>$cache_path</pre></a></li>
+<li class="property public "><a href="#property_cache_url" title="$cache_url :: "><span class="description">stores the url of the cache file</span><pre>$cache_url</pre></a></li>
+<li class="property public "><a href="#property_config" title="$config :: "><span class="description">stores the configuration</span><pre>$config</pre></a></li>
+<li class="property public "><a href="#property_force_image_refresh" title="$force_image_refresh :: "><span class="description">true if you want to force cache refresh</span><pre>$force_image_refresh</pre></a></li>
 <li class="property public inherited"><a href="#property_images" title="$images :: "><span class="description">the list of images</span><pre>$images</pre></a></li>
 <li class="property public inherited"><a href="#property_media_dimension" title="$media_dimension :: "><span class="description">WordPress media size name</span><pre>$media_dimension</pre></a></li>
-<li class="property public "><a href="#property_no_images" title="$no_images :: "><span class="description"></span><pre>$no_images</pre></a></li>
+<li class="property public "><a href="#property_no_images" title="$no_images :: "><span class="description">to be returned when no image is available</span><pre>$no_images</pre></a></li>
 <li class="property public inherited"><a href="#property_static_markup" title="$static_markup :: "><span class="description">Stores some static html</span><pre>$static_markup</pre></a></li>
-<li class="property public inherited"><a href="#property_textdomain" title="$textdomain :: "><span class="description"></span><pre>$textdomain</pre></a></li>
 <li class="property public inherited"><a href="#property_timthumb_opts" title="$timthumb_opts :: "><span class="description">options for timthumb</span><pre>$timthumb_opts</pre></a></li>
 <li class="property public inherited"><a href="#property_tpl" title="$tpl :: "><span class="description">the html template</span><pre>$tpl</pre></a></li>
 <li class="property public inherited"><a href="#property_unid" title="$unid :: "><span class="description">the unique id for the current gallery it will be automatically created if not specified</span><pre>$unid</pre></a></li>
@@ -379,7 +378,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 </div>
 <a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
 <h2>Set the static markup; ie: prev\next\loading divs</h2>
-<pre>set_markup($key, string $markup) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<pre>set_markup(string $key, string $markup) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -388,7 +387,9 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 <td>\GalleryHelper::set_markup()</td>
 </tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the string has to be substituted</p></div>
 <div class="subelement argument">
 <h4>$markup</h4>
 <code>string</code><p>html markup</p></div>
@@ -663,38 +664,38 @@ a wordpress media id or an image object</h2>
 </div></div>
 </div>
 <a id="property_cache_dir"> </a><div class="element clickable property public property_cache_dir" data-toggle="collapse" data-target=".property_cache_dir .collapse">
-<h2></h2>
-<pre>$cache_dir </pre>
+<h2>stores the base directory of the cache file</h2>
+<pre>$cache_dir : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_cache_name"> </a><div class="element clickable property public property_cache_name" data-toggle="collapse" data-target=".property_cache_name .collapse">
-<h2></h2>
-<pre>$cache_name </pre>
+<h2>stores the name of the cache file</h2>
+<pre>$cache_name : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_cache_path"> </a><div class="element clickable property public property_cache_path" data-toggle="collapse" data-target=".property_cache_path .collapse">
-<h2></h2>
-<pre>$cache_path </pre>
+<h2>stores the path of the cache file</h2>
+<pre>$cache_path : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_cache_url"> </a><div class="element clickable property public property_cache_url" data-toggle="collapse" data-target=".property_cache_url .collapse">
-<h2></h2>
-<pre>$cache_url </pre>
+<h2>stores the url of the cache file</h2>
+<pre>$cache_url : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_config"> </a><div class="element clickable property public property_config" data-toggle="collapse" data-target=".property_config .collapse">
-<h2></h2>
-<pre>$config </pre>
+<h2>stores the configuration</h2>
+<pre>$config : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_force_image_refresh"> </a><div class="element clickable property public property_force_image_refresh" data-toggle="collapse" data-target=".property_force_image_refresh .collapse">
-<h2></h2>
-<pre>$force_image_refresh </pre>
+<h2>true if you want to force cache refresh</h2>
+<pre>$force_image_refresh : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -723,8 +724,8 @@ a wordpress media id or an image object</h2>
 </div></div>
 </div>
 <a id="property_no_images"> </a><div class="element clickable property public property_no_images" data-toggle="collapse" data-target=".property_no_images .collapse">
-<h2></h2>
-<pre>$no_images </pre>
+<h2>to be returned when no image is available</h2>
+<pre>$no_images : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -737,18 +738,6 @@ a wordpress media id or an image object</h2>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\GalleryHelper::$$static_markup</td>
-</tr></table>
-</div></div>
-</div>
-<a id="property_textdomain"> </a><div class="element clickable property public property_textdomain" data-toggle="collapse" data-target=".property_textdomain .collapse">
-<h2></h2>
-<pre>$textdomain </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::$$textdomain</td>
 </tr></table>
 </div></div>
 </div>
@@ -795,7 +784,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

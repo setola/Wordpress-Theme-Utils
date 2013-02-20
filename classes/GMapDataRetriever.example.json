@@ -1,0 +1,15 @@
+{
+   "center":{
+      "lat":45.433976164602,
+      "lng":12.342536151409
+   },
+   "point":{
+      "lat":45.433976164602,
+      "lng":12.342536151409
+   },
+   "zoom":14,
+   "type":"ROADMAP",
+   "title":"Hotel Londra Palace",
+   "content":"<p>Riva degli Schiavoni, 4171<br \/>\n30122 Venice, Italy<br \/>\n+39 041 520 0533<br \/>\ninfo@londrapalace.com<br \/>\n<a class=\"book-action\" href=\"javascript:;\">book<\/a><\/p>\n",
+   "book_trans":"book"
+}

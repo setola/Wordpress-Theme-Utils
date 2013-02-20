@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \ImageGenerator</title>
+<title>WP Theme Utils » \ImageGenerator</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -55,18 +55,14 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_flush" title="flush :: Flush the cache file and regenerate it"><span class="description">Flush the cache file and regenerate it</span><pre>flush()</pre></a></li>
-<li class="method public "><a href="#method_get_all_image_sizes" title="get_all_image_sizes :: "><span class="description">get_all_image_sizes()
-        </span><pre>get_all_image_sizes()</pre></a></li>
+<li class="method public "><a href="#method_get_all_image_sizes" title="get_all_image_sizes :: Retrieves all the image sizes registered in WordPress"><span class="description">Retrieves all the image sizes registered in WordPress</span><pre>get_all_image_sizes()</pre></a></li>
 <li class="method public "><a href="#method_get_dimensions" title="get_dimensions :: Finds width and height of a media size"><span class="description">Finds width and height of a media size</span><pre>get_dimensions()</pre></a></li>
 <li class="method public "><a href="#method_get_image_alt" title="get_image_alt :: Generates an alternative text for this image"><span class="description">Generates an alternative text for this image</span><pre>get_image_alt()</pre></a></li>
 <li class="method public "><a href="#method_get_image_height" title="get_image_height :: Get the image height"><span class="description">Get the image height</span><pre>get_image_height()</pre></a></li>
 <li class="method public "><a href="#method_get_image_src" title="get_image_src :: Retrieves the image src attribute"><span class="description">Retrieves the image src attribute</span><pre>get_image_src()</pre></a></li>
 <li class="method public "><a href="#method_get_image_width" title="get_image_width :: Gets the image width"><span class="description">Gets the image width</span><pre>get_image_width()</pre></a></li>
-<li class="method public "><a href="#method_get_markup" title="get_markup :: "><span class="description">get_markup()
-        </span><pre>get_markup()</pre></a></li>
+<li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the html markup for the current generated image"><span class="description">Retrieves the html markup for the current generated image</span><pre>get_markup()</pre></a></li>
 <li class="method public "><a href="#method_get_post_metadata_callback" title="get_post_metadata_callback :: Callback for 'get_post_metadata' hook."><span class="description">Callback for 'get_post_metadata' hook.</span><pre>get_post_metadata_callback()</pre></a></li>
 <li class="method public "><a href="#method_get_rgb" title="get_rgb :: Retrieves the rgb value from the given hexadecimal"><span class="description">Retrieves the rgb value from the given hexadecimal</span><pre>get_rgb()</pre></a></li>
 <li class="method public "><a href="#method_hook" title="hook :: Hooks into WordPress to serve a generated image when no one is available"><span class="description">Hooks into WordPress to serve a generated image when no one is available</span><pre>hook()</pre></a></li>
@@ -86,13 +82,13 @@ if the image exists or has to be generated</span><pre>init()</pre></a></li>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
-                    <ul><li class="property public "><a href="#property_settings" title="$settings :: "><span class="description"></span><pre>$settings</pre></a></li></ul>
+                    <ul><li class="property public "><a href="#property_settings" title="$settings :: "><span class="description">stores the settings for this generator</span><pre>$settings</pre></a></li></ul>
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private "><a href="#property_cache" title="$cache :: "><span class="description"></span><pre>$cache</pre></a></li>
-<li class="property private "><a href="#property_image" title="$image :: "><span class="description"></span><pre>$image</pre></a></li>
-<li class="property private "><a href="#property_url" title="$url :: "><span class="description"></span><pre>$url</pre></a></li>
+<li class="property private "><a href="#property_cache" title="$cache :: "><span class="description">some infos about the cache: url\path\filename...</span><pre>$cache</pre></a></li>
+<li class="property private "><a href="#property_image" title="$image :: "><span class="description">an image resource identifier</span><pre>$image</pre></a></li>
+<li class="property private "><a href="#property_url" title="$url :: "><span class="description">url for the generated image</span><pre>$url</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -127,13 +123,6 @@ if the image exists or has to be generated</span><pre>init()</pre></a></li>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>__construct()
-        </h2>
-<pre>__construct() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="method_flush"></a><div class="element clickable method public method_flush" data-toggle="collapse" data-target=".method_flush .collapse">
 <h2>Flush the cache file and regenerate it</h2>
 <pre>flush(bool $check) : <a href="../classes/ImageGenerator.html">\ImageGenerator</a></pre>
@@ -152,8 +141,7 @@ Useful to pass isset($_REQUEST['refresh']) in the ajax implementation</p>
 </div></div>
 </div>
 <a id="method_get_all_image_sizes"></a><div class="element clickable method public method_get_all_image_sizes" data-toggle="collapse" data-target=".method_get_all_image_sizes .collapse">
-<h2>get_all_image_sizes()
-        </h2>
+<h2>Retrieves all the image sizes registered in WordPress</h2>
 <pre>get_all_image_sizes() : \all</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
@@ -203,8 +191,7 @@ Useful to pass isset($_REQUEST['refresh']) in the ajax implementation</p>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
-<h2>get_markup()
-        </h2>
+<h2>Retrieves the html markup for the current generated image</h2>
 <pre>get_markup() : \the</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -349,26 +336,26 @@ if the image exists or has to be generated</h2>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_settings"> </a><div class="element clickable property public property_settings" data-toggle="collapse" data-target=".property_settings .collapse">
-<h2></h2>
-<pre>$settings </pre>
+<h2>stores the settings for this generator</h2>
+<pre>$settings : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_cache"> </a><div class="element clickable property private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
-<h2></h2>
-<pre>$cache </pre>
+<h2>some infos about the cache: url\path\filename...</h2>
+<pre>$cache : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_image"> </a><div class="element clickable property private property_image" data-toggle="collapse" data-target=".property_image .collapse">
-<h2></h2>
-<pre>$image </pre>
+<h2>an image resource identifier</h2>
+<pre>$image : resource</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_url"> </a><div class="element clickable property private property_url" data-toggle="collapse" data-target=".property_url .collapse">
-<h2></h2>
-<pre>$url </pre>
+<h2>url for the generated image</h2>
+<pre>$url : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -379,7 +366,7 @@ if the image exists or has to be generated</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \SubstitutionTemplate</title>
+<title>WP Theme Utils » \SubstitutionTemplate</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -60,8 +60,7 @@
 in the corresponding value of $this-&gt;static_markup[tag]."><span class="description">Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_markup()</pre></a></li>
 <li class="method public "><a href="#method_set_markup" title="set_markup :: Set the static markup; ie: prev\next\loading divs"><span class="description">Set the static markup; ie: prev\next\loading divs</span><pre>set_markup()</pre></a></li>
-<li class="method public "><a href="#method_set_multi_markup" title="set_multi_markup :: "><span class="description">set_multi_markup()
-        </span><pre>set_multi_markup()</pre></a></li>
+<li class="method public "><a href="#method_set_multi_markup" title="set_multi_markup :: Bulk set the key:markup pairs"><span class="description">Bulk set the key:markup pairs</span><pre>set_multi_markup()</pre></a></li>
 <li class="method public "><a href="#method_set_tpl" title="set_tpl :: Sets the substitutions template"><span class="description">Sets the substitutions template</span><pre>set_tpl()</pre></a></li>
 </ul>
 </li>
@@ -85,7 +84,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_m
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages a substitution set</p>
+<p class="short_description">Manages a string substitution set</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -115,41 +114,49 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 </div>
 <a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
 <h2>Set the static markup; ie: prev\next\loading divs</h2>
-<pre>set_markup($key, string $markup) : <a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></pre>
+<pre>set_markup(string | array $key, string | array $markup) : <a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><code>array</code><p>the searches to be substituted</p></div>
 <div class="subelement argument">
 <h4>$markup</h4>
-<code>string</code><p>html markup</p></div>
+<code>string</code><code>array</code><p>html markups</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td>if $key and $markup have different number of elements</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></code>$this for chainability</div>
 </div></div>
 </div>
 <a id="method_set_multi_markup"></a><div class="element clickable method public method_set_multi_markup" data-toggle="collapse" data-target=".method_set_multi_markup .collapse">
-<h2>set_multi_markup()
-        </h2>
-<pre>set_multi_markup($ass_array) </pre>
+<h2>Bulk set the key:markup pairs</h2>
+<pre>set_multi_markup(array $ass_array) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$ass_array</h4></div>
+<div class="subelement argument">
+<h4>$ass_array</h4>
+<code>array</code><p>an associative array of keys and markups</p></div>
 </div></div>
 </div>
 <a id="method_set_tpl"></a><div class="element clickable method public method_set_tpl" data-toggle="collapse" data-target=".method_set_tpl .collapse">
 <h2>Sets the substitutions template</h2>
-<pre>set_tpl(\strin $tpl) </pre>
+<pre>set_tpl(string $tpl) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$tpl</h4>
-<code>\strin</code><p>the template</p></div>
+<code>string</code><p>the template</p></div>
 </div></div>
 </div>
 <h3>
@@ -173,7 +180,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

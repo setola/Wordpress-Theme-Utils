@@ -1,4 +1,7 @@
 <?php
+/**
+ * Contains the LipsumGenerator 
+ */
 
 /**
  * Generates Lorem Ipsum text
@@ -40,18 +43,59 @@ class LipsumGenerator {
 	 */
 	//const OPTION_NAME_RENDER = 'lipsum_generator_render';
 
+	/**
+	 * @var string the format type
+	 */
 	private $format;
+	
+	/**
+	 * @var int number of paragraphs
+	 */
 	private $number_of_paragraphs;
+	
+	/**
+	 * @var int words in a paragraph
+	 */
 	private $words_per_paragraph;
+	
+	/**
+	 * @var int minimum amount of words until a single word can be repeated
+	 */
 	private $words_per_sentence;
+	
+	/**
+	 * @var array all generated texts will start with thouse words (ex. 'Lorem Ipsum') 
+	 */
 	private $beginning;
+	
+	/**
+	 * @var GeneratorDictionary a dictionary for the current generator
+	 */
 	private $dictionary;
+	
+	/**
+	 * @var int the minimum amount of words until a single word can be repeated
+	 */
 	private $min_repeat_count;
+	
+	/**
+	 * @var array config for rich html generator
+	 */
 	private $rich_html_config;
+	
+	/**
+	 * @var mixed a seed for random generator
+	 */
 	private $seed;
-
-	//TODO: still to be checked
+	
+	/**
+	 * @var string the rendered text
+	 */
 	private $render;
+	
+	/**
+	 * @var GaussianMath some math utils
+	 */
 	private $gaussian_math;
 	//public $count;
 
@@ -179,6 +223,7 @@ class LipsumGenerator {
 	}
 
 	/**
+	 * Retrieves an array of random words
 	 * @return array a list of random words
 	 * @param $count int the number of words to ber retrieved
 	 */
@@ -522,6 +567,7 @@ class LipsumGenerator {
 	
 	/**
 	 * Inserts commas and periods in the given array of words.
+	 * @param array $sentence the list of sentence
 	 */
 	private function punctuate(& $sentence){
 		$count = count($sentence);
@@ -546,6 +592,7 @@ class LipsumGenerator {
 	 * Determines the number of commas for a
 	 * sentence of the given length. Average and
 	 * standard deviation are determined superficially
+	 * @param $len int a medium amount of words between two commas
 	 */
 	private function numberOfCommas($len){
 		$avg    = (float) log($len, 6);
@@ -626,6 +673,7 @@ class LipsumGenerator {
 	/**
 	 * Hook for the_content: 
 	 * if there is no content it appends the generated
+	 * @param $content string the content
 	 */
 	public function the_content($content){
 		return (empty($content)) ? $this->__toString() : $content;

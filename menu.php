@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The Template for displaying the navigation bar
+ * 
+ * @since 0.1
+ */
+
 	ThemeHelpers::load_css('linear-menu');
 	wp_nav_menu(
 		array(

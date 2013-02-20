@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains the ShowTitleThumbExcerptWalkerNavMenu class definitions
+ */
 
 /**
  * Shows the title, the post thumbnail 
@@ -7,8 +10,15 @@
  * @version 1.0.0
  */
 class ShowTitleThumbExcerptWalkerNavMenu extends Walker_Nav_Menu {
+	/**
+	 * @var string the substition template
+	 * @see SubstitutionTemplate
+	 */
 	public $tpl;
 	
+	/**
+	 * Initializes the object
+	 */
 	public function __construct(){
 		$this->tpl = new SubstitutionTemplate();
 		$this->tpl->set_tpl(<<< EOF
@@ -27,6 +37,13 @@ EOF
 		
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see Walker_Nav_Menu::end_el()
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item Page data object.
+	 * @param int $depth Depth of page.
+	 */
 	public function end_el(&$output, $item, $depth){
 		setup_postdata(get_post($item->object_id));
 		$this->tpl

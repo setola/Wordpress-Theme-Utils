@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-    <title>Wordpress Theme Utils</title>
+    <title>WP Theme Utils</title>
     <parser>
         <target>data</target>
         <markers>

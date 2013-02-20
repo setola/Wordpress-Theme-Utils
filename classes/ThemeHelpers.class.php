@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * stores the definition for class ThemeHelpers
+ */
 /**
  * Stores some static methods that may be useful for html management
  * @author etessore
@@ -54,7 +56,13 @@ class ThemeHelpers{
 	 * Use the wp_enqueue_scripts action to call this function, 
 	 * or admin_enqueue_scripts to call it on the admin side. 
 	 * Calling it outside of an action can lead to problems. 
+	 * 
 	 * @see @link http://core.trac.wordpress.org/ticket/11526 #11526 for details.
+	 * @param string $handle Script name
+	 * @param string $src Script url
+	 * @param array $deps (optional) Array of script names on which this script depends
+	 * @param string|bool $ver (optional) Script version (used for cache busting), set to NULL to disable
+	 * @param bool $in_footer (optional) Whether to enqueue the script before </head> or before </body>
 	 */
 	public static function load_js($handle, $src = null, $deps = array(), $ver = null, $in_footer = false){
 		// anonimous functions are available only from 5.3.0
@@ -75,6 +83,14 @@ class ThemeHelpers{
 	 * Use the wp_enqueue_scripts action to call this function. 
 	 * Calling it outside of an action can lead to problems. 
 	 * @see @link http://core.trac.wordpress.org/ticket/17916 #17916 for details.
+	 * 
+	 * @param string $handle Name of the stylesheet.
+	 * @param string|bool $src Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.
+	 * @param array $deps Array of handles of any stylesheet that this stylesheet depends on.
+	 *  (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.
+	 * @param string|bool $ver String specifying the stylesheet version number. Set to NULL to disable.
+	 *  Used to ensure that the correct version is sent to the client regardless of caching.
+	 * @param string $media The media for which this stylesheet has been defined.
 	 */
 	public static function load_css($handle, $src = null, $deps = array(), $ver = null, $media = false){
 		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
@@ -275,7 +291,7 @@ class ThemeHelpers{
 	
 	/**
 	 * Get the markup for an <a> tag
-	 * @return the markup for an html <a> tag
+	 * @return string the markup for an html <a> tag
 	 * @param string $href the url to be pointed
 	 * @param string $label the text
 	 * @param array|string $parms some html attributes in key=>value pairs or a plain string
@@ -304,6 +320,12 @@ EOF;
 EOF;
 	}
 	
+	/**
+	 * Retrieves a <script> tag
+	 * @deprecated
+	 * @param string $content the inner content
+	 * @param array $parms some parameters
+	 */
 	public static function script($content, $parms=''){
 		_deprecated_function(__CLASS__.'::'.__FUNCTION__, '1.0.4', 'HtmlHelper::script');
 		$parms 	= self::params($parms);
@@ -424,6 +446,7 @@ EOF;
 	 * Choose in order from:
 	 * FB SEO Plugin
 	 * Post Title
+	 * @param $post int|object the post
 	 */
 	public static function get_the_seo_h1($post = null){
 		if(is_null($post)){
@@ -451,6 +474,7 @@ EOF;
 	 * Choose in order from:
 	 * FB SEO Plugin
 	 * Post Title
+	 * @param $post int|object the post
 	 */
 	public static function get_the_seo_span($post = null){
 		if(is_null($post)){

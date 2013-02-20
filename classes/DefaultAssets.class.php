@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains the DefaultAssets class
+ */
 
 /**
  * Register some useful assets in WordPress
@@ -6,9 +9,19 @@
  * @version 1.0.1
  */
 class DefaultAssets{
+	/**
+	 * @var arrary manages the list of css and js 
+	 */
 	private $assets = array('css' => array(), 'js' => array());
+	
+	/**
+	 * @var array stores infos on path and uri
+	 */
 	private $base_dir = array();
 	
+	/**
+	 * Register some assets and hooks into WP
+	 */
 	function __construct(){
 		$this
 			->register_standard()
@@ -104,6 +117,11 @@ class DefaultAssets{
 	/**
 	 * Adds a javascript to the current set
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
+	 * @param string $handle Script name
+	 * @param string $src Script url
+	 * @param array $deps (optional) Array of script names on which this script depends
+	 * @param string|bool $ver (optional) Script version (used for cache busting), set to NULL to disable
+	 * @param bool $in_footer (optional) Whether to enqueue the script before </head> or before </body>
 	 * @return DefaultAssets $this for chainability
 	 */
 	public function add_js($handle, $src, $deps = array(), $ver = null, $in_footer = false){
@@ -120,6 +138,13 @@ class DefaultAssets{
 	/**
 	 * Adds a css to the current set
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
+	 * @param string $handle Name of the stylesheet.
+	 * @param string|bool $src Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.
+	 * @param array $deps Array of handles of any stylesheet that this stylesheet depends on.
+	 *  (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.
+	 * @param string|bool $ver String specifying the stylesheet version number. Set to NULL to disable.
+	 *  Used to ensure that the correct version is sent to the client regardless of caching.
+	 * @param string $media The media for which this stylesheet has been defined.
 	 * @return DefaultAssets $this for chainability
 	 */
 	public function add_css($handle, $src, $deps = array(), $ver = null, $media = false){

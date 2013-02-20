@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains TinyMCEExcerptCustomization class definition
+ */
 
 /**
  * This class removes the default excerpt metabox
@@ -8,6 +11,10 @@
 class TinyMCEExcerptCustomization{
 	const textdomain = '';
 	const custom_exceprt_slug = '_custom-excerpt';
+	
+	/**
+	 * @var array a list of context where wysiwyg editor is required
+	 */
 	var $contexts;
 
 	/**

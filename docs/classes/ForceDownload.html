@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \ForceDownload</title>
+<title>WP Theme Utils » \ForceDownload</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -59,8 +59,7 @@
 Overload this to insert more checks"><span class="description">Tests if the $_REQUEST[] field is valid
 Overload this to insert more checks</span><pre>check_request()</pre></a></li>
 <li class="method public "><a href="#method_force_download" title="force_download :: AJAX callback for forcing the download of a file"><span class="description">AJAX callback for forcing the download of a file</span><pre>force_download()</pre></a></li>
-<li class="method public "><a href="#method_force_download_anchor" title="force_download_anchor :: "><span class="description">force_download_anchor()
-        </span><pre>force_download_anchor()</pre></a></li>
+<li class="method public "><a href="#method_force_download_anchor" title="force_download_anchor :: Calculates the url for the attachment with id $id"><span class="description">Calculates the url for the attachment with id $id</span><pre>force_download_anchor()</pre></a></li>
 </ul>
 </li></ul>
 </div>
@@ -121,25 +120,30 @@ Overload this to insert more checks</h2>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_force_download_anchor"></a><div class="element clickable method public method_force_download_anchor" data-toggle="collapse" data-target=".method_force_download_anchor .collapse">
-<h2>force_download_anchor()
-        </h2>
-<pre>force_download_anchor(int $id, string $label, array | string $parms) </pre>
+<h2>Calculates the url for the attachment with id $id</h2>
+<pre>force_download_anchor(int $id, string $label, array $parms) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="classes.ThemeHelpers.class.html#%5CThemeHelpers::anchor()">\ThemeHelpers::anchor()</a></td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$id</h4>
-<code>int</code>
-</div>
+<code>int</code><p>the attachment id</p></div>
 <div class="subelement argument">
 <h4>$label</h4>
-<code>string</code>
+<code>string</code><p>the text inside the <a> tag</p>
 </div>
 <div class="subelement argument">
 <h4>$parms</h4>
-<code>array</code><code>string</code><p>@see</p>
+<code>array</code><p>additional parameters for the <a> tag</p>
 </div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>an <a> tag</div>
 </div></div>
 </div>
 </div>
@@ -149,7 +153,7 @@ Overload this to insert more checks</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

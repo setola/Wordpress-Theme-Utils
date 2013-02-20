@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \EscapeRoute</title>
+<title>WP Theme Utils » \EscapeRoute</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -57,23 +57,21 @@
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Initializes the object to the default values"><span class="description">Initializes the object to the default values</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_add_link" title="add_link :: Adds a link"><span class="description">Adds a link</span><pre>add_link()</pre></a></li>
-<li class="method public "><a href="#method_get_markup" title="get_markup :: "><span class="description">get_markup()
-        </span><pre>get_markup()</pre></a></li>
+<li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the markup"><span class="description">Retrieves the markup</span><pre>get_markup()</pre></a></li>
 <li class="method public "><a href="#method_set_separator" title="set_separator :: Set the separator for the list of anchors"><span class="description">Set the separator for the list of anchors</span><pre>set_separator()</pre></a></li>
 <li class="method public "><a href="#method_set_template" title="set_template :: Set the html template"><span class="description">Set the html template</span><pre>set_template()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="method protected "><a href="#method_render_list" title="render_list :: "><span class="description">render_list()
-        </span><pre>render_list()</pre></a></li></ul>
+                    <ul><li class="method protected "><a href="#method_render_list" title="render_list :: Renders the list of anchors"><span class="description">Renders the list of anchors</span><pre>render_list()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_links" title="$links :: "><span class="description"></span><pre>$links</pre></a></li>
-<li class="property public "><a href="#property_list_separator" title="$list_separator :: "><span class="description"></span><pre>$list_separator</pre></a></li>
-<li class="property public "><a href="#property_templates" title="$templates :: "><span class="description"></span><pre>$templates</pre></a></li>
-<li class="property public "><a href="#property_tpl" title="$tpl :: "><span class="description"></span><pre>$tpl</pre></a></li>
+<li class="property public "><a href="#property_links" title="$links :: "><span class="description">the list of link to be printed in case of 404</span><pre>$links</pre></a></li>
+<li class="property public "><a href="#property_list_separator" title="$list_separator :: "><span class="description">the list separator</span><pre>$list_separator</pre></a></li>
+<li class="property public "><a href="#property_templates" title="$templates :: "><span class="description">the substitution engine</span><pre>$templates</pre></a></li>
+<li class="property public "><a href="#property_tpl" title="$tpl :: "><span class="description">the substitution template</span><pre>$tpl</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -137,8 +135,7 @@ Changelog
 </div></div>
 </div>
 <a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
-<h2>get_markup()
-        </h2>
+<h2>Retrieves the markup</h2>
 <pre>get_markup() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -178,8 +175,7 @@ Changelog
 </div></div>
 </div>
 <a id="method_render_list"></a><div class="element clickable method protected method_render_list" data-toggle="collapse" data-target=".method_render_list .collapse">
-<h2>render_list()
-        </h2>
+<h2>Renders the list of anchors</h2>
 <pre>render_list() : \the</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -192,26 +188,26 @@ Changelog
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_links"> </a><div class="element clickable property public property_links" data-toggle="collapse" data-target=".property_links .collapse">
-<h2></h2>
-<pre>$links </pre>
+<h2>the list of link to be printed in case of 404</h2>
+<pre>$links : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_list_separator"> </a><div class="element clickable property public property_list_separator" data-toggle="collapse" data-target=".property_list_separator .collapse">
-<h2></h2>
-<pre>$list_separator </pre>
+<h2>the list separator</h2>
+<pre>$list_separator : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_templates"> </a><div class="element clickable property public property_templates" data-toggle="collapse" data-target=".property_templates .collapse">
-<h2></h2>
-<pre>$templates </pre>
+<h2>the substitution engine</h2>
+<pre>$templates : <a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_tpl"> </a><div class="element clickable property public property_tpl" data-toggle="collapse" data-target=".property_tpl .collapse">
-<h2></h2>
-<pre>$tpl </pre>
+<h2>the substitution template</h2>
+<pre>$tpl : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -222,7 +218,7 @@ Changelog
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

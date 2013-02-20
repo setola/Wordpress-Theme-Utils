@@ -1,3 +1,13 @@
+<?php 
+/**
+ * Template part for a single article (post\page)
+ * Version with title and brief content button to expand it
+ * 
+ * @since 0.1
+ */
+
+0==0; //php doc workaround
+?>
 <article id="page-content-openclose-<?php the_ID(); ?>" <?php post_class('open-details'); ?>>
 	
 	<header class="header">

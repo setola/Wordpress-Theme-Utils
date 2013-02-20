@@ -1,4 +1,7 @@
 <?php 
+/**
+ * stores the ShowItemExcerptWalkerNavMenu class definition
+ */
 
 /**
  * Shows the title, the post thumbnail 
@@ -9,7 +12,14 @@
  * @version 1.0.0
  */
 class ShowItemExcerptWalkerNavMenu extends Walker_Nav_Menu {
+	/**
+	 * @var string the template
+	 */
 	public $tpl;
+	
+	/**
+	 * @var string the excerpt buffer
+	 */
 	public $excerpt_output;
 	
 	/**
@@ -39,6 +49,10 @@ EOF
 	/**
 	 * (non-PHPdoc)
 	 * @see Walker_Nav_Menu::start_el()
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item Menu item data object.
+	 * @param int $depth Depth of menu item. Used for padding.
+	 * @param int $args
 	 */
 	function start_el(&$output, $item, $depth, $args){
 		global $wp_query;

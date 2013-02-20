@@ -1,4 +1,8 @@
 <?php 
+/**
+ * Contains AjaxImageGenerator class definition
+ */
+
 
 /**
  * Hooks the ImageGenerator class to admin-ajax action

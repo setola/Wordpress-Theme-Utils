@@ -1,4 +1,7 @@
 <?php 
+/**
+ * stores the HtmlHelper and HtmlBuilder class definition
+ */
 
 /**
  * Helper class useful to generate some html tags
@@ -89,7 +92,7 @@ EOF;
 	
 	/**
 	 * Get the markup for a <span> tag
-	 * @param string $src the image source
+	 * @param string $inner_html the image source
 	 * @param array $parms additional parameters
 	 */
 	public static function span($inner_html, $parms=array()){
@@ -111,6 +114,7 @@ class HtmlBuilder {
 	const HTML_VERSION = 'html5';
 	
 	/**
+	 * Retrieves the list of self-closing tags
 	 * @return array a list of self-closing tags
 	 */
 	public static function self_closing_tags(){
@@ -188,7 +192,6 @@ class HtmlBuilder {
 	
 	/**
 	 * Retrieves the correct DOCTYPE
-	 * @param string $type the type, default is html5
 	 */
 	public static function doctype() {
 		$doctypes = array(

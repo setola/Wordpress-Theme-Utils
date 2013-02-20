@@ -1,5 +1,11 @@
 <?php 
 /**
+ * Contains ImagePreload class definition
+ */
+
+
+
+/**
  * Takes care of image preloading with jQuery imagesloaded
  * @author etessore
  * @version 1.0.0

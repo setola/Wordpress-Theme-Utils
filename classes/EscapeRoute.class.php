@@ -1,5 +1,9 @@
 <?php 
 /**
+ * stores the EscapeRoute class definition
+ */
+
+/**
  * Manages the navigation links on a 404 page
  * @author etessore
  * @version 1.0.1
@@ -9,9 +13,24 @@
  * 	moved from ThemeHelpers to HtmlHelper class
  */
 class EscapeRoute{
+	/**
+	 * @var array the list of link to be printed in case of 404
+	 */
 	public $links = array();
+	
+	/**
+	 * @var string the substitution template
+	 */
 	public $tpl;
+	
+	/**
+	 * @var SubstitutionTemplate the substitution engine
+	 */
 	public $templates;
+	
+	/**
+	 * @var string the list separator
+	 */
 	public $list_separator = '';
 	
 	/**
@@ -75,6 +94,7 @@ EOF;
 	}
 	
 	/**
+	 * Renders the list of anchors
 	 * @return the rendered the list of anchors
 	 */
 	protected function render_list(){
@@ -91,6 +111,7 @@ EOF;
 	}
 	
 	/**
+	 * Retrieves the markup
 	 * @returns the markup
 	 */
 	public function get_markup(){

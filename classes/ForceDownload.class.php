@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains ForceDownload class definition
+ */
 
 /**
  * Force an attachment to be downloaded
@@ -11,7 +14,6 @@ class ForceDownload{
 	 * Enables the force to download feature
 	 * @param bool $priv
 	 * @param bool $nopriv
-	 * @param string $request_field
 	 */
 	public function __construct($priv=true, $nopriv=true){
 		if($priv) add_action('wp_ajax_download', array(&$this, 'force_download'));
@@ -51,10 +53,12 @@ class ForceDownload{
 	}
 
 	/**
-	 *
-	 * @param int $id
-	 * @param string $label
-	 * @param array|string $parms @see
+	 * Calculates the url for the attachment with id $id
+	 * @param int $id the attachment id
+	 * @param string $label the text inside the <a> tag
+	 * @param array $parms additional parameters for the <a> tag 
+	 * @see ThemeHelpers::anchor()
+	 * @return string an <a> tag
 	 */
 	public function force_download_anchor($id, $label, $parms){
 		return ThemeHelpers::anchor(admin_url('admin-ajax.php').'?action=download&id='.$id, $label, $parms);

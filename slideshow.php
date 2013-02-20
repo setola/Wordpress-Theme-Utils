@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The template part for displaying the slideshow
+ * 
+ * @since 0.1
+ */
+
 add_image_size('slideshow',940, 400);
 
 /**
@@ -7,7 +13,14 @@ add_image_size('slideshow',940, 400);
  * @version 1.0.1
  */
 class Slideshow extends ImagePreload{
+	/**
+	 * @var int the id of the post
+	 */
 	public $post_id;
+	
+	/**
+	 * @var array the list of imagese to be slided
+	 */
 	public $images;
 
 	/**

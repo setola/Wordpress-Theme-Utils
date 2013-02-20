@@ -1,4 +1,7 @@
 <?php 
+/**
+ * stores the RuntimeInfos class definition
+ */
 
 /**
  * Manages a set of info to be printed as a json generally at the endo of the page
@@ -10,12 +13,35 @@
  * 	solved notice of undefined post on 404 pages
  */
 class RuntimeInfos{
+	/**
+	 * @var array the list of infos
+	 */
 	public $infos = array();
+	
+	/**
+	 * @var int the way we want the infos
+	 */
 	public $type;
+	
+	/**
+	 * @var int id of the post these infos refer to
+	 */
 	protected $id;
 	
+	/**
+	 * 
+	 * @var int use this as type to have a <script> tag in the footer
+	 */
 	const TYPE_FOOTER = 1;
+	
+	/**
+	 * @var int uset this as type to have an external js on an admin-ajax.php url
+	 */
 	const TYPE_AJAX = 2;
+	
+	/**
+	 * @var string the action parameter for the admin-ajax
+	 */
 	const ajax_action = 'runtime-infos';
 	
 	/**
@@ -71,6 +97,12 @@ class RuntimeInfos{
 		return $this;
 	}
 	
+	/**
+	 * Sets the type
+	 * @param int $type
+	 * @see RuntimeInfos::TYPE_AJAX
+	 * @see RuntimeInfos::TYPE_FOOTER
+	 */
 	public function set_type($type){
 		$this->type = $type;
 		return $this;

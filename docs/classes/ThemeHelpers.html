@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \ThemeHelpers</title>
+<title>WP Theme Utils » \ThemeHelpers</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -101,8 +101,7 @@ Post Title</span><pre>get_the_seo_span()</pre></a></li>
 <li class="method public "><a href="#method_merge_images" title="merge_images :: Merges some images to a single big one to save some http connections."><span class="description">Merges some images to a single big one to save some http connections.</span><pre>merge_images()</pre></a></li>
 <li class="method public "><a href="#method_params" title="params :: Prepare the $parms to be printed as html attributes"><span class="description">Prepare the $parms to be printed as html attributes</span><pre>params()</pre></a></li>
 <li class="method public "><a href="#method_remove_wpml_assets" title="remove_wpml_assets :: Remove some useless css and js by wpml"><span class="description">Remove some useless css and js by wpml</span><pre>remove_wpml_assets()</pre></a></li>
-<li class="method public "><a href="#method_script" title="script :: "><span class="description">script()
-        </span><pre>script()</pre></a></li>
+<li class="method public "><a href="#method_script" title="script :: Retrieves a &lt;script&gt; tag"><span class="description">Retrieves a &lt;script&gt; tag</span><pre>script()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -158,7 +157,7 @@ Changelog
 </div>
 <a id="method_anchor"></a><div class="element clickable method public method_anchor" data-toggle="collapse" data-target=".method_anchor .collapse">
 <h2>Get the markup for an &lt;a&gt; tag</h2>
-<pre>anchor(string $href, string $label, array | string $parms) : \the</pre>
+<pre>anchor(string $href, string $label, array | string $parms) : string</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -175,7 +174,7 @@ Changelog
 </div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\the</code>markup for an html <a> tag</div>
+<code>string</code>the markup for an html <a> tag</div>
 </div></div>
 </div>
 <a id="method_array_to_html_attributes"></a><div class="element clickable method public method_array_to_html_attributes" data-toggle="collapse" data-target=".method_array_to_html_attributes .collapse">
@@ -300,7 +299,8 @@ Post Title</h2>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$post</h4></div>
+<div class="subelement argument">
+<h4>$post</h4><p>int|object the post</p></div>
 </div></div>
 </div>
 <a id="method_get_the_seo_span"></a><div class="element clickable method public method_get_the_seo_span" data-toggle="collapse" data-target=".method_get_the_seo_span .collapse">
@@ -313,7 +313,8 @@ Post Title</h2>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$post</h4></div>
+<div class="subelement argument">
+<h4>$post</h4><p>int|object the post</p></div>
 </div></div>
 </div>
 <a id="method_get_the_seo_title"></a><div class="element clickable method public method_get_the_seo_title" data-toggle="collapse" data-target=".method_get_the_seo_title .collapse">
@@ -354,7 +355,7 @@ Blog Name</p></div></div></div>
 </div>
 <a id="method_load_css"></a><div class="element clickable method public method_load_css" data-toggle="collapse" data-target=".method_load_css .collapse">
 <h2>Enqueue a StyleSheet in WordPress init action</h2>
-<pre>load_css($handle, $src, $deps, $ver, $media) </pre>
+<pre>load_css(string $handle, string | bool $src, array $deps, string | bool $ver, string $media) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -372,16 +373,30 @@ Calling it outside of an action can lead to problems.</a></td>
 </tr>
 </table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$handle</h4></div>
-<div class="subelement argument"><h4>$src</h4></div>
-<div class="subelement argument"><h4>$deps</h4></div>
-<div class="subelement argument"><h4>$ver</h4></div>
-<div class="subelement argument"><h4>$media</h4></div>
+<div class="subelement argument">
+<h4>$handle</h4>
+<code>string</code><p>Name of the stylesheet.</p></div>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><code>bool</code><p>Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.</p>
+</div>
+<div class="subelement argument">
+<h4>$deps</h4>
+<code>array</code><p>Array of handles of any stylesheet that this stylesheet depends on.
+ (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.</p>
+</div>
+<div class="subelement argument">
+<h4>$ver</h4>
+<code>string</code><code>bool</code><p>String specifying the stylesheet version number. Set to NULL to disable.
+ Used to ensure that the correct version is sent to the client regardless of caching.</p></div>
+<div class="subelement argument">
+<h4>$media</h4>
+<code>string</code><p>The media for which this stylesheet has been defined.</p></div>
 </div></div>
 </div>
 <a id="method_load_js"></a><div class="element clickable method public method_load_js" data-toggle="collapse" data-target=".method_load_js .collapse">
 <h2>Enqueue a JavaScript in WordPress init action</h2>
-<pre>load_js($handle, $src, $deps, $ver, $in_footer) </pre>
+<pre>load_js(string $handle, string $src, array $deps, string | bool $ver, bool $in_footer) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -400,11 +415,24 @@ Calling it outside of an action can lead to problems.</a></td>
 </tr>
 </table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$handle</h4></div>
-<div class="subelement argument"><h4>$src</h4></div>
-<div class="subelement argument"><h4>$deps</h4></div>
-<div class="subelement argument"><h4>$ver</h4></div>
-<div class="subelement argument"><h4>$in_footer</h4></div>
+<div class="subelement argument">
+<h4>$handle</h4>
+<code>string</code><p>Script name</p></div>
+<div class="subelement argument">
+<h4>$src</h4>
+<code>string</code><p>Script url</p></div>
+<div class="subelement argument">
+<h4>$deps</h4>
+<code>array</code><p>(optional) Array of script names on which this script depends</p>
+</div>
+<div class="subelement argument">
+<h4>$ver</h4>
+<code>string</code><code>bool</code><p>(optional) Script version (used for cache busting), set to NULL to disable</p>
+</div>
+<div class="subelement argument">
+<h4>$in_footer</h4>
+<code>bool</code><p>(optional) Whether to enqueue the script before </head> or before </body></p>
+</div>
 </div></div>
 </div>
 <a id="method_merge_images"></a><div class="element clickable method public method_merge_images" data-toggle="collapse" data-target=".method_merge_images .collapse">
@@ -453,15 +481,22 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true</p></
 </div></div>
 </div>
 <a id="method_script"></a><div class="element clickable method public method_script" data-toggle="collapse" data-target=".method_script .collapse">
-<h2>script()
-        </h2>
-<pre>script($content, $parms) </pre>
+<h2>Retrieves a &lt;script&gt; tag</h2>
+<pre>script(string $content, array $parms) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>deprecated</th>
+<td></td>
+</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$content</h4></div>
-<div class="subelement argument"><h4>$parms</h4></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>the inner content</p></div>
+<div class="subelement argument">
+<h4>$parms</h4>
+<code>array</code><p>some parameters</p></div>
 </div></div>
 </div>
 <h3>
@@ -479,7 +514,7 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true</p></
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

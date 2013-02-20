@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \GalleryHelper</title>
+<title>WP Theme Utils » \GalleryHelper</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -59,8 +59,7 @@
 <li class="method public "><a href="#method_add_image" title="add_image :: Adds an image to the current set"><span class="description">Adds an image to the current set</span><pre>add_image()</pre></a></li>
 <li class="method public "><a href="#method_add_images" title="add_images :: Add some images to the current set"><span class="description">Add some images to the current set</span><pre>add_images()</pre></a></li>
 <li class="method public "><a href="#method_calculate_unique" title="calculate_unique :: Calculates the unique id for the current gallery"><span class="description">Calculates the unique id for the current gallery</span><pre>calculate_unique()</pre></a></li>
-<li class="method public "><a href="#method_get_markup" title="get_markup :: "><span class="description">get_markup()
-        </span><pre>get_markup()</pre></a></li>
+<li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the markup for the current gallery"><span class="description">Retrieves the markup for the current gallery</span><pre>get_markup()</pre></a></li>
 <li class="method public inherited"><a href="#method_load_assets" title="load_assets :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets()</pre></a></li>
 <li class="method public inherited"><a href="#method_load_assets_callback" title="load_assets_callback :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets_callback()</pre></a></li>
 <li class="method public "><a href="#method_replace_markup" title="replace_markup :: Replaces the markup in $this-&gt;tpl %tag%s with the one
@@ -105,7 +104,6 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <li class="property public "><a href="#property_images" title="$images :: "><span class="description">the list of images</span><pre>$images</pre></a></li>
 <li class="property public "><a href="#property_media_dimension" title="$media_dimension :: "><span class="description">WordPress media size name</span><pre>$media_dimension</pre></a></li>
 <li class="property public "><a href="#property_static_markup" title="$static_markup :: "><span class="description">Stores some static html</span><pre>$static_markup</pre></a></li>
-<li class="property public "><a href="#property_textdomain" title="$textdomain :: "><span class="description"></span><pre>$textdomain</pre></a></li>
 <li class="property public "><a href="#property_timthumb_opts" title="$timthumb_opts :: "><span class="description">options for timthumb</span><pre>$timthumb_opts</pre></a></li>
 <li class="property public "><a href="#property_tpl" title="$tpl :: "><span class="description">the html template</span><pre>$tpl</pre></a></li>
 <li class="property public "><a href="#property_unid" title="$unid :: "><span class="description">the unique id for the current gallery it will be automatically created if not specified</span><pre>$unid</pre></a></li>
@@ -210,8 +208,7 @@ will be retrieved from the wp media, elsewhere it is an html tag</p></div>
 </div></div>
 </div>
 <a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
-<h2>get_markup()
-        </h2>
+<h2>Retrieves the markup for the current gallery</h2>
 <pre>get_markup() : \the</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -280,12 +277,14 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 </div>
 <a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
 <h2>Set the static markup; ie: prev\next\loading divs</h2>
-<pre>set_markup($key, string $markup) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<pre>set_markup(string $key, string $markup) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the string has to be substituted</p></div>
 <div class="subelement argument">
 <h4>$markup</h4>
 <code>string</code><p>html markup</p></div>
@@ -500,12 +499,6 @@ a wordpress media id or an image object</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_textdomain"> </a><div class="element clickable property public property_textdomain" data-toggle="collapse" data-target=".property_textdomain .collapse">
-<h2></h2>
-<pre>$textdomain </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="property_timthumb_opts"> </a><div class="element clickable property public property_timthumb_opts" data-toggle="collapse" data-target=".property_timthumb_opts .collapse">
 <h2>options for timthumb</h2>
 <pre>$timthumb_opts : array</pre>
@@ -531,7 +524,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

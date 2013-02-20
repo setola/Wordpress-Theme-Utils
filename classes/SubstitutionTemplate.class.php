@@ -1,7 +1,10 @@
 <?php 
+/**
+ * Stores the definition for class SubstitutionTemplate
+ */
 
 /**
- * Manages a substitution set
+ * Manages a string substitution set
  * @author etessore
  * @version 1.0.0
  */
@@ -26,7 +29,7 @@ class SubstitutionTemplate{
 	
 	/**
 	 * Sets the substitutions template
-	 * @param strin $tpl the template
+	 * @param string $tpl the template
 	 */
 	public function set_tpl($tpl){
 		$this->tpl = $tpl;
@@ -35,8 +38,10 @@ class SubstitutionTemplate{
 	
 	/**
 	 * Set the static markup; ie: prev\next\loading divs
-	 * @param string $markup html markup
+	 * @param string|array $key the searches to be substituted
+	 * @param string|array $markup html markups
 	 * @return SubstitutionTemplate $this for chainability
+	 * @throws Exception if $key and $markup have different number of elements
 	 */
 	public function set_markup($key, $markup){
 		$key = (array) $key;
@@ -58,6 +63,10 @@ class SubstitutionTemplate{
 		return $this;
 	}
 	
+	/**
+	 * Bulk set the key:markup pairs
+	 * @param array $ass_array an associative array of keys and markups
+	 */
 	public function set_multi_markup($ass_array){
 		$ass_array = (array) $ass_array;
 		$this->set_markup(array_keys($ass_array), array_values($ass_array));

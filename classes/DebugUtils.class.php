@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Stores DebugUtils class definition
+ */
 
 /**
  * Utils to debug the code while writing it.
@@ -56,6 +59,8 @@ EOF;
 	}
 	
 	/**
+	 * This object is a Singleton.
+	 * This method gets the instance of it.
 	 * @return DebugUtils the single instance of the class
 	 */
 	public static function get_instance(){
@@ -78,6 +83,7 @@ EOF;
 	}
 	
 	/**
+	 * Retrieves the current level of echo
 	 * @return the current level of echo
 	 */
 	public function get_level(){

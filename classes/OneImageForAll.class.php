@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Contains OneImageForAll class definitions
+ */
 
 /**
  * Merges all images of a gallery in only one and serve it as a sprite
@@ -7,17 +10,43 @@
  * @version 1.0.0
  */
 class OneImageForAll extends GalleryHelper{
+	/**
+	 * @var string stores the name of the cache file
+	 */
 	public $cache_name;
+	
+	/**
+	 * @var string stores the base directory of the cache file
+	 */
 	public $cache_dir;
+	
+	/**
+	 * @var string stores the url of the cache file
+	 */
 	public $cache_url;
+	
+	/**
+	 * @var string stores the path of the cache file
+	 */
 	public $cache_path;
+	
+	/**
+	 * @var boolean true if you want to force cache refresh
+	 */
 	public $force_image_refresh;
+	
+	/**
+	 * @var array stores the configuration
+	 */
 	public $config;
+	
+	/**
+	 * @var string to be returned when no image is available
+	 */
 	public $no_images;
 	
 	/**
 	 * Initializes the object with default values
-	 * @param array $this->config config for the images
 	 */
 	public function __construct(){
 		$this->force_image_refresh = false;

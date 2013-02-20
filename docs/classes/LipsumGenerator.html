@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \LipsumGenerator</title>
+<title>WP Theme Utils » \LipsumGenerator</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -91,8 +91,7 @@ on the average word length of an english sentence."><span class="description">Re
 on the average word length of an english sentence.</span><pre>gaussian_sentence()</pre></a></li>
 <li class="method private "><a href="#method_get_config" title="get_config :: Retrieves the config set for this generator"><span class="description">Retrieves the config set for this generator</span><pre>get_config()</pre></a></li>
 <li class="method private "><a href="#method_get_paragraph" title="get_paragraph :: Builds a single paragraph"><span class="description">Builds a single paragraph</span><pre>get_paragraph()</pre></a></li>
-<li class="method private "><a href="#method_get_words" title="get_words :: "><span class="description">get_words()
-        </span><pre>get_words()</pre></a></li>
+<li class="method private "><a href="#method_get_words" title="get_words :: Retrieves an array of random words"><span class="description">Retrieves an array of random words</span><pre>get_words()</pre></a></li>
 <li class="method private "><a href="#method_numberOfCommas" title="numberOfCommas :: Determines the number of commas for a
 sentence of the given length."><span class="description">Determines the number of commas for a
 sentence of the given length.</span><pre>numberOfCommas()</pre></a></li>
@@ -110,17 +109,17 @@ sentence of the given length.</span><pre>numberOfCommas()</pre></a></li>
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private "><a href="#property_beginning" title="$beginning :: "><span class="description"></span><pre>$beginning</pre></a></li>
-<li class="property private "><a href="#property_dictionary" title="$dictionary :: "><span class="description"></span><pre>$dictionary</pre></a></li>
-<li class="property private "><a href="#property_format" title="$format :: "><span class="description"></span><pre>$format</pre></a></li>
-<li class="property private "><a href="#property_gaussian_math" title="$gaussian_math :: "><span class="description"></span><pre>$gaussian_math</pre></a></li>
-<li class="property private "><a href="#property_min_repeat_count" title="$min_repeat_count :: "><span class="description"></span><pre>$min_repeat_count</pre></a></li>
-<li class="property private "><a href="#property_number_of_paragraphs" title="$number_of_paragraphs :: "><span class="description"></span><pre>$number_of_paragraphs</pre></a></li>
-<li class="property private "><a href="#property_render" title="$render :: "><span class="description"></span><pre>$render</pre></a></li>
-<li class="property private "><a href="#property_rich_html_config" title="$rich_html_config :: "><span class="description"></span><pre>$rich_html_config</pre></a></li>
-<li class="property private "><a href="#property_seed" title="$seed :: "><span class="description"></span><pre>$seed</pre></a></li>
-<li class="property private "><a href="#property_words_per_paragraph" title="$words_per_paragraph :: "><span class="description"></span><pre>$words_per_paragraph</pre></a></li>
-<li class="property private "><a href="#property_words_per_sentence" title="$words_per_sentence :: "><span class="description"></span><pre>$words_per_sentence</pre></a></li>
+<li class="property private "><a href="#property_beginning" title="$beginning :: "><span class="description">all generated texts will start with thouse words (ex. 'Lorem Ipsum')</span><pre>$beginning</pre></a></li>
+<li class="property private "><a href="#property_dictionary" title="$dictionary :: "><span class="description">a dictionary for the current generator</span><pre>$dictionary</pre></a></li>
+<li class="property private "><a href="#property_format" title="$format :: "><span class="description">the format type</span><pre>$format</pre></a></li>
+<li class="property private "><a href="#property_gaussian_math" title="$gaussian_math :: "><span class="description">some math utils</span><pre>$gaussian_math</pre></a></li>
+<li class="property private "><a href="#property_min_repeat_count" title="$min_repeat_count :: "><span class="description">the minimum amount of words until a single word can be repeated</span><pre>$min_repeat_count</pre></a></li>
+<li class="property private "><a href="#property_number_of_paragraphs" title="$number_of_paragraphs :: "><span class="description">number of paragraphs</span><pre>$number_of_paragraphs</pre></a></li>
+<li class="property private "><a href="#property_render" title="$render :: "><span class="description">the rendered text</span><pre>$render</pre></a></li>
+<li class="property private "><a href="#property_rich_html_config" title="$rich_html_config :: "><span class="description">config for rich html generator</span><pre>$rich_html_config</pre></a></li>
+<li class="property private "><a href="#property_seed" title="$seed :: "><span class="description">a seed for random generator</span><pre>$seed</pre></a></li>
+<li class="property private "><a href="#property_words_per_paragraph" title="$words_per_paragraph :: "><span class="description">words in a paragraph</span><pre>$words_per_paragraph</pre></a></li>
+<li class="property private "><a href="#property_words_per_sentence" title="$words_per_sentence :: "><span class="description">minimum amount of words until a single word can be repeated</span><pre>$words_per_sentence</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -412,7 +411,8 @@ if there is no content it appends the generated</h2>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$content</h4></div>
+<div class="subelement argument">
+<h4>$content</h4><p>string the content</p></div>
 </div></div>
 </div>
 <a id="method_force_beginning"></a><div class="element clickable method private method_force_beginning" data-toggle="collapse" data-target=".method_force_beginning .collapse">
@@ -456,8 +456,7 @@ on the average word length of an english sentence.</h2>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_get_words"></a><div class="element clickable method private method_get_words" data-toggle="collapse" data-target=".method_get_words .collapse">
-<h2>get_words()
-        </h2>
+<h2>Retrieves an array of random words</h2>
 <pre>get_words($count) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -479,17 +478,20 @@ sentence of the given length.</h2>
 <div class="long_description"><p>Average and
 standard deviation are determined superficially</p></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$len</h4></div>
+<div class="subelement argument">
+<h4>$len</h4><p>int a medium amount of words between two commas</p></div>
 </div></div>
 </div>
 <a id="method_punctuate"></a><div class="element clickable method private method_punctuate" data-toggle="collapse" data-target=".method_punctuate .collapse">
 <h2>Inserts commas and periods in the given array of words.</h2>
-<pre>punctuate($sentence) </pre>
+<pre>punctuate(array $sentence) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$sentence</h4></div>
+<div class="subelement argument">
+<h4>$sentence</h4>
+<code>array</code><p>the list of sentence</p></div>
 </div></div>
 </div>
 <a id="method_render_html"></a><div class="element clickable method private method_render_html" data-toggle="collapse" data-target=".method_render_html .collapse">
@@ -571,68 +573,68 @@ standard deviation are determined superficially</p></div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_beginning"> </a><div class="element clickable property private property_beginning" data-toggle="collapse" data-target=".property_beginning .collapse">
-<h2></h2>
-<pre>$beginning </pre>
+<h2>all generated texts will start with thouse words (ex. 'Lorem Ipsum')</h2>
+<pre>$beginning : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_dictionary"> </a><div class="element clickable property private property_dictionary" data-toggle="collapse" data-target=".property_dictionary .collapse">
-<h2></h2>
-<pre>$dictionary </pre>
+<h2>a dictionary for the current generator</h2>
+<pre>$dictionary : <a href="../classes/GeneratorDictionary.html">\GeneratorDictionary</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_format"> </a><div class="element clickable property private property_format" data-toggle="collapse" data-target=".property_format .collapse">
-<h2></h2>
-<pre>$format </pre>
+<h2>the format type</h2>
+<pre>$format : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_gaussian_math"> </a><div class="element clickable property private property_gaussian_math" data-toggle="collapse" data-target=".property_gaussian_math .collapse">
-<h2></h2>
-<pre>$gaussian_math </pre>
+<h2>some math utils</h2>
+<pre>$gaussian_math : <a href="../classes/GaussianMath.html">\GaussianMath</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_min_repeat_count"> </a><div class="element clickable property private property_min_repeat_count" data-toggle="collapse" data-target=".property_min_repeat_count .collapse">
-<h2></h2>
-<pre>$min_repeat_count </pre>
+<h2>the minimum amount of words until a single word can be repeated</h2>
+<pre>$min_repeat_count : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_number_of_paragraphs"> </a><div class="element clickable property private property_number_of_paragraphs" data-toggle="collapse" data-target=".property_number_of_paragraphs .collapse">
-<h2></h2>
-<pre>$number_of_paragraphs </pre>
+<h2>number of paragraphs</h2>
+<pre>$number_of_paragraphs : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_render"> </a><div class="element clickable property private property_render" data-toggle="collapse" data-target=".property_render .collapse">
-<h2></h2>
-<pre>$render </pre>
+<h2>the rendered text</h2>
+<pre>$render : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_rich_html_config"> </a><div class="element clickable property private property_rich_html_config" data-toggle="collapse" data-target=".property_rich_html_config .collapse">
-<h2></h2>
-<pre>$rich_html_config </pre>
+<h2>config for rich html generator</h2>
+<pre>$rich_html_config : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_seed"> </a><div class="element clickable property private property_seed" data-toggle="collapse" data-target=".property_seed .collapse">
-<h2></h2>
-<pre>$seed </pre>
+<h2>a seed for random generator</h2>
+<pre>$seed : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_words_per_paragraph"> </a><div class="element clickable property private property_words_per_paragraph" data-toggle="collapse" data-target=".property_words_per_paragraph .collapse">
-<h2></h2>
-<pre>$words_per_paragraph </pre>
+<h2>words in a paragraph</h2>
+<pre>$words_per_paragraph : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_words_per_sentence"> </a><div class="element clickable property private property_words_per_sentence" data-toggle="collapse" data-target=".property_words_per_sentence .collapse">
-<h2></h2>
-<pre>$words_per_sentence </pre>
+<h2>minimum amount of words until a single word can be repeated</h2>
+<pre>$words_per_sentence : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -708,7 +710,7 @@ the generator can store his config</td>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

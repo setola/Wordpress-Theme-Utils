@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Stores GeneratorDictionary class definitions
+ */
 
 /**
  * Maintans a set of words for a sentences generator
@@ -8,9 +11,19 @@
  * insertion and deletion will be more efficent
  */
 class GeneratorDictionary{
+	/**
+	 * @var array a list of usable words
+	 */
 	private $words;
+	
+	/**
+	 * @var int the number of usable words
+	 */
 	private $count;
 
+	/**
+	 * Initializes the dictionary
+	 */
 	public function __construct(){
 		$this->count = 0;
 		$this
@@ -45,6 +58,7 @@ class GeneratorDictionary{
 	}
 
 	/**
+	 * Retrieves all the usable words of this dictionary
 	 * @return the full set of words
 	 */
 	public function get_all_words(){
@@ -52,6 +66,7 @@ class GeneratorDictionary{
 	}
 	
 	/**
+	 * Retrieves the number of usable words in this dictionary
 	 * @return the number of words in the current dictionary
 	 */
 	public function number_of_words(){

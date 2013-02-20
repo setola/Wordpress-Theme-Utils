@@ -1,5 +1,8 @@
 <?php 
 /**
+ * Stores the MinigalleryBigImageWithThumbs class definition
+ */
+/**
  * Manages the markup for the minigallery 
  * with a big image and some small thumbs
  * @author etessore
@@ -123,7 +126,8 @@ EOF
 	}
 	
 	/**
-	 * @return the markup for the mini gallery
+	 * Retrieves the markup for this minigallery
+	 * @return the markup for the minigallery
 	 */
 	public function get_markup(){
 		$toret = '';

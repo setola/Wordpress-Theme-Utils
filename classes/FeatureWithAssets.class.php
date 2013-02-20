@@ -1,5 +1,10 @@
 <?php 
 /**
+ * Contains the FeatureWithAssets class
+ */
+
+
+/**
  * Manages the assets loading for a feature.
  * 
  * WARNING: this method doesn't register the asset:

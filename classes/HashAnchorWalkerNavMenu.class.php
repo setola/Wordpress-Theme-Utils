@@ -1,6 +1,23 @@
 <?php 
+/**
+ * stores the HashAnchorWalkerNavMenu class definition
+ */
 
+/**
+ * Menu Walker to have the la tocke of the url as hash
+ * ex: http://www.fastbooking.net/clients/#africa
+ * @author etessore
+ */
 class HashAnchorWalkerNavMenu extends Walker_Nav_Menu{
+	/**
+	 * (non-PHPdoc)
+	 * @see Walker_Nav_Menu::start_el()
+	 * 
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item Menu item data object.
+	 * @param int $depth Depth of menu item. Used for padding.
+	 * @param object $args
+	 */
 	function start_el($output, $item, $depth, $args){
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';

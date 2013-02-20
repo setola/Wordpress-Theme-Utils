@@ -1,4 +1,10 @@
 <?php 
+/**
+ * The Template part for displaying the list of child pages
+ * 
+ * @since 0.1
+ */
+
 global $post;
 
 $children = get_pages(

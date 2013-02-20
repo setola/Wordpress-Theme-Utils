@@ -1,5 +1,9 @@
 <?php 
 /**
+ * containst SpecialOffersSnippet class definition
+ */
+
+/**
  * Manages the integration of the special offers snippet
  * @author etessore
  * @version 1.0.3
@@ -17,12 +21,31 @@ class SpecialOffersSnippet {
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/promotions.php';
 	const default_divdest = 'FB_so';
 	
+	/**
+	 * @var array stores the list of parameter to be passed on GET
+	 */
 	public $params;
+	
+	/**
+	 * @var string stores the url of the snippet
+	 */
 	private $url;
+	
+	/**
+	 * @var int the index of snippet occurency
+	 */
 	public $index;
+	
+	/**
+	 * @var SubstitutionTemplate the template to be substituted
+	 */
 	public $templates;
 	//private $assets = array('js', 'css');
 
+	/**
+	 * Initializes the snippet
+	 * @param string $hid the hotel hid
+	 */
 	public function __construct($hid){
 		$tpl = <<< EOF
 	<div id="%divdest%">

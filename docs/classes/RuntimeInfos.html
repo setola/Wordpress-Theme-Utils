@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \RuntimeInfos</title>
+<title>WP Theme Utils » \RuntimeInfos</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -68,8 +68,7 @@ This has to be called after RuntimeInfos::generate_unique_id()</span><pre>load_a
 <li class="method public "><a href="#method_set_standard_infos" title="set_standard_infos :: Sets the default values:
 postID, theme_url, upload_dir, home_url and ajaxurl"><span class="description">Sets the default values:
 postID, theme_url, upload_dir, home_url and ajaxurl</span><pre>set_standard_infos()</pre></a></li>
-<li class="method public "><a href="#method_set_type" title="set_type :: "><span class="description">set_type()
-        </span><pre>set_type()</pre></a></li>
+<li class="method public "><a href="#method_set_type" title="set_type :: Sets the type"><span class="description">Sets the type</span><pre>set_type()</pre></a></li>
 <li class="method public "><a href="#method_the_markup" title="the_markup :: Prints the markup"><span class="description">Prints the markup</span><pre>the_markup()</pre></a></li>
 </ul>
 </li>
@@ -85,19 +84,22 @@ postID, theme_url, upload_dir, home_url and ajaxurl</span><pre>set_standard_info
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_infos" title="$infos :: "><span class="description"></span><pre>$infos</pre></a></li>
-<li class="property public "><a href="#property_type" title="$type :: "><span class="description"></span><pre>$type</pre></a></li>
+<li class="property public "><a href="#property_infos" title="$infos :: "><span class="description">the list of infos</span><pre>$infos</pre></a></li>
+<li class="property public "><a href="#property_type" title="$type :: "><span class="description">the way we want the infos</span><pre>$type</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul><li class="property protected "><a href="#property_id" title="$id :: "><span class="description"></span><pre>$id</pre></a></li></ul>
+                    <ul><li class="property protected "><a href="#property_id" title="$id :: "><span class="description">id of the post these infos refer to</span><pre>$id</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants
                     <ul>
-<li class="constant  "><a href="#constant_TYPE_AJAX" title="TYPE_AJAX :: "><span class="description">TYPE_AJAX</span><pre>TYPE_AJAX</pre></a></li>
-<li class="constant  "><a href="#constant_TYPE_FOOTER" title="TYPE_FOOTER :: "><span class="description">TYPE_FOOTER</span><pre>TYPE_FOOTER</pre></a></li>
-<li class="constant  "><a href="#constant_ajax_action" title="ajax_action :: "><span class="description">ajax_action</span><pre>ajax_action</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_AJAX" title="TYPE_AJAX :: "><span class="description">&lt;p&gt;uset this as type to have an external js on an admin-ajax.php url&lt;/p&gt;
+</span><pre>TYPE_AJAX</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_FOOTER" title="TYPE_FOOTER :: "><span class="description">&lt;p&gt;use this as type to have a &lt;script&gt; tag in the footer&lt;/p&gt;
+</span><pre>TYPE_FOOTER</pre></a></li>
+<li class="constant  "><a href="#constant_ajax_action" title="ajax_action :: "><span class="description">&lt;p&gt;the action parameter for the admin-ajax&lt;/p&gt;
+</span><pre>ajax_action</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -199,14 +201,26 @@ postID, theme_url, upload_dir, home_url and ajaxurl</h2>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method_set_type"></a><div class="element clickable method public method_set_type" data-toggle="collapse" data-target=".method_set_type .collapse">
-<h2>set_type()
-        </h2>
-<pre>set_type($type) </pre>
+<h2>Sets the type</h2>
+<pre>set_type(int $type) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="classes.RuntimeInfos.class.html#%5CRuntimeInfos::TYPE_AJAX">\RuntimeInfos::TYPE_AJAX</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="classes.RuntimeInfos.class.html#%5CRuntimeInfos::TYPE_FOOTER">\RuntimeInfos::TYPE_FOOTER</a></td>
+</tr>
+</table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$type</h4></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>int</code>
+</div>
 </div></div>
 </div>
 <a id="method_the_markup"></a><div class="element clickable method public method_the_markup" data-toggle="collapse" data-target=".method_the_markup .collapse">
@@ -242,40 +256,43 @@ data structure, i.e. XML</p></div></div></div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_infos"> </a><div class="element clickable property public property_infos" data-toggle="collapse" data-target=".property_infos .collapse">
-<h2></h2>
-<pre>$infos </pre>
+<h2>the list of infos</h2>
+<pre>$infos : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_type"> </a><div class="element clickable property public property_type" data-toggle="collapse" data-target=".property_type .collapse">
-<h2></h2>
-<pre>$type </pre>
+<h2>the way we want the infos</h2>
+<pre>$type : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_id"> </a><div class="element clickable property protected property_id" data-toggle="collapse" data-target=".property_id .collapse">
-<h2></h2>
-<pre>$id </pre>
+<h2>id of the post these infos refer to</h2>
+<pre>$id : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_TYPE_AJAX"> </a><div class="element clickable constant  constant_TYPE_AJAX" data-toggle="collapse" data-target=".constant_TYPE_AJAX .collapse">
-<h2>TYPE_AJAX</h2>
-<pre>TYPE_AJAX </pre>
+<h2>&lt;p&gt;uset this as type to have an external js on an admin-ajax.php url&lt;/p&gt;
+</h2>
+<pre>TYPE_AJAX : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_TYPE_FOOTER"> </a><div class="element clickable constant  constant_TYPE_FOOTER" data-toggle="collapse" data-target=".constant_TYPE_FOOTER .collapse">
-<h2>TYPE_FOOTER</h2>
-<pre>TYPE_FOOTER </pre>
+<h2>&lt;p&gt;use this as type to have a &lt;script&gt; tag in the footer&lt;/p&gt;
+</h2>
+<pre>TYPE_FOOTER : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_ajax_action"> </a><div class="element clickable constant  constant_ajax_action" data-toggle="collapse" data-target=".constant_ajax_action .collapse">
-<h2>ajax_action</h2>
-<pre>ajax_action </pre>
+<h2>&lt;p&gt;the action parameter for the admin-ajax&lt;/p&gt;
+</h2>
+<pre>ajax_action : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -286,7 +303,7 @@ data structure, i.e. XML</p></div></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

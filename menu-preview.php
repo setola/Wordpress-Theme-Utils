@@ -1,3 +1,9 @@
+<?php 
+/**
+ * Template part to print a title and an excerpt of every menu entry.
+ */
+0==0;
+?>
 <div class="tabs">
 <?php 
 	wp_nav_menu(

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \LoremIpsumDictionary</title>
+<title>WP Theme Utils » \LoremIpsumDictionary</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -55,13 +55,10 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Builds the dictionary"><span class="description">Builds the dictionary</span><pre>__construct()</pre></a></li>
 <li class="method public inherited"><a href="#method_add_word" title="add_word :: Adds the given $word to the current set"><span class="description">Adds the given $word to the current set</span><pre>add_word()</pre></a></li>
-<li class="method public inherited"><a href="#method_get_all_words" title="get_all_words :: "><span class="description">get_all_words()
-        </span><pre>get_all_words()</pre></a></li>
-<li class="method public inherited"><a href="#method_number_of_words" title="number_of_words :: "><span class="description">number_of_words()
-        </span><pre>number_of_words()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_all_words" title="get_all_words :: Retrieves all the usable words of this dictionary"><span class="description">Retrieves all the usable words of this dictionary</span><pre>get_all_words()</pre></a></li>
+<li class="method public inherited"><a href="#method_number_of_words" title="number_of_words :: Retrieves the number of usable words in this dictionary"><span class="description">Retrieves the number of usable words in this dictionary</span><pre>number_of_words()</pre></a></li>
 <li class="method public inherited"><a href="#method_remove_word" title="remove_word :: Removes the given words from the current set"><span class="description">Removes the given words from the current set</span><pre>remove_word()</pre></a></li>
 </ul>
 </li>
@@ -71,8 +68,8 @@
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private inherited"><a href="#property_count" title="$count :: "><span class="description"></span><pre>$count</pre></a></li>
-<li class="property private inherited"><a href="#property_words" title="$words :: "><span class="description"></span><pre>$words</pre></a></li>
+<li class="property private inherited"><a href="#property_count" title="$count :: "><span class="description">the number of usable words</span><pre>$count</pre></a></li>
+<li class="property private inherited"><a href="#property_words" title="$words :: "><span class="description">a list of usable words</span><pre>$words</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -88,9 +85,9 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Maintans a set of words for a sentences generator</p>
+<p class="short_description">Stores the dictionary for generating 'Lorem ipsum.</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>..' text</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -104,8 +101,7 @@
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>__construct()
-        </h2>
+<h2>Builds the dictionary</h2>
 <pre>__construct() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
@@ -130,8 +126,7 @@
 </div></div>
 </div>
 <a id="method_get_all_words"></a><div class="element clickable method public method_get_all_words" data-toggle="collapse" data-target=".method_get_all_words .collapse">
-<h2>get_all_words()
-        </h2>
+<h2>Retrieves all the usable words of this dictionary</h2>
 <pre>get_all_words() : \the</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
@@ -146,8 +141,7 @@
 </div></div>
 </div>
 <a id="method_number_of_words"></a><div class="element clickable method public method_number_of_words" data-toggle="collapse" data-target=".method_number_of_words .collapse">
-<h2>number_of_words()
-        </h2>
+<h2>Retrieves the number of usable words in this dictionary</h2>
 <pre>number_of_words() : \the</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
@@ -183,8 +177,8 @@
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_count"> </a><div class="element clickable property private property_count" data-toggle="collapse" data-target=".property_count .collapse">
-<h2></h2>
-<pre>$count </pre>
+<h2>the number of usable words</h2>
+<pre>$count : int</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -195,8 +189,8 @@
 </div></div>
 </div>
 <a id="property_words"> </a><div class="element clickable property private property_words" data-toggle="collapse" data-target=".property_words .collapse">
-<h2></h2>
-<pre>$words </pre>
+<h2>a list of usable words</h2>
+<pre>$words : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -213,7 +207,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -1,6 +1,17 @@
 <?php 
+/**
+ * contains LoremIpsumDictionary class definition
+ */
 
+/**
+ * Stores the dictionary for generating 'Lorem ipsum...' text
+ * @author etessore
+ */
 class LoremIpsumDictionary extends GeneratorDictionary{
+	
+	/**
+	 * Builds the dictionary
+	 */
 	public function __construct(){
 		$words = array(
 			'lorem',

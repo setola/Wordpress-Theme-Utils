@@ -1,4 +1,10 @@
 <?php 
+/**
+ * Template part for listing child pages
+ * 
+ * @since 0.1
+ */
+
 $children = get_pages(
 	array(
 		'child_of' 		=>	get_the_ID(),

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Wordpress Theme Utils » \SpecialOffersSnippet</title>
+<title>WP Theme Utils » \SpecialOffersSnippet</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
@@ -28,13 +28,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">191</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">4</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -55,8 +55,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes the snippet"><span class="description">Initializes the snippet</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_add_param" title="add_param :: Adds a new parameter or update if exists"><span class="description">Adds a new parameter or update if exists</span><pre>add_param()</pre></a></li>
 <li class="method public "><a href="#method_calculate_url" title="calculate_url :: Builds the url for the remote iframe"><span class="description">Builds the url for the remote iframe</span><pre>calculate_url()</pre></a></li>
 <li class="method public "><a href="#method_del_param" title="del_param :: Removes a param"><span class="description">Removes a param</span><pre>del_param()</pre></a></li>
@@ -83,13 +82,13 @@ If defined use http_build_url, else custom code</span><pre>build_url()</pre></a>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_index" title="$index :: "><span class="description"></span><pre>$index</pre></a></li>
-<li class="property public "><a href="#property_params" title="$params :: "><span class="description"></span><pre>$params</pre></a></li>
-<li class="property public "><a href="#property_templates" title="$templates :: "><span class="description"></span><pre>$templates</pre></a></li>
+<li class="property public "><a href="#property_index" title="$index :: "><span class="description">the index of snippet occurency</span><pre>$index</pre></a></li>
+<li class="property public "><a href="#property_params" title="$params :: "><span class="description">stores the list of parameter to be passed on GET</span><pre>$params</pre></a></li>
+<li class="property public "><a href="#property_templates" title="$templates :: "><span class="description">the template to be substituted</span><pre>$templates</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="property private "><a href="#property_url" title="$url :: "><span class="description"></span><pre>$url</pre></a></li></ul>
+                    <ul><li class="property private "><a href="#property_url" title="$url :: "><span class="description">stores the url of the snippet</span><pre>$url</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants
@@ -135,14 +134,15 @@ If defined use http_build_url, else custom code</span><pre>build_url()</pre></a>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>__construct()
-        </h2>
-<pre>__construct($hid) </pre>
+<h2>Initializes the snippet</h2>
+<pre>__construct(string $hid) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$hid</h4></div>
+<div class="subelement argument">
+<h4>$hid</h4>
+<code>string</code><p>the hotel hid</p></div>
 </div></div>
 </div>
 <a id="method_add_param"></a><div class="element clickable method public method_add_param" data-toggle="collapse" data-target=".method_add_param .collapse">
@@ -256,26 +256,26 @@ If defined use http_build_url, else custom code</h2>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_index"> </a><div class="element clickable property public property_index" data-toggle="collapse" data-target=".property_index .collapse">
-<h2></h2>
-<pre>$index </pre>
+<h2>the index of snippet occurency</h2>
+<pre>$index : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_params"> </a><div class="element clickable property public property_params" data-toggle="collapse" data-target=".property_params .collapse">
-<h2></h2>
-<pre>$params </pre>
+<h2>stores the list of parameter to be passed on GET</h2>
+<pre>$params : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_templates"> </a><div class="element clickable property public property_templates" data-toggle="collapse" data-target=".property_templates .collapse">
-<h2></h2>
-<pre>$templates </pre>
+<h2>the template to be substituted</h2>
+<pre>$templates : <a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_url"> </a><div class="element clickable property private property_url" data-toggle="collapse" data-target=".property_url .collapse">
-<h2></h2>
-<pre>$url </pre>
+<h2>stores the url of the snippet</h2>
+<pre>$url : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -300,7 +300,7 @@ If defined use http_build_url, else custom code</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>

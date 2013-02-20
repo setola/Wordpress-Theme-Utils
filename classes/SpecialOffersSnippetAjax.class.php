@@ -1,7 +1,19 @@
 <?php 
+/**
+ * Contains the SpecialOffersSnippetAjax class
+ */
+
+/**
+ * Hook to WP Ajax system to get the special offers snippet url
+ * @author etessore
+ *
+ */
 class SpecialOffersSnippetAjax{
 	const ajax_action = 'offer-snippet';
 	
+	/**
+	 * Default constructor
+	 */
 	public function __construct(){
 		$this->hook();
 	}

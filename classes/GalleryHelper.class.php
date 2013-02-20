@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * Stores the GalleryHelper class definition
+ */
 /**
  * Manages the markup for a generic set of images
  * Extend this with your nice and candy classes!
@@ -7,7 +9,6 @@
  * @version 1.0.2
  */
 abstract class GalleryHelper extends FeatureWithAssets{
-	public $textdomain = 'theme';
 
 	/**
 	 * @var string the unique id for the current gallery
@@ -84,6 +85,7 @@ abstract class GalleryHelper extends FeatureWithAssets{
 
 	/**
 	 * Set the static markup; ie: prev\next\loading divs
+	 * @param string $key the string has to be substituted 
 	 * @param string $markup html markup
 	 * @return GalleryHelper $this for chainability
 	 */
@@ -306,6 +308,7 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	
 
 	/**
+	 * Retrieves the markup for the current gallery
 	 * @return the markup for the current gallery
 	 */
 	abstract public function get_markup();

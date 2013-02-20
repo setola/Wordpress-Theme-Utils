@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * stores the ImageGenerator class definition
+ */
 /**
  * Generates paceholder images
  * @author etessore
@@ -11,13 +13,26 @@
  * 	Initial release
  */
 class ImageGenerator{
+	/**
+	 * @var array stores the settings for this generator
+	 */
 	public $settings;
 	
+	/**
+	 * @var resource an image resource identifier
+	 */
 	private $image;
+	
+	/**
+	 * @var array some infos about the cache: url\path\filename...
+	 */
 	private $cache;
+	
+	/**
+	 * @var string url for the generated image
+	 */
 	private $url;
 	
-	public function __construct(){}
 	
 	/**
 	 * Initializes the object by checking 
@@ -55,6 +70,7 @@ class ImageGenerator{
 	}
 	
 	/**
+	 * Retrieves the html markup for the current generated image
 	 * @return the html markup for the current generated image
 	 */
 	public function get_markup(){
@@ -294,6 +310,7 @@ class ImageGenerator{
 	}
 	
 	/**
+	 * Retrieves all the image sizes registered in WordPress
 	 * @return all the image sizes registered in WordPress
 	 */
 	public static function get_all_image_sizes(){

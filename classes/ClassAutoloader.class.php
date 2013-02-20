@@ -1,5 +1,9 @@
 <?php
 /**
+ * Contains the ClassAutoloader class definitions
+ */
+
+/**
  * Autoload needed classes
  * @author etessore
  * @version 1.0.1
@@ -11,8 +15,15 @@
  */
 class ClassAutoloader {
 	const WORDPRESS_THEME_UTILS_CLASS_DIR = 'classes';
+	
+	/**
+	 * @var array stores the path the system will scan for files
+	 */
 	public $loading_template;
 	
+	/**
+	 * Initializes the autoloader
+	 */
 	public function __construct() {
 		$this
 			// First search in the child theme dir
