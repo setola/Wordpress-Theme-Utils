@@ -1,5 +1,17 @@
-<?php echo HtmlHelper::doctype('html5'); ?>
-<?php the_html(); ?>
+<?php 
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till 'main container' div
+ *
+ * @since 0.1
+ */
+
+
+echo HtmlHelper::doctype('html5');
+the_html(); 
+
+?>
 <head>
 	<?php 
 		$header = new HeadHelper();

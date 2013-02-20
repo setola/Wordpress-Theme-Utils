@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Wordpress Theme Utils » \RuntimeInfos</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">191</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">4</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">1</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes the current set of infos with default values"><span class="description">Initializes the current set of infos with default values</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_add_info" title="add_info :: Adds an info to the current set"><span class="description">Adds an info to the current set</span><pre>add_info()</pre></a></li>
+<li class="method public "><a href="#method_ajax_callback" title="ajax_callback :: Callback executed when the admin ajax url
+is called with self::ajax_action parameter"><span class="description">Callback executed when the admin ajax url
+is called with self::ajax_action parameter</span><pre>ajax_callback()</pre></a></li>
+<li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the html markup"><span class="description">Retrieves the html markup</span><pre>get_markup()</pre></a></li>
+<li class="method public "><a href="#method_hook" title="hook :: Hook the print of this infos to Wordpress footer"><span class="description">Hook the print of this infos to Wordpress footer</span><pre>hook()</pre></a></li>
+<li class="method public "><a href="#method_load_assets" title="load_assets :: Registers and enqueue the js from admin-ajax.php
+This has to be called after RuntimeInfos::generate_unique_id()"><span class="description">Registers and enqueue the js from admin-ajax.php
+This has to be called after RuntimeInfos::generate_unique_id()</span><pre>load_assets()</pre></a></li>
+<li class="method public "><a href="#method_set_standard_infos" title="set_standard_infos :: Sets the default values:
+postID, theme_url, upload_dir, home_url and ajaxurl"><span class="description">Sets the default values:
+postID, theme_url, upload_dir, home_url and ajaxurl</span><pre>set_standard_infos()</pre></a></li>
+<li class="method public "><a href="#method_set_type" title="set_type :: "><span class="description">set_type()
+        </span><pre>set_type()</pre></a></li>
+<li class="method public "><a href="#method_the_markup" title="the_markup :: Prints the markup"><span class="description">Prints the markup</span><pre>the_markup()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_render" title="render :: Format the data set in JSON."><span class="description">Format the data set in JSON.</span><pre>render()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_generate_unique_id" title="generate_unique_id :: Generates an unique ID for the current data set"><span class="description">Generates an unique ID for the current data set</span><pre>generate_unique_id()</pre></a></li>
+<li class="method private "><a href="#method_get_the_ID" title="get_the_ID :: Get the ID for the current post"><span class="description">Get the ID for the current post</span><pre>get_the_ID()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public "><a href="#property_infos" title="$infos :: "><span class="description"></span><pre>$infos</pre></a></li>
+<li class="property public "><a href="#property_type" title="$type :: "><span class="description"></span><pre>$type</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_id" title="$id :: "><span class="description"></span><pre>$id</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_TYPE_AJAX" title="TYPE_AJAX :: "><span class="description">TYPE_AJAX</span><pre>TYPE_AJAX</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_FOOTER" title="TYPE_FOOTER :: "><span class="description">TYPE_FOOTER</span><pre>TYPE_FOOTER</pre></a></li>
+<li class="constant  "><a href="#constant_ajax_action" title="ajax_action :: "><span class="description">ajax_action</span><pre>ajax_action</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\RuntimeInfos"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/RuntimeInfos.html">RuntimeInfos</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Manages a set of info to be printed as a json generally at the endo of the page</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">etessore</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.1
+Changelog
+1.0.1
+	solved notice of undefined post on 404 pages</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Initializes the current set of infos with default values</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_add_info"></a><div class="element clickable method public method_add_info" data-toggle="collapse" data-target=".method_add_info .collapse">
+<h2>Adds an info to the current set</h2>
+<pre>add_info(string $key, string $value) : <a href="../classes/RuntimeInfos.html">\RuntimeInfos</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the name of the info</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>the value of the info</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RuntimeInfos.html">\RuntimeInfos</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_ajax_callback"></a><div class="element clickable method public method_ajax_callback" data-toggle="collapse" data-target=".method_ajax_callback .collapse">
+<h2>Callback executed when the admin ajax url
+is called with self::ajax_action parameter</h2>
+<pre>ajax_callback() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
+<h2>Retrieves the html markup</h2>
+<pre>get_markup() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>html markup</div>
+</div></div>
+</div>
+<a id="method_hook"></a><div class="element clickable method public method_hook" data-toggle="collapse" data-target=".method_hook .collapse">
+<h2>Hook the print of this infos to Wordpress footer</h2>
+<pre>hook() : <a href="../classes/RuntimeInfos.html">\RuntimeInfos</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RuntimeInfos.html">\RuntimeInfos</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
+<h2>Registers and enqueue the js from admin-ajax.php
+This has to be called after RuntimeInfos::generate_unique_id()</h2>
+<pre>load_assets() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_set_standard_infos"></a><div class="element clickable method public method_set_standard_infos" data-toggle="collapse" data-target=".method_set_standard_infos .collapse">
+<h2>Sets the default values:
+postID, theme_url, upload_dir, home_url and ajaxurl</h2>
+<pre>set_standard_infos() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_set_type"></a><div class="element clickable method public method_set_type" data-toggle="collapse" data-target=".method_set_type .collapse">
+<h2>set_type()
+        </h2>
+<pre>set_type($type) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$type</h4></div>
+</div></div>
+</div>
+<a id="method_the_markup"></a><div class="element clickable method public method_the_markup" data-toggle="collapse" data-target=".method_the_markup .collapse">
+<h2>Prints the markup</h2>
+<pre>the_markup() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_render"></a><div class="element clickable method protected method_render" data-toggle="collapse" data-target=".method_render .collapse">
+<h2>Format the data set in JSON.</h2>
+<pre>render() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Overload this if you want a different
+data structure, i.e. XML</p></div></div></div>
+</div>
+<a id="method_generate_unique_id"></a><div class="element clickable method private method_generate_unique_id" data-toggle="collapse" data-target=".method_generate_unique_id .collapse">
+<h2>Generates an unique ID for the current data set</h2>
+<pre>generate_unique_id() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>the ID</div>
+</div></div>
+</div>
+<a id="method_get_the_ID"></a><div class="element clickable method private method_get_the_ID" data-toggle="collapse" data-target=".method_get_the_ID .collapse">
+<h2>Get the ID for the current post</h2>
+<pre>get_the_ID() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_infos"> </a><div class="element clickable property public property_infos" data-toggle="collapse" data-target=".property_infos .collapse">
+<h2></h2>
+<pre>$infos </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property public property_type" data-toggle="collapse" data-target=".property_type .collapse">
+<h2></h2>
+<pre>$type </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_id"> </a><div class="element clickable property protected property_id" data-toggle="collapse" data-target=".property_id .collapse">
+<h2></h2>
+<pre>$id </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_TYPE_AJAX"> </a><div class="element clickable constant  constant_TYPE_AJAX" data-toggle="collapse" data-target=".constant_TYPE_AJAX .collapse">
+<h2>TYPE_AJAX</h2>
+<pre>TYPE_AJAX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_FOOTER"> </a><div class="element clickable constant  constant_TYPE_FOOTER" data-toggle="collapse" data-target=".constant_TYPE_FOOTER .collapse">
+<h2>TYPE_FOOTER</h2>
+<pre>TYPE_FOOTER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ajax_action"> </a><div class="element clickable constant  constant_ajax_action" data-toggle="collapse" data-target=".constant_ajax_action .collapse">
+<h2>ajax_action</h2>
+<pre>ajax_action </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Wordpress Theme Utils » \FeatureWithAssets</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">191</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">4</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">1</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_add_asset" title="add_asset :: Adds an asset."><span class="description">Adds an asset.</span><pre>add_asset()</pre></a></li>
+<li class="method public "><a href="#method_load_assets" title="load_assets :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets()</pre></a></li>
+<li class="method public "><a href="#method_load_assets_callback" title="load_assets_callback :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets_callback()</pre></a></li>
+<li class="method public "><a href="#method_set_assets" title="set_assets :: Set the assets list to the given one"><span class="description">Set the assets list to the given one</span><pre>set_assets()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_assets" title="$assets :: "><span class="description">the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</span><pre>$assets</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\FeatureWithAssets"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/FeatureWithAssets.html">FeatureWithAssets</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Manages the assets loading for a feature.</p>
+<div class="details">
+<div class="long_description"><p>WARNING: this method doesn't register the asset:
+You have to take care of it by yourself (tipically in assets.php)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">etessore</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.1
+1.0.1
+	Fixed Notice: wp_enqueue_script was called incorrectly
+1.0.0
+	Initial release</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_add_asset"></a><div class="element clickable method public method_add_asset" data-toggle="collapse" data-target=".method_add_asset .collapse">
+<h2>Adds an asset.</h2>
+<pre>add_asset(string $handle, string $type) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You cannot define an asset here,
+to do it please use wp_register_script or wp_register_style
+in functions.php or config/assets.php
+WARNING: this method doesn't register the asset:
+You have to take care of it by yourself (tipically in assets.php)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$handle</h4>
+<code>string</code><p>the handle for the asset.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>the asset type: js|css</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
+<h2>Loads needed scripts and css</h2>
+<pre>load_assets() : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_load_assets_callback"></a><div class="element clickable method public method_load_assets_callback" data-toggle="collapse" data-target=".method_load_assets_callback .collapse">
+<h2>Loads needed scripts and css</h2>
+<pre>load_assets_callback() : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_assets"></a><div class="element clickable method public method_set_assets" data-toggle="collapse" data-target=".method_set_assets .collapse">
+<h2>Set the assets list to the given one</h2>
+<pre>set_assets(array $assets) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$assets</h4>
+<code>array</code><p>the list of assets: array('js'=>array(...), 'css'=>array(...));</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_assets"> </a><div class="element clickable property public property_assets" data-toggle="collapse" data-target=".property_assets .collapse">
+<h2>the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</h2>
+<pre>$assets : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Wordpress Theme Utils » \MinigalleryBigImageWithThumbs</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">191</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">4</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">1</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Initializes the Minigallery with the default config"><span class="description">Initializes the Minigallery with the default config</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_add_asset" title="add_asset :: Adds an asset."><span class="description">Adds an asset.</span><pre>add_asset()</pre></a></li>
+<li class="method public inherited"><a href="#method_add_image" title="add_image :: Adds an image to the current set"><span class="description">Adds an image to the current set</span><pre>add_image()</pre></a></li>
+<li class="method public inherited"><a href="#method_add_images" title="add_images :: Add some images to the current set"><span class="description">Add some images to the current set</span><pre>add_images()</pre></a></li>
+<li class="method public inherited"><a href="#method_calculate_unique" title="calculate_unique :: Calculates the unique id for the current gallery"><span class="description">Calculates the unique id for the current gallery</span><pre>calculate_unique()</pre></a></li>
+<li class="method public "><a href="#method_get_markup" title="get_markup :: "><span class="description">get_markup()
+        </span><pre>get_markup()</pre></a></li>
+<li class="method public "><a href="#method_load_assets" title="load_assets :: Loads the needed assets"><span class="description">Loads the needed assets</span><pre>load_assets()</pre></a></li>
+<li class="method public inherited"><a href="#method_load_assets_callback" title="load_assets_callback :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets_callback()</pre></a></li>
+<li class="method public inherited"><a href="#method_replace_markup" title="replace_markup :: Replaces the markup in $this-&gt;tpl %tag%s with the one
+in the corresponding value of $this-&gt;static_markup[tag]."><span class="description">Replaces the markup in $this-&gt;tpl %tag%s with the one
+in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_markup()</pre></a></li>
+<li class="method public inherited"><a href="#method_set_assets" title="set_assets :: Set the assets list to the given one"><span class="description">Set the assets list to the given one</span><pre>set_assets()</pre></a></li>
+<li class="method public "><a href="#method_set_big_sizes" title="set_big_sizes :: Sets the sizes of the big image"><span class="description">Sets the sizes of the big image</span><pre>set_big_sizes()</pre></a></li>
+<li class="method public inherited"><a href="#method_set_markup" title="set_markup :: Set the static markup; ie: prev\next\loading divs"><span class="description">Set the static markup; ie: prev\next\loading divs</span><pre>set_markup()</pre></a></li>
+<li class="method public "><a href="#method_set_small_sizes" title="set_small_sizes :: Sets the sizes of the thumbs"><span class="description">Sets the sizes of the thumbs</span><pre>set_small_sizes()</pre></a></li>
+<li class="method public "><a href="#method_set_template" title="set_template :: Set the html template for this minigallery"><span class="description">Set the html template for this minigallery</span><pre>set_template()</pre></a></li>
+<li class="method public "><a href="#method_set_thumbs_list_config" title="set_thumbs_list_config :: Sets the config for the thumbnails list"><span class="description">Sets the config for the thumbnails list</span><pre>set_thumbs_list_config()</pre></a></li>
+<li class="method public inherited"><a href="#method_set_timthumb_options" title="set_timthumb_options :: Set the timthumb options
+If set_wp_media_dimension() is called it will prevale on this."><span class="description">Set the timthumb options
+If set_wp_media_dimension() is called it will prevale on this.</span><pre>set_timthumb_options()</pre></a></li>
+<li class="method public inherited"><a href="#method_set_uid" title="set_uid :: Set the unique id for this gallery"><span class="description">Set the unique id for this gallery</span><pre>set_uid()</pre></a></li>
+<li class="method public inherited"><a href="#method_set_wp_media_dimension" title="set_wp_media_dimension :: Sets the dimension for this gallery."><span class="description">Sets the dimension for this gallery.</span><pre>set_wp_media_dimension()</pre></a></li>
+<li class="method public inherited"><a href="#method_the_markup" title="the_markup :: Echoes the markup for the current gallery"><span class="description">Echoes the markup for the current gallery</span><pre>the_markup()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_get_image_alt" title="get_image_alt :: Checks if the $index image of the list is
+a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
+a wordpress media id or an image object</span><pre>get_image_alt()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_caption" title="get_image_caption :: Checks if the $index image of the list is
+a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
+a wordpress media id or an image object</span><pre>get_image_caption()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_description" title="get_image_description :: Checks if the $index image of the list is
+a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
+a wordpress media id or an image object</span><pre>get_image_description()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_height" title="get_image_height :: Get the height for the n-th image of the list"><span class="description">Get the height for the n-th image of the list</span><pre>get_image_height()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_id" title="get_image_id :: Checks if the $index image of the list is
+a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
+a wordpress media id or an image object</span><pre>get_image_id()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_src" title="get_image_src :: Checks if the $index image of the list is
+a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
+a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_width" title="get_image_width :: Get the width for the n-th image of the list"><span class="description">Get the width for the n-th image of the list</span><pre>get_image_width()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul>
+<li class="property public inherited"><a href="#property_assets" title="$assets :: "><span class="description">the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</span><pre>$assets</pre></a></li>
+<li class="property public inherited"><a href="#property_images" title="$images :: "><span class="description">the list of images</span><pre>$images</pre></a></li>
+<li class="property public inherited"><a href="#property_media_dimension" title="$media_dimension :: "><span class="description">WordPress media size name</span><pre>$media_dimension</pre></a></li>
+<li class="property public "><a href="#property_sizes" title="$sizes :: "><span class="description">stores the sizes of the images</span><pre>$sizes</pre></a></li>
+<li class="property public inherited"><a href="#property_static_markup" title="$static_markup :: "><span class="description">Stores some static html</span><pre>$static_markup</pre></a></li>
+<li class="property public inherited"><a href="#property_textdomain" title="$textdomain :: "><span class="description"></span><pre>$textdomain</pre></a></li>
+<li class="property public "><a href="#property_thumb_list_config" title="$thumb_list_config :: "><span class="description">configuration for the thumbnails list</span><pre>$thumb_list_config</pre></a></li>
+<li class="property public inherited"><a href="#property_timthumb_opts" title="$timthumb_opts :: "><span class="description">options for timthumb</span><pre>$timthumb_opts</pre></a></li>
+<li class="property public inherited"><a href="#property_tpl" title="$tpl :: "><span class="description">the html template</span><pre>$tpl</pre></a></li>
+<li class="property public inherited"><a href="#property_unid" title="$unid :: "><span class="description">the unique id for the current gallery it will be automatically created if not specified</span><pre>$unid</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\MinigalleryBigImageWithThumbs"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/MinigalleryBigImageWithThumbs.html">MinigalleryBigImageWithThumbs</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Manages the markup for the minigallery
+with a big image and some small thumbs</p>
+<div class="details">
+<div class="long_description"><p>WARNING: this method doesn't register the asset:
+You have to take care of it by yourself (tipically in assets.php)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">etessore</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Initializes the Minigallery with the default config</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_add_asset"></a><div class="element clickable method public method_add_asset" data-toggle="collapse" data-target=".method_add_asset .collapse">
+<h2>Adds an asset.</h2>
+<pre>add_asset(string $handle, string $type) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You cannot define an asset here,
+to do it please use wp_register_script or wp_register_style
+in functions.php or config/assets.php
+WARNING: this method doesn't register the asset:
+You have to take care of it by yourself (tipically in assets.php)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\FeatureWithAssets::add_asset()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::add_asset()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$handle</h4>
+<code>string</code><p>the handle for the asset.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>the asset type: js|css</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_add_image"></a><div class="element clickable method public method_add_image" data-toggle="collapse" data-target=".method_add_image .collapse">
+<h2>Adds an image to the current set</h2>
+<pre>add_image(string | int $img) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::add_image()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$img</h4>
+<code>string</code><code>int</code><p>the image: if is an int it
+will be retrieved from the wp media, elsewhere it is an html tag</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_add_images"></a><div class="element clickable method public method_add_images" data-toggle="collapse" data-target=".method_add_images .collapse">
+<h2>Add some images to the current set</h2>
+<pre>add_images(array $images) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::add_images()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$images</h4>
+<code>array</code><p>the list of images to be added</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_calculate_unique"></a><div class="element clickable method public method_calculate_unique" data-toggle="collapse" data-target=".method_calculate_unique .collapse">
+<h2>Calculates the unique id for the current gallery</h2>
+<pre>calculate_unique() : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::calculate_unique()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
+<h2>get_markup()
+        </h2>
+<pre>get_markup() : \the</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\the</code>markup for the mini gallery</div>
+</div></div>
+</div>
+<a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
+<h2>Loads the needed assets</h2>
+<pre>load_assets() : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_load_assets_callback"></a><div class="element clickable method public method_load_assets_callback" data-toggle="collapse" data-target=".method_load_assets_callback .collapse">
+<h2>Loads needed scripts and css</h2>
+<pre>load_assets_callback() : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\FeatureWithAssets::load_assets_callback()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::load_assets_callback()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_replace_markup"></a><div class="element clickable method public method_replace_markup" data-toggle="collapse" data-target=".method_replace_markup .collapse">
+<h2>Replaces the markup in $this-&gt;tpl %tag%s with the one
+in the corresponding value of $this-&gt;static_markup[tag].</h2>
+<pre>replace_markup() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::replace_markup()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_set_assets"></a><div class="element clickable method public method_set_assets" data-toggle="collapse" data-target=".method_set_assets .collapse">
+<h2>Set the assets list to the given one</h2>
+<pre>set_assets(array $assets) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\FeatureWithAssets::set_assets()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::set_assets()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$assets</h4>
+<code>array</code><p>the list of assets: array('js'=>array(...), 'css'=>array(...));</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_big_sizes"></a><div class="element clickable method public method_set_big_sizes" data-toggle="collapse" data-target=".method_set_big_sizes .collapse">
+<h2>Sets the sizes of the big image</h2>
+<pre>set_big_sizes(int $widht, int $height) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$widht</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
+<h2>Set the static markup; ie: prev\next\loading divs</h2>
+<pre>set_markup($key, string $markup) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::set_markup()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$key</h4></div>
+<div class="subelement argument">
+<h4>$markup</h4>
+<code>string</code><p>html markup</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_small_sizes"></a><div class="element clickable method public method_set_small_sizes" data-toggle="collapse" data-target=".method_set_small_sizes .collapse">
+<h2>Sets the sizes of the thumbs</h2>
+<pre>set_small_sizes(int $widht, int $height) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$widht</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_template"></a><div class="element clickable method public method_set_template" data-toggle="collapse" data-target=".method_set_template .collapse">
+<h2>Set the html template for this minigallery</h2>
+<pre>set_template(string $tpl) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tpl</h4>
+<code>string</code><p>the template</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_thumbs_list_config"></a><div class="element clickable method public method_set_thumbs_list_config" data-toggle="collapse" data-target=".method_set_thumbs_list_config .collapse">
+<h2>Sets the config for the thumbnails list</h2>
+<pre>set_thumbs_list_config(array $config) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>array</code><p>the config array</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_timthumb_options"></a><div class="element clickable method public method_set_timthumb_options" data-toggle="collapse" data-target=".method_set_timthumb_options .collapse">
+<h2>Set the timthumb options
+If set_wp_media_dimension() is called it will prevale on this.</h2>
+<pre>set_timthumb_options(array $options) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::set_timthumb_options()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_set_uid"></a><div class="element clickable method public method_set_uid" data-toggle="collapse" data-target=".method_set_uid .collapse">
+<h2>Set the unique id for this gallery</h2>
+<pre>set_uid(string $unid) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::set_uid()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$unid</h4>
+<code>string</code><p>the unique</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_set_wp_media_dimension"></a><div class="element clickable method public method_set_wp_media_dimension" data-toggle="collapse" data-target=".method_set_wp_media_dimension .collapse">
+<h2>Sets the dimension for this gallery.</h2>
+<pre>set_wp_media_dimension(string $dimension) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If set this option will prevale on timthumb</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::set_wp_media_dimension()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dimension</h4>
+<code>string</code><p>WordPress media dimension name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_the_markup"></a><div class="element clickable method public method_the_markup" data-toggle="collapse" data-target=".method_the_markup .collapse">
+<h2>Echoes the markup for the current gallery</h2>
+<pre>the_markup() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::the_markup()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_get_image_alt"></a><div class="element clickable method protected method_get_image_alt" data-toggle="collapse" data-target=".method_get_image_alt .collapse">
+<h2>Checks if the $index image of the list is
+a wordpress media id or an image object</h2>
+<pre>get_image_alt(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>the alt attribute for the $index image of the set</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_alt()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_caption"></a><div class="element clickable method protected method_get_image_caption" data-toggle="collapse" data-target=".method_get_image_caption .collapse">
+<h2>Checks if the $index image of the list is
+a wordpress media id or an image object</h2>
+<pre>get_image_caption(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>the caption for the $index image of the set</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_caption()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_description"></a><div class="element clickable method protected method_get_image_description" data-toggle="collapse" data-target=".method_get_image_description .collapse">
+<h2>Checks if the $index image of the list is
+a wordpress media id or an image object</h2>
+<pre>get_image_description(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>the description for the $index image of the set</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_description()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_height"></a><div class="element clickable method protected method_get_image_height" data-toggle="collapse" data-target=".method_get_image_height .collapse">
+<h2>Get the height for the n-th image of the list</h2>
+<pre>get_image_height(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_height()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_id"></a><div class="element clickable method protected method_get_image_id" data-toggle="collapse" data-target=".method_get_image_id .collapse">
+<h2>Checks if the $index image of the list is
+a wordpress media id or an image object</h2>
+<pre>get_image_id(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>the id attribute for the $index image of the set</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_id()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_src"></a><div class="element clickable method protected method_get_image_src" data-toggle="collapse" data-target=".method_get_image_src .collapse">
+<h2>Checks if the $index image of the list is
+a wordpress media id or an image object</h2>
+<pre>get_image_src(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>the src attribute for the $index image of the set</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_src()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<a id="method_get_image_width"></a><div class="element clickable method protected method_get_image_width" data-toggle="collapse" data-target=".method_get_image_width .collapse">
+<h2>Get the width for the n-th image of the list</h2>
+<pre>get_image_width(int $index) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_width()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_assets"> </a><div class="element clickable property public property_assets" data-toggle="collapse" data-target=".property_assets .collapse">
+<h2>the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</h2>
+<pre>$assets : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\FeatureWithAssets::$$assets</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$assets</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_images"> </a><div class="element clickable property public property_images" data-toggle="collapse" data-target=".property_images .collapse">
+<h2>the list of images</h2>
+<pre>$images : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$images</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_media_dimension"> </a><div class="element clickable property public property_media_dimension" data-toggle="collapse" data-target=".property_media_dimension .collapse">
+<h2>WordPress media size name</h2>
+<pre>$media_dimension : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$media_dimension</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_sizes"> </a><div class="element clickable property public property_sizes" data-toggle="collapse" data-target=".property_sizes .collapse">
+<h2>stores the sizes of the images</h2>
+<pre>$sizes : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_static_markup"> </a><div class="element clickable property public property_static_markup" data-toggle="collapse" data-target=".property_static_markup .collapse">
+<h2>Stores some static html</h2>
+<pre>$static_markup : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$static_markup</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_textdomain"> </a><div class="element clickable property public property_textdomain" data-toggle="collapse" data-target=".property_textdomain .collapse">
+<h2></h2>
+<pre>$textdomain </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$textdomain</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_thumb_list_config"> </a><div class="element clickable property public property_thumb_list_config" data-toggle="collapse" data-target=".property_thumb_list_config .collapse">
+<h2>configuration for the thumbnails list</h2>
+<pre>$thumb_list_config : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_timthumb_opts"> </a><div class="element clickable property public property_timthumb_opts" data-toggle="collapse" data-target=".property_timthumb_opts .collapse">
+<h2>options for timthumb</h2>
+<pre>$timthumb_opts : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$timthumb_opts</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_tpl"> </a><div class="element clickable property public property_tpl" data-toggle="collapse" data-target=".property_tpl .collapse">
+<h2>the html template</h2>
+<pre>$tpl : String</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$tpl</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_unid"> </a><div class="element clickable property public property_unid" data-toggle="collapse" data-target=".property_unid .collapse">
+<h2>the unique id for the current gallery it will be automatically created if not specified</h2>
+<pre>$unid : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$unid</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Wordpress Theme Utils » \TinyMCEExcerptCustomization</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Wordpress Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">191</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">4</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">1</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Set the feature up"><span class="description">Set the feature up</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_add_tinymce_to_excerpt_metabox" title="add_tinymce_to_excerpt_metabox :: Adds a new excerpt editor with the wysiwyg editor"><span class="description">Adds a new excerpt editor with the wysiwyg editor</span><pre>add_tinymce_to_excerpt_metabox()</pre></a></li>
+<li class="method public "><a href="#method_custom_trim_excerpt" title="custom_trim_excerpt :: Manages the excerpt escaping process"><span class="description">Manages the excerpt escaping process</span><pre>custom_trim_excerpt()</pre></a></li>
+<li class="method public "><a href="#method_remove_excerpt_metabox" title="remove_excerpt_metabox :: Removes the default editor for the excerpt"><span class="description">Removes the default editor for the excerpt</span><pre>remove_excerpt_metabox()</pre></a></li>
+<li class="method public "><a href="#method_save_box" title="save_box :: Called when the post is beeing saved"><span class="description">Called when the post is beeing saved</span><pre>save_box()</pre></a></li>
+<li class="method public "><a href="#method_tinymce_excerpt_box" title="tinymce_excerpt_box :: Prints the markup for the tinymce excerpt box"><span class="description">Prints the markup for the tinymce excerpt box</span><pre>tinymce_excerpt_box()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_contexts" title="$contexts :: "><span class="description"></span><pre>$contexts</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_custom_exceprt_slug" title="custom_exceprt_slug :: "><span class="description">custom_exceprt_slug</span><pre>custom_exceprt_slug</pre></a></li>
+<li class="constant  "><a href="#constant_textdomain" title="textdomain :: "><span class="description">textdomain</span><pre>textdomain</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\TinyMCEExcerptCustomization"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/TinyMCEExcerptCustomization.html">TinyMCEExcerptCustomization</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">This class removes the default excerpt metabox
+and adds a new box with the wysiwyg editor capability</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="">etessore</a></td>
+</tr></table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Set the feature up</h2>
+<pre>__construct(array $contexts) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contexts</h4>
+<code>array</code><p>a list of context where you want the wysiwyg editor in the excerpt field. Defatul array('post','page')</p>
+</div>
+</div></div>
+</div>
+<a id="method_add_tinymce_to_excerpt_metabox"></a><div class="element clickable method public method_add_tinymce_to_excerpt_metabox" data-toggle="collapse" data-target=".method_add_tinymce_to_excerpt_metabox .collapse">
+<h2>Adds a new excerpt editor with the wysiwyg editor</h2>
+<pre>add_tinymce_to_excerpt_metabox() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_custom_trim_excerpt"></a><div class="element clickable method public method_custom_trim_excerpt" data-toggle="collapse" data-target=".method_custom_trim_excerpt .collapse">
+<h2>Manages the excerpt escaping process</h2>
+<pre>custom_trim_excerpt(string $text, string $raw_excerpt) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>the default filtered version</p></div>
+<div class="subelement argument">
+<h4>$raw_excerpt</h4>
+<code>string</code><p>the raw version</p></div>
+</div></div>
+</div>
+<a id="method_remove_excerpt_metabox"></a><div class="element clickable method public method_remove_excerpt_metabox" data-toggle="collapse" data-target=".method_remove_excerpt_metabox .collapse">
+<h2>Removes the default editor for the excerpt</h2>
+<pre>remove_excerpt_metabox() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_save_box"></a><div class="element clickable method public method_save_box" data-toggle="collapse" data-target=".method_save_box .collapse">
+<h2>Called when the post is beeing saved</h2>
+<pre>save_box(int $post_id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>int</code><p>the post id</p></div>
+</div></div>
+</div>
+<a id="method_tinymce_excerpt_box"></a><div class="element clickable method public method_tinymce_excerpt_box" data-toggle="collapse" data-target=".method_tinymce_excerpt_box .collapse">
+<h2>Prints the markup for the tinymce excerpt box</h2>
+<pre>tinymce_excerpt_box(object $post) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post</h4>
+<code>object</code><p>the post object</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_contexts"> </a><div class="element clickable property public property_contexts" data-toggle="collapse" data-target=".property_contexts .collapse">
+<h2></h2>
+<pre>$contexts </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_custom_exceprt_slug"> </a><div class="element clickable constant  constant_custom_exceprt_slug" data-toggle="collapse" data-target=".constant_custom_exceprt_slug .collapse">
+<h2>custom_exceprt_slug</h2>
+<pre>custom_exceprt_slug </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_textdomain"> </a><div class="element clickable constant  constant_textdomain" data-toggle="collapse" data-target=".constant_textdomain .collapse">
+<h2>textdomain</h2>
+<pre>textdomain </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-20T10:46:25+01:00.<br></footer></div>
+</div>
+</body>
+</html>

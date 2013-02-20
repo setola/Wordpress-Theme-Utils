@@ -1,4 +1,32 @@
 <?php
+/**
+ * Theme functions and definitions
+ *
+ * When using a child theme (see http://codex.wordpress.org/Theme_Development and
+ * http://codex.wordpress.org/Child_Themes), you can override certain functions
+ * (those wrapped in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before the parent
+ * theme's file, so the child theme functions would be used.
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
+ * to a filter or action hook. The hook can be removed by using remove_action() or
+ * remove_filter() and you can attach your own function to the hook.
+ *
+ * We can remove the parent theme's hook only after it is attached, which means we need to
+ * wait until setting up the child theme:
+ *
+ * <code>
+ * add_action( 'after_setup_theme', 'my_child_theme_setup' );
+ * function my_child_theme_setup() {
+ *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
+ *     remove_filter( 'excerpt_length', 'twentyten_excerpt_length' );
+ *     ...
+ * }
+ * </code>
+ *
+ * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
+ */
+
 if(!defined('WORDPRESS_THEME_UTILS_PATH')) 
 	define('WORDPRESS_THEME_UTILS_PATH', dirname(__FILE__));
 
@@ -23,23 +51,7 @@ new DebugUtils();
  */
 //new DefaultAssets();
 
-//TODO: clean useless initializations
 
-/**
- * Iframe system
- */
-/*global $offers;
-$offers = new SpecialOffersSnippet('itqua22319');
-$offers
-	->add_param('displayPrice', 1)
-	->add_param('nb', 1)
-	->add_param('order', 'random')
-	->add_param('pb_flag', 1)
-	->add_param('apd', __('Starting from ', 'theme'))
-	->add_param('pn', __(' per night', 'theme'))
-	->add_param('cta', __('Check Availability', 'theme'))
-	->add_param('ctam', __('More Info', 'theme'));
-*/
 /**
  * Runtime infos
  */
@@ -47,12 +59,17 @@ global $runtime_infos;
 $runtime_infos = new RuntimeInfos();
 $runtime_infos->hook();
 
+
+
+
+if(!function_exists('http_build_url')){
 /**
- * PECT_HTTP is usually missing...
+ * PECT_HTTP is usually missing on many environment.
+ * This function provides the same feature as the function included in PECT_HTTP.
+ * @see @link http://php.net/manual/en/function.http-build-url.php
  * @param array $parsed_url the array to be merged
  * @return string the url
  */
-if(!function_exists('http_build_url ')){
 	function http_build_url($parsed_url) {
 		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
 		$host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
@@ -95,63 +112,11 @@ add_filter('body_class', array('ThemeHelpers', 'body_class'));
 
 
 
-
-
+if(!function_exists('the_html')) { 
 /**
- * Prints the sub pages
- */
-/*
-function the_children(){
-	$children = get_pages(
-			array(
-					'child_of' 		=>	get_the_ID(),
-					'sort_column' 	=>	'menu_order',
-					'sort_order' 	=>	'desc'
-			)
-	);
-
-	if(count($children)) :
-
-	$subs = new SubstitutionTemplate();
-	$subs->set_tpl(<<<EOF
-	<div class="sub-item %column%-col" id="page_%item-id%">
-		<div class="inner">
-			<div class="title">%title%</div>
-			<div class="body">%body%</div>
-			<div class="more">%button%</div>
-		</div>
-	</div>
-EOF
-	);
-
-	$columns = array('left', 'center', 'right');
-
-	echo '<div id="sub-items" class="three-cols clearfix">';
-	foreach($children as $k => $post){
-		global $post;
-		setup_postdata($post);
-		echo $subs
-		->set_markup('item-id', get_the_ID())
-		->set_markup('title', 	ThemeHelpers::anchor(get_permalink(), get_the_title()))
-		->set_markup('column', 	$columns[$k%3])
-		->set_markup('body', 	get_the_excerpt())
-		->set_markup('button', 	ThemeHelpers::anchor(get_permalink(), __('Details', 'theme')))
-		->replace_markup();
-		;
-	}
-	wp_reset_postdata();
-
-	echo '</div>';
-	endif;
-}
-*/
-
-
-/**
- * Print the <html> opening tag
+ * Print the <html> opening tag from html5 boilerplate
  * @param string|array $class some additional classes
  */
-if(!function_exists('the_html')) { 
 	function the_html($class=''){
 		if(is_array($class)){
 			$class = ' '.join(' ', $class);
@@ -166,91 +131,3 @@ if(!function_exists('the_html')) {
 	}
 }
 
-/**
- * Print the markup from the FBSeo plugin
- */
-/*function the_fb_seo(){
-	echo ThemeHelpers::heading();
-}
-
-
-
-
-
-
-function the_post_image(){
-	$images = get_posts(
-		array(
-			'post_parent'	=>	get_the_ID(),
-			'post_type'		=>	'attachment',
-			'numberposts'	=>	-1,
-			'exclude'		=>	get_post_thumbnail_id(),
-			'orderby'		=>	'post_order',
-			'order'			=>	'ASC',
-			'tax_query' 	=>	array(
-				'taxonomy'		=>	'media_tag',
-				'field'			=>	'slug',
-				'terms'			=>	'slideshow',
-				'operator'		=>	'NOT IN'
-			)
-		)
-	);
-	
-	//$images = get_attachments_by_media_tags('media_tags=slideshow');
-	//$images = wp_get_attachment_url();
-	if(count($images)>0){
-		$good_sizes = true;
-		foreach($images as $image){
-			$metas = wp_get_attachment_metadata($image->ID);
-			if(intval($metas['width']) < 460 && intval($metas['height']) < 250 ){
-				$good_sizes = false; 
-				break;
-			}
-		}
-		
-		if($good_sizes){
-			$minigallery = new MinigalleryBigImageWithThumbs();
-			echo $minigallery
-				->add_images($images)
-				->set_markup('next', '<div class="next">&raquo;</div>')
-				->set_markup('prev', '<div class="next">&laquo;</div>')
-				->set_markup('loading', '<div class="loading">'.__('Loading Image...', 'theme').'</div>')
-				->get_markup();
-		} else {
-			foreach($images as $image){
-				echo wp_get_attachment_image($image->ID);
-			}
-		}
-	} else { 
-		echo wp_get_attachment_image(4, 'two-columns'); 
-	}
-}
-
-function the_post_head_image(){
-	if(has_post_thumbnail()){
-		the_post_thumbnail();
-	}else{
-		$image_found = false;
-		global $post;
-		while($post->post_parent!=0){
-			$post = get_post($post->post_parent);
-			setup_postdata($post);
-			if(has_post_thumbnail()){
-				the_post_thumbnail();
-				$image_found = true;
-			}
-		}
-		wp_reset_postdata();
-		
-		if(!$image_found){
-			echo wp_get_attachment_image(75, 'post-thumbnail');
-		}
-	}
-}
-*/
-/**
- * Prints the logo
- */
-/*function the_logo(){
-	echo wp_get_attachment_image(LOGO_MEDIA_ID, 'logo');
-}*/
