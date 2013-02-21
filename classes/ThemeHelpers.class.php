@@ -415,7 +415,7 @@ EOF;
 	 */
 	public static function get_the_seo_title(){
 		if(is_404()){
-			return 'asdlalla';
+			return __('Error 404', 'theme');
 		}
 		if(function_exists('fbseo_get_title')) 
 			return fbseo_get_title();
@@ -432,7 +432,7 @@ EOF;
 	 */
 	public static function get_the_seo_description(){
 		if(is_404()){
-			return 'asdlalla';
+			return __('Error 404', 'theme');
 		}
 		
 		if(function_exists('fbseo_get_metadescription'))
@@ -453,7 +453,7 @@ EOF;
 			global $post;
 		}
 		if(is_404()){
-			return __('Error 404');
+			return __('Error 404', 'theme');
 		}
 		if(is_numeric($post)){
 			$id = $post;

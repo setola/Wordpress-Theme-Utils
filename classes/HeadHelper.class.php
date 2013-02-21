@@ -85,23 +85,24 @@ class HeadHelper{
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 EOF
-		);
+			);
+		}
 
 		echo <<<EOF
-	<title>$title</title>
-	$desc
-    <meta charset="{$this->charset}">
-    $meta_tags
-    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
+		<title>$title</title>
+		$desc
+	    <meta charset="{$this->charset}">
+	    $meta_tags
+	    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
+	    $ga_tracking
 EOF;
-		}
 	}
 	
 	/**
 	 * Sets the Google Analytics tracking code
 	 * @param string $ga UA-XXXXXX
 	 */
-	public function set_ga($ga){
+	public function set_ua($ga){
 		$this->ua = $ga;
 		return $this;
 	}
