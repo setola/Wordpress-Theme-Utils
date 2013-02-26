@@ -2,7 +2,7 @@
  * location.less
  * Put here the style for the location page (google maps)
  * 
- * Compiled on Thu, 24 Jan 2013 16:04:20 GMT
+ * Compiled on Mon, 25 Feb 2013 16:00:46 GMT
  */
 /*!
  * variables.less
@@ -37,7 +37,7 @@
   height: 294px;
   overflow: hidden;
   position: relative;
-  z-index: 1200;
+  z-index: 1300;
 }
 .minigallery .caption {
   position: absolute;
@@ -56,7 +56,7 @@
   background-image: linear-gradient(to right, rgba(125, 125, 125, 0.5), rgba(125, 125, 125, 0.5));
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#807d7d7d', endColorstr='#807d7d7d', GradientType=1);
-  z-index: 1300;
+  z-index: 1200;
 }
 .minigallery .big-image {
   position: relative;
