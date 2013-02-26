@@ -21,7 +21,7 @@ jQuery.fn.doSlideshow = function() {
 		var status_box = images_container.find('.loading');
 		var status_template = status_box.attr('data-description')+'';
 		status_template.replace(/%total%/g, window.preload_images[id].images.length+'');
-		var cycle_container = jQuery('<div/>',{'class':'cycle'});
+		var cycle_container = jQuery('<div/>',{'class':'cycle-full'});
 		
 		//Reset
 		images_container.empty();
@@ -42,6 +42,9 @@ jQuery.fn.doSlideshow = function() {
 			img.imageResize();
 		});
 		
+		cycle_container.css('display','none');
+		images_container.append(cycle_container);
+		
 		//initialize deferred object for imagesLoaded
 		var dfd = images_container.imagesLoaded();
 		
@@ -52,11 +55,12 @@ jQuery.fn.doSlideshow = function() {
 		
 		//When all images are loaded...
 		dfd.always(function(){
-			images_container.append(cycle_container);
-			cycle_container.cycle({
+			//images_container.append(cycle_container);
+			cycle_container.fadeIn().cycle({
 				speed: 800,
 				timeout: 3000,
-				slideResize: false
+				slideResize: 0,
+				containerResize: 0
 			});	
 			status_box.fadeOut(600);
 		});
