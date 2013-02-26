@@ -18,7 +18,7 @@
  * 	Initial Release
  */
 class SpecialOffersSnippet {
-	const baseurl = 'http://hotelsitecontents.fastbooking.com/promotions.php';
+	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion';
 	const default_divdest = 'FB_so';
 	
 	/**
@@ -81,7 +81,10 @@ EOF;
 	 */
 	public static function calculate_url($params=array()){
 		$url_arr = parse_url(self::baseurl);
-		$url_arr['query'] = http_build_query($params);
+		$url_arr['query'] = 
+			(empty($url_arr['query'])) 
+				?	http_build_query($params) 
+				:	$url_arr['query'].'&'.http_build_query($params);
 		return self::build_url($url_arr);
 	}
 	
@@ -142,9 +145,7 @@ EOF;
 	 * @return string the url
 	 */
 	public function get_iframe_src(){
-		$url_arr = parse_url(self::baseurl);
-		$url_arr['query'] = http_build_query($this->params);
-		return self::build_url($url_arr);
+		return self::calculate_url($this->params);
 	}
 	
 	/**
