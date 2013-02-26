@@ -18,13 +18,15 @@ jQuery.fn.doSlideshow = function() {
 	
 	return this.each(function(){
 		var images_container = jQuery(this);
-		var status_box = images_container.find('.loading');
-		var status_template = status_box.attr('data-description')+'';
-		status_template.replace(/%total%/g, window.preload_images[id].images.length+'');
+		//var status_box = images_container.find('.loading');
+		var status_box = jQuery('<div>', {'class':'loading'});
+		//var status_template = status_box.attr('data-description')+'';
+		var status_template = window.preload_images[id].loading+'';
+		status_template = status_template.replace(/%total%/g, window.preload_images[id].images.length+'');
 		var cycle_container = jQuery('<div/>',{'class':'cycle-full'});
 		
 		//Reset
-		images_container.empty();
+		images_container.empty().append(status_box.html(status_template.replace(/%number%/g, 0+'')));
 		
 		jQuery.each(window.preload_images[id].images, function(index, image) {
 			var img = jQuery('<img/>', {

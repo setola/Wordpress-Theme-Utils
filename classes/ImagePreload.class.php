@@ -37,7 +37,7 @@ class ImagePreload extends GalleryHelper{
 		$json = json_encode(
 			array(
 				'images'	=>	$toret,
-				//'loading'	=>	$this->static_markup['loading'],
+				'loading'	=>	__('Loading image %number%/%total%', 'theme'),
 				'uid'		=>	$this->unid
 			)
 		);
