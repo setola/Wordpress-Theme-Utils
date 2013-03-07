@@ -41,7 +41,10 @@ include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
 new ClassAutoloader();
 
 /**
- * Initialize the debug utils vd() v() vc()
+ * Initialize the debug utils 
+ * @see vd() 
+ * @see v() 
+ * @see vc()
  */
 new DebugUtils();
 
@@ -92,15 +95,7 @@ register_nav_menu('primary', __('Primary Menu', 'theme'));
 register_nav_menu('secondary', __('Secondary Menu', 'theme'));
 
 
-/**
- * Hide the wp admin bar
- */
-add_filter('show_admin_bar', '__return_false');
 
-/**
- * Hook to body class
- */
-add_filter('body_class', array('ThemeHelpers', 'body_class'));
 
 
 
@@ -118,16 +113,7 @@ if(!function_exists('the_html')) {
  * @param string|array $class some additional classes
  */
 	function the_html($class=''){
-		if(is_array($class)){
-			$class = ' '.join(' ', $class);
-		}
-		$class = ' '.trim($class);
-		?>
-		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-		<!--[if IE 8]>         <html class="no-js lt-ie9<?php echo $class; ?>" <?php language_attributes(); ?>> <![endif]-->
-		<!--[if gt IE 8]><!--> <html class="no-js<?php echo $class; ?>" <?php language_attributes(); ?>> <!--<![endif]-->
-		<?php 
+		echo HtmlHelper::open_html($class);
 	}
 }
 

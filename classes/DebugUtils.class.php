@@ -139,7 +139,7 @@ EOF;
 if(!function_exists('vd')):
 /**
  * Quick and dirty way to know a variable value
- * vd stand for <strong>v</strong>ar_dump() and <strong>d</storng>ie()
+ * vd stand for <b>v</b>ar_dump() and <b>d</b>ie()
  * @param mixed $var the variable to be dumped
  */
 function vd($var){
@@ -167,7 +167,7 @@ endif;
 if(!function_exists('vc')):
 /**
  * Quick and dirty way to know a variable value in a production enviroment
- * vc stand for <strong>v</strong>ar_dump() on a <strong>c</storng>omment
+ * vc stand for <b>v</b>ar_dump() on a <b>c</b>omment
  * @param mixed $var the variable to be dumped
  */
 function vc($var){

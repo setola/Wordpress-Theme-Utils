@@ -521,6 +521,13 @@ EOF;
 	<!-- AddThis Button END -->	
 EOF;
 	}
+	
+	/**
+	 * Hides the wp admin bar
+	 */
+	public function hide_admin_bar(){
+		add_filter('show_admin_bar', '__return_false');
+	}
 
 
 }

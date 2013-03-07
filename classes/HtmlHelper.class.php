@@ -212,6 +212,36 @@ class HtmlBuilder {
 	}
 	
 	/**
+	 * Returns the <html> opening tag from html5 boilerplate
+	 * @param string|array $class some additional classes
+	 */
+	public static function open_html($class=''){
+		if(is_array($class)){
+			$class = ' '.join(' ', $class);
+		}
+		$class = ' '.trim($class);
+		
+		ob_start();
+		language_attributes();
+		$langs = ob_get_contents();
+		ob_end_clean();
+		
+		
+		$sub = new SubstitutionTemplate();
+		return $sub->set_tpl(
+<<< EOF
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7%class%" %langs%> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8%class%"  %langs%> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9%class%"  %langs%> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js%class%"  %langs%> <!--<![endif]-->		
+EOF
+		)
+			->set_markup('langs', $langs)
+			->set_markup('class', $class)
+			->replace_markup();
+	}
+	
+	/**
 	 * Builds a default tag structure: <tagname tagparameters>inner_html</tagname>
 	 * @param string $tag the tag
 	 * @param string $inner_html the inner html
