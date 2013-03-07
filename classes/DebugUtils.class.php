@@ -7,7 +7,7 @@
  * Utils to debug the code while writing it.
  * @author Emanuele 'Tex' Tessore
  */
-class DebugUtils {
+final class DebugUtils {
 	
 	/**
 	 * @var DebugUtils singleton instance
@@ -48,7 +48,7 @@ class DebugUtils {
 	/**
 	 * Initializes the default settings
 	 */
-	public function __construct(){
+	private function __construct(){
 		$this->tpl = $tpl = <<<EOF
 		<div class="debug">
 			<h1>%title%</h1>
