@@ -9,7 +9,9 @@
 
 
 echo HtmlHelper::doctype('html5');
-the_html(); 
+echo HtmlHelper::open_html();
+ThemeHelpers::load_css('reset');
+ThemeHelpers::load_css('grid-960');
 
 ?>
 <head>
@@ -18,10 +20,10 @@ the_html();
 		$header
 		->set_title(ThemeHelpers::get_the_seo_title())
 		->set_meta_tag(
-				array(
-						'name'		=>	'description',
-						'content'	=>	ThemeHelpers::get_the_seo_description()
-				)
+			array(
+				'name'		=>	'description',
+				'content'	=>	ThemeHelpers::get_the_seo_description()
+			)
 		)
 		->the_head();
 		wp_head();
