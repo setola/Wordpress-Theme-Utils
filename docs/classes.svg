@@ -23,22 +23,22 @@
 <!-- \\ImagePreload -->
 <g id="node2" class="node"><title>\\ImagePreload</title>
 <a xlink:href="classes.ImagePreload.class.html" xlink:title="ImagePreload" target="_parent">
-<polygon fill="none" stroke="black" points="553,-844 455,-844 455,-808 553,-808 553,-844"/>
-<text text-anchor="middle" x="504" y="-823.1" font-family="Courier,monospace" font-size="11.00">ImagePreload</text>
+<polygon fill="none" stroke="black" points="553,-830 455,-830 455,-794 553,-794 553,-830"/>
+<text text-anchor="middle" x="504" y="-809.1" font-family="Courier,monospace" font-size="11.00">ImagePreload</text>
 </a>
 </g>
 <!-- \\GalleryHelper -->
-<g id="node29" class="node"><title>\\GalleryHelper</title>
+<g id="node30" class="node"><title>\\GalleryHelper</title>
 <a xlink:href="classes.GalleryHelper.class.html" xlink:title="«abstract»&lt;br/&gt;GalleryHelper" target="_parent">
-<polygon fill="none" stroke="black" points="325,-790 221,-790 221,-754 325,-754 325,-790"/>
-<text text-anchor="start" x="239" y="-777.433" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="229" y="-764.233" font-family="Courier,monospace" font-size="11.00">GalleryHelper</text>
+<polygon fill="none" stroke="black" points="325,-830 221,-830 221,-794 325,-794 325,-830"/>
+<text text-anchor="start" x="239" y="-817.433" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="229" y="-804.233" font-family="Courier,monospace" font-size="11.00">GalleryHelper</text>
 </a>
 </g>
 <!-- \\ImagePreload&#45;&gt;\\GalleryHelper -->
 <g id="edge3" class="edge"><title>\\ImagePreload&#45;&gt;\\GalleryHelper</title>
-<path fill="none" stroke="black" d="M454.728,-814.482C419.941,-806.35 373.046,-795.387 335.609,-786.636"/>
-<polygon fill="none" stroke="black" points="336.348,-783.214 325.814,-784.346 334.755,-790.031 336.348,-783.214"/>
+<path fill="none" stroke="black" d="M454.728,-812C420.089,-812 373.445,-812 336.087,-812"/>
+<polygon fill="none" stroke="black" points="335.814,-808.5 325.814,-812 335.814,-815.5 335.814,-808.5"/>
 </g>
 <!-- \\SpecialOffersSnippetAjax -->
 <g id="node3" class="node"><title>\\SpecialOffersSnippetAjax</title>
@@ -50,296 +50,308 @@
 <!-- \\FeatureWithAssets -->
 <g id="node4" class="node"><title>\\FeatureWithAssets</title>
 <a xlink:href="classes.FeatureWithAssets.class.html" xlink:title="FeatureWithAssets" target="_parent">
-<polygon fill="none" stroke="black" points="147,-790 17,-790 17,-754 147,-754 147,-790"/>
-<text text-anchor="middle" x="82" y="-769.1" font-family="Courier,monospace" font-size="11.00">FeatureWithAssets</text>
+<polygon fill="none" stroke="black" points="147,-830 17,-830 17,-794 147,-794 147,-830"/>
+<text text-anchor="middle" x="82" y="-809.1" font-family="Courier,monospace" font-size="11.00">FeatureWithAssets</text>
 </a>
 </g>
 <!-- \\DefaultAssets -->
 <g id="node5" class="node"><title>\\DefaultAssets</title>
 <a xlink:href="classes.DefaultAssets.class.html" xlink:title="DefaultAssets" target="_parent">
-<polygon fill="none" stroke="black" points="857,-1384 753,-1384 753,-1348 857,-1348 857,-1384"/>
-<text text-anchor="middle" x="805" y="-1363.1" font-family="Courier,monospace" font-size="11.00">DefaultAssets</text>
+<polygon fill="none" stroke="black" points="556,-776 452,-776 452,-740 556,-740 556,-776"/>
+<text text-anchor="middle" x="504" y="-755.1" font-family="Courier,monospace" font-size="11.00">DefaultAssets</text>
 </a>
 </g>
 <!-- \\AjaxImageGenerator -->
 <g id="node6" class="node"><title>\\AjaxImageGenerator</title>
 <a xlink:href="classes.AjaxImageGenerator.class.html" xlink:title="AjaxImageGenerator" target="_parent">
-<polygon fill="none" stroke="black" points="874,-1330 736,-1330 736,-1294 874,-1294 874,-1330"/>
-<text text-anchor="middle" x="805" y="-1309.1" font-family="Courier,monospace" font-size="11.00">AjaxImageGenerator</text>
+<polygon fill="none" stroke="black" points="874,-1384 736,-1384 736,-1348 874,-1348 874,-1384"/>
+<text text-anchor="middle" x="805" y="-1363.1" font-family="Courier,monospace" font-size="11.00">AjaxImageGenerator</text>
 </a>
 </g>
 <!-- \\TinyMCEExcerptCustomization -->
 <g id="node7" class="node"><title>\\TinyMCEExcerptCustomization</title>
 <a xlink:href="classes.TinyMCEExcerpt.class.html" xlink:title="TinyMCEExcerptCustomization" target="_parent">
-<polygon fill="none" stroke="black" points="904,-1276 706,-1276 706,-1240 904,-1240 904,-1276"/>
-<text text-anchor="middle" x="805" y="-1255.1" font-family="Courier,monospace" font-size="11.00">TinyMCEExcerptCustomization</text>
+<polygon fill="none" stroke="black" points="904,-1330 706,-1330 706,-1294 904,-1294 904,-1330"/>
+<text text-anchor="middle" x="805" y="-1309.1" font-family="Courier,monospace" font-size="11.00">TinyMCEExcerptCustomization</text>
 </a>
 </g>
 <!-- \\OneImageForAll -->
 <g id="node8" class="node"><title>\\OneImageForAll</title>
 <a xlink:href="classes.OneImageForAll.class.html" xlink:title="OneImageForAll" target="_parent">
-<polygon fill="none" stroke="black" points="559,-790 449,-790 449,-754 559,-754 559,-790"/>
-<text text-anchor="middle" x="504" y="-769.1" font-family="Courier,monospace" font-size="11.00">OneImageForAll</text>
+<polygon fill="none" stroke="black" points="559,-587 449,-587 449,-551 559,-551 559,-587"/>
+<text text-anchor="middle" x="504" y="-566.1" font-family="Courier,monospace" font-size="11.00">OneImageForAll</text>
 </a>
 </g>
 <!-- \\OneImageForAll&#45;&gt;\\GalleryHelper -->
 <g id="edge5" class="edge"><title>\\OneImageForAll&#45;&gt;\\GalleryHelper</title>
-<path fill="none" stroke="black" d="M448.376,-772C414.475,-772 371.063,-772 335.912,-772"/>
-<polygon fill="none" stroke="black" points="335.761,-768.5 325.761,-772 335.761,-775.5 335.761,-768.5"/>
+<path fill="none" stroke="black" d="M448.302,-574.626C430.885,-578.52 412.462,-585.056 398,-596 333.278,-644.977 296.344,-737.939 281.186,-784.286"/>
+<polygon fill="none" stroke="black" points="277.804,-783.372 278.118,-793.962 284.477,-785.488 277.804,-783.372"/>
 </g>
 <!-- \\GMapDataRetriever -->
 <g id="node9" class="node"><title>\\GMapDataRetriever</title>
 <a xlink:href="classes.GMapDataRetriever.class.html" xlink:title="GMapDataRetriever" target="_parent">
-<polygon fill="none" stroke="black" points="870,-1222 740,-1222 740,-1186 870,-1186 870,-1222"/>
-<text text-anchor="middle" x="805" y="-1201.1" font-family="Courier,monospace" font-size="11.00">GMapDataRetriever</text>
+<polygon fill="none" stroke="black" points="870,-1276 740,-1276 740,-1240 870,-1240 870,-1276"/>
+<text text-anchor="middle" x="805" y="-1255.1" font-family="Courier,monospace" font-size="11.00">GMapDataRetriever</text>
 </a>
 </g>
 <!-- \\SimpleFieldsQuickConfig -->
 <g id="node10" class="node"><title>\\SimpleFieldsQuickConfig</title>
 <a xlink:href="classes.SimpleFieldsQuickConfig.class.html" xlink:title="SimpleFieldsQuickConfig" target="_parent">
-<polygon fill="none" stroke="black" points="891,-1168 719,-1168 719,-1132 891,-1132 891,-1168"/>
-<text text-anchor="middle" x="805" y="-1147.1" font-family="Courier,monospace" font-size="11.00">SimpleFieldsQuickConfig</text>
+<polygon fill="none" stroke="black" points="891,-1222 719,-1222 719,-1186 891,-1186 891,-1222"/>
+<text text-anchor="middle" x="805" y="-1201.1" font-family="Courier,monospace" font-size="11.00">SimpleFieldsQuickConfig</text>
 </a>
 </g>
 <!-- \\DebugUtils -->
 <g id="node11" class="node"><title>\\DebugUtils</title>
 <a xlink:href="classes.DebugUtils.class.html" xlink:title="DebugUtils" target="_parent">
-<polygon fill="none" stroke="black" points="847,-1114 763,-1114 763,-1078 847,-1078 847,-1114"/>
-<text text-anchor="middle" x="805" y="-1093.1" font-family="Courier,monospace" font-size="11.00">DebugUtils</text>
+<polygon fill="none" stroke="black" points="847,-1168 763,-1168 763,-1132 847,-1132 847,-1168"/>
+<text text-anchor="middle" x="805" y="-1147.1" font-family="Courier,monospace" font-size="11.00">DebugUtils</text>
 </a>
 </g>
 <!-- \\ForceDownload -->
 <g id="node12" class="node"><title>\\ForceDownload</title>
 <a xlink:href="classes.ForceDownload.class.html" xlink:title="ForceDownload" target="_parent">
-<polygon fill="none" stroke="black" points="857,-1060 753,-1060 753,-1024 857,-1024 857,-1060"/>
-<text text-anchor="middle" x="805" y="-1039.1" font-family="Courier,monospace" font-size="11.00">ForceDownload</text>
+<polygon fill="none" stroke="black" points="857,-1114 753,-1114 753,-1078 857,-1078 857,-1114"/>
+<text text-anchor="middle" x="805" y="-1093.1" font-family="Courier,monospace" font-size="11.00">ForceDownload</text>
 </a>
 </g>
 <!-- \\ShowTitleThumbExcerptWalkerNavMenu -->
 <g id="node13" class="node"><title>\\ShowTitleThumbExcerptWalkerNavMenu</title>
 <a xlink:href="classes.ShowTitleThumbExcerptWalkerNavMenu.class.html" xlink:title="ShowTitleThumbExcerptWalkerNavMenu" target="_parent">
-<polygon fill="none" stroke="black" points="928,-196 682,-196 682,-160 928,-160 928,-196"/>
-<text text-anchor="middle" x="805" y="-175.1" font-family="Courier,monospace" font-size="11.00">ShowTitleThumbExcerptWalkerNavMenu</text>
+<polygon fill="none" stroke="black" points="928,-250 682,-250 682,-214 928,-214 928,-250"/>
+<text text-anchor="middle" x="805" y="-229.1" font-family="Courier,monospace" font-size="11.00">ShowTitleThumbExcerptWalkerNavMenu</text>
 </a>
 </g>
 <!-- \\Walker_Nav_Menu -->
-<g id="node40" class="node"><title>\\Walker_Nav_Menu</title>
+<g id="node41" class="node"><title>\\Walker_Nav_Menu</title>
 <ellipse fill="none" stroke="black" cx="504" cy="-18" rx="104.86" ry="18.3848"/>
 <text text-anchor="middle" x="504" y="-14.4" font-family="Times Roman,serif" font-size="14.00" fill="gray">\Walker_Nav_Menu</text>
 </g>
 <!-- \\ShowTitleThumbExcerptWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu -->
 <g id="edge7" class="edge"><title>\\ShowTitleThumbExcerptWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
-<path fill="none" stroke="black" d="M697.465,-159.906C692.05,-157.313 686.853,-154.361 682,-151 633.659,-117.52 658.532,-73.2029 610,-40 606.04,-37.2905 601.815,-34.9026 597.418,-32.7991"/>
-<polygon fill="none" stroke="black" points="598.752,-29.5632 588.18,-28.869 596.012,-36.0046 598.752,-29.5632"/>
+<path fill="none" stroke="black" d="M695.03,-213.874C690.43,-211.274 686.054,-208.331 682,-205 620.175,-154.211 672.114,-90.4342 610,-40 606.808,-37.4084 603.388,-35.0991 599.802,-33.0427"/>
+<polygon fill="none" stroke="black" points="601.09,-29.774 590.58,-28.4355 597.961,-36.0359 601.09,-29.774"/>
 </g>
 <!-- \\LipsumGenerator -->
 <g id="node14" class="node"><title>\\LipsumGenerator</title>
 <a xlink:href="classes.LipsumGenerator.class.html" xlink:title="LipsumGenerator" target="_parent">
-<polygon fill="none" stroke="black" points="864,-952 746,-952 746,-916 864,-916 864,-952"/>
-<text text-anchor="middle" x="805" y="-931.1" font-family="Courier,monospace" font-size="11.00">LipsumGenerator</text>
+<polygon fill="none" stroke="black" points="864,-1006 746,-1006 746,-970 864,-970 864,-1006"/>
+<text text-anchor="middle" x="805" y="-985.1" font-family="Courier,monospace" font-size="11.00">LipsumGenerator</text>
 </a>
 </g>
 <!-- \\ThemeHelpers -->
 <g id="node15" class="node"><title>\\ThemeHelpers</title>
 <a xlink:href="classes.ThemeHelpers.class.html" xlink:title="ThemeHelpers" target="_parent">
-<polygon fill="none" stroke="black" points="854,-898 756,-898 756,-862 854,-862 854,-898"/>
-<text text-anchor="middle" x="805" y="-877.1" font-family="Courier,monospace" font-size="11.00">ThemeHelpers</text>
+<polygon fill="none" stroke="black" points="854,-952 756,-952 756,-916 854,-916 854,-952"/>
+<text text-anchor="middle" x="805" y="-931.1" font-family="Courier,monospace" font-size="11.00">ThemeHelpers</text>
 </a>
 </g>
 <!-- \\SubstitutionTemplate -->
 <g id="node16" class="node"><title>\\SubstitutionTemplate</title>
 <a xlink:href="classes.SubstitutionTemplate.class.html" xlink:title="SubstitutionTemplate" target="_parent">
-<polygon fill="none" stroke="black" points="881,-844 729,-844 729,-808 881,-808 881,-844"/>
-<text text-anchor="middle" x="805" y="-823.1" font-family="Courier,monospace" font-size="11.00">SubstitutionTemplate</text>
+<polygon fill="none" stroke="black" points="881,-898 729,-898 729,-862 881,-862 881,-898"/>
+<text text-anchor="middle" x="805" y="-877.1" font-family="Courier,monospace" font-size="11.00">SubstitutionTemplate</text>
 </a>
 </g>
 <!-- \\ClassAutoloader -->
 <g id="node17" class="node"><title>\\ClassAutoloader</title>
 <a xlink:href="classes.ClassAutoloader.class.html" xlink:title="ClassAutoloader" target="_parent">
-<polygon fill="none" stroke="black" points="864,-790 746,-790 746,-754 864,-754 864,-790"/>
-<text text-anchor="middle" x="805" y="-769.1" font-family="Courier,monospace" font-size="11.00">ClassAutoloader</text>
+<polygon fill="none" stroke="black" points="864,-844 746,-844 746,-808 864,-808 864,-844"/>
+<text text-anchor="middle" x="805" y="-823.1" font-family="Courier,monospace" font-size="11.00">ClassAutoloader</text>
 </a>
 </g>
 <!-- \\RemoveSpacesWalkerNavMenu -->
 <g id="node18" class="node"><title>\\RemoveSpacesWalkerNavMenu</title>
 <a xlink:href="classes.RemoveSpacesWalkerNavMenu.class.html" xlink:title="RemoveSpacesWalkerNavMenu" target="_parent">
-<polygon fill="none" stroke="black" points="897,-88 713,-88 713,-52 897,-52 897,-88"/>
-<text text-anchor="middle" x="805" y="-67.1" font-family="Courier,monospace" font-size="11.00">RemoveSpacesWalkerNavMenu</text>
+<polygon fill="none" stroke="black" points="897,-196 713,-196 713,-160 897,-160 897,-196"/>
+<text text-anchor="middle" x="805" y="-175.1" font-family="Courier,monospace" font-size="11.00">RemoveSpacesWalkerNavMenu</text>
 </a>
 </g>
 <!-- \\RemoveSpacesWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu -->
 <g id="edge9" class="edge"><title>\\RemoveSpacesWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
-<path fill="none" stroke="black" d="M712.234,-53.974C672.751,-47.153 627.019,-39.2525 588.487,-32.5958"/>
-<polygon fill="none" stroke="black" points="588.79,-29.0963 578.34,-30.8427 587.598,-35.9941 588.79,-29.0963"/>
+<path fill="none" stroke="black" d="M712.333,-166C701.562,-162.239 691.166,-157.348 682,-151 633.659,-117.52 658.532,-73.2029 610,-40 606.04,-37.2905 601.815,-34.9026 597.418,-32.7991"/>
+<polygon fill="none" stroke="black" points="598.752,-29.5632 588.18,-28.869 596.012,-36.0046 598.752,-29.5632"/>
 </g>
 <!-- \\SpecialOffersSnippet -->
 <g id="node19" class="node"><title>\\SpecialOffersSnippet</title>
 <a xlink:href="classes.SpecialOffersSnippet.class.html" xlink:title="SpecialOffersSnippet" target="_parent">
-<polygon fill="none" stroke="black" points="881,-682 729,-682 729,-646 881,-646 881,-682"/>
-<text text-anchor="middle" x="805" y="-661.1" font-family="Courier,monospace" font-size="11.00">SpecialOffersSnippet</text>
+<polygon fill="none" stroke="black" points="881,-736 729,-736 729,-700 881,-700 881,-736"/>
+<text text-anchor="middle" x="805" y="-715.1" font-family="Courier,monospace" font-size="11.00">SpecialOffersSnippet</text>
 </a>
 </g>
 <!-- \\HashAnchorWalkerNavMenu -->
 <g id="node20" class="node"><title>\\HashAnchorWalkerNavMenu</title>
 <a xlink:href="classes.HashAnchorWalkerNavMenu.class.html" xlink:title="HashAnchorWalkerNavMenu" target="_parent">
-<polygon fill="none" stroke="black" points="891,-412 719,-412 719,-376 891,-376 891,-412"/>
-<text text-anchor="middle" x="805" y="-391.1" font-family="Courier,monospace" font-size="11.00">HashAnchorWalkerNavMenu</text>
+<polygon fill="none" stroke="black" points="891,-88 719,-88 719,-52 891,-52 891,-88"/>
+<text text-anchor="middle" x="805" y="-67.1" font-family="Courier,monospace" font-size="11.00">HashAnchorWalkerNavMenu</text>
 </a>
 </g>
 <!-- \\HashAnchorWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu -->
 <g id="edge11" class="edge"><title>\\HashAnchorWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
-<path fill="none" stroke="black" d="M718.863,-388.214C705.127,-383.833 692.129,-377.123 682,-367 576.739,-261.806 715.862,-144.59 610,-40 607.38,-37.4118 604.541,-35.0908 601.53,-33.0115"/>
-<polygon fill="none" stroke="black" points="603.026,-29.8307 592.634,-27.7696 599.473,-35.8617 603.026,-29.8307"/>
+<path fill="none" stroke="black" d="M718.745,-55.0989C677.741,-48.015 628.903,-39.578 588.169,-32.5409"/>
+<polygon fill="none" stroke="black" points="588.718,-29.0839 578.268,-30.8303 587.526,-35.9817 588.718,-29.0839"/>
 </g>
 <!-- \\MinigalleryBigImageWithThumbs -->
 <g id="node21" class="node"><title>\\MinigalleryBigImageWithThumbs</title>
 <a xlink:href="classes.MinigalleryBigImageWithThumbs.class.html" xlink:title="MinigalleryBigImageWithThumbs" target="_parent">
-<polygon fill="none" stroke="black" points="610,-628 398,-628 398,-592 610,-592 610,-628"/>
-<text text-anchor="middle" x="504" y="-607.1" font-family="Courier,monospace" font-size="11.00">MinigalleryBigImageWithThumbs</text>
+<polygon fill="none" stroke="black" points="610,-533 398,-533 398,-497 610,-497 610,-533"/>
+<text text-anchor="middle" x="504" y="-512.1" font-family="Courier,monospace" font-size="11.00">MinigalleryBigImageWithThumbs</text>
 </a>
 </g>
 <!-- \\MinigalleryBigImageWithThumbs&#45;&gt;\\GalleryHelper -->
 <g id="edge13" class="edge"><title>\\MinigalleryBigImageWithThumbs&#45;&gt;\\GalleryHelper</title>
-<path fill="none" stroke="black" d="M416.174,-628.027C409.844,-630.628 403.712,-633.602 398,-637 351.777,-664.496 312.282,-714.224 290.662,-745.044"/>
-<polygon fill="none" stroke="black" points="287.575,-743.356 284.792,-753.579 293.343,-747.323 287.575,-743.356"/>
+<path fill="none" stroke="black" d="M411.259,-533.015C406.553,-535.624 402.09,-538.602 398,-542 320.714,-606.219 288.707,-728.745 277.792,-783.883"/>
+<polygon fill="none" stroke="black" points="274.303,-783.499 275.883,-793.975 281.181,-784.8 274.303,-783.499"/>
 </g>
 <!-- \\GeneratorDictionary -->
 <g id="node22" class="node"><title>\\GeneratorDictionary</title>
 <a xlink:href="classes.GeneratorDictionary.class.html" xlink:title="GeneratorDictionary" target="_parent">
-<polygon fill="none" stroke="black" points="576,-682 432,-682 432,-646 576,-646 576,-682"/>
-<text text-anchor="middle" x="504" y="-661.1" font-family="Courier,monospace" font-size="11.00">GeneratorDictionary</text>
+<polygon fill="none" stroke="black" points="576,-641 432,-641 432,-605 576,-605 576,-641"/>
+<text text-anchor="middle" x="504" y="-620.1" font-family="Courier,monospace" font-size="11.00">GeneratorDictionary</text>
 </a>
 </g>
 <!-- \\MinigalleryThumbsLinkToBig -->
 <g id="node23" class="node"><title>\\MinigalleryThumbsLinkToBig</title>
 <a xlink:href="classes.MinigalleryThumbsLinkToBig.class.html" xlink:title="MinigalleryThumbsLinkToBig" target="_parent">
-<polygon fill="none" stroke="black" points="600,-574 408,-574 408,-538 600,-538 600,-574"/>
-<text text-anchor="middle" x="504" y="-553.1" font-family="Courier,monospace" font-size="11.00">MinigalleryThumbsLinkToBig</text>
+<polygon fill="none" stroke="black" points="600,-938 408,-938 408,-902 600,-902 600,-938"/>
+<text text-anchor="middle" x="504" y="-917.1" font-family="Courier,monospace" font-size="11.00">MinigalleryThumbsLinkToBig</text>
 </a>
 </g>
 <!-- \\MinigalleryThumbsLinkToBig&#45;&gt;\\GalleryHelper -->
 <g id="edge15" class="edge"><title>\\MinigalleryThumbsLinkToBig&#45;&gt;\\GalleryHelper</title>
-<path fill="none" stroke="black" d="M413.406,-574.004C407.989,-576.609 402.798,-579.589 398,-583 339.496,-624.585 300.89,-702.899 283.536,-744.463"/>
-<polygon fill="none" stroke="black" points="280.202,-743.372 279.678,-753.954 286.687,-746.008 280.202,-743.372"/>
+<path fill="none" stroke="black" d="M421.787,-901.915C413.626,-899.274 405.569,-896.309 398,-893 363.877,-878.08 328.586,-854.311 304.241,-836.372"/>
+<polygon fill="none" stroke="black" points="306.212,-833.476 296.106,-830.294 302.022,-839.084 306.212,-833.476"/>
 </g>
 <!-- \\EscapeRoute -->
 <g id="node24" class="node"><title>\\EscapeRoute</title>
 <a xlink:href="classes.EscapeRoute.class.html" xlink:title="EscapeRoute" target="_parent">
-<polygon fill="none" stroke="black" points="850,-574 760,-574 760,-538 850,-538 850,-574"/>
-<text text-anchor="middle" x="805" y="-553.1" font-family="Courier,monospace" font-size="11.00">EscapeRoute</text>
+<polygon fill="none" stroke="black" points="850,-628 760,-628 760,-592 850,-592 850,-628"/>
+<text text-anchor="middle" x="805" y="-607.1" font-family="Courier,monospace" font-size="11.00">EscapeRoute</text>
 </a>
 </g>
+<!-- \\DefaultAssetsCDN -->
+<g id="node25" class="node"><title>\\DefaultAssetsCDN</title>
+<a xlink:href="classes.DefaultAssetsCDN.class.html" xlink:title="DefaultAssetsCDN" target="_parent">
+<polygon fill="none" stroke="black" points="867,-790 743,-790 743,-754 867,-754 867,-790"/>
+<text text-anchor="middle" x="805" y="-769.1" font-family="Courier,monospace" font-size="11.00">DefaultAssetsCDN</text>
+</a>
+</g>
+<!-- \\DefaultAssetsCDN&#45;&gt;\\DefaultAssets -->
+<g id="edge17" class="edge"><title>\\DefaultAssetsCDN&#45;&gt;\\DefaultAssets</title>
+<path fill="none" stroke="black" d="M742.267,-769.082C690.579,-766.678 617.66,-763.287 566.136,-760.89"/>
+<polygon fill="none" stroke="black" points="566.281,-757.393 556.129,-760.425 565.956,-764.386 566.281,-757.393"/>
+</g>
 <!-- \\GaussianMath -->
-<g id="node25" class="node"><title>\\GaussianMath</title>
+<g id="node26" class="node"><title>\\GaussianMath</title>
 <a xlink:href="classes.GaussianMath.class.html" xlink:title="GaussianMath" target="_parent">
 <polygon fill="none" stroke="black" points="854,-520 756,-520 756,-484 854,-484 854,-520"/>
 <text text-anchor="middle" x="805" y="-499.1" font-family="Courier,monospace" font-size="11.00">GaussianMath</text>
 </a>
 </g>
 <!-- \\RuntimeInfos -->
-<g id="node26" class="node"><title>\\RuntimeInfos</title>
+<g id="node27" class="node"><title>\\RuntimeInfos</title>
 <a xlink:href="classes.RuntimeInfos.class.html" xlink:title="RuntimeInfos" target="_parent">
 <polygon fill="none" stroke="black" points="854,-466 756,-466 756,-430 854,-430 854,-466"/>
 <text text-anchor="middle" x="805" y="-445.1" font-family="Courier,monospace" font-size="11.00">RuntimeInfos</text>
 </a>
 </g>
 <!-- \\LevelWalkerNavMenu -->
-<g id="node27" class="node"><title>\\LevelWalkerNavMenu</title>
+<g id="node28" class="node"><title>\\LevelWalkerNavMenu</title>
 <a xlink:href="classes.LevelWalkerNavMenu.class.html" xlink:title="LevelWalkerNavMenu" target="_parent">
 <polygon fill="none" stroke="black" points="874,-358 736,-358 736,-322 874,-322 874,-358"/>
 <text text-anchor="middle" x="805" y="-337.1" font-family="Courier,monospace" font-size="11.00">LevelWalkerNavMenu</text>
 </a>
 </g>
 <!-- \\LevelWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu -->
-<g id="edge17" class="edge"><title>\\LevelWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
+<g id="edge19" class="edge"><title>\\LevelWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
 <path fill="none" stroke="black" d="M735.791,-338.034C716.268,-334.244 696.438,-326.847 682,-313 591.437,-226.143 701.059,-126.337 610,-40 607.247,-37.3894 604.268,-35.0537 601.118,-32.9659"/>
 <polygon fill="none" stroke="black" points="602.832,-29.9143 592.412,-27.9993 599.363,-35.9945 602.832,-29.9143"/>
 </g>
 <!-- \\ShowItemExcerptWalkerNavMenu -->
-<g id="node28" class="node"><title>\\ShowItemExcerptWalkerNavMenu</title>
+<g id="node29" class="node"><title>\\ShowItemExcerptWalkerNavMenu</title>
 <a xlink:href="classes.ShowItemExcerptWalkerNavMenu.class.html" xlink:title="ShowItemExcerptWalkerNavMenu" target="_parent">
-<polygon fill="none" stroke="black" points="908,-250 702,-250 702,-214 908,-214 908,-250"/>
-<text text-anchor="middle" x="805" y="-229.1" font-family="Courier,monospace" font-size="11.00">ShowItemExcerptWalkerNavMenu</text>
+<polygon fill="none" stroke="black" points="908,-412 702,-412 702,-376 908,-376 908,-412"/>
+<text text-anchor="middle" x="805" y="-391.1" font-family="Courier,monospace" font-size="11.00">ShowItemExcerptWalkerNavMenu</text>
 </a>
 </g>
 <!-- \\ShowItemExcerptWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu -->
-<g id="edge19" class="edge"><title>\\ShowItemExcerptWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
-<path fill="none" stroke="black" d="M701.787,-217.379C694.696,-214.006 687.997,-209.927 682,-205 620.175,-154.211 672.114,-90.4342 610,-40 606.808,-37.4084 603.388,-35.0991 599.802,-33.0427"/>
-<polygon fill="none" stroke="black" points="601.09,-29.774 590.58,-28.4355 597.961,-36.0359 601.09,-29.774"/>
+<g id="edge21" class="edge"><title>\\ShowItemExcerptWalkerNavMenu&#45;&gt;\\Walker_Nav_Menu</title>
+<path fill="none" stroke="black" d="M701.818,-381.234C694.538,-377.472 687.799,-372.795 682,-367 576.739,-261.806 715.862,-144.59 610,-40 607.38,-37.4118 604.541,-35.0908 601.53,-33.0115"/>
+<polygon fill="none" stroke="black" points="603.026,-29.8307 592.634,-27.7696 599.473,-35.8617 603.026,-29.8307"/>
 </g>
 <!-- \\GalleryHelper&#45;&gt;\\FeatureWithAssets -->
-<g id="edge21" class="edge"><title>\\GalleryHelper&#45;&gt;\\FeatureWithAssets</title>
-<path fill="none" stroke="black" d="M220.303,-772C201.04,-772 178.847,-772 157.958,-772"/>
-<polygon fill="none" stroke="black" points="157.826,-768.5 147.826,-772 157.826,-775.5 157.826,-768.5"/>
+<g id="edge23" class="edge"><title>\\GalleryHelper&#45;&gt;\\FeatureWithAssets</title>
+<path fill="none" stroke="black" d="M220.303,-812C201.04,-812 178.847,-812 157.958,-812"/>
+<polygon fill="none" stroke="black" points="157.826,-808.5 147.826,-812 157.826,-815.5 157.826,-808.5"/>
 </g>
 <!-- \\HeadHelper -->
-<g id="node30" class="node"><title>\\HeadHelper</title>
+<g id="node31" class="node"><title>\\HeadHelper</title>
 <a xlink:href="classes.HeadHelper.class.html" xlink:title="HeadHelper" target="_parent">
 <polygon fill="none" stroke="black" points="847,-304 763,-304 763,-268 847,-268 847,-304"/>
 <text text-anchor="middle" x="805" y="-283.1" font-family="Courier,monospace" font-size="11.00">HeadHelper</text>
 </a>
 </g>
 <!-- \\HtmlHelper -->
-<g id="node31" class="node"><title>\\HtmlHelper</title>
+<g id="node32" class="node"><title>\\HtmlHelper</title>
 <a xlink:href="classes.HtmlHelper.class.html" xlink:title="HtmlHelper" target="_parent">
-<polygon fill="none" stroke="black" points="847,-736 763,-736 763,-700 847,-700 847,-736"/>
-<text text-anchor="middle" x="805" y="-715.1" font-family="Courier,monospace" font-size="11.00">HtmlHelper</text>
+<polygon fill="none" stroke="black" points="847,-682 763,-682 763,-646 847,-646 847,-682"/>
+<text text-anchor="middle" x="805" y="-661.1" font-family="Courier,monospace" font-size="11.00">HtmlHelper</text>
 </a>
 </g>
 <!-- \\HtmlBuilder -->
-<g id="node32" class="node"><title>\\HtmlBuilder</title>
+<g id="node33" class="node"><title>\\HtmlBuilder</title>
 <a xlink:href="classes.HtmlHelper.class.html" xlink:title="HtmlBuilder" target="_parent">
-<polygon fill="none" stroke="black" points="549,-736 459,-736 459,-700 549,-700 549,-736"/>
-<text text-anchor="middle" x="504" y="-715.1" font-family="Courier,monospace" font-size="11.00">HtmlBuilder</text>
+<polygon fill="none" stroke="black" points="549,-695 459,-695 459,-659 549,-659 549,-695"/>
+<text text-anchor="middle" x="504" y="-674.1" font-family="Courier,monospace" font-size="11.00">HtmlBuilder</text>
 </a>
 </g>
 <!-- \\HtmlHelper&#45;&gt;\\HtmlBuilder -->
-<g id="edge23" class="edge"><title>\\HtmlHelper&#45;&gt;\\HtmlBuilder</title>
-<path fill="none" stroke="black" d="M762.83,-718C709.791,-718 618.565,-718 559.794,-718"/>
-<polygon fill="none" stroke="black" points="559.575,-714.5 549.575,-718 559.575,-721.5 559.575,-714.5"/>
+<g id="edge25" class="edge"><title>\\HtmlHelper&#45;&gt;\\HtmlBuilder</title>
+<path fill="none" stroke="black" d="M762.83,-665.821C709.791,-668.112 618.565,-672.052 559.794,-674.59"/>
+<polygon fill="none" stroke="black" points="559.414,-671.103 549.575,-675.032 559.716,-678.097 559.414,-671.103"/>
 </g>
 <!-- \\LoremIpsumDictionary -->
-<g id="node33" class="node"><title>\\LoremIpsumDictionary</title>
+<g id="node34" class="node"><title>\\LoremIpsumDictionary</title>
 <a xlink:href="classes.LoremIpsumDictionary.class.html" xlink:title="LoremIpsumDictionary" target="_parent">
-<polygon fill="none" stroke="black" points="881,-628 729,-628 729,-592 881,-592 881,-628"/>
-<text text-anchor="middle" x="805" y="-607.1" font-family="Courier,monospace" font-size="11.00">LoremIpsumDictionary</text>
+<polygon fill="none" stroke="black" points="881,-574 729,-574 729,-538 881,-538 881,-574"/>
+<text text-anchor="middle" x="805" y="-553.1" font-family="Courier,monospace" font-size="11.00">LoremIpsumDictionary</text>
 </a>
 </g>
 <!-- \\LoremIpsumDictionary&#45;&gt;\\GeneratorDictionary -->
-<g id="edge25" class="edge"><title>\\LoremIpsumDictionary&#45;&gt;\\GeneratorDictionary</title>
-<path fill="none" stroke="black" d="M728.656,-623.696C685.261,-631.481 630.899,-641.234 586.521,-649.195"/>
-<polygon fill="none" stroke="black" points="585.858,-645.759 576.633,-650.97 587.094,-652.649 585.858,-645.759"/>
+<g id="edge27" class="edge"><title>\\LoremIpsumDictionary&#45;&gt;\\GeneratorDictionary</title>
+<path fill="none" stroke="black" d="M728.876,-572.648C713.362,-576.059 697.153,-579.634 682,-583 650.887,-589.911 616.732,-597.569 586.733,-604.319"/>
+<polygon fill="none" stroke="black" points="585.716,-600.96 576.729,-606.571 587.253,-607.789 585.716,-600.96"/>
 </g>
 <!-- \\ImageGenerator -->
-<g id="node34" class="node"><title>\\ImageGenerator</title>
+<g id="node35" class="node"><title>\\ImageGenerator</title>
 <a xlink:href="classes.ImageGenerator.class.html" xlink:title="ImageGenerator" target="_parent">
 <polygon fill="none" stroke="black" points="860,-142 750,-142 750,-106 860,-106 860,-142"/>
 <text text-anchor="middle" x="805" y="-121.1" font-family="Courier,monospace" font-size="11.00">ImageGenerator</text>
 </a>
 </g>
 <!-- \\PhotogalleryThumbWithFancybox -->
-<g id="node35" class="node"><title>\\PhotogalleryThumbWithFancybox</title>
+<g id="node36" class="node"><title>\\PhotogalleryThumbWithFancybox</title>
 <a xlink:href="classes.PhotogalleryThumbWithFancybox.class.html" xlink:title="PhotogalleryThumbWithFancybox" target="_parent">
-<polygon fill="none" stroke="black" points="610,-898 398,-898 398,-862 610,-862 610,-898"/>
-<text text-anchor="middle" x="504" y="-877.1" font-family="Courier,monospace" font-size="11.00">PhotogalleryThumbWithFancybox</text>
+<polygon fill="none" stroke="black" points="610,-884 398,-884 398,-848 610,-848 610,-884"/>
+<text text-anchor="middle" x="504" y="-863.1" font-family="Courier,monospace" font-size="11.00">PhotogalleryThumbWithFancybox</text>
 </a>
 </g>
 <!-- \\PhotogalleryThumbWithFancybox&#45;&gt;\\GalleryHelper -->
-<g id="edge27" class="edge"><title>\\PhotogalleryThumbWithFancybox&#45;&gt;\\GalleryHelper</title>
-<path fill="none" stroke="black" d="M421.787,-861.915C413.626,-859.274 405.569,-856.309 398,-853 363.877,-838.08 328.586,-814.311 304.241,-796.372"/>
-<polygon fill="none" stroke="black" points="306.212,-793.476 296.106,-790.294 302.022,-799.084 306.212,-793.476"/>
+<g id="edge29" class="edge"><title>\\PhotogalleryThumbWithFancybox&#45;&gt;\\GalleryHelper</title>
+<path fill="none" stroke="black" d="M426.759,-847.944C397.205,-841.035 363.884,-833.246 335.835,-826.689"/>
+<polygon fill="none" stroke="black" points="336.291,-823.201 325.757,-824.333 334.698,-830.017 336.291,-823.201"/>
 </g>
 <!-- \\Slideshow -->
-<g id="node36" class="node"><title>\\Slideshow</title>
+<g id="node37" class="node"><title>\\Slideshow</title>
 <a xlink:href="slideshow.html" xlink:title="Slideshow" target="_parent">
-<polygon fill="none" stroke="black" points="843,-1006 767,-1006 767,-970 843,-970 843,-1006"/>
-<text text-anchor="middle" x="805" y="-985.1" font-family="Courier,monospace" font-size="11.00">Slideshow</text>
+<polygon fill="none" stroke="black" points="843,-1060 767,-1060 767,-1024 843,-1024 843,-1060"/>
+<text text-anchor="middle" x="805" y="-1039.1" font-family="Courier,monospace" font-size="11.00">Slideshow</text>
 </a>
 </g>
 <!-- \\Slideshow&#45;&gt;\\ImagePreload -->
-<g id="edge29" class="edge"><title>\\Slideshow&#45;&gt;\\ImagePreload</title>
-<path fill="none" stroke="black" d="M766.288,-986.902C740.462,-984.49 706.82,-977.96 682,-961 634.369,-928.453 657.082,-886.336 610,-853 596.267,-843.276 579.341,-837.049 563.078,-833.063"/>
-<polygon fill="none" stroke="black" points="563.591,-829.592 553.072,-830.859 562.085,-836.428 563.591,-829.592"/>
+<g id="edge31" class="edge"><title>\\Slideshow&#45;&gt;\\ImagePreload</title>
+<path fill="none" stroke="black" d="M766.267,-1042.51C739.767,-1040.88 705.341,-1034.63 682,-1015 617.321,-960.601 673.764,-894.47 610,-839 597.067,-827.749 580.076,-821.076 563.496,-817.15"/>
+<polygon fill="none" stroke="black" points="563.766,-813.633 553.266,-815.045 562.355,-820.489 563.766,-813.633"/>
 </g>
 </g>
 </svg>

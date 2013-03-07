@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \DefaultAssets</title>
+<title>WP Theme Utils » \DefaultAssetsCDN</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -55,18 +55,18 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Register some assets and hooks into WP"><span class="description">Register some assets and hooks into WP</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_add_css" title="add_css :: Adds a css to the current set"><span class="description">Adds a css to the current set</span><pre>add_css()</pre></a></li>
-<li class="method public "><a href="#method_add_js" title="add_js :: Adds a javascript to the current set"><span class="description">Adds a javascript to the current set</span><pre>add_js()</pre></a></li>
-<li class="method public "><a href="#method_callback" title="callback :: This is called on wordpress init
+<li class="method public inherited"><a href="#method___construct" title="__construct :: Register some assets and hooks into WP"><span class="description">Register some assets and hooks into WP</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_add_css" title="add_css :: Adds a css to the current set"><span class="description">Adds a css to the current set</span><pre>add_css()</pre></a></li>
+<li class="method public inherited"><a href="#method_add_js" title="add_js :: Adds a javascript to the current set"><span class="description">Adds a javascript to the current set</span><pre>add_js()</pre></a></li>
+<li class="method public inherited"><a href="#method_callback" title="callback :: This is called on wordpress init
 Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
 from the parent theme"><span class="description">This is called on wordpress init
 Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
 from the parent theme</span><pre>callback()</pre></a></li>
-<li class="method public "><a href="#method_hook" title="hook :: Hooks the assets registration into wordpress init hook"><span class="description">Hooks the assets registration into wordpress init hook</span><pre>hook()</pre></a></li>
-<li class="method public "><a href="#method_register_standard" title="register_standard :: Register some assets for generic use"><span class="description">Register some assets for generic use</span><pre>register_standard()</pre></a></li>
+<li class="method public inherited"><a href="#method_hook" title="hook :: Hooks the assets registration into wordpress init hook"><span class="description">Hooks the assets registration into wordpress init hook</span><pre>hook()</pre></a></li>
+<li class="method public "><a href="#method_register_standard" title="register_standard :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>register_standard()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -75,30 +75,34 @@ from the parent theme</span><pre>callback()</pre></a></li>
 </li>
 <li class="nav-header private">» Private
                     <ul>
-<li class="property private "><a href="#property_assets" title="$assets :: "><span class="description">manages the list of css and js</span><pre>$assets</pre></a></li>
-<li class="property private "><a href="#property_base_dir" title="$base_dir :: "><span class="description">stores infos on path and uri</span><pre>$base_dir</pre></a></li>
+<li class="property private inherited"><a href="#property_assets" title="$assets :: "><span class="description">manages the list of css and js</span><pre>$assets</pre></a></li>
+<li class="property private inherited"><a href="#property_base_dir" title="$base_dir :: "><span class="description">stores infos on path and uri</span><pre>$base_dir</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\DefaultAssets"></a><ul class="breadcrumb">
+<a id="\DefaultAssetsCDN"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/DefaultAssets.html">DefaultAssets</a>
+<span class="divider">\</span><a href="../classes/DefaultAssetsCDN.html">DefaultAssetsCDN</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Register some useful assets in WordPress</p>
+<p class="short_description">Registers some assets from some CDNs</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
 <td><a href="">etessore</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>1.0</td>
 </tr>
 <tr>
 <th>version</th>
@@ -110,19 +114,31 @@ from the parent theme</span><pre>callback()</pre></a></li>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
 <h2>Register some assets and hooks into WP</h2>
 <pre>__construct() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::__construct()</td>
+</tr></table>
+</div></div>
 </div>
 <a id="method_add_css"></a><div class="element clickable method public method_add_css" data-toggle="collapse" data-target=".method_add_css .collapse">
 <h2>Adds a css to the current set</h2>
 <pre>add_css(string $handle, string | bool $src, array $deps, string | bool $ver, string $media) : <a href="../classes/DefaultAssets.html">\DefaultAssets</a></pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>see</th>
 <td><a href="">http://codex.wordpress.org/Function_Reference/wp_register_style</a></td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::add_css()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$handle</h4>
@@ -151,13 +167,19 @@ from the parent theme</span><pre>callback()</pre></a></li>
 <a id="method_add_js"></a><div class="element clickable method public method_add_js" data-toggle="collapse" data-target=".method_add_js .collapse">
 <h2>Adds a javascript to the current set</h2>
 <pre>add_js(string $handle, string $src, array $deps, string | bool $ver, bool $in_footer) : <a href="../classes/DefaultAssets.html">\DefaultAssets</a></pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>see</th>
 <td><a href="">http://codex.wordpress.org/Function_Reference/wp_register_script</a></td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::add_js()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$handle</h4>
@@ -188,21 +210,37 @@ Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
 from the parent theme</h2>
 <pre>callback() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::callback()</td>
+</tr></table>
+</div></div>
 </div>
 <a id="method_hook"></a><div class="element clickable method public method_hook" data-toggle="collapse" data-target=".method_hook .collapse">
 <h2>Hooks the assets registration into wordpress init hook</h2>
 <pre>hook() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::hook()</td>
+</tr></table>
+</div></div>
 </div>
 <a id="method_register_standard"></a><div class="element clickable method public method_register_standard" data-toggle="collapse" data-target=".method_register_standard .collapse">
-<h2>Register some assets for generic use</h2>
+<h2>(non-PHPdoc)</h2>
 <pre>register_standard() : <a href="../classes/DefaultAssets.html">\DefaultAssets</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="classes.DefaultAssets.class.html#%5CDefaultAssets::register_standard()">\DefaultAssets::register_standard()</a></td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/DefaultAssets.html">\DefaultAssets</a></code>$this for chainability</div>
@@ -213,14 +251,26 @@ from the parent theme</h2>
 <a id="property_assets"> </a><div class="element clickable property private property_assets" data-toggle="collapse" data-target=".property_assets .collapse">
 <h2>manages the list of css and js</h2>
 <pre>$assets : \arrary</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::$$assets</td>
+</tr></table>
+</div></div>
 </div>
 <a id="property_base_dir"> </a><div class="element clickable property private property_base_dir" data-toggle="collapse" data-target=".property_base_dir .collapse">
 <h2>stores infos on path and uri</h2>
 <pre>$base_dir : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::$$base_dir</td>
+</tr></table>
+</div></div>
 </div>
 </div>
 </div>

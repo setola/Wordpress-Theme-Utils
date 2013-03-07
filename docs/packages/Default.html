@@ -66,11 +66,11 @@
 Usefull in a loop cause it doesn't break the execution with die"><span class="description">Quick and dirty way to know a variable value
 Usefull in a loop cause it doesn't break the execution with die</span><pre>v</pre></a></li>
 <li class="function  "><a href="#function_vc" title="vc :: Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() on a &lt;strong&gt;c&lt;/storng&gt;omment"><span class="description">Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() on a &lt;strong&gt;c&lt;/storng&gt;omment</span><pre>vc</pre></a></li>
+vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment"><span class="description">Quick and dirty way to know a variable value in a production enviroment
+vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</span><pre>vc</pre></a></li>
 <li class="function  "><a href="#function_vd" title="vd :: Quick and dirty way to know a variable value
-vd stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() and &lt;strong&gt;d&lt;/storng&gt;ie()"><span class="description">Quick and dirty way to know a variable value
-vd stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() and &lt;strong&gt;d&lt;/storng&gt;ie()</span><pre>vd</pre></a></li>
+vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()"><span class="description">Quick and dirty way to know a variable value
+vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</span><pre>vd</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-class"></i> Classes</li>
 <li><a href="#ImagePreload" title="Takes care of image preloading with jQuery imagesloaded">ImagePreload</a></li>
@@ -105,6 +105,7 @@ with a big image and some small thumbs">MinigalleryBigImageWithThumbs</a></li>
 <li><a href="#MinigalleryThumbsLinkToBig" title="Generates a list of thumbnail each one is an anchor
 to the image with 'full' media dimensions.">MinigalleryThumbsLinkToBig</a></li>
 <li><a href="#EscapeRoute" title="Manages the navigation links on a 404 page">EscapeRoute</a></li>
+<li><a href="#DefaultAssetsCDN" title="Registers some assets from some CDNs">DefaultAssetsCDN</a></li>
 <li><a href="#GaussianMath" title="The following object is used to compute numbers with a gaussian distribution">GaussianMath</a></li>
 <li><a href="#RuntimeInfos" title="Manages a set of info to be printed as a json generally at the endo of the page">RuntimeInfos</a></li>
 <li><a href="#LevelWalkerNavMenu" title="Adds the level for the current menu element">LevelWalkerNavMenu</a></li>
@@ -127,6 +128,8 @@ clicking on a little thumb opens the big image in fancybox">PhotogalleryThumbWit
 <li class="constant  "><a href="#constant_ICL_DONT_LOAD_NAVIGATION_CSS" title="ICL_DONT_LOAD_NAVIGATION_CSS :: "><span class="description">ICL_DONT_LOAD_NAVIGATION_CSS</span><pre>ICL_DONT_LOAD_NAVIGATION_CSS</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_DEBUG" title="WORDPRESS_THEME_UTILS_DEBUG :: "><span class="description">WORDPRESS_THEME_UTILS_DEBUG</span><pre>WORDPRESS_THEME_UTILS_DEBUG</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_PATH" title="WORDPRESS_THEME_UTILS_PATH :: "><span class="description">WORDPRESS_THEME_UTILS_PATH</span><pre>WORDPRESS_THEME_UTILS_PATH</pre></a></li>
+<li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU" title="WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU :: "><span class="description">WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</span><pre>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</pre></a></li>
+<li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU" title="WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU :: "><span class="description">WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</span><pre>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</pre></a></li>
 </ul>
 </div>
 <div class="span8 package-contents">
@@ -194,7 +197,7 @@ Usefull in a loop cause it doesn't break the execution with die</h2>
 </div>
 <a id="function_vc"></a><div class="element clickable function  function_vc" data-toggle="collapse" data-target=".function_vc .collapse">
 <h2>Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() on a &lt;strong&gt;c&lt;/storng&gt;omment</h2>
+vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</h2>
 <pre>vc(mixed $var) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -207,7 +210,7 @@ vc stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() on a &lt;strong&gt;c&lt;/st
 </div>
 <a id="function_vd"></a><div class="element clickable function  function_vd" data-toggle="collapse" data-target=".function_vd .collapse">
 <h2>Quick and dirty way to know a variable value
-vd stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() and &lt;strong&gt;d&lt;/storng&gt;ie()</h2>
+vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</h2>
 <pre>vd(mixed $var) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -247,6 +250,13 @@ vd stand for &lt;strong&gt;v&lt;/strong&gt;ar_dump() and &lt;strong&gt;d&lt;/sto
 <p class="short_description">Register some useful assets in WordPress</p>
 <div class="details collapse"></div>
 <a href="../classes/DefaultAssets.html" class="more">« More »</a>
+</div>
+<div id="DefaultAssetsCDN" class="element ajax clickable class">
+<h1>DefaultAssetsCDN<a href="../classes/DefaultAssetsCDN.html">¶</a>
+</h1>
+<p class="short_description">Registers some assets from some CDNs</p>
+<div class="details collapse"></div>
+<a href="../classes/DefaultAssetsCDN.html" class="more">« More »</a>
 </div>
 <div id="EscapeRoute" class="element ajax clickable class">
 <h1>EscapeRoute<a href="../classes/EscapeRoute.html">¶</a>
@@ -509,13 +519,25 @@ and adds a new box with the wysiwyg editor capability</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU .collapse">
+<h2>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</h2>
+<pre>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU .collapse">
+<h2>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</h2>
+<pre>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-20T18:08:21+01:00.<br></footer></div>
+            generated on 2013-03-07T18:19:12+01:00.<br></footer></div>
 </div>
 </body>
 </html>
