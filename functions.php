@@ -33,6 +33,15 @@ if(!defined('WORDPRESS_THEME_UTILS_PATH'))
 if(!defined('WORDPRESS_THEME_UTILS_DEBUG'))
 	define('WORDPRESS_THEME_UTILS_DEBUG', true);
 
+if(!defined('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU'))
+	define('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU', true);
+
+if(!defined('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU'))
+	define('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU', true);
+
+
+
+
 include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
 
 /**
@@ -46,7 +55,7 @@ new ClassAutoloader();
  * @see v() 
  * @see vc()
  */
-new DebugUtils();
+DebugUtils::get_instance();
 
 
 /**
@@ -91,8 +100,10 @@ if(!function_exists('http_build_url')){
 /**
  * Initialize the main menues
  */
-register_nav_menu('primary', __('Primary Menu', 'theme'));
-register_nav_menu('secondary', __('Secondary Menu', 'theme'));
+if(WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU === true)
+	register_nav_menu('primary', __('Primary Menu', 'theme'));
+if(WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU === true)
+	register_nav_menu('secondary', __('Secondary Menu', 'theme'));
 
 
 

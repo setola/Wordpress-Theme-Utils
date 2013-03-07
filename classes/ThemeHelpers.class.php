@@ -533,3 +533,7 @@ EOF;
 }
 
 
+/**
+ * Hook to body class
+ */
+add_filter('body_class', array('ThemeHelpers', 'body_class'));
