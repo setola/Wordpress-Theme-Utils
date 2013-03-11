@@ -311,7 +311,12 @@ class ImageGenerator{
 	
 	/**
 	 * Retrieves all the image sizes registered in WordPress
-	 * @return all the image sizes registered in WordPress
+	 * @return array of all image sizes registered in WP
+	 * <code>'size_name' => array(
+	 * 	'width'		=>	200,
+	 * 	'height'	=>	80,
+	 * 	'crop'		=>	true
+	 * )
 	 */
 	public static function get_all_image_sizes(){
 		global $_wp_additional_image_sizes;
