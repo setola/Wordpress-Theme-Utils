@@ -25,11 +25,13 @@ class DefaultAssets{
 	function __construct(){
 		$this
 			->register_standard()
+			->register_custom()
 			->hook();
 	}
 	
 	/**
 	 * Register some assets for generic use
+	 * Put here yout JS libraries and Generic CSS like reset.css or similar
 	 * @return DefaultAssets $this for chainability
 	 */
 	public function register_standard(){
@@ -45,7 +47,7 @@ class DefaultAssets{
 		
 		
 		/**
-		 * Some usefull libraries
+		 * Some usefull jquery libraries
 		 */
 		$this->add_js('jquery.imagesloaded', '/js/jquery.imagesloaded.js', array('jquery'), '2.0.1', true);
 		$this->add_js('jquery.cycle', '/js/jquery.cycle.js', array('jquery'), '2.0.1', true);
@@ -53,20 +55,6 @@ class DefaultAssets{
 		$this->add_js('jquery-fancybox', '/js/jquery.fancybox.js', array('jquery'), '2.1.0', true);
 		
 		
-		
-		/**
-		 * Initialization scripts
-		 */
-		$this->add_js('slideshow', '/js/slideshow.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
-		$this->add_js('slideshow-fullscreen', '/js/slideshow-fullscreen.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
-		$this->add_js('social', '/js/social.js', array('jquery'), '0.1', true);
-		$this->add_js('cycle', '/js/cycle.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);
-		$this->add_js('crs', '/js/crs.js', array('jquery'), '0.1', true);
-		$this->add_js('open-details', '/js/open-details.js', array('jquery'), '0.1', true);
-		$this->add_js('navbar-fixed', '/js/navbar-fixed.js', array('jquery'), '0.1', true);
-		$this->add_js('photogallery', '/js/photogallery.js', array('jquery','jquery-fancybox'), '0.1', true);
-		$this->add_js('modernizr', '/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js', null, '2.6.1', false);
-		$this->add_js('minigallery-thumbs-link-to-big', '/js/minigallery-thumbs-link-to-big.js', array('jquery-fancybox'), '0.1', false);
 		
 		
 		/**
@@ -93,6 +81,31 @@ class DefaultAssets{
 		$this->add_css('h5bp.main', '/html5-boilerplate/css/main.css', null, '1.0.1', 'screen');
 		
 		
+		
+		
+		return $this;
+	}
+	
+	/**
+	 * Register some assets to be used in the theme.
+	 * Put here your custom scripts.
+	 * @return DefaultAssets $this for chainability
+	 */
+	public function register_custom(){
+		
+		/**
+		 * Initialization scripts
+		 */
+		$this->add_js('slideshow', '/js/slideshow.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
+		$this->add_js('slideshow-fullscreen', '/js/slideshow-fullscreen.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
+		$this->add_js('social', '/js/social.js', array('jquery'), '0.1', true);
+		$this->add_js('cycle', '/js/cycle.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);
+		$this->add_js('crs', '/js/crs.js', array('jquery'), '0.1', true);
+		$this->add_js('open-details', '/js/open-details.js', array('jquery'), '0.1', true);
+		$this->add_js('navbar-fixed', '/js/navbar-fixed.js', array('jquery'), '0.1', true);
+		$this->add_js('photogallery', '/js/photogallery.js', array('jquery','jquery-fancybox'), '0.1', true);
+		$this->add_js('modernizr', '/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js', null, '2.6.1', false);
+		$this->add_js('minigallery-thumbs-link-to-big', '/js/minigallery-thumbs-link-to-big.js', array('jquery-fancybox'), '0.1', false);
 		
 		/**
 		 * Theme Specific CSS for part of page
@@ -174,7 +187,7 @@ class DefaultAssets{
 	 */
 	public function callback(){
 		foreach($this->assets['js'] as $asset){
-			
+			wp_deregister_script($asset['handle']);
 			if(file_exists(get_stylesheet_directory().$asset['src'])){
 				wp_register_script(
 						$asset['handle'],
@@ -202,7 +215,7 @@ class DefaultAssets{
 			}
 		}
 		foreach($this->assets['css'] as $asset){
-			
+			wp_deregister_style($asset['handle']);
 			if(file_exists(get_stylesheet_directory().$asset['src'])){
 				wp_register_style(
 					$asset['handle'], 
