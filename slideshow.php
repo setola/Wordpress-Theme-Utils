@@ -4,8 +4,8 @@
  * 
  * @since 0.1
  */
-
-add_image_size('slideshow',940, 400);
+if(!array_key_exists('slideshow', ImageGenerator::get_all_image_sizes()))
+	add_image_size('slideshow',940, 400);
 
 /**
  * Manages the slideshow
