@@ -1,14 +1,18 @@
 jQuery(document).ready(function(){
-	jQuery('.tabs ul li a').click(function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		var that = jQuery(this);
-		that.parent().parent().find('.active').removeClass('active');
-		that.addClass('active');
-		jQuery('.preview-entry:visible').fadeOut(function(){
-			jQuery(that.attr('href')).fadeIn();
+	jQuery('.tab').eq(0).addClass('active');
+	jQuery('.tabs').each(function(){
+		var tabs = jQuery(this);
+		tabs.find('a').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			var current_link = jQuery(this);
+			tabs.find('.active').removeClass('active');
+			current_link.addClass('active');
+			jQuery('.tab.active').removeClass('active');
+			jQuery(current_link.attr('href')).addClass('active');
+			if(current_link.attr('data-title')){
+				jQuery('#tabs-title').html(current_link.attr('data-title'));
+			}
 		});
-		
-	}).eq(0).addClass('active');
-	jQuery('.preview-entry').eq(0).fadeIn();
+	}).find('#'+jQuery('.tab.active').attr('id')).addClass('active');
 });

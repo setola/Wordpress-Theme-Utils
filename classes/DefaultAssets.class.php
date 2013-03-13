@@ -64,16 +64,6 @@ class DefaultAssets{
 				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery','jquery.ui.selectmenu'), '1', true);
 		
 		
-		
-		/**
-		 * Google Map
-		 */
-		$this->add_js('gmaps.api', 'http://maps.google.com/maps/api/js?sensor=false', null, '3', 'screen');
-		$this->add_js('map', '/js/gmap.js', array('jquery','gmaps.api'), '0.1', 'screen');
-		$this->add_js('map-directions', '/js/map-directions.js', array('jquery','map'), '0.1', true);
-		
-		
-		
 		/**
 		 * HTML5 Boiler Plate
 		 */
@@ -104,8 +94,18 @@ class DefaultAssets{
 		$this->add_js('open-details', '/js/open-details.js', array('jquery'), '0.1', true);
 		$this->add_js('navbar-fixed', '/js/navbar-fixed.js', array('jquery'), '0.1', true);
 		$this->add_js('photogallery', '/js/photogallery.js', array('jquery','jquery-fancybox'), '0.1', true);
+		$this->add_js('tabs', '/js/tabs.js', array('jquery'), '0.1', true);
 		$this->add_js('modernizr', '/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js', null, '2.6.1', false);
 		$this->add_js('minigallery-thumbs-link-to-big', '/js/minigallery-thumbs-link-to-big.js', array('jquery-fancybox'), '0.1', false);
+		
+		
+		/**
+		 * Google Map
+		 */
+		$this->add_js('gmaps.api', 'http://maps.google.com/maps/api/js?sensor=false', null, '3', 'screen');
+		$this->add_js('map', '/js/gmap.js', array('jquery','gmaps.api'), '0.1', 'screen');
+		$this->add_js('map-directions', '/js/map-directions.js', array('jquery','map'), '0.1', true);
+		
 		
 		/**
 		 * Theme Specific CSS for part of page
