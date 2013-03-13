@@ -4,7 +4,10 @@
  */
 
 /**
- * Registers some assets from some CDNs
+ * Registers some assets from public available CDNs:
+ * ajax.googleapis.com
+ * cdnjs.cloudflare.com
+ * cdn.jsdelivr.net
  * 
  * @author etessore
  * @since 1.0
@@ -24,6 +27,11 @@ class DefaultAssetsCDN extends DefaultAssets{
 		$this->add_js('jquery.cycle', 'http://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/2.9999.8/jquery.cycle.all.min.js', array('jquery'), '2.9999.8', true);
 		$this->add_js('jquery.scrollto', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js', array('jquery'), '1.4.3', true);
 		$this->add_js('jquery-fancybox', 'http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js', array('jquery'), '2.1.4', true);
+		$this->add_js('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js', array('jquery'), '1.10.1', true);
+		
+		//Fblib, remember to fill the fbcallback.js in your child theme!
+		$this->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='
+				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery', 'jquery-ui'), '1', true);
 		
 		
 		// some useful css
