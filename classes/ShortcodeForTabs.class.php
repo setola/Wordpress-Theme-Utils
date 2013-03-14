@@ -110,7 +110,7 @@ class ShortcodeForTabs{
 		// render the html and return it to WordPress
 		return $this->tab_tpl
 			->set_markup('id', 		' id="'.$parms['title'].'" ')
-			->set_markup('class', 	' class="'.$parms['class'].'" ')
+			->set_markup('class', 	' class="tab '.$parms['class'].'" ')
 			->set_markup('icon', 	$this->get_image($parms['icon']))
 			->set_markup('content',	do_shortcode($content))
 			->replace_markup();
@@ -141,16 +141,19 @@ class ShortcodeForTabs{
 			'class'	=>	'tabs',
 		), $atts);
 		
-		$inner_html = array();
+		$inner_html = '';
 		foreach($this->list_of_entries as $entry){
-			$inner_html[] = HtmlHelper::anchor(
-				'#'.$entry['title'], 
-				$this->get_image($entry['icon']).$entry['title'],
-				array('data-title'=>$entry['title'])
+			$inner_html .= HtmlHelper::list_item(
+				HtmlHelper::anchor(
+					'#'.$entry['title'], 
+					$this->get_image($entry['icon']).$entry['title'],
+					array('data-title'=>$entry['title'])
+				),
+				array('class'=>$entry['class'])
 			);
 		}
 		
-		global $post;
+		//global $post;
 		//do_shortcode(get_the_content());
 		
 		return HtmlHelper::unorderd_list($inner_html, array('class'=>$parms['class']));
