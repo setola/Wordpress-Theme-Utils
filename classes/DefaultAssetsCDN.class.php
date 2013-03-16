@@ -26,6 +26,7 @@ class DefaultAssetsCDN extends DefaultAssets{
 		$this->add_js('jquery.imagesloaded', 'http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js', array('jquery'), '2.1.0', true);
 		$this->add_js('jquery.cycle', 'http://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/2.9999.8/jquery.cycle.all.min.js', array('jquery'), '2.9999.8', true);
 		$this->add_js('jquery.scrollto', 'http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js', array('jquery'), '1.4.3', true);
+		$this->add_js('jquery-tinyscrollbar', 'http://cdnjs.cloudflare.com/ajax/libs/tinyscrollbar/1.66/jquery.tinyscrollbar.min.js', array('jquery'), '1.66', true);
 		$this->add_js('jquery-fancybox', 'http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js', array('jquery'), '2.1.4', true);
 		$this->add_js('jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js', array('jquery'), '1.10.1', true);
 		
