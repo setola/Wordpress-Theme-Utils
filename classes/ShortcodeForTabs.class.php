@@ -4,6 +4,9 @@
  * Stores ShortcodeForTabs class definition
  */
 
+//remove_filter('the_content', 'wpautop');
+//add_filter('the_content', 'wpautop' , 12);
+
 /**
  * Manages tabs design with shortcodes.
  * 
@@ -62,8 +65,8 @@ class ShortcodeForTabs{
 	 * Initializes the istance with default values
 	 */
 	public function __construct(){
-		$this->add_shordcode();
 		add_filter('the_content', array(&$this, 'build_list'), 7);
+		$this->add_shordcode();
 		$this->tab_tpl = new SubstitutionTemplate();
 		$this->tab_tpl->set_tpl('<section%id%%class%>%icon%%content%</section>');
 	}
@@ -71,17 +74,17 @@ class ShortcodeForTabs{
 	/**
 	 * Register the needed shortcodes with WordPress subsystem
 	 */
-	private function add_shordcode(){
-		add_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
-		add_shortcode(self::$list_shortcode, array(&$this, 'list_hook'));
+	private function add_shordcode($tab=true, $list=true){
+		if($tab) add_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
+		if($list) add_shortcode(self::$list_shortcode, array(&$this, 'list_hook'));
 	}
 	
 	/**
 	 * Deletes the shortcodes used in this feature
 	 */
-	private function delete_shortcode(){
-		remove_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
-		remove_shortcode(self::$list_shortcode, array(&$this, 'list_hook'));
+	private function delete_shortcode($tab=true, $list=true){
+		if($tab) remove_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
+		if($list) remove_shortcode(self::$list_shortcode, array(&$this, 'list_hook'));
 	}
 	
 	/**
@@ -92,7 +95,7 @@ class ShortcodeForTabs{
 	public function tab_hook($atts, $content = null){
 		$parms = shortcode_atts( array(
 			'icon'	=>	'',
-			'class'	=>	'tab',
+			'class'	=>	'',
 			'title'	=>	'tab-entry_'.$this->number_of_entries,
 			'list'	=>	true
 		), $atts );
@@ -153,9 +156,6 @@ class ShortcodeForTabs{
 			);
 		}
 		
-		//global $post;
-		//do_shortcode(get_the_content());
-		
 		return HtmlHelper::unorderd_list($inner_html, array('class'=>$parms['class']));
 	}
 	
@@ -167,15 +167,15 @@ class ShortcodeForTabs{
 	 * @param string $content the post content
 	 */
 	public function build_list($content){
-		global $post, $shortcode_tags;
+		global $shortcode_tags;
 		
 		// Backup current registered shortcodes and clear them all out
    		$orig_shortcode_tags = $shortcode_tags;
     	remove_all_shortcodes();
     	
     	// Do the shortcode (only the one above is registered)
-    	$this->add_shordcode();
-		do_shortcode(get_the_content());
+    	$this->add_shordcode(true, false);
+		do_shortcode($content);
 		
     	// Put the original shortcodes back
     	$shortcode_tags = $orig_shortcode_tags;
