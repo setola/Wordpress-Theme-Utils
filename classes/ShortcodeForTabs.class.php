@@ -97,7 +97,9 @@ class ShortcodeForTabs{
 			'icon'	=>	'',
 			'class'	=>	'',
 			'title'	=>	'tab-entry_'.$this->number_of_entries,
-			'list'	=>	true
+			'list'	=>	true,
+			'from'	=>	'',
+			'mode'	=>	''
 		), $atts );
 		
 		if($parms['list'] !== 'false'){
@@ -111,8 +113,9 @@ class ShortcodeForTabs{
 		ThemeHelpers::load_js('tabs');
 		
 		// render the html and return it to WordPress
+		
 		return $this->tab_tpl
-			->set_markup('id', 		' id="'.$parms['title'].'" ')
+			->set_markup('id', 		' id="'.sanitize_title($parms['title']).'" ')
 			->set_markup('class', 	' class="tab '.$parms['class'].'" ')
 			->set_markup('icon', 	$this->get_image($parms['icon']))
 			->set_markup('content',	do_shortcode($content))
@@ -150,7 +153,10 @@ class ShortcodeForTabs{
 				HtmlHelper::anchor(
 					'#'.$entry['title'], 
 					$this->get_image($entry['icon']).$entry['title'],
-					array('data-title'=>$entry['title'])
+					array(
+						'data-title'	=>	$entry['title'],
+						'data-from'		=>	$entry['from'],
+					)
 				),
 				array('class'=>$entry['class'])
 			);
