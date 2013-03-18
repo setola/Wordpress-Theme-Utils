@@ -151,7 +151,7 @@ class ShortcodeForTabs{
 		foreach($this->list_of_entries as $entry){
 			$inner_html .= HtmlHelper::list_item(
 				HtmlHelper::anchor(
-					'#'.$entry['title'], 
+					'#'.sanitize_title($entry['title']), 
 					$this->get_image($entry['icon']).$entry['title'],
 					array(
 						'data-title'	=>	$entry['title'],
