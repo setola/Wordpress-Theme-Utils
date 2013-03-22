@@ -189,6 +189,8 @@ class OneImageForAll extends GalleryHelper{
 				$this->cache_path,
 				$this->config['q']
 			);
+			
+			imagedestroy($image);
 		}
 		
 		return $this;
