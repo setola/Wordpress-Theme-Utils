@@ -320,7 +320,7 @@ class ImageGenerator{
 	 */
 	public static function get_all_image_sizes(){
 		global $_wp_additional_image_sizes;
-		return array_merge($_wp_additional_image_sizes, array(
+		return array_merge((array)$_wp_additional_image_sizes, array(
 			'thumbnail'	=>	array(
 				'width'		=>	get_option('thumbnail_size_w'),
 				'height'	=>	get_option('thumbnail_size_h'),
