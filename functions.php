@@ -27,26 +27,49 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  */
 
+/**
+ * The base path for Wordpress Theme Utils
+ */
 if(!defined('WORDPRESS_THEME_UTILS_PATH')) 
 	define('WORDPRESS_THEME_UTILS_PATH', dirname(__FILE__));
 
+/**
+ * Set to true if you want vd()\vc()\v() to print output, 
+ * false is generic better for production
+ */
 if(!defined('WORDPRESS_THEME_UTILS_DEBUG'))
 	define('WORDPRESS_THEME_UTILS_DEBUG', true);
 
+/**
+ * Set to false to disable registration of Top Menu
+ */
 if(!defined('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU'))
 	define('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU', true);
 
+/**
+ * Set to false to disable registration of Bottom Menu
+ */
 if(!defined('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU'))
 	define('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU', true);
 
+/**
+ * Relative path for template parts
+ */
+if(!defined('WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH'))
+	define('WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH', 'partials/');
+
+/**
+ * Relative path for autoloader class
+ */
+if(!defined('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH'))
+	define('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH', '/classes/ClassAutoloader.class.php');
 
 
-
-include_once WORDPRESS_THEME_UTILS_PATH . '/classes/ClassAutoloader.class.php';
 
 /**
  * Initialize the autoloader
  */
+include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
 new ClassAutoloader();
 
 /**
@@ -60,28 +83,37 @@ DebugUtils::get_instance();
 
 /**
  * Register some standard assets
+ * 
+ * overload the global $assets variable in your child theme functions.php if you need customization on this.
+ * @see DefaultAssets for adding or remove assets
  */
-//new DefaultAssets();
-
+global $assets;
+if(empty($assets)){
+	new DefaultAssetsCDN();
+}
 
 /**
- * Runtime infos
+ * Register runtime infos, useful for javascript
+ * 
+ * Overload the global $runtime_infos in your child theme functions.php if you need customization on this.
+ * @see RuntimeInfos for more details
  */
 global $runtime_infos;
-$runtime_infos = new RuntimeInfos();
-$runtime_infos->hook();
-
+if(empty($runtime_infos)){
+	$runtime_infos = new RuntimeInfos();
+	$runtime_infos->hook();
+}
 
 
 
 if(!function_exists('http_build_url')){
-/**
- * PECT_HTTP is usually missing on many environment.
- * This function provides the same feature as the function included in PECT_HTTP.
- * @see @link http://php.net/manual/en/function.http-build-url.php
- * @param array $parsed_url the array to be merged
- * @return string the url
- */
+	/**
+	 * PECT_HTTP is usually missing on many environment.
+	 * This function provides the same feature as the function included in PECT_HTTP.
+	 * @see @link http://php.net/manual/en/function.http-build-url.php
+	 * @param array $parsed_url the array to be merged
+	 * @return string the url
+	 */
 	function http_build_url($parsed_url) {
 		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
 		$host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
@@ -119,10 +151,10 @@ if(WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU === true)
 
 
 if(!function_exists('the_html')) { 
-/**
- * Print the <html> opening tag from html5 boilerplate
- * @param string|array $class some additional classes
- */
+	/**
+	 * Print the <html> opening tag from html5 boilerplate
+	 * @param string|array $class some additional classes
+	 */
 	function the_html($class=''){
 		echo HtmlHelper::open_html($class);
 	}
