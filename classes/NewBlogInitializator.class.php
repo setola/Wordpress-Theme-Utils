@@ -9,6 +9,7 @@
  * 
  * @author etessore
  * @version 1.0.0
+ * @package classes
  * 
  */
 class NewBlogInitializator{
@@ -31,6 +32,9 @@ class NewBlogInitializator{
 	 */
 	private $pages = array();
 	
+	/**
+	 * Hooks the initial data filling into WordPress
+	 */
 	public function hook(){
 		add_action('wpmu_new_blog', array(&$this, 'init'), 10, 1);
 	}
@@ -177,8 +181,8 @@ class NewBlogInitializator{
 	/**
 	 * Adds all automatically generated pages to the given menu
 	 * @param int $menu_id the menu id 
-	 * @params int $start the first element index
-	 * @params int $end the last element index
+	 * @param int $start the first element index
+	 * @param int $end the last element index
 	 * @return NewBlogInitializator $this for chainability
 	 */
 	public function add_menu_entries($menu_id, $start=0, $end=null){
@@ -208,11 +212,23 @@ class NewBlogInitializator{
 	 * Then tries to create style.css in the newly
 	 * theme folder and fill it with the default header comment
 	 *
+	 * An example of parameters:
+	 * <code>
+	 * $defaults = array(
+	 * 		'name' 			=>	'Wordpress Theme Utils Child Theme',
+	 * 		'folder' 		=>	'wtu-child-theme',
+	 * 		'child_of' 		=>	'Wordpress-Theme-Utils',
+	 * 		'description' 	=>	'This is a Child Theme of Wordpress Theme Utils',
+	 * 		'theme_uri'		=>	'http://www.emanueletessore.com/',
+	 * 		'author'		=>	'Emanuele Tessore',
+	 * 		'author_uri'	=>	'http://www.emanueletessore.com/',
+	 * 		'version'		=>	'1.0.0'
+	 * );
+	 * </code>
+	 *
 	 * Uses {@link http://codex.wordpress.org/Function_Reference/wp_die wp_die()} if something goes wrong
 	 *
-	 * @param string $name the name of your new child theme. Spaces and tags will be stripped
-	 * @param string $child_of the parent theme, default hotel-template
-	 * @param string $description the description of the theme will be showed in WP backend
+	 * @param array $parms parameters for the new theme
 	 * @return NewBlogInitializator $this for chainability
 	 */
 	public function add_theme($parms=null){

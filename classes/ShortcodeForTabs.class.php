@@ -22,6 +22,7 @@
  * 
  * @author etessore
  * @version 1.0.0
+ * @package classes
  * @since 1.0
  */
 class ShortcodeForTabs{
@@ -73,6 +74,8 @@ class ShortcodeForTabs{
 	
 	/**
 	 * Register the needed shortcodes with WordPress subsystem
+	 * @param boolean $tab true if you want to enable the shortcode for the single tab
+	 * @param boolean $list true if you want to enable the shortcode for the list of tabs
 	 */
 	private function add_shordcode($tab=true, $list=true){
 		if($tab) add_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
@@ -81,6 +84,8 @@ class ShortcodeForTabs{
 	
 	/**
 	 * Deletes the shortcodes used in this feature
+	 * @param boolean $tab true if you want to remove the shortcode for the single tab
+	 * @param boolean $list true if you want to remove the shortcode for the list of tabs
 	 */
 	private function delete_shortcode($tab=true, $list=true){
 		if($tab) remove_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));

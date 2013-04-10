@@ -1,6 +1,9 @@
 <?php 
 /**
  * Template part to print a title and an excerpt of every menu entry.
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  */
 0==0;
 ?>

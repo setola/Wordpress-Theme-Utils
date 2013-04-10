@@ -37,7 +37,7 @@ new ClassAutoloader();
 Classes
 -------
 
-In this folder you'll finde some .class.php files 
+In this folder you'll find some .class.php files 
 with some useful classes to implement some 
 standard features of a generic website.
 
@@ -75,13 +75,16 @@ and a compile.ini configuration for the less to css render engine.
 
 
 
-Miscellaneus files
+Partials
 ------------------
 
-* 404.php the default template for a 404 error page
-* assets.php register here all the script you want to use in your theme
-* front-page.php the homepage template
-* functions.php the theme's functions file
-* index.php the default behawior
-* page.php the behawior of a standard page
-* style.css insert here yout theme's name and infos
+Here are stored some template parts that can be useful as starting point for building your theme
+To use it simply call for:
+````php
+<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow'); ?>
+````
+
+Templates
+------------------
+
+Here you can find some different templates

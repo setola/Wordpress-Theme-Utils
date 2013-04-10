@@ -2,6 +2,9 @@
 /**
  * Template part for listing child pages
  * 
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

@@ -6,6 +6,8 @@
 /**
  * Adds the level for the current menu element
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  *
  */
 class LevelWalkerNavMenu extends Walker_Nav_Menu {

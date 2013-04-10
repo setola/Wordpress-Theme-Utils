@@ -7,6 +7,7 @@
  * Maintans a set of words for a sentences generator
  * @author etessore
  * @version 1.0.0
+ * @package classes
  * @todo maintain an ordinate array so that 
  * insertion and deletion will be more efficent
  */

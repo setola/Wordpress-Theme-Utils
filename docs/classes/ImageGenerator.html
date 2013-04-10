@@ -18,7 +18,13 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/classes.html"><i class="icon-folder-open"></i> classes</a></li>
+<li><a href="../packages/debug.html"><i class="icon-folder-open"></i> debug</a></li>
+<li><a href="../packages/templates.html"><i class="icon-folder-open"></i> templates</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -34,7 +40,7 @@
                 <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">2</span></a></li>
+                <span class="label label-info">1</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -114,11 +120,11 @@ if the image exists or has to be generated</span><pre>init()</pre></a></li>
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.1
-1.0.1
-	added hooks into wordpress
-1.0.0
-	Initial release</td>
+<td>1.0.1</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/classes.html">classes</a></td>
 </tr>
 </table>
 <h3>
@@ -142,13 +148,18 @@ Useful to pass isset($_REQUEST['refresh']) in the ajax implementation</p>
 </div>
 <a id="method_get_all_image_sizes"></a><div class="element clickable method public method_get_all_image_sizes" data-toggle="collapse" data-target=".method_get_all_image_sizes .collapse">
 <h2>Retrieves all the image sizes registered in WordPress</h2>
-<pre>get_all_image_sizes() : \all</pre>
+<pre>get_all_image_sizes() : array</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\all</code>the image sizes registered in WordPress</div>
+<code>array</code>of all image sizes registered in WP
+<code>'size_name' => array(
+	'width'		=>	200,
+	'height'	=>	80,
+	'crop'		=>	true
+)</div>
 </div></div>
 </div>
 <a id="method_get_dimensions"></a><div class="element clickable method public method_get_dimensions" data-toggle="collapse" data-target=".method_get_dimensions .collapse">
@@ -366,7 +377,7 @@ if the image exists or has to be generated</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-07T18:19:12+01:00.<br></footer></div>
+            generated on 2013-04-10T12:34:58+02:00.<br></footer></div>
 </div>
 </body>
 </html>

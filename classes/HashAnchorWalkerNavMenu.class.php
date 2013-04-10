@@ -7,6 +7,7 @@
  * Menu Walker to have the la tocke of the url as hash
  * ex: http://www.fastbooking.net/clients/#africa
  * @author etessore
+ * @package classes
  */
 class HashAnchorWalkerNavMenu extends Walker_Nav_Menu{
 	/**

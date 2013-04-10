@@ -2,6 +2,9 @@
 /**
  * The template part for displaying the slideshow
  * 
+ * @version 1.0.0
+ * @package templates
+ * @subpackage parts
  * @since 0.1
  */
 if(!array_key_exists('slideshow', ImageGenerator::get_all_image_sizes()))
@@ -11,6 +14,8 @@ if(!array_key_exists('slideshow', ImageGenerator::get_all_image_sizes()))
  * Manages the slideshow
  * @author etessore
  * @version 1.0.1
+ * @package templates
+ * @subpackage parts
  */
 class Slideshow extends ImagePreload{
 	/**

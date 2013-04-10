@@ -6,6 +6,8 @@
 /**
  * Stores the dictionary for generating 'Lorem ipsum...' text
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  */
 class LoremIpsumDictionary extends GeneratorDictionary{
 	

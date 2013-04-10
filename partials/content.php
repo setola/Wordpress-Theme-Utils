@@ -4,6 +4,9 @@
  * 
  * This is the default version showing title and full content
  * 
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

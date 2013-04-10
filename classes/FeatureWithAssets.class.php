@@ -11,8 +11,12 @@
  * You have to take care of it by yourself (tipically in assets.php)
  * @author etessore
  * @version 1.0.1
- * 
- * 1.0.1
+ * @package classes
+ */ 
+
+/*
+ * Changelog:
+ *  1.0.1
  * 	Fixed Notice: wp_enqueue_script was called incorrectly
  * 1.0.0
  * 	Initial release

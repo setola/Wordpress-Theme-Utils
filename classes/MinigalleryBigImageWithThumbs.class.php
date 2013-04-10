@@ -7,6 +7,7 @@
  * with a big image and some small thumbs
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class MinigalleryBigImageWithThumbs extends GalleryHelper{
 	/**

@@ -8,6 +8,7 @@
  * Important: every image have the same sizes and jpeg quality.
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class OneImageForAll extends GalleryHelper{
 	/**

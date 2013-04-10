@@ -7,6 +7,7 @@
  * Helper class useful to generate some html tags
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class HtmlHelper extends HtmlBuilder{
 	

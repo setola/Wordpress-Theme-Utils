@@ -2,6 +2,8 @@
 /**
  * The Template part for displaying the footer menu
  * 
+ * @package templates
+ * @subpackage parts
  * @since 0.1
  */
 

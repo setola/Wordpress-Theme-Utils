@@ -6,6 +6,7 @@
 /**
  * Utils to debug the code while writing it.
  * @author Emanuele 'Tex' Tessore
+ * @package classes
  */
 final class DebugUtils {
 	
@@ -141,6 +142,8 @@ if(!function_exists('vd')):
  * Quick and dirty way to know a variable value
  * vd stand for <b>v</b>ar_dump() and <b>d</b>ie()
  * @param mixed $var the variable to be dumped
+ * @package debug
+ * @version 1.0.0
  */
 function vd($var){
 	DebugUtils::get_instance()
@@ -155,6 +158,8 @@ if(!function_exists('v')):
  * Quick and dirty way to know a variable value
  * Usefull in a loop cause it doesn't break the execution with die
  * @param mixed $var the variable to be dumped
+ * @package debug
+ * @version 1.0.0
  */
 function v($var){
 	DebugUtils::get_instance()
@@ -169,6 +174,8 @@ if(!function_exists('vc')):
  * Quick and dirty way to know a variable value in a production enviroment
  * vc stand for <b>v</b>ar_dump() on a <b>c</b>omment
  * @param mixed $var the variable to be dumped
+ * @package debug
+ * @version 1.0.0
  */
 function vc($var){
 	DebugUtils::get_instance()
@@ -183,6 +190,8 @@ if(!function_exists('debug')):
  * Quick and dirty way to know a variable value.
  * It uses the last changed mode.
  * @param mixed $var the variable to be dumped
+ * @package debug
+ * @version 1.0.0
  */
 function debug($var){
 	DebugUtils::get_instance()

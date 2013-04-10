@@ -6,6 +6,7 @@
 /**
  * The following object is used to compute numbers with a gaussian distribution
  * @link http://us.php.net/manual/en/function.rand.php#53784
+ * @package classes
  */
 class GaussianMath{
 	

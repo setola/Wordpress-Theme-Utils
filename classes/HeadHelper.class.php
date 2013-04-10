@@ -6,6 +6,8 @@
 /**
  * Some helper for the code inside <head> tag
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  *
  */
 class HeadHelper{

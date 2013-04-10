@@ -7,6 +7,7 @@
  * Register some useful assets in WordPress
  * @author etessore
  * @version 1.0.1
+ * @package classes
  */
 class DefaultAssets{
 	/**

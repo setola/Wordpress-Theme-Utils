@@ -6,11 +6,14 @@
  * Generates paceholder images
  * @author etessore
  * @version 1.0.1
- * 
+ * @package classes
+ */ 
+/* 
+ * Changelog:
  * 1.0.1
- * 	added hooks into wordpress
+ * added hooks into wordpress
  * 1.0.0
- * 	Initial release
+ * Initial release
  */
 class ImageGenerator{
 	/**

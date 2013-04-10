@@ -8,6 +8,7 @@
  * and the excerpt for every menu entry.
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class ShowTitleThumbExcerptWalkerNavMenu extends Walker_Nav_Menu {
 	/**

@@ -5,11 +5,13 @@
 
 /**
  * Perform a quick configuration for Simple Fields plugin
- * with the default values used by FastBooking
+ * 
+ * It uses the default values used by FastBooking
  * By default you only need to call in functions.php:
  * <code>new SimpleFieldsQuickConfig();</code>
  * @author etessore
  * @version 1.0
+ * @package classes
  */
 class SimpleFieldsQuickConfig{
 	

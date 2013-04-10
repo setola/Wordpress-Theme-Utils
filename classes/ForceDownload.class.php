@@ -7,6 +7,7 @@
  * Force an attachment to be downloaded
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class ForceDownload{
 	

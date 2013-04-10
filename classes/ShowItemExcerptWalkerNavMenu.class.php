@@ -10,6 +10,7 @@
  * to the default menu entry.
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class ShowItemExcerptWalkerNavMenu extends Walker_Nav_Menu {
 	/**

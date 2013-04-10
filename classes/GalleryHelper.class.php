@@ -7,6 +7,7 @@
  * Extend this with your nice and candy classes!
  * @author etessore
  * @version 1.0.2
+ * @package classes
  */
 abstract class GalleryHelper extends FeatureWithAssets{
 

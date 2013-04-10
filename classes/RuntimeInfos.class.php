@@ -7,7 +7,10 @@
  * Manages a set of info to be printed as a json generally at the endo of the page
  * @author etessore
  * @version 1.0.1
- * 
+ * @package classes
+ */ 
+
+/* 
  * Changelog
  * 1.0.1
  * 	solved notice of undefined post on 404 pages

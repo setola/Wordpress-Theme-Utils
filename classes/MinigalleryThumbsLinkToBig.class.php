@@ -9,6 +9,7 @@
  * By default loads FancyBox so to have an eye candy popup effect.
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class MinigalleryThumbsLinkToBig extends GalleryHelper{
 	/**

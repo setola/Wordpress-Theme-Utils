@@ -9,6 +9,7 @@
  * Takes care of image preloading with jQuery imagesloaded
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class ImagePreload extends GalleryHelper{
 	

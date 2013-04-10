@@ -7,6 +7,8 @@
  * This class removes the default excerpt metabox
  * and adds a new box with the wysiwyg editor capability
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  */
 class TinyMCEExcerptCustomization{
 	const textdomain = '';

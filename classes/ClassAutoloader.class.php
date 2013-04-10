@@ -7,7 +7,11 @@
  * Autoload needed classes
  * @author etessore
  * @version 1.0.1
- * 
+ * @package classes
+ */
+ 
+/* 
+ * Changelog:
  * 1.0.1
  * 	support multiple search path to allow children theme to extend classes
  * 1.0.0

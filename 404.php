@@ -2,6 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
+ * @version 1.0.0
+ * @package templates
  * @since 0.1
  */
 

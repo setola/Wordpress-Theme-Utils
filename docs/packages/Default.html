@@ -18,7 +18,13 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/classes.html"><i class="icon-folder-open"></i> classes</a></li>
+<li><a href="../packages/debug.html"><i class="icon-folder-open"></i> debug</a></li>
+<li><a href="../packages/templates.html"><i class="icon-folder-open"></i> templates</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -34,7 +40,7 @@
                 <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">2</span></a></li>
+                <span class="label label-info">1</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -59,74 +65,19 @@
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-function"></i> Functions</li>
-<li class="function  "><a href="#function_debug" title="debug :: Quick and dirty way to know a variable value."><span class="description">Quick and dirty way to know a variable value.</span><pre>debug</pre></a></li>
 <li class="function  "><a href="#function_http_build_url" title="http_build_url :: PECT_HTTP is usually missing on many environment."><span class="description">PECT_HTTP is usually missing on many environment.</span><pre>http_build_url</pre></a></li>
 <li class="function  "><a href="#function_the_html" title="the_html :: Print the &lt;html&gt; opening tag from html5 boilerplate"><span class="description">Print the &lt;html&gt; opening tag from html5 boilerplate</span><pre>the_html</pre></a></li>
-<li class="function  "><a href="#function_v" title="v :: Quick and dirty way to know a variable value
-Usefull in a loop cause it doesn't break the execution with die"><span class="description">Quick and dirty way to know a variable value
-Usefull in a loop cause it doesn't break the execution with die</span><pre>v</pre></a></li>
-<li class="function  "><a href="#function_vc" title="vc :: Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment"><span class="description">Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</span><pre>vc</pre></a></li>
-<li class="function  "><a href="#function_vd" title="vd :: Quick and dirty way to know a variable value
-vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()"><span class="description">Quick and dirty way to know a variable value
-vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</span><pre>vd</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-class"></i> Classes</li>
-<li><a href="#ImagePreload" title="Takes care of image preloading with jQuery imagesloaded">ImagePreload</a></li>
-<li><a href="#SpecialOffersSnippetAjax" title="Hook to WP Ajax system to get the special offers snippet url">SpecialOffersSnippetAjax</a></li>
-<li><a href="#FeatureWithAssets" title="Manages the assets loading for a feature.">FeatureWithAssets</a></li>
-<li><a href="#DefaultAssets" title="Register some useful assets in WordPress">DefaultAssets</a></li>
-<li><a href="#AjaxImageGenerator" title="Hooks the ImageGenerator class to admin-ajax action">AjaxImageGenerator</a></li>
-<li><a href="#TinyMCEExcerptCustomization" title="This class removes the default excerpt metabox
-and adds a new box with the wysiwyg editor capability">TinyMCEExcerptCustomization</a></li>
-<li><a href="#OneImageForAll" title="Merges all images of a gallery in only one and serve it as a sprite
-Important: every image have the same sizes and jpeg quality.">OneImageForAll</a></li>
-<li><a href="#GMapDataRetriever" title="Retrieves GMaps data for the gmap.js integration">GMapDataRetriever</a></li>
-<li><a href="#SimpleFieldsQuickConfig" title="Perform a quick configuration for Simple Fields plugin
-with the default values used by FastBooking
-By default you only need to call in functions.php:
-&lt;code&gt;new SimpleFieldsQuickConfig();&lt;/code&gt;">SimpleFieldsQuickConfig</a></li>
-<li><a href="#DebugUtils" title="Utils to debug the code while writing it.">DebugUtils</a></li>
-<li><a href="#ForceDownload" title="Force an attachment to be downloaded">ForceDownload</a></li>
-<li><a href="#ShowTitleThumbExcerptWalkerNavMenu" title="Shows the title, the post thumbnail
-and the excerpt for every menu entry.">ShowTitleThumbExcerptWalkerNavMenu</a></li>
-<li><a href="#LipsumGenerator" title="Generates Lorem Ipsum text">LipsumGenerator</a></li>
-<li><a href="#ThemeHelpers" title="Stores some static methods that may be useful for html management">ThemeHelpers</a></li>
-<li><a href="#SubstitutionTemplate" title="Manages a string substitution set">SubstitutionTemplate</a></li>
-<li><a href="#ClassAutoloader" title="Autoload needed classes">ClassAutoloader</a></li>
-<li><a href="#RemoveSpacesWalkerNavMenu" title="Remove spaces and newlines from the current menu.">RemoveSpacesWalkerNavMenu</a></li>
-<li><a href="#SpecialOffersSnippet" title="Manages the integration of the special offers snippet">SpecialOffersSnippet</a></li>
-<li><a href="#HashAnchorWalkerNavMenu" title="Menu Walker to have the la tocke of the url as hash
-ex: http://www.fastbooking.net/clients/#africa">HashAnchorWalkerNavMenu</a></li>
-<li><a href="#MinigalleryBigImageWithThumbs" title="Manages the markup for the minigallery
-with a big image and some small thumbs">MinigalleryBigImageWithThumbs</a></li>
-<li><a href="#GeneratorDictionary" title="Maintans a set of words for a sentences generator">GeneratorDictionary</a></li>
-<li><a href="#MinigalleryThumbsLinkToBig" title="Generates a list of thumbnail each one is an anchor
-to the image with 'full' media dimensions.">MinigalleryThumbsLinkToBig</a></li>
-<li><a href="#EscapeRoute" title="Manages the navigation links on a 404 page">EscapeRoute</a></li>
-<li><a href="#DefaultAssetsCDN" title="Registers some assets from some CDNs">DefaultAssetsCDN</a></li>
-<li><a href="#GaussianMath" title="The following object is used to compute numbers with a gaussian distribution">GaussianMath</a></li>
-<li><a href="#RuntimeInfos" title="Manages a set of info to be printed as a json generally at the endo of the page">RuntimeInfos</a></li>
-<li><a href="#LevelWalkerNavMenu" title="Adds the level for the current menu element">LevelWalkerNavMenu</a></li>
-<li><a href="#ShowItemExcerptWalkerNavMenu" title="Shows the title, the post thumbnail
-and the excerpt for every menu entry.">ShowItemExcerptWalkerNavMenu</a></li>
-<li><a href="#GalleryHelper" title="Manages the markup for a generic set of images
-Extend this with your nice and candy classes!">GalleryHelper</a></li>
-<li><a href="#HeadHelper" title="Some helper for the code inside &lt;head&gt; tag">HeadHelper</a></li>
-<li><a href="#HtmlHelper" title="Helper class useful to generate some html tags">HtmlHelper</a></li>
 <li><a href="#HtmlBuilder" title="Inner class to build some very basic html nodes">HtmlBuilder</a></li>
-<li><a href="#LoremIpsumDictionary" title="Stores the dictionary for generating 'Lorem ipsum.">LoremIpsumDictionary</a></li>
-<li><a href="#ImageGenerator" title="Generates paceholder images">ImageGenerator</a></li>
-<li><a href="#PhotogalleryThumbWithFancybox" title="Manages images and markup for a photogallery where
-clicking on a little thumb opens the big image in fancybox">PhotogalleryThumbWithFancybox</a></li>
-<li><a href="#Slideshow" title="Manages the slideshow">Slideshow</a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
 <li class="constant  "><a href="#constant_ICL_DONT_LOAD_LANGUAGES_JS" title="ICL_DONT_LOAD_LANGUAGES_JS :: "><span class="description">ICL_DONT_LOAD_LANGUAGES_JS</span><pre>ICL_DONT_LOAD_LANGUAGES_JS</pre></a></li>
 <li class="constant  "><a href="#constant_ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS" title="ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS :: "><span class="description">ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS</span><pre>ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS</pre></a></li>
 <li class="constant  "><a href="#constant_ICL_DONT_LOAD_NAVIGATION_CSS" title="ICL_DONT_LOAD_NAVIGATION_CSS :: "><span class="description">ICL_DONT_LOAD_NAVIGATION_CSS</span><pre>ICL_DONT_LOAD_NAVIGATION_CSS</pre></a></li>
+<li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH" title="WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH :: "><span class="description">WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</span><pre>WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_DEBUG" title="WORDPRESS_THEME_UTILS_DEBUG :: "><span class="description">WORDPRESS_THEME_UTILS_DEBUG</span><pre>WORDPRESS_THEME_UTILS_DEBUG</pre></a></li>
+<li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH" title="WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH :: "><span class="description">WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</span><pre>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_PATH" title="WORDPRESS_THEME_UTILS_PATH :: "><span class="description">WORDPRESS_THEME_UTILS_PATH</span><pre>WORDPRESS_THEME_UTILS_PATH</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU" title="WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU :: "><span class="description">WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</span><pre>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</pre></a></li>
 <li class="constant  "><a href="#constant_WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU" title="WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU :: "><span class="description">WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</span><pre>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</pre></a></li>
@@ -139,18 +90,6 @@ clicking on a little thumb opens the big image in fancybox">PhotogalleryThumbWit
 <div class="package-indent">
 <h3>
 <i class="icon-custom icon-function"></i> Functions</h3>
-<a id="function_debug"></a><div class="element clickable function  function_debug" data-toggle="collapse" data-target=".function_debug .collapse">
-<h2>Quick and dirty way to know a variable value.</h2>
-<pre>debug(mixed $var) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>It uses the last changed mode.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$var</h4>
-<code>mixed</code><p>the variable to be dumped</p></div>
-</div></div>
-</div>
 <a id="function_http_build_url"></a><div class="element clickable function  function_http_build_url" data-toggle="collapse" data-target=".function_http_build_url .collapse">
 <h2>PECT_HTTP is usually missing on many environment.</h2>
 <pre>http_build_url(array $parsed_url) : string</pre>
@@ -182,310 +121,14 @@ clicking on a little thumb opens the big image in fancybox">PhotogalleryThumbWit
 <code>string</code><code>array</code><p>some additional classes</p></div>
 </div></div>
 </div>
-<a id="function_v"></a><div class="element clickable function  function_v" data-toggle="collapse" data-target=".function_v .collapse">
-<h2>Quick and dirty way to know a variable value
-Usefull in a loop cause it doesn't break the execution with die</h2>
-<pre>v(mixed $var) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$var</h4>
-<code>mixed</code><p>the variable to be dumped</p></div>
-</div></div>
-</div>
-<a id="function_vc"></a><div class="element clickable function  function_vc" data-toggle="collapse" data-target=".function_vc .collapse">
-<h2>Quick and dirty way to know a variable value in a production enviroment
-vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</h2>
-<pre>vc(mixed $var) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$var</h4>
-<code>mixed</code><p>the variable to be dumped</p></div>
-</div></div>
-</div>
-<a id="function_vd"></a><div class="element clickable function  function_vd" data-toggle="collapse" data-target=".function_vd .collapse">
-<h2>Quick and dirty way to know a variable value
-vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</h2>
-<pre>vd(mixed $var) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$var</h4>
-<code>mixed</code><p>the variable to be dumped</p></div>
-</div></div>
-</div>
 <h3>
 <i class="icon-custom icon-class"></i> Classes and interfaces</h3>
-<div id="AjaxImageGenerator" class="element ajax clickable class">
-<h1>AjaxImageGenerator<a href="../classes/AjaxImageGenerator.html">¶</a>
-</h1>
-<p class="short_description">Hooks the ImageGenerator class to admin-ajax action</p>
-<div class="details collapse"></div>
-<a href="../classes/AjaxImageGenerator.html" class="more">« More »</a>
-</div>
-<div id="ClassAutoloader" class="element ajax clickable class">
-<h1>ClassAutoloader<a href="../classes/ClassAutoloader.html">¶</a>
-</h1>
-<p class="short_description">Autoload needed classes</p>
-<div class="details collapse"></div>
-<a href="../classes/ClassAutoloader.html" class="more">« More »</a>
-</div>
-<div id="DebugUtils" class="element ajax clickable class">
-<h1>DebugUtils<a href="../classes/DebugUtils.html">¶</a>
-</h1>
-<p class="short_description">Utils to debug the code while writing it.</p>
-<div class="details collapse"></div>
-<a href="../classes/DebugUtils.html" class="more">« More »</a>
-</div>
-<div id="DefaultAssets" class="element ajax clickable class">
-<h1>DefaultAssets<a href="../classes/DefaultAssets.html">¶</a>
-</h1>
-<p class="short_description">Register some useful assets in WordPress</p>
-<div class="details collapse"></div>
-<a href="../classes/DefaultAssets.html" class="more">« More »</a>
-</div>
-<div id="DefaultAssetsCDN" class="element ajax clickable class">
-<h1>DefaultAssetsCDN<a href="../classes/DefaultAssetsCDN.html">¶</a>
-</h1>
-<p class="short_description">Registers some assets from some CDNs</p>
-<div class="details collapse"></div>
-<a href="../classes/DefaultAssetsCDN.html" class="more">« More »</a>
-</div>
-<div id="EscapeRoute" class="element ajax clickable class">
-<h1>EscapeRoute<a href="../classes/EscapeRoute.html">¶</a>
-</h1>
-<p class="short_description">Manages the navigation links on a 404 page</p>
-<div class="details collapse"></div>
-<a href="../classes/EscapeRoute.html" class="more">« More »</a>
-</div>
-<div id="FeatureWithAssets" class="element ajax clickable class">
-<h1>FeatureWithAssets<a href="../classes/FeatureWithAssets.html">¶</a>
-</h1>
-<p class="short_description">Manages the assets loading for a feature.</p>
-<div class="details collapse"></div>
-<a href="../classes/FeatureWithAssets.html" class="more">« More »</a>
-</div>
-<div id="ForceDownload" class="element ajax clickable class">
-<h1>ForceDownload<a href="../classes/ForceDownload.html">¶</a>
-</h1>
-<p class="short_description">Force an attachment to be downloaded</p>
-<div class="details collapse"></div>
-<a href="../classes/ForceDownload.html" class="more">« More »</a>
-</div>
-<div id="GMapDataRetriever" class="element ajax clickable class">
-<h1>GMapDataRetriever<a href="../classes/GMapDataRetriever.html">¶</a>
-</h1>
-<p class="short_description">Retrieves GMaps data for the gmap.js integration</p>
-<div class="details collapse"></div>
-<a href="../classes/GMapDataRetriever.html" class="more">« More »</a>
-</div>
-<div id="GalleryHelper" class="element ajax clickable class">
-<h1>GalleryHelper<a href="../classes/GalleryHelper.html">¶</a>
-</h1>
-<p class="short_description">Manages the markup for a generic set of images
-Extend this with your nice and candy classes!</p>
-<div class="details collapse"></div>
-<a href="../classes/GalleryHelper.html" class="more">« More »</a>
-</div>
-<div id="GaussianMath" class="element ajax clickable class">
-<h1>GaussianMath<a href="../classes/GaussianMath.html">¶</a>
-</h1>
-<p class="short_description">The following object is used to compute numbers with a gaussian distribution</p>
-<div class="details collapse"></div>
-<a href="../classes/GaussianMath.html" class="more">« More »</a>
-</div>
-<div id="GeneratorDictionary" class="element ajax clickable class">
-<h1>GeneratorDictionary<a href="../classes/GeneratorDictionary.html">¶</a>
-</h1>
-<p class="short_description">Maintans a set of words for a sentences generator</p>
-<div class="details collapse"></div>
-<a href="../classes/GeneratorDictionary.html" class="more">« More »</a>
-</div>
-<div id="HashAnchorWalkerNavMenu" class="element ajax clickable class">
-<h1>HashAnchorWalkerNavMenu<a href="../classes/HashAnchorWalkerNavMenu.html">¶</a>
-</h1>
-<p class="short_description">Menu Walker to have the la tocke of the url as hash
-ex: http://www.fastbooking.net/clients/#africa</p>
-<div class="details collapse"></div>
-<a href="../classes/HashAnchorWalkerNavMenu.html" class="more">« More »</a>
-</div>
-<div id="HeadHelper" class="element ajax clickable class">
-<h1>HeadHelper<a href="../classes/HeadHelper.html">¶</a>
-</h1>
-<p class="short_description">Some helper for the code inside <head> tag</p>
-<div class="details collapse"></div>
-<a href="../classes/HeadHelper.html" class="more">« More »</a>
-</div>
 <div id="HtmlBuilder" class="element ajax clickable class">
 <h1>HtmlBuilder<a href="../classes/HtmlBuilder.html">¶</a>
 </h1>
 <p class="short_description">Inner class to build some very basic html nodes</p>
 <div class="details collapse"></div>
 <a href="../classes/HtmlBuilder.html" class="more">« More »</a>
-</div>
-<div id="HtmlHelper" class="element ajax clickable class">
-<h1>HtmlHelper<a href="../classes/HtmlHelper.html">¶</a>
-</h1>
-<p class="short_description">Helper class useful to generate some html tags</p>
-<div class="details collapse"></div>
-<a href="../classes/HtmlHelper.html" class="more">« More »</a>
-</div>
-<div id="ImageGenerator" class="element ajax clickable class">
-<h1>ImageGenerator<a href="../classes/ImageGenerator.html">¶</a>
-</h1>
-<p class="short_description">Generates paceholder images</p>
-<div class="details collapse"></div>
-<a href="../classes/ImageGenerator.html" class="more">« More »</a>
-</div>
-<div id="ImagePreload" class="element ajax clickable class">
-<h1>ImagePreload<a href="../classes/ImagePreload.html">¶</a>
-</h1>
-<p class="short_description">Takes care of image preloading with jQuery imagesloaded</p>
-<div class="details collapse"></div>
-<a href="../classes/ImagePreload.html" class="more">« More »</a>
-</div>
-<div id="LevelWalkerNavMenu" class="element ajax clickable class">
-<h1>LevelWalkerNavMenu<a href="../classes/LevelWalkerNavMenu.html">¶</a>
-</h1>
-<p class="short_description">Adds the level for the current menu element</p>
-<div class="details collapse"></div>
-<a href="../classes/LevelWalkerNavMenu.html" class="more">« More »</a>
-</div>
-<div id="LipsumGenerator" class="element ajax clickable class">
-<h1>LipsumGenerator<a href="../classes/LipsumGenerator.html">¶</a>
-</h1>
-<p class="short_description">Generates Lorem Ipsum text</p>
-<div class="details collapse"></div>
-<a href="../classes/LipsumGenerator.html" class="more">« More »</a>
-</div>
-<div id="LoremIpsumDictionary" class="element ajax clickable class">
-<h1>LoremIpsumDictionary<a href="../classes/LoremIpsumDictionary.html">¶</a>
-</h1>
-<p class="short_description">Stores the dictionary for generating 'Lorem ipsum.</p>
-<div class="details collapse"></div>
-<a href="../classes/LoremIpsumDictionary.html" class="more">« More »</a>
-</div>
-<div id="MinigalleryBigImageWithThumbs" class="element ajax clickable class">
-<h1>MinigalleryBigImageWithThumbs<a href="../classes/MinigalleryBigImageWithThumbs.html">¶</a>
-</h1>
-<p class="short_description">Manages the markup for the minigallery
-with a big image and some small thumbs</p>
-<div class="details collapse"></div>
-<a href="../classes/MinigalleryBigImageWithThumbs.html" class="more">« More »</a>
-</div>
-<div id="MinigalleryThumbsLinkToBig" class="element ajax clickable class">
-<h1>MinigalleryThumbsLinkToBig<a href="../classes/MinigalleryThumbsLinkToBig.html">¶</a>
-</h1>
-<p class="short_description">Generates a list of thumbnail each one is an anchor
-to the image with 'full' media dimensions.</p>
-<div class="details collapse"></div>
-<a href="../classes/MinigalleryThumbsLinkToBig.html" class="more">« More »</a>
-</div>
-<div id="OneImageForAll" class="element ajax clickable class">
-<h1>OneImageForAll<a href="../classes/OneImageForAll.html">¶</a>
-</h1>
-<p class="short_description">Merges all images of a gallery in only one and serve it as a sprite
-Important: every image have the same sizes and jpeg quality.</p>
-<div class="details collapse"></div>
-<a href="../classes/OneImageForAll.html" class="more">« More »</a>
-</div>
-<div id="PhotogalleryThumbWithFancybox" class="element ajax clickable class">
-<h1>PhotogalleryThumbWithFancybox<a href="../classes/PhotogalleryThumbWithFancybox.html">¶</a>
-</h1>
-<p class="short_description">Manages images and markup for a photogallery where
-clicking on a little thumb opens the big image in fancybox</p>
-<div class="details collapse"></div>
-<a href="../classes/PhotogalleryThumbWithFancybox.html" class="more">« More »</a>
-</div>
-<div id="RemoveSpacesWalkerNavMenu" class="element ajax clickable class">
-<h1>RemoveSpacesWalkerNavMenu<a href="../classes/RemoveSpacesWalkerNavMenu.html">¶</a>
-</h1>
-<p class="short_description">Remove spaces and newlines from the current menu.</p>
-<div class="details collapse"></div>
-<a href="../classes/RemoveSpacesWalkerNavMenu.html" class="more">« More »</a>
-</div>
-<div id="RuntimeInfos" class="element ajax clickable class">
-<h1>RuntimeInfos<a href="../classes/RuntimeInfos.html">¶</a>
-</h1>
-<p class="short_description">Manages a set of info to be printed as a json generally at the endo of the page</p>
-<div class="details collapse"></div>
-<a href="../classes/RuntimeInfos.html" class="more">« More »</a>
-</div>
-<div id="ShowItemExcerptWalkerNavMenu" class="element ajax clickable class">
-<h1>ShowItemExcerptWalkerNavMenu<a href="../classes/ShowItemExcerptWalkerNavMenu.html">¶</a>
-</h1>
-<p class="short_description">Shows the title, the post thumbnail
-and the excerpt for every menu entry.</p>
-<div class="details collapse"></div>
-<a href="../classes/ShowItemExcerptWalkerNavMenu.html" class="more">« More »</a>
-</div>
-<div id="ShowTitleThumbExcerptWalkerNavMenu" class="element ajax clickable class">
-<h1>ShowTitleThumbExcerptWalkerNavMenu<a href="../classes/ShowTitleThumbExcerptWalkerNavMenu.html">¶</a>
-</h1>
-<p class="short_description">Shows the title, the post thumbnail
-and the excerpt for every menu entry.</p>
-<div class="details collapse"></div>
-<a href="../classes/ShowTitleThumbExcerptWalkerNavMenu.html" class="more">« More »</a>
-</div>
-<div id="SimpleFieldsQuickConfig" class="element ajax clickable class">
-<h1>SimpleFieldsQuickConfig<a href="../classes/SimpleFieldsQuickConfig.html">¶</a>
-</h1>
-<p class="short_description">Perform a quick configuration for Simple Fields plugin
-with the default values used by FastBooking
-By default you only need to call in functions.php:
-<code>new SimpleFieldsQuickConfig();</code></p>
-<div class="details collapse"></div>
-<a href="../classes/SimpleFieldsQuickConfig.html" class="more">« More »</a>
-</div>
-<div id="Slideshow" class="element ajax clickable class">
-<h1>Slideshow<a href="../classes/Slideshow.html">¶</a>
-</h1>
-<p class="short_description">Manages the slideshow</p>
-<div class="details collapse"></div>
-<a href="../classes/Slideshow.html" class="more">« More »</a>
-</div>
-<div id="SpecialOffersSnippet" class="element ajax clickable class">
-<h1>SpecialOffersSnippet<a href="../classes/SpecialOffersSnippet.html">¶</a>
-</h1>
-<p class="short_description">Manages the integration of the special offers snippet</p>
-<div class="details collapse"></div>
-<a href="../classes/SpecialOffersSnippet.html" class="more">« More »</a>
-</div>
-<div id="SpecialOffersSnippetAjax" class="element ajax clickable class">
-<h1>SpecialOffersSnippetAjax<a href="../classes/SpecialOffersSnippetAjax.html">¶</a>
-</h1>
-<p class="short_description">Hook to WP Ajax system to get the special offers snippet url</p>
-<div class="details collapse"></div>
-<a href="../classes/SpecialOffersSnippetAjax.html" class="more">« More »</a>
-</div>
-<div id="SubstitutionTemplate" class="element ajax clickable class">
-<h1>SubstitutionTemplate<a href="../classes/SubstitutionTemplate.html">¶</a>
-</h1>
-<p class="short_description">Manages a string substitution set</p>
-<div class="details collapse"></div>
-<a href="../classes/SubstitutionTemplate.html" class="more">« More »</a>
-</div>
-<div id="ThemeHelpers" class="element ajax clickable class">
-<h1>ThemeHelpers<a href="../classes/ThemeHelpers.html">¶</a>
-</h1>
-<p class="short_description">Stores some static methods that may be useful for html management</p>
-<div class="details collapse"></div>
-<a href="../classes/ThemeHelpers.html" class="more">« More »</a>
-</div>
-<div id="TinyMCEExcerptCustomization" class="element ajax clickable class">
-<h1>TinyMCEExcerptCustomization<a href="../classes/TinyMCEExcerptCustomization.html">¶</a>
-</h1>
-<p class="short_description">This class removes the default excerpt metabox
-and adds a new box with the wysiwyg editor capability</p>
-<div class="details collapse"></div>
-<a href="../classes/TinyMCEExcerptCustomization.html" class="more">« More »</a>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -507,9 +150,21 @@ and adds a new box with the wysiwyg editor capability</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH .collapse">
+<h2>WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</h2>
+<pre>WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_WORDPRESS_THEME_UTILS_DEBUG"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_DEBUG" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_DEBUG .collapse">
 <h2>WORDPRESS_THEME_UTILS_DEBUG</h2>
 <pre>WORDPRESS_THEME_UTILS_DEBUG </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH .collapse">
+<h2>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</h2>
+<pre>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -537,7 +192,7 @@ and adds a new box with the wysiwyg editor capability</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-07T18:19:12+01:00.<br></footer></div>
+            generated on 2013-04-10T12:34:58+02:00.<br></footer></div>
 </div>
 </body>
 </html>

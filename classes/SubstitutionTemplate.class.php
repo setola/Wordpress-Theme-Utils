@@ -7,6 +7,7 @@
  * Manages a string substitution set
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class SubstitutionTemplate{
 	

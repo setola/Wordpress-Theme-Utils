@@ -7,7 +7,10 @@
  * Manages the navigation links on a 404 page
  * @author etessore
  * @version 1.0.1
- * 
+ * @package classes
+ */ 
+
+/* 
  * Changelog
  * 1.0.1
  * 	moved from ThemeHelpers to HtmlHelper class

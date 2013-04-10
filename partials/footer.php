@@ -4,6 +4,9 @@
  * 
  * Contains the closing of the body and html tags
  * 
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

@@ -7,7 +7,11 @@
  * Manages the integration of the special offers snippet
  * @author etessore
  * @version 1.0.3
- * 
+ * @package classes
+ */
+ 
+/* 
+ * Changelog:
  * 1.0.3
  * 	remove dependency from FeatureWithAsset and used ThemeHelpers::load_js()
  * 1.0.2

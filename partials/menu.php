@@ -2,6 +2,8 @@
 /**
  * The Template for displaying the navigation bar
  * 
+ * @package templates
+ * @subpackage parts
  * @since 0.1
  */
 

@@ -9,6 +9,8 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @since 0.1
+ * @version 1.0.0
+ * @package templates
  */
 
 wp_enqueue_style('main');

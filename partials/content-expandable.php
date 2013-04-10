@@ -3,6 +3,9 @@
  * Template part for a single article (post\page)
  * Version with title and brief content button to expand it
  * 
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

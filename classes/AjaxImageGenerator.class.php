@@ -6,11 +6,11 @@
 
 /**
  * Hooks the ImageGenerator class to admin-ajax action
+ * 
  * @author etessore
  * @version 1.0.0
+ * @package classes
  * 
- * 1.0.0
- * 	Initial release
  */
 class AjaxImageGenerator{
 	/**

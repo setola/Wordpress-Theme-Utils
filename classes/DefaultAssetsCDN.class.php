@@ -11,6 +11,7 @@
  * 
  * @author etessore
  * @since 1.0
+ * @package classes
  * 
  */
 class DefaultAssetsCDN extends DefaultAssets{

@@ -2,6 +2,9 @@
 /**
  * The Template part for displaying a <p> with links to how to update your browser without panic
  * 
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

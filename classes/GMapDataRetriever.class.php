@@ -7,6 +7,7 @@
  * Retrieves GMaps data for the gmap.js integration
  * @author etessore
  * @version 1.0
+ * @package classes
  */
 class GMapDataRetriever {
 	/**

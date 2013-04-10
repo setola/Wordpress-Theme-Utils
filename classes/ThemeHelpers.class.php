@@ -6,7 +6,10 @@
  * Stores some static methods that may be useful for html management
  * @author etessore
  * @version 1.0.5
- * 
+ * @package classes
+ */ 
+
+/* 
  * Changelog
  * 1.0.5
  * 	added support for title in 404 pages

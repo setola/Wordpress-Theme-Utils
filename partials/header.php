@@ -4,6 +4,9 @@
  *
  * Displays all of the <head> section and everything up till 'main container' div
  *
+ * @package templates
+ * @subpackage parts
+ * @version 1.0.0
  * @since 0.1
  */
 

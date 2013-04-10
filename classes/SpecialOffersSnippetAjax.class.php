@@ -6,6 +6,8 @@
 /**
  * Hook to WP Ajax system to get the special offers snippet url
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  *
  */
 class SpecialOffersSnippetAjax{

@@ -1,7 +1,8 @@
 <?php 
 /**
  * The Template for displaying the home page
- * 
+ * @version 1.0.0
+ * @package templates
  * @since 0.1
  */
 

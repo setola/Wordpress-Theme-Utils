@@ -7,6 +7,8 @@
  * Manages images and markup for a photogallery where 
  * clicking on a little thumb opens the big image in fancybox 
  * @author etessore
+ * @version 1.0.0
+ * @package classes
  */
 class PhotogalleryThumbWithFancybox extends GalleryHelper{
 	

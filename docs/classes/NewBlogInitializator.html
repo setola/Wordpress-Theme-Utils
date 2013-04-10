@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>WP Theme Utils » \NewBlogInitializator</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">WP Theme Utils</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/classes.html"><i class="icon-folder-open"></i> classes</a></li>
+<li><a href="../packages/debug.html"><i class="icon-folder-open"></i> debug</a></li>
+<li><a href="../packages/templates.html"><i class="icon-folder-open"></i> templates</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">1</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_add_menu_entries" title="add_menu_entries :: Adds all automatically generated pages to the given menu"><span class="description">Adds all automatically generated pages to the given menu</span><pre>add_menu_entries()</pre></a></li>
+<li class="method public "><a href="#method_add_menu_entry" title="add_menu_entry :: Adds an automatically generated page to the given menu"><span class="description">Adds an automatically generated page to the given menu</span><pre>add_menu_entry()</pre></a></li>
+<li class="method public "><a href="#method_add_page" title="add_page :: Inserts a new page into WP"><span class="description">Inserts a new page into WP</span><pre>add_page()</pre></a></li>
+<li class="method public "><a href="#method_add_theme" title="add_theme :: Creates the basic structure for a child theme."><span class="description">Creates the basic structure for a child theme.</span><pre>add_theme()</pre></a></li>
+<li class="method public "><a href="#method_create_menu" title="create_menu :: Creates the menu with given name"><span class="description">Creates the menu with given name</span><pre>create_menu()</pre></a></li>
+<li class="method public "><a href="#method_delete_all_pages" title="delete_all_pages :: Deletes all pages"><span class="description">Deletes all pages</span><pre>delete_all_pages()</pre></a></li>
+<li class="method public "><a href="#method_delete_default_posts" title="delete_default_posts :: Removes the default 'Hello World' post and page"><span class="description">Removes the default 'Hello World' post and page</span><pre>delete_default_posts()</pre></a></li>
+<li class="method public "><a href="#method_enable_theme" title="enable_theme :: Enables the new theme for the current blog"><span class="description">Enables the new theme for the current blog</span><pre>enable_theme()</pre></a></li>
+<li class="method public "><a href="#method_get_page_details" title="get_page_details :: Gets the automatically generated page details"><span class="description">Gets the automatically generated page details</span><pre>get_page_details()</pre></a></li>
+<li class="method public "><a href="#method_hook" title="hook :: Hooks the initial data filling into WordPress"><span class="description">Hooks the initial data filling into WordPress</span><pre>hook()</pre></a></li>
+<li class="method public "><a href="#method_init" title="init :: Initializes the blog with starting data."><span class="description">Initializes the blog with starting data.</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_reset_page_list" title="reset_page_list :: Resets the list of the automatically generated pages"><span class="description">Resets the list of the automatically generated pages</span><pre>reset_page_list()</pre></a></li>
+<li class="method public "><a href="#method_select_blog" title="select_blog :: In a MultiSite environment selects the right blog"><span class="description">In a MultiSite environment selects the right blog</span><pre>select_blog()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_blog_id" title="$blog_id :: In a MultiSite environment stores the blog id"><span class="description"></span><pre>$blog_id</pre></a></li>
+<li class="property private "><a href="#property_pages" title="$pages :: Stores the list of automatically created pages"><span class="description"></span><pre>$pages</pre></a></li>
+<li class="property private "><a href="#property_theme" title="$theme :: Stores the parameter for the new blog theme"><span class="description"></span><pre>$theme</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\NewBlogInitializator"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/NewBlogInitializator.html">NewBlogInitializator</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Fills the brand new blog with starting data</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">etessore</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/classes.html">classes</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_add_menu_entries"></a><div class="element clickable method public method_add_menu_entries" data-toggle="collapse" data-target=".method_add_menu_entries .collapse">
+<h2>Adds all automatically generated pages to the given menu</h2>
+<pre>add_menu_entries(int $menu_id, int $start, int $end) : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$menu_id</h4>
+<code>int</code><p>the menu id</p></div>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>int</code><p>the first element index</p></div>
+<div class="subelement argument">
+<h4>$end</h4>
+<code>int</code><p>the last element index</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_add_menu_entry"></a><div class="element clickable method public method_add_menu_entry" data-toggle="collapse" data-target=".method_add_menu_entry .collapse">
+<h2>Adds an automatically generated page to the given menu</h2>
+<pre>add_menu_entry(int $index, int $menu_id) : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of $this->pages array</p>
+</div>
+<div class="subelement argument">
+<h4>$menu_id</h4>
+<code>int</code><p>the menu id</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_add_page"></a><div class="element clickable method public method_add_page" data-toggle="collapse" data-target=".method_add_page .collapse">
+<h2>Inserts a new page into WP</h2>
+<pre>add_page(string | array $parms) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parms</h4>
+<code>string</code><code>array</code><p>page details according to {@link http://codex.wordpress.org/Function_Reference/wp_insert_post wp_insert_post()}</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>the post id</div>
+</div></div>
+</div>
+<a id="method_add_theme"></a><div class="element clickable method public method_add_theme" data-toggle="collapse" data-target=".method_add_theme .collapse">
+<h2>Creates the basic structure for a child theme.</h2>
+<pre>add_theme(array $parms) : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method tries to make a new theme directory
+under the wp-contents/themes.
+Then tries to create style.css in the newly
+theme folder and fill it with the default header comment</p>
+
+<p>An example of parameters:</p>
+
+<pre><code>$defaults = array(
+        'name'          =>  'Wordpress Theme Utils Child Theme',
+        'folder'        =>  'wtu-child-theme',
+        'child_of'      =>  'Wordpress-Theme-Utils',
+        'description'   =>  'This is a Child Theme of Wordpress Theme Utils',
+        'theme_uri'     =>  'http://www.emanueletessore.com/',
+        'author'        =>  'Emanuele Tessore',
+        'author_uri'    =>  'http://www.emanueletessore.com/',
+        'version'       =>  '1.0.0'
+);
+</code></pre>
+
+<p>Uses <a href="http://codex.wordpress.org/Function_Reference/wp_die">wp_die()</a> if something goes wrong</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parms</h4>
+<code>array</code><p>parameters for the new theme</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_create_menu"></a><div class="element clickable method public method_create_menu" data-toggle="collapse" data-target=".method_create_menu .collapse">
+<h2>Creates the menu with given name</h2>
+<pre>create_menu(string $name, string $location) : \Ambigous</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a menu with given name exists this method will return its id.
+If $location parameter is passed this method will assign the menu with given $name to such location</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>the menu name</p></div>
+<div class="subelement argument">
+<h4>$location</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><mixed, boolean, unknown, multitype:, NULL, WP_Error, object, array|object, string, number, error, multitype:mixed unknown , multitype:number mixed , multitype:number Ambigous <string, NULL> ></div>
+</div></div>
+</div>
+<a id="method_delete_all_pages"></a><div class="element clickable method public method_delete_all_pages" data-toggle="collapse" data-target=".method_delete_all_pages .collapse">
+<h2>Deletes all pages</h2>
+<pre>delete_all_pages() : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>WARNING: it does NOT ask if you're sure!!!</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_delete_default_posts"></a><div class="element clickable method public method_delete_default_posts" data-toggle="collapse" data-target=".method_delete_default_posts .collapse">
+<h2>Removes the default 'Hello World' post and page</h2>
+<pre>delete_default_posts() : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_enable_theme"></a><div class="element clickable method public method_enable_theme" data-toggle="collapse" data-target=".method_enable_theme .collapse">
+<h2>Enables the new theme for the current blog</h2>
+<pre>enable_theme() : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_get_page_details"></a><div class="element clickable method public method_get_page_details" data-toggle="collapse" data-target=".method_get_page_details .collapse">
+<h2>Gets the automatically generated page details</h2>
+<pre>get_page_details(int $index) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the id of the page</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>list of details, false if the $index doesn't point to an automatically generated page</div>
+</div></div>
+</div>
+<a id="method_hook"></a><div class="element clickable method public method_hook" data-toggle="collapse" data-target=".method_hook .collapse">
+<h2>Hooks the initial data filling into WordPress</h2>
+<pre>hook() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>Initializes the blog with starting data.</h2>
+<pre>init(int $blog_id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Overload this in a child ob ject if you need customization on starting data</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$blog_id</h4>
+<code>int</code><p>the blog id</p></div>
+</div></div>
+</div>
+<a id="method_reset_page_list"></a><div class="element clickable method public method_reset_page_list" data-toggle="collapse" data-target=".method_reset_page_list .collapse">
+<h2>Resets the list of the automatically generated pages</h2>
+<pre>reset_page_list() : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_select_blog"></a><div class="element clickable method public method_select_blog" data-toggle="collapse" data-target=".method_select_blog .collapse">
+<h2>In a MultiSite environment selects the right blog</h2>
+<pre>select_blog() : <a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/NewBlogInitializator.html">\NewBlogInitializator</a></code>$this for chainability</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_blog_id"> </a><div class="element clickable property private property_blog_id" data-toggle="collapse" data-target=".property_blog_id .collapse">
+<h2></h2>
+<pre>$blog_id : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_pages"> </a><div class="element clickable property private property_pages" data-toggle="collapse" data-target=".property_pages .collapse">
+<h2></h2>
+<pre>$pages : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_theme"> </a><div class="element clickable property private property_theme" data-toggle="collapse" data-target=".property_theme .collapse">
+<h2></h2>
+<pre>$theme : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-04-10T12:34:58+02:00.<br></footer></div>
+</div>
+</body>
+</html>

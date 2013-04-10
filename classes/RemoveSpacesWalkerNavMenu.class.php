@@ -10,6 +10,7 @@
  * text-align: center;</code> 
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class RemoveSpacesWalkerNavMenu extends Walker_Nav_Menu {
 	/**
