@@ -10,12 +10,27 @@
  *
  * @since 0.1
  */
+
 wp_enqueue_style('main');
-get_header(); 
+
+get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
+
 ?>
-	
-	<div id="main-container">
-		<h1>Customize you Default Page by editing index.php</h1>
+
+	<div id="main-container" class="container_16">
+		<div id="page-text" class="grid_10">
+			<?php 
+				while(have_posts()){
+					the_post(); 
+					get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'content', get_post_format());
+				}
+			?>
+		</div>
+		<div id="sidebar" class="grid_6">
+			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'sidebar'); ?>
+		</div>
 	</div>
-	
-<?php get_footer(); ?>
+
+<?php 
+	get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'footer'); 
+?>

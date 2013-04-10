@@ -5,12 +5,14 @@
  * @since 0.1
  */
 
-wp_enqueue_style('page');
-get_header(); 
+ThemeHelpers::load_css('reset');
+ThemeHelpers::load_css('grid-960');
+
+get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 
 ?>
 	<div id="main-content" class="container_16">
-		<div class="grid_8 alpha">
+		<div class="grid_8">
 			<?php 
 				$image = new ImageGenerator(); 
 				$image
@@ -25,7 +27,7 @@ get_header();
 				echo $image->get_markup();			
 			?>
 		</div>
-		<div class="grid_8 omega">
+		<div class="grid_8">
 			<?php 
 				$escape = new EscapeRoute();
 				$escape->templates->set_markup('class', 'grid_6');
@@ -37,12 +39,14 @@ get_header();
 	</div>
 	
 	<div class="container_16">
-		<div class="grid_8 alpha">
+		<div class="grid_8">
 			<?php the_widget('WP_Widget_Pages'); ?>
 		</div>
-		<div class="grid_8 omega">
+		<div class="grid_8">
 			<?php the_widget('WP_Widget_Recent_Posts'); ?>
 		</div>
 	</div>
 
-<?php get_footer(); ?>
+<?php 
+	get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'footer'); 
+?>

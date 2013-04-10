@@ -5,21 +5,24 @@
  * @since 0.1
  */
 
-wp_enqueue_style('front-page');
-get_header(); 
+wp_enqueue_style('main');
+
+get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 
 ?>
-	
+
 	<div id="main-container" class="container_16">
 		<div id="slideshow" class="grid_16">
-			<?php get_template_part('slideshow'); ?>
+			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow'); ?>
 		</div>
 		<div id="page-text" class="grid_10">
-			<?php get_template_part('content'); ?>
+			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'content', get_post_format()); ?>
 		</div>
 		<div id="sidebar" class="grid_6">
-			<?php get_template_part('sidebar'); ?>
+			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'sidebar'); ?>
 		</div>
 	</div>
-	
-<?php get_footer(); ?>
+
+<?php 
+	get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'footer'); 
+?>
