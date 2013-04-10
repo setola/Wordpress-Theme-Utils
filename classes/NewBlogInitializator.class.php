@@ -325,14 +325,11 @@ EOF;
 		$offset = 0;
 		while( count( $posts ) > 0 ) {
 			if( $offset == 10 ) {
-				echo "Bailing<br />\n";
 				break;
 			}
 			$offset++;
-	
-			echo "<h3>Cycle $offset</h3>\n";	
+			
 			foreach( $posts as $post ) {
-				print "Post ID: {$post->ID}<br />\n";
 				wp_delete_post( $post->ID, true );
 			}	
 			$posts = get_posts( $options );
