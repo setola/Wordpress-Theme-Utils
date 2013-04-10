@@ -30,7 +30,7 @@ Usage
 If you plan to overwrite functions.php you have to remeber to import the classes
 you need from the parent theme. Usually loading the ClassAutoloader is enough
 ````php
-include_once get_template_directory() . '/classes/ClassAutoloader.class.php';
+include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
 new ClassAutoloader();
 ````
 
