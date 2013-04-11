@@ -26,15 +26,15 @@ Usage
 	*/
 ````
 
+Functions.php
+-----
 
-If you plan to overwrite functions.php you have to hook your customizations
-to 'after_setup_theme' action hook.
+If you plan to overwrite **functions.php** and you need some classes from the framework,
+you have to hook your customizations to *'after_setup_theme'* action hook.
 ````php
-
 function wtu_child_theme_customizations(){
 	$test = new LipsumGenerator();
 	$test->hook();
-
 }
 
 add_action('after_setup_theme', 'wtu_child_theme_customizations');
