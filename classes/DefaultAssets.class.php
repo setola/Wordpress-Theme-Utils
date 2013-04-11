@@ -73,7 +73,6 @@ class DefaultAssets{
 		
 		
 		
-		
 		return $this;
 	}
 	
@@ -124,6 +123,11 @@ class DefaultAssets{
 		$this->add_css('open-details', '/css/open-details.css', null, '0.1', 'screen');
 		$this->add_css('jquery-fancybox', '/css/jquery.fancybox.css', null, '2.1.0', 'screen');
 		$this->add_css('linear-menu', '/css/linear-menu.css', null, '0.1', 'screen');
+		
+		/**
+		 * Default style.css
+		 */
+		$this->add_css('style', '/style.css', null, '1.0', 'screen');
 		
 		return $this;
 	}

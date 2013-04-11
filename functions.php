@@ -27,82 +27,46 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  */
 
-/**
- * The base path for Wordpress Theme Utils
- */
-if(!defined('WORDPRESS_THEME_UTILS_PATH')) 
-	define('WORDPRESS_THEME_UTILS_PATH', dirname(__FILE__));
 
-/**
- * Set to true if you want vd()\vc()\v() to print output, 
- * false is generic better for production
- */
-if(!defined('WORDPRESS_THEME_UTILS_DEBUG'))
-	define('WORDPRESS_THEME_UTILS_DEBUG', true);
+function wordpress_theme_utils_initialize(){
+	include_once 'classes/ThemeUtils.class.php';
+	ThemeUtils::get_instance();
+	
 
-/**
- * Set to false to disable registration of Top Menu
- */
-if(!defined('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU'))
-	define('WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU', true);
-
-/**
- * Set to false to disable registration of Bottom Menu
- */
-if(!defined('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU'))
-	define('WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU', true);
-
-/**
- * Relative path for template parts
- */
-if(!defined('WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH'))
-	define('WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH', 'partials/');
-
-/**
- * Relative path for autoloader class
- */
-if(!defined('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH'))
-	define('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH', '/classes/ClassAutoloader.class.php');
-
-
-
-/**
- * Initialize the autoloader
- */
-include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
-new ClassAutoloader();
-
-/**
- * Initialize the debug utils 
- * @see vd() 
- * @see v() 
- * @see vc()
- */
-DebugUtils::get_instance();
-
-
-/**
- * Register some standard assets
- * 
- * overload the global $assets variable in your child theme functions.php if you need customization on this.
- * @see DefaultAssets for adding or remove assets
- */
-global $assets;
-if(empty($assets)){
-	new DefaultAssetsCDN();
+	/**
+	 * Register some standard assets
+	 *
+	 * overload the global $assets variable in your child theme functions.php if you need customization on this.
+	 * @see DefaultAssets for adding or remove assets
+	 */
+	global $assets;
+	if(empty($assets)){
+		new DefaultAssetsCDN();
+	}
+	
+	/**
+	 * Register runtime infos, useful for javascript
+	 *
+	 * Overload the global $runtime_infos in your child theme functions.php if you need customization on this.
+	 * @see RuntimeInfos for more details
+	 */
+	global $runtime_infos;
+	if(empty($runtime_infos)){
+		$runtime_infos = new RuntimeInfos();
+		$runtime_infos->hook();
+	}
+	
+	/**
+	 * Initialize the main menues
+	 */
+	if(WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU === true)
+		register_nav_menu('primary', __('Primary Menu', 'theme'));
+	if(WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU === true)
+		register_nav_menu('secondary', __('Secondary Menu', 'theme'));
+	
 }
+add_action('after_setup_theme', 'wordpress_theme_utils_initialize', 9);
 
-/**
- * Register runtime infos, useful for javascript
- * 
- * Overload the global $runtime_infos in your child theme functions.php if you need customization on this.
- * @see RuntimeInfos for more details
- */
-global $runtime_infos;
-if(empty($runtime_infos)){
-	$runtime_infos = new RuntimeInfos();
-	$runtime_infos->hook();
-}
 
 
 
@@ -127,15 +91,6 @@ if(!function_exists('http_build_url')){
 		return "$scheme$user$pass$host$port$path$query$fragment";
 	}
 }
-
-
-/**
- * Initialize the main menues
- */
-if(WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU === true)
-	register_nav_menu('primary', __('Primary Menu', 'theme'));
-if(WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU === true)
-	register_nav_menu('secondary', __('Secondary Menu', 'theme'));
 
 
 

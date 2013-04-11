@@ -6,7 +6,8 @@
  * @since 0.1
  */
 
-wp_enqueue_style('main');
+ThemeHelpers::load_css('standard-style');
+ThemeHelpers::load_css('style');
 
 get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 
