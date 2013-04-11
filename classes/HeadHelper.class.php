@@ -68,8 +68,9 @@ class HeadHelper{
 		$title = esc_html($this->title);
 		$desc = $this->render_meta_tag('description');
 		$ga_tracking = '';
+		$tempate_directory_uri = get_template_directory_uri();
 		if(!empty($this->ua)){
-		$ga_tracking = HtmlHelper::script(<<< EOF
+			$ga_tracking = HtmlHelper::script(<<< EOF
      var _gaq = _gaq || [];
      _gaq.push(['_setAccount', '{$this->ua}'],
      ['_setDomainName', 'none'],
@@ -95,7 +96,7 @@ EOF
 		$desc
 	    <meta charset="{$this->charset}">
 	    $meta_tags
-	    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
+	    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.ico">
 	    $ga_tracking
 EOF;
 	}
