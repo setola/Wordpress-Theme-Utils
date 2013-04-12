@@ -6,7 +6,6 @@
  * @since 0.1
  */
 
-ThemeHelpers::load_css('standard-style');
 ThemeHelpers::load_css('style');
 
 get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');

@@ -127,7 +127,7 @@ class DefaultAssets{
 		/**
 		 * Default style.css
 		 */
-		$this->add_css('style', '/style.css', null, '1.0', 'screen');
+		$this->add_css('style', '/style.css', array('reset', 'grid-960', 'standard-style'), '1.0', 'screen');
 		
 		return $this;
 	}
