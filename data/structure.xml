@@ -13,7 +13,7 @@ Learn more: http://codex.wordpress.org/Template_Hierarchy&lt;/p&gt;</long-descri
       <tag line="2" name="package" description="templates"/>
     </docblock>
   </file>
-  <file path="functions.php" hash="b8841316f8606896e01ba95435eedba7" package="Default">
+  <file path="functions.php" hash="a14a3e5e9ed5192de1746e7eb7bad375" package="Default">
     <docblock line="2">
       <description>Theme functions and definitions</description>
       <long-description>&lt;p&gt;When using a child theme (see http://codex.wordpress.org/Theme_Development and
@@ -39,83 +39,42 @@ function my_child_theme_setup() {
 
 &lt;p&gt;For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.&lt;/p&gt;</long-description>
     </docblock>
-    <include line="72" type="Include Once" package="Default">
-      <name/>
-      <docblock line="69">
-        <description>Initialize the autoloader</description>
-        <long-description/>
-      </docblock>
+    <include line="36" type="Include Once" package="Default">
+      <name>classes/ThemeUtils.class.php</name>
     </include>
-    <constant namespace="global" line="34" package="Default">
-      <name>WORDPRESS_THEME_UTILS_PATH</name>
-      <full_name>\WORDPRESS_THEME_UTILS_PATH</full_name>
-      <value>dirname(__FILE__)</value>
-    </constant>
-    <constant namespace="global" line="41" package="Default">
-      <name>WORDPRESS_THEME_UTILS_DEBUG</name>
-      <full_name>\WORDPRESS_THEME_UTILS_DEBUG</full_name>
-      <value>true</value>
-    </constant>
-    <constant namespace="global" line="47" package="Default">
-      <name>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</name>
-      <full_name>\WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</full_name>
-      <value>true</value>
-    </constant>
-    <constant namespace="global" line="53" package="Default">
-      <name>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</name>
-      <full_name>\WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</full_name>
-      <value>true</value>
-    </constant>
-    <constant namespace="global" line="59" package="Default">
-      <name>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</name>
-      <full_name>\WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</full_name>
-      <value>'partials/'</value>
-    </constant>
-    <constant namespace="global" line="65" package="Default">
-      <name>WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</name>
-      <full_name>\WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</full_name>
-      <value>'/classes/ClassAutoloader.class.php'</value>
-    </constant>
-    <function namespace="global" line="117" package="Default">
+    <function namespace="global" line="35" package="core">
+      <name>wordpress_theme_utils_initialize_hook</name>
+      <full_name>\wordpress_theme_utils_initialize_hook</full_name>
+      <docblock line="30">
+        <description>Automatic initialization for the framework settings</description>
+        <long-description/>
+        <tag line="30" name="package" description="core"/>
+        <tag line="30" name="version" description="1.0.0"/>
+      </docblock>
+    </function>
+    <function namespace="global" line="56" package="core">
       <name>http_build_url</name>
       <full_name>\http_build_url</full_name>
-      <docblock line="110">
-        <description>PECT_HTTP is usually missing on many environment.</description>
-        <long-description>&lt;p&gt;This function provides the same feature as the function included in PECT_HTTP.&lt;/p&gt;</long-description>
-        <tag line="110" name="see" description="http://php.net/manual/en/function.http-build-url.php" refers="\global\@link"/>
-        <tag line="110" name="param" description="the array to be merged" type="array" variable="$parsed_url">
+      <docblock line="45">
+        <description>Build a URL.</description>
+        <long-description>&lt;p&gt;The parts of the second URL will be merged into the first according to the flags argument.
+PECT_HTTP is usually missing on many environment.
+This function provides the same feature as the function included in PECT_HTTP.&lt;/p&gt;</long-description>
+        <tag line="45" name="see" description="http://php.net/manual/en/function.http-build-url.php" refers="\global\@link"/>
+        <tag line="45" name="param" description="the array to be merged" type="array" variable="$parsed_url">
           <type by_reference="false">array</type>
         </tag>
-        <tag line="110" name="return" description="the url" type="string">
+        <tag line="45" name="package" description="core"/>
+        <tag line="45" name="return" description="the url" type="string">
           <type by_reference="false">string</type>
         </tag>
       </docblock>
-      <argument line="117">
+      <argument line="56">
         <name>$parsed_url</name>
         <default/>
         <type/>
       </argument>
     </function>
-    <function namespace="global" line="158" package="Default">
-      <name>the_html</name>
-      <full_name>\the_html</full_name>
-      <docblock line="154">
-        <description>Print the &lt;html&gt; opening tag from html5 boilerplate</description>
-        <long-description/>
-        <tag line="154" name="param" description="some additional classes" type="string|array" variable="$class">
-          <type by_reference="false">string</type>
-          <type by_reference="false">array</type>
-        </tag>
-      </docblock>
-      <argument line="158">
-        <name>$class</name>
-        <default>''</default>
-        <type/>
-      </argument>
-    </function>
-    <markers>
-      <todo line="149">move this into ThemeHelpers to allow overloading in child theme</todo>
-    </markers>
   </file>
   <file path="404.php" hash="7867d52558f1a25ce8b15ca9d98093a8" package="templates">
     <docblock line="2">
@@ -305,7 +264,7 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
       </method>
     </class>
   </file>
-  <file path="classes/DefaultAssets.class.php" hash="e544fc78b93ebc6ce140f453ef7f1aaa" package="Default">
+  <file path="classes/DefaultAssets.class.php" hash="7f188a8d35133604b78fafcc8e4db06b" package="Default">
     <docblock line="2">
       <description>Contains the DefaultAssets class</description>
       <long-description/>
@@ -363,136 +322,136 @@ Put here yout JS libraries and Generic CSS like reset.css or similar</descriptio
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="85" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="classes">
         <name>register_custom</name>
         <full_name>register_custom</full_name>
-        <docblock line="80">
+        <docblock line="79">
           <description>Register some assets to be used in the theme.</description>
           <long-description>&lt;p&gt;Put here your custom scripts.&lt;/p&gt;</long-description>
-          <tag line="80" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="79" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="141" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="classes">
         <name>add_js</name>
         <full_name>add_js</full_name>
-        <docblock line="131">
+        <docblock line="135">
           <description>Adds a javascript to the current set</description>
           <long-description/>
-          <tag line="131" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_script" refers="\@link"/>
-          <tag line="131" name="param" description="Script name" type="string" variable="$handle">
+          <tag line="135" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_script" refers="\@link"/>
+          <tag line="135" name="param" description="Script name" type="string" variable="$handle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="131" name="param" description="Script url" type="string" variable="$src">
+          <tag line="135" name="param" description="Script url" type="string" variable="$src">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="131" name="param" description="(optional) Array of script names on which this script depends" type="array" variable="$deps">
+          <tag line="135" name="param" description="(optional) Array of script names on which this script depends" type="array" variable="$deps">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="131" name="param" description="(optional) Script version (used for cache busting), set to NULL to disable" type="string|bool" variable="$ver">
+          <tag line="135" name="param" description="(optional) Script version (used for cache busting), set to NULL to disable" type="string|bool" variable="$ver">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="131" name="param" description="(optional) Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;" type="bool" variable="$in_footer">
+          <tag line="135" name="param" description="(optional) Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;" type="bool" variable="$in_footer">
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="131" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="135" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
-        <argument line="141">
+        <argument line="145">
           <name>$handle</name>
           <default/>
           <type/>
         </argument>
-        <argument line="141">
+        <argument line="145">
           <name>$src</name>
           <default/>
           <type/>
         </argument>
-        <argument line="141">
+        <argument line="145">
           <name>$deps</name>
           <default>array()</default>
           <type/>
         </argument>
-        <argument line="141">
+        <argument line="145">
           <name>$ver</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="141">
+        <argument line="145">
           <name>$in_footer</name>
           <default>false</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="classes">
         <name>add_css</name>
         <full_name>add_css</full_name>
-        <docblock line="152">
+        <docblock line="156">
           <description>Adds a css to the current set</description>
           <long-description/>
-          <tag line="152" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_style" refers="\@link"/>
-          <tag line="152" name="param" description="Name of the stylesheet." type="string" variable="$handle">
+          <tag line="156" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_style" refers="\@link"/>
+          <tag line="156" name="param" description="Name of the stylesheet." type="string" variable="$handle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="152" name="param" description="Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'." type="string|bool" variable="$src">
+          <tag line="156" name="param" description="Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'." type="string|bool" variable="$src">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="152" name="param" description="Array of handles of any stylesheet that this stylesheet depends on.&#10; (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies." type="array" variable="$deps">
+          <tag line="156" name="param" description="Array of handles of any stylesheet that this stylesheet depends on.&#10; (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies." type="array" variable="$deps">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="152" name="param" description="String specifying the stylesheet version number. Set to NULL to disable.&#10; Used to ensure that the correct version is sent to the client regardless of caching." type="string|bool" variable="$ver">
+          <tag line="156" name="param" description="String specifying the stylesheet version number. Set to NULL to disable.&#10; Used to ensure that the correct version is sent to the client regardless of caching." type="string|bool" variable="$ver">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="152" name="param" description="The media for which this stylesheet has been defined." type="string" variable="$media">
+          <tag line="156" name="param" description="The media for which this stylesheet has been defined." type="string" variable="$media">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="152" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="156" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
-        <argument line="164">
+        <argument line="168">
           <name>$handle</name>
           <default/>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="168">
           <name>$src</name>
           <default/>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="168">
           <name>$deps</name>
           <default>array()</default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="168">
           <name>$ver</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="168">
           <name>$media</name>
           <default>false</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="182" package="classes">
         <name>hook</name>
         <full_name>hook</full_name>
-        <docblock line="175">
+        <docblock line="179">
           <description>Hooks the assets registration into wordpress init hook</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="189" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="193" package="classes">
         <name>callback</name>
         <full_name>callback</full_name>
-        <docblock line="183">
+        <docblock line="187">
           <description>This is called on wordpress init
 Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
@@ -1378,81 +1337,81 @@ So if you wanna add the default values you'll have to visit wp-admin&lt;/p&gt;</
       </method>
     </class>
   </file>
-  <file path="classes/DebugUtils.class.php" hash="2463bbfde0cf2d4ebe4abde97fef8b04" package="Default">
+  <file path="classes/DebugUtils.class.php" hash="8c71647925221c37c09bf769ed23c635" package="Default">
     <docblock line="2">
       <description>Stores DebugUtils class definition</description>
       <long-description/>
     </docblock>
-    <function namespace="global" line="148" package="debug">
+    <function namespace="global" line="154" package="debug">
       <name>vd</name>
       <full_name>\vd</full_name>
-      <docblock line="141">
+      <docblock line="147">
         <description>Quick and dirty way to know a variable value
 vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</description>
         <long-description/>
-        <tag line="141" name="param" description="the variable to be dumped" type="mixed" variable="$var">
+        <tag line="147" name="param" description="the variable to be dumped" type="mixed" variable="$var">
           <type by_reference="false">mixed</type>
         </tag>
-        <tag line="141" name="package" description="debug"/>
-        <tag line="141" name="version" description="1.0.0"/>
+        <tag line="147" name="package" description="debug"/>
+        <tag line="147" name="version" description="1.0.0"/>
       </docblock>
-      <argument line="148">
+      <argument line="154">
         <name>$var</name>
         <default/>
         <type/>
       </argument>
     </function>
-    <function namespace="global" line="164" package="debug">
+    <function namespace="global" line="170" package="debug">
       <name>v</name>
       <full_name>\v</full_name>
-      <docblock line="157">
+      <docblock line="163">
         <description>Quick and dirty way to know a variable value
 Usefull in a loop cause it doesn't break the execution with die</description>
         <long-description/>
-        <tag line="157" name="param" description="the variable to be dumped" type="mixed" variable="$var">
+        <tag line="163" name="param" description="the variable to be dumped" type="mixed" variable="$var">
           <type by_reference="false">mixed</type>
         </tag>
-        <tag line="157" name="package" description="debug"/>
-        <tag line="157" name="version" description="1.0.0"/>
+        <tag line="163" name="package" description="debug"/>
+        <tag line="163" name="version" description="1.0.0"/>
       </docblock>
-      <argument line="164">
+      <argument line="170">
         <name>$var</name>
         <default/>
         <type/>
       </argument>
     </function>
-    <function namespace="global" line="180" package="debug">
+    <function namespace="global" line="186" package="debug">
       <name>vc</name>
       <full_name>\vc</full_name>
-      <docblock line="173">
+      <docblock line="179">
         <description>Quick and dirty way to know a variable value in a production enviroment
 vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</description>
         <long-description/>
-        <tag line="173" name="param" description="the variable to be dumped" type="mixed" variable="$var">
+        <tag line="179" name="param" description="the variable to be dumped" type="mixed" variable="$var">
           <type by_reference="false">mixed</type>
         </tag>
-        <tag line="173" name="package" description="debug"/>
-        <tag line="173" name="version" description="1.0.0"/>
+        <tag line="179" name="package" description="debug"/>
+        <tag line="179" name="version" description="1.0.0"/>
       </docblock>
-      <argument line="180">
+      <argument line="186">
         <name>$var</name>
         <default/>
         <type/>
       </argument>
     </function>
-    <function namespace="global" line="196" package="debug">
+    <function namespace="global" line="202" package="debug">
       <name>debug</name>
       <full_name>\debug</full_name>
-      <docblock line="189">
+      <docblock line="195">
         <description>Quick and dirty way to know a variable value.</description>
         <long-description>&lt;p&gt;It uses the last changed mode.&lt;/p&gt;</long-description>
-        <tag line="189" name="param" description="the variable to be dumped" type="mixed" variable="$var">
+        <tag line="195" name="param" description="the variable to be dumped" type="mixed" variable="$var">
           <type by_reference="false">mixed</type>
         </tag>
-        <tag line="189" name="package" description="debug"/>
-        <tag line="189" name="version" description="1.0.0"/>
+        <tag line="195" name="package" description="debug"/>
+        <tag line="195" name="version" description="1.0.0"/>
       </docblock>
-      <argument line="196">
+      <argument line="202">
         <name>$var</name>
         <default/>
         <type/>
@@ -1468,29 +1427,29 @@ vc stand for &lt;b&gt;v&lt;/b&gt;ar_dump() on a &lt;b&gt;c&lt;/b&gt;omment</desc
         <tag line="6" name="author" description="Emanuele 'Tex' Tessore"/>
         <tag line="6" name="package" description="classes"/>
       </docblock>
-      <constant namespace="global" line="36" package="classes">
+      <constant namespace="global" line="42" package="classes">
         <name>COMMENT</name>
         <full_name>COMMENT</full_name>
         <value>1</value>
-        <docblock line="33">
+        <docblock line="39">
           <description>Wrap the var_dump into an html comment</description>
           <long-description/>
         </docblock>
       </constant>
-      <constant namespace="global" line="41" package="classes">
+      <constant namespace="global" line="47" package="classes">
         <name>H1_PRE</name>
         <full_name>H1_PRE</full_name>
         <value>2</value>
-        <docblock line="38">
+        <docblock line="44">
           <description>Print a well visible H1 and the dump is wrapped in a pre</description>
           <long-description/>
         </docblock>
       </constant>
-      <constant namespace="global" line="47" package="classes">
+      <constant namespace="global" line="53" package="classes">
         <name>H1_PRE_DIE</name>
         <full_name>H1_PRE_DIE</full_name>
         <value>3</value>
-        <docblock line="43">
+        <docblock line="49">
           <description>Print a well visible H1, use a pre as wrapper for the variable
 dump and then stop the execution of the script</description>
           <long-description/>
@@ -1535,90 +1494,101 @@ dump and then stop the execution of the script</description>
         <docblock line="28">
           <description/>
           <long-description/>
-          <tag line="28" name="var" description="the template for the debug section" type="\unknown_type">
-            <type by_reference="false">\unknown_type</type>
+          <tag line="28" name="var" description="the template for the debug section" type="string">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="52" package="classes">
+      <property final="false" static="false" visibility="public" line="37" namespace="global" package="Default">
+        <name>$status</name>
+        <default>false</default>
+        <docblock line="33">
+          <description>Enable or disable all debugs</description>
+          <long-description/>
+          <tag line="33" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="58" package="classes">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="49">
+        <docblock line="55">
           <description>Initializes the default settings</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="67" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="73" package="classes">
         <name>get_instance</name>
         <full_name>get_instance</full_name>
-        <docblock line="62">
+        <docblock line="68">
           <description>This object is a Singleton.</description>
           <long-description>&lt;p&gt;This method gets the instance of it.&lt;/p&gt;</long-description>
-          <tag line="62" name="return" description="the single instance of the class" type="\DebugUtils">
+          <tag line="68" name="return" description="the single instance of the class" type="\DebugUtils">
             <type by_reference="false">\DebugUtils</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="81" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="classes">
         <name>set_level</name>
         <full_name>set_level</full_name>
-        <docblock line="75">
+        <docblock line="81">
           <description>Sets the level of output.</description>
           <long-description>&lt;p&gt;Use DebugUtils::SOFT DebugUtils::H1_PRE or DebugUtils::H1_PRE_DIE&lt;/p&gt;</long-description>
-          <tag line="75" name="param" description="the level" type="int" variable="$level">
+          <tag line="81" name="param" description="the level" type="int" variable="$level">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="75" name="return" description="for chaining" type="\DebugUtils">
+          <tag line="81" name="return" description="for chaining" type="\DebugUtils">
             <type by_reference="false">\DebugUtils</type>
           </tag>
         </docblock>
-        <argument line="81">
+        <argument line="87">
           <name>$level</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="96" package="classes">
         <name>get_level</name>
         <full_name>get_level</full_name>
-        <docblock line="86">
+        <docblock line="92">
           <description>Retrieves the current level of echo</description>
           <long-description/>
-          <tag line="86" name="return" description="current level of echo" type="\the">
+          <tag line="92" name="return" description="current level of echo" type="\the">
             <type by_reference="false">\the</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="98" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="104" package="classes">
         <name>debug</name>
         <full_name>debug</full_name>
-        <docblock line="94">
+        <docblock line="100">
           <description>Prints the dump for the given $var</description>
           <long-description/>
-          <tag line="94" name="param" description="the variable to be dumped" type="mixed" variable="$var">
+          <tag line="100" name="param" description="the variable to be dumped" type="mixed" variable="$var">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
-        <argument line="98">
+        <argument line="104">
           <name>$var</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="130" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="classes">
         <name>set_title</name>
         <full_name>set_title</full_name>
-        <docblock line="125">
+        <docblock line="131">
           <description>Sets the title of the box</description>
           <long-description/>
-          <tag line="125" name="param" description="" type="string" variable="$title">
+          <tag line="131" name="param" description="" type="string" variable="$title">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="125" name="return" description="for chaining" type="\DebugUtils">
+          <tag line="131" name="return" description="for chaining" type="\DebugUtils">
             <type by_reference="false">\DebugUtils</type>
           </tag>
         </docblock>
-        <argument line="130">
+        <argument line="136">
           <name>$title</name>
           <default/>
           <type/>
@@ -2015,6 +1985,141 @@ Thanks to Viper007Bond: @link http://www.viper007bond.com/2009/11/22/wordpress-c
           <default/>
           <type/>
         </argument>
+      </method>
+    </class>
+  </file>
+  <file path="classes/ThemeUtils.class.php" hash="0714725642b9ce0f257286277d165c4c" package="Default">
+    <docblock line="2">
+      <description>Stores the code for the parent theme setting initialization and management</description>
+      <long-description/>
+    </docblock>
+    <include line="47" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <constant namespace="global" line="95" package="Default">
+      <name>WORDPRESS_THEME_UTILS_PATH</name>
+      <full_name>\WORDPRESS_THEME_UTILS_PATH</full_name>
+      <value>dirname(__DIR__)</value>
+    </constant>
+    <constant namespace="global" line="101" package="Default">
+      <name>WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</name>
+      <full_name>\WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU</full_name>
+      <value>true</value>
+    </constant>
+    <constant namespace="global" line="107" package="Default">
+      <name>WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</name>
+      <full_name>\WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU</full_name>
+      <value>true</value>
+    </constant>
+    <constant namespace="global" line="113" package="Default">
+      <name>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</name>
+      <full_name>\WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</full_name>
+      <value>'partials/'</value>
+    </constant>
+    <constant namespace="global" line="119" package="Default">
+      <name>WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</name>
+      <full_name>\WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH</full_name>
+      <value>'/classes/ClassAutoloader.class.php'</value>
+    </constant>
+    <function namespace="global" line="128" package="Default">
+      <name>wtu_init</name>
+      <full_name>\wtu_init</full_name>
+      <docblock line="124">
+        <description>Initializes the WordPress Theme Utils.</description>
+        <long-description>&lt;p&gt;Use this in your child theme functions.php&lt;/p&gt;</long-description>
+      </docblock>
+    </function>
+    <class final="false" abstract="false" namespace="global" line="13" package="classes">
+      <extends/>
+      <name>ThemeUtils</name>
+      <full_name>\ThemeUtils</full_name>
+      <docblock line="7">
+        <description>Initializes and manages the parent theme config and constants</description>
+        <long-description/>
+        <tag line="7" name="author" description="etessore"/>
+        <tag line="7" name="version" description="1.0.0"/>
+        <tag line="7" name="package" description="classes"/>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="18" namespace="global" package="Default">
+        <name>$instance</name>
+        <default>null</default>
+        <docblock line="14">
+          <description>Stores the unique instance</description>
+          <long-description/>
+          <tag line="14" name="var" description="" type="\ThemeUtils">
+            <type by_reference="false">\ThemeUtils</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="24" package="classes">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="20">
+          <description>Initializes default settings
+Singleton private constructor</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="35" package="classes">
+        <name>get_instance</name>
+        <full_name>get_instance</full_name>
+        <docblock line="31">
+          <description>Gets the instance with the current options set</description>
+          <long-description/>
+          <tag line="31" name="return" description="current instance" type="\ThemeUtils">
+            <type by_reference="false">\ThemeUtils</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="46" package="classes">
+        <name>enable_autoload_system</name>
+        <full_name>enable_autoload_system</full_name>
+        <docblock line="43">
+          <description>Initializes the autoloader subsystem</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="54" package="classes">
+        <name>register_main_menu</name>
+        <full_name>register_main_menu</full_name>
+        <docblock line="51">
+          <description>Registers the Primary Menu to WordPress</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="61" package="classes">
+        <name>register_bottom_menu</name>
+        <full_name>register_bottom_menu</full_name>
+        <docblock line="58">
+          <description>Register the Secondary Menu to WordPress</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="69" package="classes">
+        <name>enable_debug</name>
+        <full_name>enable_debug</full_name>
+        <docblock line="65">
+          <description>Enables vd()\vc()\v() functions output,
+This is generically good for development environments.</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="79" package="classes">
+        <name>disable_debug</name>
+        <full_name>disable_debug</full_name>
+        <docblock line="75">
+          <description>Disable vd()\vc()\v() functions output,
+This is default status, generically good for production environments.</description>
+          <long-description/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="87" package="classes">
+        <name>default_constants</name>
+        <full_name>default_constants</full_name>
+        <docblock line="84">
+          <description>Register some constants</description>
+          <long-description/>
+        </docblock>
       </method>
     </class>
   </file>
@@ -5159,7 +5264,7 @@ a wordpress media id or an image object</description>
       </method>
     </class>
   </file>
-  <file path="classes/HeadHelper.class.php" hash="b5fc2fc8c1079b0c66cc76bfa9a78f6b" package="Default">
+  <file path="classes/HeadHelper.class.php" hash="a7d98fe845ac49f23920cad9eaff7fad" package="Default">
     <docblock line="2">
       <description>stores the HeadHelper class declaration</description>
       <long-description/>
@@ -5249,148 +5354,148 @@ a wordpress media id or an image object</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="107" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="classes">
         <name>set_ua</name>
         <full_name>set_ua</full_name>
-        <docblock line="103">
+        <docblock line="104">
           <description>Sets the Google Analytics tracking code</description>
           <long-description/>
-          <tag line="103" name="param" description="UA-XXXXXX" type="string" variable="$ga">
+          <tag line="104" name="param" description="UA-XXXXXX" type="string" variable="$ga">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="107">
+        <argument line="108">
           <name>$ga</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="116" package="classes">
         <name>the_head</name>
         <full_name>the_head</full_name>
-        <docblock line="112">
+        <docblock line="113">
           <description>Print the markup</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="classes">
         <name>set_meta_tag</name>
         <full_name>set_meta_tag</full_name>
-        <docblock line="119">
+        <docblock line="120">
           <description>Set a meta tag</description>
           <long-description/>
-          <tag line="119" name="param" description="the meta tag" type="array" variable="$meta">
+          <tag line="120" name="param" description="the meta tag" type="array" variable="$meta">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="119" name="return" description="$this for chainability" type="\HeadHelper">
+          <tag line="120" name="return" description="$this for chainability" type="\HeadHelper">
             <type by_reference="false">\HeadHelper</type>
           </tag>
         </docblock>
-        <argument line="124">
+        <argument line="125">
           <name>$meta</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="135" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="classes">
         <name>set_title</name>
         <full_name>set_title</full_name>
-        <docblock line="131">
+        <docblock line="132">
           <description>Set the title</description>
           <long-description/>
-          <tag line="131" name="param" description="the title" type="string" variable="$title">
+          <tag line="132" name="param" description="the title" type="string" variable="$title">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="135">
+        <argument line="136">
           <name>$title</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="144" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="classes">
         <name>set_link</name>
         <full_name>set_link</full_name>
-        <docblock line="140">
+        <docblock line="141">
           <description>Set a link</description>
           <long-description/>
-          <tag line="140" name="param" description="the link" type="array" variable="$link">
+          <tag line="141" name="param" description="the link" type="array" variable="$link">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="144">
+        <argument line="145">
           <name>$link</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="155" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="156" package="classes">
         <name>delete_link</name>
         <full_name>delete_link</full_name>
-        <docblock line="151">
+        <docblock line="152">
           <description>Remove a link</description>
           <long-description/>
-          <tag line="151" name="param" description="the link name" type="string" variable="$link">
+          <tag line="152" name="param" description="the link name" type="string" variable="$link">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="155">
+        <argument line="156">
           <name>$link</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="165" package="classes">
         <name>delete_meta_tag</name>
         <full_name>delete_meta_tag</full_name>
-        <docblock line="160">
+        <docblock line="161">
           <description>Delete a meta tag</description>
           <long-description/>
-          <tag line="160" name="param" description="the meta name" type="string" variable="$name">
+          <tag line="161" name="param" description="the meta name" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="164">
+        <argument line="165">
           <name>$name</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="172" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="173" package="classes">
         <name>render_meta_tags</name>
         <full_name>render_meta_tags</full_name>
-        <docblock line="169">
+        <docblock line="170">
           <description>Retrieve the meta tags list ready to be inserted into &lt;head&gt;</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="186" package="classes">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="187" package="classes">
         <name>render_meta_tag</name>
         <full_name>render_meta_tag</full_name>
-        <docblock line="182">
+        <docblock line="183">
           <description>Render a single meta tag of the current set stored in $this-&gt;meta_tags</description>
           <long-description/>
-          <tag line="182" name="param" description="the name of the meta" type="string" variable="$name">
+          <tag line="183" name="param" description="the name of the meta" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="186">
+        <argument line="187">
           <name>$name</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="197" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="classes">
         <name>set_charset</name>
         <full_name>set_charset</full_name>
-        <docblock line="193">
+        <docblock line="194">
           <description>Set the charset for the page</description>
           <long-description/>
-          <tag line="193" name="param" description="the charset" type="string" variable="$charset">
+          <tag line="194" name="param" description="the charset" type="string" variable="$charset">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="197">
+        <argument line="198">
           <name>$charset</name>
           <default/>
           <type/>
@@ -5398,10 +5503,10 @@ a wordpress media id or an image object</description>
       </method>
     </class>
   </file>
-  <file path="classes/HtmlHelper.class.php" hash="a25c7f63599dfe0e8d8a2751944462fe" package="Default">
+  <file path="classes/HtmlHelper.class.php" hash="7ad25974a8cbccc547e0dc528a565669" package="Default">
     <docblock line="2">
       <description>stores the HtmlHelper and HtmlBuilder class definition</description>
-      <long-description/>
+      <long-description></long-description>
     </docblock>
     <class final="false" abstract="false" namespace="global" line="12" package="classes">
       <extends>\HtmlBuilder</extends>
@@ -5409,7 +5514,7 @@ a wordpress media id or an image object</description>
       <full_name>\HtmlHelper</full_name>
       <docblock line="6">
         <description>Helper class useful to generate some html tags</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="6" name="author" description="etessore"/>
         <tag line="6" name="version" description="1.0.0"/>
         <tag line="6" name="package" description="classes"/>
@@ -5419,7 +5524,7 @@ a wordpress media id or an image object</description>
         <full_name>script</full_name>
         <docblock line="14">
           <description>Retrieves a &lt;script&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="14" name="param" description="the inner script content" type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
@@ -5429,7 +5534,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="19">
           <name>$content</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="19">
@@ -5443,7 +5548,7 @@ a wordpress media id or an image object</description>
         <full_name>image</full_name>
         <docblock line="24">
           <description>Get the markup for a &lt;img&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="24" name="param" description="the image source" type="string" variable="$src">
             <type by_reference="false">string</type>
           </tag>
@@ -5453,7 +5558,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="29">
           <name>$src</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="29">
@@ -5467,7 +5572,7 @@ a wordpress media id or an image object</description>
         <full_name>anchor</full_name>
         <docblock line="34">
           <description>Get the markup for an &lt;a&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="34" name="return" description="markup for an html &lt;a&gt; tag" type="\the">
             <type by_reference="false">\the</type>
           </tag>
@@ -5483,12 +5588,12 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="41">
           <name>$href</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="41">
           <name>$label</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="41">
@@ -5502,7 +5607,7 @@ a wordpress media id or an image object</description>
         <full_name>list_item</full_name>
         <docblock line="46">
           <description>Retrieves a &lt;li&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="46" name="param" description="the inner html" type="string" variable="$inner_html">
             <type by_reference="false">string</type>
           </tag>
@@ -5512,7 +5617,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="51">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="51">
@@ -5535,7 +5640,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         </docblock>
         <argument line="62">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
@@ -5544,7 +5649,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         <full_name>unorderd_list</full_name>
         <docblock line="74">
           <description>Retrieves a &lt;ul&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="74" name="param" description="the inner html.&#10;If an array is passed, every element will be wrapped inside a &lt;li&gt; tag" type="string|array" variable="$inner_html">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
@@ -5555,7 +5660,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         </docblock>
         <argument line="80">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="80">
@@ -5569,7 +5674,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         <full_name>ordered_list</full_name>
         <docblock line="84">
           <description>Retrieves a &lt;ol&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="84" name="param" description="the inner html.&#10;If is an array every element will be wrapped inside a &lt;li&gt; tag" type="string|array" variable="$inner_html">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
@@ -5580,7 +5685,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         </docblock>
         <argument line="90">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="90">
@@ -5594,7 +5699,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         <full_name>span</full_name>
         <docblock line="94">
           <description>Get the markup for a &lt;span&gt; tag</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="94" name="param" description="the image source" type="string" variable="$inner_html">
             <type by_reference="false">string</type>
           </tag>
@@ -5604,7 +5709,7 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         </docblock>
         <argument line="99">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
         <argument line="99">
@@ -5614,210 +5719,211 @@ If it is an array every element will be wrapped in a &lt;li&gt; tag&lt;/p&gt;</l
         </argument>
       </method>
     </class>
-    <class final="false" abstract="false" namespace="global" line="110" package="Default">
+    <class final="false" abstract="false" namespace="global" line="111" package="classes">
       <extends/>
       <name>HtmlBuilder</name>
       <full_name>\HtmlBuilder</full_name>
       <docblock line="105">
         <description>Inner class to build some very basic html nodes</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="105" name="author" description="etessore"/>
         <tag line="105" name="version" description="1.0.0"/>
+        <tag line="105" name="package" description="classes"/>
       </docblock>
-      <constant namespace="global" line="115" package="Default">
+      <constant namespace="global" line="116" package="classes">
         <name>HTML_VERSION</name>
         <full_name>HTML_VERSION</full_name>
         <value>'html5'</value>
-        <docblock line="111">
-          <description/>
-          <long-description/>
-          <tag line="111" name="var" description="value of the version of the html/xhtml used useful to have different behavior if not using HTML 5" type="string">
+        <docblock line="112">
+          <description></description>
+          <long-description></long-description>
+          <tag line="112" name="var" description="value of the version of the html/xhtml used useful to have different behavior if not using HTML 5" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="121" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="122" package="classes">
         <name>self_closing_tags</name>
         <full_name>self_closing_tags</full_name>
-        <docblock line="117">
+        <docblock line="118">
           <description>Retrieves the list of self-closing tags</description>
-          <long-description/>
-          <tag line="117" name="return" description="a list of self-closing tags" type="array">
+          <long-description></long-description>
+          <tag line="118" name="return" description="a list of self-closing tags" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="131" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="132" package="classes">
         <name>open_tag</name>
         <full_name>open_tag</full_name>
-        <docblock line="125">
+        <docblock line="126">
           <description>Gets the opening html tag for the given one</description>
-          <long-description/>
-          <tag line="125" name="return" description="the opening tag" type="string">
+          <long-description></long-description>
+          <tag line="126" name="return" description="the opening tag" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="125" name="param" description="the html tag" type="string" variable="$tag">
+          <tag line="126" name="param" description="the html tag" type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="125" name="param" description="the additional parameters" type="array" variable="$params">
+          <tag line="126" name="param" description="the additional parameters" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="131">
+        <argument line="132">
           <name>$tag</name>
           <default>''</default>
           <type/>
         </argument>
-        <argument line="131">
+        <argument line="132">
           <name>$params</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="141" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="142" package="classes">
         <name>close_tag</name>
         <full_name>close_tag</full_name>
-        <docblock line="136">
+        <docblock line="137">
           <description>Gets the closing html tag for the given one</description>
-          <long-description/>
-          <tag line="136" name="return" description="the closing tag" type="string">
+          <long-description></long-description>
+          <tag line="137" name="return" description="the closing tag" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="136" name="param" description="the html tag" type="string" variable="$tag">
+          <tag line="137" name="param" description="the html tag" type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="141">
+        <argument line="142">
           <name>$tag</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="151" package="Default">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="152" package="classes">
         <name>params</name>
         <full_name>params</full_name>
-        <docblock line="147">
+        <docblock line="148">
           <description>Prepare the $parms to be printed as html attributes</description>
-          <long-description/>
-          <tag line="147" name="param" description="list of html attributes" type="array" variable="$parms">
+          <long-description></long-description>
+          <tag line="148" name="param" description="list of html attributes" type="array" variable="$parms">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="151">
+        <argument line="152">
           <name>$parms</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="164" package="Default">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="165" package="classes">
         <name>array_to_html_attributes</name>
         <full_name>array_to_html_attributes</full_name>
-        <docblock line="157">
+        <docblock line="158">
           <description>Generates HTML Node Attribures</description>
-          <long-description/>
-          <tag line="157" name="param" description="" type="string" variable="$glue">
+          <long-description></long-description>
+          <tag line="158" name="param" description="" type="string" variable="$glue">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="157" name="param" description="" type="array|string" variable="$pieces">
+          <tag line="158" name="param" description="" type="array|string" variable="$pieces">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
-          <tag line="157" name="return" description="" type="string">
+          <tag line="158" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="157" name="author" description="http://blog.teknober.com/2011/04/13/php-array-to-html-attributes/"/>
+          <tag line="158" name="author" description="http://blog.teknober.com/2011/04/13/php-array-to-html-attributes/"/>
         </docblock>
-        <argument line="164">
+        <argument line="165">
           <name>$glue</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="165">
           <name>$pieces</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="186" package="Default">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="187" package="classes">
         <name>get_html_attributes</name>
         <full_name>get_html_attributes</full_name>
-        <docblock line="179">
+        <docblock line="180">
           <description>Retrives the attributes list choosing between the given parameters</description>
-          <long-description/>
-          <tag line="179" name="param" description="the inner html" type="string|array" variable="$inner_html">
+          <long-description></long-description>
+          <tag line="180" name="param" description="the inner html" type="string|array" variable="$inner_html">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
           </tag>
-          <tag line="179" name="param" description="the parameters" type="array" variable="$params">
+          <tag line="180" name="param" description="the parameters" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="179" name="return" description="the html tag attributes ready to be printed in the DOM" type="string">
+          <tag line="180" name="return" description="the html tag attributes ready to be printed in the DOM" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="186">
+        <argument line="187">
           <name>$inner_html</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
-        <argument line="186">
+        <argument line="187">
           <name>$params</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="198" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="199" package="classes">
         <name>doctype</name>
         <full_name>doctype</full_name>
-        <docblock line="195">
+        <docblock line="196">
           <description>Retrieves the correct DOCTYPE</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="220" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="221" package="classes">
         <name>open_html</name>
         <full_name>open_html</full_name>
-        <docblock line="216">
+        <docblock line="217">
           <description>Returns the &lt;html&gt; opening tag from html5 boilerplate</description>
-          <long-description/>
-          <tag line="216" name="param" description="some additional classes" type="string|array" variable="$class">
+          <long-description></long-description>
+          <tag line="217" name="param" description="some additional classes" type="string|array" variable="$class">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="220">
+        <argument line="221">
           <name>$class</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="252" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="253" package="classes">
         <name>standard_tag</name>
         <full_name>standard_tag</full_name>
-        <docblock line="246">
+        <docblock line="247">
           <description>Builds a default tag structure: &lt;tagname tagparameters&gt;inner_html&lt;/tagname&gt;</description>
-          <long-description/>
-          <tag line="246" name="param" description="the tag" type="string" variable="$tag">
+          <long-description></long-description>
+          <tag line="247" name="param" description="the tag" type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="246" name="param" description="the inner html" type="string" variable="$inner_html">
+          <tag line="247" name="param" description="the inner html" type="string" variable="$inner_html">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="246" name="param" description="the additional html tag parameters" type="array" variable="$parms">
+          <tag line="247" name="param" description="the additional html tag parameters" type="array" variable="$parms">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="252">
+        <argument line="253">
           <name>$tag</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
-        <argument line="252">
+        <argument line="253">
           <name>$inner_html</name>
           <default>''</default>
           <type/>
         </argument>
-        <argument line="252">
+        <argument line="253">
           <name>$parms</name>
           <default>array()</default>
           <type>array</type>
@@ -6294,7 +6400,7 @@ clicking on a little thumb opens the big image in fancybox</description>
   <file path="partials/menu-children.php" hash="420cfec6f8cc59ddd743ad8fa1a6add3" package="templates\parts">
     <docblock line="2">
       <description>Template part for listing child pages</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="version" description="1.0.0"/>
@@ -6304,7 +6410,7 @@ clicking on a little thumb opens the big image in fancybox</description>
   <file path="partials/menu-brothers.php" hash="ad6837173d5b80e4d7f992bbe3a6a40b" package="templates\parts">
     <docblock line="2">
       <description>The Template part for displaying the list of child pages</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="version" description="1.0.0"/>
@@ -6314,7 +6420,7 @@ clicking on a little thumb opens the big image in fancybox</description>
   <file path="partials/menu-secondary.php" hash="c35929b31ca9f387e737f745d9b20745" package="templates\parts">
     <docblock line="2">
       <description>The Template part for displaying the footer menu</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="since" description="0.1"/>
@@ -6324,7 +6430,7 @@ clicking on a little thumb opens the big image in fancybox</description>
     <docblock line="2">
       <description>Template part for a single article (post\page)
 Version with title and brief content button to expand it</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="version" description="1.0.0"/>
@@ -6334,7 +6440,7 @@ Version with title and brief content button to expand it</description>
   <file path="partials/browsehappy.php" hash="124d8091e92009439104c3757430ccd4" package="templates\parts">
     <docblock line="2">
       <description>The Template part for displaying a &lt;p&gt; with links to how to update your browser without panic</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="version" description="1.0.0"/>
@@ -6344,7 +6450,7 @@ Version with title and brief content button to expand it</description>
   <file path="partials/menu-preview.php" hash="c13f010639e95880d4f1be39a7a34dc9" package="templates\parts">
     <docblock line="2">
       <description>Template part to print a title and an excerpt of every menu entry.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="version" description="1.0.0"/>
@@ -6425,13 +6531,13 @@ Version with title and brief content button to expand it</description>
   <file path="partials/menu.php" hash="9c0ffe99ec6d3150fc7dbcec9bfe8f14" package="templates\parts">
     <docblock line="2">
       <description>The Template for displaying the navigation bar</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="templates"/>
       <tag line="2" name="subpackage" description="parts"/>
       <tag line="2" name="since" description="0.1"/>
     </docblock>
   </file>
-  <file path="front-page.php" hash="86f600756b1bfa8fbb9175124c0a05ef" package="templates">
+  <file path="front-page.php" hash="b3cb36e658734fbbe712f86354d34449" package="templates">
     <docblock line="2">
       <description>The Template for displaying the home page</description>
       <long-description/>
@@ -6442,12 +6548,13 @@ Version with title and brief content button to expand it</description>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="classes" full_name="classes"/>
+  <package name="core" full_name="core"/>
   <package name="debug" full_name="debug"/>
   <package name="templates" full_name="templates">
     <package name="parts" full_name="templates\parts"/>
   </package>
   <namespace name="global" full_name="global"/>
-  <marker count="2">todo</marker>
+  <marker count="1">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="1"/>
 </project>

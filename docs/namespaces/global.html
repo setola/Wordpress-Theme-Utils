@@ -22,6 +22,7 @@
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/classes.html"><i class="icon-folder-open"></i> classes</a></li>
+<li><a href="../packages/core.html"><i class="icon-folder-open"></i> core</a></li>
 <li><a href="../packages/debug.html"><i class="icon-folder-open"></i> debug</a></li>
 <li><a href="../packages/templates.html"><i class="icon-folder-open"></i> templates</a></li>
 </ul>
@@ -37,7 +38,7 @@
                 <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">2</span>
+                <span class="label label-info">1</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">1</span></a></li>
@@ -98,15 +99,23 @@
 </div></div>
 </div>
 <a id="function_http_build_url"></a><div class="element clickable function  function_http_build_url" data-toggle="collapse" data-target=".function_http_build_url .collapse">
-<h2>PECT_HTTP is usually missing on many environment.</h2>
+<h2>Build a URL.</h2>
 <pre>http_build_url(array $parsed_url) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>This function provides the same feature as the function included in PECT_HTTP.</p></div>
-<table class="table table-bordered"><tr>
+<div class="long_description"><p>The parts of the second URL will be merged into the first according to the flags argument.
+PECT_HTTP is usually missing on many environment.
+This function provides the same feature as the function included in PECT_HTTP.</p></div>
+<table class="table table-bordered">
+<tr>
 <th>see</th>
 <td><a href="">http://php.net/manual/en/function.http-build-url.php</a></td>
-</tr></table>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/core.html">core</a></td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$parsed_url</h4>
@@ -114,18 +123,6 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>the url</div>
-</div></div>
-</div>
-<a id="function_the_html"></a><div class="element clickable function  function_the_html" data-toggle="collapse" data-target=".function_the_html .collapse">
-<h2>Print the &lt;html&gt; opening tag from html5 boilerplate</h2>
-<pre>the_html(string | array $class) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><code>array</code><p>some additional classes</p></div>
 </div></div>
 </div>
 <a id="function_v"></a><div class="element clickable function  function_v" data-toggle="collapse" data-target=".function_v .collapse">
@@ -196,6 +193,30 @@ vd stand for &lt;b&gt;v&lt;/b&gt;ar_dump() and &lt;b&gt;d&lt;/b&gt;ie()</h2>
 <h4>$var</h4>
 <code>mixed</code><p>the variable to be dumped</p></div>
 </div></div>
+</div>
+<a id="function_wordpress_theme_utils_initialize_hook"></a><div class="element clickable function  function_wordpress_theme_utils_initialize_hook" data-toggle="collapse" data-target=".function_wordpress_theme_utils_initialize_hook .collapse">
+<h2>Automatic initialization for the framework settings</h2>
+<pre>wordpress_theme_utils_initialize_hook() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/core.html">core</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="function_wtu_init"></a><div class="element clickable function  function_wtu_init" data-toggle="collapse" data-target=".function_wtu_init .collapse">
+<h2>Initializes the WordPress Theme Utils.</h2>
+<pre>wtu_init() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Use this in your child theme functions.php</p></div></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-class"></i> Classes and interfaces</h3>
@@ -469,6 +490,13 @@ and the excerpt for every menu entry.</p>
 <div class="details collapse"></div>
 <a href="../classes/ThemeHelpers.html" class="more">« More »</a>
 </div>
+<div id="ThemeUtils" class="element ajax clickable class">
+<h1>ThemeUtils<a href="../classes/ThemeUtils.html">¶</a>
+</h1>
+<p class="short_description">Initializes and manages the parent theme config and constants</p>
+<div class="details collapse"></div>
+<a href="../classes/ThemeUtils.html" class="more">« More »</a>
+</div>
 <div id="TinyMCEExcerptCustomization" class="element ajax clickable class">
 <h1>TinyMCEExcerptCustomization<a href="../classes/TinyMCEExcerptCustomization.html">¶</a>
 </h1>
@@ -503,12 +531,6 @@ and adds a new box with the wysiwyg editor capability</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="constant_WORDPRESS_THEME_UTILS_DEBUG"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_DEBUG" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_DEBUG .collapse">
-<h2>WORDPRESS_THEME_UTILS_DEBUG</h2>
-<pre>WORDPRESS_THEME_UTILS_DEBUG </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
 <a id="constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH"> </a><div class="element clickable constant  constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH" data-toggle="collapse" data-target=".constant_WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH .collapse">
 <h2>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH</h2>
 <pre>WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH </pre>
@@ -539,7 +561,7 @@ and adds a new box with the wysiwyg editor capability</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-10T12:34:58+02:00.<br></footer></div>
+            generated on 2013-04-12T12:22:02+02:00.<br></footer></div>
 </div>
 </body>
 </html>
