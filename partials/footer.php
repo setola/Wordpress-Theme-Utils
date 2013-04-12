@@ -14,11 +14,13 @@
 ?>
 	
 	<footer id="footer" class="container_16">
-		<nav class="grid_8">
-			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'menu', 'secondary'); ?>
-		</nav>
-		<div class="grid_8">
-			<?php do_action('wtu_credits'); ?>
+		<div class="grid_16 linear-menu-container">
+			<nav class="grid_8 alpha">
+				<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'menu', 'secondary'); ?>
+			</nav>
+			<div class="grid_8 omega credits">
+				<?php do_action('wtu_credits'); ?>
+			</div>
 		</div>
 	</footer>
 	

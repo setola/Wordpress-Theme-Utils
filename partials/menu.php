@@ -11,7 +11,7 @@
 	wp_nav_menu(
 		array(
 			'theme_location'	=>	'primary',
-			'menu_class'		=>	'linear-menu clearfix grid_16',
+			'menu_class'		=>	'linear-menu clearfix',
 			'container'			=>	'',
 			'depth'				=>	1,
 			//'walker'			=>	new RemoveSpacesWalkerNavMenu(),

@@ -2,38 +2,40 @@
  * linear-menu.less
  * Put here the style for a linear menu
  * 
- * Compiled on Thu, 11 Apr 2013 14:25:17 GMT
+ * Compiled on Fri, 12 Apr 2013 15:26:13 GMT
  * 
  */
-.linear-menu ul,
-ul.linear-menu {
-  width: 100%;
-  min-heigth: 2em;
-  list-style: none;
+.linear-menu-container {
   background-color: #eeeeee;
+  min-heigth: 2em;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.linear-menu-container .linear-menu {
+  width: 100%;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
-.linear-menu ul li,
-ul.linear-menu li {
+.linear-menu-container .linear-menu li {
   float: left;
-  border-left: 1px solid #0088cc;
-  border-right: 1px solid #006699;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #b3b3b3;
 }
-.linear-menu ul li:first-child,
-ul.linear-menu li:first-child {
+.linear-menu-container .linear-menu li:first-child {
   border-left: none;
 }
-.linear-menu ul li:last-child,
-ul.linear-menu li:last-child {
+.linear-menu-container .linear-menu li:last-child {
   border-right: none;
 }
-.linear-menu ul li a,
-ul.linear-menu li a {
+.linear-menu-container .linear-menu li a {
   text-decoration: none;
   padding: 5px 10px;
   display: block;
+  color: #333333;
 }
-.linear-menu ul li a:hover,
-ul.linear-menu li a:hover {
+.linear-menu-container .linear-menu li a:hover {
+  color: #000000;
   background-color: #bbbbbb;
 }

@@ -115,7 +115,7 @@ class DefaultAssets{
 		$this->add_css('grid-960', '/css/grid-960.css', null, '0.1', 'screen');
 		$this->add_css('fbqs', '/css/fbqs.css', null, '0.1', 'screen');
 		$this->add_css('standard-style', '/css/standard-style.css', null, '0.1', 'screen');
-		$this->add_css('slideshow-fullscreen', '/css/slideshow-fullscreen.css', null, '0.1', 'screen');
+		$this->add_css('slideshow', '/css/slideshow.css', null, '0.1', 'screen');
 		$this->add_css('room', '/css/room.css', null, '0.1', 'screen');
 		$this->add_css('offers', '/css/offers.css', null, '0.1', 'screen');
 		$this->add_css('location', '/css/location.css', null, '0.1', 'screen');

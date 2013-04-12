@@ -1,0 +1,52 @@
+/*!
+ * slideshow.less
+ * Put here the style for the slideshow
+ * 
+ * Compiled on :compileTime:
+ */
+
+@import "variables";
+@import "mixins";
+
+@images_width: 940px;
+@images_height: 400px;
+@controls_width: 50px;
+@controls_height: 100px;
+
+#slideshow-container{
+	position: relative;
+	.size(@images_height, @images_width);
+	
+	.fullscreen {
+		.square(100%);
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		z-index: @zindexslideShow;
+	}
+	
+	.controls{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		.size(@controls_height, 100%);
+		padding: 0;
+		list-style: none;
+		
+		& .prev, & .next{
+			.size(@controls_height, @controls_width);
+			background: red;
+		}
+	}
+}
+
+.preload {
+	height: 30px;
+	line-height: 30px;
+	margin-top: -15px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 100%;
+}

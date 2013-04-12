@@ -1,8 +1,8 @@
 /*!
- * sprite.less
- * Put here the style for the sprite
+ * slideshow.less
+ * Put here the style for the slideshow
  * 
- * Compiled on Fri, 12 Apr 2013 14:41:59 GMT
+ * Compiled on Fri, 12 Apr 2013 15:26:13 GMT
  */
 /*!
  * variables.less
@@ -27,13 +27,34 @@
  * 
  * Compiled on :compileTime:
  */
-#slideshow.fullscreen {
+#slideshow-container {
+  position: relative;
+  width: 940px;
+  height: 400px;
+}
+#slideshow-container .fullscreen {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
   z-index: 1100;
+}
+#slideshow-container .controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  list-style: none;
+}
+#slideshow-container .controls .prev,
+#slideshow-container .controls .next {
+  width: 50px;
+  height: 100px;
+  background: red;
 }
 .preload {
   height: 30px;

@@ -45,5 +45,7 @@ ThemeHelpers::load_css('grid-960');
 	</div>
 	
 	<div id="main-menu" class="container_16">
-		<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'menu'); ?>
+		<div class="linear-menu-container grid_16">
+			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'menu'); ?>
+		</div>
 	</div>

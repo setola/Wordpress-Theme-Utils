@@ -8,32 +8,44 @@
 
 @bg_color: #eee;
 @bg_color_hover: darken(@bg_color, 20%);
+@link_color: #333;
+@link_color_hover: darken(@link_color, 20%);
 @inner_padding: 5px 10px;
-@border_color_1: #0088CC;
+@border_color_1: #ccc;
 @border_color_2: darken(@border_color_1, 10%);
+@vertical_margin: 10px;
 
-.linear-menu ul, ul.linear-menu{
-	width: 100%;
-	min-heigth: 2em;
-	list-style: none;
+.linear-menu-container {
 	background-color: @bg_color;
-	padding: 0;
-	li{
-		float: left;
-		border-left: 1px solid @border_color_1;
-		border-right: 1px solid @border_color_2;
-		&:first-child{
-			border-left: none;
-		}
-		&:last-child{
-			border-right: none;
-		}
-		a{
-			text-decoration: none;
-			padding: @inner_padding;
-			display: block;
-			&:hover{
-				background-color: @bg_color_hover;
+	min-heigth: 2em;
+	width: 100%;
+	margin-top: @vertical_margin;
+	margin-bottom: @vertical_margin;
+	
+	.linear-menu {
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			float: left;
+			border-left: 1px solid @border_color_1;
+			border-right: 1px solid @border_color_2;
+			&:first-child{
+				border-left: none;
+			}
+			&:last-child{
+				border-right: none;
+			}
+			a{
+				text-decoration: none;
+				padding: @inner_padding;
+				display: block;
+				color: @link_color;
+				&:hover{
+					color: @link_color_hover;
+					background-color: @bg_color_hover;
+				}
 			}
 		}
 	}

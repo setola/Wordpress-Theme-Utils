@@ -94,14 +94,15 @@ class Slideshow extends ImagePreload{
 	}
 }
 
-
-
-
-ThemeHelpers::load_js('slideshow');
-/**
- * Prints the slideshow
- */
-$preloader = new Slideshow();
-$preloader->the_markup();
-
-
+?>
+<div id="slideshow">
+<?php 
+	ThemeHelpers::load_css('slideshow');
+	ThemeHelpers::load_js('slideshow');
+	/**
+	 * Prints the slideshow
+	 */
+	$preloader = new Slideshow();
+	$preloader->the_markup();
+?>
+</div>
