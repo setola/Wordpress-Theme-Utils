@@ -8,6 +8,8 @@
  * @author etessore
  * @version 1.0.2
  * @package classes
+ * @subpackage image manager
+ * @todo remove using of FeatureWithAssets
  */
 abstract class GalleryHelper extends FeatureWithAssets{
 

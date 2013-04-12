@@ -12,6 +12,7 @@
  * @author etessore
  * @version 1.0.1
  * @package classes
+ * @deprecated uses ThemeHelpers::load_css() and ThemeHelpers::load_js() instead
  */ 
 
 /*

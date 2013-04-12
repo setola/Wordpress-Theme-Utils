@@ -10,6 +10,7 @@
  * @author etessore
  * @version 1.0.0
  * @package classes
+ * @subpackage image manager
  */
 class ImagePreload extends GalleryHelper{
 	
