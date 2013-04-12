@@ -32,12 +32,12 @@ Functions.php
 If you plan to overwrite **functions.php** and you need some classes from the framework,
 you have to hook your customizations to *'after_setup_theme'* action hook.
 ````php
-function wtu_child_theme_customizations(){
-	$test = new LipsumGenerator();
-	$test->hook();
-}
-
-add_action('after_setup_theme', 'wtu_child_theme_customizations');
+	function wtu_child_theme_customizations(){
+		wtu_init();
+		// add here other code to enable WTU features you need
+		ThemeUtils::enable_debug();
+	}
+	add_action('after_setup_theme', 'wtu_child_theme_customizations');
 ````
 more infos on this:
 http://justintadlock.com/archives/2010/12/30/wordpress-theme-function-files
