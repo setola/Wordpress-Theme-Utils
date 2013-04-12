@@ -80,6 +80,14 @@ class ThemeUtils{
 		$debug = DebugUtils::get_instance();
 		$debug->status = false;
 	}
+	
+	/**
+	 * Enable the Lorem Ipsum body text on empty pages
+	 */
+	public static function dummy_content(){
+		$dummy_content = new LipsumGenerator();
+		$dummy_content->init()->save()->hook();
+	} 
 
 	/**
 	 * Register some constants

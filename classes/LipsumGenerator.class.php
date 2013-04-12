@@ -108,8 +108,10 @@ class LipsumGenerator {
 	 * @return LipsumGenerator $this for chainability
 	 */
 	public function init(){
-		$this->seed = rand(0, 1000000);
-		if(!$this->load()){ $this->defaults(); } 
+		if(!$this->load()){ 
+			$this->defaults();
+			$this->seed = rand(0, 1000000);
+		}
 		return $this;
 	}
 	
@@ -668,6 +670,7 @@ class LipsumGenerator {
 	 * @return LipsumGenerator $this for chainability
 	 */
 	public function hook(){
+		$this->init();
 		add_filter('the_content', array($this, 'the_content'));
 		return $this;
 	}
@@ -678,6 +681,7 @@ class LipsumGenerator {
 	 * @param $content string the content
 	 */
 	public function the_content($content){
+		$this->init();
 		return (empty($content)) ? $this->__toString() : $content;
 	}
 	
