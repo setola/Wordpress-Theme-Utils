@@ -106,6 +106,7 @@ EOF;
  * Inner class to build some very basic html nodes
  * @author etessore
  * @version 1.0.0
+ * @package classes
  */
 class HtmlBuilder {
 	/**

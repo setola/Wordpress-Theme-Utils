@@ -27,55 +27,30 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  */
 
-
-function wordpress_theme_utils_initialize(){
+/**
+ * Automatic initialization for the framework settings
+ * @package core
+ * @version 1.0.0
+ */
+function wordpress_theme_utils_initialize_hook(){
 	include_once 'classes/ThemeUtils.class.php';
-	ThemeUtils::get_instance();
-	
-
-	/**
-	 * Register some standard assets
-	 *
-	 * overload the global $assets variable in your child theme functions.php if you need customization on this.
-	 * @see DefaultAssets for adding or remove assets
-	 */
-	global $assets;
-	if(empty($assets)){
-		new DefaultAssetsCDN();
-	}
-	
-	/**
-	 * Register runtime infos, useful for javascript
-	 *
-	 * Overload the global $runtime_infos in your child theme functions.php if you need customization on this.
-	 * @see RuntimeInfos for more details
-	 */
-	global $runtime_infos;
-	if(empty($runtime_infos)){
-		$runtime_infos = new RuntimeInfos();
-		$runtime_infos->hook();
-	}
-	
-	/**
-	 * Initialize the main menues
-	 */
-	if(WORDPRESS_THEME_UTILS_REGISTER_TOP_MENU === true)
-		register_nav_menu('primary', __('Primary Menu', 'theme'));
-	if(WORDPRESS_THEME_UTILS_REGISTER_BOTTOM_MENU === true)
-		register_nav_menu('secondary', __('Secondary Menu', 'theme'));
-	
 }
-add_action('after_setup_theme', 'wordpress_theme_utils_initialize', 9);
+add_action('after_setup_theme', 'wordpress_theme_utils_initialize_hook', 9);
+
 
 
 
 
 if(!function_exists('http_build_url')){
 	/**
+	 * Build a URL.
+	 * 
+	 * The parts of the second URL will be merged into the first according to the flags argument.
 	 * PECT_HTTP is usually missing on many environment.
 	 * This function provides the same feature as the function included in PECT_HTTP.
 	 * @see @link http://php.net/manual/en/function.http-build-url.php
 	 * @param array $parsed_url the array to be merged
+	 * @package core
 	 * @return string the url
 	 */
 	function http_build_url($parsed_url) {
@@ -96,22 +71,4 @@ if(!function_exists('http_build_url')){
 
 
 
-
-
-
-
-
-// TODO: move this into ThemeHelpers to allow overloading in child theme 
-
-
-
-if(!function_exists('the_html')) { 
-	/**
-	 * Print the <html> opening tag from html5 boilerplate
-	 * @param string|array $class some additional classes
-	 */
-	function the_html($class=''){
-		echo HtmlHelper::open_html($class);
-	}
-}
 

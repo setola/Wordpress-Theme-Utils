@@ -26,9 +26,15 @@ final class DebugUtils {
 	private $title;
 	
 	/**
-	 * @var unknown_type the template for the debug section
+	 * @var string the template for the debug section
 	 */
 	public $template;
+	
+	/**
+	 * Enable or disable all debugs
+	 * @var boolean
+	 */
+	public $status = false;
 	
 	/**
 	 * Wrap the var_dump into an html comment
@@ -96,7 +102,7 @@ EOF;
 	 * @param mixed $var the variable to be dumped
 	 */
 	public function debug($var){
-		if(!WORDPRESS_THEME_UTILS_DEBUG) return '';
+		if(!$this->status) return '';
 		
 		$render = str_replace(
 			array(	'%debug%',								'%title%'), 
