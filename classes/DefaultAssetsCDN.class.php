@@ -42,6 +42,25 @@ class DefaultAssetsCDN extends DefaultAssets{
 		
 		$this->add_css('jquery-fancybox', '/css/jquery.fancybox_cdn.css', null, '2.1.0', 'screen');
 		
+		$this->register_jqueryui_themes();
+		
+		return $this;
+	}
+	
+	/**
+	 * Register some jQuery UI themes from code.jquery.com CDN
+	 * @param array $themes list of theme names
+	 * @return DefaultAssetsCDN $this for chainability
+	 */
+	protected function register_jqueryui_themes($themes=null){
+		$themes = empty($themes) ? array('blitzer', 'smoothness') : $themes;
+		$version = '1.10.2';
+		$min = '.min';
+		
+		foreach($themes as $theme){
+			$this->add_css("jquery-ui-$theme", "http://code.jquery.com/ui/$version/themes/$theme/jquery-ui$min.css", null, $version, 'screen');
+		}
+		
 		return $this;
 	}
 }
