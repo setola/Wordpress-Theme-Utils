@@ -20,12 +20,16 @@
 	position: relative;
 	.size(@images_height, @images_width);
 	
-	.fullscreen {
-		.square(100%);
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		z-index: @zindexslideShow;
+	#slideshow{
+		.size(@images_height, @images_width);
+		
+		&.fullscreen {
+			.square(100%);
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			z-index: @zindexslideShow;
+		}
 	}
 	
 	.controls{
