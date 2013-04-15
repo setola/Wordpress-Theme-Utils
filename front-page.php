@@ -13,7 +13,7 @@ get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 ?>
 
 	<div id="main-container" class="container_16">
-		<div id="slideshow-container" class="grid_16">
+		<div id="slideshow-container" class="grid_16 slideshow-container">
 			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow'); ?>
 			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow_controls'); ?>
 		</div>

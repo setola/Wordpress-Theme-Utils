@@ -10,8 +10,11 @@
 
 @images_width: 940px;
 @images_height: 400px;
-@controls_width: 50px;
-@controls_height: 100px;
+@controls_big_width: 50px;
+@controls_big_height: 100px;
+@controls_sprite: '../images/media-controls.png';
+@controls_button_width: 33px;
+@controls_button_height: 33px;
 
 #slideshow-container{
 	position: relative;
@@ -30,13 +33,57 @@
 		bottom: 0;
 		left: 0;
 		margin: 0;
-		.size(@controls_height, 100%);
+		.size(@controls_button_height, 100%);
 		padding: 0;
 		list-style: none;
+		z-index: (@zindexslideShow + 30);
 		
-		& .prev, & .next{
+		/*& .prev, & .next{
 			.size(@controls_height, @controls_width);
 			background: red;
+		}*/
+		
+		.play, .pause, .prev, .next, .play-pause{
+			background-image: url(@controls_sprite);
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-position: center center;
+			background-color: transparent;
+			.size(@controls_button_height, @controls_button_width);
+			float: left;
+			cursor: pointer;
+		}
+		
+		.play{
+			background-position: 0 0;
+		}
+		
+		.play:HOVER{
+			background-position: 0 -33px;
+		}
+		
+		.pause{
+			background-position: -99px 0;
+		}
+		
+		.pause:HOVER{
+			background-position: -99px -33px;
+		}
+		
+		.prev{
+			background-position: -33px 0;
+		}
+		
+		.prev:HOVER{
+			background-position: -33px -33px;
+		}
+		
+		.next{
+			background-position: -66px 0;
+		}
+		
+		.next:HOVER{
+			background-position: -66px -33px;
 		}
 	}
 }

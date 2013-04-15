@@ -13,8 +13,6 @@
 ?>
 <ul class="controls">
 	<li class="prev"></li>
-	<li class="next"></li>
-	<li class="play"></li>
-	<li class="pause"></li>
 	<li class="play-pause"></li>
+	<li class="next"></li>
 </ul>
