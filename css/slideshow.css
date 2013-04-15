@@ -2,7 +2,7 @@
  * slideshow.less
  * Put here the style for the slideshow
  * 
- * Compiled on Fri, 12 Apr 2013 15:26:13 GMT
+ * Compiled on Mon, 15 Apr 2013 08:18:39 GMT
  */
 /*!
  * variables.less
@@ -46,15 +46,54 @@
   left: 0;
   margin: 0;
   width: 100%;
-  height: 100px;
+  height: 33px;
   padding: 0;
   list-style: none;
+  z-index: 1130;
+  /*& .prev, & .next{
+			.size(@controls_height, @controls_width);
+			background: red;
+		}*/
+
 }
+#slideshow-container .controls .play,
+#slideshow-container .controls .pause,
 #slideshow-container .controls .prev,
+#slideshow-container .controls .next,
+#slideshow-container .controls .play-pause {
+  background-image: url('../images/media-controls.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  float: left;
+  cursor: pointer;
+}
+#slideshow-container .controls .play {
+  background-position: 0 0;
+}
+#slideshow-container .controls .play:HOVER {
+  background-position: 0 -33px;
+}
+#slideshow-container .controls .pause {
+  background-position: -99px 0;
+}
+#slideshow-container .controls .pause:HOVER {
+  background-position: -99px -33px;
+}
+#slideshow-container .controls .prev {
+  background-position: -33px 0;
+}
+#slideshow-container .controls .prev:HOVER {
+  background-position: -33px -33px;
+}
 #slideshow-container .controls .next {
-  width: 50px;
-  height: 100px;
-  background: red;
+  background-position: -66px 0;
+}
+#slideshow-container .controls .next:HOVER {
+  background-position: -66px -33px;
 }
 .preload {
   height: 30px;

@@ -95,7 +95,7 @@ class Slideshow extends ImagePreload{
 }
 
 ?>
-<div id="slideshow">
+<div id="slideshow" class="slideshow">
 <?php 
 	ThemeHelpers::load_css('slideshow');
 	ThemeHelpers::load_js('slideshow');
