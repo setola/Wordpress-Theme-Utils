@@ -46,6 +46,115 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	public $media_dimension;
 	
 	/**
+	 * Search the media gallery for suitable images.
+	 * 
+	 * This is the order:
+	 * Check if current post has attached images
+	 * Check the default language if has attached images
+	 * Check if frontpage has attached images
+	 * Check if frontpage has attached images in default language
+	 * Build a placeholder
+	 */
+	public function get_images(){
+		$this->images = GalleryHelper::get_images_from_post();
+		
+		if(empty($this->images)){
+			$this->images = GalleryHelper::get_images_from_main_language();
+		}
+		
+		if(empty($this->images)){
+			$this->images = GalleryHelper::get_images_from_frontpage();
+		}
+		
+		if(empty($this->images)){
+			$this->images = GalleryHelper::get_images_from_homepage_in_default_language();
+		}
+		
+		if(empty($this->images)){
+				
+			$dimensions = ImageGenerator::get_dimensions('slideshow');
+			$image = new ImageGenerator();
+			$image
+			->set('width', $dimensions['width'])
+			->set('height', $dimensions['height'])
+			->set('bg_color', 'cccccc')
+			->set('text_color', '222222');
+				
+			$this->add_image(array(
+					'src'	=>	$image->get_image_src(),
+					'alt'	=>	$image->get_image_alt(),
+					'width'	=>	$image->get_image_width(),
+					'height'=>	$image->get_image_height()
+			));
+		}
+	}
+	
+	/**
+	 * Get the images attached to a post
+	 * @param array $args
+	 * @return Ambigous <multitype:, boolean, multitype:Ambigous <NULL> >
+	 */
+	public static function get_images_from_post($args=array()){
+		$post_id = is_null($args['post_parent']) ? $post_id : get_the_ID();
+		
+		$defaults = array(
+				'post_parent'		=> $post_id,
+				'post_type'			=> 'attachment',
+				'post_mime_type'	=> 'image',
+		);
+		
+		if(taxonomy_exists('media_tag')){
+			$args['tax_query'] 	=	wp_parse_args(
+				$args['tax_query'],
+				array(
+					'taxonomy'		=> 'media_tag',
+					'field'			=> 'slug',
+					'terms'			=> 'slideshow',
+					'operator'		=> 'IN'
+				)
+			);
+		}
+		
+		return get_children(wp_parse_args($args, $defaults));
+	}
+	
+	/**
+	 * Get the images from the main language translation of the post
+	 * @param string $post_id the post id you want to search for
+	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
+	 */
+	public static function get_images_from_main_language($post_id=null){
+		global $sitepress;
+		if(empty($sitepress)) return self::get_images_from_post($post_id);
+		
+		return self::get_images(
+			array(
+				'post_parent'=>icl_object_id(
+					is_null($post_id) ? $post_id : get_the_ID(), 
+					'post', 
+					true, 
+					$sitepress->get_default_language()
+				)
+			)
+		);
+	}
+	
+	/**
+	 * Get images attached to the frontpage
+	 */
+	public static function get_images_from_frontpage(){
+		return self::get_images(array('post_parent'=>get_option('page_on_front')));
+	}
+	
+	/**
+	 * Get images attached to the frontpage in default language translation 
+	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
+	 */
+	public static function get_images_from_homepage_in_default_language(){
+		return self::get_images_from_main_language(array('post_parent'=>get_option('page_on_front')));
+	}
+	
+	/**
 	 * Set the unique id for this gallery
 	 * @param string $unid the unique
 	 * @return GalleryHelper $this for chainability
