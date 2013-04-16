@@ -628,7 +628,8 @@ class LipsumGenerator {
 	private function set_config($config){
 		$fields = array_keys(get_class_vars(__CLASS__));
 		foreach($fields as $field){
-			$this->{$field} = $config[$field];
+			if(isset($config[$field]))
+				$this->{$field} = $config[$field];
 		}
 		return $this;
 	/*		->set_math(new GaussianMath())
@@ -671,7 +672,7 @@ class LipsumGenerator {
 	 */
 	public function hook(){
 		$this->init();
-		add_filter('the_content', array($this, 'the_content'));
+		add_filter('the_content', array($this, 'the_content'), 10, 1);
 		return $this;
 	}
 	
@@ -681,8 +682,9 @@ class LipsumGenerator {
 	 * @param $content string the content
 	 */
 	public function the_content($content){
-		$this->init();
-		return (empty($content)) ? $this->__toString() : $content;
+		return (empty($content)) 
+			? $this->init()->__toString() 
+			: $content;
 	}
 	
 
