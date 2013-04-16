@@ -2,7 +2,7 @@
  * slideshow.less
  * Put here the style for the slideshow
  * 
- * Compiled on Mon, 15 Apr 2013 08:18:39 GMT
+ * Compiled on Tue, 16 Apr 2013 07:31:11 GMT
  */
 /*!
  * variables.less
@@ -32,7 +32,11 @@
   width: 940px;
   height: 400px;
 }
-#slideshow-container .fullscreen {
+#slideshow-container #slideshow {
+  width: 940px;
+  height: 400px;
+}
+#slideshow-container #slideshow.fullscreen {
   width: 100%;
   height: 100%;
   margin: 0;
