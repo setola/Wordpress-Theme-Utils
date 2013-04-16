@@ -94,7 +94,7 @@ class ThemeUtils{
 	 */
 	public static function default_constants(){
 		// initialize constants only once
-		if(defined(WORDPRESS_THEME_UTILS_PATH)) return;
+		if(defined('WORDPRESS_THEME_UTILS_PATH')) return;
 
 		/**
 		 * The base path for Wordpress Theme Utils
