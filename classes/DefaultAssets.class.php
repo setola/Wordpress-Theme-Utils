@@ -180,8 +180,11 @@ class DefaultAssets{
 	 * Hooks the assets registration into wordpress init hook
 	 */
 	public function hook(){
-		if(!is_admin())
-			add_action('init', array($this, 'callback'));
+		if(!is_admin()){
+			add_action('wp_enqueue_scripts', array($this, 'callback'), 10);
+			add_action('wp_enqueue_scripts', array($this, 'load_assets'), 11);
+			add_action('shutdown', array($this, 'save_assets'));
+		}
 	}
 	
 	/**
@@ -247,5 +250,20 @@ class DefaultAssets{
 				);
 			}
 		}
+	}
+	
+	public function save_assets($post_id = null){
+		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
+		$transient = 'page_assets_id_'.$post_id;
+		delete_transient($transient);
+		set_transient($transient, ThemeHelpers::$assets);
+	}
+	
+	public function load_assets($post_id = null){
+		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
+		$transient = 'page_assets_id_'.$post_id;
+		$assets = get_transient($transient);
+		foreach($assets['css'] as $handle) wp_enqueue_style($handle);
+		foreach($assets['js'] as $handle) wp_enqueue_script($handle);
 	}
 }

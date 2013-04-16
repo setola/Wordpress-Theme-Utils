@@ -31,6 +31,12 @@ class ThemeHelpers{
 	const textdomain = 'theme';
 	
 	/**
+	 * Stores the assets to be loaded
+	 * @var array
+	 */
+	public static $assets = array('js' => array(),'css' => array());
+	
+	/**
 	 * This filter callback adds some usefull classes to the body
 	 * Remember to call body_class() in the theme!
 	 * 
@@ -53,7 +59,7 @@ class ThemeHelpers{
 	}
 	
 	/**
-	 * Enqueue a JavaScript in WordPress init action
+	 * Enqueue a previously registered JavaScript in WordPress init action
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
 	 * according to this we have to:
 	 * Use the wp_enqueue_scripts action to call this function, 
@@ -61,26 +67,22 @@ class ThemeHelpers{
 	 * Calling it outside of an action can lead to problems. 
 	 * 
 	 * @see @link http://core.trac.wordpress.org/ticket/11526 #11526 for details.
-	 * @param string $handle Script name
-	 * @param string $src Script url
-	 * @param array $deps (optional) Array of script names on which this script depends
-	 * @param string|bool $ver (optional) Script version (used for cache busting), set to NULL to disable
-	 * @param bool $in_footer (optional) Whether to enqueue the script before </head> or before </body>
 	 */
-	public static function load_js($handle, $src = null, $deps = array(), $ver = null, $in_footer = false){
-		// anonimous functions are available only from 5.3.0
-		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
-			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
-			return;
+	public static function load_js($handle){
+		if(func_num_args() > 1){
+			_deprecated_argument(__CLASS__.'::'.__FUNCTION__, '1.0.5');
 		}
-		
-		add_action('wp_enqueue_scripts', function($handle, $src, $deps, $ver, $in_footer){
-			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
-		});
+		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
+			add_action('wp_enqueue_scripts', function($handle) use ($handle) {
+				wp_enqueue_script($handle);
+			});
+		}
+
+		self::$assets['js'][$handle] = $handle;
 	}
 	
 	/**
-	 * Enqueue a StyleSheet in WordPress init action
+	 * Enqueue a previously registered StyleSheet in WordPress init action
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
 	 * according to this we have to:
 	 * Use the wp_enqueue_scripts action to call this function. 
@@ -88,22 +90,18 @@ class ThemeHelpers{
 	 * @see @link http://core.trac.wordpress.org/ticket/17916 #17916 for details.
 	 * 
 	 * @param string $handle Name of the stylesheet.
-	 * @param string|bool $src Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.
-	 * @param array $deps Array of handles of any stylesheet that this stylesheet depends on.
-	 *  (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.
-	 * @param string|bool $ver String specifying the stylesheet version number. Set to NULL to disable.
-	 *  Used to ensure that the correct version is sent to the client regardless of caching.
-	 * @param string $media The media for which this stylesheet has been defined.
 	 */
-	public static function load_css($handle, $src = null, $deps = array(), $ver = null, $media = false){
+	public static function load_css($handle){
+		if(func_num_args() > 1){
+			_deprecated_argument(__CLASS__.'::'.__FUNCTION__, '1.0.5');
+		}
 		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
-			wp_enqueue_style($handle, $src, $deps, $ver, $media);
-			return;
+			add_action('wp_enqueue_scripts', function($handle) use ($handle) {
+				wp_enqueue_style($handle);
+			});
 		}
 		
-		add_action('wp_enqueue_scripts', function($handle, $src, $deps, $ver, $media){
-			wp_enqueue_style($handle, $src, $deps, $ver, $media);
-		});
+		self::$assets['css'][$handle] = $handle;
 	}
 	
 	/**
