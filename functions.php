@@ -68,25 +68,27 @@ if(!function_exists('http_build_url')){
 }
 
 
-/**
- * Fill the default credit line in the footer
- * @return string
- */
-function wordpress_theme_utils_credits(){
-	$toret = array();
-	$toret[] = HtmlHelper::anchor(
-		home_url('/'), 
-		sprintf(__('&copy; %s', 'wordpress_theme_utils'), get_bloginfo('name'))
-	);
-	$toret[] = HtmlHelper::anchor(
-		__('https://github.com/setola/Wordpress-Theme-Utils/', 'wordpress_theme_utils'), 
-		sprintf(__('Built on %s', 'wordpress_theme_utils'), 'WordPress Themes Utils')
-	);
-	$toret[] = HtmlHelper::anchor(
-		__('http://wordpress.org/', 'wordpress_theme_utils'), 
-		sprintf(__('Powered by %s', 'wordpress_theme_utils' ), 'WordPress')
-	);
-	
-	echo HtmlHelper::unorderd_list($toret, array('class'=>'linear-menu clearfix'));
+if(!function_exists('wordpress_theme_utils_credits')){
+	/**
+	 * Fill the default credit line in the footer
+	 * @return string
+	 */
+	function wordpress_theme_utils_credits(){
+		$toret = array();
+		$toret[] = HtmlHelper::anchor(
+			home_url('/'), 
+			sprintf(__('&copy; %s', 'wordpress_theme_utils'), get_bloginfo('name'))
+		);
+		$toret[] = HtmlHelper::anchor(
+			__('https://github.com/setola/Wordpress-Theme-Utils/', 'wordpress_theme_utils'), 
+			sprintf(__('Built on %s', 'wordpress_theme_utils'), 'WordPress Themes Utils')
+		);
+		$toret[] = HtmlHelper::anchor(
+			__('http://wordpress.org/', 'wordpress_theme_utils'), 
+			sprintf(__('Powered by %s', 'wordpress_theme_utils' ), 'WordPress')
+		);
+		
+		echo HtmlHelper::unorderd_list($toret, array('class'=>'linear-menu clearfix'));
+	}
+	add_action('wtu_credits', 'wordpress_theme_utils_credits');
 }
-add_action('wtu_credits', 'wordpress_theme_utils_credits');
