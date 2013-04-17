@@ -204,8 +204,9 @@ class ThemeHelpers{
 	 * @param string $more_link_text Optional. Content for when there is more text
 	 * @param int|object $post_id Post ID or post object.
 	 * @param bool $apply_filters true if you want the_content filter applyed on the return value
+	 * @param bool $remove_more if true the function will remove the #more span added by WordPress
 	 */
-	static function get_the_content_after_more($more_link_text = '', $post_id = null, $apply_filters = true){
+	static function get_the_content_after_more($more_link_text = '', $post_id = null, $apply_filters = true, $remove_more = true){
 		$toret = '';
 		
 		if(isset($post_id)){
@@ -221,6 +222,10 @@ class ThemeHelpers{
 		if($apply_filters){
 			$toret = apply_filters('the_content', $toret);
 			$toret = str_replace(']]>', ']]&gt;', $toret);
+		}
+		
+		if($remove_more){
+			$toret = preg_replace('/<p>.*<span id="more-.*"><\/span>.*<\/p>/i', '', $toret);
 		}
 		
 		return $toret;
