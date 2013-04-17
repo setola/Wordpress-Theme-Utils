@@ -144,7 +144,7 @@ function wtu_init(){
 	*/
 	global $assets;
 	if(empty($assets)){
-		new DefaultAssetsCDN();
+		$assets = new DefaultAssetsCDN();
 	}
 
 	/**

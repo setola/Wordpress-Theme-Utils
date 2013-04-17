@@ -69,13 +69,7 @@ EOF;
 		$this->index = 0;
 		
 		if(!is_admin()){
-			ThemeHelpers::load_js(
-					'snippet-com',
-					'http://hotelsitecontents.fastbooking.com/js/com.js',
-					null,
-					'0.1',
-					true
-			);
+			ThemeHelpers::load_js('snippet-com');
 		}
 	}
 
