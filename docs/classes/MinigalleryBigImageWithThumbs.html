@@ -35,13 +35,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">1</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">1</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -67,6 +67,11 @@
 <li class="method public inherited"><a href="#method_add_image" title="add_image :: Adds an image to the current set"><span class="description">Adds an image to the current set</span><pre>add_image()</pre></a></li>
 <li class="method public inherited"><a href="#method_add_images" title="add_images :: Add some images to the current set"><span class="description">Add some images to the current set</span><pre>add_images()</pre></a></li>
 <li class="method public inherited"><a href="#method_calculate_unique" title="calculate_unique :: Calculates the unique id for the current gallery"><span class="description">Calculates the unique id for the current gallery</span><pre>calculate_unique()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images" title="get_images :: Search the media gallery for suitable images."><span class="description">Search the media gallery for suitable images.</span><pre>get_images()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_frontpage" title="get_images_from_frontpage :: Get images attached to the frontpage"><span class="description">Get images attached to the frontpage</span><pre>get_images_from_frontpage()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_homepage_in_default_language" title="get_images_from_homepage_in_default_language :: Get images attached to the frontpage in default language translation"><span class="description">Get images attached to the frontpage in default language translation</span><pre>get_images_from_homepage_in_default_language()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_main_language" title="get_images_from_main_language :: Get the images from the main language translation of the post"><span class="description">Get the images from the main language translation of the post</span><pre>get_images_from_main_language()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_post" title="get_images_from_post :: Get the images attached to a post"><span class="description">Get the images attached to a post</span><pre>get_images_from_post()</pre></a></li>
 <li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the markup for this minigallery"><span class="description">Retrieves the markup for this minigallery</span><pre>get_markup()</pre></a></li>
 <li class="method public "><a href="#method_load_assets" title="load_assets :: Loads the needed assets"><span class="description">Loads the needed assets</span><pre>load_assets()</pre></a></li>
 <li class="method public inherited"><a href="#method_load_assets_callback" title="load_assets_callback :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets_callback()</pre></a></li>
@@ -152,6 +157,10 @@ You have to take care of it by yourself (tipically in assets.php)</p></div>
 <tr>
 <th>package</th>
 <td><a href="../packages/classes.html">classes</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>image manager</td>
 </tr>
 </table>
 <h3>
@@ -246,6 +255,97 @@ will be retrieved from the wp media, elsewhere it is an html tag</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_get_images"></a><div class="element clickable method public method_get_images" data-toggle="collapse" data-target=".method_get_images .collapse">
+<h2>Search the media gallery for suitable images.</h2>
+<pre>get_images() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is the order:
+Check if current post has attached images
+Check the default language if has attached images
+Check if frontpage has attached images
+Check if frontpage has attached images in default language
+Build a placeholder</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_get_images_from_frontpage"></a><div class="element clickable method public method_get_images_from_frontpage" data-toggle="collapse" data-target=".method_get_images_from_frontpage .collapse">
+<h2>Get images attached to the frontpage</h2>
+<pre>get_images_from_frontpage() </pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_frontpage()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_get_images_from_homepage_in_default_language"></a><div class="element clickable method public method_get_images_from_homepage_in_default_language" data-toggle="collapse" data-target=".method_get_images_from_homepage_in_default_language .collapse">
+<h2>Get images attached to the frontpage in default language translation</h2>
+<pre>get_images_from_homepage_in_default_language() : \Ambigous</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_homepage_in_default_language()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><Ambigous, multitype:, boolean, multitype:Ambigous <NULL> ></div>
+</div></div>
+</div>
+<a id="method_get_images_from_main_language"></a><div class="element clickable method public method_get_images_from_main_language" data-toggle="collapse" data-target=".method_get_images_from_main_language .collapse">
+<h2>Get the images from the main language translation of the post</h2>
+<pre>get_images_from_main_language(string $post_id) : \Ambigous</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_main_language()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>string</code><p>the post id you want to search for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><Ambigous, multitype:, boolean, multitype:Ambigous <NULL> ></div>
+</div></div>
+</div>
+<a id="method_get_images_from_post"></a><div class="element clickable method public method_get_images_from_post" data-toggle="collapse" data-target=".method_get_images_from_post .collapse">
+<h2>Get the images attached to a post</h2>
+<pre>get_images_from_post(array $args) : \Ambigous</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_post()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><multitype:, boolean, multitype:Ambigous <NULL> ></div>
 </div></div>
 </div>
 <a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
@@ -748,7 +848,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-12T12:22:02+02:00.<br></footer></div>
+            generated on 2013-04-18T11:35:50+02:00.<br></footer></div>
 </div>
 </body>
 </html>

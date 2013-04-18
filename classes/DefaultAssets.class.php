@@ -252,6 +252,14 @@ class DefaultAssets{
 		}
 	}
 	
+	/**
+	 * Saves the assets required for post with given id
+	 * 
+	 * Stores it in a transient so that if you like to call ThemeHelpers::load_js()
+	 * somewhere after wp_head() the next time you will load the page
+	 * the system will add such assets to the head (css) or foot (js).
+	 * @param int $post_id the id of the post
+	 */
 	public function save_assets($post_id = null){
 		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
 		$transient = 'page_assets_id_'.$post_id;
@@ -259,6 +267,14 @@ class DefaultAssets{
 		set_transient($transient, ThemeHelpers::$assets);
 	}
 	
+	/**
+	 * Loads the assets for the post with given id
+	 * 
+	 * Retrieves a transient with the list of assets used in this page\post.
+	 * Then enqueue them with {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_script wp_enqueue_script()} 
+	 * or {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_style wp_enqueue_style()}
+	 * @param string $post_id
+	 */
 	public function load_assets($post_id = null){
 		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
 		$transient = 'page_assets_id_'.$post_id;

@@ -67,6 +67,8 @@ class ThemeHelpers{
 	 * Calling it outside of an action can lead to problems. 
 	 * 
 	 * @see @link http://core.trac.wordpress.org/ticket/11526 #11526 for details.
+	 * 
+	 * @param string $handle the registered handle for the javascript
 	 */
 	public static function load_js($handle){
 		if(func_num_args() > 1){
@@ -89,7 +91,7 @@ class ThemeHelpers{
 	 * Calling it outside of an action can lead to problems. 
 	 * @see @link http://core.trac.wordpress.org/ticket/17916 #17916 for details.
 	 * 
-	 * @param string $handle Name of the stylesheet.
+	 * @param string $handle the registered handle for the stylesheet.
 	 */
 	public static function load_css($handle){
 		if(func_num_args() > 1){

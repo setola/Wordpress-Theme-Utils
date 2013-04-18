@@ -35,13 +35,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">1</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">1</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -73,9 +73,14 @@ Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
 from the parent theme</span><pre>callback()</pre></a></li>
 <li class="method public inherited"><a href="#method_hook" title="hook :: Hooks the assets registration into wordpress init hook"><span class="description">Hooks the assets registration into wordpress init hook</span><pre>hook()</pre></a></li>
+<li class="method public inherited"><a href="#method_load_assets" title="load_assets :: Loads the assets for the post with given id"><span class="description">Loads the assets for the post with given id</span><pre>load_assets()</pre></a></li>
 <li class="method public inherited"><a href="#method_register_custom" title="register_custom :: Register some assets to be used in the theme."><span class="description">Register some assets to be used in the theme.</span><pre>register_custom()</pre></a></li>
 <li class="method public "><a href="#method_register_standard" title="register_standard :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>register_standard()</pre></a></li>
+<li class="method public inherited"><a href="#method_save_assets" title="save_assets :: Saves the assets required for post with given id"><span class="description">Saves the assets required for post with given id</span><pre>save_assets()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_register_jqueryui_themes" title="register_jqueryui_themes :: Register some jQuery UI themes from code.jquery.com CDN"><span class="description">Register some jQuery UI themes from code.jquery.com CDN</span><pre>register_jqueryui_themes()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
@@ -246,6 +251,25 @@ from the parent theme</h2>
 </tr></table>
 </div></div>
 </div>
+<a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
+<h2>Loads the assets for the post with given id</h2>
+<pre>load_assets(string $post_id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Retrieves a transient with the list of assets used in this page\post.
+Then enqueue them with <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script">wp_enqueue_script()</a>
+or <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style">wp_enqueue_style()</a></p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::load_assets()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
 <a id="method_register_custom"></a><div class="element clickable method public method_register_custom" data-toggle="collapse" data-target=".method_register_custom .collapse">
 <h2>Register some assets to be used in the theme.</h2>
 <pre>register_custom() : <a href="../classes/DefaultAssets.html">\DefaultAssets</a></pre>
@@ -274,6 +298,39 @@ from the parent theme</h2>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/DefaultAssets.html">\DefaultAssets</a></code>$this for chainability</div>
+</div></div>
+</div>
+<a id="method_save_assets"></a><div class="element clickable method public method_save_assets" data-toggle="collapse" data-target=".method_save_assets .collapse">
+<h2>Saves the assets required for post with given id</h2>
+<pre>save_assets(int $post_id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Stores it in a transient so that if you like to call ThemeHelpers::load_js()
+somewhere after wp_head() the next time you will load the page
+the system will add such assets to the head (css) or foot (js).</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\DefaultAssets::save_assets()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>int</code><p>the id of the post</p></div>
+</div></div>
+</div>
+<a id="method_register_jqueryui_themes"></a><div class="element clickable method protected method_register_jqueryui_themes" data-toggle="collapse" data-target=".method_register_jqueryui_themes .collapse">
+<h2>Register some jQuery UI themes from code.jquery.com CDN</h2>
+<pre>register_jqueryui_themes(array $themes) : <a href="../classes/DefaultAssetsCDN.html">\DefaultAssetsCDN</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$themes</h4>
+<code>array</code><p>list of theme names</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/DefaultAssetsCDN.html">\DefaultAssetsCDN</a></code>$this for chainability</div>
 </div></div>
 </div>
 <h3>
@@ -309,7 +366,7 @@ from the parent theme</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-12T12:22:02+02:00.<br></footer></div>
+            generated on 2013-04-18T11:35:50+02:00.<br></footer></div>
 </div>
 </body>
 </html>

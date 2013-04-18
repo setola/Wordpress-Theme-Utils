@@ -35,13 +35,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">1</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">1</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -104,13 +104,17 @@ Post Title</span><pre>get_the_seo_span()</pre></a></li>
 <li class="method public "><a href="#method_heading" title="heading :: Retrives the markup for the default seo heading (h1+span)"><span class="description">Retrives the markup for the default seo heading (h1+span)</span><pre>heading()</pre></a></li>
 <li class="method public "><a href="#method_hide_admin_bar" title="hide_admin_bar :: Hides the wp admin bar"><span class="description">Hides the wp admin bar</span><pre>hide_admin_bar()</pre></a></li>
 <li class="method public "><a href="#method_image" title="image :: Get the markup for a &lt;img&gt; tag"><span class="description">Get the markup for a &lt;img&gt; tag</span><pre>image()</pre></a></li>
-<li class="method public "><a href="#method_load_css" title="load_css :: Enqueue a StyleSheet in WordPress init action"><span class="description">Enqueue a StyleSheet in WordPress init action</span><pre>load_css()</pre></a></li>
-<li class="method public "><a href="#method_load_js" title="load_js :: Enqueue a JavaScript in WordPress init action"><span class="description">Enqueue a JavaScript in WordPress init action</span><pre>load_js()</pre></a></li>
+<li class="method public "><a href="#method_load_css" title="load_css :: Enqueue a previously registered StyleSheet in WordPress init action"><span class="description">Enqueue a previously registered StyleSheet in WordPress init action</span><pre>load_css()</pre></a></li>
+<li class="method public "><a href="#method_load_js" title="load_js :: Enqueue a previously registered JavaScript in WordPress init action"><span class="description">Enqueue a previously registered JavaScript in WordPress init action</span><pre>load_js()</pre></a></li>
 <li class="method public "><a href="#method_merge_images" title="merge_images :: Merges some images to a single big one to save some http connections."><span class="description">Merges some images to a single big one to save some http connections.</span><pre>merge_images()</pre></a></li>
 <li class="method public "><a href="#method_params" title="params :: Prepare the $parms to be printed as html attributes"><span class="description">Prepare the $parms to be printed as html attributes</span><pre>params()</pre></a></li>
 <li class="method public "><a href="#method_remove_wpml_assets" title="remove_wpml_assets :: Remove some useless css and js by wpml"><span class="description">Remove some useless css and js by wpml</span><pre>remove_wpml_assets()</pre></a></li>
 <li class="method public "><a href="#method_script" title="script :: Retrieves a &lt;script&gt; tag"><span class="description">Retrieves a &lt;script&gt; tag</span><pre>script()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_assets" title="$assets :: Stores the assets to be loaded"><span class="description"></span><pre>$assets</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants
@@ -243,7 +247,7 @@ If defined use http_build_url, else custom code</h2>
 </div>
 <a id="method_get_the_content_after_more"></a><div class="element clickable method public method_get_the_content_after_more" data-toggle="collapse" data-target=".method_get_the_content_after_more .collapse">
 <h2>Returns the content after the more tag for the given post</h2>
-<pre>get_the_content_after_more(string $more_link_text, int | object $post_id, bool $apply_filters) </pre>
+<pre>get_the_content_after_more(string $more_link_text, int | object $post_id, bool $apply_filters, bool $remove_more) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -257,6 +261,9 @@ If defined use http_build_url, else custom code</h2>
 <div class="subelement argument">
 <h4>$apply_filters</h4>
 <code>bool</code><p>true if you want the_content filter applyed on the return value</p></div>
+<div class="subelement argument">
+<h4>$remove_more</h4>
+<code>bool</code><p>if true the function will remove the #more span added by WordPress</p></div>
 </div></div>
 </div>
 <a id="method_get_the_content_before_more"></a><div class="element clickable method public method_get_the_content_before_more" data-toggle="collapse" data-target=".method_get_the_content_before_more .collapse">
@@ -359,8 +366,8 @@ Blog Name</p></div></div></div>
 </div></div>
 </div>
 <a id="method_load_css"></a><div class="element clickable method public method_load_css" data-toggle="collapse" data-target=".method_load_css .collapse">
-<h2>Enqueue a StyleSheet in WordPress init action</h2>
-<pre>load_css(string $handle, string | bool $src, array $deps, string | bool $ver, string $media) </pre>
+<h2>Enqueue a previously registered StyleSheet in WordPress init action</h2>
+<pre>load_css(string $handle) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -380,28 +387,12 @@ Calling it outside of an action can lead to problems.</a></td>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$handle</h4>
-<code>string</code><p>Name of the stylesheet.</p></div>
-<div class="subelement argument">
-<h4>$src</h4>
-<code>string</code><code>bool</code><p>Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.</p>
-</div>
-<div class="subelement argument">
-<h4>$deps</h4>
-<code>array</code><p>Array of handles of any stylesheet that this stylesheet depends on.
- (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.</p>
-</div>
-<div class="subelement argument">
-<h4>$ver</h4>
-<code>string</code><code>bool</code><p>String specifying the stylesheet version number. Set to NULL to disable.
- Used to ensure that the correct version is sent to the client regardless of caching.</p></div>
-<div class="subelement argument">
-<h4>$media</h4>
-<code>string</code><p>The media for which this stylesheet has been defined.</p></div>
+<code>string</code><p>the registered handle for the stylesheet.</p></div>
 </div></div>
 </div>
 <a id="method_load_js"></a><div class="element clickable method public method_load_js" data-toggle="collapse" data-target=".method_load_js .collapse">
-<h2>Enqueue a JavaScript in WordPress init action</h2>
-<pre>load_js(string $handle, string $src, array $deps, string | bool $ver, bool $in_footer) </pre>
+<h2>Enqueue a previously registered JavaScript in WordPress init action</h2>
+<pre>load_js(string $handle) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -422,22 +413,7 @@ Calling it outside of an action can lead to problems.</a></td>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$handle</h4>
-<code>string</code><p>Script name</p></div>
-<div class="subelement argument">
-<h4>$src</h4>
-<code>string</code><p>Script url</p></div>
-<div class="subelement argument">
-<h4>$deps</h4>
-<code>array</code><p>(optional) Array of script names on which this script depends</p>
-</div>
-<div class="subelement argument">
-<h4>$ver</h4>
-<code>string</code><code>bool</code><p>(optional) Script version (used for cache busting), set to NULL to disable</p>
-</div>
-<div class="subelement argument">
-<h4>$in_footer</h4>
-<code>bool</code><p>(optional) Whether to enqueue the script before </head> or before </body></p>
-</div>
+<code>string</code><p>the registered handle for the javascript</p></div>
 </div></div>
 </div>
 <a id="method_merge_images"></a><div class="element clickable method public method_merge_images" data-toggle="collapse" data-target=".method_merge_images .collapse">
@@ -505,6 +481,14 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true</p></
 </div></div>
 </div>
 <h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_assets"> </a><div class="element clickable property public property_assets" data-toggle="collapse" data-target=".property_assets .collapse">
+<h2></h2>
+<pre>$assets : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_textdomain"> </a><div class="element clickable constant  constant_textdomain" data-toggle="collapse" data-target=".constant_textdomain .collapse">
 <h2>&lt;p&gt;Stores the name of the gettext domain for this theme&lt;/p&gt;</h2>
@@ -519,7 +503,7 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true</p></
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-12T12:22:02+02:00.<br></footer></div>
+            generated on 2013-04-18T11:35:50+02:00.<br></footer></div>
 </div>
 </body>
 </html>
