@@ -87,6 +87,8 @@ abstract class GalleryHelper extends FeatureWithAssets{
 					'height'=>	$image->get_image_height()
 			));
 		}
+		
+		return $this;
 	}
 	
 	/**
