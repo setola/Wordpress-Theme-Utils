@@ -25,6 +25,8 @@ class ThemeUtils{
 		self::default_constants();
 		self::enable_autoload_system();
 		self::disable_debug();
+		self::register_main_menu();
+		self::register_bottom_menu();
 		self::$instance = $this;
 	}
 

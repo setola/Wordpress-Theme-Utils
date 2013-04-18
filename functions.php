@@ -34,6 +34,7 @@
  */
 function wordpress_theme_utils_initialize_hook(){
 	include_once 'classes/ThemeUtils.class.php';
+	wtu_init();
 }
 add_action('after_setup_theme', 'wordpress_theme_utils_initialize_hook', 9);
 
