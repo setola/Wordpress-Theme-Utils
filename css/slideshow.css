@@ -2,7 +2,7 @@
  * slideshow.less
  * Put here the style for the slideshow
  * 
- * Compiled on Thu, 18 Apr 2013 09:21:56 GMT
+ * Compiled on Thu, 18 Apr 2013 11:54:23 GMT
  */
 /*!
  * variables.less
@@ -27,16 +27,16 @@
  * 
  * Compiled on :compileTime:
  */
-#slideshow-container {
+.slideshow-container {
   position: relative;
   width: 940px;
   height: 400px;
 }
-#slideshow-container #slideshow {
+.slideshow-container #slideshow {
   width: 940px;
   height: 400px;
 }
-#slideshow-container #slideshow.fullscreen {
+.slideshow-container #slideshow.fullscreen {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -44,7 +44,7 @@
   overflow: hidden;
   z-index: 1100;
 }
-#slideshow-container .controls {
+.slideshow-container .controls {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -60,11 +60,11 @@
 		}*/
 
 }
-#slideshow-container .controls .play,
-#slideshow-container .controls .pause,
-#slideshow-container .controls .prev,
-#slideshow-container .controls .next,
-#slideshow-container .controls .play-pause {
+.slideshow-container .controls .play,
+.slideshow-container .controls .pause,
+.slideshow-container .controls .prev,
+.slideshow-container .controls .next,
+.slideshow-container .controls .play-pause {
   background-image: url('../images/media-controls.png');
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -75,28 +75,28 @@
   float: left;
   cursor: pointer;
 }
-#slideshow-container .controls .play {
+.slideshow-container .controls .play {
   background-position: 0 0;
 }
-#slideshow-container .controls .play:HOVER {
+.slideshow-container .controls .play:HOVER {
   background-position: 0 -33px;
 }
-#slideshow-container .controls .pause {
+.slideshow-container .controls .pause {
   background-position: -99px 0;
 }
-#slideshow-container .controls .pause:HOVER {
+.slideshow-container .controls .pause:HOVER {
   background-position: -99px -33px;
 }
-#slideshow-container .controls .prev {
+.slideshow-container .controls .prev {
   background-position: -33px 0;
 }
-#slideshow-container .controls .prev:HOVER {
+.slideshow-container .controls .prev:HOVER {
   background-position: -33px -33px;
 }
-#slideshow-container .controls .next {
+.slideshow-container .controls .next {
   background-position: -66px 0;
 }
-#slideshow-container .controls .next:HOVER {
+.slideshow-container .controls .next:HOVER {
   background-position: -66px -33px;
 }
 .preload {
