@@ -56,21 +56,21 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	 * Build a placeholder
 	 */
 	public function get_images(){
-		$this->images = GalleryHelper::get_images_from_post();
+		$this->add_images(self::get_images_from_post());// = self::get_images_from_post();
 		
-		if(empty($this->images)){
-			$this->images = GalleryHelper::get_images_from_main_language();
+		if(!$this->has_images()){
+			$this->add_images(self::get_images_from_main_language());
 		}
 		
-		if(empty($this->images)){
-			$this->images = GalleryHelper::get_images_from_frontpage();
+		if(!$this->has_images()){
+			$this->add_images(self::get_images_from_frontpage());
 		}
 		
-		if(empty($this->images)){
-			$this->images = GalleryHelper::get_images_from_homepage_in_default_language();
+		if(!$this->has_images()){
+			$this->add_images(self::get_images_from_homepage_in_default_language());
 		}
 		
-		if(empty($this->images)){
+		if(!$this->has_images()){
 				
 			$dimensions = ImageGenerator::get_dimensions('slideshow');
 			$image = new ImageGenerator();
@@ -89,6 +89,14 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		}
 		
 		return $this;
+	}
+	
+	/**
+	 * Check if the current gallery has one or more images
+	 * @return boolean true if there is at least one image
+	 */
+	public function has_images(){
+		return !empty($this->images);
 	}
 	
 	/**
@@ -145,7 +153,7 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	 * Get images attached to the frontpage
 	 */
 	public static function get_images_from_frontpage(){
-		return self::get_images(array('post_parent'=>get_option('page_on_front')));
+		return self::get_images_from_post(array('post_parent'=>get_option('page_on_front')));
 	}
 	
 	/**
