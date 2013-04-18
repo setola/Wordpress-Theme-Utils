@@ -13,7 +13,7 @@
 			'theme_location'	=>	'primary',
 			'menu_class'		=>	'linear-menu clearfix',
 			'container'			=>	'',
-			'depth'				=>	1,
+			//'depth'				=>	1,
 			//'walker'			=>	new RemoveSpacesWalkerNavMenu(),
 			'before'			=>	'',
 			'after'				=>	'',

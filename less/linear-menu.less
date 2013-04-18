@@ -5,32 +5,76 @@
  * Compiled on :compileTime:
  * 
  */
+@import "variables";
+@import "mixins";
 
 @bg_color: #eee;
-@bg_color_hover: darken(@bg_color, 20%);
-@link_color: #333;
+@bg_color_hover: darken(@bg_color, 10%);
+@current_item_color: #000;
+@link_color: #666;
 @link_color_hover: darken(@link_color, 20%);
-@inner_padding: 5px 10px;
+@inner_vertical_padding: 5px;
+@inner_horizontal_padding: 10px;
 @border_color_1: #ccc;
 @border_color_2: darken(@border_color_1, 10%);
+@border_color_3: #666;
+@border_color_4: darken(@border_color_3, 10%);
 @vertical_margin: 10px;
+@height: 20px;
 
 .linear-menu-container {
 	background-color: @bg_color;
-	min-heigth: 2em;
 	width: 100%;
 	margin-top: @vertical_margin;
 	margin-bottom: @vertical_margin;
+	font-family: @fontLucidaSans;
+	text-transform: uppercase;
+	z-index: @zindexMenu;
+	
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	ul.sub-menu{
+		position: absolute;
+		display: none;
+		top: ( @height + ( 2 * @inner_vertical_padding ) );
+		left: 0;
+		background-color: @bg_color_hover;
+		li{
+			display: block;
+			float: none;
+			min-width: 150px;
+			max-width: 200px;
+			border: 0 none;
+			border-bottom: 1px solid @border_color_3;
+			border-top: 1px solid @border_color_4;
+			&:first-child{
+				border-top: none;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
 	
 	.linear-menu {
 		width: 100%;
-		list-style: none;
 		padding: 0;
 		margin: 0;
 		li{
 			float: left;
 			border-left: 1px solid @border_color_1;
 			border-right: 1px solid @border_color_2;
+			position: relative;
+			&:hover{
+				background-color: @bg_color_hover;
+				.sub-menu{
+					display: block;
+				}
+			}
 			&:first-child{
 				border-left: none;
 			}
@@ -39,14 +83,20 @@
 			}
 			a{
 				text-decoration: none;
-				padding: @inner_padding;
+				padding: @inner_vertical_padding @inner_horizontal_padding;
 				display: block;
 				color: @link_color;
+				height: @height;
+				line-height: @height;
+				text-shadow: 1px 1px @border_color_1;
 				&:hover{
 					color: @link_color_hover;
-					background-color: @bg_color_hover;
 				}
 			}
 		}
+		.current-menu-item a {
+			color: @current_item_color;
+		}
 	}
 }
+
