@@ -97,7 +97,7 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	 * @return Ambigous <multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_post($args=array()){
-		$post_id = is_null($args['post_parent']) ? $post_id : get_the_ID();
+		$post_id = is_null($args['post_parent']) ? get_the_ID() : $post_id;
 		
 		$defaults = array(
 				'post_parent'		=> $post_id,
