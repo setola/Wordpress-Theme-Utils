@@ -75,10 +75,10 @@ abstract class GalleryHelper extends FeatureWithAssets{
 			$dimensions = ImageGenerator::get_dimensions('slideshow');
 			$image = new ImageGenerator();
 			$image
-			->set('width', $dimensions['width'])
-			->set('height', $dimensions['height'])
-			->set('bg_color', 'cccccc')
-			->set('text_color', '222222');
+				->set('width', $dimensions['width'])
+				->set('height', $dimensions['height'])
+				->set('bg_color', 'cccccc')
+				->set('text_color', '222222');
 				
 			$this->add_image(array(
 					'src'	=>	$image->get_image_src(),
@@ -93,11 +93,23 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	
 	/**
 	 * Check if the current gallery has one or more images
-	 * @return boolean true if there is at least one image
+	 * 
+	 * Useful to check if jquery.cycle() is needed
+	 * 
+	 * @return boolean true if there is at least two image
 	 */
 	public function has_images(){
-		return !empty($this->images);
+		return count($this->images) > 1;
 	}
+	
+	/**
+	 * Checks if the current gallery has more no images
+	 * @return boolean true if there is no image in the current set
+	 */
+	public function is_empty(){
+		return empty($this->images);
+	}
+	
 	
 	/**
 	 * Get the images attached to a post
