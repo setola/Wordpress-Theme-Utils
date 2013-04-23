@@ -15,10 +15,14 @@ get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 	<div id="main-container" class="container_16">
 		<div id="slideshow-container" class="grid_16 slideshow-container">
 			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow'); ?>
-			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow_controls'); ?>
 		</div>
 		<div id="page-text" class="grid_10">
-			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'content', get_post_format()); ?>
+			<?php 
+				while(have_posts()){
+					the_post(); 
+					get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'content', get_post_format());
+				} 
+			?>
 		</div>
 		<div id="sidebar" class="grid_6">
 			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'sidebar'); ?>
