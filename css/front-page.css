@@ -2,7 +2,7 @@
  * front-page.less
  * Put here the style for the homepage
  * 
- * Compiled on Thu, 18 Apr 2013 11:54:23 GMT
+ * Compiled on Tue, 23 Apr 2013 13:57:21 GMT
  */
 /*!
  * variables.less
@@ -198,6 +198,12 @@ textarea {
 }
 .clearfix:after {
   clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
 body {
   background: #ffffff;
