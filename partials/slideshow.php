@@ -27,6 +27,8 @@ if(!array_key_exists('slideshow', ImageGenerator::get_all_image_sizes()))
 		->the_markup();
 ?>
 </div>
-<?php if($preloader->has_images()){
+<?php 
+if($preloader->has_images()){
 	get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'slideshow_controls');
-} ?>
+} 
+?>
