@@ -279,7 +279,7 @@ class DefaultAssets{
 		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
 		$transient = 'page_assets_id_'.$post_id;
 		$assets = get_transient($transient);
-		foreach($assets['css'] as $handle) wp_enqueue_style($handle);
-		foreach($assets['js'] as $handle) wp_enqueue_script($handle);
+		foreach((array)$assets['css'] as $handle) wp_enqueue_style($handle);
+		foreach((array)$assets['js'] as $handle) wp_enqueue_script($handle);
 	}
 }
