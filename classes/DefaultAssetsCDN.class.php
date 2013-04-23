@@ -34,7 +34,9 @@ class DefaultAssetsCDN extends DefaultAssets{
 		//Fblib, remember to fill the fbcallback.js in your child theme!
 		$this->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='
 				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery', 'jquery-ui'), '1', true);
-		$this->add_js('snippet-com', 'http://hotelsitecontents.fastbooking.com/js/com.js', null, '0.1', true);
+		
+		// Add This javascript
+		$this->add_js('addthis', 'http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5142f4961c6fb998', null, null, true);
 		
 		// some useful css
 		$this->add_css('reset', 'http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css', null, '2.0', 'screen');

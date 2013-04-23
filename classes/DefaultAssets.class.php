@@ -55,15 +55,16 @@ class DefaultAssets{
 		$this->add_js('jquery.scrollto', '/js/jquery.scrollTo.js', array('jquery'), '1.4.2', true);
 		$this->add_js('jquery-fancybox', '/js/jquery.fancybox.js', array('jquery'), '2.1.0', true);
 		
-		
-		
+		/**
+		 * Add This javascript
+		 */
+		$this->add_js('addthis', 'http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5142f4961c6fb998', null, null, true);
 		
 		/**
 		 * Fblib, remember to fill the fbcallback.js in your child theme!
 		 */
 		$this->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='
 				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery','jquery.ui.selectmenu'), '1', true);
-		$this->add_js('snippet-com', 'http://hotelsitecontents.fastbooking.com/js/com.js', null, '0.1', true);
 		
 		/**
 		 * HTML5 Boiler Plate
@@ -106,6 +107,7 @@ class DefaultAssets{
 		$this->add_js('map', '/js/gmap.js', array('jquery','gmaps.api'), '0.1', 'screen');
 		$this->add_js('map-directions', '/js/map-directions.js', array('jquery','map'), '0.1', true);
 		
+
 		
 		/**
 		 * Theme Specific CSS for part of page
