@@ -6,12 +6,14 @@
 /**
  * Manages the integration of the special offers snippet
  * @author etessore
- * @version 1.0.3
+ * @version 1.0.4
  * @package classes
  */
  
 /* 
  * Changelog:
+ * 1.0.4
+ * 	new javascript implementation: FB.CrossCom.consume();
  * 1.0.3
  * 	remove dependency from FeatureWithAsset and used ThemeHelpers::load_js()
  * 1.0.2
@@ -24,6 +26,7 @@
 class SpecialOffersSnippet {
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion';
 	const default_divdest = 'FB_so';
+	const com_js = 'http://hotelsitecontents.fastbooking.ch/js/fb.js';
 	
 	/**
 	 * @var array stores the list of parameter to be passed on GET
@@ -52,10 +55,11 @@ class SpecialOffersSnippet {
 	 */
 	public function __construct($hid){
 		$tpl = <<< EOF
+	%comjstag%
 	<div id="%divdest%">
 		<div class="loading">%loading%</div>
 	</div>
-	<iframe id="iframe_%divdest%" src="%iframe%" style="display:none"></iframe>
+	%promojstag%
 EOF;
 		
 		$this->templates = new SubstitutionTemplate();
@@ -164,6 +168,44 @@ EOF;
 	}
 	
 	/**
+	 * Retrieves the script tag for com.js
+	 * 
+	 * Checks if is the first implementation, otherwhise it will return an empty string
+	 * @return string html script tag to com.js
+	 */
+	protected function get_com_js(){
+		if($this->index == 1)
+			return 
+				HtmlHelper::script(
+					'/* */', 
+					array(
+						'src'	=>	self::com_js,
+						'id'	=>	'script_com_js'
+					)
+				);
+		return '';
+	}
+	
+	/**
+	 * Retrieves the script for initialize the snippet system
+	 * @return string html script tag
+	 */
+	protected function get_promo_js(){
+		$content = new SubstitutionTemplate();
+		$content
+			->set_tpl('FB.CrossCom.consume("%url%", "%divedest%");')
+			->set_markup('url', $this->get_iframe_src())
+			->set_markup('divedest', $this->get_param('divdest'));
+		return 
+			HtmlHelper::script(
+				$content->replace_markup(), 
+				array(
+					'id'=>'iframe_'.$this->get_param('divdest')
+				)
+			);
+	}
+	
+	/**
 	 * Retrieves the markup for the offers
 	 */
 	public function get_markup(){
@@ -171,8 +213,10 @@ EOF;
 		$this->index++;
 		
 		return $this->templates
-			->set_markup('iframe', $this->get_iframe_src())
+			//->set_markup('iframe', $this->get_iframe_src())
 			->set_markup('divdest', $this->get_param('divdest'))
+			->set_markup('comjstag', $this->get_com_js())
+			->set_markup('promojstag', $this->get_promo_js())
 			->replace_markup();
 	}
 	
