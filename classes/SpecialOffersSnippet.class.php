@@ -27,6 +27,7 @@ class SpecialOffersSnippet {
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion';
 	const default_divdest = 'FB_so';
 	const com_js = 'http://hotelsitecontents.fastbooking.ch/js/fb.js';
+	const pop_js = 'http://hotelsitecontents.fastbooking.com/js/pop.js';
 	
 	/**
 	 * @var array stores the list of parameter to be passed on GET
@@ -56,6 +57,7 @@ class SpecialOffersSnippet {
 	public function __construct($hid){
 		$tpl = <<< EOF
 	%comjstag%
+	%popjstag%
 	<div id="%divdest%">
 		<div class="loading">%loading%</div>
 	</div>
@@ -206,6 +208,23 @@ EOF;
 	}
 	
 	/**
+	 * Gets the pop.js for the 'ugly pop-up' feature
+	 * @return string
+	 */
+	protected function get_pop_js(){
+		if($this->index == 1)
+			return 
+				HtmlHelper::script(
+					'/* */', 
+					array(
+						'src'	=>	self::pop_js,
+						'id'	=>	'script_com_js'
+					)
+				);
+			return '';
+	}
+	
+	/**
 	 * Retrieves the markup for the offers
 	 */
 	public function get_markup(){
@@ -216,6 +235,7 @@ EOF;
 			//->set_markup('iframe', $this->get_iframe_src())
 			->set_markup('divdest', $this->get_param('divdest'))
 			->set_markup('comjstag', $this->get_com_js())
+			->set_markup('popjstag', $this->get_pop_js())
 			->set_markup('promojstag', $this->get_promo_js())
 			->replace_markup();
 	}
