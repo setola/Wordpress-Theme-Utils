@@ -34,12 +34,19 @@ EOF
 	global $post;
 	foreach($children as $post){
 		setup_postdata($post);
+		$roomcode = (get_post_meta($post->ID, 'roomcode', true)) 
+			?	'<div class="cta-container">'.HtmlHelper::anchor(
+					'javascript:;', 
+					__('Book This Room', 'theme'), 
+					array('class'=>'book-room cta', 'data-roomcode'=>get_post_meta($post->ID, 'roomcode', true))
+				).'</div>'
+			:	'';
 		echo $subs
 			->set_markup('image', HtmlHelper::anchor(get_permalink(), get_the_post_thumbnail()))
 			->set_markup('title', HtmlHelper::anchor(get_permalink(), get_the_title()))
 			->set_markup('excerpt', get_the_excerpt())
 			->set_markup('moreinfo', '<div class="more-container">'.HtmlHelper::anchor(get_permalink(), __('More Info', 'theme')).'</div>')
-			->set_markup('book', '<div class="cta-container">'.HtmlHelper::anchor('javascript:;', __('Book This Room', 'theme'), array('class'=>'book-room cta')).'</div>')
+			->set_markup('book', $roomcode)
 			->replace_markup();
 	}
 	wp_reset_postdata();
