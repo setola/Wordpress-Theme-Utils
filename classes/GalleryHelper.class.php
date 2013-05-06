@@ -154,10 +154,10 @@ abstract class GalleryHelper extends FeatureWithAssets{
 		global $sitepress;
 		if(empty($sitepress)) return self::get_images_from_post($post_id);
 		
-		return self::get_images(
+		return self::get_images_from_post(
 			array(
 				'post_parent'=>icl_object_id(
-					is_null($post_id) ? $post_id : get_the_ID(), 
+					is_null($post_id) ? get_the_ID() : $post_id, 
 					'post', 
 					true, 
 					$sitepress->get_default_language()
