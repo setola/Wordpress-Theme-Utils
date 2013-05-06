@@ -119,11 +119,16 @@ abstract class GalleryHelper extends FeatureWithAssets{
 	public static function get_images_from_post($args=array()){
 		$post_id = is_null($args['post_parent']) ? get_the_ID() : $post_id;
 		
+		
 		$defaults = array(
 				'post_parent'		=> $post_id,
 				'post_type'			=> 'attachment',
 				'post_mime_type'	=> 'image',
 		);
+		
+		if(function_exists('has_post_thumbnail') && has_post_thumbnail($post_id)){
+			$defaults['exclude'] = get_post_thumbnail_id($post_id);
+		}
 		
 		if(taxonomy_exists('media_tag')){
 			$args['tax_query'] 	=	wp_parse_args(
