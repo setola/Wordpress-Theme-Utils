@@ -268,10 +268,21 @@ class ThemeHelpers{
 	
 	/**
 	 * Checks if the current post has the <!--more--> tag
+	 * @param object $posts the post object
 	 */
-	static function has_more_tag(){
-		global $post;
+	static function has_more_tag($post=null){
+	    if(is_null($post)) global $post;
 		return strpos($post->post_content, '<!--more-->')!==false;
+	}
+	
+	/**
+	 * Checks if the post content has the give shortcode
+	 * @param object $posts the post object
+	 * @return boolean true if the shortcode is used at least once in the body
+	 */
+	static function has_shortcode($code, $post=null) {
+	    if(is_null($post)) global $post;
+        return stripos($post->post_content, '['.$code)!==false;
 	}
 	
 	/**
