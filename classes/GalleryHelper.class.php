@@ -124,6 +124,8 @@ abstract class GalleryHelper extends FeatureWithAssets{
 				'post_parent'		=> $post_id,
 				'post_type'			=> 'attachment',
 				'post_mime_type'	=> 'image',
+				'orderby'			=>	'menu_order',
+				'order'				=>	'ASC'
 		);
 		
 		if(function_exists('has_post_thumbnail') && has_post_thumbnail($post_id)){

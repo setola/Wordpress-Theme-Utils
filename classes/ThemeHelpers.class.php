@@ -234,6 +234,17 @@ class ThemeHelpers{
 	}
 	
 	/**
+	 * Checks if the post content has the give shortcode
+	 * @param object $posts the post object
+	 * @return boolean true if the shortcode is used at least once in the body
+	 */
+	static function has_shortcode($code, $post=null) {
+	    if(is_null($post)) global $post;
+        if(stripos($post->post_content, '['.$code)===false) return false;
+        return true;
+	}
+	
+	/**
 	 * Prints the content before the more tag for the given post
 	 * If the tag is not present it will print the entire body
 	 * @param string $more_link_text Optional. Content for when there is more text
