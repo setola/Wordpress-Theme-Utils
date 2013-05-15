@@ -19,10 +19,11 @@
  * 	class	=	string class attribute for the current tab div
  * 	title	=	string the title of the tab
  * 	list	=	boolean set to false if you want to remove the current entry from the tabs list
+ * 	from	=	the starting point of the google maps route
+ * 	route-type	=	the type or google maps route {@link https://developers.google.com/maps/documentation/javascript/reference#TravelMode google.maps.TravelMode}
  * 
  * @author etessore
  * @version 1.0.0
- * @package classes
  * @since 1.0
  */
 class ShortcodeForTabs{
@@ -74,8 +75,6 @@ class ShortcodeForTabs{
 	
 	/**
 	 * Register the needed shortcodes with WordPress subsystem
-	 * @param boolean $tab true if you want to enable the shortcode for the single tab
-	 * @param boolean $list true if you want to enable the shortcode for the list of tabs
 	 */
 	private function add_shordcode($tab=true, $list=true){
 		if($tab) add_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
@@ -84,8 +83,6 @@ class ShortcodeForTabs{
 	
 	/**
 	 * Deletes the shortcodes used in this feature
-	 * @param boolean $tab true if you want to remove the shortcode for the single tab
-	 * @param boolean $list true if you want to remove the shortcode for the list of tabs
 	 */
 	private function delete_shortcode($tab=true, $list=true){
 		if($tab) remove_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
@@ -99,12 +96,13 @@ class ShortcodeForTabs{
 	 */
 	public function tab_hook($atts, $content = null){
 		$parms = shortcode_atts( array(
-			'icon'	=>	'',
-			'class'	=>	'',
-			'title'	=>	'tab-entry_'.$this->number_of_entries,
-			'list'	=>	true,
-			'from'	=>	'',
-			'mode'	=>	''
+			'icon'			=>	'',
+			'class'			=>	'',
+			'title'			=>	'tab-entry_'.$this->number_of_entries,
+			'list'			=>	true,
+			'from'			=>	'',
+			'route_type'	=>	'',
+			'mode'			=>	''
 		), $atts );
 		
 		if($parms['list'] !== 'false'){
@@ -117,14 +115,20 @@ class ShortcodeForTabs{
 		
 		ThemeHelpers::load_js('tabs');
 		
-		// render the html and return it to WordPress
+		// remove the autop feature that conflicts with inner html structure of a single tab
+		remove_filter('the_content', 'wpautop');
 		
-		return $this->tab_tpl
+		// render the html and return it to WordPress
+		$toret = $this->tab_tpl
 			->set_markup('id', 		' id="'.sanitize_title($parms['title']).'" ')
 			->set_markup('class', 	' class="tab '.$parms['class'].'" ')
 			->set_markup('icon', 	$this->get_image($parms['icon']))
-			->set_markup('content',	do_shortcode($content))
+			->set_markup('content',	wpautop($content))
 			->replace_markup();
+		
+		//add_filter('the_content', 'wpautop');
+		
+		return $toret;
 		
 	}
 	
@@ -159,8 +163,9 @@ class ShortcodeForTabs{
 					'#'.sanitize_title($entry['title']), 
 					$this->get_image($entry['icon']).$entry['title'],
 					array(
-						'data-title'	=>	$entry['title'],
-						'data-from'		=>	$entry['from'],
+						'data-title'		=>	$entry['title'],
+						'data-from'			=>	$entry['from'],
+						'data-route-type'	=>	$entry['route_type'],
 					)
 				),
 				array('class'=>$entry['class'])
