@@ -21,7 +21,6 @@ class ImagePreload extends GalleryHelper{
 	public function get_markup(){
 		if(empty($this->images)){ return ''; }
 		
-		$this->load_assets();
 		$toret = array();
 		
 		foreach($this->images as $k => $image){

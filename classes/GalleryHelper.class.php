@@ -11,7 +11,7 @@
  * @subpackage image manager
  * @todo remove using of FeatureWithAssets
  */
-abstract class GalleryHelper extends FeatureWithAssets{
+abstract class GalleryHelper /*extends FeatureWithAssets*/{
 
 	/**
 	 * @var string the unique id for the current gallery

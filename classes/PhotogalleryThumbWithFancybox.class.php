@@ -6,9 +6,15 @@
 /**
  * Manages images and markup for a photogallery where 
  * clicking on a little thumb opens the big image in fancybox 
+ * 
+ * It takes care of loading jQuery Fancybox if registered
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
  * @package classes
+ * 
+ * changelog:
+ * 	1.0.1
+ * 		- removed dependency from FeatureWithAssets, use ThemeHelpers::load_js() instead
  */
 class PhotogalleryThumbWithFancybox extends GalleryHelper{
 	
@@ -28,24 +34,32 @@ class PhotogalleryThumbWithFancybox extends GalleryHelper{
 	 * @var string
 	 */
 	public $single_image_container_class;
+	
+	/**
+	 * Stores the html template
+	 * @var SubstitutionTemplate
+	 */
+	public $subs;
 
 	/**
 	 * Initializes the photogallery
 	 */
 	public function __construct(){
-		$this
-			->set_markup('loading', '<div class="loading">'.__('Loading...', $this->textdomain).'</div>')
-			->set_wp_media_dimension('photogallery')
-			->set_images_per_row(4)
-			->set_single_image_container_class('grid_4')
-			->set_template(<<< EOF
+		$this->subs = new SubstitutionTemplate();
+		$this->subs
+			->set_tpl(<<< EOF
 	<div id="%gallery-id%" class="gallery">
 		<div class="big-image-container">
 			%images%
 		</div>
 	</div>
 EOF
-		);
+			)
+			->set_markup('loading', '<div class="loading">'.__('Loading...', $this->textdomain).'</div>');
+		$this
+			->set_wp_media_dimension('photogallery')
+			->set_images_per_row(4)
+			->set_single_image_container_class('grid_4');
 	}
 	
 	/**
@@ -80,21 +94,11 @@ EOF
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see FeatureWithAssets::load_assets()
-	 */
-	public function load_assets(){
-		wp_enqueue_style('photogallery');
-		wp_enqueue_script('photogallery');
-	}
-	
-	/**
-	 * (non-PHPdoc)
 	 * @see GalleryHelper::get_markup()
 	 */
 	public function get_markup(){
 		$markup_images = '';
 		if(count($this->images)>0){
-			$this->load_assets();
 			$images_per_line = $this->images_per_row;
 			foreach ($this->images as $k => $image){
 				$classes = array($this->single_image_container_class, 'image_'.$k);
@@ -102,6 +106,7 @@ EOF
 				if($images_per_line == 0){
 					$images_per_line = $this->images_per_row;
 				}
+				
 				if($images_per_line == $this->images_per_row){
 					$classes[] = 'alpha';
 				}
@@ -130,14 +135,13 @@ EOF
 		if(!$this->unid){
 			$this->calculate_unique();
 		}
-	
-		$this->static_markup['gallery-id'] = $this->unid;
-		$this->static_markup['images'] = $markup_images;
-	
-		return str_replace(
-				array_map(create_function('$k', 'return "%".$k."%";'), array_keys($this->static_markup)),
-				array_values($this->static_markup),
-				$this->tpl
-		);
+		
+		$this->subs->set_markup('gallery-id', $this->unid);
+		$this->subs->set_markup('images', $markup_images);
+		
+		ThemeHelpers::load_js('jquery-fancybox');
+		ThemeHelpers::load_css('jquery-fancybox');
+		
+		return $this->subs->replace_markup();
 	}
 }
