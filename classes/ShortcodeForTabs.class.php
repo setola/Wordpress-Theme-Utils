@@ -68,21 +68,25 @@ class ShortcodeForTabs{
 	 */
 	public function __construct(){
 		add_filter('the_content', array(&$this, 'build_list'), 7);
-		$this->add_shordcode();
+		$this->add_shortcode();
 		$this->tab_tpl = new SubstitutionTemplate();
 		$this->tab_tpl->set_tpl('<section%id%%class%>%icon%%content%</section>');
 	}
 	
 	/**
 	 * Register the needed shortcodes with WordPress subsystem
+	 * @param $tab true if you want to enable the shortcode 'tab_hook'
+	 * @param $list true if you want to enable the shortcode 'list_hook'
 	 */
-	private function add_shordcode($tab=true, $list=true){
+	private function add_shortcode($tab=true, $list=true){
 		if($tab) add_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
 		if($list) add_shortcode(self::$list_shortcode, array(&$this, 'list_hook'));
 	}
 	
 	/**
 	 * Deletes the shortcodes used in this feature
+	 * @param $tab true if you want to disable the shortcode 'tab_hook'
+	 * @param $list true if you want to disable the shortcode 'list_hook'
 	 */
 	private function delete_shortcode($tab=true, $list=true){
 		if($tab) remove_shortcode(self::$tab_shortcode, array(&$this, 'tab_hook'));
@@ -190,7 +194,7 @@ class ShortcodeForTabs{
     	remove_all_shortcodes();
     	
     	// Do the shortcode (only the one above is registered)
-    	$this->add_shordcode(true, false);
+    	$this->add_shortcode(true, false);
 		do_shortcode($content);
 		
     	// Put the original shortcodes back

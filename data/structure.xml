@@ -96,7 +96,7 @@ This function provides the same feature as the function included in PECT_HTTP.&l
       <tag line="2" name="since" description="0.1"/>
     </docblock>
   </file>
-  <file path="classes/ImagePreload.class.php" hash="c13bd4c1761c9367bcaa9ef0ea5abee3" package="Default">
+  <file path="classes/ImagePreload.class.php" hash="995d2945886076b40f15433588a53003" package="Default">
     <docblock line="2">
       <description>Contains ImagePreload class definition</description>
       <long-description/>
@@ -277,10 +277,10 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
       </method>
     </class>
   </file>
-  <file path="classes/DefaultAssets.class.php" hash="6677732a82153e054d7806312321ed51" package="Default">
+  <file path="classes/DefaultAssets.class.php" hash="01749b17807441158df31e4ea379d0e3" package="Default">
     <docblock line="2">
       <description>Contains the DefaultAssets class</description>
-      <long-description></long-description>
+      <long-description/>
     </docblock>
     <class final="false" abstract="false" namespace="global" line="12" package="classes">
       <extends/>
@@ -288,7 +288,7 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
       <full_name>\DefaultAssets</full_name>
       <docblock line="6">
         <description>Register some useful assets in WordPress</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="6" name="author" description="etessore"/>
         <tag line="6" name="version" description="1.0.1"/>
         <tag line="6" name="package" description="classes"/>
@@ -297,8 +297,8 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
         <name>$assets</name>
         <default>array('css' =&gt; array(), 'js' =&gt; array())</default>
         <docblock line="13">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="13" name="var" description="manages the list of css and js" type="\arrary">
             <type by_reference="false">\arrary</type>
           </tag>
@@ -308,8 +308,8 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
         <name>$base_dir</name>
         <default>array()</default>
         <docblock line="18">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="18" name="var" description="stores infos on path and uri" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -320,7 +320,7 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
         <full_name>__construct</full_name>
         <docblock line="23">
           <description>Register some assets and hooks into WP</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="classes">
@@ -329,180 +329,180 @@ You have to take care of it by yourself (tipically in assets.php)&lt;/p&gt;</lon
         <docblock line="33">
           <description>Register some assets for generic use
 Put here yout JS libraries and Generic CSS like reset.css or similar</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="33" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="85" package="classes">
         <name>register_custom</name>
         <full_name>register_custom</full_name>
-        <docblock line="79">
+        <docblock line="80">
           <description>Register some assets to be used in the theme.</description>
           <long-description>&lt;p&gt;Put here your custom scripts.&lt;/p&gt;</long-description>
-          <tag line="79" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="80" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="147" package="classes">
         <name>add_js</name>
         <full_name>add_js</full_name>
-        <docblock line="135">
+        <docblock line="137">
           <description>Adds a javascript to the current set</description>
-          <long-description></long-description>
-          <tag line="135" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_script" refers="\@link"/>
-          <tag line="135" name="param" description="Script name" type="string" variable="$handle">
+          <long-description/>
+          <tag line="137" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_script" refers="\@link"/>
+          <tag line="137" name="param" description="Script name" type="string" variable="$handle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="135" name="param" description="Script url" type="string" variable="$src">
+          <tag line="137" name="param" description="Script url" type="string" variable="$src">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="135" name="param" description="(optional) Array of script names on which this script depends" type="array" variable="$deps">
+          <tag line="137" name="param" description="(optional) Array of script names on which this script depends" type="array" variable="$deps">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="135" name="param" description="(optional) Script version (used for cache busting), set to NULL to disable" type="string|bool" variable="$ver">
+          <tag line="137" name="param" description="(optional) Script version (used for cache busting), set to NULL to disable" type="string|bool" variable="$ver">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="135" name="param" description="(optional) Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;" type="bool" variable="$in_footer">
+          <tag line="137" name="param" description="(optional) Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;" type="bool" variable="$in_footer">
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="135" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="137" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
-        <argument line="145">
+        <argument line="147">
           <name>$handle</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="145">
+        <argument line="147">
           <name>$src</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="145">
+        <argument line="147">
           <name>$deps</name>
           <default>array()</default>
           <type/>
         </argument>
-        <argument line="145">
+        <argument line="147">
           <name>$ver</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="145">
+        <argument line="147">
           <name>$in_footer</name>
           <default>false</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="170" package="classes">
         <name>add_css</name>
         <full_name>add_css</full_name>
-        <docblock line="156">
+        <docblock line="158">
           <description>Adds a css to the current set</description>
-          <long-description></long-description>
-          <tag line="156" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_style" refers="\@link"/>
-          <tag line="156" name="param" description="Name of the stylesheet." type="string" variable="$handle">
+          <long-description/>
+          <tag line="158" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_style" refers="\@link"/>
+          <tag line="158" name="param" description="Name of the stylesheet." type="string" variable="$handle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="156" name="param" description="Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'." type="string|bool" variable="$src">
+          <tag line="158" name="param" description="Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'." type="string|bool" variable="$src">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="156" name="param" description="Array of handles of any stylesheet that this stylesheet depends on.&#10; (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies." type="array" variable="$deps">
+          <tag line="158" name="param" description="Array of handles of any stylesheet that this stylesheet depends on.&#10; (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies." type="array" variable="$deps">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="156" name="param" description="String specifying the stylesheet version number. Set to NULL to disable.&#10; Used to ensure that the correct version is sent to the client regardless of caching." type="string|bool" variable="$ver">
+          <tag line="158" name="param" description="String specifying the stylesheet version number. Set to NULL to disable.&#10; Used to ensure that the correct version is sent to the client regardless of caching." type="string|bool" variable="$ver">
             <type by_reference="false">string</type>
             <type by_reference="false">bool</type>
           </tag>
-          <tag line="156" name="param" description="The media for which this stylesheet has been defined." type="string" variable="$media">
+          <tag line="158" name="param" description="The media for which this stylesheet has been defined." type="string" variable="$media">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="156" name="return" description="$this for chainability" type="\DefaultAssets">
+          <tag line="158" name="return" description="$this for chainability" type="\DefaultAssets">
             <type by_reference="false">\DefaultAssets</type>
           </tag>
         </docblock>
-        <argument line="168">
+        <argument line="170">
           <name>$handle</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="168">
+        <argument line="170">
           <name>$src</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="168">
+        <argument line="170">
           <name>$deps</name>
           <default>array()</default>
           <type/>
         </argument>
-        <argument line="168">
+        <argument line="170">
           <name>$ver</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="168">
+        <argument line="170">
           <name>$media</name>
           <default>false</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="182" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="184" package="classes">
         <name>hook</name>
         <full_name>hook</full_name>
-        <docblock line="179">
+        <docblock line="181">
           <description>Hooks the assets registration into wordpress init hook</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="196" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="classes">
         <name>callback</name>
         <full_name>callback</full_name>
-        <docblock line="190">
+        <docblock line="192">
           <description>This is called on wordpress init
 Tries to load asset from the child theme,
 if the asset file doesn't exists it loads
 from the parent theme</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="263" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="265" package="classes">
         <name>save_assets</name>
         <full_name>save_assets</full_name>
-        <docblock line="255">
+        <docblock line="257">
           <description>Saves the assets required for post with given id</description>
           <long-description>&lt;p&gt;Stores it in a transient so that if you like to call ThemeHelpers::load_js()
 somewhere after wp_head() the next time you will load the page
 the system will add such assets to the head (css) or foot (js).&lt;/p&gt;</long-description>
-          <tag line="255" name="param" description="the id of the post" type="int" variable="$post_id">
+          <tag line="257" name="param" description="the id of the post" type="int" variable="$post_id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="263">
+        <argument line="265">
           <name>$post_id</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="278" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="280" package="classes">
         <name>load_assets</name>
         <full_name>load_assets</full_name>
-        <docblock line="270">
+        <docblock line="272">
           <description>Loads the assets for the post with given id</description>
           <long-description>&lt;p&gt;Retrieves a transient with the list of assets used in this page\post.
 Then enqueue them with {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_script wp_enqueue_script()}
 or {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_style wp_enqueue_style()}&lt;/p&gt;</long-description>
-          <tag line="270" name="param" description="" type="string" variable="$post_id">
+          <tag line="272" name="param" description="" type="string" variable="$post_id">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="278">
+        <argument line="280">
           <name>$post_id</name>
           <default>null</default>
           <type/>
@@ -1812,12 +1812,12 @@ and the excerpt for every menu entry.</description>
       </method>
     </class>
   </file>
-  <file path="classes/ShortcodeForTabs.class.php" hash="fb25b3ec0d90ec019ff61df89cbef7ff" package="Default">
+  <file path="classes/ShortcodeForTabs.class.php" hash="72e3d0091faeb6c10a89f0be3b4bd608" package="Default">
     <docblock line="3">
       <description>Stores ShortcodeForTabs class definition</description>
       <long-description/>
     </docblock>
-    <class final="false" abstract="false" namespace="global" line="28" package="classes">
+    <class final="false" abstract="false" namespace="global" line="29" package="Default">
       <extends/>
       <name>ShortcodeForTabs</name>
       <full_name>\ShortcodeForTabs</full_name>
@@ -1831,205 +1831,198 @@ list of the tabs in the current post content.&lt;/p&gt;
     icon    =   string|int number if you want a incon from the media library, string for the &lt;img&gt; tag src attribute
     class   =   string class attribute for the current tab div
     title   =   string the title of the tab
-    list    =   boolean set to false if you want to remove the current entry from the tabs list&lt;/p&gt;</long-description>
+    list    =   boolean set to false if you want to remove the current entry from the tabs list
+    from    =   the starting point of the google maps route
+    route-type  =   the type or google maps route {@link https://developers.google.com/maps/documentation/javascript/reference#TravelMode google.maps.TravelMode}&lt;/p&gt;</long-description>
         <tag line="10" name="author" description="etessore"/>
         <tag line="10" name="version" description="1.0.0"/>
-        <tag line="10" name="package" description="classes"/>
         <tag line="10" name="since" description="1.0"/>
       </docblock>
-      <property final="false" static="true" visibility="public" line="33" namespace="global" package="Default">
+      <property final="false" static="true" visibility="public" line="34" namespace="global" package="Default">
         <name>$tab_shortcode</name>
         <default>'tab'</default>
-        <docblock line="29">
+        <docblock line="30">
           <description>Stores the shortcode used for wrapping a single tab</description>
           <long-description/>
-          <tag line="29" name="var" description="" type="string">
+          <tag line="30" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="true" visibility="public" line="39" namespace="global" package="Default">
+      <property final="false" static="true" visibility="public" line="40" namespace="global" package="Default">
         <name>$list_shortcode</name>
         <default>'tabs_list'</default>
-        <docblock line="35">
+        <docblock line="36">
           <description>Stores the shortcode for placing the tabs lis</description>
           <long-description/>
-          <tag line="35" name="var" description="" type="\unknown_type">
+          <tag line="36" name="var" description="" type="\unknown_type">
             <type by_reference="false">\unknown_type</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="45" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="46" namespace="global" package="Default">
         <name>$tab_tpl</name>
         <default/>
-        <docblock line="41">
+        <docblock line="42">
           <description>Substitution template for the single tab</description>
           <long-description/>
-          <tag line="41" name="var" description="" type="\SubstitutionTemplate">
+          <tag line="42" name="var" description="" type="\SubstitutionTemplate">
             <type by_reference="false">\SubstitutionTemplate</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="51" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="52" namespace="global" package="Default">
         <name>$list_tpl</name>
         <default/>
-        <docblock line="47">
+        <docblock line="48">
           <description>Substitution template for the tabs list</description>
           <long-description/>
-          <tag line="47" name="var" description="" type="\SubstitutionTemplate">
+          <tag line="48" name="var" description="" type="\SubstitutionTemplate">
             <type by_reference="false">\SubstitutionTemplate</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="private" line="57" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="58" namespace="global" package="Default">
         <name>$list_of_entries</name>
         <default>array()</default>
-        <docblock line="53">
+        <docblock line="54">
           <description>Stores the list of tabs for the current post</description>
           <long-description/>
-          <tag line="53" name="var" description="" type="array">
+          <tag line="54" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="private" line="63" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="64" namespace="global" package="Default">
         <name>$number_of_entries</name>
         <default>0</default>
-        <docblock line="59">
+        <docblock line="60">
           <description>Stores the number of tabs for the current post</description>
           <long-description/>
-          <tag line="59" name="var" description="" type="int">
+          <tag line="60" name="var" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Default">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="65">
+        <docblock line="66">
           <description>Initializes the istance with default values</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="80" package="classes">
-        <name>add_shordcode</name>
-        <full_name>add_shordcode</full_name>
-        <docblock line="75">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="81" package="Default">
+        <name>add_shortcode</name>
+        <full_name>add_shortcode</full_name>
+        <docblock line="76">
           <description>Register the needed shortcodes with WordPress subsystem</description>
           <long-description/>
-          <tag line="75" name="param" description="true if you want to enable the shortcode for the single tab" type="boolean" variable="$tab">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="75" name="param" description="true if you want to enable the shortcode for the list of tabs" type="boolean" variable="$list">
-            <type by_reference="false">boolean</type>
-          </tag>
+          <tag line="76" name="param" description="true if you want to enable the shortcode 'tab_hook'" type="\" variable="$tab"/>
+          <tag line="76" name="param" description="true if you want to enable the shortcode 'list_hook'" type="\" variable="$list"/>
         </docblock>
-        <argument line="80">
+        <argument line="81">
           <name>$tab</name>
           <default>true</default>
           <type/>
         </argument>
-        <argument line="80">
+        <argument line="81">
           <name>$list</name>
           <default>true</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="90" package="classes">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="91" package="Default">
         <name>delete_shortcode</name>
         <full_name>delete_shortcode</full_name>
-        <docblock line="85">
+        <docblock line="86">
           <description>Deletes the shortcodes used in this feature</description>
           <long-description/>
-          <tag line="85" name="param" description="true if you want to remove the shortcode for the single tab" type="boolean" variable="$tab">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="85" name="param" description="true if you want to remove the shortcode for the list of tabs" type="boolean" variable="$list">
-            <type by_reference="false">boolean</type>
-          </tag>
+          <tag line="86" name="param" description="true if you want to disable the shortcode 'tab_hook'" type="\" variable="$tab"/>
+          <tag line="86" name="param" description="true if you want to disable the shortcode 'list_hook'" type="\" variable="$list"/>
         </docblock>
-        <argument line="90">
+        <argument line="91">
           <name>$tab</name>
           <default>true</default>
           <type/>
         </argument>
-        <argument line="90">
+        <argument line="91">
           <name>$list</name>
           <default>true</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="101" package="Default">
         <name>tab_hook</name>
         <full_name>tab_hook</full_name>
-        <docblock line="95">
+        <docblock line="96">
           <description>This is called back by wordpress when a tab shortcode is found</description>
           <long-description/>
-          <tag line="95" name="param" description="" type="\unknown_type" variable="$atts">
+          <tag line="96" name="param" description="" type="\unknown_type" variable="$atts">
             <type by_reference="false">\unknown_type</type>
           </tag>
-          <tag line="95" name="param" description="the content wrapped into the shortcode" type="string" variable="$content">
+          <tag line="96" name="param" description="the content wrapped into the shortcode" type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="100">
+        <argument line="101">
           <name>$atts</name>
           <default/>
           <type/>
         </argument>
-        <argument line="100">
+        <argument line="101">
           <name>$content</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="139" package="classes">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="147" package="Default">
         <name>get_image</name>
         <full_name>get_image</full_name>
-        <docblock line="131">
+        <docblock line="139">
           <description>Get the image for the tab.</description>
           <long-description>&lt;p&gt;build the image for this tab: take it from the media
 library if the parameter is a number, use such parameter
 as src attribute for img tag if it's not a number.&lt;/p&gt;</long-description>
-          <tag line="131" name="param" description="id of the image or string of the src parameter" type="int|string" variable="$parm">
+          <tag line="139" name="param" description="id of the image or string of the src parameter" type="int|string" variable="$parm">
             <type by_reference="false">int</type>
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="139">
+        <argument line="147">
           <name>$parm</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="150" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="158" package="Default">
         <name>list_hook</name>
         <full_name>list_hook</full_name>
-        <docblock line="146">
+        <docblock line="154">
           <description>This is called back by WordPress when the tab list shortcode is found</description>
           <long-description/>
-          <tag line="146" name="param" description="User defined attributes in shortcode tag." type="array" variable="$atts">
+          <tag line="154" name="param" description="User defined attributes in shortcode tag." type="array" variable="$atts">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="150">
+        <argument line="158">
           <name>$atts</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="180" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="189" package="Default">
         <name>build_list</name>
         <full_name>build_list</full_name>
-        <docblock line="173">
+        <docblock line="182">
           <description>Builds the list of tabs.</description>
           <long-description>&lt;p&gt;This is called to be sure we don't leave no tab behind
 Thanks to Viper007Bond: @link http://www.viper007bond.com/2009/11/22/wordpress-code-earlier-shortcodes/&lt;/p&gt;</long-description>
-          <tag line="173" name="param" description="the post content" type="string" variable="$content">
+          <tag line="182" name="param" description="the post content" type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="180">
+        <argument line="189">
           <name>$content</name>
           <default/>
           <type/>
@@ -2799,10 +2792,10 @@ if there is no content it appends the generated</description>
       </method>
     </class>
   </file>
-  <file path="classes/ThemeHelpers.class.php" hash="2a23c31b7f2f65d80f0ba6fabcdbc80f" package="Default">
+  <file path="classes/ThemeHelpers.class.php" hash="2d422d303e2a275006d09b4ab8a358e5" package="Default">
     <docblock line="2">
       <description>stores the definition for class ThemeHelpers</description>
-      <long-description></long-description>
+      <long-description/>
     </docblock>
     <constant namespace="global" line="114" package="Default">
       <name>ICL_DONT_LOAD_LANGUAGES_JS</name>
@@ -2825,7 +2818,7 @@ if there is no content it appends the generated</description>
       <full_name>\ThemeHelpers</full_name>
       <docblock line="5">
         <description>Stores some static methods that may be useful for html management</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="etessore"/>
         <tag line="5" name="version" description="1.0.5"/>
         <tag line="5" name="package" description="classes"/>
@@ -2835,8 +2828,8 @@ if there is no content it appends the generated</description>
         <full_name>textdomain</full_name>
         <value>'theme'</value>
         <docblock line="28">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="28" name="var" description="Stores the name of the gettext domain for this theme" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -2847,7 +2840,7 @@ if there is no content it appends the generated</description>
         <default>array('js' =&gt; array(), 'css' =&gt; array())</default>
         <docblock line="33">
           <description>Stores the assets to be loaded</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="33" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2859,14 +2852,14 @@ if there is no content it appends the generated</description>
         <docblock line="39">
           <description>This filter callback adds some usefull classes to the body
 Remember to call body_class() in the theme!</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="param" description="the classes already added by wordpress or some other plugin" type="array" variable="$classes">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="45">
           <name>$classes</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2875,7 +2868,7 @@ Remember to call body_class() in the theme!</description>
         <full_name>load_js</full_name>
         <docblock line="61">
           <description>Enqueue a previously registered JavaScript in WordPress init action</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="61" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_script&#10;according to this we have to:&#10;Use the wp_enqueue_scripts action to call this function,&#10;or admin_enqueue_scripts to call it on the admin side.&#10;Calling it outside of an action can lead to problems." refers="\@link"/>
           <tag line="61" name="see" description="http://core.trac.wordpress.org/ticket/11526 #11526 for details." refers="\@link"/>
           <tag line="61" name="param" description="the registered handle for the javascript" type="string" variable="$handle">
@@ -2884,7 +2877,7 @@ Remember to call body_class() in the theme!</description>
         </docblock>
         <argument line="73">
           <name>$handle</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2893,7 +2886,7 @@ Remember to call body_class() in the theme!</description>
         <full_name>load_css</full_name>
         <docblock line="86">
           <description>Enqueue a previously registered StyleSheet in WordPress init action</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="86" name="see" description="http://codex.wordpress.org/Function_Reference/wp_register_style&#10;according to this we have to:&#10;Use the wp_enqueue_scripts action to call this function.&#10;Calling it outside of an action can lead to problems." refers="\@link"/>
           <tag line="86" name="see" description="http://core.trac.wordpress.org/ticket/17916 #17916 for details." refers="\@link"/>
           <tag line="86" name="param" description="the registered handle for the stylesheet." type="string" variable="$handle">
@@ -2902,7 +2895,7 @@ Remember to call body_class() in the theme!</description>
         </docblock>
         <argument line="96">
           <name>$handle</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2911,7 +2904,7 @@ Remember to call body_class() in the theme!</description>
         <full_name>remove_wpml_assets</full_name>
         <docblock line="109">
           <description>Remove some useless css and js by wpml</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="109" name="see" description="http://wpml.org/documentation/support/wpml-coding-api/" refers="\@link"/>
         </docblock>
       </method>
@@ -2934,7 +2927,7 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true&lt;/p
         </docblock>
         <argument line="127">
           <name>$images</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="127">
@@ -2948,7 +2941,7 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true&lt;/p
         <full_name>get_the_content_after_more</full_name>
         <docblock line="204">
           <description>Returns the content after the more tag for the given post</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="204" name="param" description="Optional. Content for when there is more text" type="string" variable="$more_link_text">
             <type by_reference="false">string</type>
           </tag>
@@ -2990,7 +2983,7 @@ To disable the cache system set IMAGE_MERGE_FORCE_REFRESH constant to true&lt;/p
         <docblock line="236">
           <description>Prints the content before the more tag for the given post
 If the tag is not present it will print the entire body</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="236" name="param" description="Optional. Content for when there is more text" type="string" variable="$more_link_text">
             <type by_reference="false">string</type>
           </tag>
@@ -3018,192 +3011,224 @@ If the tag is not present it will print the entire body</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="272" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="273" package="classes">
         <name>has_more_tag</name>
         <full_name>has_more_tag</full_name>
         <docblock line="269">
           <description>Checks if the current post has the &lt;!--more--&gt; tag</description>
-          <long-description></long-description>
+          <long-description/>
+          <tag line="269" name="param" description="the post object" type="object" variable="$posts">
+            <type by_reference="false">object</type>
+          </tag>
         </docblock>
+        <argument line="273">
+          <name>$post</name>
+          <default>null</default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="281" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="283" package="classes">
+        <name>has_shortcode</name>
+        <full_name>has_shortcode</full_name>
+        <docblock line="278">
+          <description>Checks if the post content has the give shortcode</description>
+          <long-description/>
+          <tag line="278" name="param" description="the post object" type="object" variable="$posts">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="278" name="return" description="true if the shortcode is used at least once in the body" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="283">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="283">
+          <name>$post</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="292" package="classes">
         <name>doctype</name>
         <full_name>doctype</full_name>
-        <docblock line="277">
+        <docblock line="288">
           <description>Retrieves the correct DOCTYPE</description>
-          <long-description></long-description>
-          <tag line="277" name="param" description="the type, default is html5" type="string" variable="$type">
+          <long-description/>
+          <tag line="288" name="param" description="the type, default is html5" type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="281">
+        <argument line="292">
           <name>$type</name>
           <default>'html5'</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="307" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="318" package="classes">
         <name>anchor</name>
         <full_name>anchor</full_name>
-        <docblock line="300">
+        <docblock line="311">
           <description>Get the markup for an &lt;a&gt; tag</description>
-          <long-description></long-description>
-          <tag line="300" name="return" description="the markup for an html &lt;a&gt; tag" type="string">
+          <long-description/>
+          <tag line="311" name="return" description="the markup for an html &lt;a&gt; tag" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="300" name="param" description="the url to be pointed" type="string" variable="$href">
+          <tag line="311" name="param" description="the url to be pointed" type="string" variable="$href">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="300" name="param" description="the text" type="string" variable="$label">
+          <tag line="311" name="param" description="the text" type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="300" name="param" description="some html attributes in key=&gt;value pairs or a plain string" type="array|string" variable="$parms">
+          <tag line="311" name="param" description="some html attributes in key=&gt;value pairs or a plain string" type="array|string" variable="$parms">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="307">
+        <argument line="318">
           <name>$href</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="307">
+        <argument line="318">
           <name>$label</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="307">
+        <argument line="318">
           <name>$parms</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="322" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="333" package="classes">
         <name>image</name>
         <full_name>image</full_name>
-        <docblock line="317">
+        <docblock line="328">
           <description>Get the markup for a &lt;img&gt; tag</description>
-          <long-description></long-description>
-          <tag line="317" name="param" description="the image source" type="string" variable="$src">
+          <long-description/>
+          <tag line="328" name="param" description="the image source" type="string" variable="$src">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="317" name="param" description="additional parameters" type="array|string" variable="$parms">
+          <tag line="328" name="param" description="additional parameters" type="array|string" variable="$parms">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="322">
+        <argument line="333">
           <name>$src</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="322">
+        <argument line="333">
           <name>$parms</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="337" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="348" package="classes">
         <name>script</name>
         <full_name>script</full_name>
-        <docblock line="331">
+        <docblock line="342">
           <description>Retrieves a &lt;script&gt; tag</description>
-          <long-description></long-description>
-          <tag line="331" name="deprecated" description=""/>
-          <tag line="331" name="param" description="the inner content" type="string" variable="$content">
+          <long-description/>
+          <tag line="342" name="deprecated" description=""/>
+          <tag line="342" name="param" description="the inner content" type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="331" name="param" description="some parameters" type="array" variable="$parms">
+          <tag line="342" name="param" description="some parameters" type="array" variable="$parms">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="337">
+        <argument line="348">
           <name>$content</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="337">
+        <argument line="348">
           <name>$parms</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="354" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="365" package="classes">
         <name>array_to_html_attributes</name>
         <full_name>array_to_html_attributes</full_name>
-        <docblock line="347">
+        <docblock line="358">
           <description>Generates HTML Node Attribures</description>
-          <long-description></long-description>
-          <tag line="347" name="param" description="" type="string" variable="$glue">
+          <long-description/>
+          <tag line="358" name="param" description="" type="string" variable="$glue">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="347" name="param" description="" type="array|string" variable="$pieces">
+          <tag line="358" name="param" description="" type="array|string" variable="$pieces">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
-          <tag line="347" name="return" description="" type="string">
+          <tag line="358" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="347" name="author" description="http://blog.teknober.com/2011/04/13/php-array-to-html-attributes/"/>
+          <tag line="358" name="author" description="http://blog.teknober.com/2011/04/13/php-array-to-html-attributes/"/>
         </docblock>
-        <argument line="354">
+        <argument line="365">
           <name>$glue</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
-        <argument line="354">
+        <argument line="365">
           <name>$pieces</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="373" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="384" package="classes">
         <name>params</name>
         <full_name>params</full_name>
-        <docblock line="369">
+        <docblock line="380">
           <description>Prepare the $parms to be printed as html attributes</description>
-          <long-description></long-description>
-          <tag line="369" name="param" description="list of html attributes" type="string|array" variable="$parms">
+          <long-description/>
+          <tag line="380" name="param" description="list of html attributes" type="string|array" variable="$parms">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="373">
+        <argument line="384">
           <name>$parms</name>
           <default>''</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="387" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="398" package="classes">
         <name>build_url</name>
         <full_name>build_url</full_name>
-        <docblock line="381">
+        <docblock line="392">
           <description>Retrieves the url from array $url_arr
 If defined use http_build_url, else custom code</description>
-          <long-description></long-description>
-          <tag line="381" name="param" description="the array of attributes" type="array" variable="$url_arr">
+          <long-description/>
+          <tag line="392" name="param" description="the array of attributes" type="array" variable="$url_arr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="381" name="see" description="\http://php.net/manual/en/function.parse-url.php" refers="\http://php.net/manual/en/function.parse-url.php"/>
+          <tag line="392" name="see" description="\http://php.net/manual/en/function.parse-url.php" refers="\http://php.net/manual/en/function.parse-url.php"/>
         </docblock>
-        <argument line="387">
+        <argument line="398">
           <name>$url_arr</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="407" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="418" package="classes">
         <name>heading</name>
         <full_name>heading</full_name>
-        <docblock line="404">
+        <docblock line="415">
           <description>Retrives the markup for the default seo heading (h1+span)</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="424" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="435" package="classes">
         <name>get_the_seo_title</name>
         <full_name>get_the_seo_title</full_name>
-        <docblock line="417">
+        <docblock line="428">
           <description>Returns the title of the page.</description>
           <long-description>&lt;p&gt;Choose in order from:
 FB SEO Plugin
@@ -3211,69 +3236,76 @@ YOAST Seo TODO
 Blog Name&lt;/p&gt;</long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="441" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="452" package="classes">
         <name>get_the_seo_description</name>
         <full_name>get_the_seo_description</full_name>
-        <docblock line="434">
+        <docblock line="445">
           <description>Returns the description of the page
 Choose in order from:
 FB SEO Plugin
 YOAST Seo TODO
 Blog Name</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="459" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="470" package="classes">
         <name>get_the_seo_h1</name>
         <full_name>get_the_seo_h1</full_name>
-        <docblock line="452">
+        <docblock line="463">
           <description>Returns the H1 for this page
 Choose in order from:
 FB SEO Plugin
 Post Title</description>
-          <long-description></long-description>
-          <tag line="452" name="param" description="int|object the post" type="\" variable="$post"/>
+          <long-description/>
+          <tag line="463" name="param" description="int|object the post" type="\" variable="$post"/>
         </docblock>
-        <argument line="459">
+        <argument line="470">
           <name>$post</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="487" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="498" package="classes">
         <name>get_the_seo_span</name>
         <full_name>get_the_seo_span</full_name>
-        <docblock line="480">
+        <docblock line="491">
           <description>Returns the SPAN for this page
 Choose in order from:
 FB SEO Plugin
 Post Title</description>
-          <long-description></long-description>
-          <tag line="480" name="param" description="int|object the post" type="\" variable="$post"/>
+          <long-description/>
+          <tag line="491" name="param" description="int|object the post" type="\" variable="$post"/>
         </docblock>
-        <argument line="487">
+        <argument line="498">
           <name>$post</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="511" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="522" package="classes">
         <name>add_this</name>
         <full_name>add_this</full_name>
-        <docblock line="508">
+        <docblock line="519">
           <description>Retrieves the markup for the Add This widget</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="536" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="547" package="classes">
         <name>hide_admin_bar</name>
         <full_name>hide_admin_bar</full_name>
-        <docblock line="533">
+        <docblock line="544">
           <description>Hides the wp admin bar</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
+    <parse_markers>
+      <error line="269" code="50014">Name of argument $post does not match with the DocBlock's name $posts in has_more_tag()</error>
+      <notice line="269" code="50013">Parameter $posts could not be found in has_more_tag()</notice>
+      <error line="278" code="50014">Name of argument $code does not match with the DocBlock's name $posts in has_shortcode()</error>
+      <error line="278" code="50015">Argument $post is missing from the Docblock of has_shortcode()</error>
+      <notice line="278" code="50013">Parameter $posts could not be found in has_shortcode()</notice>
+    </parse_markers>
   </file>
   <file path="classes/SubstitutionTemplate.class.php" hash="01981543e0f26f4f5300a909a44531a8" package="Default">
     <docblock line="2">
@@ -3662,12 +3694,12 @@ text-align: center;&lt;/code&gt;&lt;/pre&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="classes/SpecialOffersSnippet.class.php" hash="cfb12315c3669dac2294ffe06c894009" package="Default">
+  <file path="classes/SpecialOffersSnippet.class.php" hash="b4b5d1f5b0f65e0e1f582f155c8469d3" package="Default">
     <docblock line="2">
       <description>containst SpecialOffersSnippet class definition</description>
       <long-description/>
     </docblock>
-    <class final="false" abstract="false" namespace="global" line="24" package="classes">
+    <class final="false" abstract="false" namespace="global" line="26" package="classes">
       <extends/>
       <name>SpecialOffersSnippet</name>
       <full_name>\SpecialOffersSnippet</full_name>
@@ -3675,191 +3707,201 @@ text-align: center;&lt;/code&gt;&lt;/pre&gt;</long-description>
         <description>Manages the integration of the special offers snippet</description>
         <long-description/>
         <tag line="6" name="author" description="etessore"/>
-        <tag line="6" name="version" description="1.0.3"/>
+        <tag line="6" name="version" description="1.0.4"/>
         <tag line="6" name="package" description="classes"/>
       </docblock>
-      <constant namespace="global" line="25" package="classes">
+      <constant namespace="global" line="27" package="classes">
         <name>baseurl</name>
         <full_name>baseurl</full_name>
         <value>'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion'</value>
       </constant>
-      <constant namespace="global" line="26" package="classes">
+      <constant namespace="global" line="28" package="classes">
         <name>default_divdest</name>
         <full_name>default_divdest</full_name>
         <value>'FB_so'</value>
       </constant>
-      <property final="false" static="false" visibility="public" line="31" namespace="global" package="Default">
+      <constant namespace="global" line="29" package="classes">
+        <name>com_js</name>
+        <full_name>com_js</full_name>
+        <value>'http://hotelsitecontents.fastbooking.ch/js/fb.js'</value>
+      </constant>
+      <constant namespace="global" line="30" package="classes">
+        <name>pop_js</name>
+        <full_name>pop_js</full_name>
+        <value>'http://hotelsitecontents.fastbooking.com/js/pop.js'</value>
+      </constant>
+      <property final="false" static="false" visibility="public" line="35" namespace="global" package="Default">
         <name>$params</name>
         <default/>
-        <docblock line="28">
+        <docblock line="32">
           <description/>
           <long-description/>
-          <tag line="28" name="var" description="stores the list of parameter to be passed on GET" type="array">
+          <tag line="32" name="var" description="stores the list of parameter to be passed on GET" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="private" line="36" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="40" namespace="global" package="Default">
         <name>$url</name>
         <default/>
-        <docblock line="33">
+        <docblock line="37">
           <description/>
           <long-description/>
-          <tag line="33" name="var" description="stores the url of the snippet" type="string">
+          <tag line="37" name="var" description="stores the url of the snippet" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="41" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="45" namespace="global" package="Default">
         <name>$index</name>
         <default/>
-        <docblock line="38">
+        <docblock line="42">
           <description/>
           <long-description/>
-          <tag line="38" name="var" description="the index of snippet occurency" type="int">
+          <tag line="42" name="var" description="the index of snippet occurency" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="46" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="50" namespace="global" package="Default">
         <name>$templates</name>
         <default/>
-        <docblock line="43">
+        <docblock line="47">
           <description/>
           <long-description/>
-          <tag line="43" name="var" description="the template to be substituted" type="\SubstitutionTemplate">
+          <tag line="47" name="var" description="the template to be substituted" type="\SubstitutionTemplate">
             <type by_reference="false">\SubstitutionTemplate</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="57" package="classes">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="49">
+        <docblock line="53">
           <description>Initializes the snippet</description>
           <long-description/>
-          <tag line="49" name="param" description="the hotel hid" type="string" variable="$hid">
+          <tag line="53" name="param" description="the hotel hid" type="string" variable="$hid">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="53">
+        <argument line="57">
           <name>$hid</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="80" package="classes">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="86" package="classes">
         <name>calculate_url</name>
         <full_name>calculate_url</full_name>
-        <docblock line="76">
+        <docblock line="82">
           <description>Builds the url for the remote iframe</description>
           <long-description/>
-          <tag line="76" name="param" description="additional query params for the iframe" type="array" variable="$params">
+          <tag line="82" name="param" description="additional query params for the iframe" type="array" variable="$params">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="80">
+        <argument line="86">
           <name>$params</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="global" line="95" package="classes">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="global" line="101" package="classes">
         <name>build_url</name>
         <full_name>build_url</full_name>
-        <docblock line="89">
+        <docblock line="95">
           <description>Retrieves the url from array $url_arr
 If defined use http_build_url, else custom code</description>
           <long-description/>
-          <tag line="89" name="param" description="the array of attributes" type="array" variable="$url_arr">
+          <tag line="95" name="param" description="the array of attributes" type="array" variable="$url_arr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="89" name="see" description="\http://php.net/manual/en/function.parse-url.php" refers="\http://php.net/manual/en/function.parse-url.php"/>
+          <tag line="95" name="see" description="\http://php.net/manual/en/function.parse-url.php" refers="\http://php.net/manual/en/function.parse-url.php"/>
         </docblock>
-        <argument line="95">
+        <argument line="101">
           <name>$url_arr</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="118" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="124" package="classes">
         <name>add_param</name>
         <full_name>add_param</full_name>
-        <docblock line="112">
+        <docblock line="118">
           <description>Adds a new parameter or update if exists</description>
           <long-description/>
-          <tag line="112" name="param" description="" type="string" variable="$key">
+          <tag line="118" name="param" description="" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="112" name="param" description="" type="int|string" variable="$value">
+          <tag line="118" name="param" description="" type="int|string" variable="$value">
             <type by_reference="false">int</type>
             <type by_reference="false">string</type>
           </tag>
-          <tag line="112" name="return" description="$this for chainability" type="\SpecialOffersSnippet">
+          <tag line="118" name="return" description="$this for chainability" type="\SpecialOffersSnippet">
             <type by_reference="false">\SpecialOffersSnippet</type>
           </tag>
         </docblock>
-        <argument line="118">
+        <argument line="124">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
-        <argument line="118">
+        <argument line="124">
           <name>$value</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="127" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="133" package="classes">
         <name>get_param</name>
         <full_name>get_param</full_name>
-        <docblock line="123">
+        <docblock line="129">
           <description>Retrives the $key param for this snippet</description>
           <long-description/>
-          <tag line="123" name="param" description="name of the parameter" type="string" variable="$key">
+          <tag line="129" name="param" description="name of the parameter" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="127">
+        <argument line="133">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="142" package="classes">
         <name>del_param</name>
         <full_name>del_param</full_name>
-        <docblock line="131">
+        <docblock line="137">
           <description>Removes a param</description>
           <long-description/>
-          <tag line="131" name="param" description="the param to be deleted" type="string" variable="$key">
+          <tag line="137" name="param" description="the param to be deleted" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="131" name="return" description="$this for chainability" type="\SpecialOffersSnippet">
+          <tag line="137" name="return" description="$this for chainability" type="\SpecialOffersSnippet">
             <type by_reference="false">\SpecialOffersSnippet</type>
           </tag>
         </docblock>
-        <argument line="136">
+        <argument line="142">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="151" package="classes">
         <name>get_iframe_src</name>
         <full_name>get_iframe_src</full_name>
-        <docblock line="141">
+        <docblock line="147">
           <description>Retrieves the src of the iframe</description>
           <long-description/>
-          <tag line="141" name="return" description="the url" type="string">
+          <tag line="147" name="return" description="the url" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="155" package="classes">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="161" package="classes">
         <name>get_divdest</name>
         <full_name>get_divdest</full_name>
-        <docblock line="149">
+        <docblock line="155">
           <description>Calculates the divdest for the current iframe integration
 First time it will be self::default_divdest
 For the other an "_&lt;number&gt;" will be appended
@@ -3867,18 +3909,51 @@ If the parameter divdest is customized it will return that one</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="169" package="classes">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="178" package="classes">
+        <name>get_com_js</name>
+        <full_name>get_com_js</full_name>
+        <docblock line="172">
+          <description>Retrieves the script tag for com.js</description>
+          <long-description>&lt;p&gt;Checks if is the first implementation, otherwhise it will return an empty string&lt;/p&gt;</long-description>
+          <tag line="172" name="return" description="html script tag to com.js" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="195" package="classes">
+        <name>get_promo_js</name>
+        <full_name>get_promo_js</full_name>
+        <docblock line="191">
+          <description>Retrieves the script for initialize the snippet system</description>
+          <long-description/>
+          <tag line="191" name="return" description="html script tag" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="214" package="classes">
+        <name>get_pop_js</name>
+        <full_name>get_pop_js</full_name>
+        <docblock line="210">
+          <description>Gets the pop.js for the 'ugly pop-up' feature</description>
+          <long-description/>
+          <tag line="210" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="230" package="classes">
         <name>get_markup</name>
         <full_name>get_markup</full_name>
-        <docblock line="166">
+        <docblock line="227">
           <description>Retrieves the markup for the offers</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="182" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="246" package="classes">
         <name>the_iframe_src</name>
         <full_name>the_iframe_src</full_name>
-        <docblock line="179">
+        <docblock line="243">
           <description>Prints the iframe src</description>
           <long-description/>
         </docblock>
@@ -4424,7 +4499,7 @@ to the image with 'full' media dimensions.</description>
       </method>
     </class>
   </file>
-  <file path="classes/DefaultAssetsCDN.class.php" hash="527d6d7a55a80672a0d6607cb13bf3f5" package="Default">
+  <file path="classes/DefaultAssetsCDN.class.php" hash="1427b60913f05ea147f08d79c8c2d693" package="Default">
     <docblock line="2">
       <description>Maintains the code for DefaultAssetsCDN class</description>
       <long-description/>
@@ -4452,20 +4527,20 @@ cdn.jsdelivr.net</description>
           <tag line="18" name="see" description="\DefaultAssets::register_standard()" refers="\DefaultAssets::register_standard()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="55" package="classes">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="57" package="classes">
         <name>register_jqueryui_themes</name>
         <full_name>register_jqueryui_themes</full_name>
-        <docblock line="50">
+        <docblock line="52">
           <description>Register some jQuery UI themes from code.jquery.com CDN</description>
           <long-description/>
-          <tag line="50" name="param" description="list of theme names" type="array" variable="$themes">
+          <tag line="52" name="param" description="list of theme names" type="array" variable="$themes">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="50" name="return" description="$this for chainability" type="\DefaultAssetsCDN">
+          <tag line="52" name="return" description="$this for chainability" type="\DefaultAssetsCDN">
             <type by_reference="false">\DefaultAssetsCDN</type>
           </tag>
         </docblock>
-        <argument line="55">
+        <argument line="57">
           <name>$themes</name>
           <default>null</default>
           <type/>
@@ -4906,13 +4981,13 @@ to change the printed markup&lt;/p&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="classes/GalleryHelper.class.php" hash="d619e7bafef7fd2c4f47d57bdf162059" package="Default">
+  <file path="classes/GalleryHelper.class.php" hash="2bba55205c860caee8b92d740f7d74ec" package="Default">
     <docblock line="2">
       <description>Stores the GalleryHelper class definition</description>
       <long-description/>
     </docblock>
     <class final="false" abstract="true" namespace="global" line="14" package="classes\image manager">
-      <extends>\FeatureWithAssets</extends>
+      <extends/>
       <name>GalleryHelper</name>
       <full_name>\GalleryHelper</full_name>
       <docblock line="5">
@@ -5004,367 +5079,389 @@ Check if frontpage has attached images in default language
 Build a placeholder&lt;/p&gt;</long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="99" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="101" package="classes\image manager">
+        <name>has_images</name>
+        <full_name>has_images</full_name>
+        <docblock line="94">
+          <description>Check if the current gallery has one or more images</description>
+          <long-description>&lt;p&gt;Useful to check if jquery.cycle() is needed&lt;/p&gt;</long-description>
+          <tag line="94" name="return" description="true if there is at least two image" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="classes\image manager">
+        <name>is_empty</name>
+        <full_name>is_empty</full_name>
+        <docblock line="105">
+          <description>Checks if the current gallery has more no images</description>
+          <long-description/>
+          <tag line="105" name="return" description="true if there is no image in the current set" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="119" package="classes\image manager">
         <name>get_images_from_post</name>
         <full_name>get_images_from_post</full_name>
-        <docblock line="94">
+        <docblock line="114">
           <description>Get the images attached to a post</description>
           <long-description/>
-          <tag line="94" name="param" description="" type="array" variable="$args">
+          <tag line="114" name="param" description="" type="array" variable="$args">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="94" name="return" description="&lt;multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
+          <tag line="114" name="return" description="&lt;multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
         </docblock>
-        <argument line="99">
+        <argument line="119">
           <name>$args</name>
           <default>array()</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="128" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="155" package="classes\image manager">
         <name>get_images_from_main_language</name>
         <full_name>get_images_from_main_language</full_name>
-        <docblock line="123">
+        <docblock line="150">
           <description>Get the images from the main language translation of the post</description>
           <long-description/>
-          <tag line="123" name="param" description="the post id you want to search for" type="string" variable="$post_id">
+          <tag line="150" name="param" description="the post id you want to search for" type="string" variable="$post_id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="123" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
+          <tag line="150" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
         </docblock>
-        <argument line="128">
+        <argument line="155">
           <name>$post_id</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="147" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="174" package="classes\image manager">
         <name>get_images_from_frontpage</name>
         <full_name>get_images_from_frontpage</full_name>
-        <docblock line="144">
+        <docblock line="171">
           <description>Get images attached to the frontpage</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="155" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="182" package="classes\image manager">
         <name>get_images_from_homepage_in_default_language</name>
         <full_name>get_images_from_homepage_in_default_language</full_name>
-        <docblock line="151">
+        <docblock line="178">
           <description>Get images attached to the frontpage in default language translation</description>
           <long-description/>
-          <tag line="151" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
+          <tag line="178" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="classes\image manager">
         <name>set_uid</name>
         <full_name>set_uid</full_name>
-        <docblock line="159">
+        <docblock line="186">
           <description>Set the unique id for this gallery</description>
           <long-description/>
-          <tag line="159" name="param" description="the unique" type="string" variable="$unid">
+          <tag line="186" name="param" description="the unique" type="string" variable="$unid">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="159" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="186" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="164">
+        <argument line="191">
           <name>$unid</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="174" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="201" package="classes\image manager">
         <name>set_timthumb_options</name>
         <full_name>set_timthumb_options</full_name>
-        <docblock line="169">
+        <docblock line="196">
           <description>Set the timthumb options
 If set_wp_media_dimension() is called it will prevale on this.</description>
           <long-description/>
-          <tag line="169" name="param" description="" type="array" variable="$options">
+          <tag line="196" name="param" description="" type="array" variable="$options">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="174">
+        <argument line="201">
           <name>$options</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="185" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="212" package="classes\image manager">
         <name>set_wp_media_dimension</name>
         <full_name>set_wp_media_dimension</full_name>
-        <docblock line="179">
+        <docblock line="206">
           <description>Sets the dimension for this gallery.</description>
           <long-description>&lt;p&gt;If set this option will prevale on timthumb&lt;/p&gt;</long-description>
-          <tag line="179" name="param" description="WordPress media dimension name" type="string" variable="$dimension">
+          <tag line="206" name="param" description="WordPress media dimension name" type="string" variable="$dimension">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="179" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="206" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="185">
+        <argument line="212">
           <name>$dimension</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="195" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="222" package="classes\image manager">
         <name>set_template</name>
         <full_name>set_template</full_name>
-        <docblock line="190">
+        <docblock line="217">
           <description>Set the html template for this gallery</description>
           <long-description/>
-          <tag line="190" name="param" description="the template" type="string" variable="$tpl">
+          <tag line="217" name="param" description="the template" type="string" variable="$tpl">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="190" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="217" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="195">
+        <argument line="222">
           <name>$tpl</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="206" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="233" package="classes\image manager">
         <name>set_markup</name>
         <full_name>set_markup</full_name>
-        <docblock line="200">
+        <docblock line="227">
           <description>Set the static markup; ie: prev\next\loading divs</description>
           <long-description/>
-          <tag line="200" name="param" description="the string has to be substituted" type="string" variable="$key">
+          <tag line="227" name="param" description="the string has to be substituted" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="200" name="param" description="html markup" type="string" variable="$markup">
+          <tag line="227" name="param" description="html markup" type="string" variable="$markup">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="200" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="227" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="206">
+        <argument line="233">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
-        <argument line="206">
+        <argument line="233">
           <name>$markup</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="242" package="classes\image manager">
         <name>replace_markup</name>
         <full_name>replace_markup</full_name>
-        <docblock line="211">
+        <docblock line="238">
           <description>Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="232" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="259" package="classes\image manager">
         <name>add_image</name>
         <full_name>add_image</full_name>
-        <docblock line="226">
+        <docblock line="253">
           <description>Adds an image to the current set</description>
           <long-description/>
-          <tag line="226" name="param" description="the image: if is an int it&#10;will be retrieved from the wp media, elsewhere it is an html tag" type="string|int" variable="$img">
+          <tag line="253" name="param" description="the image: if is an int it&#10;will be retrieved from the wp media, elsewhere it is an html tag" type="string|int" variable="$img">
             <type by_reference="false">string</type>
             <type by_reference="false">int</type>
           </tag>
-          <tag line="226" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="253" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="232">
+        <argument line="259">
           <name>$img</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="242" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="269" package="classes\image manager">
         <name>add_images</name>
         <full_name>add_images</full_name>
-        <docblock line="237">
+        <docblock line="264">
           <description>Add some images to the current set</description>
           <long-description/>
-          <tag line="237" name="param" description="the list of images to be added" type="array" variable="$images">
+          <tag line="264" name="param" description="the list of images to be added" type="array" variable="$images">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="237" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="264" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="242">
+        <argument line="269">
           <name>$images</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="255" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="282" package="classes\image manager">
         <name>calculate_unique</name>
         <full_name>calculate_unique</full_name>
-        <docblock line="251">
+        <docblock line="278">
           <description>Calculates the unique id for the current gallery</description>
           <long-description/>
-          <tag line="251" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="278" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="266" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="293" package="classes\image manager">
         <name>get_image_src</name>
         <full_name>get_image_src</full_name>
-        <docblock line="260">
+        <docblock line="287">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
           <long-description/>
-          <tag line="260" name="returns" description="the src attribute for the $index image of the set"/>
-          <tag line="260" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="287" name="returns" description="the src attribute for the $index image of the set"/>
+          <tag line="287" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="266">
+        <argument line="293">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="297" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="324" package="classes\image manager">
         <name>get_image_width</name>
         <full_name>get_image_width</full_name>
-        <docblock line="293">
+        <docblock line="320">
           <description>Get the width for the n-th image of the list</description>
           <long-description/>
-          <tag line="293" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="320" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="297">
+        <argument line="324">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="321" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="348" package="classes\image manager">
         <name>get_image_height</name>
         <full_name>get_image_height</full_name>
-        <docblock line="317">
+        <docblock line="344">
           <description>Get the height for the n-th image of the list</description>
           <long-description/>
-          <tag line="317" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="344" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="321">
+        <argument line="348">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="347" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="374" package="classes\image manager">
         <name>get_image_id</name>
         <full_name>get_image_id</full_name>
-        <docblock line="341">
+        <docblock line="368">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
           <long-description/>
-          <tag line="341" name="returns" description="the id attribute for the $index image of the set"/>
-          <tag line="341" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="368" name="returns" description="the id attribute for the $index image of the set"/>
+          <tag line="368" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="347">
+        <argument line="374">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="364" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="391" package="classes\image manager">
         <name>get_image_alt</name>
         <full_name>get_image_alt</full_name>
-        <docblock line="358">
+        <docblock line="385">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
           <long-description/>
-          <tag line="358" name="returns" description="the alt attribute for the $index image of the set"/>
-          <tag line="358" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="385" name="returns" description="the alt attribute for the $index image of the set"/>
+          <tag line="385" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="364">
+        <argument line="391">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="385" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="412" package="classes\image manager">
         <name>get_image_caption</name>
         <full_name>get_image_caption</full_name>
-        <docblock line="379">
+        <docblock line="406">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
           <long-description/>
-          <tag line="379" name="returns" description="the caption for the $index image of the set"/>
-          <tag line="379" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="406" name="returns" description="the caption for the $index image of the set"/>
+          <tag line="406" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="385">
+        <argument line="412">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="407" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="434" package="classes\image manager">
         <name>get_image_description</name>
         <full_name>get_image_description</full_name>
-        <docblock line="401">
+        <docblock line="428">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
           <long-description/>
-          <tag line="401" name="returns" description="the description for the $index image of the set"/>
-          <tag line="401" name="param" description="the index of the images list" type="int" variable="$index">
+          <tag line="428" name="returns" description="the description for the $index image of the set"/>
+          <tag line="428" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="407">
+        <argument line="434">
           <name>$index</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="428" package="classes\image manager">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="455" package="classes\image manager">
         <name>get_markup</name>
         <full_name>get_markup</full_name>
-        <docblock line="424">
+        <docblock line="451">
           <description>Retrieves the markup for the current gallery</description>
           <long-description/>
-          <tag line="424" name="return" description="markup for the current gallery" type="\the">
+          <tag line="451" name="return" description="markup for the current gallery" type="\the">
             <type by_reference="false">\the</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="433" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="460" package="classes\image manager">
         <name>the_markup</name>
         <full_name>the_markup</full_name>
-        <docblock line="430">
+        <docblock line="457">
           <description>Echoes the markup for the current gallery</description>
           <long-description/>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="classes/HeadHelper.class.php" hash="a7d98fe845ac49f23920cad9eaff7fad" package="Default">
+  <file path="classes/HeadHelper.class.php" hash="1d0cf5dfb78f3adab8468f172dcc8ffa" package="Default">
     <docblock line="2">
       <description>stores the HeadHelper class declaration</description>
       <long-description/>
@@ -5454,148 +5551,148 @@ a wordpress media id or an image object</description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="112" package="classes">
         <name>set_ua</name>
         <full_name>set_ua</full_name>
-        <docblock line="104">
+        <docblock line="108">
           <description>Sets the Google Analytics tracking code</description>
           <long-description/>
-          <tag line="104" name="param" description="UA-XXXXXX" type="string" variable="$ga">
+          <tag line="108" name="param" description="UA-XXXXXX" type="string" variable="$ga">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="108">
+        <argument line="112">
           <name>$ga</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="116" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="120" package="classes">
         <name>the_head</name>
         <full_name>the_head</full_name>
-        <docblock line="113">
+        <docblock line="117">
           <description>Print the markup</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="129" package="classes">
         <name>set_meta_tag</name>
         <full_name>set_meta_tag</full_name>
-        <docblock line="120">
+        <docblock line="124">
           <description>Set a meta tag</description>
           <long-description/>
-          <tag line="120" name="param" description="the meta tag" type="array" variable="$meta">
+          <tag line="124" name="param" description="the meta tag" type="array" variable="$meta">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="120" name="return" description="$this for chainability" type="\HeadHelper">
+          <tag line="124" name="return" description="$this for chainability" type="\HeadHelper">
             <type by_reference="false">\HeadHelper</type>
           </tag>
         </docblock>
-        <argument line="125">
+        <argument line="129">
           <name>$meta</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="140" package="classes">
         <name>set_title</name>
         <full_name>set_title</full_name>
-        <docblock line="132">
+        <docblock line="136">
           <description>Set the title</description>
           <long-description/>
-          <tag line="132" name="param" description="the title" type="string" variable="$title">
+          <tag line="136" name="param" description="the title" type="string" variable="$title">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="136">
+        <argument line="140">
           <name>$title</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="149" package="classes">
         <name>set_link</name>
         <full_name>set_link</full_name>
-        <docblock line="141">
+        <docblock line="145">
           <description>Set a link</description>
           <long-description/>
-          <tag line="141" name="param" description="the link" type="array" variable="$link">
+          <tag line="145" name="param" description="the link" type="array" variable="$link">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="145">
+        <argument line="149">
           <name>$link</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="156" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="160" package="classes">
         <name>delete_link</name>
         <full_name>delete_link</full_name>
-        <docblock line="152">
+        <docblock line="156">
           <description>Remove a link</description>
           <long-description/>
-          <tag line="152" name="param" description="the link name" type="string" variable="$link">
+          <tag line="156" name="param" description="the link name" type="string" variable="$link">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="156">
+        <argument line="160">
           <name>$link</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="165" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="169" package="classes">
         <name>delete_meta_tag</name>
         <full_name>delete_meta_tag</full_name>
-        <docblock line="161">
+        <docblock line="165">
           <description>Delete a meta tag</description>
           <long-description/>
-          <tag line="161" name="param" description="the meta name" type="string" variable="$name">
+          <tag line="165" name="param" description="the meta name" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="165">
+        <argument line="169">
           <name>$name</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="173" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="177" package="classes">
         <name>render_meta_tags</name>
         <full_name>render_meta_tags</full_name>
-        <docblock line="170">
+        <docblock line="174">
           <description>Retrieve the meta tags list ready to be inserted into &lt;head&gt;</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="187" package="classes">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="191" package="classes">
         <name>render_meta_tag</name>
         <full_name>render_meta_tag</full_name>
-        <docblock line="183">
+        <docblock line="187">
           <description>Render a single meta tag of the current set stored in $this-&gt;meta_tags</description>
           <long-description/>
-          <tag line="183" name="param" description="the name of the meta" type="string" variable="$name">
+          <tag line="187" name="param" description="the name of the meta" type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="187">
+        <argument line="191">
           <name>$name</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="202" package="classes">
         <name>set_charset</name>
         <full_name>set_charset</full_name>
-        <docblock line="194">
+        <docblock line="198">
           <description>Set the charset for the page</description>
           <long-description/>
-          <tag line="194" name="param" description="the charset" type="string" variable="$charset">
+          <tag line="198" name="param" description="the charset" type="string" variable="$charset">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="198">
+        <argument line="202">
           <name>$charset</name>
           <default/>
           <type/>
@@ -6395,74 +6492,139 @@ if the image exists or has to be generated</description>
       </method>
     </class>
   </file>
-  <file path="classes/PhotogalleryThumbWithFancybox.class.php" hash="acdc068bf8c323a46150b919cf77c695" package="Default">
+  <file path="classes/PhotogalleryThumbWithFancybox.class.php" hash="9d4b425101aaa8b599fd356b36b3cf2b" package="Default">
     <docblock line="2">
       <description>stores the PhotogalleryThumbWithFancybox class</description>
       <long-description/>
     </docblock>
-    <class final="false" abstract="false" namespace="global" line="13" package="classes">
+    <class final="false" abstract="false" namespace="global" line="19" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
       <extends>\GalleryHelper</extends>
       <name>PhotogalleryThumbWithFancybox</name>
       <full_name>\PhotogalleryThumbWithFancybox</full_name>
       <docblock line="6">
         <description>Manages images and markup for a photogallery where
 clicking on a little thumb opens the big image in fancybox</description>
-        <long-description/>
+        <long-description>&lt;p&gt;It takes care of loading jQuery Fancybox if registered&lt;/p&gt;</long-description>
         <tag line="6" name="author" description="etessore"/>
-        <tag line="6" name="version" description="1.0.0"/>
-        <tag line="6" name="package" description="classes"/>
+        <tag line="6" name="version" description="1.0.1"/>
+        <tag line="6" name="package" description="classes&#10;changelog:&#10;&#9;1.0.1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load_js() instead"/>
       </docblock>
-      <property final="false" static="false" visibility="public" line="18" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
         <name>$sizes</name>
         <default/>
-        <docblock line="15">
+        <docblock line="21">
           <description/>
           <long-description/>
-          <tag line="15" name="var" description="stores the sizes of the images" type="array">
+          <tag line="21" name="var" description="stores the sizes of the images" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="classes">
+      <property final="false" static="false" visibility="public" line="30" namespace="global" package="Default">
+        <name>$images_per_row</name>
+        <default/>
+        <docblock line="26">
+          <description>The number of images per row</description>
+          <long-description/>
+          <tag line="26" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="36" namespace="global" package="Default">
+        <name>$single_image_container_class</name>
+        <default/>
+        <docblock line="32">
+          <description>The image container class</description>
+          <long-description/>
+          <tag line="32" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="42" namespace="global" package="Default">
+        <name>$subs</name>
+        <default/>
+        <docblock line="38">
+          <description>Stores the html template</description>
+          <long-description/>
+          <tag line="38" name="var" description="" type="\SubstitutionTemplate">
+            <type by_reference="false">\SubstitutionTemplate</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="20">
+        <docblock line="44">
           <description>Initializes the photogallery</description>
           <long-description/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="classes">
-        <name>set_sizes</name>
-        <full_name>set_sizes</full_name>
-        <docblock line="37">
-          <description>Sets the images sizes: array('w'=&gt;xxx, 'h'=&gt;yyy)</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+        <name>set_images_per_row</name>
+        <full_name>set_images_per_row</full_name>
+        <docblock line="65">
+          <description>Sets the number of images per row</description>
           <long-description/>
-          <tag line="37" name="param" description="" type="array" variable="$sizes">
-            <type by_reference="false">array</type>
+          <tag line="65" name="param" description="a number" type="int" variable="$images_per_row">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="65" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+            <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
           </tag>
         </docblock>
-        <argument line="41">
+        <argument line="70">
+          <name>$images_per_row</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+        <name>set_single_image_container_class</name>
+        <full_name>set_single_image_container_class</full_name>
+        <docblock line="75">
+          <description>Set the class for single image container</description>
+          <long-description/>
+          <tag line="75" name="param" description="the class" type="string" variable="$class">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="75" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+            <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
+          </tag>
+        </docblock>
+        <argument line="80">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+        <name>set_sizes</name>
+        <full_name>set_sizes</full_name>
+        <docblock line="85">
+          <description>Sets the images sizes: array('w'=&gt;xxx, 'h'=&gt;yyy)</description>
+          <long-description/>
+          <tag line="85" name="param" description="" type="array" variable="$sizes">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="85" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+            <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
+          </tag>
+        </docblock>
+        <argument line="90">
           <name>$sizes</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="classes">
-        <name>load_assets</name>
-        <full_name>load_assets</full_name>
-        <docblock line="46">
-          <description>(non-PHPdoc)</description>
-          <long-description/>
-          <tag line="46" name="see" description="\FeatureWithAssets::load_assets()" refers="\FeatureWithAssets::load_assets()"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="classes">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="99" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
         <name>get_markup</name>
         <full_name>get_markup</full_name>
-        <docblock line="55">
+        <docblock line="95">
           <description>(non-PHPdoc)</description>
           <long-description/>
-          <tag line="55" name="see" description="\GalleryHelper::get_markup()" refers="\GalleryHelper::get_markup()"/>
+          <tag line="95" name="see" description="\GalleryHelper::get_markup()" refers="\GalleryHelper::get_markup()"/>
         </docblock>
       </method>
     </class>
@@ -6477,7 +6639,7 @@ clicking on a little thumb opens the big image in fancybox</description>
       <tag line="2" name="since" description="0.1"/>
     </docblock>
   </file>
-  <file path="partials/footer.php" hash="937cf065ffc44b6bb4d6c4bee6d7297a" package="templates\parts">
+  <file path="partials/footer.php" hash="161713d40f75fe031be3fd9593cae092" package="templates\parts">
     <docblock line="2">
       <description>The template for displaying the footer.</description>
       <long-description>&lt;p&gt;Contains the closing of the body and html tags&lt;/p&gt;</long-description>
@@ -6552,6 +6714,16 @@ Version with title and brief content button to expand it</description>
       <tag line="2" name="since" description="0.1"/>
     </docblock>
   </file>
+  <file path="partials/children.php" hash="f2a6f3d7adba19356495a3710fc814a2" package="templates\parts">
+    <docblock line="2">
+      <description>Template part for listing child pages with post thumbnail and excerpt</description>
+      <long-description/>
+      <tag line="2" name="package" description="templates"/>
+      <tag line="2" name="subpackage" description="parts"/>
+      <tag line="2" name="version" description="1.0.0"/>
+      <tag line="2" name="since" description="0.1"/>
+    </docblock>
+  </file>
   <file path="partials/browsehappy.php" hash="124d8091e92009439104c3757430ccd4" package="templates\parts">
     <docblock line="2">
       <description>The Template part for displaying a &lt;p&gt; with links to how to update your browser without panic</description>
@@ -6583,7 +6755,7 @@ the second with the content after such tag&lt;/p&gt;</long-description>
       <tag line="2" name="version" description="1.0.0"/>
     </docblock>
   </file>
-  <file path="partials/slideshow.php" hash="d83bc4b398d79f65e021ec92ea7ecc69" package="templates\parts">
+  <file path="partials/slideshow.php" hash="3cbe10457c888ff9b42031e8f99302f5" package="templates\parts">
     <docblock line="2">
       <description>The template part for displaying the slideshow</description>
       <long-description/>
@@ -6602,7 +6774,7 @@ the second with the content after such tag&lt;/p&gt;</long-description>
       <tag line="2" name="since" description="0.1"/>
     </docblock>
   </file>
-  <file path="front-page.php" hash="771c9a8424a41e506f2ddf0cac151980" package="templates">
+  <file path="front-page.php" hash="2ae0bac3e727159d79e2607b21615ed7" package="templates">
     <docblock line="2">
       <description>The Template for displaying the home page</description>
       <long-description/>
@@ -6614,6 +6786,13 @@ the second with the content after such tag&lt;/p&gt;</long-description>
   <package name="Default" full_name="Default"/>
   <package name="classes" full_name="classes">
     <package name="image manager" full_name="classes\image manager"/>
+  </package>
+  <package name="classes&#10;changelog:&#10;&#9;1" full_name="classes&#10;changelog:&#10;&#9;1">
+    <package name="0" full_name="classes&#10;changelog:&#10;&#9;1\0">
+      <package name="1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load" full_name="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load">
+        <package name="js() instead" full_name="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead"/>
+      </package>
+    </package>
   </package>
   <package name="core" full_name="core"/>
   <package name="debug" full_name="debug"/>

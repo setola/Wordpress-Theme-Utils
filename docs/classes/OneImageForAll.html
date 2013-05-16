@@ -22,6 +22,9 @@
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 <li><a href="../packages/classes.html"><i class="icon-folder-open"></i> classes</a></li>
+<li><a href="../packages/classes%0Achangelog:%0A%091.html"><i class="icon-folder-open"></i> classes
+changelog:
+	1</a></li>
 <li><a href="../packages/core.html"><i class="icon-folder-open"></i> core</a></li>
 <li><a href="../packages/debug.html"><i class="icon-folder-open"></i> debug</a></li>
 <li><a href="../packages/templates.html"><i class="icon-folder-open"></i> templates</a></li>
@@ -35,7 +38,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">6</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -63,7 +66,6 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Initializes the object with default values"><span class="description">Initializes the object with default values</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#method_add_asset" title="add_asset :: Adds an asset."><span class="description">Adds an asset.</span><pre>add_asset()</pre></a></li>
 <li class="method public inherited"><a href="#method_add_image" title="add_image :: Adds an image to the current set"><span class="description">Adds an image to the current set</span><pre>add_image()</pre></a></li>
 <li class="method public inherited"><a href="#method_add_images" title="add_images :: Add some images to the current set"><span class="description">Add some images to the current set</span><pre>add_images()</pre></a></li>
 <li class="method public "><a href="#method_cache_names" title="cache_names :: Calculates the cache name, dir, url and path."><span class="description">Calculates the cache name, dir, url and path.</span><pre>cache_names()</pre></a></li>
@@ -76,12 +78,11 @@
 <li class="method public inherited"><a href="#method_get_images_from_post" title="get_images_from_post :: Get the images attached to a post"><span class="description">Get the images attached to a post</span><pre>get_images_from_post()</pre></a></li>
 <li class="method public "><a href="#method_get_markup" title="get_markup :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>get_markup()</pre></a></li>
 <li class="method public "><a href="#method_get_style" title="get_style :: Calculates the style for the $image_id"><span class="description">Calculates the style for the $image_id</span><pre>get_style()</pre></a></li>
-<li class="method public inherited"><a href="#method_load_assets" title="load_assets :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets()</pre></a></li>
-<li class="method public inherited"><a href="#method_load_assets_callback" title="load_assets_callback :: Loads needed scripts and css"><span class="description">Loads needed scripts and css</span><pre>load_assets_callback()</pre></a></li>
+<li class="method public inherited"><a href="#method_has_images" title="has_images :: Check if the current gallery has one or more images"><span class="description">Check if the current gallery has one or more images</span><pre>has_images()</pre></a></li>
+<li class="method public inherited"><a href="#method_is_empty" title="is_empty :: Checks if the current gallery has more no images"><span class="description">Checks if the current gallery has more no images</span><pre>is_empty()</pre></a></li>
 <li class="method public inherited"><a href="#method_replace_markup" title="replace_markup :: Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag]."><span class="description">Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_markup()</pre></a></li>
-<li class="method public inherited"><a href="#method_set_assets" title="set_assets :: Set the assets list to the given one"><span class="description">Set the assets list to the given one</span><pre>set_assets()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_markup" title="set_markup :: Set the static markup; ie: prev\next\loading divs"><span class="description">Set the static markup; ie: prev\next\loading divs</span><pre>set_markup()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_template" title="set_template :: Set the html template for this gallery"><span class="description">Set the html template for this gallery</span><pre>set_template()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_timthumb_options" title="set_timthumb_options :: Set the timthumb options
@@ -117,7 +118,6 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public inherited"><a href="#property_assets" title="$assets :: "><span class="description">the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</span><pre>$assets</pre></a></li>
 <li class="property public "><a href="#property_cache_dir" title="$cache_dir :: "><span class="description">stores the base directory of the cache file</span><pre>$cache_dir</pre></a></li>
 <li class="property public "><a href="#property_cache_name" title="$cache_name :: "><span class="description">stores the name of the cache file</span><pre>$cache_name</pre></a></li>
 <li class="property public "><a href="#property_cache_path" title="$cache_path :: "><span class="description">stores the path of the cache file</span><pre>$cache_path</pre></a></li>
@@ -149,8 +149,7 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <p class="short_description">Merges all images of a gallery in only one and serve it as a sprite
 Important: every image have the same sizes and jpeg quality.</p>
 <div class="details">
-<div class="long_description"><p>WARNING: this method doesn't register the asset:
-You have to take care of it by yourself (tipically in assets.php)</p></div>
+<div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -176,38 +175,6 @@ You have to take care of it by yourself (tipically in assets.php)</p></div>
 <pre>__construct() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_add_asset"></a><div class="element clickable method public method_add_asset" data-toggle="collapse" data-target=".method_add_asset .collapse">
-<h2>Adds an asset.</h2>
-<pre>add_asset(string $handle, string $type) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>You cannot define an asset here,
-to do it please use wp_register_script or wp_register_style
-in functions.php or config/assets.php
-WARNING: this method doesn't register the asset:
-You have to take care of it by yourself (tipically in assets.php)</p></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\FeatureWithAssets::add_asset()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::add_asset()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$handle</h4>
-<code>string</code><p>the handle for the asset.</p></div>
-<div class="subelement argument">
-<h4>$type</h4>
-<code>string</code><p>the asset type: js|css</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
-</div></div>
 </div>
 <a id="method_add_image"></a><div class="element clickable method public method_add_image" data-toggle="collapse" data-target=".method_add_image .collapse">
 <h2>Adds an image to the current set</h2>
@@ -406,46 +373,34 @@ Build a placeholder</p></div>
 <code>string</code>the style html attribute</div>
 </div></div>
 </div>
-<a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
-<h2>Loads needed scripts and css</h2>
-<pre>load_assets() : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<a id="method_has_images"></a><div class="element clickable method public method_has_images" data-toggle="collapse" data-target=".method_has_images .collapse">
+<h2>Check if the current gallery has one or more images</h2>
+<pre>has_images() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<div class="long_description"><p>Useful to check if jquery.cycle() is needed</p></div>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\FeatureWithAssets::load_assets()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::load_assets()</td>
-</tr>
-</table>
+<td>\GalleryHelper::has_images()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+<code>boolean</code>true if there is at least two image</div>
 </div></div>
 </div>
-<a id="method_load_assets_callback"></a><div class="element clickable method public method_load_assets_callback" data-toggle="collapse" data-target=".method_load_assets_callback .collapse">
-<h2>Loads needed scripts and css</h2>
-<pre>load_assets_callback() : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
+<a id="method_is_empty"></a><div class="element clickable method public method_is_empty" data-toggle="collapse" data-target=".method_is_empty .collapse">
+<h2>Checks if the current gallery has more no images</h2>
+<pre>is_empty() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
+<table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\FeatureWithAssets::load_assets_callback()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::load_assets_callback()</td>
-</tr>
-</table>
+<td>\GalleryHelper::is_empty()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
+<code>boolean</code>true if there is no image in the current set</div>
 </div></div>
 </div>
 <a id="method_replace_markup"></a><div class="element clickable method public method_replace_markup" data-toggle="collapse" data-target=".method_replace_markup .collapse">
@@ -459,32 +414,6 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 <th>inherited_from</th>
 <td>\GalleryHelper::replace_markup()</td>
 </tr></table>
-</div></div>
-</div>
-<a id="method_set_assets"></a><div class="element clickable method public method_set_assets" data-toggle="collapse" data-target=".method_set_assets .collapse">
-<h2>Set the assets list to the given one</h2>
-<pre>set_assets(array $assets) : <a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\FeatureWithAssets::set_assets()</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::set_assets()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$assets</h4>
-<code>array</code><p>the list of assets: array('js'=>array(...), 'css'=>array(...));</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/FeatureWithAssets.html">\FeatureWithAssets</a></code>$this for chainability</div>
 </div></div>
 </div>
 <a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
@@ -756,24 +685,6 @@ a wordpress media id or an image object</h2>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_assets"> </a><div class="element clickable property public property_assets" data-toggle="collapse" data-target=".property_assets .collapse">
-<h2>the list of assets to be loaded array('js'=&gt;array(...), 'css'=&gt;array(...));</h2>
-<pre>$assets : array</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>inherited_from</th>
-<td>\FeatureWithAssets::$$assets</td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\GalleryHelper::$$assets</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a id="property_cache_dir"> </a><div class="element clickable property public property_cache_dir" data-toggle="collapse" data-target=".property_cache_dir .collapse">
 <h2>stores the base directory of the cache file</h2>
 <pre>$cache_dir : string</pre>
@@ -895,7 +806,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-18T11:35:50+02:00.<br></footer></div>
+            generated on 2013-05-16T17:50:35+02:00.<br></footer></div>
 </div>
 </body>
 </html>
