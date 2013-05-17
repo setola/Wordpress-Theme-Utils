@@ -12,9 +12,12 @@
  * @version 1.0.1
  * @package classes
  * 
- * changelog:
+*/
+
+/*
+ * Changelog
  * 	1.0.1
- * 		- removed dependency from FeatureWithAssets, use ThemeHelpers::load_js() instead
+ *	 removed dependency from FeatureWithAssets, use ThemeHelpers::load_js() instead
  */
 class PhotogalleryThumbWithFancybox extends GalleryHelper{
 	

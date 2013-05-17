@@ -4984,7 +4984,7 @@ to change the printed markup&lt;/p&gt;</long-description>
   <file path="classes/GalleryHelper.class.php" hash="b62fb1d5751ddd61efbbe1e89d076094" package="Default">
     <docblock line="2">
       <description>Stores the GalleryHelper class definition</description>
-      <long-description></long-description>
+      <long-description/>
     </docblock>
     <class final="false" abstract="true" namespace="global" line="14" package="classes\image manager">
       <extends/>
@@ -4993,7 +4993,7 @@ to change the printed markup&lt;/p&gt;</long-description>
       <docblock line="5">
         <description>Manages the markup for a generic set of images
 Extend this with your nice and candy classes!</description>
-        <long-description></long-description>
+        <long-description/>
         <tag line="5" name="author" description="etessore"/>
         <tag line="5" name="version" description="1.0.2"/>
         <tag line="5" name="package" description="classes"/>
@@ -5004,8 +5004,8 @@ Extend this with your nice and candy classes!</description>
         <name>$unid</name>
         <default>false</default>
         <docblock line="16">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="16" name="var" description="the unique id for the current gallery it will be automatically created if not specified" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -5013,10 +5013,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="25" namespace="global" package="Default">
         <name>$tpl</name>
-        <default></default>
+        <default/>
         <docblock line="22">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="22" name="var" description="the html template" type="String">
             <type by_reference="false">String</type>
           </tag>
@@ -5026,8 +5026,8 @@ Extend this with your nice and candy classes!</description>
         <name>$images</name>
         <default>array()</default>
         <docblock line="27">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="27" name="var" description="the list of images" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5035,10 +5035,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="35" namespace="global" package="Default">
         <name>$static_markup</name>
-        <default></default>
+        <default/>
         <docblock line="32">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="32" name="var" description="Stores some static html" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5046,10 +5046,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="41" namespace="global" package="Default">
         <name>$timthumb_opts</name>
-        <default></default>
+        <default/>
         <docblock line="37">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="37" name="var" description="options for timthumb" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5057,10 +5057,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="46" namespace="global" package="Default">
         <name>$media_dimension</name>
-        <default></default>
+        <default/>
         <docblock line="43">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="43" name="var" description="WordPress media size name" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -5095,7 +5095,7 @@ Build a placeholder&lt;/p&gt;</long-description>
         <full_name>is_empty</full_name>
         <docblock line="105">
           <description>Checks if the current gallery has more no images</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="105" name="return" description="true if there is no image in the current set" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
@@ -5106,7 +5106,7 @@ Build a placeholder&lt;/p&gt;</long-description>
         <full_name>get_images_from_post</full_name>
         <docblock line="114">
           <description>Get the images attached to a post</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="114" name="param" description="" type="array" variable="$args">
             <type by_reference="false">array</type>
           </tag>
@@ -5146,7 +5146,7 @@ and queries it for attached images.&lt;/p&gt;</long-description>
         <full_name>get_images_from_frontpage</full_name>
         <docblock line="178">
           <description>Get images attached to the frontpage</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="189" package="classes\image manager">
@@ -5154,7 +5154,7 @@ and queries it for attached images.&lt;/p&gt;</long-description>
         <full_name>get_images_from_homepage_in_default_language</full_name>
         <docblock line="185">
           <description>Get images attached to the frontpage in default language translation</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="185" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
@@ -5165,7 +5165,7 @@ and queries it for attached images.&lt;/p&gt;</long-description>
         <full_name>set_uid</full_name>
         <docblock line="193">
           <description>Set the unique id for this gallery</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="193" name="param" description="the unique" type="string" variable="$unid">
             <type by_reference="false">string</type>
           </tag>
@@ -5175,7 +5175,7 @@ and queries it for attached images.&lt;/p&gt;</long-description>
         </docblock>
         <argument line="198">
           <name>$unid</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5185,14 +5185,14 @@ and queries it for attached images.&lt;/p&gt;</long-description>
         <docblock line="203">
           <description>Set the timthumb options
 If set_wp_media_dimension() is called it will prevale on this.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="203" name="param" description="" type="array" variable="$options">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="208">
           <name>$options</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5211,7 +5211,7 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         </docblock>
         <argument line="219">
           <name>$dimension</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5220,7 +5220,7 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         <full_name>set_template</full_name>
         <docblock line="224">
           <description>Set the html template for this gallery</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="224" name="param" description="the template" type="string" variable="$tpl">
             <type by_reference="false">string</type>
           </tag>
@@ -5230,7 +5230,7 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         </docblock>
         <argument line="229">
           <name>$tpl</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5239,7 +5239,7 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         <full_name>set_markup</full_name>
         <docblock line="234">
           <description>Set the static markup; ie: prev\next\loading divs</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="234" name="param" description="the string has to be substituted" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
@@ -5252,12 +5252,12 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         </docblock>
         <argument line="240">
           <name>$key</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="240">
           <name>$markup</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5267,7 +5267,7 @@ If set_wp_media_dimension() is called it will prevale on this.</description>
         <docblock line="245">
           <description>Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="266" package="classes\image manager">
@@ -5275,7 +5275,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         <full_name>add_image</full_name>
         <docblock line="260">
           <description>Adds an image to the current set</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="260" name="param" description="the image: if is an int it&#10;will be retrieved from the wp media, elsewhere it is an html tag" type="string|int" variable="$img">
             <type by_reference="false">string</type>
             <type by_reference="false">int</type>
@@ -5286,7 +5286,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         </docblock>
         <argument line="266">
           <name>$img</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5295,7 +5295,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         <full_name>add_images</full_name>
         <docblock line="271">
           <description>Add some images to the current set</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="271" name="param" description="the list of images to be added" type="array" variable="$images">
             <type by_reference="false">array</type>
           </tag>
@@ -5305,7 +5305,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         </docblock>
         <argument line="276">
           <name>$images</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5314,7 +5314,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         <full_name>calculate_unique</full_name>
         <docblock line="285">
           <description>Calculates the unique id for the current gallery</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="285" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
@@ -5326,7 +5326,7 @@ in the corresponding value of $this-&gt;static_markup[tag].</description>
         <docblock line="294">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="294" name="returns" description="the src attribute for the $index image of the set"/>
           <tag line="294" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
@@ -5334,7 +5334,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="300">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5343,14 +5343,14 @@ a wordpress media id or an image object</description>
         <full_name>get_image_width</full_name>
         <docblock line="327">
           <description>Get the width for the n-th image of the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="327" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="331">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5359,14 +5359,14 @@ a wordpress media id or an image object</description>
         <full_name>get_image_height</full_name>
         <docblock line="351">
           <description>Get the height for the n-th image of the list</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="351" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="355">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5376,7 +5376,7 @@ a wordpress media id or an image object</description>
         <docblock line="375">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="375" name="returns" description="the id attribute for the $index image of the set"/>
           <tag line="375" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
@@ -5384,7 +5384,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="381">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5394,7 +5394,7 @@ a wordpress media id or an image object</description>
         <docblock line="392">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="392" name="returns" description="the alt attribute for the $index image of the set"/>
           <tag line="392" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
@@ -5402,7 +5402,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="398">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5412,7 +5412,7 @@ a wordpress media id or an image object</description>
         <docblock line="413">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="413" name="returns" description="the caption for the $index image of the set"/>
           <tag line="413" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
@@ -5420,7 +5420,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="419">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5430,7 +5430,7 @@ a wordpress media id or an image object</description>
         <docblock line="435">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="435" name="returns" description="the description for the $index image of the set"/>
           <tag line="435" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
@@ -5438,7 +5438,7 @@ a wordpress media id or an image object</description>
         </docblock>
         <argument line="441">
           <name>$index</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -5447,7 +5447,7 @@ a wordpress media id or an image object</description>
         <full_name>get_markup</full_name>
         <docblock line="458">
           <description>Retrieves the markup for the current gallery</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="458" name="return" description="markup for the current gallery" type="\the">
             <type by_reference="false">\the</type>
           </tag>
@@ -5458,7 +5458,7 @@ a wordpress media id or an image object</description>
         <full_name>the_markup</full_name>
         <docblock line="464">
           <description>Echoes the markup for the current gallery</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -6494,12 +6494,12 @@ if the image exists or has to be generated</description>
       </method>
     </class>
   </file>
-  <file path="classes/PhotogalleryThumbWithFancybox.class.php" hash="9d4b425101aaa8b599fd356b36b3cf2b" package="Default">
+  <file path="classes/PhotogalleryThumbWithFancybox.class.php" hash="2d592b742ea6c6de5a6f783d40e615d1" package="Default">
     <docblock line="2">
       <description>stores the PhotogalleryThumbWithFancybox class</description>
-      <long-description/>
+      <long-description></long-description>
     </docblock>
-    <class final="false" abstract="false" namespace="global" line="19" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+    <class final="false" abstract="false" namespace="global" line="22" package="classes">
       <extends>\GalleryHelper</extends>
       <name>PhotogalleryThumbWithFancybox</name>
       <full_name>\PhotogalleryThumbWithFancybox</full_name>
@@ -6509,124 +6509,124 @@ clicking on a little thumb opens the big image in fancybox</description>
         <long-description>&lt;p&gt;It takes care of loading jQuery Fancybox if registered&lt;/p&gt;</long-description>
         <tag line="6" name="author" description="etessore"/>
         <tag line="6" name="version" description="1.0.1"/>
-        <tag line="6" name="package" description="classes&#10;changelog:&#10;&#9;1.0.1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load_js() instead"/>
+        <tag line="6" name="package" description="classes"/>
       </docblock>
-      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="27" namespace="global" package="Default">
         <name>$sizes</name>
-        <default/>
-        <docblock line="21">
-          <description/>
-          <long-description/>
-          <tag line="21" name="var" description="stores the sizes of the images" type="array">
+        <default></default>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+          <tag line="24" name="var" description="stores the sizes of the images" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="30" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="33" namespace="global" package="Default">
         <name>$images_per_row</name>
-        <default/>
-        <docblock line="26">
+        <default></default>
+        <docblock line="29">
           <description>The number of images per row</description>
-          <long-description/>
-          <tag line="26" name="var" description="" type="int">
+          <long-description></long-description>
+          <tag line="29" name="var" description="" type="int">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="36" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="39" namespace="global" package="Default">
         <name>$single_image_container_class</name>
-        <default/>
-        <docblock line="32">
+        <default></default>
+        <docblock line="35">
           <description>The image container class</description>
-          <long-description/>
-          <tag line="32" name="var" description="" type="string">
+          <long-description></long-description>
+          <tag line="35" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="public" line="42" namespace="global" package="Default">
+      <property final="false" static="false" visibility="public" line="45" namespace="global" package="Default">
         <name>$subs</name>
-        <default/>
-        <docblock line="38">
+        <default></default>
+        <docblock line="41">
           <description>Stores the html template</description>
-          <long-description/>
-          <tag line="38" name="var" description="" type="\SubstitutionTemplate">
+          <long-description></long-description>
+          <tag line="41" name="var" description="" type="\SubstitutionTemplate">
             <type by_reference="false">\SubstitutionTemplate</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="classes">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="44">
+        <docblock line="47">
           <description>Initializes the photogallery</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="classes">
         <name>set_images_per_row</name>
         <full_name>set_images_per_row</full_name>
-        <docblock line="65">
+        <docblock line="68">
           <description>Sets the number of images per row</description>
-          <long-description/>
-          <tag line="65" name="param" description="a number" type="int" variable="$images_per_row">
+          <long-description></long-description>
+          <tag line="68" name="param" description="a number" type="int" variable="$images_per_row">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="65" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+          <tag line="68" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
             <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
           </tag>
         </docblock>
-        <argument line="70">
+        <argument line="73">
           <name>$images_per_row</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="classes">
         <name>set_single_image_container_class</name>
         <full_name>set_single_image_container_class</full_name>
-        <docblock line="75">
+        <docblock line="78">
           <description>Set the class for single image container</description>
-          <long-description/>
-          <tag line="75" name="param" description="the class" type="string" variable="$class">
+          <long-description></long-description>
+          <tag line="78" name="param" description="the class" type="string" variable="$class">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="75" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+          <tag line="78" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
             <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
           </tag>
         </docblock>
-        <argument line="80">
+        <argument line="83">
           <name>$class</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="93" package="classes">
         <name>set_sizes</name>
         <full_name>set_sizes</full_name>
-        <docblock line="85">
+        <docblock line="88">
           <description>Sets the images sizes: array('w'=&gt;xxx, 'h'=&gt;yyy)</description>
-          <long-description/>
-          <tag line="85" name="param" description="" type="array" variable="$sizes">
+          <long-description></long-description>
+          <tag line="88" name="param" description="" type="array" variable="$sizes">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="85" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
+          <tag line="88" name="return" description="$this for chainability" type="\PhotogalleryThumbWithFancybox">
             <type by_reference="false">\PhotogalleryThumbWithFancybox</type>
           </tag>
         </docblock>
-        <argument line="90">
+        <argument line="93">
           <name>$sizes</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="99" package="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="classes">
         <name>get_markup</name>
         <full_name>get_markup</full_name>
-        <docblock line="95">
+        <docblock line="98">
           <description>(non-PHPdoc)</description>
-          <long-description/>
-          <tag line="95" name="see" description="\GalleryHelper::get_markup()" refers="\GalleryHelper::get_markup()"/>
+          <long-description></long-description>
+          <tag line="98" name="see" description="\GalleryHelper::get_markup()" refers="\GalleryHelper::get_markup()"/>
         </docblock>
       </method>
     </class>
@@ -6788,13 +6788,6 @@ the second with the content after such tag&lt;/p&gt;</long-description>
   <package name="Default" full_name="Default"/>
   <package name="classes" full_name="classes">
     <package name="image manager" full_name="classes\image manager"/>
-  </package>
-  <package name="classes&#10;changelog:&#10;&#9;1" full_name="classes&#10;changelog:&#10;&#9;1">
-    <package name="0" full_name="classes&#10;changelog:&#10;&#9;1\0">
-      <package name="1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load" full_name="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load">
-        <package name="js() instead" full_name="classes&#10;changelog:&#10;&#9;1\0\1&#10;&#9;&#9;- removed dependency from FeatureWithAssets, use ThemeHelpers::load\js() instead"/>
-      </package>
-    </package>
   </package>
   <package name="core" full_name="core"/>
   <package name="debug" full_name="debug"/>
