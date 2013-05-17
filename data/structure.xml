@@ -4981,10 +4981,10 @@ to change the printed markup&lt;/p&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="classes/GalleryHelper.class.php" hash="2bba55205c860caee8b92d740f7d74ec" package="Default">
+  <file path="classes/GalleryHelper.class.php" hash="b62fb1d5751ddd61efbbe1e89d076094" package="Default">
     <docblock line="2">
       <description>Stores the GalleryHelper class definition</description>
-      <long-description/>
+      <long-description></long-description>
     </docblock>
     <class final="false" abstract="true" namespace="global" line="14" package="classes\image manager">
       <extends/>
@@ -4993,7 +4993,7 @@ to change the printed markup&lt;/p&gt;</long-description>
       <docblock line="5">
         <description>Manages the markup for a generic set of images
 Extend this with your nice and candy classes!</description>
-        <long-description/>
+        <long-description></long-description>
         <tag line="5" name="author" description="etessore"/>
         <tag line="5" name="version" description="1.0.2"/>
         <tag line="5" name="package" description="classes"/>
@@ -5004,8 +5004,8 @@ Extend this with your nice and candy classes!</description>
         <name>$unid</name>
         <default>false</default>
         <docblock line="16">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="16" name="var" description="the unique id for the current gallery it will be automatically created if not specified" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -5013,10 +5013,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="25" namespace="global" package="Default">
         <name>$tpl</name>
-        <default/>
+        <default></default>
         <docblock line="22">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="22" name="var" description="the html template" type="String">
             <type by_reference="false">String</type>
           </tag>
@@ -5026,8 +5026,8 @@ Extend this with your nice and candy classes!</description>
         <name>$images</name>
         <default>array()</default>
         <docblock line="27">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="27" name="var" description="the list of images" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5035,10 +5035,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="35" namespace="global" package="Default">
         <name>$static_markup</name>
-        <default/>
+        <default></default>
         <docblock line="32">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="32" name="var" description="Stores some static html" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5046,10 +5046,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="41" namespace="global" package="Default">
         <name>$timthumb_opts</name>
-        <default/>
+        <default></default>
         <docblock line="37">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="37" name="var" description="options for timthumb" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -5057,10 +5057,10 @@ Extend this with your nice and candy classes!</description>
       </property>
       <property final="false" static="false" visibility="public" line="46" namespace="global" package="Default">
         <name>$media_dimension</name>
-        <default/>
+        <default></default>
         <docblock line="43">
-          <description/>
-          <long-description/>
+          <description></description>
+          <long-description></long-description>
           <tag line="43" name="var" description="WordPress media size name" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -5095,7 +5095,7 @@ Build a placeholder&lt;/p&gt;</long-description>
         <full_name>is_empty</full_name>
         <docblock line="105">
           <description>Checks if the current gallery has more no images</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="105" name="return" description="true if there is no image in the current set" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
@@ -5106,7 +5106,7 @@ Build a placeholder&lt;/p&gt;</long-description>
         <full_name>get_images_from_post</full_name>
         <docblock line="114">
           <description>Get the images attached to a post</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="114" name="param" description="" type="array" variable="$args">
             <type by_reference="false">array</type>
           </tag>
@@ -5120,12 +5120,14 @@ Build a placeholder&lt;/p&gt;</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="155" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="160" package="classes\image manager">
         <name>get_images_from_main_language</name>
         <full_name>get_images_from_main_language</full_name>
         <docblock line="150">
           <description>Get the images from the main language translation of the post</description>
-          <long-description/>
+          <long-description>&lt;p&gt;Uses WPML to retrieve the post translation in default language
+and queries it for attached images.&lt;/p&gt;</long-description>
+          <tag line="150" name="uses" description="\icl_object_id()" refers="\icl_object_id()"/>
           <tag line="150" name="param" description="the post id you want to search for" type="string" variable="$post_id">
             <type by_reference="false">string</type>
           </tag>
@@ -5133,330 +5135,330 @@ Build a placeholder&lt;/p&gt;</long-description>
             <type by_reference="false">\Ambigous</type>
           </tag>
         </docblock>
-        <argument line="155">
+        <argument line="160">
           <name>$post_id</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="174" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="181" package="classes\image manager">
         <name>get_images_from_frontpage</name>
         <full_name>get_images_from_frontpage</full_name>
-        <docblock line="171">
+        <docblock line="178">
           <description>Get images attached to the frontpage</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="182" package="classes\image manager">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="189" package="classes\image manager">
         <name>get_images_from_homepage_in_default_language</name>
         <full_name>get_images_from_homepage_in_default_language</full_name>
-        <docblock line="178">
+        <docblock line="185">
           <description>Get images attached to the frontpage in default language translation</description>
-          <long-description/>
-          <tag line="178" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
+          <long-description></long-description>
+          <tag line="185" name="return" description="&lt;Ambigous, multitype:, boolean, multitype:Ambigous &lt;NULL&gt; &gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="191" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="classes\image manager">
         <name>set_uid</name>
         <full_name>set_uid</full_name>
-        <docblock line="186">
+        <docblock line="193">
           <description>Set the unique id for this gallery</description>
-          <long-description/>
-          <tag line="186" name="param" description="the unique" type="string" variable="$unid">
+          <long-description></long-description>
+          <tag line="193" name="param" description="the unique" type="string" variable="$unid">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="186" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="193" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="191">
+        <argument line="198">
           <name>$unid</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="201" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="classes\image manager">
         <name>set_timthumb_options</name>
         <full_name>set_timthumb_options</full_name>
-        <docblock line="196">
+        <docblock line="203">
           <description>Set the timthumb options
 If set_wp_media_dimension() is called it will prevale on this.</description>
-          <long-description/>
-          <tag line="196" name="param" description="" type="array" variable="$options">
+          <long-description></long-description>
+          <tag line="203" name="param" description="" type="array" variable="$options">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="201">
+        <argument line="208">
           <name>$options</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="212" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="219" package="classes\image manager">
         <name>set_wp_media_dimension</name>
         <full_name>set_wp_media_dimension</full_name>
-        <docblock line="206">
+        <docblock line="213">
           <description>Sets the dimension for this gallery.</description>
           <long-description>&lt;p&gt;If set this option will prevale on timthumb&lt;/p&gt;</long-description>
-          <tag line="206" name="param" description="WordPress media dimension name" type="string" variable="$dimension">
+          <tag line="213" name="param" description="WordPress media dimension name" type="string" variable="$dimension">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="206" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="213" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="212">
+        <argument line="219">
           <name>$dimension</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="222" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="229" package="classes\image manager">
         <name>set_template</name>
         <full_name>set_template</full_name>
-        <docblock line="217">
+        <docblock line="224">
           <description>Set the html template for this gallery</description>
-          <long-description/>
-          <tag line="217" name="param" description="the template" type="string" variable="$tpl">
+          <long-description></long-description>
+          <tag line="224" name="param" description="the template" type="string" variable="$tpl">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="217" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="224" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="222">
+        <argument line="229">
           <name>$tpl</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="233" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="240" package="classes\image manager">
         <name>set_markup</name>
         <full_name>set_markup</full_name>
-        <docblock line="227">
+        <docblock line="234">
           <description>Set the static markup; ie: prev\next\loading divs</description>
-          <long-description/>
-          <tag line="227" name="param" description="the string has to be substituted" type="string" variable="$key">
+          <long-description></long-description>
+          <tag line="234" name="param" description="the string has to be substituted" type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="227" name="param" description="html markup" type="string" variable="$markup">
+          <tag line="234" name="param" description="html markup" type="string" variable="$markup">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="227" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="234" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="233">
+        <argument line="240">
           <name>$key</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
-        <argument line="233">
+        <argument line="240">
           <name>$markup</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="242" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="249" package="classes\image manager">
         <name>replace_markup</name>
         <full_name>replace_markup</full_name>
-        <docblock line="238">
+        <docblock line="245">
           <description>Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="259" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="266" package="classes\image manager">
         <name>add_image</name>
         <full_name>add_image</full_name>
-        <docblock line="253">
+        <docblock line="260">
           <description>Adds an image to the current set</description>
-          <long-description/>
-          <tag line="253" name="param" description="the image: if is an int it&#10;will be retrieved from the wp media, elsewhere it is an html tag" type="string|int" variable="$img">
+          <long-description></long-description>
+          <tag line="260" name="param" description="the image: if is an int it&#10;will be retrieved from the wp media, elsewhere it is an html tag" type="string|int" variable="$img">
             <type by_reference="false">string</type>
             <type by_reference="false">int</type>
           </tag>
-          <tag line="253" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="260" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="259">
+        <argument line="266">
           <name>$img</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="269" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="276" package="classes\image manager">
         <name>add_images</name>
         <full_name>add_images</full_name>
-        <docblock line="264">
+        <docblock line="271">
           <description>Add some images to the current set</description>
-          <long-description/>
-          <tag line="264" name="param" description="the list of images to be added" type="array" variable="$images">
+          <long-description></long-description>
+          <tag line="271" name="param" description="the list of images to be added" type="array" variable="$images">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="264" name="return" description="$this for chainability" type="\GalleryHelper">
+          <tag line="271" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
-        <argument line="269">
+        <argument line="276">
           <name>$images</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="282" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="289" package="classes\image manager">
         <name>calculate_unique</name>
         <full_name>calculate_unique</full_name>
-        <docblock line="278">
+        <docblock line="285">
           <description>Calculates the unique id for the current gallery</description>
-          <long-description/>
-          <tag line="278" name="return" description="$this for chainability" type="\GalleryHelper">
+          <long-description></long-description>
+          <tag line="285" name="return" description="$this for chainability" type="\GalleryHelper">
             <type by_reference="false">\GalleryHelper</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="293" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="300" package="classes\image manager">
         <name>get_image_src</name>
         <full_name>get_image_src</full_name>
-        <docblock line="287">
+        <docblock line="294">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description/>
-          <tag line="287" name="returns" description="the src attribute for the $index image of the set"/>
-          <tag line="287" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="294" name="returns" description="the src attribute for the $index image of the set"/>
+          <tag line="294" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="293">
+        <argument line="300">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="324" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="331" package="classes\image manager">
         <name>get_image_width</name>
         <full_name>get_image_width</full_name>
-        <docblock line="320">
+        <docblock line="327">
           <description>Get the width for the n-th image of the list</description>
-          <long-description/>
-          <tag line="320" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="327" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="324">
+        <argument line="331">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="348" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="355" package="classes\image manager">
         <name>get_image_height</name>
         <full_name>get_image_height</full_name>
-        <docblock line="344">
+        <docblock line="351">
           <description>Get the height for the n-th image of the list</description>
-          <long-description/>
-          <tag line="344" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="351" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="348">
+        <argument line="355">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="374" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="381" package="classes\image manager">
         <name>get_image_id</name>
         <full_name>get_image_id</full_name>
-        <docblock line="368">
+        <docblock line="375">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description/>
-          <tag line="368" name="returns" description="the id attribute for the $index image of the set"/>
-          <tag line="368" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="375" name="returns" description="the id attribute for the $index image of the set"/>
+          <tag line="375" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="374">
+        <argument line="381">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="391" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="398" package="classes\image manager">
         <name>get_image_alt</name>
         <full_name>get_image_alt</full_name>
-        <docblock line="385">
+        <docblock line="392">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description/>
-          <tag line="385" name="returns" description="the alt attribute for the $index image of the set"/>
-          <tag line="385" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="392" name="returns" description="the alt attribute for the $index image of the set"/>
+          <tag line="392" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="391">
+        <argument line="398">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="412" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="419" package="classes\image manager">
         <name>get_image_caption</name>
         <full_name>get_image_caption</full_name>
-        <docblock line="406">
+        <docblock line="413">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description/>
-          <tag line="406" name="returns" description="the caption for the $index image of the set"/>
-          <tag line="406" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="413" name="returns" description="the caption for the $index image of the set"/>
+          <tag line="413" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="412">
+        <argument line="419">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="434" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="441" package="classes\image manager">
         <name>get_image_description</name>
         <full_name>get_image_description</full_name>
-        <docblock line="428">
+        <docblock line="435">
           <description>Checks if the $index image of the list is
 a wordpress media id or an image object</description>
-          <long-description/>
-          <tag line="428" name="returns" description="the description for the $index image of the set"/>
-          <tag line="428" name="param" description="the index of the images list" type="int" variable="$index">
+          <long-description></long-description>
+          <tag line="435" name="returns" description="the description for the $index image of the set"/>
+          <tag line="435" name="param" description="the index of the images list" type="int" variable="$index">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="434">
+        <argument line="441">
           <name>$index</name>
-          <default/>
+          <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="455" package="classes\image manager">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="462" package="classes\image manager">
         <name>get_markup</name>
         <full_name>get_markup</full_name>
-        <docblock line="451">
+        <docblock line="458">
           <description>Retrieves the markup for the current gallery</description>
-          <long-description/>
-          <tag line="451" name="return" description="markup for the current gallery" type="\the">
+          <long-description></long-description>
+          <tag line="458" name="return" description="markup for the current gallery" type="\the">
             <type by_reference="false">\the</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="460" package="classes\image manager">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="467" package="classes\image manager">
         <name>the_markup</name>
         <full_name>the_markup</full_name>
-        <docblock line="457">
+        <docblock line="464">
           <description>Echoes the markup for the current gallery</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
     </class>

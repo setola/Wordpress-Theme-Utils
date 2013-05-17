@@ -26,6 +26,12 @@ Usage
 	*/
 ````
 
+Documentation
+-----
+
+You can find doc in the php files, or a phpdoc extract in <your-domain.ltd>/wp-content/themes/Wordpress-Theme-Utils/docs/
+
+
 Functions.php
 -----
 
