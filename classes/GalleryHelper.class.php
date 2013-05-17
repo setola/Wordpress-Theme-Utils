@@ -149,18 +149,25 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	
 	/**
 	 * Get the images from the main language translation of the post
+	 * 
+	 * Uses WPML to retrieve the post translation in default language
+	 * and queries it for attached images.
+	 * 
+	 * @uses icl_object_id()
 	 * @param string $post_id the post id you want to search for
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_main_language($post_id=null){
+		$post_id = is_null($post_id) ? get_the_ID() : $post_id;
+		
 		global $sitepress;
 		if(empty($sitepress)) return self::get_images_from_post($post_id);
-		
+
 		return self::get_images_from_post(
 			array(
 				'post_parent'=>icl_object_id(
 					is_null($post_id) ? get_the_ID() : $post_id, 
-					'post', 
+					get_post_type($post_id), 
 					true, 
 					$sitepress->get_default_language()
 				)
