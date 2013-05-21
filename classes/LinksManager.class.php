@@ -128,32 +128,42 @@ class LinksManager{
 		// The actual fields for data entry
 		// Use get_post_meta to retrieve an existing value from the database and use the value for the form
 		$value = get_post_meta($post->ID, '_link_meta_values', true);
-		?>
-		<table class="form-table"><tbody>
-		<tr>
-			<th><?php echo HtmlHelper::label(__('Label', 'wtu_framework'), 'link_meta_values[label]'); ?></th>
-			<td><?php echo HtmlHelper::input('link_meta_values[label]', 'text', array('value'=>$value['label'],'class'=>'large-text')); ?></td>
-		</tr>
-		<tr>
-			<th><?php echo HtmlHelper::label(__('Title', 'wtu_framework'), 'link_meta_values[title]'); ?></th>
-			<td><?php  echo HtmlHelper::input('link_meta_values[title]', 'text', array('value'=>$value['title'],'class'=>'large-text')); ?></td>
-		</tr>
-		<tr>
-			<th><?php echo HtmlHelper::label(__('Open in new tab', 'wtu_framework'), 'link_meta_values[open_new_tab]'); ?></th>
-			<td><?php echo HtmlHelper::input('link_meta_values[open_new_tab]', 'checkbox', array('checked' => ($value['open_new_tab']=='on') ? 'checked' : '')); ?></td>
-		</tr>
-		<tr>
-			<th><?php echo HtmlHelper::label(__('Noindex', 'wtu_framework'), 'link_meta_values[noindex]');?></th>
-			<td><?php echo HtmlHelper::input('link_meta_values[noindex]', 'checkbox', array('checked' => ($value['noindex']=='on') ? 'checked' : '')); ?></td>
-		</tr>
-		</tbody></table>
-		<?php 
+		
+		$subs = new SubstitutionTemplate();
+		$subs->set_tpl('<tr><th scope="row">%th%</th><td>%td%</td></tr>');
+		
+		echo '<table class="form-table"><tbody>';
+		
+		echo $subs
+			->set_markup('th', HtmlHelper::label(__('Label', 'wtu_framework'), 'link_meta_values[label]'))
+			->set_markup('td', HtmlHelper::input('link_meta_values[label]', 'text', array('value'=>$value['label'],'class'=>'large-text')))
+			->replace_markup();
+		
+		echo $subs
+			->set_markup('th', HtmlHelper::label(__('Title', 'wtu_framework'), 'link_meta_values[title]'))
+			->set_markup('td', HtmlHelper::input('link_meta_values[title]', 'text', array('value'=>$value['title'],'class'=>'large-text')))
+			->replace_markup();
+		
+		echo $subs
+			->set_markup('th', HtmlHelper::label(__('Open in new tab', 'wtu_framework'), 'link_meta_values[open_new_tab]'))
+			->set_markup('td', HtmlHelper::input('link_meta_values[open_new_tab]', 'checkbox', array('checked' => ($value['open_new_tab']=='on') ? 'checked' : '')))
+			->replace_markup();
+		
+		echo $subs
+			->set_markup('th', HtmlHelper::label(__('Noindex', 'wtu_framework'), 'link_meta_values[noindex]'))
+			->set_markup('td', HtmlHelper::input('link_meta_values[noindex]', 'checkbox', array('checked' => ($value['noindex']=='on') ? 'checked' : '')))
+			->replace_markup();
+		
+		echo '</tbody></table>';
+		
 	}
 	
 	/**
-	 * Register the metaboxes
+	 * Register the link details metabox and removes some useless one
 	 */
 	public static function register_metaboxes(){
+		remove_meta_box('fbseo', self::CUSTOM_LINKS_POST_TYPE);
+		remove_meta_box('wpseo_meta', self::CUSTOM_LINKS_POST_TYPE);
 		add_meta_box(
 			'wpu-custom-links',
 			__( 'Link Details', 'wtu_framework' ),
