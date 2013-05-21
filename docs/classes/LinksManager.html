@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \ThemeUtils</title>
+<title>WP Theme Utils » \LinksManager</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -62,20 +62,16 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method_default_constants" title="default_constants :: Register some constants"><span class="description">Register some constants</span><pre>default_constants()</pre></a></li>
-<li class="method public "><a href="#method_disable_debug" title="disable_debug :: Disable vd()\vc()\v() functions output,
-This is default status, generically good for production environments."><span class="description">Disable vd()\vc()\v() functions output,
-This is default status, generically good for production environments.</span><pre>disable_debug()</pre></a></li>
-<li class="method public "><a href="#method_dummy_content" title="dummy_content :: Enable the Lorem Ipsum body text on empty pages"><span class="description">Enable the Lorem Ipsum body text on empty pages</span><pre>dummy_content()</pre></a></li>
-<li class="method public "><a href="#method_enable_autoload_system" title="enable_autoload_system :: Initializes the autoloader subsystem"><span class="description">Initializes the autoloader subsystem</span><pre>enable_autoload_system()</pre></a></li>
-<li class="method public "><a href="#method_enable_debug" title="enable_debug :: Enables vd()\vc()\v() functions output,
-This is generically good for development environments."><span class="description">Enables vd()\vc()\v() functions output,
-This is generically good for development environments.</span><pre>enable_debug()</pre></a></li>
-<li class="method public "><a href="#method_enable_links_manager" title="enable_links_manager :: Enables the Custom Links feature"><span class="description">Enables the Custom Links feature</span><pre>enable_links_manager()</pre></a></li>
-<li class="method public "><a href="#method_get_instance" title="get_instance :: Gets the instance with the current options set"><span class="description">Gets the instance with the current options set</span><pre>get_instance()</pre></a></li>
-<li class="method public "><a href="#method_register_bottom_menu" title="register_bottom_menu :: Register the Secondary Menu to WordPress"><span class="description">Register the Secondary Menu to WordPress</span><pre>register_bottom_menu()</pre></a></li>
-<li class="method public "><a href="#method_register_main_menu" title="register_main_menu :: Registers the Primary Menu to WordPress"><span class="description">Registers the Primary Menu to WordPress</span><pre>register_main_menu()</pre></a></li>
-<li class="method public "><a href="#method_register_text_domain" title="register_text_domain :: Register the wtu-framework text domain to WordPress"><span class="description">Register the wtu-framework text domain to WordPress</span><pre>register_text_domain()</pre></a></li>
+<li class="method public "><a href="#method_custom_title" title="custom_title :: Callback to modify the title field in the admin panel"><span class="description">Callback to modify the title field in the admin panel</span><pre>custom_title()</pre></a></li>
+<li class="method public "><a href="#method_edit_link_box_html" title="edit_link_box_html :: Print the markup for the link details box"><span class="description">Print the markup for the link details box</span><pre>edit_link_box_html()</pre></a></li>
+<li class="method public "><a href="#method_get_instance" title="get_instance :: Retrieves the current instance"><span class="description">Retrieves the current instance</span><pre>get_instance()</pre></a></li>
+<li class="method public "><a href="#method_get_links" title="get_links :: "><span class="description">get_links()
+        </span><pre>get_links()</pre></a></li>
+<li class="method public "><a href="#method_init" title="init :: Called by WordPress on init"><span class="description">Called by WordPress on init</span><pre>init()</pre></a></li>
+<li class="method public "><a href="#method_is_enabled" title="is_enabled :: Test if this feature is enabled"><span class="description">Test if this feature is enabled</span><pre>is_enabled()</pre></a></li>
+<li class="method public "><a href="#method_register_custom_types" title="register_custom_types :: Register some custom post types and categories"><span class="description">Register some custom post types and categories</span><pre>register_custom_types()</pre></a></li>
+<li class="method public "><a href="#method_register_metaboxes" title="register_metaboxes :: Register the link details metabox and removes some useless one"><span class="description">Register the link details metabox and removes some useless one</span><pre>register_metaboxes()</pre></a></li>
+<li class="method public "><a href="#method_save_link_data" title="save_link_data :: Called by WordPress while saving the post"><span class="description">Called by WordPress while saving the post</span><pre>save_link_data()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
@@ -88,24 +84,28 @@ Singleton private constructor</span><pre>__construct()</pre></a></li></ul>
                     <ul></ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="property private "><a href="#property_instance" title="$instance :: Stores the unique instance"><span class="description"></span><pre>$instance</pre></a></li></ul>
+                    <ul><li class="property private "><a href="#property_instance" title="$instance :: Stores the instance of the singleton"><span class="description"></span><pre>$instance</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul><li class="constant  "><a href="#constant_CUSTOM_LINKS_POST_TYPE" title="CUSTOM_LINKS_POST_TYPE :: "><span class="description">CUSTOM_LINKS_POST_TYPE</span><pre>CUSTOM_LINKS_POST_TYPE</pre></a></li></ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\ThemeUtils"></a><ul class="breadcrumb">
+<a id="\LinksManager"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ThemeUtils.html">ThemeUtils</a>
+<span class="divider">\</span><a href="../classes/LinksManager.html">LinksManager</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Initializes and manages the parent theme config and constants</p>
+<p class="short_description">Manages the links subsection</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>Adds support for link image and translations</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -115,79 +115,100 @@ Singleton private constructor</span><pre>__construct()</pre></a></li></ul>
 <th>version</th>
 <td>1.0.0</td>
 </tr>
-<tr>
-<th>package</th>
-<td><a href="../packages/classes.html">classes</a></td>
-</tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_default_constants"></a><div class="element clickable method public method_default_constants" data-toggle="collapse" data-target=".method_default_constants .collapse">
-<h2>Register some constants</h2>
-<pre>default_constants() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<a id="method_custom_title"></a><div class="element clickable method public method_custom_title" data-toggle="collapse" data-target=".method_custom_title .collapse">
+<h2>Callback to modify the title field in the admin panel</h2>
+<pre>custom_title(\unknown $input) : string | \unknown</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$input</h4>
+<code>\unknown</code>
 </div>
-<a id="method_disable_debug"></a><div class="element clickable method public method_disable_debug" data-toggle="collapse" data-target=".method_disable_debug .collapse">
-<h2>Disable vd()\vc()\v() functions output,
-This is default status, generically good for production environments.</h2>
-<pre>disable_debug() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>\unknown</code>
 </div>
-<a id="method_dummy_content"></a><div class="element clickable method public method_dummy_content" data-toggle="collapse" data-target=".method_dummy_content .collapse">
-<h2>Enable the Lorem Ipsum body text on empty pages</h2>
-<pre>dummy_content() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div></div>
 </div>
-<a id="method_enable_autoload_system"></a><div class="element clickable method public method_enable_autoload_system" data-toggle="collapse" data-target=".method_enable_autoload_system .collapse">
-<h2>Initializes the autoloader subsystem</h2>
-<pre>enable_autoload_system() </pre>
+<a id="method_edit_link_box_html"></a><div class="element clickable method public method_edit_link_box_html" data-toggle="collapse" data-target=".method_edit_link_box_html .collapse">
+<h2>Print the markup for the link details box</h2>
+<pre>edit_link_box_html(object $post) </pre>
 <div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_enable_debug"></a><div class="element clickable method public method_enable_debug" data-toggle="collapse" data-target=".method_enable_debug .collapse">
-<h2>Enables vd()\vc()\v() functions output,
-This is generically good for development environments.</h2>
-<pre>enable_debug() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_enable_links_manager"></a><div class="element clickable method public method_enable_links_manager" data-toggle="collapse" data-target=".method_enable_links_manager .collapse">
-<h2>Enables the Custom Links feature</h2>
-<pre>enable_links_manager() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post</h4>
+<code>object</code><p>the current post</p></div>
+</div></div>
 </div>
 <a id="method_get_instance"></a><div class="element clickable method public method_get_instance" data-toggle="collapse" data-target=".method_get_instance .collapse">
-<h2>Gets the instance with the current options set</h2>
-<pre>get_instance() : <a href="../classes/ThemeUtils.html">\ThemeUtils</a></pre>
+<h2>Retrieves the current instance</h2>
+<pre>get_instance() : <a href="../classes/LinksManager.html">\LinksManager</a></pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/ThemeUtils.html">\ThemeUtils</a></code>current instance</div>
+<code><a href="../classes/LinksManager.html">\LinksManager</a></code>the current instance</div>
 </div></div>
 </div>
-<a id="method_register_bottom_menu"></a><div class="element clickable method public method_register_bottom_menu" data-toggle="collapse" data-target=".method_register_bottom_menu .collapse">
-<h2>Register the Secondary Menu to WordPress</h2>
-<pre>register_bottom_menu() </pre>
+<a id="method_get_links"></a><div class="element clickable method public method_get_links" data-toggle="collapse" data-target=".method_get_links .collapse">
+<h2>get_links()
+        </h2>
+<pre>get_links($args) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$args</h4></div>
+</div></div>
+</div>
+<a id="method_init"></a><div class="element clickable method public method_init" data-toggle="collapse" data-target=".method_init .collapse">
+<h2>Called by WordPress on init</h2>
+<pre>init() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_is_enabled"></a><div class="element clickable method public method_is_enabled" data-toggle="collapse" data-target=".method_is_enabled .collapse">
+<h2>Test if this feature is enabled</h2>
+<pre>is_enabled() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>true if LinkManager is enabled</div>
+</div></div>
+</div>
+<a id="method_register_custom_types"></a><div class="element clickable method public method_register_custom_types" data-toggle="collapse" data-target=".method_register_custom_types .collapse">
+<h2>Register some custom post types and categories</h2>
+<pre>register_custom_types() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_register_metaboxes"></a><div class="element clickable method public method_register_metaboxes" data-toggle="collapse" data-target=".method_register_metaboxes .collapse">
+<h2>Register the link details metabox and removes some useless one</h2>
+<pre>register_metaboxes() </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_register_main_menu"></a><div class="element clickable method public method_register_main_menu" data-toggle="collapse" data-target=".method_register_main_menu .collapse">
-<h2>Registers the Primary Menu to WordPress</h2>
-<pre>register_main_menu() </pre>
+<a id="method_save_link_data"></a><div class="element clickable method public method_save_link_data" data-toggle="collapse" data-target=".method_save_link_data .collapse">
+<h2>Called by WordPress while saving the post</h2>
+<pre>save_link_data(int $post_id) </pre>
 <div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_register_text_domain"></a><div class="element clickable method public method_register_text_domain" data-toggle="collapse" data-target=".method_register_text_domain .collapse">
-<h2>Register the wtu-framework text domain to WordPress</h2>
-<pre>register_text_domain() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>int</code><p>the post ID</p></div>
+</div></div>
 </div>
 <a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
 <h2>Initializes default settings
@@ -200,7 +221,15 @@ Singleton private constructor</h2>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_instance"> </a><div class="element clickable property private property_instance" data-toggle="collapse" data-target=".property_instance .collapse">
 <h2></h2>
-<pre>$instance : <a href="../classes/ThemeUtils.html">\ThemeUtils</a></pre>
+<pre>$instance : <a href="../classes/LinksManager.html">\LinksManager</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_CUSTOM_LINKS_POST_TYPE"> </a><div class="element clickable constant  constant_CUSTOM_LINKS_POST_TYPE" data-toggle="collapse" data-target=".constant_CUSTOM_LINKS_POST_TYPE .collapse">
+<h2>CUSTOM_LINKS_POST_TYPE</h2>
+<pre>CUSTOM_LINKS_POST_TYPE </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
