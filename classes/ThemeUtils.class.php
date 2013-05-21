@@ -27,7 +27,15 @@ class ThemeUtils{
 		self::disable_debug();
 		self::register_main_menu();
 		self::register_bottom_menu();
+		self::register_text_domain();
 		self::$instance = $this;
+	}
+	
+	/**
+	 * Register the wtu-framework text domain to WordPress
+	 */
+	public static function register_text_domain(){
+		load_theme_textdomain('wtu_framework', WORDPRESS_THEME_UTILS_PATH.'/languages');
 	}
 
 	/**
@@ -127,6 +135,13 @@ class ThemeUtils{
 		 */
 		if(!defined('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH'))
 			define('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH', '/classes/ClassAutoloader.class.php');
+	}
+	
+	/**
+	 * Enables the Custom Links feature
+	 */
+	public static function enable_links_manager(){
+		LinksManager::get_instance();
 	}
 }
 

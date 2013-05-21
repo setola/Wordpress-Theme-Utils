@@ -99,6 +99,44 @@ EOF;
 	public static function span($inner_html, $parms=array()){
 		return self::standard_tag('span', self::list_inner_html($inner_html), $parms);
 	}
+	
+	/**
+	 * Get the markup for a <input> tag
+	 * @param string $name the input name
+	 * @param string $type the input type, default text
+	 * @param array $parms additional parameters
+	 * @return string html markup
+	 */
+	public static function input($name, $type='text', $parms=array()){
+		$parms['name'] = $name;
+		if(!in_array(
+			$type, 
+			array(
+				'button', 	'checkbox',		'color',
+				'date', 	'datetime',		'datetime-local', 
+				'email', 	'file',			'hidden',
+				'image', 	'month',		'number',
+				'password',	'radio',		'range',
+				'reset', 	'search',		'submit',
+				'tel', 		'text',			'time',
+				'url', 		'week'
+			)
+		)) $type = 'text';
+		$parms['type'] = $type;
+		return self::standard_tag('input', '', $parms);
+	}
+	
+	/**
+	 * Get the markup for a <label> tag
+	 * @param string $inner_html the inner text
+	 * @param string $for_name the input name this label is referred to
+	 * @param array $parms additional parameters
+	 * @return string html markup
+	 */
+	public static function label($inner_html, $for_name, $parms=array()){
+		$parms['for'] = $for_name;
+		return self::standard_tag('label', $inner_html, $parms);
+	}
 }
 
 
@@ -120,7 +158,7 @@ class HtmlBuilder {
 	 * @return array a list of self-closing tags
 	 */
 	public static function self_closing_tags(){
-		return array('br', 'hr', 'img');
+		return array('br', 'hr', 'img', 'input');
 	} 
 	
 	/**
