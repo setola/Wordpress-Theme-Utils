@@ -162,14 +162,16 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		
 		global $sitepress;
 		if(empty($sitepress)) return self::get_images_from_post($post_id);
-
+		
 		return self::get_images_from_post(
 			array(
-				'post_parent'=>icl_object_id(
-					is_null($post_id) ? get_the_ID() : $post_id, 
-					get_post_type($post_id), 
-					true, 
-					$sitepress->get_default_language()
+				'post_parent'=>intval(
+					icl_object_id(
+						$post_id, 
+						get_post_type($post_id), 
+						true, 
+						$sitepress->get_default_language()
+					)
 				)
 			)
 		);
@@ -187,7 +189,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_homepage_in_default_language(){
-		return self::get_images_from_main_language(array('post_parent'=>get_option('page_on_front')));
+		return self::get_images_from_main_language(get_option('page_on_front'));
 	}
 	
 	/**
@@ -387,6 +389,26 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 			if(isset($this->images[$index]['id']))
 				return $this->images[$index]['id'];
 		}
+	}
+	
+	/**
+	 * Retrieves the title for the image with given index
+	 * @param int $index the index of the images list
+	 * @returns the title attribute for the $index image of the set
+	 */
+	protected function get_image_title($index){
+		$toret = $this->images[$index];
+
+		if(is_integer($this->images[$index])){
+			$toret = get_the_title($this->images[$index]);
+		} elseif(is_object($this->images[$index])){
+			$toret = get_the_title($this->images[$index]->ID);
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['title']))
+				$toret = $this->images[$index]['title'];
+		}
+
+		return $toret;
 	}
 	
 	/**

@@ -127,9 +127,18 @@ EOF
 					ThemeHelpers::anchor(
 						$big_img_src,
 						ThemeHelpers::image(
-							$this->get_image_src($k)
+							$this->get_image_src($k),
+							array(
+								'alt'			=>	$this->get_image_alt($k)	
+							)
 						),
-						'rel="group" class="fancy"'
+						array(
+							'rel'				=>	'group', 
+							'class'				=>	'fancy', 
+							'title'				=>	$this->get_image_title($k),
+							'data-description'	=>	$this->get_image_description($k),
+							'data-caption'		=>	$this->get_image_caption($k)
+						)
 					)
 					.'</div>';
 			}
