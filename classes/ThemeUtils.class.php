@@ -54,6 +54,7 @@ class ThemeUtils{
 	 * Initializes the autoloader subsystem
 	 */
 	public static function enable_autoload_system(){
+		var_dump(WORDPRESS_THEME_UTILS_PATH);
 		include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
 		new ClassAutoloader();
 	}
@@ -110,7 +111,7 @@ class ThemeUtils{
 		 * The base path for Wordpress Theme Utils
 		 */
 		if(!defined('WORDPRESS_THEME_UTILS_PATH'))
-			define('WORDPRESS_THEME_UTILS_PATH', dirname(__DIR__));
+			define('WORDPRESS_THEME_UTILS_PATH', dirname(dirname(__FILE__)));
 
 		/**
 		 * Set to false to disable registration of Top Menu

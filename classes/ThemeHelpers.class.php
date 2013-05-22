@@ -74,11 +74,11 @@ class ThemeHelpers{
 		if(func_num_args() > 1){
 			_deprecated_argument(__CLASS__.'::'.__FUNCTION__, '1.0.5');
 		}
-		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
-			add_action('wp_enqueue_scripts', function($handle) use ($handle) {
+		/*if(version_compare(PHP_VERSION, '5.3.0', '>=')){
+			//add_action('wp_enqueue_scripts', function($handle) use ($handle) {
 				wp_enqueue_script($handle);
-			});
-		}
+			//});
+		}*/
 
 		self::$assets['js'][$handle] = $handle;
 	}
@@ -97,11 +97,11 @@ class ThemeHelpers{
 		if(func_num_args() > 1){
 			_deprecated_argument(__CLASS__.'::'.__FUNCTION__, '1.0.5');
 		}
-		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
+		/*if(version_compare(PHP_VERSION, '5.3.0', '>=')){
 			add_action('wp_enqueue_scripts', function($handle) use ($handle) {
 				wp_enqueue_style($handle);
 			});
-		}
+		}*/
 		
 		self::$assets['css'][$handle] = $handle;
 	}
@@ -544,7 +544,7 @@ EOF;
 	/**
 	 * Hides the wp admin bar
 	 */
-	public function hide_admin_bar(){
+	public static function hide_admin_bar(){
 		add_filter('show_admin_bar', '__return_false');
 	}
 
