@@ -12,7 +12,8 @@ $children = get_pages(
 	array(
 		'child_of' 		=>	get_the_ID(),
 		'sort_column' 	=>	'menu_order',
-		'sort_order' 	=>	'asc'
+		'sort_order' 	=>	'asc',
+		'parent'		=>	get_the_ID()
 	)
 );
 
