@@ -60,16 +60,18 @@ class ThemeUtils{
 
 	/**
 	 * Registers the Primary Menu to WordPress
+	 * @param string $label the label for the menu
 	 */
-	public static function register_main_menu(){
-		register_nav_menu('primary', __('Primary Menu', 'theme'));
+	public static function register_main_menu($label=''){
+		register_nav_menu('primary', (empty($label)) ? __('Primary Menu', 'theme') : $label);
 	}
 
 	/**
 	 * Register the Secondary Menu to WordPress
+	 * @param string $label the label for the menu
 	 */
-	public static function register_bottom_menu(){
-		register_nav_menu('secondary', __('Secondary Menu', 'theme'));
+	public static function register_bottom_menu($label=''){
+		register_nav_menu('secondary', (empty($label)) ? __('Secondary Menu', 'theme'): $label);
 	}
 
 	/**
