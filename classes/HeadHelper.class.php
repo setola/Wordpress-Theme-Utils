@@ -6,8 +6,6 @@
 /**
  * Some helper for the code inside <head> tag
  * @author etessore
- * @version 1.0.0
- * @package classes
  *
  */
 class HeadHelper{
@@ -36,6 +34,11 @@ class HeadHelper{
 	 * @var string Google Analytics tracking code
 	 */
 	public $ua;
+	
+	/**
+	 * @var array list of inline JavaScripts to insert in the <head> tag
+	 */
+	public $custom_scripts;
 	
 	
 	/**
@@ -68,13 +71,8 @@ class HeadHelper{
 		$title = esc_html($this->title);
 		$desc = $this->render_meta_tag('description');
 		$ga_tracking = '';
-		$tempate_directory_uri = get_template_directory_uri();
-		$favicon_base_url = 
-			file_exists(get_stylesheet_directory().'/images/favicon.ico') 
-			? get_stylesheet_directory_uri()
-			: get_template_directory_uri();
 		if(!empty($this->ua)){
-			$ga_tracking = HtmlHelper::script(<<< EOF
+		$ga_tracking = HtmlHelper::script(<<< EOF
      var _gaq = _gaq || [];
      _gaq.push(['_setAccount', '{$this->ua}'],
      ['_setDomainName', 'none'],
@@ -94,14 +92,21 @@ class HeadHelper{
 EOF
 			);
 		}
+		
+		if(count($this->custom_scripts)){
+			foreach($this->custom_scripts as $name => $script){
+				$custom_scripts = HtmlHelper::script($script, array('id'=>$name));
+			}
+		}
 
 		echo <<<EOF
 		<title>$title</title>
 		$desc
 	    <meta charset="{$this->charset}">
 	    $meta_tags
-	    <link rel="shortcut icon" href="$favicon_base_url/images/favicon.ico">
+	    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
 	    $ga_tracking
+	    $custom_scripts
 EOF;
 	}
 	
@@ -130,6 +135,17 @@ EOF;
 		if(isset($meta['name'])){
 			$this->meta_tags[$meta['name']] = $meta;
 		}
+		return $this;
+	}
+	
+	/**
+	 * Adds an inline JavaScript to the current head section
+	 * @param string $content the js code
+	 * @param string $name the name of the script
+	 * @return HeadHelper $this for chainability
+	 */
+	public function add_inline_script($content, $name=null){
+		$this->custom_scripts[$name] = $content;
 		return $this;
 	}
 	

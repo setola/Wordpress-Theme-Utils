@@ -44,7 +44,7 @@ class DefaultAssetsCDN extends DefaultAssets{
 		
 		$this->add_css('jquery-fancybox', '/css/jquery.fancybox_cdn.css', null, '2.1.0', 'screen');
 		
-		$this->register_jqueryui_themes();
+		$this->register_jqueryui_themes()->register_webfonts();
 		
 		return $this;
 	}
@@ -61,6 +61,22 @@ class DefaultAssetsCDN extends DefaultAssets{
 		
 		foreach($themes as $theme){
 			$this->add_css("jquery-ui-$theme", "http://code.jquery.com/ui/$version/themes/$theme/jquery-ui$min.css", null, $version, 'screen');
+		}
+		
+		return $this;
+	}
+	
+	/**
+	 * Registers some Google Webfonts
+	 * @param array $fonts list of font names
+	 * @return DefaultAssetsCDN $this for chainability
+	 */
+	protected function register_webfonts($fonts=null){
+		$fonts = empty($fonts) ? array('Marcellus') : $fonts;
+		$version = '1.0.0';
+		
+		foreach($fonts as $font){
+			$this->add_css("webfonts-$font", "http://fonts.googleapis.com/css?family=$font", null, $version, 'screen');
 		}
 		
 		return $this;
