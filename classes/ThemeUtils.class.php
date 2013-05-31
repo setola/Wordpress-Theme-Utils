@@ -54,7 +54,6 @@ class ThemeUtils{
 	 * Initializes the autoloader subsystem
 	 */
 	public static function enable_autoload_system(){
-		var_dump(WORDPRESS_THEME_UTILS_PATH);
 		include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
 		new ClassAutoloader();
 	}
