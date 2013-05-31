@@ -124,13 +124,13 @@ class OneImageForAll extends GalleryHelper{
 		$this->cache_name .= serialize($this->config);
 		$this->cache_name = md5($this->cache_name);
 		
-		$this->cache_dir = get_template_directory().'/cache/';
+		$this->cache_dir = get_stylesheet_directory().'/cache/';
 		if (!@is_dir($this->cache_dir)){
 			if (!@mkdir($this->cache_dir)){
-				die('Couldn\'t create cache dir: '.$this->cache_dir);
+				wp_die('Couldn\'t create cache dir: '.$this->cache_dir.'<br> Please check the permissions', 'Check your permissions!');
 			}
 		}
-		$this->cache_url = get_bloginfo('template_url').'/cache/'.$this->cache_name.'.jpg';
+		$this->cache_url = get_stylesheet_directory_uri().'/cache/'.$this->cache_name.'.jpg';
 		$this->cache_path = $this->cache_dir.$this->cache_name.'.jpg';
 		
 		return $this;
@@ -147,18 +147,13 @@ class OneImageForAll extends GalleryHelper{
 		if(file_exists($this->cache_path) && $this->force_image_refresh!==true) 
 			return $this;
 		
-		//vd($this->media_dimension);	
 		$combined_image = imagecreatetruecolor(
 			$this->config['w'] * count($this->images),
 			$this->config['h']
 		);
 		
-		//vd($this->config);
-		
 		foreach($this->images as $array_index => $image){
 			$src = $this->get_image_src($array_index); 
-			vc($src);
-			//  $image['url'].'?'.http_build_query($this->config, '', '&');
 
 			$info = getimagesize($src);
 			switch($info['mime']){

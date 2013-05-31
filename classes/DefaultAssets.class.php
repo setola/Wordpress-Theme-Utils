@@ -98,6 +98,7 @@ class DefaultAssets{
 		$this->add_js('tabs', '/js/tabs.js', array('jquery'), '0.1', true);
 		$this->add_js('modernizr', '/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js', null, '2.6.1', false);
 		$this->add_js('minigallery-thumbs-link-to-big', '/js/minigallery-thumbs-link-to-big.js', array('jquery-fancybox'), '0.1', false);
+		$this->add_js('slideshow-oneimageforall', '/js/slideshow-oneimageforall.js', array('jquery.cycle'), '0.1', false);
 		
 		
 		/**
