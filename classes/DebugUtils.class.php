@@ -113,7 +113,7 @@ EOF;
 		switch($this->level){
 			default:
 			case self::COMMENT:
-				$render = '<!-- '.$render.' -->';
+				echo '<!-- '.$render.' -->';
 				break;
 				
 			case self::H1_PRE:
