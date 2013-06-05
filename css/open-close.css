@@ -1,0 +1,43 @@
+/*!
+ * open-close.less
+ * Put here the style for the offers
+ * 
+ * Compiled on Wed, 05 Jun 2013 14:39:14 GMT
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+/*!
+ * mixins.less
+ * UTILITY MIXINS
+ * 
+ * Please note that this file should NOT contain
+ * any css definition, only less mixins.
+ * You can check if this is true by compiling
+ * css/mixins.css which have to be empty!
+ * 
+ * 
+ */
+/*!
+ * variables.less
+ * Store here your global variables
+ * 
+ * Compiled on :compileTime:
+ */
+.open-close {
+  background: url(../images/open-close.png) scroll no-repeat left center transparent;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.open-close .open,
+.open-close.open {
+  background-position: -20px center;
+}
+.open-close.right .open,
+.open-close.right.open {
+  background-position: -40px center;
+}

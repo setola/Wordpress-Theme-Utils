@@ -93,6 +93,7 @@ class DefaultAssets{
 		$this->add_js('cycle', '/js/cycle.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);
 		$this->add_js('crs', '/js/crs.js', array('jquery'), '0.1', true);
 		$this->add_js('open-details', '/js/open-details.js', array('jquery'), '0.1', true);
+		$this->add_js('open-close', '/js/open-close.js', array('jquery'), '0.1', true);
 		$this->add_js('navbar-fixed', '/js/navbar-fixed.js', array('jquery'), '0.1', true);
 		$this->add_js('photogallery', '/js/photogallery.js', array('jquery','jquery-fancybox'), '0.1', true);
 		$this->add_js('tabs', '/js/tabs.js', array('jquery'), '0.1', true);
@@ -124,6 +125,7 @@ class DefaultAssets{
 		$this->add_css('location', '/css/location.css', null, '0.1', 'screen');
 		$this->add_css('photogallery', '/css/photogallery.css', null, '0.1', 'screen');
 		$this->add_css('open-details', '/css/open-details.css', null, '0.1', 'screen');
+		$this->add_css('open-close', '/css/open-close.css', null, '0.1', 'screen');
 		$this->add_css('jquery-fancybox', '/css/jquery.fancybox.css', null, '2.1.0', 'screen');
 		$this->add_css('linear-menu', '/css/linear-menu.css', null, '0.1', 'screen');
 		

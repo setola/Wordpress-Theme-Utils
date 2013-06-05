@@ -1,0 +1,21 @@
+/*!
+ * open-close.less
+ * Put here the style for the offers
+ * 
+ * Compiled on :compileTime:
+ */
+
+@import "variables";
+@import "mixins";
+
+.open-close{
+	background: url(../images/open-close.png) scroll no-repeat left center transparent;
+	.square(20px);
+	cursor: pointer;
+	.open, &.open{
+		background-position: -20px center;
+	}
+	&.right .open, &.right.open{
+		background-position: -40px center;
+	}
+}
