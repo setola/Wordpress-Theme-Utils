@@ -329,6 +329,31 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	}
 	
 	/**
+	 * Retrieves the path for the given image
+	 * If it is an external image it returns the src attributes
+	 * @param int $index the index of the images list
+	 * @return string path to disc
+	 */
+	protected function get_image_path($index){
+		//return wp_get_attachment_metadata($this->images[$index]);
+		
+		$toret = $this->images[$index];
+
+		if(is_integer($this->images[$index])){
+			//$toret = wp_get_attachment_url($this->images[$index]);
+			$toret = get_attached_file($this->images[$index], $this->media_dimension);
+		} elseif(is_object($this->images[$index])){
+			//$toret = wp_get_attachment_url($this->images[$index]->ID);
+			$toret = get_attached_file($this->images[$index]->ID, $this->media_dimension);
+		} elseif(is_array($this->images[$index])){
+			if(isset($this->images[$index]['src']))
+				$toret = $this->images[$index]['src'];
+		}
+
+		return $toret;
+	}
+	
+	/**
 	 * Get the width for the n-th image of the list
 	 * @param int $index the index of the images list
 	 */

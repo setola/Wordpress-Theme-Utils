@@ -153,7 +153,7 @@ class OneImageForAll extends GalleryHelper{
 		);
 		
 		foreach($this->images as $array_index => $image){
-			$src = $this->get_image_src($array_index); 
+			$src = $this->get_image_path($array_index);
 
 			$info = getimagesize($src);
 			switch($info['mime']){
