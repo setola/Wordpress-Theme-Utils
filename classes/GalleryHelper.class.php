@@ -72,7 +72,9 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		
 		if(!$this->has_images()){
 				
-			$dimensions = ImageGenerator::get_dimensions('slideshow');
+			$dimensions = ImageGenerator::get_dimensions($this->media_dimension);
+			if($dimensions['width'] == 'unknown') return $this;
+			
 			$image = new ImageGenerator();
 			$image
 				->set('width', $dimensions['width'])
@@ -154,7 +156,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * and queries it for attached images.
 	 * 
 	 * @uses icl_object_id()
-	 * @param string $post_id the post id you want to search for
+	 * @param int $post_id the post id you want to search for
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_main_language($post_id=null){
