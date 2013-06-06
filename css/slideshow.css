@@ -2,7 +2,7 @@
  * slideshow.less
  * Put here the style for the slideshow
  * 
- * Compiled on Tue, 23 Apr 2013 13:57:21 GMT
+ * Compiled on Wed, 05 Jun 2013 14:39:14 GMT
  */
 /*!
  * variables.less
@@ -68,7 +68,7 @@
   background-image: url('../images/media-controls.png');
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: 0 0;
   background-color: transparent;
   width: 33px;
   height: 33px;
