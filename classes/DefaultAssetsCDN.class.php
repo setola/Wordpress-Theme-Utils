@@ -55,7 +55,7 @@ class DefaultAssetsCDN extends DefaultAssets{
 	 * @return DefaultAssetsCDN $this for chainability
 	 */
 	protected function register_jqueryui_themes($themes=null){
-		$themes = empty($themes) ? array('blitzer', 'smoothness') : $themes;
+		$themes = empty($themes) ? array('blitzer', 'smoothness', 'ui-darkness') : $themes;
 		$version = '1.10.2';
 		$min = '.min';
 		
