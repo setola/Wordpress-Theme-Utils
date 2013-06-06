@@ -58,7 +58,7 @@ class SpecialOffersSnippet {
 		$tpl = <<< EOF
 	%comjstag%
 	%popjstag%
-	<div id="%divdest%">
+	<div id="%divdest%"%option_divdest%>
 		<div class="loading">%loading%</div>
 	</div>
 	%promojstag%
@@ -123,6 +123,16 @@ EOF;
 	 */
 	public function add_param($key, $value){
 		$this->params[$key] = $value;
+		return $this;
+	}
+	
+	/**
+	 * Enables the offers to cycle
+	 * @return SpecialOffersSnippet $this for chainability
+	 */
+	public function enable_cycle(){
+		$this->templates->set_markup('option_divdest', 'class="cycle"');
+		ThemeHelpers::load_js('offers-cycle');
 		return $this;
 	}
 	

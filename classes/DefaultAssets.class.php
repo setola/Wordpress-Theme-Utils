@@ -94,6 +94,8 @@ class DefaultAssets{
 		$this->add_js('crs', '/js/crs.js', array('jquery'), '0.1', true);
 		$this->add_js('open-details', '/js/open-details.js', array('jquery'), '0.1', true);
 		$this->add_js('open-close', '/js/open-close.js', array('jquery'), '0.1', true);
+		$this->add_js('snippet-com', 'http://hotelsitecontents.fastbooking.com/js/com.js', null, '0.1', true);
+		$this->add_js('offers-cycle', '/js/offers-cycle.js', array('jquery.cycle', 'snippet-com'), '0.1', true);
 		$this->add_js('navbar-fixed', '/js/navbar-fixed.js', array('jquery'), '0.1', true);
 		$this->add_js('photogallery', '/js/photogallery.js', array('jquery','jquery-fancybox'), '0.1', true);
 		$this->add_js('tabs', '/js/tabs.js', array('jquery'), '0.1', true);
