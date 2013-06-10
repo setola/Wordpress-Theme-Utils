@@ -18,6 +18,8 @@ class ShowItemExcerptWalkerNavMenu extends Walker_Nav_Menu {
 	 */
 	public $tpl;
 	
+	public $classes = array();
+	
 	/**
 	 * @var string the excerpt buffer
 	 */
@@ -38,13 +40,102 @@ class ShowItemExcerptWalkerNavMenu extends Walker_Nav_Menu {
 		</div>
 		<div class="grid_8 omega">
 			<div class="title">%title%</div>
-			<div class="body">%body%</div>
+			<div class="excerpt">%excerpt%</div>
 		</div>
 	</div>
 EOF
 		);
 		$this->excerpt_output = '';
 		
+	}
+	
+	/**
+	 * Builds the %image% substitution
+	 * @param int $post_id the post ID
+	 * @param string $size the media size
+	 * @param array $args optional arguments for the anchor
+	 * @return string the image markup
+	 */
+	public function get_image($post_id, $size, $args){
+		return ThemeHelpers::anchor(
+			get_permalink($post_id), 
+			get_the_post_thumbnail($post_id, $size), 
+			$args
+		);
+	}
+	
+	/**
+	 * Builds the %id% substitution
+	 * @param int $post_id the post ID
+	 * @return string the id
+	 */
+	public function get_excerpt_id($post_id){
+		return 'navmenu-excerpt-'.$post_id;
+	}
+	
+	/**
+	 * Builds the id of the html li element
+	 * @param object $item the menu item
+	 * @param array $args additional arguments
+	 * @return string the id
+	 */
+	public function get_container_id($item, $args){
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
+		return $id;
+	}
+	
+	/**
+	 * Builds the %permalink% substitution
+	 * @param int $post_id the post ID
+	 * @param array $args optional arguments for the anchor tag
+	 * @return string html anchor tag for the permalink
+	 */
+	public function get_permalink($post_id, $args=array()){
+		return ThemeHelpers::anchor(
+			get_permalink($post_id), 
+			get_the_title($post_id), 
+			$args
+		);
+	}
+	
+	/**
+	 * Builds the %title% substitution
+	 * @param int $post_id the post ID
+	 * @return Ambigous <string, mixed> the title
+	 */
+	public function get_title($post_id){
+		return get_the_title($post_id);
+	}
+	
+	/**
+	 * Builds the %excerpt% substitution
+	 * @param int $post_id the post ID
+	 * @return Ambigous <string, mixed> the excerpt
+	 */
+	public function get_excerpt($post_id){
+		global $post;
+		$post = get_post($post_id);
+		return get_the_excerpt();
+	}
+	
+	/**
+	 * Builds the %href% substitution
+	 * @param int $post_id the post ID
+	 * @return string the href for the current menu element
+	 */
+	public function get_href($post_id){
+		return get_permalink($post_id);
+	}
+	
+	/**
+	 * Adds a class to the li
+	 * @param string $class the class
+	 * @return ShowItemExcerptWalkerNavMenu $this for chainability
+	 */
+	public function add_class($class){
+		$this->classes[] = $class;
+		return $this;
 	}
 	
 	/**
@@ -56,53 +147,24 @@ EOF
 	 * @param int $args
 	 */
 	function start_el(&$output, $item, $depth, $args){
-		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-		$class_names = $value = '';
+		$this->classes = array_merge((array) $item->classes, $this->classes);
+		$this->add_class('menu-item-' . $item->ID);
 
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $this->classes ), $item, $args ) );
 
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-		$class_names = ' class="' . esc_attr( $class_names ) . '"';
-
-		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
-		$excerpt_id = 'navmenu-excerpt-'.$item->ID;
-
-		$output .= $indent . '<li' . $id . $value . $class_names .'>';
-
-		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( '#'.$excerpt_id   ) .'"' : '';
-		$attributes .= 'data-open="'.$excerpt_id.'"';
-
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '</a>';
-		$item_output .= $args->after;
+		$output .= $indent . '<li' . $this->get_container_id($item, $args) . ' class="' . esc_attr( $class_names ) . '"' .'>';
 		
-		global $post;
-		$post = get_post($item->object_id);
-		setup_postdata($post);
 		$this->tpl
-			->set_markup('id', $excerpt_id)
-			->set_markup('image', get_the_post_thumbnail(get_the_ID(), 'thumbnail'))
-			->set_markup(
-				'permalink', 
-				ThemeHelpers::anchor(
-					get_permalink(), 
-					get_the_title(), 
-					array('title'=>get_the_title())
-				)
-			)
-			->set_markup('title', get_the_title())
-			->set_markup('body', get_the_excerpt());
+			->set_markup('id', 			$this->get_excerpt_id($item->object_id))
+			->set_markup('image', 		$this->get_image($item->object_id, 'thumbnail', array('title'=>$this->get_title($item->object_id))))
+			->set_markup('permalink', 	$this->get_permalink($item->object_id, array('title'=>$this->get_title($item->object_id))))
+			->set_markup('title', 		$this->get_title($item->object_id))
+			->set_markup('excerpt', 	$this->get_excerpt($item->object_id))
+			->set_markup('href',		$this->get_href($post_id));
+		
 		$this->excerpt_output .= $this->tpl->replace_markup();
-		wp_reset_postdata();
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		$output .= $this->tpl->replace_markup();
