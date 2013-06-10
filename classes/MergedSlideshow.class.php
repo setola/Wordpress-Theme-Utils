@@ -105,6 +105,7 @@ EOF;
 	 * @see ImagePreload::get_markup()
 	 */
 	function get_markup(){
+		ThemeHelpers::load_css('slideshow');
 		ThemeHelpers::load_js('slideshow-oneimageforall');
 		$images_list =
 			(has_post_thumbnail())

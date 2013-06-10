@@ -62,6 +62,14 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 			$this->add_images(self::get_images_from_main_language());
 		}
 		
+		if(!$this->has_images() && HotelManager::$enabled){
+			$this->add_images(self::get_images_from_closest_hotel());
+		}
+		
+		if(!$this->has_images() && HotelManager::$enabled){
+			$this->add_images(self::get_images_from_closest_hotel_in_default_language());
+		}
+		
 		if(!$this->has_images()){
 			$this->add_images(self::get_images_from_frontpage());
 		}
@@ -119,13 +127,13 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @return Ambigous <multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_post($args=array()){
-		$post_id = is_null($args['post_parent']) ? get_the_ID() : $post_id;
+		$post_id = is_null($args['post_parent']) ? get_the_ID() : $args['post_parent'];
 		
 		
 		$defaults = array(
-				'post_parent'		=> $post_id,
-				'post_type'			=> 'attachment',
-				'post_mime_type'	=> 'image',
+				'post_parent'		=>	$post_id,
+				'post_type'			=>	'attachment',
+				'post_mime_type'	=>	'image',
 				'orderby'			=>	'menu_order',
 				'order'				=>	'ASC'
 		);
@@ -163,7 +171,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		$post_id = is_null($post_id) ? get_the_ID() : $post_id;
 		
 		global $sitepress;
-		if(empty($sitepress)) return self::get_images_from_post($post_id);
+		if(empty($sitepress)) return self::get_images_from_post(array('post_parent' => intval($post_id)));
 		
 		return self::get_images_from_post(
 			array(
@@ -180,18 +188,34 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	}
 	
 	/**
-	 * Get images attached to the frontpage
+	 * Gets images attached to the frontpage
 	 */
 	public static function get_images_from_frontpage(){
 		return self::get_images_from_post(array('post_parent'=>get_option('page_on_front')));
 	}
 	
 	/**
-	 * Get images attached to the frontpage in default language translation 
+	 * Gets images attached to the frontpage in default language translation 
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
 	public static function get_images_from_homepage_in_default_language(){
 		return self::get_images_from_main_language(get_option('page_on_front'));
+	}
+	
+	/**
+	 * Gets images from the first post marked as 'hotel' by HotelManager
+	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
+	 */
+	public static function get_images_from_closest_hotel(){
+		return self::get_images_from_post(array('post_parent' => HotelManager::get_hotel_id()));
+	}
+	
+	/**
+	 * Gets images from the first post marked as 'hotel' by HotelManager in default language
+	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
+	 */
+	public static function  get_images_from_closest_hotel_in_default_language(){
+		return self::get_images_from_post(array('post_parent' => HotelManager::get_hotel_id(null, true)));
 	}
 	
 	/**

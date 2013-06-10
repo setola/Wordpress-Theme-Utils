@@ -21,6 +21,9 @@ class ImagePreload extends GalleryHelper{
 	public function get_markup(){
 		if(empty($this->images)){ return ''; }
 		
+		ThemeHelpers::load_css('slideshow');
+		ThemeHelpers::load_js('slideshow');
+		
 		$toret = array();
 		
 		foreach($this->images as $k => $image){

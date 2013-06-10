@@ -14,6 +14,12 @@ class HotelManager {
 	public $hotels=array();
 	
 	/**
+	 * Maintains the status of this feature
+	 * @var unknown
+	 */
+	public static $enabled = false;
+	
+	/**
 	 * Stores the list of errors
 	 * @var array
 	 */
@@ -32,11 +38,21 @@ class HotelManager {
 	const META_KEY_NAME = '_this_is_an_hotel';
 	
 	/**
-	 * Initializes the current object
+	 * Enable the feature
 	 */
-	public function __construct() {
+	public static function enable() {
 		add_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
 		add_action('save_post', array(__CLASS__, 'save_metabox_data'));
+		self::$enabled = true;
+	}
+	
+	/**
+	 * Disables the feature
+	 */
+	public static function disable(){
+		remove_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
+		remove_action('save_post', array(__CLASS__, 'save_metabox_data'));
+		self::$enabled = false;
 	}
 	
 	/**
@@ -176,15 +192,20 @@ class HotelManager {
 	/**
 	 * Retrieves the hotel post id
 	 * @param int|object $post the post you want to check
+	 * @param boolean $default_language true if you want the id of the default language translation
 	 * @return int the hotel post id
 	 */
-	public static function get_hotel_id($post=null){
+	public static function get_hotel_id($post=null, $default_language=false){
 		if(empty($post)) global $post;
 		
 		$haystack = self::get_haystack($post);
 		
 		foreach(self::get_hotels_ids() as $id){
 			if(in_array($id, $haystack)){
+				global $sitepress;
+				if(isset($sitepress) && $default_language){
+					return icl_object_id($id, get_post_type($id), true, $sitepress->get_default_language());
+				}
 				return $id;
 			}
 		}
