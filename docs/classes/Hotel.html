@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \AjaxImageGenerator</title>
+<title>WP Theme Utils » \Hotel</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -62,108 +62,103 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Sets the admin-ajax hooks"><span class="description">Sets the admin-ajax hooks</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_ajax_callback" title="ajax_callback :: This method is called by the admin-ajax subsystem."><span class="description">This method is called by the admin-ajax subsystem.</span><pre>ajax_callback()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_check_for_pages" title="check_for_pages :: "><span class="description">check_for_pages()
+        </span><pre>check_for_pages()</pre></a></li>
+<li class="method public "><a href="#method_debug" title="debug :: "><span class="description">debug()
+        </span><pre>debug()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="method private "><a href="#method_init" title="init :: Sets the admin-ajax hooks"><span class="description">Sets the admin-ajax hooks</span><pre>init()</pre></a></li></ul>
+                    <ul><li class="method private "><a href="#method_add_book_link" title="add_book_link :: "><span class="description">add_book_link()
+        </span><pre>add_book_link()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
+                    <ul>
+<li class="property public "><a href="#property_hasPages" title="$hasPages :: "><span class="description"></span><pre>$hasPages</pre></a></li>
+<li class="property public "><a href="#property_systag" title="$systag :: "><span class="description"></span><pre>$systag</pre></a></li>
+</ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="property private "><a href="#property_is_hooked" title="$is_hooked :: "><span class="description">hook to WordPress only once</span><pre>$is_hooked</pre></a></li></ul>
+                    <ul><li class="property private "><a href="#property_errors" title="$errors :: "><span class="description"></span><pre>$errors</pre></a></li></ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\AjaxImageGenerator"></a><ul class="breadcrumb">
+<a id="\Hotel"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/AjaxImageGenerator.html">AjaxImageGenerator</a>
+<span class="divider">\</span><a href="../classes/Hotel.html">Hotel</a>
 </li>
 </ul>
-<div class="element class">
-<p class="short_description">Hooks the ImageGenerator class to admin-ajax action</p>
-<div class="details">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>author</th>
-<td><a href="">etessore</a></td>
-</tr>
-<tr>
-<th>version</th>
-<td>1.0.0</td>
-</tr>
-<tr>
-<th>package</th>
-<td><a href="../packages/classes.html">classes</a></td>
-</tr>
-</table>
+<div class="element class"><div class="details">
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Sets the admin-ajax hooks</h2>
-<pre>__construct(bool $priv, bool $nopriv) </pre>
+<h2>__construct()
+        </h2>
+<pre>__construct($systag, $data) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$priv</h4>
-<code>bool</code><p>is the hook available for registered users?</p>
-</div>
-<div class="subelement argument">
-<h4>$nopriv</h4>
-<code>bool</code><p>is the hook available for the non-registered users?</p>
-</div>
+<div class="subelement argument"><h4>$systag</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
 </div></div>
 </div>
-<a id="method_ajax_callback"></a><div class="element clickable method public method_ajax_callback" data-toggle="collapse" data-target=".method_ajax_callback .collapse">
-<h2>This method is called by the admin-ajax subsystem.</h2>
-<pre>ajax_callback() </pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Prints the image.</p></div></div></div>
-</div>
-<a id="method_init"></a><div class="element clickable method private method_init" data-toggle="collapse" data-target=".method_init .collapse">
-<h2>Sets the admin-ajax hooks</h2>
-<pre>init(bool $priv, bool $nopriv) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$priv</h4>
-<code>bool</code><p>is the hook available for registered users?</p>
-</div>
-<div class="subelement argument">
-<h4>$nopriv</h4>
-<code>bool</code><p>is the hook available for the non-registered users?</p>
-</div>
-</div></div>
-</div>
-<h3>
-<i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_is_hooked"> </a><div class="element clickable property private property_is_hooked" data-toggle="collapse" data-target=".property_is_hooked .collapse">
-<h2>hook to WordPress only once</h2>
-<pre>$is_hooked : bool</pre>
+<a id="method_check_for_pages"></a><div class="element clickable method public method_check_for_pages" data-toggle="collapse" data-target=".method_check_for_pages .collapse">
+<h2>check_for_pages()
+        </h2>
+<pre>check_for_pages() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="method_debug"></a><div class="element clickable method public method_debug" data-toggle="collapse" data-target=".method_debug .collapse">
+<h2>debug()
+        </h2>
+<pre>debug() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="method_add_book_link"></a><div class="element clickable method private method_add_book_link" data-toggle="collapse" data-target=".method_add_book_link .collapse">
+<h2>add_book_link()
+        </h2>
+<pre>add_book_link() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_hasPages"> </a><div class="element clickable property public property_hasPages" data-toggle="collapse" data-target=".property_hasPages .collapse">
+<h2></h2>
+<pre>$hasPages </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_systag"> </a><div class="element clickable property public property_systag" data-toggle="collapse" data-target=".property_systag .collapse">
+<h2></h2>
+<pre>$systag </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_errors"> </a><div class="element clickable property private property_errors" data-toggle="collapse" data-target=".property_errors .collapse">
+<h2></h2>
+<pre>$errors </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div></div>
 </div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-06-10T17:30:51+02:00.<br></footer></div>
+            generated on 2013-06-10T17:30:52+02:00.<br></footer></div>
 </div>
 </body>
 </html>

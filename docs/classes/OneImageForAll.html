@@ -35,10 +35,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">8</span></a></li>
+                <span class="label label-info">26</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">2</span>
+                <span class="label label-info">3</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">2</span></a></li>
@@ -69,8 +69,10 @@
 <li class="method public inherited"><a href="#method_calculate_unique" title="calculate_unique :: Calculates the unique id for the current gallery"><span class="description">Calculates the unique id for the current gallery</span><pre>calculate_unique()</pre></a></li>
 <li class="method public "><a href="#method_check_config" title="check_config :: Checks if the config has all the paramaters needed."><span class="description">Checks if the config has all the paramaters needed.</span><pre>check_config()</pre></a></li>
 <li class="method public inherited"><a href="#method_get_images" title="get_images :: Search the media gallery for suitable images."><span class="description">Search the media gallery for suitable images.</span><pre>get_images()</pre></a></li>
-<li class="method public inherited"><a href="#method_get_images_from_frontpage" title="get_images_from_frontpage :: Get images attached to the frontpage"><span class="description">Get images attached to the frontpage</span><pre>get_images_from_frontpage()</pre></a></li>
-<li class="method public inherited"><a href="#method_get_images_from_homepage_in_default_language" title="get_images_from_homepage_in_default_language :: Get images attached to the frontpage in default language translation"><span class="description">Get images attached to the frontpage in default language translation</span><pre>get_images_from_homepage_in_default_language()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_closest_hotel" title="get_images_from_closest_hotel :: Gets images from the first post marked as 'hotel' by HotelManager"><span class="description">Gets images from the first post marked as 'hotel' by HotelManager</span><pre>get_images_from_closest_hotel()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_closest_hotel_in_default_language" title="get_images_from_closest_hotel_in_default_language :: Gets images from the first post marked as 'hotel' by HotelManager in default language"><span class="description">Gets images from the first post marked as 'hotel' by HotelManager in default language</span><pre>get_images_from_closest_hotel_in_default_language()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_frontpage" title="get_images_from_frontpage :: Gets images attached to the frontpage"><span class="description">Gets images attached to the frontpage</span><pre>get_images_from_frontpage()</pre></a></li>
+<li class="method public inherited"><a href="#method_get_images_from_homepage_in_default_language" title="get_images_from_homepage_in_default_language :: Gets images attached to the frontpage in default language translation"><span class="description">Gets images attached to the frontpage in default language translation</span><pre>get_images_from_homepage_in_default_language()</pre></a></li>
 <li class="method public inherited"><a href="#method_get_images_from_main_language" title="get_images_from_main_language :: Get the images from the main language translation of the post"><span class="description">Get the images from the main language translation of the post</span><pre>get_images_from_main_language()</pre></a></li>
 <li class="method public inherited"><a href="#method_get_images_from_post" title="get_images_from_post :: Get the images attached to a post"><span class="description">Get the images attached to a post</span><pre>get_images_from_post()</pre></a></li>
 <li class="method public "><a href="#method_get_markup" title="get_markup :: (non-PHPdoc)"><span class="description">(non-PHPdoc)</span><pre>get_markup()</pre></a></li>
@@ -105,6 +107,9 @@ a wordpress media id or an image object</span><pre>get_image_description()</pre>
 <li class="method protected inherited"><a href="#method_get_image_id" title="get_image_id :: Checks if the $index image of the list is
 a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
 a wordpress media id or an image object</span><pre>get_image_id()</pre></a></li>
+<li class="method protected inherited"><a href="#method_get_image_path" title="get_image_path :: Retrieves the path for the given image
+If it is an external image it returns the src attributes"><span class="description">Retrieves the path for the given image
+If it is an external image it returns the src attributes</span><pre>get_image_path()</pre></a></li>
 <li class="method protected inherited"><a href="#method_get_image_src" title="get_image_src :: Checks if the $index image of the list is
 a wordpress media id or an image object"><span class="description">Checks if the $index image of the list is
 a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li>
@@ -267,8 +272,42 @@ Build a placeholder</p></div>
 </tr></table>
 </div></div>
 </div>
+<a id="method_get_images_from_closest_hotel"></a><div class="element clickable method public method_get_images_from_closest_hotel" data-toggle="collapse" data-target=".method_get_images_from_closest_hotel .collapse">
+<h2>Gets images from the first post marked as 'hotel' by HotelManager</h2>
+<pre>get_images_from_closest_hotel() : \Ambigous</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_closest_hotel()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><Ambigous, multitype:, boolean, multitype:Ambigous <NULL> ></div>
+</div></div>
+</div>
+<a id="method_get_images_from_closest_hotel_in_default_language"></a><div class="element clickable method public method_get_images_from_closest_hotel_in_default_language" data-toggle="collapse" data-target=".method_get_images_from_closest_hotel_in_default_language .collapse">
+<h2>Gets images from the first post marked as 'hotel' by HotelManager in default language</h2>
+<pre>get_images_from_closest_hotel_in_default_language() : \Ambigous</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_images_from_closest_hotel_in_default_language()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><Ambigous, multitype:, boolean, multitype:Ambigous <NULL> ></div>
+</div></div>
+</div>
 <a id="method_get_images_from_frontpage"></a><div class="element clickable method public method_get_images_from_frontpage" data-toggle="collapse" data-target=".method_get_images_from_frontpage .collapse">
-<h2>Get images attached to the frontpage</h2>
+<h2>Gets images attached to the frontpage</h2>
 <pre>get_images_from_frontpage() </pre>
 <div class="labels">
 <span class="label">Inherited</span><span class="label">Static</span>
@@ -282,7 +321,7 @@ Build a placeholder</p></div>
 </div></div>
 </div>
 <a id="method_get_images_from_homepage_in_default_language"></a><div class="element clickable method public method_get_images_from_homepage_in_default_language" data-toggle="collapse" data-target=".method_get_images_from_homepage_in_default_language .collapse">
-<h2>Get images attached to the frontpage in default language translation</h2>
+<h2>Gets images attached to the frontpage in default language translation</h2>
 <pre>get_images_from_homepage_in_default_language() : \Ambigous</pre>
 <div class="labels">
 <span class="label">Inherited</span><span class="label">Static</span>
@@ -300,7 +339,7 @@ Build a placeholder</p></div>
 </div>
 <a id="method_get_images_from_main_language"></a><div class="element clickable method public method_get_images_from_main_language" data-toggle="collapse" data-target=".method_get_images_from_main_language .collapse">
 <h2>Get the images from the main language translation of the post</h2>
-<pre>get_images_from_main_language(string $post_id) : \Ambigous</pre>
+<pre>get_images_from_main_language(int $post_id) : \Ambigous</pre>
 <div class="labels">
 <span class="label">Inherited</span><span class="label">Static</span>
 </div>
@@ -320,7 +359,7 @@ and queries it for attached images.</p></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$post_id</h4>
-<code>string</code><p>the post id you want to search for</p></div>
+<code>int</code><p>the post id you want to search for</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\Ambigous</code><Ambigous, multitype:, boolean, multitype:Ambigous <NULL> ></div>
@@ -638,6 +677,26 @@ a wordpress media id or an image object</h2>
 <code>int</code><p>the index of the images list</p></div>
 </div></div>
 </div>
+<a id="method_get_image_path"></a><div class="element clickable method protected method_get_image_path" data-toggle="collapse" data-target=".method_get_image_path .collapse">
+<h2>Retrieves the path for the given image
+If it is an external image it returns the src attributes</h2>
+<pre>get_image_path(int $index) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::get_image_path()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code><p>the index of the images list</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>path to disc</div>
+</div></div>
+</div>
 <a id="method_get_image_src"></a><div class="element clickable method protected method_get_image_src" data-toggle="collapse" data-target=".method_get_image_src .collapse">
 <h2>Checks if the $index image of the list is
 a wordpress media id or an image object</h2>
@@ -833,7 +892,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-05-21T18:01:54+02:00.<br></footer></div>
+            generated on 2013-06-10T17:30:51+02:00.<br></footer></div>
 </div>
 </body>
 </html>
