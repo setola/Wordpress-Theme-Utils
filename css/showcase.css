@@ -1,0 +1,61 @@
+.showcase {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	z-index: 10;
+	background: #000;
+	margin: 0;
+}
+
+.showcase-slide {
+	float:left;	
+}
+
+.showcase-arrow-previous,.showcase-arrow-next {
+	position: absolute;
+	background:transparent url("../images/showcase_arrow.png") 0 0 no-repeat;
+	width: 42px;
+	height: 42px;
+	top: 50%;
+	margin-top: -21px;
+	cursor: pointer;
+	z-index: 100;
+	opacity: 0.8;
+	filter: Alpha(opacity = 80);
+}
+
+.showcase-arrow-previous {
+	left: 20px;
+}
+
+.showcase-arrow-next {
+	right: 20px;
+	background-position: -42px 0;
+}
+
+.showcase-arrow-previous:hover,.showcase-arrow-next:hover {
+	opacity: 1;
+	filter: Alpha(opacity = 100);
+}
+
+.showcase-content {
+	background-color: #000;
+	text-align: center;
+	width: inherit;
+}
+
+.showcase-content img {
+	margin-right: 2px;
+	width: auto;
+}
+
+.showcase-content-wrapper {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	clear: none;
+}
+
+.showcase-content-wrapper {
+
+}
