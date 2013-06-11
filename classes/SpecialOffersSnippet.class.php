@@ -67,6 +67,7 @@ EOF;
 		$this->templates = new SubstitutionTemplate();
 		$this->templates
 			->set_tpl($tpl)
+			->set_markup('option_divdest', '')
 			->set_markup('loading', __('Loading Offers...', 'theme'));
 		
 		$this->add_param('hid', $hid)
