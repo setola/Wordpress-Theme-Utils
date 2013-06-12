@@ -56,10 +56,10 @@ EOF
 	 * @param array $args optional arguments for the anchor
 	 * @return string the image markup
 	 */
-	public function get_image($post_id, $size, $args){
+	public function get_image($item, $size, $args){
 		return ThemeHelpers::anchor(
-			get_permalink($post_id), 
-			get_the_post_thumbnail($post_id, $size), 
+			get_permalink($item->object_id), 
+			get_the_post_thumbnail($item->object_id, $size), 
 			$args
 		);
 	}
@@ -69,8 +69,8 @@ EOF
 	 * @param int $post_id the post ID
 	 * @return string the id
 	 */
-	public function get_excerpt_id($post_id){
-		return 'navmenu-excerpt-'.$post_id;
+	public function get_excerpt_id($item){
+		return 'navmenu-excerpt-'.$item->object_id;
 	}
 	
 	/**
@@ -91,10 +91,10 @@ EOF
 	 * @param array $args optional arguments for the anchor tag
 	 * @return string html anchor tag for the permalink
 	 */
-	public function get_permalink($post_id, $args=array()){
+	public function get_permalink($item, $args=array()){
 		return ThemeHelpers::anchor(
-			get_permalink($post_id), 
-			get_the_title($post_id), 
+			get_permalink($item->object_id), 
+			$this->get_title($item), 
 			$args
 		);
 	}
@@ -104,8 +104,8 @@ EOF
 	 * @param int $post_id the post ID
 	 * @return Ambigous <string, mixed> the title
 	 */
-	public function get_title($post_id){
-		return get_the_title($post_id);
+	public function get_title($item){		 
+		return apply_filters( 'the_title', $item->title, $item->ID );		
 	}
 	
 	/**
@@ -113,9 +113,9 @@ EOF
 	 * @param int $post_id the post ID
 	 * @return Ambigous <string, mixed> the excerpt
 	 */
-	public function get_excerpt($post_id){
+	public function get_excerpt($item){
 		global $post;
-		$post = get_post($post_id);
+		$post = get_post($item->object_id);
 		return get_the_excerpt();
 	}
 	
@@ -124,8 +124,8 @@ EOF
 	 * @param int $post_id the post ID
 	 * @return string the href for the current menu element
 	 */
-	public function get_href($post_id){
-		return get_permalink($post_id);
+	public function get_href($item){
+		return get_permalink($item->object_id);
 	}
 	
 	/**
@@ -157,13 +157,12 @@ EOF
 		$output .= $indent . '<li' . $this->get_container_id($item, $args) . ' class="' . esc_attr( $class_names ) . '"' .'>';
 		
 		$this->tpl
-			->set_markup('id', 			$this->get_excerpt_id($item->object_id))
-			->set_markup('image', 		$this->get_image($item->object_id, 'thumbnail', array('title'=>$this->get_title($item->object_id))))
-			->set_markup('permalink', 	$this->get_permalink($item->object_id, array('title'=>$this->get_title($item->object_id))))
-			->set_markup('title', 		$this->get_title($item->object_id))
-			->set_markup('excerpt', 	$this->get_excerpt($item->object_id))
-			->set_markup('href',		$this->get_href($post_id));
-		
+			->set_markup('id', 			$this->get_excerpt_id($item))
+			->set_markup('image', 		$this->get_image($item, 'thumbnail', array('title'=>$this->get_title($item))))
+			->set_markup('permalink', 	$this->get_permalink($item, array('title'=>$this->get_title($item))))
+			->set_markup('title', 		$this->get_title($item))
+			->set_markup('excerpt', 	$this->get_excerpt($item))
+			->set_markup('href',		$this->get_href($post_id));		
 		$this->excerpt_output .= $this->tpl->replace_markup();
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
