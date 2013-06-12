@@ -162,8 +162,8 @@ class LinksManager{
 	 * Register the link details metabox and removes some useless one
 	 */
 	public static function register_metaboxes(){
-		remove_meta_box('fbseo', self::CUSTOM_LINKS_POST_TYPE);
-		remove_meta_box('wpseo_meta', self::CUSTOM_LINKS_POST_TYPE);
+		remove_meta_box('fbseo', self::CUSTOM_LINKS_POST_TYPE, 'normal');
+		remove_meta_box('wpseo_meta', self::CUSTOM_LINKS_POST_TYPE, 'normal');
 		add_meta_box(
 			'wpu-custom-links',
 			__( 'Link Details', 'wtu_framework' ),
