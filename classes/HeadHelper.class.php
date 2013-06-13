@@ -71,6 +71,10 @@ class HeadHelper{
 		$title = esc_html($this->title);
 		$desc = $this->render_meta_tag('description');
 		$ga_tracking = '';
+		$favicon_base_url =
+			file_exists(get_stylesheet_directory().'/images/favicon.ico')
+			? get_stylesheet_directory_uri()
+			: get_template_directory_uri();
 		if(!empty($this->ua)){
 		$ga_tracking = HtmlHelper::script(<<< EOF
      var _gaq = _gaq || [];
@@ -93,6 +97,7 @@ EOF
 			);
 		}
 		
+		$custom_scripts = '';
 		if(count($this->custom_scripts)){
 			foreach($this->custom_scripts as $name => $script){
 				$custom_scripts = HtmlHelper::script($script, array('id'=>$name));
@@ -104,7 +109,7 @@ EOF
 		$desc
 	    <meta charset="{$this->charset}">
 	    $meta_tags
-	    <link rel="shortcut icon" href="$tempate_directory_uri/images/favicon.png">
+	    <link rel="shortcut icon" href="$favicon_base_url/images/favicon.png">
 	    $ga_tracking
 	    $custom_scripts
 EOF;
