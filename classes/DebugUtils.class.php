@@ -26,9 +26,9 @@ final class DebugUtils {
 	private $title;
 	
 	/**
-	 * @var string the template for the debug section
+	 * @var SubstitutionTemplate the template for the debug section
 	 */
-	public $template;
+	public $tpl;
 	
 	/**
 	 * Enable or disable all debugs
@@ -138,6 +138,21 @@ EOF;
 		return $this;
 	}
 	
+	/**
+	 * Dumps the $wp_scripts global variable
+	 */
+	public function dump_assets(){
+		global $wp_scripts;
+		$this->debug($wp_scripts);
+	}
+	
+	/**
+	 * Debug the assets list on the bottom of the page
+	 */
+	public function debug_assets(){
+		add_action('shutdown', array(&$this, 'dump_assets'));
+	}
+	
 }
 
 
@@ -146,7 +161,7 @@ EOF;
 if(!function_exists('vd')):
 /**
  * Quick and dirty way to know a variable value
- * vd stand for <b>v</b>ar_dump() and <b>d</b>ie()
+ * vd stays for <b>v</b>ar_dump() and <b>d</b>ie()
  * @param mixed $var the variable to be dumped
  * @package debug
  * @version 1.0.0
@@ -178,7 +193,7 @@ endif;
 if(!function_exists('vc')):
 /**
  * Quick and dirty way to know a variable value in a production enviroment
- * vc stand for <b>v</b>ar_dump() on a <b>c</b>omment
+ * vc stays for <b>v</b>ar_dump() on a <b>c</b>omment
  * @param mixed $var the variable to be dumped
  * @package debug
  * @version 1.0.0
@@ -203,5 +218,19 @@ function debug($var){
 	DebugUtils::get_instance()
 		->set_title(__('Debug'))
 		->debug($var);
+}
+endif;
+
+if(!function_exists('debug_assets')):
+/**
+ * Quick and dirty way to know the assets list
+ * at the end of the page
+ * @package debug
+ * @version 1.0.0
+ */
+function debug_assets(){
+	DebugUtils::get_instance()
+		->set_title(__('Assets'))
+		->debug_assets();
 }
 endif;
