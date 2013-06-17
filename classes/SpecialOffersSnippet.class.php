@@ -140,6 +140,15 @@ EOF;
 		ThemeHelpers::load_js('offers-cycle');
 		return $this;
 	}
+
+	/**
+	 * Disables the offers to cycle
+	 * @return SpecialOffersSnippet $this for chainability
+	 */
+	public function disable_cycle(){
+		$this->templates->set_markup('option_divdest', '');
+		return $this;
+	}
 	
 	/**
 	 * Uses Fancybox instead of the default popup system
@@ -269,6 +278,13 @@ EOF;
 			->set_markup('popjstag', $this->get_pop_js())
 			->set_markup('promojstag', $this->get_promo_js())
 			->replace_markup();
+	}
+	
+	/**
+	 * Prints the markup for the offers
+	 */
+	public function the_markup(){
+		echo $this->get_markup();
 	}
 	
 	/**
