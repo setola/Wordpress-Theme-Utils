@@ -87,6 +87,8 @@ class HotelManager {
 	 * Saves the metabox data while saving the page
 	 */
 	public static function save_metabox_data($post_id){
+		if(!isset($post_id)) return;
+		if(!isset($_POST['post_type'])) return;
 		// First we need to check if the current user is authorised to do this action.
 		if ( 'page' == $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) )
