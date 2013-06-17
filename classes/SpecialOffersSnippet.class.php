@@ -56,18 +56,22 @@ class SpecialOffersSnippet {
 	 */
 	public function __construct($hid){
 		$tpl = <<< EOF
+	%pre%
 	%comjstag%
 	%popjstag%
 	<div id="%divdest%"%option_divdest%>
 		<div class="loading">%loading%</div>
 	</div>
 	%promojstag%
+	%post%
 EOF;
 		
 		$this->templates = new SubstitutionTemplate();
 		$this->templates
 			->set_tpl($tpl)
 			->set_markup('option_divdest', '')
+			->set_markup('post', '')
+			->set_markup('pre', '')
 			->set_markup('loading', __('Loading Offers...', 'theme'));
 		
 		$this->add_param('hid', $hid)
@@ -134,6 +138,22 @@ EOF;
 	public function enable_cycle(){
 		$this->templates->set_markup('option_divdest', 'class="cycle"');
 		ThemeHelpers::load_js('offers-cycle');
+		return $this;
+	}
+	
+	/**
+	 * Uses Fancybox instead of the default popup system
+	 * @return SpecialOffersSnippet $this for chainability
+	 */
+	public function enable_fancybox(){
+		ThemeHelpers::load_js('jquery-fancybox');
+		ThemeHelpers::load_css('jquery-fancybox');
+		$content = <<< EOF
+	function FBso_popin(id) {
+		$.fancybox('<div id="FB_so"><div id="popinFBso_conteneur"><div id="popinFBso_contenu">'+$('#'+id).html()+'</div></div></div>', {width: 705, autoSize: false});
+	}	
+EOF;
+		$this->templates->set_markup('post', HtmlHelper::script($content));
 		return $this;
 	}
 	
