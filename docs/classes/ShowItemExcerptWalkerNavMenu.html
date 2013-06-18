@@ -35,10 +35,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">26</span></a></li>
+                <span class="label label-info">39</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">4</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">2</span></a></li>
@@ -158,14 +158,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_excerpt"></a><div class="element clickable method public method_get_excerpt" data-toggle="collapse" data-target=".method_get_excerpt .collapse">
 <h2>Builds the %excerpt% substitution</h2>
-<pre>get_excerpt(int $post_id) : \Ambigous</pre>
+<pre>get_excerpt($item) : \Ambigous</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\Ambigous</code><string, mixed> the excerpt</div>
@@ -173,14 +171,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_excerpt_id"></a><div class="element clickable method public method_get_excerpt_id" data-toggle="collapse" data-target=".method_get_excerpt_id .collapse">
 <h2>Builds the %id% substitution</h2>
-<pre>get_excerpt_id(int $post_id) : string</pre>
+<pre>get_excerpt_id($item) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>the id</div>
@@ -188,14 +184,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_href"></a><div class="element clickable method public method_get_href" data-toggle="collapse" data-target=".method_get_href .collapse">
 <h2>Builds the %href% substitution</h2>
-<pre>get_href(int $post_id) : string</pre>
+<pre>get_href($item) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>the href for the current menu element</div>
@@ -203,14 +197,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_image"></a><div class="element clickable method public method_get_image" data-toggle="collapse" data-target=".method_get_image .collapse">
 <h2>Builds the %image% substitution</h2>
-<pre>get_image(int $post_id, string $size, array $args) : string</pre>
+<pre>get_image($item, string $size, array $args) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <div class="subelement argument">
 <h4>$size</h4>
 <code>string</code><p>the media size</p></div>
@@ -224,14 +216,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_permalink"></a><div class="element clickable method public method_get_permalink" data-toggle="collapse" data-target=".method_get_permalink .collapse">
 <h2>Builds the %permalink% substitution</h2>
-<pre>get_permalink(int $post_id, array $args) : string</pre>
+<pre>get_permalink($item, array $args) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <div class="subelement argument">
 <h4>$args</h4>
 <code>array</code><p>optional arguments for the anchor tag</p></div>
@@ -242,14 +232,12 @@ to change the printed markup</p></div></div></div>
 </div>
 <a id="method_get_title"></a><div class="element clickable method public method_get_title" data-toggle="collapse" data-target=".method_get_title .collapse">
 <h2>Builds the %title% substitution</h2>
-<pre>get_title(int $post_id) : \Ambigous</pre>
+<pre>get_title($item) : \Ambigous</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$post_id</h4>
-<code>int</code><p>the post ID</p></div>
+<div class="subelement argument"><h4>$item</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\Ambigous</code><string, mixed> the title</div>
@@ -308,7 +296,7 @@ to change the printed markup</p></div></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-06-10T17:30:52+02:00.<br></footer></div>
+            generated on 2013-06-18T17:08:25+02:00.<br></footer></div>
 </div>
 </body>
 </html>
