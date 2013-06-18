@@ -59,8 +59,20 @@ class SpecialOffersSnippet {
 	%pre%
 	%comjstag%
 	%popjstag%
-	<div id="%divdest%"%option_divdest%>
-		<div class="loading">%loading%</div>
+	<div class="offers-container">
+		<div id="%divdest%"%option_divdest%>
+			<div class="loading">%loading%</div>
+		</div>
+		<div class="controls">
+			<ul>
+				<li class="prev"></li>
+				<li class="play-pause pause"></li>
+				<li class="next"></li>
+			</ul>
+		</div>
+		<div class="">
+			<a hrref="javascript:;" class="offers-toggler"></a>
+		</div>
 	</div>
 	%promojstag%
 	%post%
@@ -136,7 +148,7 @@ EOF;
 	 * @return SpecialOffersSnippet $this for chainability
 	 */
 	public function enable_cycle(){
-		$this->templates->set_markup('option_divdest', 'class="cycle"');
+		$this->templates->set_markup('option_divdest', ' class="cycle"');
 		ThemeHelpers::load_js('offers-cycle');
 		return $this;
 	}
