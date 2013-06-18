@@ -50,7 +50,7 @@ EOF
 				->set_markup('image', get_the_post_thumbnail(get_the_ID(), 'thumbnail'))
 				->set_markup(
 					'permalink',
-					ThemeHelpers::anchor(
+					HtmlHelper::anchor(
 						get_permalink(),
 						get_the_post_thumbnail(get_the_ID(), 'thumbnail').__('More Info', 'theme'),
 						array('title'=>get_the_title())

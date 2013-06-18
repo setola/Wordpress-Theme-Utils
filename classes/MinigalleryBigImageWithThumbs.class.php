@@ -145,9 +145,9 @@ EOF
 				
 				$src = $this->get_image_src($k);
 				
-				$thumb_list .= ThemeHelpers::anchor(
+				$thumb_list .= HtmlHelper::anchor(
 					$src.'?'.http_build_query($this->sizes['big']),
-					ThemeHelpers::image(
+					HtmlHelper::image(
 						$src.'?'.http_build_query($this->sizes['small']), 
 						'class="image"'
 					),

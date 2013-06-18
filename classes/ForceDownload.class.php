@@ -58,10 +58,10 @@ class ForceDownload{
 	 * @param int $id the attachment id
 	 * @param string $label the text inside the <a> tag
 	 * @param array $parms additional parameters for the <a> tag 
-	 * @see ThemeHelpers::anchor()
+	 * @see HtmlHelper::anchor()
 	 * @return string an <a> tag
 	 */
 	public function force_download_anchor($id, $label, $parms){
-		return ThemeHelpers::anchor(admin_url('admin-ajax.php').'?action=download&id='.$id, $label, $parms);
+		return HtmlHelper::anchor(admin_url('admin-ajax.php').'?action=download&id='.$id, $label, $parms);
 	}
 }

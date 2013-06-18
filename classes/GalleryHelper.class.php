@@ -502,6 +502,8 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		} elseif(is_array($this->images[$index])){
 			if(isset($this->images[$index]['caption']))
 				$toret = $this->images[$index]['caption'];
+			else
+				$toret = '';
 		}
 
 		return $toret;

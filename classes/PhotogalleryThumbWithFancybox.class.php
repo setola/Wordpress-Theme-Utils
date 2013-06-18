@@ -124,9 +124,9 @@ EOF
 				
 				$markup_images .= 
 					'<div class="'.implode(' ', $classes).'">'.
-					ThemeHelpers::anchor(
+					HtmlHelper::anchor(
 						$big_img_src,
-						ThemeHelpers::image(
+						HtmlHelper::image(
 							$this->get_image_src($k),
 							array(
 								'alt'			=>	$this->get_image_alt($k)	

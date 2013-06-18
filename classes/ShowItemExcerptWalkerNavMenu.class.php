@@ -57,7 +57,7 @@ EOF
 	 * @return string the image markup
 	 */
 	public function get_image($item, $size, $args){
-		return ThemeHelpers::anchor(
+		return HtmlHelper::anchor(
 			get_permalink($item->object_id), 
 			get_the_post_thumbnail($item->object_id, $size), 
 			$args
@@ -92,7 +92,7 @@ EOF
 	 * @return string html anchor tag for the permalink
 	 */
 	public function get_permalink($item, $args=array()){
-		return ThemeHelpers::anchor(
+		return HtmlHelper::anchor(
 			get_permalink($item->object_id), 
 			$this->get_title($item), 
 			$args
@@ -125,7 +125,7 @@ EOF
 	 * @return string the href for the current menu element
 	 */
 	public function get_href($item){
-		return get_permalink($item->object_id);
+		if(isset($item->object_id)) return get_permalink($item->object_id);
 	}
 	
 	/**
@@ -162,10 +162,9 @@ EOF
 			->set_markup('permalink', 	$this->get_permalink($item, array('title'=>$this->get_title($item))))
 			->set_markup('title', 		$this->get_title($item))
 			->set_markup('excerpt', 	$this->get_excerpt($item))
-			->set_markup('href',		$this->get_href($post_id));		
+			->set_markup('href',		$this->get_href($item));		
 		$this->excerpt_output .= $this->tpl->replace_markup();
 
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-		$output .= $this->tpl->replace_markup();
+		$output .= apply_filters( 'walker_nav_menu_start_el', $this->tpl->replace_markup(), $item, $depth, $args );
 	}
 }
