@@ -63,6 +63,9 @@ final class DebugUtils {
 		</div>
 EOF;
 		$this->set_level(self::COMMENT);
+		
+		if(WP_DEBUG === true)
+			$this->debug_deprecated();
 	}
 	
 	/**
@@ -153,6 +156,29 @@ EOF;
 		add_action('shutdown', array(&$this, 'dump_assets'));
 	}
 	
+	/**
+	 * Dumps the stack trace when a deprecated function is encountered
+	 * @param string $function function name
+	 * @param string $message deprecation message
+	 * @param string $version first version with deprecated entry
+	 * @todo: need improvements on readability
+	 */
+	public function dump_deprecated($function, $message, $version){
+		error_log ('Deprecated Argument Detected');
+		$trace = debug_backtrace();
+		$this->debug($trace);
+		foreach ($trace as $frame) {
+			error_log (var_export ($frame, true));
+		}
+	}
+	
+	/**
+	 * Enables debugging of deprecated functions
+	 */
+	public function debug_deprecated(){
+		add_action('deprecated_function_run', array(&$this, 'dump_deprecated'), 10, 3);
+	}
+	
 }
 
 
@@ -232,5 +258,18 @@ function debug_assets(){
 	DebugUtils::get_instance()
 		->set_title(__('Assets'))
 		->debug_assets();
+}
+endif;
+
+if(!function_exists('debug_deprecated')):
+/**
+ * Quick and dirty way to know the stack trace of a deprecated function
+ * @package debug
+ * @version 1.0.0
+ */
+function debug_deprecated(){
+	DebugUtils::get_instance()
+		->set_title(__('Deprecated'))
+		->debug_deprecated();
 }
 endif;
