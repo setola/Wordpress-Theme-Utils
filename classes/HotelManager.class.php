@@ -133,7 +133,19 @@ class HotelManager {
 	 */
 	public static function get_hotels_ids(){
 		global $wpdb;
-		return $wpdb->get_col('SELECT post_id FROM  `'.$wpdb->postmeta.'` WHERE  `meta_key` = \''.self::META_KEY_NAME.'\'');
+		$ids = $wpdb->get_col('SELECT post_id FROM  `'.$wpdb->postmeta.'` WHERE  `meta_key` = \''.self::META_KEY_NAME.'\' AND `meta_value` = \'on\'');
+		
+		$toret = array();
+		
+		if(function_exists('icl_object_id')){
+			foreach ($ids as $k => $id) {
+				$xlat = icl_object_id($id, get_post_type($id), false);
+				if(!is_null($xlat)) $toret[$xlat] = $xlat;
+			}
+			return array_keys($toret);
+		}
+		
+		return $ids;
 	}
 	
 	/**
