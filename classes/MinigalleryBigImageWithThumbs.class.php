@@ -25,8 +25,8 @@ class MinigalleryBigImageWithThumbs extends GalleryHelper{
 	 */
 	public function __construct(){
 		$this
-			->set_big_sizes(460, 220)
-			->set_small_sizes(90, 70)
+			->set_big_size('minigallery_bigsize')
+			->set_small_size('thumbnail')
 			->set_thumbs_list_config(
 				array(
 					'number'	=>	4,
@@ -36,9 +36,9 @@ class MinigalleryBigImageWithThumbs extends GalleryHelper{
 					)
 				)
 			)
-			->set_markup('loading', '<div class="loading">'.__('Loading...', $this->textdomain).'</div>')
-			->set_markup('next', '<div class="next">'.__('Next', $this->textdomain).'</div>')
-			->set_markup('prev', '<div class="next">'.__('Prev', $this->textdomain).'</div>')
+			->set_markup('loading', '<div class="loading">'.__('Loading...', 'wtu_framework').'</div>')
+			->set_markup('next', '<div class="next">'.__('Next', 'wtu_framework').'</div>')
+			->set_markup('prev', '<div class="next">'.__('Prev', 'wtu_framework').'</div>')
 			->set_markup('big-image', '<div class="big-image"></div>')
 			->set_markup('caption', '<div class="caption"></div>')
 			->set_template(<<< EOF
@@ -74,9 +74,10 @@ EOF
 	 * @param int $height
 	 * @return MinigalleryBigImageWithThumbs $this for chainability
 	 */
-	public function set_big_sizes($widht, $height){
-		$this->sizes['big']['w']	=	$widht;
-		$this->sizes['big']['h']	=	$height;
+	public function set_big_size($name){
+		// $this->sizes['big']['w']	=	$widht;
+		// $this->sizes['big']['h']	=	$height;
+		$this->sizes['big'] = $name;
 		return $this;
 	}
 	
@@ -86,9 +87,10 @@ EOF
 	 * @param int $height
 	 * @return MinigalleryBigImageWithThumbs $this for chainability
 	 */
-	public function set_small_sizes($widht, $height){
-		$this->sizes['small']['w']	=	$widht;
-		$this->sizes['small']['h']	=	$height;
+	public function set_small_size($name){
+		// $this->sizes['small']['w']	=	$widht;
+		// $this->sizes['small']['h']	=	$height;
+		$this->sizes['small'] = $name;
 		return $this;
 	}
 	
@@ -107,22 +109,8 @@ EOF
 	 * @return MinigalleryBigImageWithThumbs $this for chainability
 	 */
 	public function load_assets(){
-		wp_enqueue_style(
-				'minigallery', 
-				get_template_directory_uri().'/css/minigallery.css', 
-				null, 
-				'0.1', 
-				'screen'
-		);
-		wp_enqueue_script(
-				'minigallery', 
-				get_template_directory_uri().'/js/minigallery.js', 
-				array('jquery', 'jquery.cycle'), 
-				'1.0.0', 
-				true
-		);
-		
-		
+		ThemeHelpers::load_js('minigallery-big-image-with-thumbs');
+		ThemeHelpers::load_css('minigallery-big-image-with-thumbs');
 		return $this;
 	}
 	
@@ -143,13 +131,17 @@ EOF
 						$this->thumb_list_config['separator']['open'];
 				}
 				
-				$src = $this->get_image_src($k);
+				// $src = $this->get_image_src($k);
+				$big_img_link = wp_get_attachment_image_src($this->get_image_id($k),$this->sizes['big']);
+				// vd($big_img_link);
+				$small_img_link = wp_get_attachment_image_src($this->get_image_id($k),$this->sizes['small']);
+			 
 				
-				$thumb_list .= HtmlHelper::anchor(
-					$src.'?'.http_build_query($this->sizes['big']),
-					HtmlHelper::image(
-						$src.'?'.http_build_query($this->sizes['small']), 
-						'class="image"'
+				$thumb_list .= HtmlHelper::anchor(					
+					$big_img_link[0],
+					HtmlHelper::image(						
+						$small_img_link[0],
+						array('class'=>'image')
 					),
 					array(
 						'class' 		=>	'thumb-link',

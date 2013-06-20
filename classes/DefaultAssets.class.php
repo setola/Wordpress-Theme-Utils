@@ -101,6 +101,7 @@ class DefaultAssets{
 		$this->add_js('tabs', '/js/tabs.js', array('jquery'), '0.1', true);
 		$this->add_js('modernizr', '/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js', null, '2.6.1', false);
 		$this->add_js('minigallery-thumbs-link-to-big', '/js/minigallery-thumbs-link-to-big.js', array('jquery-fancybox'), '0.1', false);
+		$this->add_js('minigallery-big-image-with-thumbs', '/js/minigallery-big-image-with-thumbs.js', array('jquery.cycle'), '0.1', false);
 		$this->add_js('slideshow-oneimageforall', '/js/slideshow-oneimageforall.js', array('jquery.cycle'), '0.1', false);
 		$this->add_js('jquery.showcase', '/js/jquery.showcase.js', array('jquery'), '1.0.0', true);
 		$this->add_js('showcase', '/js/showcase.js', array('jquery.showcase'), '1.0', true);
@@ -128,6 +129,7 @@ class DefaultAssets{
 		$this->add_css('offers', '/css/offers.css', null, '0.1', 'screen');
 		$this->add_css('location', '/css/location.css', null, '0.1', 'screen');
 		$this->add_css('photogallery', '/css/photogallery.css', null, '0.1', 'screen');
+		$this->add_css('minigallery-big-image-with-thumbs', '/css/minigallery-big-image-with-thumbs.css', null, '0.1', 'screen');
 		$this->add_css('open-details', '/css/open-details.css', null, '0.1', 'screen');
 		$this->add_css('open-close', '/css/open-close.css', null, '0.1', 'screen');
 		$this->add_css('jquery-fancybox', '/css/jquery.fancybox.css', null, '2.1.0', 'screen');
