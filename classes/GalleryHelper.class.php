@@ -144,7 +144,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 			$defaults['exclude'] = get_post_thumbnail_id($post_id);
 		}
 		
-		if(taxonomy_exists('media_tag')){
+		if(taxonomy_exists('media_tag') && isset($args['tax_query'])){
 			$args['tax_query'] 	=	wp_parse_args(
 				$args['tax_query'],
 				array(
