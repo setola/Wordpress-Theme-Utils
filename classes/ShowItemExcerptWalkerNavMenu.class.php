@@ -116,7 +116,9 @@ EOF
 	public function get_excerpt($item){
 		global $post;
 		$post = get_post($item->object_id);
-		return get_the_excerpt();
+		$toret = get_the_excerpt();
+		wp_reset_postdata();
+		return $toret;
 	}
 	
 	/**
