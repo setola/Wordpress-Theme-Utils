@@ -191,8 +191,8 @@ class DefaultAssets{
 	 */
 	public function hook(){
 		if(!is_admin()){
-			add_action('wp_enqueue_scripts', array($this, 'callback'), 10);
-			add_action('wp_enqueue_scripts', array($this, 'load_assets'), 11);
+			add_action('wp_enqueue_scripts', array($this, 'callback'), 8);
+			add_action('wp_enqueue_scripts', array($this, 'load_assets'), 9);
 			add_action('shutdown', array($this, 'save_assets'));
 		}
 	}
