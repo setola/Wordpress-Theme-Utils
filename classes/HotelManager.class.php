@@ -118,13 +118,12 @@ class HotelManager {
 	 * @return array a list of posts that are main hotel page
 	 */
 	public static function get_hotels(){
-		return get_posts(
-			array(
-				'meta_key'		=>	self::META_KEY_NAME ,
-				'meta_value'	=>	'on',
-				'post_type'		=>	'page'
-			) 
-		);
+		$ids = self::get_hotels_ids();
+		$toret = array();
+		foreach($ids as $id){
+			$toret[$id] = get_post($id);
+		}
+		return array_values($toret);
 	}
 	
 	/**
