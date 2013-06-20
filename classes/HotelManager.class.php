@@ -154,6 +154,7 @@ class HotelManager {
 	 */
 	protected static function get_haystack($post=null){
 		if(empty($post)) global $post;
+		if(empty($post)) return;
 		return array_merge((array) get_post_ancestors($post), (array) $post->ID);
 	}
 	
@@ -199,7 +200,7 @@ class HotelManager {
 	 */
 	public static function get_hotel_slug($post=null){
 		$p = get_post(self::get_hotel_id($post));
-		return $p->post_name;
+		if(isset($p->post_name)) return $p->post_name;
 	}
 	
 	/**
@@ -214,7 +215,7 @@ class HotelManager {
 		$haystack = self::get_haystack($post);
 		
 		foreach(self::get_hotels_ids() as $id){
-			if(in_array($id, $haystack)){
+			if(in_array($id, (array)$haystack)){
 				global $sitepress;
 				if(isset($sitepress) && $default_language){
 					return icl_object_id($id, get_post_type($id), true, $sitepress->get_default_language());
