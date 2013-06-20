@@ -287,6 +287,7 @@ class DefaultAssets{
 	 */
 	public function load_assets($post_id = null){
 		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
+		if(empty($post_id)) $post_id = get_option('page_on_front');
 		$transient = 'page_assets_id_'.$post_id;
 		$assets = get_transient($transient);
 		foreach((array)$assets['css'] as $handle) wp_enqueue_style($handle);
