@@ -58,7 +58,7 @@ class PhotogalleryThumbWithFancybox extends GalleryHelper{
 	</div>
 EOF
 			)
-			->set_markup('loading', '<div class="loading">'.__('Loading...', $this->textdomain).'</div>');
+			->set_markup('loading', '<div class="loading">'.__('Loading...', 'wtu_framework').'</div>');
 		$this
 			->set_wp_media_dimension('photogallery')
 			->set_images_per_row(4)
