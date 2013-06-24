@@ -38,7 +38,7 @@ class MinigalleryBigImageWithThumbs extends GalleryHelper{
 			)
 			->set_markup('loading', '<div class="loading">'.__('Loading...', 'wtu_framework').'</div>')
 			->set_markup('next', '<div class="next">'.__('Next', 'wtu_framework').'</div>')
-			->set_markup('prev', '<div class="next">'.__('Prev', 'wtu_framework').'</div>')
+			->set_markup('prev', '<div class="prev">'.__('Prev', 'wtu_framework').'</div>')
 			->set_markup('big-image', '<div class="big-image"></div>')
 			->set_markup('caption', '<div class="caption"></div>')
 			->set_template(<<< EOF
