@@ -110,7 +110,8 @@ class DefaultAssets{
 		/**
 		 * Google Map
 		 */
-		$this->add_js('gmaps.api', 'http://maps.google.com/maps/api/js?sensor=false', null, '3', 'screen');
+		$lang = (defined('ICL_LANGUAGE_CODE')) ? ICL_LANGUAGE_CODE : get_bloginfo('language');
+		$this->add_js('gmaps.api', 'http://maps.google.com/maps/api/js?sensor=false&language='.$lang, null, '3', 'screen');
 		$this->add_js('map', '/js/gmap.js', array('jquery','gmaps.api'), '0.1', 'screen');
 		$this->add_js('map-directions', '/js/map-directions.js', array('jquery','map'), '0.1', true);
 		
