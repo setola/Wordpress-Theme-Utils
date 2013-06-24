@@ -1,16 +1,29 @@
+window.offers_checker = window.offers_checker || [];
+
 FB.Loader.attachEvent(FB.Loader.eventType.AFTER_LOADING, {
 	'onNotify': function(){
-		var offers_checker = setInterval(function(){
-			if(typeof(jQuery.fn.cycle)!=='undefined'){
-				initializeOffersCycle();
-				clearInterval(offers_checker);
-			}
-		}, 500);
+		window.offers_checker.push(
+			setInterval(checkOffesCycleIsReady, 1000)
+		);
 	}
 });
 
+function checkOffesCycleIsReady(){
+	if(initializeOffersCycle()){
+		clearOffersCycleInterval();
+	}
+}
+
+function clearOffersCycleInterval(){
+	for(i=0; i<window.offers_checker.length; i++)
+		clearInterval(window.offers_checker[i]);
+}
 
 function initializeOffersCycle(){
+	if(typeof(jQuery)=='undefined') return false;
+	if(typeof(jQuery.fn.cycle)=='undefined') return false;
+	if(jQuery('.offers-container .cycle > ul').html() == '') return false;
+	
 	jQuery('.offers-container').each(function(key, value){
 		var that 				= jQuery(this);
 		var cycle_container 	= that.find('.cycle > ul');
@@ -42,4 +55,6 @@ function initializeOffersCycle(){
 			}
 		});
 	});
+	
+	return true;
 };
