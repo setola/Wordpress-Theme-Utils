@@ -109,7 +109,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @return boolean true if there is at least two image
 	 */
 	public function has_images(){
-		return count($this->images) > 1;
+		return count($this->images) >= 1;
 	}
 	
 	/**
