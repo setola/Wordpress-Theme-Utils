@@ -145,6 +145,14 @@ class ThemeUtils{
 	public static function enable_links_manager(){
 		LinksManager::get_instance();
 	}
+	
+	/**
+	 * Disables the loading of javascripts and csses from a template part
+	 */
+	public static function disable_automatic_assets_manager(){
+		global $assets;
+		$assets->disable_automatic_manager();
+	}
 }
 
 

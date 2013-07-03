@@ -60,6 +60,11 @@ class ThemeHelpers{
 	
 	/**
 	 * Enqueue a previously registered JavaScript in WordPress init action
+	 * 
+	 * It can be called after wp_head(). In this case the asset will be
+	 * loaded on the next page view. This is beacuse the assets list
+	 * will be stored in a transient. @see AutomaticAssetsManager::enable_automatic_manager()
+	 * 
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
 	 * according to this we have to:
 	 * Use the wp_enqueue_scripts action to call this function, 
@@ -85,6 +90,11 @@ class ThemeHelpers{
 	
 	/**
 	 * Enqueue a previously registered StyleSheet in WordPress init action
+	 * 
+	 * It can be called after wp_head(). In this case the asset will be
+	 * loaded on the next page view. This is beacuse the assets list
+	 * will be stored in a transient. @see AutomaticAssetsManager::enable_automatic_manager()
+	 * 
 	 * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
 	 * according to this we have to:
 	 * Use the wp_enqueue_scripts action to call this function. 
