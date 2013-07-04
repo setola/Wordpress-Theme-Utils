@@ -61,6 +61,8 @@ class DefaultAssets extends AutomaticAssetsManager{
 		 * Initialization scripts
 		 */
 		$this->add_js('slideshow', '/js/slideshow.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);
+		// same thing but using cycle2
+		$this->add_js('slideshow2', '/js/slideshow2.js', array('jquery.cycle2'), '0.1', true);
 		$this->add_js('slideshow-fullscreen', '/js/slideshow-fullscreen.js', array('jquery.imagesloaded', 'jquery.cycle', 'jquery.scrollto'), '0.1', true);
 		$this->add_js('social', '/js/social.js', array('jquery'), '0.1', true);
 		$this->add_js('cycle', '/js/cycle.js', array('jquery.imagesloaded', 'jquery.cycle'), '0.1', true);

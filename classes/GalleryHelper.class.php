@@ -317,7 +317,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @return GalleryHelper $this for chainability
 	 */
 	public function calculate_unique(){
-		$this->unid = uniqid('gallery-');
+		$this->unid = uniqid('gallery_');
 		return $this;
 	}
 
