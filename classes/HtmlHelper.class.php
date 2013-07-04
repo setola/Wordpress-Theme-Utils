@@ -92,8 +92,17 @@ EOF;
 	}
 	
 	/**
+	 * Get the markup for a <div> tag
+	 * @param string $inner_html the inner html code
+	 * @param array $parms additional parameters
+	 */
+	public static function div($inner_html, $parms=array()){
+		return self::standard_tag('div', self::list_inner_html($inner_html), $parms);
+	}
+	
+	/**
 	 * Get the markup for a <span> tag
-	 * @param string $inner_html the image source
+	 * @param string $inner_html the inner html code
 	 * @param array $parms additional parameters
 	 */
 	public static function span($inner_html, $parms=array()){
