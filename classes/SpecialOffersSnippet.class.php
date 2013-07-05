@@ -26,7 +26,7 @@
 class SpecialOffersSnippet {
 	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion';
 	const default_divdest = 'FB_so';
-	const com_js = 'http://hotelsitecontents.fastbooking.ch/js/fb.js';
+	const com_js = 'http://hotelsitecontents.fastbooking.com/js/fb.js';
 	const pop_js = 'http://hotelsitecontents.fastbooking.com/js/pop.js';
 	
 	/**
