@@ -1,18 +1,18 @@
 <?php 
 /**
- * Contains ImagePreload class definition
+ * Contains ImageProgressiveLoading class definition
  */
 
 
 
 /**
- * Takes care of image preloading with jQuery imagesloaded
+ * Takes care of image sequential loading with jQuery Cycle 2
  * @author etessore
  * @version 1.0.0
  * @package classes
  * @subpackage image manager
  */
-class ImagePreload extends GalleryHelper{
+class ImageProgressiveLoading extends GalleryHelper{
 	
 	public $cycle_attrs = array();
 	
