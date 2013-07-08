@@ -1,3 +1,6 @@
 [submodule "libraries/twitteroauth"]
 	path = libraries/twitteroauth
 	url = https://github.com/abraham/twitteroauth.git
+[submodule "libraries/twitter-api"]
+	path = libraries/twitter-api
+	url = https://github.com/J7mbo/twitter-api-php.git

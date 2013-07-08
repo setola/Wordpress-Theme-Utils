@@ -133,6 +133,15 @@ class ThemeUtils{
 			define('WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH', 'partials/');
 
 		/**
+		 * Path for libraries
+		 */
+		if(!defined('WORDPRESS_THEME_UTILS_LIBRARIES_RELATIVE_PATH'))
+			define('WORDPRESS_THEME_UTILS_LIBRARIES_RELATIVE_PATH', 'libraries/');
+		
+		if(!defined('WORDPRESS_THEME_UTILS_LIBRARIES_ABSOLUTE_PATH'))
+			define('WORDPRESS_THEME_UTILS_LIBRARIES_ABSOLUTE_PATH', WORDPRESS_THEME_UTILS_PATH.'/libraries/');
+
+		/**
 		 * Relative path for autoloader class
 		 */
 		if(!defined('WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH'))
