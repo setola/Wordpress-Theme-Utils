@@ -77,18 +77,29 @@ class ImageProgressiveLoading extends GalleryHelper{
 			$list[]	= $this->render_element($k);
 		}
 		
-		$first_image = array_pop($list);
+		$first_image = array_shift($list);
+		
+		/*$src = '/images/ajax-loader.gif';
+		if(file_exists(get_stylesheet_directory().$src))
+			$src = get_stylesheet_directory_uri().$src;
+		
+		if(file_exists(get_template_directory().$src))
+			$src = get_template_directory_uri().$src;
+		
+		$first_image = HtmlHelper::image($src, array('id'=>'loading-gif'));*/
 		
 		$script = HtmlHelper::script(json_encode($list), array('id'=>'script_'.$this->unid));
 		
+		$defaults = array(
+			'id'						=>	$this->unid, 
+			'class'						=>	'cycle-slideshow', 
+			'data-cycle-loader'			=>	'true',
+			'data-cycle-progressive'	=>	'#script_'.$this->unid
+		);
+		
 		return HtmlHelper::div(
 				$first_image.$script, 
-				array(
-					'id'						=>	$this->unid, 
-					'class'						=>	'cycle-slideshow', 
-					'data-cycle-loader'			=>	'true',
-					'data-cycle-progressive'	=>	'#script_'.$this->unid
-				)
+				wp_parse_args($this->cycle_attrs, $defaults)
 			);
 		
 	}

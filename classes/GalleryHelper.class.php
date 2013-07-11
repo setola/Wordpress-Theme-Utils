@@ -28,6 +28,11 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @var array the list of images
 	 */
 	public $images = array();
+	
+	/**
+	 * @var int the maximum number of images to show
+	 */
+	public $image_number;
 
 	/**
 	 * @var array Stores some static html
@@ -56,26 +61,31 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * Build a placeholder
 	 */
 	public function get_images(){
-		$this->add_images(self::get_images_from_post());// = self::get_images_from_post();
+		$args = array();
+		if($this->image_number){
+			$args['numberposts'] = $this->image_number;
+		}
+		
+		$this->add_images(self::get_images_from_post($args));// = self::get_images_from_post();
 		
 		if(!$this->has_images()){
-			$this->add_images(self::get_images_from_main_language());
+			$this->add_images(self::get_images_from_main_language($args));
 		}
 		
 		if(!$this->has_images() && HotelManager::$enabled){
-			$this->add_images(self::get_images_from_closest_hotel());
+			$this->add_images(self::get_images_from_closest_hotel($args));
 		}
 		
 		if(!$this->has_images() && HotelManager::$enabled){
-			$this->add_images(self::get_images_from_closest_hotel_in_default_language());
+			$this->add_images(self::get_images_from_closest_hotel_in_default_language($args));
 		}
 		
 		if(!$this->has_images()){
-			$this->add_images(self::get_images_from_frontpage());
+			$this->add_images(self::get_images_from_frontpage($args));
 		}
 		
 		if(!$this->has_images()){
-			$this->add_images(self::get_images_from_homepage_in_default_language());
+			$this->add_images(self::get_images_from_homepage_in_default_language($args));
 		}
 		
 		if(!$this->has_images()){
@@ -227,6 +237,16 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 */
 	public function set_uid($unid){
 		$this->unid = $unid;
+		return $this;
+	}
+
+	/**
+	 * Set the maximum number of images to show
+	 * @param int $number the number
+	 * @return GalleryHelper $this for chainability
+	 */
+	public function limit_images_number($number){
+		$this->image_number = $number;
 		return $this;
 	}
 	
