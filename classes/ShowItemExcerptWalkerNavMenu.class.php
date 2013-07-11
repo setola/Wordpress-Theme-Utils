@@ -18,6 +18,8 @@ class ShowItemExcerptWalkerNavMenu extends Walker_Nav_Menu {
 	 */
 	public $tpl;
 	
+	public $thumb_media_size = 'thumbnail';
+	
 	public $classes = array();
 	
 	/**
@@ -141,6 +143,16 @@ EOF
 	}
 	
 	/**
+	 * Sets the thumbnail media dimension
+	 * @param string $size the media dimension
+	 * @return ShowItemExcerptWalkerNavMenu $this for chainability
+	 */
+	public function set_thumb_media_size($size){
+		$this->thumb_media_size = $size;
+		return $this;
+	}
+	
+	/**
 	 * (non-PHPdoc)
 	 * @see Walker_Nav_Menu::start_el()
 	 * @param string $output Passed by reference. Used to append additional content.
@@ -160,7 +172,7 @@ EOF
 		
 		$this->tpl
 			->set_markup('id', 			$this->get_excerpt_id($item))
-			->set_markup('image', 		$this->get_image($item, 'thumbnail', array('title'=>$this->get_title($item))))
+			->set_markup('image', 		$this->get_image($item, $this->thumb_media_size, array('title'=>$this->get_title($item))))
 			->set_markup('permalink', 	$this->get_permalink($item, array('title'=>$this->get_title($item))))
 			->set_markup('title', 		$this->get_title($item))
 			->set_markup('excerpt', 	$this->get_excerpt($item))
