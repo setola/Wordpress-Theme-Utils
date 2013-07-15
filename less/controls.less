@@ -1,0 +1,69 @@
+/*!
+ * controls.less
+ * Put here the style for a cycling element controls
+ * 
+ * Compiled on :compileTime:
+ */
+
+@import "variables";
+@import "mixins";
+
+@iconSize: 33px;
+@bgImage: url(../images/media-controls.png);
+
+.controls{
+	position: absolute;
+	bottom: 0;
+	right: 40px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	z-index: (@zindexslideShow + 30);
+	
+	ul{
+		list-style: none;
+	}
+	
+	.play, .pause, .prev, .next, .play-pause{
+		background-image: @bgImage;
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		background-position: 0 0;
+		background-color: transparent;
+		.square(@iconSize);
+		float: left;
+		cursor: pointer;
+	}
+	
+	.play{
+		background-position: 0 0;
+	}
+	
+	.play:HOVER{
+		background-position: 0 -33px;
+	}
+	
+	.pause{
+		background-position: -99px 0;
+	}
+	
+	.pause:HOVER{
+		background-position: -99px -33px;
+	}
+	
+	.prev{
+		background-position: -33px 0;
+	}
+	
+	.prev:HOVER{
+		background-position: -33px -33px;
+	}
+	
+	.next{
+		background-position: -66px 0;
+	}
+	
+	.next:HOVER{
+		background-position: -66px -33px;
+	}
+}

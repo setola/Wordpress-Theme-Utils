@@ -24,7 +24,7 @@
  * 	Initial Release
  */
 class SpecialOffersSnippet {
-	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php?snippet=promotion';
+	const baseurl = 'http://hotelsitecontents.fastbooking.com/router.php';
 	const default_divdest = 'FB_so';
 	const com_js = 'http://hotelsitecontents.fastbooking.com/js/fb.js';
 	const pop_js = 'http://hotelsitecontents.fastbooking.com/js/pop.js';
@@ -63,13 +63,7 @@ class SpecialOffersSnippet {
 		<div id="%divdest%"%option_divdest%>
 			<div class="loading">%loading%</div>
 		</div>
-		<div class="controls">
-			<ul>
-				<li class="prev"></li>
-				<li class="play-pause pause"></li>
-				<li class="next"></li>
-			</ul>
-		</div>
+		%controls%
 		<div class="">
 			<a hrref="javascript:;" class="offers-toggler"></a>
 		</div>
@@ -84,9 +78,12 @@ EOF;
 			->set_markup('option_divdest', '')
 			->set_markup('post', '')
 			->set_markup('pre', '')
+			->set_markup('controls', '')
 			->set_markup('loading', __('Loading Offers...', 'theme'));
 		
-		$this->add_param('hid', $hid)
+		$this
+			->add_param('snippet', 'promotion')
+			->add_param('hid', $hid)
 			->add_param('divdest', self::default_divdest);
 		
 		$this->index = 0;
@@ -175,6 +172,29 @@ EOF;
 	}	
 EOF;
 		$this->templates->set_markup('post', HtmlHelper::script($content));
+		return $this;
+	}
+	
+	/**
+	 * Adds 3 controls: nex pause\play and prev.
+	 * @param string $markup
+	 * @return SpecialOffersSnippet $this for chainability
+	 */
+	public function show_controls($markup=''){
+		ThemeHelpers::load_css('controls');
+		$markup = empty($markup) 
+		? '
+		<div class="controls">
+			<ul>
+				<li class="prev"></li>
+				<li class="play-pause pause"></li>
+				<li class="next"></li>
+			</ul>
+		</div>
+		'
+		: $markup;
+		$this->templates->set_markup('controls', $markup);
+		
 		return $this;
 	}
 	

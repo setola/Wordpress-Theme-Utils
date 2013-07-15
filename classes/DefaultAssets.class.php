@@ -101,6 +101,7 @@ class DefaultAssets extends AutomaticAssetsManager{
 		$this->add_css('fbqs', '/css/fbqs.css', null, '0.1', 'screen');
 		$this->add_css('standard-style', '/css/standard-style.css', null, '0.1', 'screen');
 		$this->add_css('slideshow', '/css/slideshow.css', null, '0.1', 'screen');
+		$this->add_css('controls', '/css/controls.css', null, '0.1', 'screen');
 		$this->add_css('room', '/css/room.css', null, '0.1', 'screen');
 		$this->add_css('offers', '/css/offers.css', null, '0.1', 'screen');
 		$this->add_css('location', '/css/location.css', null, '0.1', 'screen');
