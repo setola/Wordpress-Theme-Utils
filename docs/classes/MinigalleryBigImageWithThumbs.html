@@ -35,7 +35,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">39</span></a></li>
+                <span class="label label-info">186</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">4</span>
@@ -76,13 +76,14 @@
 <li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the markup for this minigallery"><span class="description">Retrieves the markup for this minigallery</span><pre>get_markup()</pre></a></li>
 <li class="method public inherited"><a href="#method_has_images" title="has_images :: Check if the current gallery has one or more images"><span class="description">Check if the current gallery has one or more images</span><pre>has_images()</pre></a></li>
 <li class="method public inherited"><a href="#method_is_empty" title="is_empty :: Checks if the current gallery has more no images"><span class="description">Checks if the current gallery has more no images</span><pre>is_empty()</pre></a></li>
+<li class="method public inherited"><a href="#method_limit_images_number" title="limit_images_number :: Set the maximum number of images to show"><span class="description">Set the maximum number of images to show</span><pre>limit_images_number()</pre></a></li>
 <li class="method public "><a href="#method_load_assets" title="load_assets :: Loads the needed assets"><span class="description">Loads the needed assets</span><pre>load_assets()</pre></a></li>
 <li class="method public inherited"><a href="#method_replace_markup" title="replace_markup :: Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag]."><span class="description">Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_markup()</pre></a></li>
-<li class="method public "><a href="#method_set_big_sizes" title="set_big_sizes :: Sets the sizes of the big image"><span class="description">Sets the sizes of the big image</span><pre>set_big_sizes()</pre></a></li>
+<li class="method public "><a href="#method_set_big_size" title="set_big_size :: Sets the sizes of the big image"><span class="description">Sets the sizes of the big image</span><pre>set_big_size()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_markup" title="set_markup :: Set the static markup; ie: prev\next\loading divs"><span class="description">Set the static markup; ie: prev\next\loading divs</span><pre>set_markup()</pre></a></li>
-<li class="method public "><a href="#method_set_small_sizes" title="set_small_sizes :: Sets the sizes of the thumbs"><span class="description">Sets the sizes of the thumbs</span><pre>set_small_sizes()</pre></a></li>
+<li class="method public "><a href="#method_set_small_size" title="set_small_size :: Sets the sizes of the thumbs"><span class="description">Sets the sizes of the thumbs</span><pre>set_small_size()</pre></a></li>
 <li class="method public "><a href="#method_set_template" title="set_template :: Set the html template for this minigallery"><span class="description">Set the html template for this minigallery</span><pre>set_template()</pre></a></li>
 <li class="method public "><a href="#method_set_thumbs_list_config" title="set_thumbs_list_config :: Sets the config for the thumbnails list"><span class="description">Sets the config for the thumbnails list</span><pre>set_thumbs_list_config()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_timthumb_options" title="set_timthumb_options :: Set the timthumb options
@@ -121,6 +122,7 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
+<li class="property public inherited"><a href="#property_image_number" title="$image_number :: "><span class="description">the maximum number of images to show</span><pre>$image_number</pre></a></li>
 <li class="property public inherited"><a href="#property_images" title="$images :: "><span class="description">the list of images</span><pre>$images</pre></a></li>
 <li class="property public inherited"><a href="#property_media_dimension" title="$media_dimension :: "><span class="description">WordPress media size name</span><pre>$media_dimension</pre></a></li>
 <li class="property public "><a href="#property_sizes" title="$sizes :: "><span class="description">stores the sizes of the images</span><pre>$sizes</pre></a></li>
@@ -401,6 +403,25 @@ and queries it for attached images.</p></div>
 <code>boolean</code>true if there is no image in the current set</div>
 </div></div>
 </div>
+<a id="method_limit_images_number"></a><div class="element clickable method public method_limit_images_number" data-toggle="collapse" data-target=".method_limit_images_number .collapse">
+<h2>Set the maximum number of images to show</h2>
+<pre>limit_images_number(int $number) : <a href="../classes/GalleryHelper.html">\GalleryHelper</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::limit_images_number()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>int</code><p>the number</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
+</div></div>
+</div>
 <a id="method_load_assets"></a><div class="element clickable method public method_load_assets" data-toggle="collapse" data-target=".method_load_assets .collapse">
 <h2>Loads the needed assets</h2>
 <pre>load_assets() : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
@@ -425,21 +446,14 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 </tr></table>
 </div></div>
 </div>
-<a id="method_set_big_sizes"></a><div class="element clickable method public method_set_big_sizes" data-toggle="collapse" data-target=".method_set_big_sizes .collapse">
+<a id="method_set_big_size"></a><div class="element clickable method public method_set_big_size" data-toggle="collapse" data-target=".method_set_big_size .collapse">
 <h2>Sets the sizes of the big image</h2>
-<pre>set_big_sizes(int $widht, int $height) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<pre>set_big_size($name) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$widht</h4>
-<code>int</code>
-</div>
-<div class="subelement argument">
-<h4>$height</h4>
-<code>int</code>
-</div>
+<div class="subelement argument"><h4>$name</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
@@ -467,21 +481,14 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 <code><a href="../classes/GalleryHelper.html">\GalleryHelper</a></code>$this for chainability</div>
 </div></div>
 </div>
-<a id="method_set_small_sizes"></a><div class="element clickable method public method_set_small_sizes" data-toggle="collapse" data-target=".method_set_small_sizes .collapse">
+<a id="method_set_small_size"></a><div class="element clickable method public method_set_small_size" data-toggle="collapse" data-target=".method_set_small_size .collapse">
 <h2>Sets the sizes of the thumbs</h2>
-<pre>set_small_sizes(int $widht, int $height) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
+<pre>set_small_size($name) : <a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$widht</h4>
-<code>int</code>
-</div>
-<div class="subelement argument">
-<h4>$height</h4>
-<code>int</code>
-</div>
+<div class="subelement argument"><h4>$name</h4></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/MinigalleryBigImageWithThumbs.html">\MinigalleryBigImageWithThumbs</a></code>$this for chainability</div>
@@ -776,6 +783,18 @@ a wordpress media id or an image object</h2>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_image_number"> </a><div class="element clickable property public property_image_number" data-toggle="collapse" data-target=".property_image_number .collapse">
+<h2>the maximum number of images to show</h2>
+<pre>$image_number : int</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\GalleryHelper::$$image_number</td>
+</tr></table>
+</div></div>
+</div>
 <a id="property_images"> </a><div class="element clickable property public property_images" data-toggle="collapse" data-target=".property_images .collapse">
 <h2>the list of images</h2>
 <pre>$images : array</pre>
@@ -867,7 +886,7 @@ a wordpress media id or an image object</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-06-18T17:08:25+02:00.<br></footer></div>
+            generated on 2013-07-23T16:55:37+02:00.<br></footer></div>
 </div>
 </body>
 </html>

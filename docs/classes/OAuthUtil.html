@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \ForceDownload</title>
+<title>WP Theme Utils » \OAuthUtil</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -61,104 +61,98 @@
 <ul class="side-nav nav nav-list"><li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Enables the force to download feature"><span class="description">Enables the force to download feature</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_check_request" title="check_request :: Tests if the $_REQUEST[] field is valid
-Overload this to insert more checks"><span class="description">Tests if the $_REQUEST[] field is valid
-Overload this to insert more checks</span><pre>check_request()</pre></a></li>
-<li class="method public "><a href="#method_force_download" title="force_download :: AJAX callback for forcing the download of a file"><span class="description">AJAX callback for forcing the download of a file</span><pre>force_download()</pre></a></li>
-<li class="method public "><a href="#method_force_download_anchor" title="force_download_anchor :: Calculates the url for the attachment with id $id"><span class="description">Calculates the url for the attachment with id $id</span><pre>force_download_anchor()</pre></a></li>
+<li class="method public "><a href="#method_build_http_query" title="build_http_query :: "><span class="description">build_http_query()
+        </span><pre>build_http_query()</pre></a></li>
+<li class="method public "><a href="#method_get_headers" title="get_headers :: "><span class="description">get_headers()
+        </span><pre>get_headers()</pre></a></li>
+<li class="method public "><a href="#method_parse_parameters" title="parse_parameters :: "><span class="description">parse_parameters()
+        </span><pre>parse_parameters()</pre></a></li>
+<li class="method public "><a href="#method_split_header" title="split_header :: "><span class="description">split_header()
+        </span><pre>split_header()</pre></a></li>
+<li class="method public "><a href="#method_urldecode_rfc3986" title="urldecode_rfc3986 :: "><span class="description">urldecode_rfc3986()
+        </span><pre>urldecode_rfc3986()</pre></a></li>
+<li class="method public "><a href="#method_urlencode_rfc3986" title="urlencode_rfc3986 :: "><span class="description">urlencode_rfc3986()
+        </span><pre>urlencode_rfc3986()</pre></a></li>
 </ul>
 </li></ul>
 </div>
 <div class="span8">
-<a id="\ForceDownload"></a><ul class="breadcrumb">
+<a id="\OAuthUtil"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ForceDownload.html">ForceDownload</a>
+<span class="divider">\</span><a href="../classes/OAuthUtil.html">OAuthUtil</a>
 </li>
 </ul>
-<div class="element class">
-<p class="short_description">Force an attachment to be downloaded</p>
-<div class="details">
-<div class="long_description"></div>
-<table class="table table-bordered">
-<tr>
-<th>author</th>
-<td><a href="">etessore</a></td>
-</tr>
-<tr>
-<th>version</th>
-<td>1.0.0</td>
-</tr>
-<tr>
-<th>package</th>
-<td><a href="../packages/classes.html">classes</a></td>
-</tr>
-</table>
+<div class="element class"><div class="details">
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Enables the force to download feature</h2>
-<pre>__construct(bool $priv, bool $nopriv) </pre>
-<div class="labels"></div>
+<a id="method_build_http_query"></a><div class="element clickable method public method_build_http_query" data-toggle="collapse" data-target=".method_build_http_query .collapse">
+<h2>build_http_query()
+        </h2>
+<pre>build_http_query($params) </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$priv</h4>
-<code>bool</code>
-</div>
-<div class="subelement argument">
-<h4>$nopriv</h4>
-<code>bool</code>
-</div>
+<div class="subelement argument"><h4>$params</h4></div>
 </div></div>
 </div>
-<a id="method_check_request"></a><div class="element clickable method public method_check_request" data-toggle="collapse" data-target=".method_check_request .collapse">
-<h2>Tests if the $_REQUEST[] field is valid
-Overload this to insert more checks</h2>
-<pre>check_request() </pre>
+<a id="method_get_headers"></a><div class="element clickable method public method_get_headers" data-toggle="collapse" data-target=".method_get_headers .collapse">
+<h2>get_headers()
+        </h2>
+<pre>get_headers() </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_force_download"></a><div class="element clickable method public method_force_download" data-toggle="collapse" data-target=".method_force_download .collapse">
-<h2>AJAX callback for forcing the download of a file</h2>
-<pre>force_download() </pre>
+<a id="method_parse_parameters"></a><div class="element clickable method public method_parse_parameters" data-toggle="collapse" data-target=".method_parse_parameters .collapse">
+<h2>parse_parameters()
+        </h2>
+<pre>parse_parameters($input) </pre>
 <div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_force_download_anchor"></a><div class="element clickable method public method_force_download_anchor" data-toggle="collapse" data-target=".method_force_download_anchor .collapse">
-<h2>Calculates the url for the attachment with id $id</h2>
-<pre>force_download_anchor(int $id, string $label, array $parms) : string</pre>
-<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>see</th>
-<td><a href="classes.HtmlHelper.class.html#%5CHtmlHelper::anchor()">\HtmlHelper::anchor()</a></td>
-</tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>int</code><p>the attachment id</p></div>
-<div class="subelement argument">
-<h4>$label</h4>
-<code>string</code><p>the text inside the <a> tag</p>
-</div>
-<div class="subelement argument">
-<h4>$parms</h4>
-<code>array</code><p>additional parameters for the <a> tag</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>an <a> tag</div>
+<div class="subelement argument"><h4>$input</h4></div>
 </div></div>
 </div>
+<a id="method_split_header"></a><div class="element clickable method public method_split_header" data-toggle="collapse" data-target=".method_split_header .collapse">
+<h2>split_header()
+        </h2>
+<pre>split_header($header, $only_allow_oauth_parameters) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$header</h4></div>
+<div class="subelement argument"><h4>$only_allow_oauth_parameters</h4></div>
+</div></div>
 </div>
+<a id="method_urldecode_rfc3986"></a><div class="element clickable method public method_urldecode_rfc3986" data-toggle="collapse" data-target=".method_urldecode_rfc3986 .collapse">
+<h2>urldecode_rfc3986()
+        </h2>
+<pre>urldecode_rfc3986($string) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$string</h4></div>
+</div></div>
 </div>
+<a id="method_urlencode_rfc3986"></a><div class="element clickable method public method_urlencode_rfc3986" data-toggle="collapse" data-target=".method_urlencode_rfc3986 .collapse">
+<h2>urlencode_rfc3986()
+        </h2>
+<pre>urlencode_rfc3986($input) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$input</h4></div>
+</div></div>
+</div>
+</div></div>
 </div>
 </div>
 <div class="row"><footer class="span12">

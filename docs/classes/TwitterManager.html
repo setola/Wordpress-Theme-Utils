@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \EscapeRoute</title>
+<title>WP Theme Utils » \TwitterManager</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -62,39 +62,38 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: Initializes the object to the default values"><span class="description">Initializes the object to the default values</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_add_link" title="add_link :: Adds a link"><span class="description">Adds a link</span><pre>add_link()</pre></a></li>
-<li class="method public "><a href="#method_get_markup" title="get_markup :: Retrieves the markup"><span class="description">Retrieves the markup</span><pre>get_markup()</pre></a></li>
-<li class="method public "><a href="#method_set_separator" title="set_separator :: Set the separator for the list of anchors"><span class="description">Set the separator for the list of anchors</span><pre>set_separator()</pre></a></li>
-<li class="method public "><a href="#method_set_template" title="set_template :: Set the html template"><span class="description">Set the html template</span><pre>set_template()</pre></a></li>
+<li class="method public "><a href="#method_disable" title="disable :: Completely disables the connection with Twitter"><span class="description">Completely disables the connection with Twitter</span><pre>disable()</pre></a></li>
+<li class="method public "><a href="#method_enable" title="enable :: Enables the connection with Twitter"><span class="description">Enables the connection with Twitter</span><pre>enable()</pre></a></li>
+<li class="method public "><a href="#method_on_ajax_show_tweets" title="on_ajax_show_tweets :: Shows the cached tweets"><span class="description">Shows the cached tweets</span><pre>on_ajax_show_tweets()</pre></a></li>
+<li class="method public "><a href="#method_on_ajax_update_tweets" title="on_ajax_update_tweets :: Updates the list of tweets"><span class="description">Updates the list of tweets</span><pre>on_ajax_update_tweets()</pre></a></li>
 </ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul><li class="method protected "><a href="#method_render_list" title="render_list :: Renders the list of anchors"><span class="description">Renders the list of anchors</span><pre>render_list()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_links" title="$links :: "><span class="description">the list of link to be printed in case of 404</span><pre>$links</pre></a></li>
-<li class="property public "><a href="#property_list_separator" title="$list_separator :: "><span class="description">the list separator</span><pre>$list_separator</pre></a></li>
-<li class="property public "><a href="#property_templates" title="$templates :: "><span class="description">the substitution engine</span><pre>$templates</pre></a></li>
-<li class="property public "><a href="#property_tpl" title="$tpl :: "><span class="description">the substitution template</span><pre>$tpl</pre></a></li>
+<li class="property public "><a href="#property_actions" title="$actions :: List of WP AJAX actions used by this feature"><span class="description"></span><pre>$actions</pre></a></li>
+<li class="property public "><a href="#property_connection" title="$connection :: The connection to Twitter APIs"><span class="description"></span><pre>$connection</pre></a></li>
+<li class="property public "><a href="#property_oauth_key" title="$oauth_key :: The OAuth customer key"><span class="description"></span><pre>$oauth_key</pre></a></li>
+<li class="property public "><a href="#property_oauth_secret" title="$oauth_secret :: The OAuth customer secret"><span class="description"></span><pre>$oauth_secret</pre></a></li>
+<li class="property public "><a href="#property_oauth_token" title="$oauth_token :: The OAuth token"><span class="description"></span><pre>$oauth_token</pre></a></li>
+<li class="property public "><a href="#property_oauth_token_secret" title="$oauth_token_secret :: The OAuth token secret"><span class="description"></span><pre>$oauth_token_secret</pre></a></li>
+<li class="property public "><a href="#property_transients" title="$transients :: Some transients for cache"><span class="description"></span><pre>$transients</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\EscapeRoute"></a><ul class="breadcrumb">
+<a id="\TwitterManager"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/EscapeRoute.html">EscapeRoute</a>
+<span class="divider">\</span><a href="../classes/TwitterManager.html">TwitterManager</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages the navigation links on a 404 page</p>
+<p class="short_description">Manages the connection with Twitter</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -104,7 +103,7 @@
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.1</td>
+<td>1.0.0</td>
 </tr>
 <tr>
 <th>package</th>
@@ -113,109 +112,86 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>Initializes the object to the default values</h2>
-<pre>__construct() </pre>
+<a id="method_disable"></a><div class="element clickable method public method_disable" data-toggle="collapse" data-target=".method_disable .collapse">
+<h2>Completely disables the connection with Twitter</h2>
+<pre>disable() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_enable"></a><div class="element clickable method public method_enable" data-toggle="collapse" data-target=".method_enable .collapse">
+<h2>Enables the connection with Twitter</h2>
+<pre>enable(string $customer_key, string $customer_secret, string $token, string $token_secret) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You need to create a new app and authorize it from your twitter account</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$customer_key</h4>
+<code>string</code><p>Consumer key</p></div>
+<div class="subelement argument">
+<h4>$customer_secret</h4>
+<code>string</code><p>Consumer secret</p></div>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>string</code><p>Access token</p></div>
+<div class="subelement argument">
+<h4>$token_secret</h4>
+<code>string</code><p>Access token secret</p></div>
+</div></div>
+</div>
+<a id="method_on_ajax_show_tweets"></a><div class="element clickable method public method_on_ajax_show_tweets" data-toggle="collapse" data-target=".method_on_ajax_show_tweets .collapse">
+<h2>Shows the cached tweets</h2>
+<pre>on_ajax_show_tweets() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_add_link"></a><div class="element clickable method public method_add_link" data-toggle="collapse" data-target=".method_add_link .collapse">
-<h2>Adds a link</h2>
-<pre>add_link(string $href, string $label, string | array $params) : <a href="../classes/EscapeRoute.html">\EscapeRoute</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$href</h4>
-<code>string</code><p>the url to be linked</p></div>
-<div class="subelement argument">
-<h4>$label</h4>
-<code>string</code><p>the inner html for the <a> tag</p>
-</div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>string</code><code>array</code><p>additional parameters for the <a></p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/EscapeRoute.html">\EscapeRoute</a></code>$this for chainability</div>
-</div></div>
-</div>
-<a id="method_get_markup"></a><div class="element clickable method public method_get_markup" data-toggle="collapse" data-target=".method_get_markup .collapse">
-<h2>Retrieves the markup</h2>
-<pre>get_markup() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>returns</th>
-<td>the markup</td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_set_separator"></a><div class="element clickable method public method_set_separator" data-toggle="collapse" data-target=".method_set_separator .collapse">
-<h2>Set the separator for the list of anchors</h2>
-<pre>set_separator(string $separator) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$separator</h4>
-<code>string</code><p>html between every <a></p>
-</div>
-</div></div>
-</div>
-<a id="method_set_template"></a><div class="element clickable method public method_set_template" data-toggle="collapse" data-target=".method_set_template .collapse">
-<h2>Set the html template</h2>
-<pre>set_template(string $tpl) : <a href="../classes/EscapeRoute.html">\EscapeRoute</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$tpl</h4>
-<code>string</code><p>the template</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/EscapeRoute.html">\EscapeRoute</a></code>$this for chainability</div>
-</div></div>
-</div>
-<a id="method_render_list"></a><div class="element clickable method protected method_render_list" data-toggle="collapse" data-target=".method_render_list .collapse">
-<h2>Renders the list of anchors</h2>
-<pre>render_list() : \the</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>\the</code>rendered the list of anchors</div>
-</div></div>
+<a id="method_on_ajax_update_tweets"></a><div class="element clickable method public method_on_ajax_update_tweets" data-toggle="collapse" data-target=".method_on_ajax_update_tweets .collapse">
+<h2>Updates the list of tweets</h2>
+<pre>on_ajax_update_tweets() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_links"> </a><div class="element clickable property public property_links" data-toggle="collapse" data-target=".property_links .collapse">
-<h2>the list of link to be printed in case of 404</h2>
-<pre>$links : array</pre>
+<a id="property_actions"> </a><div class="element clickable property public property_actions" data-toggle="collapse" data-target=".property_actions .collapse">
+<h2></h2>
+<pre>$actions : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_list_separator"> </a><div class="element clickable property public property_list_separator" data-toggle="collapse" data-target=".property_list_separator .collapse">
-<h2>the list separator</h2>
-<pre>$list_separator : string</pre>
+<a id="property_connection"> </a><div class="element clickable property public property_connection" data-toggle="collapse" data-target=".property_connection .collapse">
+<h2></h2>
+<pre>$connection : <a href="../classes/TwitterOAuth.html">\TwitterOAuth</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_templates"> </a><div class="element clickable property public property_templates" data-toggle="collapse" data-target=".property_templates .collapse">
-<h2>the substitution engine</h2>
-<pre>$templates : <a href="../classes/SubstitutionTemplate.html">\SubstitutionTemplate</a></pre>
+<a id="property_oauth_key"> </a><div class="element clickable property public property_oauth_key" data-toggle="collapse" data-target=".property_oauth_key .collapse">
+<h2></h2>
+<pre>$oauth_key : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_tpl"> </a><div class="element clickable property public property_tpl" data-toggle="collapse" data-target=".property_tpl .collapse">
-<h2>the substitution template</h2>
-<pre>$tpl : string</pre>
+<a id="property_oauth_secret"> </a><div class="element clickable property public property_oauth_secret" data-toggle="collapse" data-target=".property_oauth_secret .collapse">
+<h2></h2>
+<pre>$oauth_secret : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_oauth_token"> </a><div class="element clickable property public property_oauth_token" data-toggle="collapse" data-target=".property_oauth_token .collapse">
+<h2></h2>
+<pre>$oauth_token : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_oauth_token_secret"> </a><div class="element clickable property public property_oauth_token_secret" data-toggle="collapse" data-target=".property_oauth_token_secret .collapse">
+<h2></h2>
+<pre>$oauth_token_secret : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_transients"> </a><div class="element clickable property public property_transients" data-toggle="collapse" data-target=".property_transients .collapse">
+<h2></h2>
+<pre>$transients : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>

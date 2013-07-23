@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>WP Theme Utils » \ShowcaseSlider</title>
+<title>WP Theme Utils » \ImageProgressiveLoading</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -80,6 +80,7 @@
 <li class="method public inherited"><a href="#method_replace_markup" title="replace_markup :: Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag]."><span class="description">Replaces the markup in $this-&gt;tpl %tag%s with the one
 in the corresponding value of $this-&gt;static_markup[tag].</span><pre>replace_markup()</pre></a></li>
+<li class="method public "><a href="#method_set_cycle_attr" title="set_cycle_attr :: Adds an attribute for the cycle div"><span class="description">Adds an attribute for the cycle div</span><pre>set_cycle_attr()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_markup" title="set_markup :: Set the static markup; ie: prev\next\loading divs"><span class="description">Set the static markup; ie: prev\next\loading divs</span><pre>set_markup()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_template" title="set_template :: Set the html template for this gallery"><span class="description">Set the html template for this gallery</span><pre>set_template()</pre></a></li>
 <li class="method public inherited"><a href="#method_set_timthumb_options" title="set_timthumb_options :: Set the timthumb options
@@ -115,9 +116,13 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 <li class="method protected inherited"><a href="#method_get_image_width" title="get_image_width :: Get the width for the n-th image of the list"><span class="description">Get the width for the n-th image of the list</span><pre>get_image_width()</pre></a></li>
 </ul>
 </li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_render_element" title="render_element :: Renders a single element of the slideshow"><span class="description">Renders a single element of the slideshow</span><pre>render_element()</pre></a></li></ul>
+</li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
+<li class="property public "><a href="#property_cycle_attrs" title="$cycle_attrs :: "><span class="description"></span><pre>$cycle_attrs</pre></a></li>
 <li class="property public inherited"><a href="#property_image_number" title="$image_number :: "><span class="description">the maximum number of images to show</span><pre>$image_number</pre></a></li>
 <li class="property public inherited"><a href="#property_images" title="$images :: "><span class="description">the list of images</span><pre>$images</pre></a></li>
 <li class="property public inherited"><a href="#property_media_dimension" title="$media_dimension :: "><span class="description">WordPress media size name</span><pre>$media_dimension</pre></a></li>
@@ -130,18 +135,17 @@ a wordpress media id or an image object</span><pre>get_image_src()</pre></a></li
 </ul>
 </div>
 <div class="span8">
-<a id="\ShowcaseSlider"></a><ul class="breadcrumb">
+<a id="\ImageProgressiveLoading"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/ShowcaseSlider.html">ShowcaseSlider</a>
+<span class="divider">\</span><a href="../classes/ImageProgressiveLoading.html">ImageProgressiveLoading</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages the markup for a generic set of images
-Extend this with your nice and candy classes!</p>
+<p class="short_description">Takes care of image sequential loading with jQuery Cycle 2</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
@@ -437,6 +441,24 @@ in the corresponding value of $this-&gt;static_markup[tag].</h2>
 <th>inherited_from</th>
 <td>\GalleryHelper::replace_markup()</td>
 </tr></table>
+</div></div>
+</div>
+<a id="method_set_cycle_attr"></a><div class="element clickable method public method_set_cycle_attr" data-toggle="collapse" data-target=".method_set_cycle_attr .collapse">
+<h2>Adds an attribute for the cycle div</h2>
+<pre>set_cycle_attr(string $key, string $value) : <a href="../classes/ImagePreload.html">\ImagePreload</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Useful if you vant to customize jQuery.cycle 2 behavior</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the key</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>the value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/ImagePreload.html">\ImagePreload</a></code>$this for chainability</div>
 </div></div>
 </div>
 <a id="method_set_markup"></a><div class="element clickable method public method_set_markup" data-toggle="collapse" data-target=".method_set_markup .collapse">
@@ -737,8 +759,30 @@ a wordpress media id or an image object</h2>
 <code>int</code><p>the index of the images list</p></div>
 </div></div>
 </div>
+<a id="method_render_element"></a><div class="element clickable method private method_render_element" data-toggle="collapse" data-target=".method_render_element .collapse">
+<h2>Renders a single element of the slideshow</h2>
+<pre>render_element(int $k) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$k</h4>
+<code>int</code><p>the index of the element in $this->images array</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>html markup for the given element</div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cycle_attrs"> </a><div class="element clickable property public property_cycle_attrs" data-toggle="collapse" data-target=".property_cycle_attrs .collapse">
+<h2></h2>
+<pre>$cycle_attrs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_image_number"> </a><div class="element clickable property public property_image_number" data-toggle="collapse" data-target=".property_image_number .collapse">
 <h2>the maximum number of images to show</h2>
 <pre>$image_number : int</pre>
