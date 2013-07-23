@@ -12,15 +12,8 @@
  * having the need to check if the asset can be
  * loaded in the head or in the foot of the page.
  *
- * The first time a page is called stores the list
- * of needed assets in a transient and then it
- * loads the required assets before the page render.
- *
- * WARNING: This is a king of chache so it can cause
- * some issues on the first page load, if some assets
- * (css first) have to be loaded in the head part.
- * From the second one the page will have
- * all the needed js and css load from the db.
+ * Uses ob_start and a placeholder for the assets.
+ * It's a singleton beacause it has to be run only once
  *
  * @author etessore
  * @version 1.0.0
@@ -28,7 +21,9 @@
  *
  */
 
-abstract class AutomaticAssetsManager {
+class AutomaticAssetsManager {
+	
+	private static $instance = null;
 
 	/**
 	 * manages the list of css and js
@@ -41,16 +36,49 @@ abstract class AutomaticAssetsManager {
 	 * @var array
 	 */
 	private $base_dir = array();
+	
+	/**
+	 * Stores the status for this feature
+	 * @var boolean true if the feature is enabled
+	 */
+	private $status = false;
+	
+	/**
+	 * Placeholder for the css
+	 * @var string
+	 */
+	const CSS_MARKER = '<!-- ###WPU### place here the css -->';
+	
+	/**
+	 * Placeholder for the top javascripts
+	 * @var stirng
+	 */
+	const TOP_JS_MARKER = '<!-- ###WPU### place here the top js -->';
+	
+	/**
+	 * Placeholder for the bottom javascript
+	 * @var string
+	 */
+	const BOTTOM_JS_MARKER = '<!-- ###WPU### place here the bottom js -->';
 
 	/**
 	 * Register some assets and hooks into WP
 	 */
-	function __construct(){
+	private function __construct(){
 		$this
-			->register_standard()
-			->register_custom()
 			->hook()
 			->enable_automatic_manager();
+	}
+	
+	/**
+	 * Retrieves the singleton instance for this feature
+	 * @return AutomaticAssetsManager unique instance
+	 */
+	public static function get_instance(){
+		if(is_null(self::$instance)){
+			self::$instance = new self;
+		}
+		return self::$instance;
 	}
 
 	/**
@@ -114,9 +142,25 @@ abstract class AutomaticAssetsManager {
 	 * @return DefaultAssets $this for chainability
 	 */
 	public function enable_automatic_manager(){
-		add_action('wp_enqueue_scripts', array(&$this, 'load_assets'), 9);
-		add_action('shutdown', array(&$this, 'save_assets'));
+		if(!$this->status && !is_admin()){
+			remove_action('wp_head', 'wp_print_styles', 8);
+			
+			add_action('wp_head', array(&$this, 'on_wp_print_styles'));
+			add_action('wp_head', array(&$this, 'on_wp_print_scripts'));
+			add_action('wp_footer', array(&$this, 'on_wp_print_footer_scripts'));
+			
+			add_action('shutdown', array(&$this, 'obstart_replace_assets_marker'), -11);
+			add_action('init', array(&$this, 'obstart_init'));
+		}
+		$this->status = true;
 		return $this;
+	}
+	
+	/**
+	 * Called by wordpress right before the page start 
+	 */
+	public function obstart_init(){
+		ob_start();
 	}
 	
 	/**
@@ -124,9 +168,66 @@ abstract class AutomaticAssetsManager {
 	 * @return DefaultAssets $this for chainability
 	 */
 	public function disable_automatic_manager(){
-		remove_action('wp_enqueue_scripts', array(&$this, 'load_assets'), 9);
-		remove_action('shutdown', array(&$this, 'save_assets'));
+			
+		remove_action('wp_head', array(&$this, 'on_wp_print_styles'));
+		remove_action('wp_head', array(&$this, 'on_wp_print_scripts'));
+		remove_action('wp_footer', array(&$this, 'on_wp_print_footer_scripts'));
+		
+		remove_action('shutdown', array(&$this, 'obstart_replace_assets_marker'), -11);
+		remove_action('init', array(&$this, 'obstart_init'));
+		
+		$this->status = false;
 		return $this;
+	}
+
+	/**
+	 * Prints a marker for the top css
+	 */
+	public function on_wp_print_styles(){ echo "\n".self::CSS_MARKER."\n"; }
+	
+	/**
+	 * Prints a marker for the top javascript
+	 */
+	public function on_wp_print_scripts(){ echo "\n".self::TOP_JS_MARKER."\n"; }
+	
+	/**
+	 * Prints a marker for the bottom javascript
+	 */
+	public function on_wp_print_footer_scripts(){ echo "\n".self::BOTTOM_JS_MARKER."\n"; }
+	
+	/**
+	 * Replaces the temporarily markers inserted
+	 * on first page execution with the real
+	 * list of html markup for the needed assets
+	 */
+	public function obstart_replace_assets_marker(){
+		$this->disable_automatic_manager();
+		$html = ob_get_clean();
+		
+		foreach((array)ThemeHelpers::$assets['css'] as $handle) wp_enqueue_style($handle);
+		foreach((array)ThemeHelpers::$assets['js'] as $handle) wp_enqueue_script($handle);
+		
+		$css_render = '';
+		$top_js_render = '';
+		$bottom_js_render = '';
+		
+		ob_start();
+		wp_print_styles();
+		$css_render = ob_get_clean();
+		
+		ob_start();
+		do_action('wp_print_scripts');
+		$top_js_render = ob_get_clean();
+		
+		ob_start();
+		do_action('wp_print_footer_scripts');
+		$bottom_js_render = ob_get_clean();/**/
+		
+		echo str_replace(
+			array(self::CSS_MARKER, self::TOP_JS_MARKER, self::BOTTOM_JS_MARKER), 
+			array($css_render, $top_js_render, $bottom_js_render), 
+			$html
+		);
 	}
 
 	/**
@@ -193,51 +294,5 @@ abstract class AutomaticAssetsManager {
 			}
 		}
 	}
-
-	/**
-	 * Saves the assets required for post with given id
-	 *
-	 * Stores it in a transient so that if you like to call ThemeHelpers::load_js()
-	 * somewhere after wp_head() the next time you will load the page
-	 * the system will add such assets to the head (css) or foot (js).
-	 * @param int $post_id the id of the post
-	 */
-	public function save_assets($post_id = null){
-		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
-		$transient = 'page_assets_id_'.$post_id;
-		delete_transient($transient);
-		set_transient($transient, ThemeHelpers::$assets);
-	}
-
-	/**
-	 * Loads the assets for the post with given id
-	 *
-	 * Retrieves a transient with the list of assets used in this page\post.
-	 * Then enqueue them with {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_script wp_enqueue_script()}
-	 * or {@link http://codex.wordpress.org/Function_Reference/wp_enqueue_style wp_enqueue_style()}
-	 * @param string $post_id
-	 */
-	public function load_assets($post_id = null){
-		$post_id = (empty($post_id)) ? get_the_ID() : $post_id;
-		if(empty($post_id)) $post_id = get_option('page_on_front');
-		$transient = 'page_assets_id_'.$post_id;
-		$assets = get_transient($transient);
-		foreach((array)$assets['css'] as $handle) wp_enqueue_style($handle);
-		foreach((array)$assets['js'] as $handle) wp_enqueue_script($handle);
-	}
-
-	/**
-	 * Register some assets for generic use
-	 * Put here yout JS libraries and Generic CSS like reset.css or similar
-	 * @return DefaultAssets $this for chainability
-	 */
-	abstract public function register_standard();
-
-	/**
-	 * Register some assets to be used in the theme.
-	 * Put here your custom scripts.
-	 * @return DefaultAssets $this for chainability
-	*/
-	abstract public function register_custom();
 
 }

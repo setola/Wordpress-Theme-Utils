@@ -145,7 +145,8 @@ EOF;
 	 * Dumps the $wp_scripts global variable
 	 */
 	public function dump_assets(){
-		global $wp_scripts;
+		global $wp_scripts, $wp_styles;
+		$this->debug($wp_styles);
 		$this->debug($wp_scripts);
 	}
 	
