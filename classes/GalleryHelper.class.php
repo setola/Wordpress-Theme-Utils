@@ -185,18 +185,11 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		global $sitepress;
 		if(empty($sitepress)) return self::get_images_from_post(array('post_parent' => intval($post_id)));
 		
-		return self::get_images_from_post(
-			array(
-				'post_parent'=>intval(
-					icl_object_id(
-						$post_id, 
-						get_post_type($post_id), 
-						true, 
-						$sitepress->get_default_language()
-					)
-				)
-			)
-		);
+		$post_id = icl_object_id($post_id, get_post_type($post_id), true, $sitepress->get_default_language());
+		
+		if($post_id == 0) return;
+					
+		return self::get_images_from_post(array('post_parent'=>intval($post_id)));
 	}
 	
 	/**

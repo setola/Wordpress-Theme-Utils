@@ -89,7 +89,7 @@ EOF;
 		$this->index = 0;
 		
 		if(!is_admin()){
-			ThemeHelpers::load_js('snippet-com');
+			//ThemeHelpers::load_js('snippet-com');
 		}
 	}
 

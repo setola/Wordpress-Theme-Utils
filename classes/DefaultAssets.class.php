@@ -52,7 +52,7 @@ class DefaultAssets{
 		 * Fblib, remember to fill the fbcallback.js in your child theme!
 		 */
 		$this->assets_manager->add_js('fbqs', 'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&callbackScriptURL='
-				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery','jquery.ui.selectmenu'), '1', true);
+				.get_stylesheet_directory_uri().'/js/fbcallback.js', array('jquery'), '1', true);
 		
 		/**
 		 * HTML5 Boiler Plate
