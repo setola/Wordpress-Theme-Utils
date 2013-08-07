@@ -176,51 +176,68 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * and queries it for attached images.
 	 * 
 	 * @uses icl_object_id()
-	 * @param int $post_id the post id you want to search for
+	 * @param array $args arguments to pass to WP_Query
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
-	public static function get_images_from_main_language($post_id=null){
-		$post_id = is_null($post_id) ? get_the_ID() : $post_id;
+	public static function get_images_from_main_language($args=array()){
+		
+		if(!isset($args['post_parent']) || is_null($args['post_parent'])){
+			$args['post_parent'] = get_the_ID();
+		}
 		
 		global $sitepress;
-		if(empty($sitepress)) return self::get_images_from_post(array('post_parent' => intval($post_id)));
-		
-		$post_id = icl_object_id($post_id, get_post_type($post_id), true, $sitepress->get_default_language());
-		
-		if($post_id == 0) return;
+		if(!empty($sitepress)){
+			$post_id = icl_object_id(
+				$args['post_parent'], 
+				get_post_type($args['post_parent']), 
+				true, 
+				$sitepress->get_default_language()
+			);
+			
+			if($post_id == 0) return;
+			
+			$args['post_parent'] = $post_id;
+		}
 					
-		return self::get_images_from_post(array('post_parent'=>intval($post_id)));
+		return self::get_images_from_post($args);
 	}
 	
 	/**
 	 * Gets images attached to the frontpage
+	 * @param array $args arguments to pass to WP_Query
+	 * @return array list of images
 	 */
-	public static function get_images_from_frontpage(){
-		return self::get_images_from_post(array('post_parent'=>get_option('page_on_front')));
+	public static function get_images_from_frontpage($args=array()){
+		$args['post_parent'] = get_option('page_on_front');
+		return self::get_images_from_post($args);
 	}
 	
 	/**
 	 * Gets images attached to the frontpage in default language translation 
+	 * @param array $args arguments to pass to WP_Query
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
-	public static function get_images_from_homepage_in_default_language(){
-		return self::get_images_from_main_language(get_option('page_on_front'));
+	public static function get_images_from_homepage_in_default_language($args=array()){
+		$args['post_parent'] = get_option('page_on_front');
+		return self::get_images_from_main_language($args);
 	}
 	
 	/**
 	 * Gets images from the first post marked as 'hotel' by HotelManager
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
-	public static function get_images_from_closest_hotel(){
-		return self::get_images_from_post(array('post_parent' => HotelManager::get_hotel_id()));
+	public static function get_images_from_closest_hotel($args=array()){
+		$args['post_parent'] = HotelManager::get_hotel_id();
+		return self::get_images_from_post($args);
 	}
 	
 	/**
 	 * Gets images from the first post marked as 'hotel' by HotelManager in default language
 	 * @return Ambigous <Ambigous, multitype:, boolean, multitype:Ambigous <NULL> >
 	 */
-	public static function  get_images_from_closest_hotel_in_default_language(){
-		return self::get_images_from_post(array('post_parent' => HotelManager::get_hotel_id(null, true)));
+	public static function  get_images_from_closest_hotel_in_default_language($args=array()){
+		$args['post_parent'] = HotelManager::get_hotel_id(null, true);
+		return self::get_images_from_post($args);
 	}
 	
 	/**
