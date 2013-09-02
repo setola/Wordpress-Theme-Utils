@@ -26,6 +26,11 @@ final class DebugUtils {
 	private $title;
 	
 	/**
+	 * @var boolean show the file and line number in wich this feature is called
+	 */
+	private $show_file_info;
+	
+	/**
 	 * @var SubstitutionTemplate the template for the debug section
 	 */
 	public $tpl;
@@ -56,13 +61,17 @@ final class DebugUtils {
 	 * Initializes the default settings
 	 */
 	private function __construct(){
-		$this->tpl = $tpl = <<<EOF
-		<div class="debug">
-			<h1>%title%</h1>
-			<pre>%debug%</pre>
-		</div>
-EOF;
 		$this->set_level(self::COMMENT);
+		$this->tpl = new SubstitutionTemplate();
+		$this->tpl->set_tpl(
+<<<EOF
+	<div class="debug">
+		<h1>%title%</h1>
+		<h2>%fileinfo%</h2>
+		<pre>%debug%</pre>
+	</div>
+EOF
+		);
 		
 		if(WP_DEBUG === true)
 			$this->debug_deprecated();
@@ -85,10 +94,20 @@ EOF;
 	 * Sets the level of output.
 	 * Use DebugUtils::SOFT DebugUtils::H1_PRE or DebugUtils::H1_PRE_DIE
 	 * @param int $level the level
-	 * @return DebugUtils for chaining
+	 * @return DebugUtils this for chaining
 	 */
 	public function set_level($level){
 		$this->level = $level;
+		return $this;
+	}
+	
+	/**
+	 * Shows or hide info about the file and line number
+	 * @param boolean $status true if you want the infos
+	 * @return DebugUtils this for chaining
+	 */
+	public function show_file_info($status){
+		$this->show_file_info = $status;
 		return $this;
 	}
 	
@@ -101,17 +120,36 @@ EOF;
 	}
 	
 	/**
+	 * Renders the file and line informations.
+	 * @return string rendered info
+	 */
+	public function get_file_info(){
+		$db = debug_backtrace();
+		$details = $db[2];
+		$sub = new SubstitutionTemplate();
+		return $sub->set_tpl(
+<<<EOF
+	<span class="file">%file%</span>: 
+	<span class="line">%line%</span>
+EOF
+		)
+			->set_markup('file', $details['file'])
+			->set_markup('line', $details['line'])
+			->replace_markup();
+	}
+	
+	/**
 	 * Prints the dump for the given $var
 	 * @param mixed $var the variable to be dumped
 	 */
 	public function debug($var){
 		if(!$this->status) return '';
 		
-		$render = str_replace(
-			array(	'%debug%',								'%title%'), 
-			array(	var_export($var, true), 	$this->title), 
-			$this->tpl
-		);
+		$render = $this->tpl
+			->set_markup('debug', var_export($var, true))
+			->set_markup('fileinfo', $this->get_file_info())
+			->set_markup('title', $this->title)
+			->replace_markup();
 		
 		switch($this->level){
 			default:
