@@ -6,12 +6,14 @@
 /**
  * Autoload needed classes
  * @author etessore
- * @version 1.0.1
+ * @version 1.0.2
  * @package classes
  */
  
 /* 
  * Changelog:
+ * 1.0.2
+ * 	rewrited as singleton
  * 1.0.1
  * 	support multiple search path to allow children theme to extend classes
  * 1.0.0
@@ -19,6 +21,8 @@
  */
 class ClassAutoloader {
 	const WORDPRESS_THEME_UTILS_CLASS_DIR = 'classes';
+	
+	private static $instance = null;
 	
 	/**
 	 * @var array stores the path the system will scan for files
@@ -28,7 +32,7 @@ class ClassAutoloader {
 	/**
 	 * Initializes the autoloader
 	 */
-	public function __construct() {
+	private function __construct() {
 		$this
 			// First search in the child theme dir
 			->add_loading_template(
@@ -43,6 +47,17 @@ class ClassAutoloader {
 				.'/%classname%.class.php'
 			)
 			->register_autoload();
+	}
+	
+	/**
+	 * Retrieves the singleton instance
+	 * @return ClassAutoloader
+	 */
+	public static function get_instance(){
+		if(is_null(self::$instance)){
+			self::$instance = new self;
+		}
+		return self::$instance;
 	}
 	
 	/**
