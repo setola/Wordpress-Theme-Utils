@@ -97,7 +97,7 @@ EOF;
 	 * @param array $parms additional parameters
 	 */
 	public static function div($inner_html, $parms=array()){
-		return self::standard_tag('div', self::list_inner_html($inner_html), $parms);
+		return self::standard_tag('div', $inner_html, $parms);
 	}
 	
 	/**
@@ -106,7 +106,26 @@ EOF;
 	 * @param array $parms additional parameters
 	 */
 	public static function span($inner_html, $parms=array()){
-		return self::standard_tag('span', self::list_inner_html($inner_html), $parms);
+		return self::standard_tag('span', $inner_html, $parms);
+	}
+	
+	/**
+	 * Get the markup for a <strong> tag
+	 * @param string $inner_html the inner html code
+	 * @param array $parms additional parameters
+	 * @return string the strong tag
+	 */
+	public static function strong($inner_html, $parms=array()){
+		return self::standard_tag('strong', $inner_html, $parms);
+	}
+	
+	/**
+	 * Get the markup for a <br> tag
+	 * @param array $parms additional parameters
+	 * @return string the br tag
+	 */
+	public static function br($parms=array()){
+		return self::standard_tag('br', $inner_html, $parms);
 	}
 	
 	/**
