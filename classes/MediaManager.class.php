@@ -1,6 +1,16 @@
 <?php 
 /**
- * Manages multiple hotels in a single website
+ * Manages multiple media set
+ * 
+ * This feature adds a metabox to your WordPress admin panel
+ * in which you can add any media media into a given set.
+ * 
+ * Then in your theme you will be able to retrieve the single
+ * set and show it where you need it.
+ * 
+ * For example if you need to have a slideshow on the top of the page
+ * and a minigallery on the bottom, this feature is what you need
+ * to separate your images between the two sets.
  * 
  * @author Emanuele 'Tex' Tessore
  * @version 1.0.0
@@ -32,6 +42,8 @@ class MediaManager {
 		add_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
 		add_action('save_post', array(__CLASS__, 'save_metabox_data'));
 		add_action('init', array(__CLASS__, 'register_assets'));
+		add_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
+		//add_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
 		add_action('admin_print_scripts', array(__CLASS__, 'enqueue_assets'));
 		self::$enabled = true;
 	}
@@ -43,6 +55,7 @@ class MediaManager {
 		remove_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
 		remove_action('save_post', array(__CLASS__, 'save_metabox_data'));
 		remove_action('init', array(__CLASS__, 'register_assets'));
+		remove_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
 		remove_action('admin_print_scripts', array(__CLASS__, 'register_assets'));
 		self::$enabled = false;
 	}
@@ -51,7 +64,7 @@ class MediaManager {
 	 * Register scripts and styles needed for this feature
 	 */
 	public static function register_assets(){
-		wp_register_script('wpu-media-manager', get_stylesheet_directory_uri().'/js/media-manager.js', array('jquery'), '1.0.0', true);
+		wp_register_script('wpu-media-manager', get_template_directory_uri().'/js/media-manager.js', array('jquery'), '1.0.0', true);
 		wp_register_script('json2', 'http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js', null, '20121008', true);
 	}
 	
@@ -61,10 +74,26 @@ class MediaManager {
 	public static function enqueue_assets(){
 		wp_enqueue_script('wpu-media-manager');
 		wp_enqueue_script('json2');
+		wp_enqueue_media();
+		wp_enqueue_script('custom-header');
+	}
+	
+	public static function media_view_settings($settings, $post ) {
+		if (!is_object($post)) return $settings;
+	
+		// Create our own shortcode string here
+		$shortcode = 'wpuCustomGallery';
+	
+		$settings['wpuCustomGallery'] = array('shortcode' => $shortcode);
+		return $settings;
+	}
+	
+	public static function wp_ajax_media_manager_gallery_update(){
+		
 	}
 	
 	/**
-	 * Registers the 'Media Manager' metabox
+	 * Registers the metabox
 	 */
 	public static function register_metaboxes(){
 		add_meta_box(
@@ -78,7 +107,7 @@ class MediaManager {
 	}
 	
 	/**
-	 * Prints the HTML markup for the 'Is This An Hotel?' metabox
+	 * Prints the HTML markup for the metabox
 	 */
 	public static function metabox_html($post){
 		wp_nonce_field(__FILE__, self::META_KEY_NAME.'_nonce');
@@ -101,10 +130,14 @@ class MediaManager {
 					)
 				);
 				
-				echo HtmlHelper::input(self::META_KEY_NAME.'['.$elem['id'].']', 'hidden', array('class'=>$elem['id']));
+				echo HtmlHelper::input(
+					self::META_KEY_NAME.'['.$elem['id'].']', 
+					'text', 
+					array('id'=>$elem['id'],'value'=>$value[$elem['id']])
+				);
 			
 				$number = 0;
-				if(isset($value[$elem['id']])) $number = count(json_decode($value[$elem['id']], true));
+				if(isset($value[$elem['id']])) $number = count(explode(',', $value[$elem['id']]));
 				if($number>0){
 					printf(_n('1 element', '%s elements', $number, 'wtu_framework'), $number); 
 				} else {
@@ -145,11 +178,11 @@ class MediaManager {
 		foreach($_POST[self::META_KEY_NAME] as $k => $v){
 			if(is_array($v)){
 				foreach($v as $k1 => $v1){
-					$v[sanitize_text_field($k1)] = sanitize_text_field($v1);
+					$v[sanitize_text_field($k1)] = sanitize_text_field(trim($v1, '"'));
 				}
 				$sanitized[sanitize_text_field($k)] = $v;
 			} else {
-				$sanitized[sanitize_text_field($k)] = sanitize_text_field($v);
+				$sanitized[sanitize_text_field($k)] = sanitize_text_field(trim($v, '"'));
 			}
 		}
 		
@@ -160,9 +193,28 @@ class MediaManager {
 		);
 	}
 	
+	/**
+	 * Adds or edits a set 
+	 * @param string $id identifier for the set
+	 * @param array $parms additional parameters such as the label showed in wp admin page
+	 */
 	public static function set_media_list($id, $parms){
 		if(!isset($parms['id'])) $parms['id'] = $id;
 		self::$media_list[$id] = $parms;
+	}
+	
+	/**
+	 * Retrieves the elements for the given set.
+	 * If $set is empty, every available set will be returned
+	 * @param string $set filter only a particular set of elements
+	 * @param int $post_id the post ID to be queried
+	 * @return mixed a list of media elements for the given set
+	 */
+	public static function get_media($set='', $post_id=null){
+		if(is_null($post_id)) $post_id = get_the_ID();
+		$data = get_post_meta($post_id, self::META_KEY_NAME, true);
+		if($set!='' && isset($data[$set])) return explode(',', $data[$set]);
+		return explode(',', $data);
 	}
 	
 }

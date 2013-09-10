@@ -7,6 +7,7 @@
  */
 
 ThemeHelpers::load_css('style');
+ThemeUtils::enable_debug();
 
 get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 
@@ -28,7 +29,8 @@ get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'header');
 			<?php get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'sidebar'); ?>
 		</div>
 	</div>
-
+	<div id="slw"><?php v(MediaManager::get_media('slideshow')); ?></div>
+	<div id="mng"><?php v(MediaManager::get_media('minigallery')); ?></div>
 <?php 
 	get_template_part(WORDPRESS_THEME_UTILS_PARTIALS_RELATIVE_PATH.'footer'); 
 ?>
