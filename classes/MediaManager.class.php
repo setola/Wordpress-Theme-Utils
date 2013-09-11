@@ -40,10 +40,10 @@ class MediaManager {
 	 */
 	public static function enable() {
 		add_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
-		add_action('save_post', array(__CLASS__, 'save_metabox_data'));
+		//add_action('save_post', array(__CLASS__, 'save_metabox_data')); //done by ajax
 		add_action('init', array(__CLASS__, 'register_assets'));
 		add_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
-		//add_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
+		add_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
 		add_action('admin_print_scripts', array(__CLASS__, 'enqueue_assets'));
 		self::$enabled = true;
 	}
@@ -53,9 +53,10 @@ class MediaManager {
 	 */
 	public static function disable(){
 		remove_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
-		remove_action('save_post', array(__CLASS__, 'save_metabox_data'));
+		//remove_action('save_post', array(__CLASS__, 'save_metabox_data'));
 		remove_action('init', array(__CLASS__, 'register_assets'));
 		remove_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
+		remove_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
 		remove_action('admin_print_scripts', array(__CLASS__, 'register_assets'));
 		self::$enabled = false;
 	}
@@ -78,18 +79,49 @@ class MediaManager {
 		wp_enqueue_script('custom-header');
 	}
 	
+	/**
+	 * Called on media_view_settings, this method adds a new 
+	 * shortcode for the media manager custom gallery
+	 * @param mixed $settings media view settings
+	 * @param object $post the post
+	 * @return mixed settings with new shortcode
+	 */
 	public static function media_view_settings($settings, $post ) {
 		if (!is_object($post)) return $settings;
-	
-		// Create our own shortcode string here
-		$shortcode = 'wpuCustomGallery';
-	
-		$settings['wpuCustomGallery'] = array('shortcode' => $shortcode);
+		$settings['wpuCustomGallery'] = array('shortcode' => 'wpuCustomGallery');
 		return $settings;
 	}
 	
+	/**
+	 * Ajax callback for saving the custom gallery ids list
+	 */
 	public static function wp_ajax_media_manager_gallery_update(){
+		//TODO: check of the nonce!!!!!!!
+		if(isset($_POST['html'])){
+			$html = sanitize_text_field($_POST['html']);
+		} else {
+			die('error: html not set');
+		}
 		
+		if(isset($_POST['post_id'])){
+			$post_id = intval($_POST['post_id']);
+		} else {
+			die('error: post id not set');
+		}
+		
+		if(isset($_POST['elem_id'])){
+			$meta_name = self::META_KEY_NAME.'-'.sanitize_title($_POST['elem_id']);
+		} else {
+			die('error: element id not set');
+		}
+		
+		update_post_meta($post_id, $meta_name, $html);
+		
+		// I want to be absolutely sure to return the meta currently present in the db :)
+		$toret = array('success'=>true, 'data'=>get_post_meta($post_id, $meta_name, true));
+		
+		header('Content-type: text/json');
+		die(json_encode($toret));
 	}
 	
 	/**
@@ -110,39 +142,46 @@ class MediaManager {
 	 * Prints the HTML markup for the metabox
 	 */
 	public static function metabox_html($post){
-		wp_nonce_field(__FILE__, self::META_KEY_NAME.'_nonce');
-		$value = get_post_meta($post->ID, self::META_KEY_NAME, true);
 		
 		if(count(self::$media_list)){
 			foreach(self::$media_list as $elem){
+				$name = self::META_KEY_NAME.'-'.$elem['id'];
+				wp_nonce_field(__FILE__, $name.'_nonce');
+				$value = get_post_meta($post->ID, $name, true);
 				
 				echo HtmlHelper::anchor(
 					'javascript:;', 
 					HtmlHelper::span('', array('class'=>'wp-media-buttons-icon'))
-					.sprintf(__('Manage Media for %s', 'wtu_framework'), HtmlHelper::strong($elem['label'])),
+						.sprintf(__('Manage Media for %s', 'wtu_framework'), 
+					HtmlHelper::strong($elem['label'])),
 					array(
 						'class'				=>	'button media-manager-button',
-						'data-target'		=>	'#'.$elem['id'],
+						'data-target'		=>	'#wtu-media-manager-element-'.$elem['id'],
+						'data-counter'		=>	'#wtu-media-manager-counter-'.$elem['id'],
+						'data-frame-id'		=>	'wtu-media-manager-'.$elem['id'],
 						'data-title'		=>	sprintf(__('Manage Media for %s', 'wtu_framework'), $elem['label']),
 						'data-button-label'	=>	sprintf(__('Add selected media to %s set', 'wtu_framework'), $elem['label']),
 						'data-multiple'		=>	'true',
+						'data-elem-id'		=>	$elem['id'],
 						'title'				=>	sprintf(__('Manage Media for %s', 'wtu_framework'), $elem['label'])
 					)
 				);
 				
-				echo HtmlHelper::input(
-					self::META_KEY_NAME.'['.$elem['id'].']', 
-					'text', 
-					array('id'=>$elem['id'],'value'=>$value[$elem['id']])
-				);
+				echo HtmlHelper::input($name, 'text', array('id'=>'wtu-media-manager-element-'.$elem['id'],'value'=>$value));
 			
 				$number = 0;
-				if(isset($value[$elem['id']])) $number = count(explode(',', $value[$elem['id']]));
-				if($number>0){
-					printf(_n('1 element', '%s elements', $number, 'wtu_framework'), $number); 
-				} else {
-					_e('Empty', 'wtu_framework');
-				}
+				if(isset($value) && $value != '') $number = count(explode(',', $value));
+				echo '&nbsp;'.HtmlHelper::span(
+					($number > 0) 
+						? sprintf(_n('1 element', '%s elements', $number, 'wtu_framework'), $number) 
+						: __('Empty', 'wtu_framework'),
+					array(
+						'id'						=>	'wtu-media-manager-counter-'.$elem['id'],
+						'data-label-no-images'		=>	__('Empty', 'wtu_framework'),
+						'data-label-one-image'		=>	__('1 element', 'wtu_framework'),
+						'data-label-more-images'	=>	__('%s elements', 'wtu_framework')
+					)
+				);
 				
 				echo HtmlHelper::br().HtmlHelper::br();
 			}
@@ -153,6 +192,7 @@ class MediaManager {
 	/**
 	 * Saves the metabox data while saving the page
 	 * @param int $post_id the post id
+	 * @deprecated using ajax instead
 	 */
 	public static function save_metabox_data($post_id){
 		if(!isset($post_id)) return;
