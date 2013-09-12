@@ -324,6 +324,11 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @return GalleryHelper $this for chainability
 	 */
 	public function add_image($img){
+		if(is_numeric($img)){
+			$img = intval($img);
+			$p = get_post(intval($img));
+			if($p->ID != $img) return $this;
+		}
 		$this->images[] = $img;
 		return $this;
 	}
