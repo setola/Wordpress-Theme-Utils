@@ -35,17 +35,11 @@
 function wordpress_theme_utils_initialize_hook(){
 	include_once 'classes/ThemeUtils.class.php';
 	wtu_init();
-
+	ThemeHelpers::remove_wpml_assets();
 	add_theme_support( 'post-thumbnails' );
-	MediaManager::enable();
-	MediaManager::set_media_list('slideshow', array('label'=>__('Slideshow', 'wtu_framework')));
-	MediaManager::set_media_list('minigallery', array('label'=>__('Minigallery', 'wtu_framework')));
-	
+	add_image_size('slideshow', 940, 400, true);
 }
 add_action('after_setup_theme', 'wordpress_theme_utils_initialize_hook', 9);
-
-
-
 
 
 if(!function_exists('http_build_url')){

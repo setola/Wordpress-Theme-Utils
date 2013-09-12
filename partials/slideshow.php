@@ -7,9 +7,6 @@
  * @subpackage parts
  * @since 0.1
  */
-if(!array_key_exists('slideshow', ImageGenerator::get_all_image_sizes()))
-	add_image_size('slideshow',940, 400);
-
 
 ?>
 <div id="slideshow" class="slideshow">
