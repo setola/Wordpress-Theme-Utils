@@ -360,7 +360,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	protected function get_image_src($index){
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			//$toret = wp_get_attachment_url($this->images[$index]);
 			$image = wp_get_attachment_image_src($this->images[$index], $this->media_dimension);
 			$toret = $image[0];
@@ -395,7 +395,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 		
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			//$toret = wp_get_attachment_url($this->images[$index]);
 			$toret = get_attached_file($this->images[$index], $this->media_dimension);
 		} elseif(is_object($this->images[$index])){
@@ -464,7 +464,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 * @param int $index the index of the images list
 	 */
 	protected function get_image_id($index){
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			return $index;
 		} elseif(is_object($this->images[$index])){
 			return $this->images[$index]->ID;
@@ -482,7 +482,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	protected function get_image_title($index){
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			$toret = get_the_title($this->images[$index]);
 		} elseif(is_object($this->images[$index])){
 			$toret = get_the_title($this->images[$index]->ID);
@@ -503,7 +503,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	protected function get_image_alt($index){
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			$toret = get_post_meta($this->images[$index], '_wp_attachment_image_alt', true);
 		} elseif(is_object($this->images[$index])){
 			$toret = get_post_meta($this->images[$index]->ID, '_wp_attachment_image_alt', true);
@@ -524,7 +524,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	protected function get_image_caption($index){
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			$post = get_post($this->images[$index]);
 			$toret = $post->post_excerpt;
 		} elseif(is_object($this->images[$index])){
@@ -548,7 +548,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	protected function get_image_description($index){
 		$toret = $this->images[$index];
 
-		if(is_integer($this->images[$index])){
+		if(is_numeric($this->images[$index])){
 			$post = get_post($this->images[$index]);
 			$toret = $post->post_content;
 		} elseif(is_object($this->images[$index])){
