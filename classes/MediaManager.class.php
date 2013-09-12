@@ -12,6 +12,35 @@
  * and a minigallery on the bottom, this feature is what you need
  * to separate your images between the two sets.
  * 
+ * In your functions.php simply add
+ * <code>
+ * 	MediaManager::enable();
+ * 	MediaManager::set_media_list('slideshow', array(
+ * 		'label'		=>	__('Slideshow', 'wtu_framework'),
+ * 		'shortcode'	=>	'mySlideshow'
+ * 	));
+ * </code>
+ * to enable the backend feature.
+ * 
+ * Now you will have to manage a new shortcode; for example:
+ * 
+ * <code>
+ * 	function mySlideshow_gallery_shortcode($atts){
+ * 		$data = shortcode_atts(array('ids' => ''), $atts );
+ * 		$toret = '';
+ * 		$ids = explode(',', $data['ids']);
+ * 		foreach($ids as $id){
+ * 			$toret .= wp_get_attachment_image($id);
+ * 		}
+ * 		return $toret;
+ * 	}
+ * 	
+ * 	add_shortcode('mySlideshow', 'mySlideshow_gallery_shortcode');
+ * </code>
+ * 
+ * If you need more than a section simply duplicate your code and change 
+ * at least the shortcode and the id (first parameter of set_media_list())
+ * 
  * @author Emanuele 'Tex' Tessore
  * @version 1.0.0
  *
@@ -27,7 +56,7 @@ class MediaManager {
 	 * Stores the list of needed media types
 	 * @var array
 	 */
-	private static $media_list = array();
+	protected static $media_list = array();
 	
 	/**
 	 * Postmeta name to identify a single hotel
@@ -42,7 +71,7 @@ class MediaManager {
 		add_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
 		//add_action('save_post', array(__CLASS__, 'save_metabox_data')); //done by ajax
 		add_action('init', array(__CLASS__, 'register_assets'));
-		add_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
+		//add_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
 		add_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
 		add_action('admin_print_scripts', array(__CLASS__, 'enqueue_assets'));
 		self::$enabled = true;
@@ -55,7 +84,7 @@ class MediaManager {
 		remove_action('add_meta_boxes', array(__CLASS__, 'register_metaboxes'));
 		//remove_action('save_post', array(__CLASS__, 'save_metabox_data'));
 		remove_action('init', array(__CLASS__, 'register_assets'));
-		remove_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
+		//remove_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
 		remove_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
 		remove_action('admin_print_scripts', array(__CLASS__, 'register_assets'));
 		self::$enabled = false;
@@ -85,8 +114,9 @@ class MediaManager {
 	 * @param mixed $settings media view settings
 	 * @param object $post the post
 	 * @return mixed settings with new shortcode
+	 * @deprecated useless???
 	 */
-	public static function media_view_settings($settings, $post ) {
+	public static function media_view_settings($settings, $post){
 		if (!is_object($post)) return $settings;
 		$settings['wpuCustomGallery'] = array('shortcode' => 'wpuCustomGallery');
 		return $settings;
@@ -126,15 +156,29 @@ class MediaManager {
 	
 	/**
 	 * Registers the metabox
+	 * 
+	 * @uses add_meta_box
+	 * 
+	 * @param string $post_type The type of Write screen on 
+	 * which to show the edit screen section ('post', 'page', 'dashboard', 
+	 * 'link', 'attachment' or 'custom_post_type' where custom_post_type 
+	 * is the custom post type slug)
+	 * 
+	 * @param string $context The part of the page where the edit screen 
+	 * section should be shown ('normal', 'advanced', or 'side'). 
+	 * (Note that 'side' doesn't exist before 2.7)
+	 * 
+	 * @param string $priority The priority within the context where the 
+	 * boxes should show ('high', 'core', 'default' or 'low')
 	 */
-	public static function register_metaboxes(){
+	public static function register_metaboxes($post_type='', $context='side', $priority='high'){
 		add_meta_box(
 			'wpu-media-manager',
 			__( 'Media Manager', 'wtu_framework' ),
 			array(__CLASS__, 'metabox_html'),
-			'page',
-			'side',
-			'high'
+			$post_type,
+			$context,
+			$priority
 		);
 	}
 	
@@ -163,6 +207,7 @@ class MediaManager {
 						'data-button-label'	=>	sprintf(__('Add selected media to %s set', 'wtu_framework'), $elem['label']),
 						'data-multiple'		=>	'true',
 						'data-elem-id'		=>	$elem['id'],
+						'data-shortcode'	=>	$elem['shortcode'],
 						'title'				=>	sprintf(__('Manage Media for %s', 'wtu_framework'), $elem['label'])
 					)
 				);
@@ -240,22 +285,82 @@ class MediaManager {
 	 */
 	public static function set_media_list($id, $parms){
 		if(!isset($parms['id'])) $parms['id'] = $id;
+		if(!isset($parms['shortcode'])) $parms['shortcode'] = $id;
+		if(!isset($parms['wpml'])) $parms['wpml'] = array(
+			'default_lang'			=>	true,
+			'homepage'				=>	false,
+			'homepage_default_lang'	=>	false
+		);
 		self::$media_list[$id] = $parms;
 	}
 	
 	/**
-	 * Retrieves the elements for the given set.
-	 * If $set is empty, every available set will be returned
-	 * @param string $set filter only a particular set of elements
+	 * Retrieves the shortcode for the given set.
+	 * @uses MediaManager::get_meta()
+	 * @param string $set identifier of the set of elements
 	 * @param int $post_id the post ID to be queried
-	 * @return mixed a list of media elements for the given set
+	 * @return string the shortcode fot the media set
 	 */
-	public static function get_media($set='', $post_id=null){
+	public static function get_media($set, $post_id=null){
 		if(is_null($post_id)) $post_id = get_the_ID();
-		$data = get_post_meta($post_id, self::META_KEY_NAME, true);
-		if($set!='' && isset($data[$set])) return explode(',', $data[$set]);
-		return explode(',', $data);
+		$data = self::get_meta($set, $post_id);
+		return $data;
+	}
+	
+	/**
+	 * Utitlity to retrieve the post meta for the given media set.
+	 * 
+	 * If WPML is available and notthing is retrieved from the
+	 * given $post_id, this method will search for the same
+	 * post meta in the corresponding post in default language.
+	 * 
+	 * It is protected cause it can be overloaded by child classes
+	 * but it's for internal use only. MediaManager::get_media() 
+	 * is the public method.
+	 * 
+	 * @uses icl_object_id() (WPML) if available
+	 * @param string $set identifier of the set of elements
+	 * @param int $post_id the post ID to be queried
+	 * @return string the meta
+	 */
+	protected static function get_meta($set, $post_id){
+		$meta_name = self::META_KEY_NAME.'-'.sanitize_title($set);
+		$data = get_post_meta($post_id, $meta_name, true);
+		
+		if(isset($GLOBALS['sitepress'])){
+			global $sitepress;
+			
+			// look for the post in default language
+			if(self::$media_list[$set]['wpml']['default_lang'] && empty($data)){
+				$post_id = icl_object_id($post_id, get_post_type($post_id), true, $sitepress->get_default_language());
+				if($post_id == 0) return;
+				$data = get_post_meta($post_id, $meta_name, true);
+			}			
+			
+			// look for the homepage in current language
+			if(self::$media_list[$set]['wpml']['default_lang'] && empty($data)){
+				$data = get_post_meta(get_option('page_on_front'), $meta_name, true);
+			}		
+			
+			// look for the homepage in default language
+			if(self::$media_list[$set]['wpml']['default_lang'] && empty($data)){
+				$post_id = icl_object_id(get_option('page_on_front'), get_post_type(get_option('page_on_front')), true, $sitepress->get_default_language());
+				if($post_id == 0) return;
+				$data = get_post_meta($post_id, $meta_name, true);
+			}		
+		}		
+			
+		return $data;
+	}
+	
+	/**
+	 * Retrieves the markup for the given set
+	 * @param string $set identifier of the set of elements
+	 * @param int $post_id the post ID to be queried
+	 * @return string html markup
+	 */
+	public static function get_gallery($set, $post_id=null){
+		return do_shortcode(self::get_media($set, $post_id));
 	}
 	
 }
-

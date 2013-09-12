@@ -64,7 +64,7 @@ wp.media.wpuMediaManager = {
 	// in wp-includes/js/media-editor.js.source.html
 	select: function() {
 		var html = jQuery(this.origin.data('target')).val(),
-	    	shortcode = wp.shortcode.next(wp.media.view.settings.wpuCustomGallery.shortcode, html),
+	    	shortcode = wp.shortcode.next(this.origin.data('shortcode'), html),
 	        defaultPostId = wp.media.gallery.defaults.id,
 	        attachments, selection;
 	 
@@ -102,6 +102,7 @@ wp.media.wpuMediaManager = {
 	shortcode: function( attachments ) {
 		var props = attachments.props.toJSON(),
 			attrs = _.pick( props, 'orderby', 'order' ),
+			shortcodeTag = this.origin.data('shortcode'), 
 			shortcode, clone;
 
 		if ( attachments.gallery )
@@ -133,7 +134,7 @@ wp.media.wpuMediaManager = {
 		});
 
 		shortcode = new wp.shortcode({
-			tag:    'wpuCustomGallery',
+			tag:    shortcodeTag,
 			attrs:  attrs,
 			type:   'single'
 		});
