@@ -18,10 +18,27 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 	public $tpl;
 	
 	/**
+	 * @var string stores the media dimension for the big image
+	 */
+	public $media_dimension_big;
+	
+	/**
 	 * Initializes the minigallery
 	 */
 	public function __construct(){
-		$this->set_template('<div class="images-container">%list%</div>');
+		$this
+			->set_template('<div class="images-container">%list%</div>')
+			->set_wp_media_dimension_big();
+	}
+	
+	/**
+	 * Sets the media dimension for the big image
+	 * @param string $dimension the media dimension name
+	 * @return MinigalleryThumbsLinkToBig $this for chainability
+	 */
+	public function set_wp_media_dimension_big($dimension='full'){
+		$this->media_dimension_big = $dimension;
+		return $this;
 	}
 	
 	/**
@@ -36,10 +53,13 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 			ThemeHelpers::load_js('minigallery-thumbs-link-to-big');
 			ThemeHelpers::load_css('jquery-fancybox');
 			foreach($this->images as $index => $image){
+				$image_big = wp_get_attachment_image_src($this->get_image_id($index), $this->media_dimension_big);
+				$image_small = wp_get_attachment_image_src($this->get_image_id($index), $this->media_dimension);
+				
 				$toret .= HtmlHelper::anchor(
-					$this->set_wp_media_dimension('full')->get_image_src($index), 
+					$image_big[0], 
 					HtmlHelper::image(
-						wp_get_attachment_thumb_url($image->ID),
+						$this->get_image_src($index),
 						array(
 							'alt'			=>	$this->get_image_alt($index),
 							'title'			=>	$this->get_image_description($index),

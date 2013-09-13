@@ -470,7 +470,7 @@ abstract class GalleryHelper /*extends FeatureWithAssets*/{
 	 */
 	protected function get_image_id($index){
 		if(is_numeric($this->images[$index])){
-			return $index;
+			return $this->images[$index];
 		} elseif(is_object($this->images[$index])){
 			return $this->images[$index]->ID;
 		} elseif(is_array($this->images[$index])){
