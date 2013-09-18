@@ -1,7 +1,6 @@
 wp.media.wpuMediaManager = {
 	frame: function(clickedjQueryElement) {
 		var origin = this.origin = clickedjQueryElement;
-		
 		var selection = this.select();
 		
 		this._frame = wp.media({
@@ -23,25 +22,7 @@ wp.media.wpuMediaManager = {
 		        elem_id:	origin.data('elem-id')
 		    }).done(function(html){
 		    	jQuery(origin.data('target')).val(html);
-		    	
-		    	var label = '';
-		    	var counter = jQuery(origin.data('counter'));
-		    	var controller = wp.media.wpuMediaManager._frame.states.get('gallery-edit');
-		        var library = controller.get('library');
-		        // Need to get all the attachment ids for gallery
-		        var ids = library.pluck('id');
-		        
-		        if(ids.length == 0){
-		        	label = counter.data('label-no-images');
-		        }
-		        
-		        if(ids.length == 1) {
-		        	label = counter.data('label-one-image');
-		        } else {
-		        	label = counter.data('label-more-images').replace(/%s/g, ids.length);;
-		        }
-		        
-		    	counter.html(label);
+		    	wp.media.wpuMediaManager.update_counter();
 		    }).fail(function(e){
 		    	//TODO: manage errors :D
 		    });
@@ -50,13 +31,91 @@ wp.media.wpuMediaManager = {
 		
 		return this._frame;
 	},
+	
+	update_counter: function(){
+		var origin = this.origin;
+    	var label = '';
+    	var counter = jQuery(origin.data('counter'));
+    	var controller = wp.media.wpuMediaManager._frame.states.get('gallery-edit');
+        var library = controller.get('library');
+        // Need to get all the attachment ids for gallery
+        var ids = library.pluck('id');
+    	
+    	switch(ids.length){
+	    	case 0:
+	    		label = counter.data('label-no-images');
+	    		break;
+	    	
+	    	case 1:
+	    		label = counter.data('label-one-image');
+	    		break;
+	    		
+	    	default:
+	    		label = counter.data('label-more-images').replace(/%s/g, ids.length);
+	    		break;
+    	}
+
+    	counter.html(label);
+    	
+	},
  
     init: function() {
 		jQuery('.media-manager-button').click(function(event){
 			event.preventDefault();
 			var clickedjQueryElement = jQuery(this);
 			clickedjQueryElement.blur();
+			jQuery(clickedjQueryElement.data('target-undo')).fadeOut();
+			jQuery(clickedjQueryElement.data('target-delete')).fadeIn();
 			wp.media.wpuMediaManager.frame(clickedjQueryElement).open();
+		});
+		
+		jQuery('.delete-media-manager-gallery').click(function(){
+			var element = jQuery(this);
+			wp.media.post( 'wpu-media-manager-delete', {
+		        nonce:      wp.media.view.settings.post.nonce, 
+		        post_id:    wp.media.view.settings.post.id,
+		        elem_id:	element.data('gallery')
+		    }).done(function(html){
+		    	element.fadeOut(function(){
+		    		jQuery(element.data('target-undo')).data('undo-value',html).fadeIn();
+		    	});
+		    	jQuery(element.data('target')).val('');
+		    	
+		    	var clickedjQueryElement = jQuery(element.data('target-origin'));
+		    	wp.media.wpuMediaManager.frame(clickedjQueryElement);
+		    	wp.media.wpuMediaManager.update_counter();
+		    }).fail(function(e){
+		    	//TODO: manage errors :D
+		    });
+		 
+		});
+		
+		jQuery('.undo-media-manager-gallery').click(function(){
+			var element = jQuery(this);
+			
+		    wp.media.post( 'wpu-media-manager-update', {
+		        nonce:      wp.media.view.settings.post.nonce, 
+		        html:       element.data('undo-value'), 
+		        post_id:    wp.media.view.settings.post.id,
+		        elem_id:	element.data('elem-id')
+		    }).done(function(html){
+		    	jQuery(element.data('target')).val(html);
+		    	jQuery(element.data('target-delete')).fadeIn();
+		    	
+		    	// FIXME: find a way to hook to correct callback
+			    var test = setInterval(function(){
+			    	var clickedjQueryElement = jQuery(element.data('target-origin'));
+			    	wp.media.wpuMediaManager.frame(clickedjQueryElement);
+			    	wp.media.wpuMediaManager.update_counter();
+		    	}, 100);
+			    setTimeout(function(){
+			    	clearInterval(test);
+			    }, 1000);
+		    }).fail(function(e){
+		    	//TODO: manage errors :D
+		    });
+			
+			element.fadeOut();
 		});
 	},
 	
@@ -67,7 +126,7 @@ wp.media.wpuMediaManager = {
 	    	shortcode = wp.shortcode.next(this.origin.data('shortcode'), html),
 	        defaultPostId = wp.media.gallery.defaults.id,
 	        attachments, selection;
-	 
+		
 	    // Bail if we didn't match the shortcode or all of the content.
 	    if ( ! shortcode ){
 	        return;

@@ -73,6 +73,7 @@ class MediaManager {
 		add_action('init', array(__CLASS__, 'register_assets'));
 		//add_filter('media_view_settings', array(__CLASS__, 'media_view_settings'), 10, 2);
 		add_action('wp_ajax_wpu-media-manager-update', array(__CLASS__,'wp_ajax_media_manager_gallery_update'));
+		add_action('wp_ajax_wpu-media-manager-delete', array(__CLASS__,'wp_ajax_media_manager_gallery_delete'));
 		add_action('admin_print_scripts', array(__CLASS__, 'enqueue_assets'));
 		self::$enabled = true;
 	}
@@ -94,7 +95,7 @@ class MediaManager {
 	 * Register scripts and styles needed for this feature
 	 */
 	public static function register_assets(){
-		wp_register_script('wpu-media-manager', get_template_directory_uri().'/js/media-manager.js', array('jquery'), '1.0.0', true);
+		wp_register_script('wpu-media-manager', get_template_directory_uri().'/js/media-manager.js', array('jquery','media-editor'), '1.0.0', true);
 		wp_register_script('json2', 'http://cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js', null, '20121008', true);
 	}
 	
@@ -126,23 +127,31 @@ class MediaManager {
 	 * Ajax callback for saving the custom gallery ids list
 	 */
 	public static function wp_ajax_media_manager_gallery_update(){
+
+		header('Content-type: text/json');
+		
+		$error = array('success'=>false, 'data'=>'');
+		
 		//TODO: check of the nonce!!!!!!!
 		if(isset($_POST['html'])){
 			$html = sanitize_text_field($_POST['html']);
 		} else {
-			die('error: html not set');
+			$error['data'] = 'html not set';
+			die(json_encode($error));
 		}
 		
 		if(isset($_POST['post_id'])){
 			$post_id = intval($_POST['post_id']);
 		} else {
-			die('error: post id not set');
+			$error['data'] = 'post id not set';
+			die(json_encode($error));
 		}
 		
 		if(isset($_POST['elem_id'])){
 			$meta_name = self::META_KEY_NAME.'-'.sanitize_title($_POST['elem_id']);
 		} else {
-			die('error: element id not set');
+			$error['data'] = 'element id not set';
+			die(json_encode($error));
 		}
 		
 		update_post_meta($post_id, $meta_name, $html);
@@ -150,7 +159,39 @@ class MediaManager {
 		// I want to be absolutely sure to return the meta currently present in the db :)
 		$toret = array('success'=>true, 'data'=>get_post_meta($post_id, $meta_name, true));
 		
+		die(json_encode($toret));
+	}
+	
+	/**
+	 * Ajax callback for deleting a custom media set
+	 */
+	public function wp_ajax_media_manager_gallery_delete(){
 		header('Content-type: text/json');
+		
+		$toret = array('success'=>false, 'data'=>'');
+		if(isset($_POST['post_id'])){
+			$post_id = intval($_POST['post_id']);
+		} else {
+			$toret['data'] = 'post id not set';
+			die(json_encode($toret));
+		}
+		
+		if(isset($_POST['elem_id'])){
+			$meta_name = self::META_KEY_NAME.'-'.sanitize_title($_POST['elem_id']);
+		} else {
+			$toret['data'] = 'element id not set';
+			die(json_encode($toret));
+		}
+		
+		$data = get_post_meta($post_id, $meta_name, true);
+		
+		if(delete_post_meta($post_id, $meta_name)){
+			$toret['success'] 	= true;
+			$toret['data'] 		= $data;
+		} else {
+			$toret['data']		= 'Error while deleting meta';
+		}
+		
 		die(json_encode($toret));
 	}
 	
@@ -188,19 +229,27 @@ class MediaManager {
 	public static function metabox_html($post){
 		
 		if(count(self::$media_list)){
-			foreach(self::$media_list as $elem){
+			$is_first = true;
+			foreach(self::$media_list as $k => $elem){
 				$name = self::META_KEY_NAME.'-'.$elem['id'];
 				wp_nonce_field(__FILE__, $name.'_nonce');
 				$value = get_post_meta($post->ID, $name, true);
 				
-				echo HtmlHelper::anchor(
+				// main edit button
+				$edit_button = HtmlHelper::anchor(
 					'javascript:;', 
 					HtmlHelper::span('', array('class'=>'wp-media-buttons-icon'))
-						.sprintf(__('Manage Media for %s', 'wtu_framework'), 
-					HtmlHelper::strong($elem['label'])),
+						/*.sprintf(
+							__('Manage Media for %s', 'wtu_framework'), 
+							HtmlHelper::strong($elem['label'])
+						),*/
+						.__('Manage Media', 'wtu_framework'),
 					array(
+						'id'				=>	'wtu-media-manager-button-'.$elem['id'],
 						'class'				=>	'button media-manager-button',
 						'data-target'		=>	'#wtu-media-manager-element-'.$elem['id'],
+						'data-target-undo'	=>	'#wtu-media-manager-undo-'.$elem['id'],
+						'data-target-delete'=>	'#wtu-media-manager-delete-'.$elem['id'],
 						'data-counter'		=>	'#wtu-media-manager-counter-'.$elem['id'],
 						'data-frame-id'		=>	'wtu-media-manager-'.$elem['id'],
 						'data-title'		=>	sprintf(__('Manage Media for %s', 'wtu_framework'), $elem['label']),
@@ -212,11 +261,20 @@ class MediaManager {
 					)
 				);
 				
-				echo HtmlHelper::input($name, 'text', array('id'=>'wtu-media-manager-element-'.$elem['id'],'value'=>$value));
-			
+				// input to store temp values, use text instead of hidden to debug
+				$input = HtmlHelper::input(
+					$name, 
+					'hidden', 
+					array(
+						'id'	=>	'wtu-media-manager-element-'.$elem['id'],
+						'value'	=>	$value
+					)
+				);
+				
+				// Counter
 				$number = 0;
 				if(isset($value) && $value != '') $number = count(explode(',', $value));
-				echo '&nbsp;'.HtmlHelper::span(
+				$counter = '&nbsp;'.HtmlHelper::span(
 					($number > 0) 
 						? sprintf(_n('1 element', '%s elements', $number, 'wtu_framework'), $number) 
 						: __('Empty', 'wtu_framework'),
@@ -228,7 +286,61 @@ class MediaManager {
 					)
 				);
 				
-				echo HtmlHelper::br().HtmlHelper::br();
+				// delete button
+				$delete = HtmlHelper::anchor(
+					'javascript:;', 
+					//HtmlHelper::image('/wp-includes/js/tinymce/plugins/wpeditimage/img/delete.png'), 
+					__('Delete', 'wtu_framework'),
+					array(
+						'id'				=>	'wtu-media-manager-delete-'.$elem['id'],
+						'style'				=>	($value) ? '' : 'display:none;',
+						'class'				=>	'delete-media-manager-gallery submitdelete', 
+						'data-counter'		=>	'#wtu-media-manager-counter-'.$elem['id'],
+						'data-gallery'		=>	$elem['id'],
+						'data-target'		=>	'#wtu-media-manager-element-'.$elem['id'],
+						//'data-label-undo'	=>	__('Undo', 'wtu_framework'),
+						'data-target-undo'	=>	'#wtu-media-manager-undo-'.$elem['id'],
+						'data-target-origin'=>	'#wtu-media-manager-button-'.$elem['id'],
+						'title'				=>	__('Delete Media Set', 'wtu_framework'),
+					)
+				);
+				
+				// undo button
+				$undo = HtmlHelper::anchor(
+					'javascript:;', 
+					__('Undo', 'wtu_framework'), 
+					array(
+						'id'				=>	'wtu-media-manager-undo-'.$elem['id'],
+						'style'				=>	'display:none;',
+						'class'				=>	'undo-media-manager-gallery', 
+						'data-gallery'		=>	$elem['id'],
+						'data-target'		=>	'#wtu-media-manager-element-'.$elem['id'],
+						'data-elem-id'		=>	$elem['id'],
+						'data-target-origin'=>	'#wtu-media-manager-button-'.$elem['id'],
+						'data-target-delete'=>	'#wtu-media-manager-delete-'.$elem['id'],
+						'data-counter'		=>	'#wtu-media-manager-counter-'.$elem['id'],
+						//'data-label-undo'	=>	__('Undo', 'wtu_framework'),
+						'title'				=>	__('Restore Media Set', 'wtu_framework'),
+					)
+				);
+				
+				$title = HtmlHelper::paragraph(HtmlHelper::strong($elem['label']));
+				
+				$inner_html = '';
+				if(!$is_first) $inner_html .= HtmlHelper::br();
+				$inner_html .= '<table class="widefat"><thead>';
+				$inner_html .= '<td width="33%">'.$title.'</td>';
+				$inner_html .= '<td width="33%">&nbsp;</td>';
+				$inner_html .= '<td width="33%">'.$edit_button.'</td></thead>';
+				$inner_html .= '<tbody><tr style="line-height: 25px;"><td class="submitbox">'.$delete.$undo.'</td>';
+				$inner_html .= '<td>&nbsp;</td>';
+				$inner_html .= '<td>'.$counter.'</td>';
+				$inner_html .= '</tr></tbody></table>';
+				$inner_html .= $input;
+				
+				echo HtmlHelper::div($inner_html, array('class'=>''));
+				
+				$is_first = false;
 			}
 		}
 		//var_dump($value);
