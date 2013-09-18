@@ -101,6 +101,15 @@ EOF;
 	}
 	
 	/**
+	 * Get the markup for a <p> tag
+	 * @param string $inner_html the inner html code
+	 * @param array $parms additional parameters
+	 */
+	public static function paragraph($inner_html, $parms=array()){
+		return self::standard_tag('p', $inner_html, $parms);
+	}
+	
+	/**
 	 * Get the markup for a <span> tag
 	 * @param string $inner_html the inner html code
 	 * @param array $parms additional parameters
