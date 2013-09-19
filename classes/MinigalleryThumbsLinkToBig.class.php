@@ -8,7 +8,7 @@
  * to the image with 'full' media dimensions.
  * By default loads FancyBox so to have an eye candy popup effect.
  * @author etessore
- * @version 1.0.0
+ * @version 1.0.1
  * @package classes
  */
 class MinigalleryThumbsLinkToBig extends GalleryHelper{
@@ -27,7 +27,7 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 	 */
 	public function __construct(){
 		$this
-			->set_template('<div class="images-container">%list%</div>')
+			->set_template('%prev%<div class="images-container">%list%</div>%next%')
 			->set_wp_media_dimension_big();
 	}
 	
@@ -49,9 +49,14 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 		$toret = '';
 		if(count($this->images)>0){
 			$subs = new SubstitutionTemplate();
-			$subs->set_tpl($this->tpl);
+			$subs
+				->set_tpl($this->tpl)
+				->set_markup('prev', HtmlHelper::anchor('javascript:;', '&lt;', array('class'=>'prev control')))
+				->set_markup('next', HtmlHelper::anchor('javascript:;', '&gt;', array('class'=>'next control')));
+			
 			ThemeHelpers::load_js('minigallery-thumbs-link-to-big');
 			ThemeHelpers::load_css('jquery-fancybox');
+			
 			foreach($this->images as $index => $image){
 				$image_big = wp_get_attachment_image_src($this->get_image_id($index), $this->media_dimension_big);
 				$image_small = wp_get_attachment_image_src($this->get_image_id($index), $this->media_dimension);
@@ -73,6 +78,7 @@ class MinigalleryThumbsLinkToBig extends GalleryHelper{
 					)
 				);
 			}
+			
 			$toret = $subs->set_markup('list', $toret)->replace_markup();
 		}
 		return $toret;
