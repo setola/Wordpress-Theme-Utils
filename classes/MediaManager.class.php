@@ -213,24 +213,42 @@ class MediaManager {
 	 * boxes should show ('high', 'core', 'default' or 'low')
 	 */
 	public static function register_metaboxes($post_type='', $context='side', $priority='high'){
-		add_meta_box(
-			'wpu-media-manager',
-			__( 'Media Manager', 'wtu_framework' ),
-			array(__CLASS__, 'metabox_html'),
-			$post_type,
-			$context,
-			$priority
-		);
+		global $post;
+		$template = get_post_meta($post->ID, '_wp_page_template', true);
+		$show_meta_box = false;
+		foreach(self::$media_list as $k => $elem){
+			$template_checker = new TemplateChecker($elem['include'], $elem['exclude']);
+			if($template_checker->check($template)) {
+				$show_meta_box = true;
+				break;
+			}
+		}
+		
+		if($show_meta_box){
+			add_meta_box(
+				'wpu-media-manager',
+				__( 'Media Manager', 'wtu_framework' ),
+				array(__CLASS__, 'metabox_html'),
+				$post_type,
+				$context,
+				$priority
+			);
+		}
 	}
 	
 	/**
 	 * Prints the HTML markup for the metabox
 	 */
 	public static function metabox_html($post){
+		global $post;
+		$template = get_post_meta($post->ID, '_wp_page_template', true);
 		
 		if(count(self::$media_list)){
 			$is_first = true;
 			foreach(self::$media_list as $k => $elem){
+				$template_checker = new TemplateChecker($elem['include'], $elem['exclude']);
+				if(!$template_checker->check($template)) continue;
+				
 				$name = self::META_KEY_NAME.'-'.$elem['id'];
 				wp_nonce_field(__FILE__, $name.'_nonce');
 				$value = get_post_meta($post->ID, $name, true);
@@ -342,6 +360,7 @@ class MediaManager {
 				
 				$is_first = false;
 			}
+			
 		}
 		//var_dump($value);
 	}
@@ -476,3 +495,5 @@ class MediaManager {
 	}
 	
 }
+
+
