@@ -1,4 +1,4 @@
-
+<?php 
 
 class TemplateChecker{
 	private $include = array();
