@@ -28,6 +28,7 @@ function initialize() {
 
 	window.tilesloaded_listener = google.maps.event.addListener(window.map, 'tilesloaded', function() { 
 		window.infowindow.open(map,marker);
+		google.maps.event.removeListener(window.tilesloaded_listener);
     });
 
 	google.maps.event.addListener(marker, 'click', function() {
