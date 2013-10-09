@@ -23,10 +23,10 @@ class ThemeUtils{
 	 */
 	private function __construct(){
 		self::default_constants();
-		self::enable_autoload_system();
-		self::disable_debug();
-		self::register_main_menu();
-		self::register_bottom_menu();
+		//self::enable_autoload_system();
+		//self::disable_debug();
+		//self::register_main_menu();
+		//self::register_bottom_menu();
 		self::register_text_domain();
 		self::$instance = $this;
 	}
@@ -178,10 +178,10 @@ function wtu_init(){
 	 * overload the global $assets variable in your child theme functions.php if you need customization on this.
 	 * @see DefaultAssets for adding or remove assets
 	*/
-	global $assets;
+	/*global $assets;
 	if(empty($assets)){
 		$assets = new DefaultAssetsCDN();
-	}
+	}*/
 
 	/**
 	 * Register runtime infos, useful for javascript
@@ -189,9 +189,9 @@ function wtu_init(){
 	 * Overload the global $runtime_infos in your child theme functions.php if you need customization on this.
 	 * @see RuntimeInfos for more details
 	 */
-	global $runtime_infos;
+	/*global $runtime_infos;
 	if(empty($runtime_infos)){
 		$runtime_infos = new RuntimeInfos();
 		$runtime_infos->hook();
-	}
+	}*/
 }

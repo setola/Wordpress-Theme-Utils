@@ -35,9 +35,9 @@
 function wordpress_theme_utils_initialize_hook(){
 	include_once 'classes/ThemeUtils.class.php';
 	wtu_init();
-	ThemeHelpers::remove_wpml_assets();
-	add_theme_support( 'post-thumbnails' );
-	add_image_size('slideshow', 940, 400, true);
+	//ThemeHelpers::remove_wpml_assets();
+	//add_theme_support( 'post-thumbnails' );
+	//add_image_size('slideshow', 940, 400, true);
 }
 add_action('after_setup_theme', 'wordpress_theme_utils_initialize_hook', 9);
 
