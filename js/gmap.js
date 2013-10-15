@@ -1,4 +1,5 @@
 window.map;
+window.styledMap;
 window.infowindow;
 
 function initialize() {
@@ -11,10 +12,24 @@ function initialize() {
 		scrollwheel 			:	false
 	};
 	window.map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+	
+	var styles = [];
+	styles.push({
+		featureType: "poi.business",
+		elementType: "labels",
+		stylers: [
+		          { visibility: "off" }
+		]
+	});
+	window.styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+	
+	window.map.mapTypes.set('map_style', window.styledMap);
+	window.map.setMapTypeId('map_style');
 
-	var contentString = '<div id="marker-content"><h2>'+
-	map_info.title+'</h2><div id="marker-body">'+
-	map_info.content+'</div></div>';
+	var contentString = 
+		'<div id="marker-content"><p class="entry-title">'+
+		map_info.title+'</p><p class="entry-content">'+
+		map_info.content+'</p></div>';
 
 	window.infowindow = new google.maps.InfoWindow({
 		content			: contentString
