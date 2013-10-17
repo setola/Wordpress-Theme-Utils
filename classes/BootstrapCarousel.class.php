@@ -44,19 +44,22 @@ EOF;
 		$slide_sub->set_tpl($tpl_slide);
 		
 		foreach($this->images as $k => $v){
+			$active = ($k==0) ? 'active' : '';
 			$caption = '';
+			$style = 'width: 100%; height: 100%; background: url(\''.$this->get_image_src($k).'\') no-repeat center center scroll transparent;';
+			
 			if($this->get_image_title($k)) 
 				$caption .= HtmlHelper::standard_tag('h2', $this->get_image_title($k));
 			if($this->get_image_caption($k))
 				$caption .= HtmlHelper::paragraph($this->get_image_caption($k));
 			
 			$image = $slide_sub
-				->set_markup('class', ($k==0) ? 'item active' : 'item')
+				->set_markup('class', implode(' ', array('item', $active)))
 				->set_markup(
 					'image', 
-					HtmlHelper::image(
-						$this->get_image_src($k), 
-						array('alt'=>$this->get_image_alt($k))
+					HtmlHelper::div(
+						'', //$this->get_image_src($k), 
+						array('alt'=>$this->get_image_alt($k), 'style'=>$style)
 					)
 				)
 				->set_markup('caption', HtmlHelper::div($caption, array('class'=>'carousel-caption')))
@@ -66,7 +69,8 @@ EOF;
 				$inner_html, 
 				array(
 					'data-target'		=>	'#'.$this->unid,
-					'data-slide-to'		=>	$k
+					'data-slide-to'		=>	$k,
+					'class'				=>	$active
 				)
 			);
 			
