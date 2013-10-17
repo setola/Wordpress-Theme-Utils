@@ -47,8 +47,8 @@ EOF;
 			$caption = '';
 			if($this->get_image_title($k)) 
 				$caption .= HtmlHelper::standard_tag('h2', $this->get_image_title($k));
-			if($this->get_image_description($k))
-				$caption .= HtmlHelper::paragraph($this->get_image_description($k));
+			if($this->get_image_caption($k))
+				$caption .= HtmlHelper::paragraph($this->get_image_caption($k));
 			
 			$image = $slide_sub
 				->set_markup('class', ($k==0) ? 'item active' : 'item')
