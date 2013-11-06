@@ -227,7 +227,7 @@ class MediaManager {
 		if($show_meta_box){
 			add_meta_box(
 				'wpu-media-manager',
-				__( 'Media Manager', 'wtu_framework' ),
+				__( 'Galleries', 'wtu_framework' ),
 				array(__CLASS__, 'metabox_html'),
 				$post_type,
 				$context,
@@ -242,6 +242,7 @@ class MediaManager {
 	public static function metabox_html($post){
 		global $post;
 		$template = get_post_meta($post->ID, '_wp_page_template', true);
+		if($template == 'default' && get_option('page_on_front') == $post->ID) $template = 'front-page.php';
 		
 		if(count(self::$media_list)){
 			$is_first = true;
@@ -494,6 +495,16 @@ class MediaManager {
 		return do_shortcode(self::get_media($set, $post_id));
 	}
 	
+	/**
+	 * Checks if the given media set has images
+	 * @param string $set the set name
+	 * @param string $post_id the post ID
+	 * @return boolean true if there are some images
+	 */
+	public static function has_images($set, $post_id=null){
+		$data = self::get_media($set, $post_id);
+		return !empty($data);
+	}
+	
 }
-
 
