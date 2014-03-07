@@ -62,6 +62,30 @@ class HeadHelper{
 			);
 	}
 	
+	public function locate_favicon($names=array('favicon'), $extensions=array('ico','png'), $paths=array()){
+		if(count($paths)==0){
+			$images = '/images/';
+			$paths[] = array(
+				'path'=>get_template_directory().$images, 
+				'url'=>get_template_directory_uri().$images
+			);
+			$paths[] = array(
+				'path'=>get_stylesheet_directory().$images, 
+				'url'=>get_stylesheet_directory_uri().$images
+			);
+		}
+		
+		foreach($paths as $path){
+			foreach($extensions as $extension){
+				foreach($names as $name){
+					$fname = $name.'.'.$extension;
+					$file = $path['path'].$fname;
+					if(file_exists($file)) return $path['url'].$fname;
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Retrieves some usefull meta tags for the <head>
 	 * @return some usefull meta tags for the <head>
@@ -71,10 +95,10 @@ class HeadHelper{
 		$title = esc_html($this->title);
 		$desc = $this->render_meta_tag('description');
 		$ga_tracking = '';
-		$favicon_base_url =
-			file_exists(get_stylesheet_directory().'/images/favicon.ico')
+		$favicon = $this->locate_favicon();
+			/*file_exists(get_stylesheet_directory().'/images/favicon.ico')
 			? get_stylesheet_directory_uri()
-			: get_template_directory_uri();
+			: get_template_directory_uri();*/
 		if(!empty($this->ua)){
 		$ga_tracking = HtmlHelper::script(<<< EOF
      var _gaq = _gaq || [];
@@ -109,7 +133,7 @@ EOF
 		$desc
 	    <meta charset="{$this->charset}">
 	    $meta_tags
-	    <link rel="shortcut icon" href="$favicon_base_url/images/favicon.png">
+	    <link rel="shortcut icon" href="$favicon">
 	    $ga_tracking
 	    $custom_scripts
 EOF;
