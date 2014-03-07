@@ -123,7 +123,7 @@ EOF;
 			$pass     = isset($url_arr['pass']) ? ':' . $url_arr['pass']  : '';
 			$pass     = ($user || $pass) ? "$pass@" : '';
 			$path     = isset($url_arr['path']) ? $url_arr['path'] : '';
-			$query    = isset($url_arr['query']) ? '?' . http_build_query($params) : '';
+			$query    = isset($url_arr['query']) ? '?' . $url_arr['query'] : '';
 			$fragment = isset($url_arr['fragment']) ? '#' . $url_arr['fragment'] : '';
 			return  "$scheme$user$pass$host$port$path$query$fragment";
 		}
