@@ -7,10 +7,7 @@ class BootstrapCarousel extends GalleryHelper{
 	
 	public function __construct($container_classes='carousel slide'){
 		$this->container_classes = $container_classes;
-	}
-	
-	public function get_markup(){
-		$tpl = <<< EOF
+		$this->set_template(<<< EOF
 
 <div id="%id%" class="%container_classes%">
 	<!-- Indicators -->
@@ -28,8 +25,9 @@ class BootstrapCarousel extends GalleryHelper{
 	</a>
 </div>
 
-EOF;
-		$tpl_slide = <<< EOF
+EOF
+		);
+		$this->tpl_slide = <<< EOF
 		
 	<div class="%class%">
 		%image%
@@ -37,11 +35,14 @@ EOF;
 	</div>
 
 EOF;
+	}
+	
+	public function get_markup(){
 		
 		$slides 		=	'';
 		$indicators 	=	'';
 		$slide_sub = new SubstitutionTemplate();
-		$slide_sub->set_tpl($tpl_slide);
+		$slide_sub->set_tpl($this->tpl_slide);
 		
 		foreach($this->images as $k => $v){
 			$active = ($k==0) ? 'active' : '';
@@ -82,7 +83,7 @@ EOF;
 		
 		$subs = new SubstitutionTemplate();
 		return $subs
-			->set_tpl($tpl)
+			->set_tpl($this->tpl)
 			->set_markup('id', $this->unid)
 			->set_markup('container_classes', $this->container_classes)
 			->set_markup('indicators', HtmlHelper::ordered_list($indicators, array('class'=>'carousel-indicators')))
