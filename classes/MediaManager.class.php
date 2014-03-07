@@ -242,7 +242,7 @@ class MediaManager {
 	public static function metabox_html($post){
 		global $post;
 		$template = get_post_meta($post->ID, '_wp_page_template', true);
-		if($template == 'default' && get_option('page_on_front') == $post->ID) $template = 'front-page.php';
+		if(($template == 'default' || $template == '') && get_option('page_on_front') == $post->ID) $template = 'front-page.php';
 		
 		if(count(self::$media_list)){
 			$is_first = true;
