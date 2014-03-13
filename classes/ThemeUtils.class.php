@@ -16,6 +16,12 @@ class ThemeUtils{
 	 * @var ThemeUtils
 	 */
 	private static $instance = null;
+	
+	/**
+	 * Stores the dir name of PHP classes
+	 * @var string
+	 */
+	const WORDPRESS_THEME_UTILS_CLASS_DIR = 'classes';
 
 	/**
 	 * Initializes default settings
@@ -54,8 +60,24 @@ class ThemeUtils{
 	 * Initializes the autoloader subsystem
 	 */
 	public static function enable_autoload_system(){
-		include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
-		ClassAutoloader::get_instance();
+		if(!class_exists('ClassAutoloader')){
+			include_once WORDPRESS_THEME_UTILS_PATH . WORDPRESS_THEME_UTILS_AUTOLOADER_RELATIVE_PATH;
+			ClassAutoloader::get_instance();
+		} else {
+			ClassAutoloader::get_instance()
+				// First search in the child theme dir
+				->add_loading_template(
+					get_stylesheet_directory().'/'
+					.self::WORDPRESS_THEME_UTILS_CLASS_DIR
+					.'/%classname%.class.php'
+				)
+				// then search into the parent theme dir
+				->add_loading_template(
+					get_template_directory().'/'
+					.self::WORDPRESS_THEME_UTILS_CLASS_DIR
+					.'/%classname%.class.php'
+				);
+		}
 	}
 
 	/**
