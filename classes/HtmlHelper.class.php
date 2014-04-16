@@ -242,7 +242,7 @@ class HtmlBuilder {
 		if (is_array($pieces)) {
 			$str = " ";
 			foreach($pieces as $key => $value) {
-				if (strlen($value) > 0) {
+				if (isset($value) && is_string($value) && strlen($value) > 0) {
 					if($key == 'id') $value = sanitize_title($value);
 					$str .= esc_attr($key) . esc_attr($glue) . '"' . esc_attr($value) . '" ';
 				}
