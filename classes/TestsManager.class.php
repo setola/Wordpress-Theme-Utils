@@ -89,7 +89,7 @@ class TestManager{
      * @return $this for chainability
      */
     public function add_requested_uri($key='requestedUrl'){
-        $this->add_parameter($key, 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}");
+        $this->add_parameter($key, 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}");
         return $this;
     }
 
