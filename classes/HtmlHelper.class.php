@@ -134,7 +134,7 @@ EOF;
 	 * @return string the br tag
 	 */
 	public static function br($parms=array()){
-		return self::standard_tag('br', $inner_html, $parms);
+		return self::standard_tag('br', '', $parms);
 	}
 	
 	/**
