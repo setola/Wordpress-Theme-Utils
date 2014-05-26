@@ -42,32 +42,6 @@ function wordpress_theme_utils_initialize_hook(){
 add_action('after_setup_theme', 'wordpress_theme_utils_initialize_hook', 9);
 
 
-if(!function_exists('http_build_url')){
-	/**
-	 * Build a URL.
-	 * 
-	 * The parts of the second URL will be merged into the first according to the flags argument.
-	 * PECT_HTTP is usually missing on many environment.
-	 * This function provides the same feature as the function included in PECT_HTTP.
-	 * @see @link http://php.net/manual/en/function.http-build-url.php
-	 * @param array $parsed_url the array to be merged
-	 * @package core
-	 * @return string the url
-	 */
-	function http_build_url($parsed_url) {
-		$scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
-		$host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
-		$port     = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
-		$user     = isset($parsed_url['user']) ? $parsed_url['user'] : '';
-		$pass     = isset($parsed_url['pass']) ? ':' . $parsed_url['pass']  : '';
-		$pass     = ($user || $pass) ? "$pass@" : '';
-		$path     = isset($parsed_url['path']) ? $parsed_url['path'] : '';
-		$query    = isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '';
-		$fragment = isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '';
-		return "$scheme$user$pass$host$port$path$query$fragment";
-	}
-}
-
 
 if(!function_exists('wordpress_theme_utils_credits')){
 	/**
@@ -93,3 +67,81 @@ if(!function_exists('wordpress_theme_utils_credits')){
 	}
 	add_action('wtu_credits', 'wordpress_theme_utils_credits');
 }
+
+
+
+
+
+if(!function_exists('get_called_class')){
+    /**
+     * PHP 5.2 fix for non existing get_called_class()
+     */
+    function get_called_class($functionName=null){
+        $btArray = debug_backtrace();
+        $btIndex = count($btArray) - 1;
+        while($btIndex > -1){
+            if(!isset($btArray[$btIndex]['file'])){
+                $btIndex--;
+                if(isset($matches[1])){
+                    if(class_exists($matches[1])){
+                        return $matches[1];
+                    } else {
+                        continue;
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                $lines = file($btArray[$btIndex]['file']);
+                $callerLine = $lines[$btArray[$btIndex]['line']-1];
+                if(!isset($functionName)) {
+                    preg_match('/([a-zA-Z\_]+)::/',
+                        $callerLine,
+                        $matches);
+                } else {
+                    preg_match('/([a-zA-Z\_]+)::'.$functionName.'/',
+                        $callerLine,
+                        $matches);
+                }
+                $btIndex--;
+                if(isset($matches[1])){
+                    if(class_exists($matches[1])){
+                        return $matches[1];
+                    } else {
+                        continue;
+                    }
+                } else {
+                    continue;
+                }
+            }
+        }
+        return $matches[1];
+    }
+}
+
+if(!function_exists('http_build_url')){
+    /**
+     * Build a URL.
+     *
+     * The parts of the second URL will be merged into the first according to the flags argument.
+     * PECT_HTTP is usually missing on many environment.
+     * This function provides the same feature as the function included in PECT_HTTP.
+     * @see @link http://php.net/manual/en/function.http-build-url.php
+     * @param array $parsed_url the array to be merged
+     * @package core
+     * @return string the url
+     */
+    function http_build_url($parsed_url) {
+        $scheme   = isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '';
+        $host     = isset($parsed_url['host']) ? $parsed_url['host'] : '';
+        $port     = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
+        $user     = isset($parsed_url['user']) ? $parsed_url['user'] : '';
+        $pass     = isset($parsed_url['pass']) ? ':' . $parsed_url['pass']  : '';
+        $pass     = ($user || $pass) ? "$pass@" : '';
+        $path     = isset($parsed_url['path']) ? $parsed_url['path'] : '';
+        $query    = isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '';
+        $fragment = isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '';
+        return "$scheme$user$pass$host$port$path$query$fragment";
+    }
+}
+
