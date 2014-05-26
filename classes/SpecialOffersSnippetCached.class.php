@@ -19,6 +19,11 @@ class SpecialOffersSnippetCached extends SpecialOffersSnippet{
     const TRANSIENT_LAST_UPDATE = 'SO_lastupdate_';
 
     /**
+     * Stores the default transient expiration: 60 * 60 * 24 s = 1 day
+     */
+    const TRANSIENT_EXPIRATION = 86400;
+
+    /**
      * @var string stores the HID
      */
     public $hid;
@@ -52,7 +57,9 @@ EOF;
 
 
     protected function get_uniq(){
-        return md5(http_build_query($this->params));
+        if(is_null($this->unique))
+            $this->unique = md5(http_build_query($this->params));
+        return $this->unique;
     }
 
     /**
@@ -67,7 +74,7 @@ EOF;
 
         preg_match("/<body[^>]*>(.*?)<\/body>/is", $html, $matches);
 
-        set_transient(self::TRANSIENT_CACHE.$this->get_uniq(), $matches[1]);
+        set_transient(self::TRANSIENT_CACHE.$this->get_uniq(), $matches[1], self::TRANSIENT_EXPIRATION);
         set_transient(self::TRANSIENT_LAST_UPDATE.$this->get_uniq(), time());
     }
 
@@ -101,16 +108,16 @@ EOF;
      */
     public function on_footer_scripts(){
         ?>
-            <script>
-                jQuery(document).ready(function(){
-                    jQuery.each(FB.Loader.Events, function(index, element){
-                        if(typeof(element.onNotify != 'undefined')){
-                            element.onNotify();
-                        }
-                    });
+        <script id="cachecd-offers-loader-js-fix">
+            jQuery(document).ready(function(){
+                jQuery.each(FB.Loader.Events, function(index, element){
+                    if(typeof(element.onNotify != 'undefined')){
+                        element.onNotify();
+                    }
                 });
-            </script>
-        <?php
+            });
+        </script>
+    <?php
     }
 
     /**
@@ -134,6 +141,9 @@ EOF;
             $offers = new parent($this->hid);
             foreach($this->params as $k => $v){
                 $offers->add_param($k, $v);
+            }
+            foreach($this->templates->static_markup as $k => $v){
+                $offers->templates->set_markup($k, $v);
             }
             return $offers->get_markup();
         }
