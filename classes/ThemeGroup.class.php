@@ -40,13 +40,10 @@ class ThemeGroup{
         $this->hook();
     }
 
-    /**
-     * Hooks to WordPress
-     */
     public function hook(){
         add_action('init', array(&$this, 'on_init'));
         add_action('shutdown', array(&$this, 'on_shutdown'));
-        add_action('wp_ajax_flush_blu_cache', array(&$this, 'on_ajax_flush'));
+        add_action('wp_ajax_flush_theme_group_cache', array(&$this, 'on_ajax_flush'));
     }
 
     /**
@@ -100,7 +97,7 @@ class ThemeGroup{
     }
 
     /**
-     * Flushes the cache, called by WordPress Admin AJAX with action 'flush_blu_cache'
+     * Flushes the cache, called by WordPress Admin AJAX with action 'flush_theme_group_cache'
      */
     public function on_ajax_flush(){
         $this->flush();
@@ -194,4 +191,3 @@ class ThemeGroup{
         return array();
     }
 }
-
