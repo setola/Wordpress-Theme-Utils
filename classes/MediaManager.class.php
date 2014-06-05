@@ -446,9 +446,47 @@ class MediaManager {
     }
 
     /**
-     * Utitlity to retrieve the post meta for the given media set.
+     * Retrieves the list of images for the given set.
+     * @param string $set identifier of the set of elements
+     * @param int $post_id the post ID to be queried
+     * @return array list of images ids
+     */
+    public static function get_images($set, $post_id=null){
+        if(is_null($post_id)) $post_id = get_the_ID();
+        $data = self::get_meta($set, $post_id);
+
+        $pattern = get_shortcode_regex();
+        $ids_string = preg_replace_callback( "/$pattern/s", array(__CLASS__, 'extract_ids'), $data );
+        return explode(',', $ids_string);
+    }
+
+    /**
+     * Retrieves the first image of the set
+     * @param $set the identifier of the set of elements
+     * @param null $post the post ID to be queried
+     * @return int an image id
+     */
+    public static function get_first_image($set, $post=null){
+        return array_shift(self::get_images($set, $post));
+    }
+
+    /**
+     * Analyzes the shortcode tokens and retrieves the ids parameters as an array of ids
+     * @param $m array of shortcode tokens
+     * @return string comma separeted ids
+     */
+    protected static function extract_ids($m){
+        if($m[1] == '[' && $m[6] == ']'){
+            return substr($m[0], 1, -1);
+        }
+        $attr = shortcode_parse_atts($m[3]);
+        return $attr['ids'];
+    }
+
+    /**
+     * Utility to retrieve the post meta for the given media set.
      *
-     * If WPML is available and notthing is retrieved from the
+     * If WPML is available and nothing is retrieved from the
      * given $post_id, this method will search for the same
      * post meta in the corresponding post in default language.
      *
