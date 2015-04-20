@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="ApiGen 2.8.0">
 
-	<title>Deprecated | Wordpress Theme Utils Developer Documentation</title>
+	<title>Class WPTU\Core\Helpers\ImageGenerators\AjaxImageGenerator | Wordpress Theme Utils Developer Documentation</title>
 
 	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
 	<script type="text/javascript" src="elementlist.js?2515591489"></script>
@@ -21,8 +21,9 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li>
-<span>Namespace</span>						</li>
-						<li>
+							<a href="namespace-WPTU.Core.Helpers.ImageGenerators.html" title="Summary of WPTU\Core\Helpers\ImageGenerators"><span>Namespace</span></a>
+						</li>
+						<li class="active">
 <span>Class</span>						</li>
 
 						<li class="divider-vertical"></li>
@@ -30,8 +31,9 @@
 						<li>
 							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
 						</li>
-						<li class="active">
-<span>Deprecated</span>						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
 						<li>
 							<a href="todo.html" title="Todo list"><span>Todo</span></a>
 						</li>
@@ -72,19 +74,19 @@
 							</ul></li></ul></li>
 				<li><a href="namespace-None.html">None</a>
 						</li>
-				<li><a href="namespace-WPTU.html">WPTU<span></span></a>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
 						<ul>
-				<li><a href="namespace-WPTU.Core.html">Core<span></span></a>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
 						<ul>
 				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
 						</li>
 				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
 						</li>
-				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+				<li class="active"><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
 						<ul>
 				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
 						</li>
-				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+				<li class="active"><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
 						</li>
 				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
 						</li>
@@ -115,6 +117,11 @@
 
 
 		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-WPTU.Core.Helpers.ImageGenerators.AjaxImageGenerator.html">AjaxImageGenerator</a></li>
+				<li><a href="class-WPTU.Core.Helpers.ImageGenerators.ImageGenerator.html">ImageGenerator</a></li>
+			</ul>
 
 
 
@@ -128,9 +135,119 @@
 
 <div id="right">
 	<div id="rightInner">
-<div id="content">
-	<h1>Deprecated</h1>
+<div id="content" class="class">
+	<h1>Class AjaxImageGenerator</h1>
 
+
+	<div class="description">
+	
+<p>Hooks the ImageGenerator class to admin-ajax action</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Helpers.html">Helpers</a>\<a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a><br>
+		<b>Package:</b> classes<br>
+
+				<b>Author:</b>
+				etessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.Helpers.ImageGenerators.AjaxImageGenerator.html#8-62" title="Go to source code">WPTU/Core/Helpers/ImageGenerators/AjaxImageGenerator.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.Helpers.ImageGenerators.AjaxImageGenerator.html#22-31" title="Go to source code">__construct</a>( <span>boolean <var>$priv</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$nopriv</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Sets the admin-ajax hooks</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Sets the admin-ajax hooks</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$priv</var></dt>
+						<dd><code>boolean</code><br>$priv is the hook available for registered users?</dd>
+						<dt><var>$nopriv</var></dt>
+						<dd><code>boolean</code><br>$nopriv is the hook available for the non-registered users?</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="ajax_callback" id="_ajax_callback">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_ajax_callback">#</a>
+			<code><a href="source-class-WPTU.Core.Helpers.ImageGenerators.AjaxImageGenerator.html#47-61" title="Go to source code">ajax_callback</a>( )</code>
+
+			<div class="description short">
+				
+<p>This method is called by the admin-ajax subsystem. Prints the image.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This method is called by the admin-ajax subsystem. Prints the image.</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
 
 
 

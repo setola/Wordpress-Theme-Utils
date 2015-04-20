@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Walkers.html" title="Summary of WPTU\Core\Walkers"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.Core.Walkers.HashAnchorWalkerNavMenu.html">HashAnchorWalkerNavMenu</a></li>
+				<li><a href="class-WPTU.Core.Walkers.LevelWalkerNavMenu.html">LevelWalkerNavMenu</a></li>
+				<li><a href="class-WPTU.Core.Walkers.RemoveSpacesWalkerNavMenu.html">RemoveSpacesWalkerNavMenu</a></li>
+				<li class="active"><a href="class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html">ShowItemExcerptWalkerNavMenu</a></li>
+				<li><a href="class-WPTU.Core.Walkers.ShowTitleThumbExcerptWalkerNavMenu.html">ShowTitleThumbExcerptWalkerNavMenu</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class ShowItemExcerptWalkerNavMenu</h1>
+
+
+	<div class="description">
+	
+<p>Shows the title, the post thumbnail and the excerpt for every menu entry.
+Additional markup will be appended to the default menu entry.</p>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+Walker_Nav_Menu
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Walkers.html">Walkers</a><br>
+		<b>Package:</b> classes<br>
+
+				<b>Author:</b>
+				etessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#11-189" title="Go to source code">WPTU/Core/Walkers/ShowItemExcerptWalkerNavMenu.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#35-57" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Initializes the object with default values. Hint: overload this if you want
+to change the printed markup</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Initializes the object with default values. Hint: overload this if you want
+to change the printed markup</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_image" id="_get_image">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_image">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#59-72" title="Go to source code">get_image</a>( <span>integer <var>$item</var></span>, <span>string <var>$size</var></span>, <span>array <var>$args</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %image% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %image% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+						<dt><var>$size</var></dt>
+						<dd><code>string</code><br>$size the media size</dd>
+						<dt><var>$args</var></dt>
+						<dd><code>array</code><br>$args optional arguments for the anchor</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the image markup<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_excerpt_id" id="_get_excerpt_id">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_excerpt_id">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#74-81" title="Go to source code">get_excerpt_id</a>( <span>integer <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %id% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %id% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the id<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_container_id" id="_get_container_id">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_container_id">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#83-93" title="Go to source code">get_container_id</a>( <span>object <var>$item</var></span>, <span>array <var>$args</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the id of the html li element</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the id of the html li element</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>object</code><br>$item the menu item</dd>
+						<dt><var>$args</var></dt>
+						<dd><code>array</code><br>$args additional arguments</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the id<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_permalink" id="_get_permalink">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_permalink">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#95-107" title="Go to source code">get_permalink</a>( <span>integer <var>$item</var></span>, <span>array <var>$args</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %permalink% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %permalink% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+						<dt><var>$args</var></dt>
+						<dd><code>array</code><br>$args optional arguments for the anchor tag</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>html anchor tag for the permalink<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_title" id="_get_title">
+
+			<td class="attributes"><code>
+				 public 
+				Ambigous
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_title">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#109-116" title="Go to source code">get_title</a>( <span>integer <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %title% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %title% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>Ambigous</code><br>&lt;string, mixed&gt; the title<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_excerpt" id="_get_excerpt">
+
+			<td class="attributes"><code>
+				 public 
+				Ambigous
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_excerpt">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#118-129" title="Go to source code">get_excerpt</a>( <span>integer <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %excerpt% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %excerpt% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>Ambigous</code><br>&lt;string, mixed&gt; the excerpt<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_href" id="_get_href">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_href">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#131-138" title="Go to source code">get_href</a>( <span>integer <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the %href% substitution</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the %href% substitution</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the href for the current menu element<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="add_class" id="_add_class">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html">WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add_class">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#140-148" title="Go to source code">add_class</a>( <span>string <var>$class</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Adds a class to the li</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Adds a class to the li</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$class</var></dt>
+						<dd><code>string</code><br>$class the class</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html">WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="set_thumb_media_size" id="_set_thumb_media_size">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html">WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_set_thumb_media_size">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#150-158" title="Go to source code">set_thumb_media_size</a>( <span>string <var>$size</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Sets the thumbnail media dimension</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Sets the thumbnail media dimension</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$size</var></dt>
+						<dd><code>string</code><br>$size the media dimension</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html">WPTU\Core\Walkers\ShowItemExcerptWalkerNavMenu</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="start_el" id="_start_el">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_start_el">#</a>
+			<code><a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#160-188" title="Go to source code">start_el</a>( <span>string <var>&amp; $output</var></span>, <span>object <var>$item</var></span>, <span>integer <var>$depth</var></span>, <span>integer <var>$args</var></span> )</code>
+
+			<div class="description short">
+				
+<p>(non-PHPdoc)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>(non-PHPdoc)</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$output</var></dt>
+						<dd><code>string</code><br>$output Passed by reference. Used to append additional content.</dd>
+						<dt><var>$item</var></dt>
+						<dd><code>object</code><br>$item Menu item data object.</dd>
+						<dt><var>$depth</var></dt>
+						<dd><code>integer</code><br>$depth Depth of menu item. Used for padding.</dd>
+						<dt><var>$args</var></dt>
+						<dd><code>integer</code><br>$args</dd>
+					</dl></div>
+
+
+
+					<h4>See</h4>
+					<div class="list">
+							Walker_Nav_Menu::start_el()<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="tpl" id="$tpl">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#21-24" title="Go to source code"><var>$tpl</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$tpl" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>the template</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>the template</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="thumb_media_size" id="$thumb_media_size">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#26" title="Go to source code"><var>$thumb_media_size</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$thumb_media_size" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="classes" id="$classes">
+			<td class="attributes"><code>
+				public  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#28" title="Go to source code"><var>$classes</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$classes" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="excerpt_output" id="$excerpt_output">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Walkers.ShowItemExcerptWalkerNavMenu.html#30-33" title="Go to source code"><var>$excerpt_output</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$excerpt_output" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>the excerpt buffer</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>the excerpt buffer</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

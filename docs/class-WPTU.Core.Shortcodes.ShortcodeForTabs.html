@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\Shortcodes\ShortcodeForTabs | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Shortcodes.html" title="Summary of WPTU\Core\Shortcodes"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-WPTU.Core.Shortcodes.ShortcodeForTabs.html">ShortcodeForTabs</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class ShortcodeForTabs</h1>
+
+
+	<div class="description">
+	
+<p>Manages tabs design with shortcodes.</p>
+
+<p>Use [tab]&lt;some text&gt;[/tab] to wrap the content of a single tag and then
+[tabs-list] for the list of the tabs in the current post content.</p>
+
+<p>These optional parameter are available: icon = string|int number if you want
+a incon from the media library, string for the &lt;img&gt; tag src attribute
+class = string class attribute for the current tab div title = string the title
+of the tab list = boolean set to false if you want to remove the current entry
+from the tabs list from = the starting point of the google maps route route-type
+= the type or google maps route <a href="https://developers.google.com/maps/documentation/javascript/reference#TravelMode">google.maps.TravelMode</a></p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a><br>
+		
+
+				<b>Author:</b>
+				etessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+				<b>Since:</b>
+				1.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#15-210" title="Go to source code">WPTU/Core/Shortcodes/ShortcodeForTabs.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#71-79" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Initializes the istance with default values</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Initializes the istance with default values</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="tab_hook" id="_tab_hook">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_tab_hook">#</a>
+			<code><a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#101-142" title="Go to source code">tab_hook</a>( <span>unknown_type <var>$atts</var></span>, <span>string <var>$content</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>This is called back by wordpress when a tab shortcode is found</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This is called back by wordpress when a tab shortcode is found</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$atts</var></dt>
+						<dd><code>unknown_type</code><br>$atts</dd>
+						<dt><var>$content</var></dt>
+						<dd><code>string</code><br>$content the content wrapped into the shortcode</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="list_hook" id="_list_hook">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_list_hook">#</a>
+			<code><a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#159-185" title="Go to source code">list_hook</a>( <span>array <var>$atts</var></span> )</code>
+
+			<div class="description short">
+				
+<p>This is called back by WordPress when the tab list shortcode is found</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This is called back by WordPress when the tab list shortcode is found</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$atts</var></dt>
+						<dd><code>array</code><br>$atts User defined attributes in shortcode tag.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="build_list" id="_build_list">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_build_list">#</a>
+			<code><a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#187-209" title="Go to source code">build_list</a>( <span>string <var>$content</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Builds the list of tabs.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the list of tabs.</p>
+
+<p>This is called to be sure we don't leave no tab behind Thanks to
+Viper007Bond: @link <a
+href="http://www.viper007bond.com/2009/11/22/wordpress-code-earlier-shortcodes/">http://www.viper007bond.com/2009/11/22/wordpress-code-earlier-shortcodes/</a></p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$content</var></dt>
+						<dd><code>string</code><br>$content the post content</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="tab_shortcode" id="$tab_shortcode">
+			<td class="attributes"><code>
+				public static 
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#35-39" title="Go to source code"><var>$tab_shortcode</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$tab_shortcode" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the shortcode used for wrapping a single tab</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the shortcode used for wrapping a single tab</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="list_shortcode" id="$list_shortcode">
+			<td class="attributes"><code>
+				public static 
+				unknown_type
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#41-45" title="Go to source code"><var>$list_shortcode</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$list_shortcode" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the shortcode for placing the tabs lis</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the shortcode for placing the tabs lis</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="tab_tpl" id="$tab_tpl">
+			<td class="attributes"><code>
+				public  
+				<code><a href="class-WPTU.Core.Helpers.SubstitutionTemplate.html">WPTU\Core\Helpers\SubstitutionTemplate</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#47-51" title="Go to source code"><var>$tab_tpl</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$tab_tpl" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Substitution template for the single tab</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Substitution template for the single tab</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="list_tpl" id="$list_tpl">
+			<td class="attributes"><code>
+				public  
+				<code><a href="class-WPTU.Core.Helpers.SubstitutionTemplate.html">WPTU\Core\Helpers\SubstitutionTemplate</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Shortcodes.ShortcodeForTabs.html#53-57" title="Go to source code"><var>$list_tpl</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$list_tpl" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Substitution template for the tabs list</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Substitution template for the tabs list</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

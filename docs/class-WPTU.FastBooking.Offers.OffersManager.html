@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\FastBooking\Offers\OffersManager | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.FastBooking.Offers.html" title="Summary of WPTU\FastBooking\Offers"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-WPTU.FastBooking.Offers.OffersManager.html">OffersManager</a></li>
+				<li><a href="class-WPTU.FastBooking.Offers.SpecialOffersSnippet.html">SpecialOffersSnippet</a></li>
+				<li><a href="class-WPTU.FastBooking.Offers.SpecialOffersSnippetAjax.html">SpecialOffersSnippetAjax</a></li>
+				<li><a href="class-WPTU.FastBooking.Offers.SpecialOffersSnippetCached.html">SpecialOffersSnippetCached</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class OffersManager</h1>
+
+
+	<div class="description">
+	
+<p>Manage the Offers linked to the booking engine by promo code</p>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+			<a href="class-WPTU.Core.Singleton.html"><span>WPTU\Core\Singleton</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>WPTU\FastBooking\Offers\OffersManager</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.FastBooking.html">FastBooking</a>\<a href="namespace-WPTU.FastBooking.Offers.html">Offers</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#10-311" title="Go to source code">WPTU/FastBooking/Offers/OffersManager.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#51-62" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Initializes the object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Initializes the object</p>
+
+
+
+
+
+
+
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-WPTU.Core.Singleton.html#___construct">WPTU\Core\Singleton::__construct</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offer_details_list" id="_offer_details_list">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offer_details_list">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#64-103" title="Go to source code">offer_details_list</a>( )</code>
+
+			<div class="description short">
+				
+<p>Returns the list of allowed offers details</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Returns the list of allowed offers details</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_custom_post" id="_register_custom_post">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_custom_post">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#105-152" title="Go to source code">register_custom_post</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register the custom post type</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register the custom post type</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_custom_taxonomy" id="_register_custom_taxonomy">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_custom_taxonomy">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#154-170" title="Go to source code">register_custom_taxonomy</a>( )</code>
+
+			<div class="description short">
+				
+<p>Registers the needed custom taxonomy</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Registers the needed custom taxonomy</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_metaboxes" id="_register_metaboxes">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_metaboxes">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#172-184" title="Go to source code">register_metaboxes</a>( )</code>
+
+			<div class="description short">
+				
+<p>Registers the needed metaboxes</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Registers the needed metaboxes</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="metabox_html" id="_metabox_html">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_metabox_html">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#186-208" title="Go to source code">metabox_html</a>( <span>object <var>$post</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Prints the metabox for the offer details</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints the metabox for the offer details</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>object</code><br>$post the current post</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="save_metabox_data" id="_save_metabox_data">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_save_metabox_data">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#210-240" title="Go to source code">save_metabox_data</a>( <span>mixed <var>$post_id</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Saves the metabox data while saving the offer</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Saves the metabox data while saving the offer</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_offer_details" id="_get_offer_details">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_offer_details">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#242-260" title="Go to source code">get_offer_details</a>( <span>object <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the offer details</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the offer details</p>
+
+<p>Format: array ( 'cname' =&gt; 'ITAOSHTLExpress', 'lg' =&gt; '', 'codeprice'
+=&gt; 'PROMO-Terme-e-gastronomia', 'firstroom' =&gt; 'Double-Superior',
+'codetrack' =&gt; '', 'firstdate' =&gt; '', )</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>object</code><br>$post the post object</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>a list of details<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_booknow" id="_get_booknow">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_booknow">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#262-286" title="Go to source code">get_booknow</a>( <span>object <var>$post</var> = <span class="php-keyword1">null</span></span>, <span>number <var>$format</var> = <span class="php-num">0</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the book now onclick attribute</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the book now onclick attribute</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>object</code><br>$post the offer custom post</dd>
+						<dt><var>$format</var></dt>
+						<dd><code>number</code><br>$format the format</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the onclick attribute<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_offer_price" id="_get_offer_price">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_offer_price">#</a>
+			<code><a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#288-309" title="Go to source code">get_offer_price</a>( <span>mixed <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the price_content div</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the price_content div</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+		<h3>Methods inherited from <a href="class-WPTU.Core.Singleton.html#methods">WPTU\Core\Singleton</a></h3>
+		<p class="elementList">
+			<code><a href="class-WPTU.Core.Singleton.html#_getInstance">getInstance()</a></code>
+		</p>
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="CUSTOM_POST_NAME" id="CUSTOM_POST_NAME">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#14-18" title="Go to source code"><b>CUSTOM_POST_NAME</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'offer'</span></code></td>
+			<td class="description"><div>
+				<a href="#CUSTOM_POST_NAME" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the custom post name</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the custom post name</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="CUSTOM_TAX_NAME" id="CUSTOM_TAX_NAME">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#20-24" title="Go to source code"><b>CUSTOM_TAX_NAME</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'offer-type'</span></code></td>
+			<td class="description"><div>
+				<a href="#CUSTOM_TAX_NAME" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the custom taxonomy name</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the custom taxonomy name</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="META_KEY_NAME" id="META_KEY_NAME">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#27-31" title="Go to source code"><b>META_KEY_NAME</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'_wtu_offers_details'</span></code></td>
+			<td class="description"><div>
+				<a href="#META_KEY_NAME" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the meta key name where store the offers details</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the meta key name where store the offers details</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="FORMAT_OOFBLIB" id="FORMAT_OOFBLIB">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#33-37" title="Go to source code"><b>FORMAT_OOFBLIB</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">1</span></code></td>
+			<td class="description"><div>
+				<a href="#FORMAT_OOFBLIB" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Use to retrieve the book now button compatible with Fblib</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Use to retrieve the book now button compatible with Fblib</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="FORMAT_FBLIB" id="FORMAT_FBLIB">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#39-43" title="Go to source code"><b>FORMAT_FBLIB</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">2</span></code></td>
+			<td class="description"><div>
+				<a href="#FORMAT_FBLIB" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Use to retrieve the book now button compatible with fblib.js</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Use to retrieve the book now button compatible with fblib.js</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="connect_name" id="$connect_name">
+			<td class="attributes"><code>
+				public  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.FastBooking.Offers.OffersManager.html#45-49" title="Go to source code"><var>$connect_name</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$connect_name" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the connect name</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the connect name</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

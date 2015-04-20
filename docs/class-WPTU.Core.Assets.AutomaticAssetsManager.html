@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\Assets\AutomaticAssetsManager | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Assets.html" title="Summary of WPTU\Core\Assets"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.Core.Assets.Assets.html">Assets</a></li>
+				<li class="active"><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">AutomaticAssetsManager</a></li>
+				<li><a href="class-WPTU.Core.Assets.DefaultAssets.html">DefaultAssets</a></li>
+				<li><a href="class-WPTU.Core.Assets.DefaultAssetsCDN.html">DefaultAssetsCDN</a></li>
+				<li><a href="class-WPTU.Core.Assets.EmptyAssets.html">EmptyAssets</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class AutomaticAssetsManager</h1>
+
+
+	<div class="description">
+	
+<p>Manages the assets</p>
+
+<p>Adds the possibility to load a javascript or a css in the middle in a
+template part without having the need to check if the asset can be loaded in the
+head or in the foot of the page.</p>
+
+<p>Uses ob_start and a placeholder for the assets. It's a singleton because it
+has to be run only once</p>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+			<a href="class-WPTU.Core.Singleton.html"><span>WPTU\Core\Singleton</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>WPTU\Core\Assets\AutomaticAssetsManager</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Assets.html">Assets</a><br>
+		<b>Package:</b> WPTU\Core\Assets<br>
+
+				<b>Author:</b>
+				etessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#13-289" title="Go to source code">WPTU/Core/Assets/AutomaticAssetsManager.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#66-73" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register some assets and hooks into WP</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register some assets and hooks into WP</p>
+
+
+
+
+
+
+
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-WPTU.Core.Singleton.html#___construct">WPTU\Core\Singleton::__construct</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="add_js" id="_add_js">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add_js">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#75-94" title="Go to source code">add_js</a>( <span>string <var>$handle</var></span>, <span>string <var>$src</var></span>, <span>array <var>$deps</var> = <span class="php-keyword1">array</span>()</span>, <span>string|boolean <var>$ver</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$in_footer</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Adds a javascript to the current set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Adds a javascript to the current set</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$handle</var></dt>
+						<dd><code>string</code><br>$handle Script name</dd>
+						<dt><var>$src</var></dt>
+						<dd><code>string</code><br>$src Script url</dd>
+						<dt><var>$deps</var></dt>
+						<dd><code>array</code><br>$deps (optional) Array of script names on which this script depends</dd>
+						<dt><var>$ver</var></dt>
+						<dd><code>string|boolean</code><br>$ver (optional) Script version (used for cache busting), set to NULL to disable</dd>
+						<dt><var>$in_footer</var></dt>
+						<dd><code>boolean</code><br>$in_footer (optional) Whether to enqueue the script before &lt;/head&gt; or
+before &lt;/body&gt;</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							@link <a
+href="http://codex.wordpress.org/Function_Reference/wp_register_script">http://codex.wordpress.org/Function_Reference/wp_register_script</a><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="add_css" id="_add_css">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add_css">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#96-117" title="Go to source code">add_css</a>( <span>string <var>$handle</var></span>, <span>string|boolean <var>$src</var></span>, <span>array <var>$deps</var> = <span class="php-keyword1">array</span>()</span>, <span>string|boolean <var>$ver</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$media</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Adds a css to the current set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Adds a css to the current set</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$handle</var></dt>
+						<dd><code>string</code><br>$handle Name of the stylesheet.</dd>
+						<dt><var>$src</var></dt>
+						<dd><code>string|boolean</code><br>$src Path to the stylesheet from the root directory of WordPress. Example:
+'/css/mystyle.css'.</dd>
+						<dt><var>$deps</var></dt>
+						<dd><code>array</code><br>$deps Array of handles of any stylesheet that this stylesheet depends on.
+(Stylesheets that must be loaded before this stylesheet.) Pass an empty array if
+there are no dependencies.</dd>
+						<dt><var>$ver</var></dt>
+						<dd><code>string|boolean</code><br>$ver String specifying the stylesheet version number. Set to NULL to disable.
+Used to ensure that the correct version is sent to the client regardless of
+caching.</dd>
+						<dt><var>$media</var></dt>
+						<dd><code>string</code><br>$media The media for which this stylesheet has been defined.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							@link <a
+href="http://codex.wordpress.org/Function_Reference/wp_register_style">http://codex.wordpress.org/Function_Reference/wp_register_style</a><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="hook" id="_hook">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_hook">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#120-129" title="Go to source code">hook</a>( )</code>
+
+			<div class="description short">
+				
+<p>Hooks the assets registration into wordpress init hook</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Hooks the assets registration into wordpress init hook</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_automatic_manager" id="_enable_automatic_manager">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_automatic_manager">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#131-148" title="Go to source code">enable_automatic_manager</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enables the loading of assets from template part</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enables the loading of assets from template part</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="obstart_init" id="_obstart_init">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_obstart_init">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#150-155" title="Go to source code">obstart_init</a>( )</code>
+
+			<div class="description short">
+				
+<p>Called by wordpress right before the page start</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Called by wordpress right before the page start</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="disable_automatic_manager" id="_disable_automatic_manager">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_disable_automatic_manager">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#157-172" title="Go to source code">disable_automatic_manager</a>( )</code>
+
+			<div class="description short">
+				
+<p>Disables the loading of assets from template part</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Disables the loading of assets from template part</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">WPTU\Core\Assets\AutomaticAssetsManager</a></code></code><br>$this for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="on_wp_print_styles" id="_on_wp_print_styles">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_on_wp_print_styles">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#174-177" title="Go to source code">on_wp_print_styles</a>( )</code>
+
+			<div class="description short">
+				
+<p>Prints a marker for the top css</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints a marker for the top css</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="on_wp_print_scripts" id="_on_wp_print_scripts">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_on_wp_print_scripts">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#179-182" title="Go to source code">on_wp_print_scripts</a>( )</code>
+
+			<div class="description short">
+				
+<p>Prints a marker for the top javascript</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints a marker for the top javascript</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="on_wp_print_footer_scripts" id="_on_wp_print_footer_scripts">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_on_wp_print_footer_scripts">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#184-187" title="Go to source code">on_wp_print_footer_scripts</a>( )</code>
+
+			<div class="description short">
+				
+<p>Prints a marker for the bottom javascript</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints a marker for the bottom javascript</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="obstart_replace_assets_marker" id="_obstart_replace_assets_marker">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_obstart_replace_assets_marker">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#189-222" title="Go to source code">obstart_replace_assets_marker</a>( )</code>
+
+			<div class="description short">
+				
+<p>Replaces the temporarily markers inserted on first page execution with the
+real list of html markup for the needed assets</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Replaces the temporarily markers inserted on first page execution with the
+real list of html markup for the needed assets</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="callback" id="_callback">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_callback">#</a>
+			<code><a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#224-287" title="Go to source code">callback</a>( )</code>
+
+			<div class="description short">
+				
+<p>This is called on wordpress init Tries to load asset from the child theme, if
+the asset file doesn't exists it loads from the parent theme</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This is called on wordpress init Tries to load asset from the child theme, if
+the asset file doesn't exists it loads from the parent theme</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+		<h3>Methods inherited from <a href="class-WPTU.Core.Singleton.html#methods">WPTU\Core\Singleton</a></h3>
+		<p class="elementList">
+			<code><a href="class-WPTU.Core.Singleton.html#_getInstance">getInstance()</a></code>
+		</p>
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="CSS_MARKER" id="CSS_MARKER">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#48-52" title="Go to source code"><b>CSS_MARKER</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'&lt;!-- ###WPU### place here the css --&gt;'</span></code></td>
+			<td class="description"><div>
+				<a href="#CSS_MARKER" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Placeholder for the css</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Placeholder for the css</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="TOP_JS_MARKER" id="TOP_JS_MARKER">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#54-58" title="Go to source code"><b>TOP_JS_MARKER</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'&lt;!-- ###WPU### place here the top js --&gt;'</span></code></td>
+			<td class="description"><div>
+				<a href="#TOP_JS_MARKER" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Placeholder for the top javascripts</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Placeholder for the top javascripts</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="BOTTOM_JS_MARKER" id="BOTTOM_JS_MARKER">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.Assets.AutomaticAssetsManager.html#60-64" title="Go to source code"><b>BOTTOM_JS_MARKER</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'&lt;!-- ###WPU### place here the bottom js --&gt;'</span></code></td>
+			<td class="description"><div>
+				<a href="#BOTTOM_JS_MARKER" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Placeholder for the bottom javascript</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Placeholder for the bottom javascript</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

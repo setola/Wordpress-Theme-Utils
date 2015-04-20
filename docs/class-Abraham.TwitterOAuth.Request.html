@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class Abraham\TwitterOAuth\Request | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-Abraham.TwitterOAuth.html" title="Summary of Abraham\TwitterOAuth"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Abraham.TwitterOAuth.Config.html">Config</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.Consumer.html">Consumer</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.HmacSha1.html">HmacSha1</a></li>
+				<li class="active"><a href="class-Abraham.TwitterOAuth.Request.html">Request</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.Response.html">Response</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.SignatureMethod.html">SignatureMethod</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.Token.html">Token</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.TwitterOAuth.html">TwitterOAuth</a></li>
+				<li><a href="class-Abraham.TwitterOAuth.Util.html">Util</a></li>
+			</ul>
+
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Abraham.TwitterOAuth.TwitterOAuthException.html">TwitterOAuthException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Request</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Abraham.html">Abraham</a>\<a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-Abraham.TwitterOAuth.Request.html#8-275" title="Go to source code">WPTU/Libraries/twitteroauth/src/Request.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#18-31" title="Go to source code">__construct</a>( <span>string <var>$httpMethod</var></span>, <span>string <var>$httpUrl</var></span>, <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				
+<p>Constructor</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Constructor</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$httpMethod</var></dt>
+						<dd><code>string</code><br>$httpMethod</dd>
+						<dt><var>$httpUrl</var></dt>
+						<dd><code>string</code><br>$httpUrl</dd>
+						<dt><var>$parameters</var></dt>
+						<dd><code>array|null</code><br>$parameters</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fromConsumerAndToken" id="_fromConsumerAndToken">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Abraham.TwitterOAuth.Request.html">Abraham\TwitterOAuth\Request</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fromConsumerAndToken">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#33-64" title="Go to source code">fromConsumerAndToken</a>( <span><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code> <var>$consumer</var></span>, <span><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code> <var>$token</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$httpMethod</var></span>, <span>string <var>$httpUrl</var></span>, <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+			<div class="description short">
+				
+<p>pretty much a helper function to set up the request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>pretty much a helper function to set up the request</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$consumer</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code></code><br>$consumer</dd>
+						<dt><var>$token</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code></code><br>$token</dd>
+						<dt><var>$httpMethod</var></dt>
+						<dd><code>string</code><br>$httpMethod</dd>
+						<dt><var>$httpUrl</var></dt>
+						<dd><code>string</code><br>$httpUrl</dd>
+						<dt><var>$parameters</var></dt>
+						<dd><code>array</code><br>$parameters</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-Abraham.TwitterOAuth.Request.html">Abraham\TwitterOAuth\Request</a></code></code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setParameter" id="_setParameter">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setParameter">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#66-85" title="Go to source code">setParameter</a>( <span>string <var>$name</var></span>, <span>string <var>$value</var></span>, <span>boolean <var>$allowDuplicates</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd><code>string</code><br>$name</dd>
+						<dt><var>$value</var></dt>
+						<dd><code>string</code><br>$value</dd>
+						<dt><var>$allowDuplicates</var></dt>
+						<dd><code>boolean</code><br>$allowDuplicates</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getParameter" id="_getParameter">
+
+			<td class="attributes"><code>
+				 public 
+				string|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getParameter">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#87-95" title="Go to source code">getParameter</a>( <span>mixed <var>$name</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd><code>mixed</code><br>$name</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string|null</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getParameters" id="_getParameters">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getParameters">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#97-103" title="Go to source code">getParameters</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="removeParameter" id="_removeParameter">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_removeParameter">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#105-111" title="Go to source code">removeParameter</a>( <span>mixed <var>$name</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd><code>mixed</code><br>$name</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSignableParameters" id="_getSignableParameters">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSignableParameters">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#113-130" title="Go to source code">getSignableParameters</a>( )</code>
+
+			<div class="description short">
+				
+<p>The request parameters, sorted and concatenated into a normalized string.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The request parameters, sorted and concatenated into a normalized string.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSignatureBaseString" id="_getSignatureBaseString">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSignatureBaseString">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#132-152" title="Go to source code">getSignatureBaseString</a>( )</code>
+
+			<div class="description short">
+				
+<p>Returns the base string of this request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Returns the base string of this request</p>
+
+<p>The base string defined as the method, the url and the parameters
+(normalized), each urlencoded and the concated with &amp;.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getNormalizedHttpMethod" id="_getNormalizedHttpMethod">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getNormalizedHttpMethod">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#154-162" title="Go to source code">getNormalizedHttpMethod</a>( )</code>
+
+			<div class="description short">
+				
+<p>Returns the HTTP Method in uppercase</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Returns the HTTP Method in uppercase</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getNormalizedHttpUrl" id="_getNormalizedHttpUrl">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getNormalizedHttpUrl">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#164-185" title="Go to source code">getNormalizedHttpUrl</a>( )</code>
+
+			<div class="description short">
+				
+<p>parses the url and rebuilds it to be scheme://host/path</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>parses the url and rebuilds it to be scheme://host/path</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toUrl" id="_toUrl">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toUrl">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#187-200" title="Go to source code">toUrl</a>( )</code>
+
+			<div class="description short">
+				
+<p>Builds a url usable for a GET request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds a url usable for a GET request</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toPostdata" id="_toPostdata">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toPostdata">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#202-210" title="Go to source code">toPostdata</a>( )</code>
+
+			<div class="description short">
+				
+<p>Builds the data one would send in a POST request</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the data one would send in a POST request</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toHeader" id="_toHeader">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toHeader">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#212-234" title="Go to source code">toHeader</a>( )</code>
+
+			<div class="description short">
+				
+<p>Builds the Authorization: header</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Builds the Authorization: header</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><code><a href="class-Abraham.TwitterOAuth.TwitterOAuthException.html">Abraham\TwitterOAuth\TwitterOAuthException</a></code></code><br>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__toString" id="___toString">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___toString">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#236-242" title="Go to source code">__toString</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="signRequest" id="_signRequest">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_signRequest">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#244-254" title="Go to source code">signRequest</a>( <span><code><a href="class-Abraham.TwitterOAuth.SignatureMethod.html">Abraham\TwitterOAuth\SignatureMethod</a></code> <var>$signatureMethod</var></span>, <span><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code> <var>$consumer</var></span>, <span><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code> <var>$token</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$signatureMethod</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.SignatureMethod.html">Abraham\TwitterOAuth\SignatureMethod</a></code></code><br>$signatureMethod</dd>
+						<dt><var>$consumer</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code></code><br>$consumer</dd>
+						<dt><var>$token</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code></code><br>$token</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="buildSignature" id="_buildSignature">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_buildSignature">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#256-266" title="Go to source code">buildSignature</a>( <span><code><a href="class-Abraham.TwitterOAuth.SignatureMethod.html">Abraham\TwitterOAuth\SignatureMethod</a></code> <var>$signatureMethod</var></span>, <span><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code> <var>$consumer</var></span>, <span><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code> <var>$token</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$signatureMethod</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.SignatureMethod.html">Abraham\TwitterOAuth\SignatureMethod</a></code></code><br>$signatureMethod</dd>
+						<dt><var>$consumer</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Consumer.html">Abraham\TwitterOAuth\Consumer</a></code></code><br>$consumer</dd>
+						<dt><var>$token</var></dt>
+						<dd><code><code><a href="class-Abraham.TwitterOAuth.Token.html">Abraham\TwitterOAuth\Token</a></code></code><br>$token</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="generateNonce" id="_generateNonce">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_generateNonce">#</a>
+			<code><a href="source-class-Abraham.TwitterOAuth.Request.html#268-274" title="Go to source code">generateNonce</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="parameters" id="$parameters">
+			<td class="attributes"><code>
+				protected  
+				mixed
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#10" title="Go to source code"><var>$parameters</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$parameters" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="httpMethod" id="$httpMethod">
+			<td class="attributes"><code>
+				protected  
+				mixed
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#11" title="Go to source code"><var>$httpMethod</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$httpMethod" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="httpUrl" id="$httpUrl">
+			<td class="attributes"><code>
+				protected  
+				mixed
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#12" title="Go to source code"><var>$httpUrl</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$httpUrl" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="baseString" id="$baseString">
+			<td class="attributes"><code>
+				public  
+				mixed
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#14" title="Go to source code"><var>$baseString</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$baseString" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="version" id="$version">
+			<td class="attributes"><code>
+				public static 
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#15" title="Go to source code"><var>$version</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$version" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="POST_INPUT" id="$POST_INPUT">
+			<td class="attributes"><code>
+				public static 
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Abraham.TwitterOAuth.Request.html#16" title="Go to source code"><var>$POST_INPUT</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$POST_INPUT" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\ThemeUtils | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.html" title="Summary of WPTU\Core"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.Core.Singleton.html">Singleton</a></li>
+				<li><a href="class-WPTU.Core.TemplateChecker.html">TemplateChecker</a></li>
+				<li class="active"><a href="class-WPTU.Core.ThemeUtils.html">ThemeUtils</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class ThemeUtils</h1>
+
+
+	<div class="description">
+	
+<p>Initializes and manages the parent theme config and constants</p>
+
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+			<a href="class-WPTU.Core.Singleton.html"><span>WPTU\Core\Singleton</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>WPTU\Core\ThemeUtils</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a><br>
+		<b>Package:</b> classes<br>
+
+				<b>Author:</b>
+				etessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.ThemeUtils.html#21-230" title="Go to source code">WPTU/Core/ThemeUtils.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#38-52" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+<p>Initializes default settings Singleton private constructor</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Initializes default settings Singleton private constructor</p>
+
+
+
+
+
+
+
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-WPTU.Core.Singleton.html#___construct">WPTU\Core\Singleton::__construct</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_feature" id="_enable_feature">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_feature">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#54-74" title="Go to source code">enable_feature</a>( <span>mixed <var>$feature_name</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Enables the given feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enables the given feature</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$feature_name</var></dt>
+						<dd><code>mixed</code><br>$feature_name int one of the class FEATURE_* constants</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code>Exception</code><br>if the given feature is already enabled<br>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="_enable_feature" id="__enable_feature">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#__enable_feature">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#76-98" title="Go to source code">_enable_feature</a>( <span>mixed <var>$feature_name</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$feature_name</var></dt>
+						<dd><code>mixed</code><br>$feature_name</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code>Exception</code><br>if $featureName is not recognized<br>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="set_assets_manager" id="_set_assets_manager">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_set_assets_manager">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#100-109" title="Go to source code">set_assets_manager</a>( <span><code><a href="class-WPTU.Core.Assets.Assets.html">WPTU\Core\Assets\Assets</a></code> <var>$assets_manager</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Sets the assets manager</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Sets the assets manager</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$assets_manager</var></dt>
+						<dd><code><code><a href="class-WPTU.Core.Assets.Assets.html">WPTU\Core\Assets\Assets</a></code></code><br>$assets_manager</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_assets_manager" id="_get_assets_manager">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-WPTU.Core.Assets.Assets.html">WPTU\Core\Assets\Assets</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_assets_manager">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#111-117" title="Go to source code">get_assets_manager</a>( )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the assets manager for this theme</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the assets manager for this theme</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><code><a href="class-WPTU.Core.Assets.Assets.html">WPTU\Core\Assets\Assets</a></code></code><br>the assets manager for this theme<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_text_domain" id="_register_text_domain">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_text_domain">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#119-126" title="Go to source code">register_text_domain</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register the wtu-framework text domain to WordPress</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register the wtu-framework text domain to WordPress</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_autoload_system" id="_enable_autoload_system">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_autoload_system">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#128-142" title="Go to source code">enable_autoload_system</a>( )</code>
+
+			<div class="description short">
+				
+<p>Initializes the autoloader subsystem</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Initializes the autoloader subsystem</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_media_manager" id="_enable_media_manager">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_media_manager">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#144-152" title="Go to source code">enable_media_manager</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enables the Media Manager feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enables the Media Manager feature</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_debug" id="_enable_debug">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_debug">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#154-164" title="Go to source code">enable_debug</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enables vd()\vc()\v() functions output, This is generically good for
+development environments.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enables vd()\vc()\v() functions output, This is generically good for
+development environments.</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enable_dummy_content" id="_enable_dummy_content">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable_dummy_content">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#166-176" title="Go to source code">enable_dummy_content</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enable the Lorem Ipsum body text on empty pages</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enable the Lorem Ipsum body text on empty pages</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="default_constants" id="_default_constants">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_default_constants">#</a>
+			<code><a href="source-class-WPTU.Core.ThemeUtils.html#178-229" title="Go to source code">default_constants</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register some constants</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register some constants</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>$this ThemeUtils for chainability<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+		<h3>Methods inherited from <a href="class-WPTU.Core.Singleton.html#methods">WPTU\Core\Singleton</a></h3>
+		<p class="elementList">
+			<code><a href="class-WPTU.Core.Singleton.html#_getInstance">getInstance()</a></code>
+		</p>
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="FEATURE_AUTOLOAD" id="FEATURE_AUTOLOAD">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.ThemeUtils.html#30" title="Go to source code"><b>FEATURE_AUTOLOAD</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">1</span></code></td>
+			<td class="description"><div>
+				<a href="#FEATURE_AUTOLOAD" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="FEATURE_MEDIAMANAGER" id="FEATURE_MEDIAMANAGER">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.ThemeUtils.html#31" title="Go to source code"><b>FEATURE_MEDIAMANAGER</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">2</span></code></td>
+			<td class="description"><div>
+				<a href="#FEATURE_MEDIAMANAGER" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="FEATURE_DEBUG" id="FEATURE_DEBUG">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.ThemeUtils.html#32" title="Go to source code"><b>FEATURE_DEBUG</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">3</span></code></td>
+			<td class="description"><div>
+				<a href="#FEATURE_DEBUG" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="FEATURE_DUMMYCONTENT" id="FEATURE_DUMMYCONTENT">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.ThemeUtils.html#33" title="Go to source code"><b>FEATURE_DUMMYCONTENT</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-num">4</span></code></td>
+			<td class="description"><div>
+				<a href="#FEATURE_DUMMYCONTENT" class="anchor">#</a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\Metaboxes\MetaboxesController | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Metaboxes.html" title="Summary of WPTU\Core\Metaboxes"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.Core.Metaboxes.MediaManager.html">MediaManager</a></li>
+				<li class="active"><a href="class-WPTU.Core.Metaboxes.MetaboxesController.html">MetaboxesController</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.MetaboxInfo.html">MetaboxInfo</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.SimpleMetabox.html">SimpleMetabox</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.TinyMCEExcerptCustomization.html">TinyMCEExcerptCustomization</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class MetaboxesController</h1>
+
+
+	<div class="description">
+	
+<p>Generic abstract metaboxes controller: decides which metaboxes are to be
+shown on the various page of the website</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#9-122" title="Go to source code">WPTU/Core/Metaboxes/MetaboxesController.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#23-32" title="Go to source code">__construct</a>( <span>mixed <var>$metabox_infos</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Build a new object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Build a new object</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$metabox_infos</var></dt>
+						<dd><code>mixed</code><br>$metabox_infos array list of MetaboxInfo</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="filter_metaboxes" id="_filter_metaboxes">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_filter_metaboxes">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#34-62" title="Go to source code">filter_metaboxes</a>( )</code>
+
+			<div class="description short">
+				
+<p>Populates the $this-&gt;enabled_metaboxes list</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Populates the $this-&gt;enabled_metaboxes list</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_admin" id="_register_admin">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_admin">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#64-72" title="Go to source code">register_admin</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register the metaboxes to the WordPress admin page</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register the metaboxes to the WordPress admin page</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="save_metabox_data" id="_save_metabox_data">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_save_metabox_data">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#74-85" title="Go to source code">save_metabox_data</a>( <span>mixed <var>$post_id</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Saves the metabox data on post_save action</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Saves the metabox data on post_save action</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post_id</var></dt>
+						<dd><code>mixed</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_value" id="_get_value">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_value">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#87-102" title="Go to source code">get_value</a>( <span>mixed <var>$metabox_id</var></span>, <span>null <var>$post_id</var> = <span class="php-keyword1">null</span> </span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the values stored in the given metabox_id post meta</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the values stored in the given metabox_id post meta</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$metabox_id</var></dt>
+						<dd><code>mixed</code><br>$metabox_id the metabox ID</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>null</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_values_by_classname" id="_get_values_by_classname">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_values_by_classname">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#104-121" title="Go to source code">get_values_by_classname</a>( <span>mixed <var>$classname</var></span>, <span>null <var>$post_id</var> = <span class="php-keyword1">null</span> </span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves a list of values for the metaboxes created by the given $classname
+class</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves a list of values for the metaboxes created by the given $classname
+class</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$classname</var></dt>
+						<dd><code>mixed</code><br>$classname the name of the class</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>null</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="metabox_infos" id="$metabox_infos">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#13-16" title="Go to source code"><var>$metabox_infos</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$metabox_infos" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>stores the list of MetaboxInfo objects</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>stores the list of MetaboxInfo objects</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="enabled_metaboxes" id="$enabled_metaboxes">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Metaboxes.MetaboxesController.html#18-21" title="Go to source code"><var>$enabled_metaboxes</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$enabled_metaboxes" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>list of metaboxes to be shown on the current page</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>list of metaboxes to be shown on the current page</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

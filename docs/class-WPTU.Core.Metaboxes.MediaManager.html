@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\Core\Metaboxes\MediaManager | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Metaboxes.html" title="Summary of WPTU\Core\Metaboxes"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-WPTU.Core.Metaboxes.MediaManager.html">MediaManager</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.MetaboxesController.html">MetaboxesController</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.MetaboxInfo.html">MetaboxInfo</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.SimpleMetabox.html">SimpleMetabox</a></li>
+				<li><a href="class-WPTU.Core.Metaboxes.TinyMCEExcerptCustomization.html">TinyMCEExcerptCustomization</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class MediaManager</h1>
+
+
+	<div class="description">
+	
+<p>Manages multiple media set</p>
+
+<p>This feature adds a metabox to your WordPress admin panel in which you can
+add any media media into a given set.</p>
+
+<p>Then in your theme you will be able to retrieve the single set and show it
+where you need it.</p>
+
+<p>For example if you need to have a slideshow on the top of the page and a
+minigallery on the bottom, this feature is what you need to separate your images
+between the two sets.</p>
+
+<p>In your functions.php simply add</p>
+
+<pre>
+MediaManager::enable();
+MediaManager::set_media_list(<span
+class="php-quote">'slideshow'</span>, <span
+class="php-keyword1">array</span>(
+        <span
+class="php-quote">'label'</span>         =&gt;      __(<span
+class="php-quote">'Slideshow'</span>, <span
+class="php-quote">'wtu_framework'</span>),
+        <span
+class="php-quote">'shortcode'</span>     =&gt;      <span
+class="php-quote">'mySlideshow'</span>
+));
+</pre>
+
+<p>to enable the backend feature.</p>
+
+<p>Now you will have to manage a new shortcode; for example:</p>
+
+<pre>
+<span
+class="php-keyword1">function</span> mySlideshow_gallery_shortcode(<span
+class="php-var">$atts</span>){
+        <span
+class="php-var">$data</span> = shortcode_atts(<span
+class="php-keyword1">array</span>(<span
+class="php-quote">'ids'</span> =&gt; <span class="php-quote">''</span>), <span
+class="php-var">$atts</span> );
+        <span
+class="php-var">$toret</span> = <span class="php-quote">''</span>;
+        <span
+class="php-var">$ids</span> = <span class="php-keyword2">explode</span>(<span
+class="php-quote">','</span>, <span class="php-var">$data</span>[<span
+class="php-quote">'ids'</span>]);
+        <span
+class="php-keyword1">foreach</span>(<span class="php-var">$ids</span> <span
+class="php-keyword1">as</span> <span
+class="php-var">$id</span>){
+                <span
+class="php-var">$toret</span> .= wp_get_attachment_image(<span
+class="php-var">$id</span>);
+        }
+        <span
+class="php-keyword1">return</span> <span
+class="php-var">$toret</span>;
+}
+
+add_shortcode(<span
+class="php-quote">'mySlideshow'</span>, <span
+class="php-quote">'mySlideshow_gallery_shortcode'</span>);
+</pre>
+
+<p>If you need more than a section simply duplicate your code and change at
+least the shortcode and the id (first parameter of set_media_list())</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.Core.html">Core</a>\<a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a><br>
+		
+
+				<b>Author:</b>
+				Emanuele 'Tex' Tessore<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#8-539" title="Go to source code">WPTU/Core/Metaboxes/MediaManager.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="enable" id="_enable">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#73-85" title="Go to source code">enable</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enable the feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enable the feature</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="disable" id="_disable">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_disable">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#87-98" title="Go to source code">disable</a>( )</code>
+
+			<div class="description short">
+				
+<p>Disables the feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Disables the feature</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_assets" id="_register_assets">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_assets">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#100-106" title="Go to source code">register_assets</a>( )</code>
+
+			<div class="description short">
+				
+<p>Register scripts and styles needed for this feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Register scripts and styles needed for this feature</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enqueue_assets" id="_enqueue_assets">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enqueue_assets">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#108-116" title="Go to source code">enqueue_assets</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enqueue the needed scripts and styles</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enqueue the needed scripts and styles</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="media_view_settings" id="_media_view_settings">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_media_view_settings">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#118-130" title="Go to source code">media_view_settings</a>( <span>mixed <var>$settings</var></span>, <span>object <var>$post</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Called on media_view_settings, this method adds a new shortcode for the media
+manager custom gallery</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Called on media_view_settings, this method adds a new shortcode for the media
+manager custom gallery</p>
+
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							useless???<br>
+					</div>
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$settings</var></dt>
+						<dd><code>mixed</code><br>$settings media view settings</dd>
+						<dt><var>$post</var></dt>
+						<dd><code>object</code><br>$post the post</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>settings with new shortcode<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="wp_ajax_media_manager_gallery_update" id="_wp_ajax_media_manager_gallery_update">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_wp_ajax_media_manager_gallery_update">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#132-169" title="Go to source code">wp_ajax_media_manager_gallery_update</a>( )</code>
+
+			<div class="description short">
+				
+<p>Ajax callback for saving the custom gallery ids list</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Ajax callback for saving the custom gallery ids list</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="wp_ajax_media_manager_gallery_delete" id="_wp_ajax_media_manager_gallery_delete">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_wp_ajax_media_manager_gallery_delete">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#171-202" title="Go to source code">wp_ajax_media_manager_gallery_delete</a>( )</code>
+
+			<div class="description short">
+				
+<p>Ajax callback for deleting a custom media set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Ajax callback for deleting a custom media set</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_metaboxes" id="_register_metaboxes">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_metaboxes">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#204-246" title="Go to source code">register_metaboxes</a>( <span>string <var>$post_type</var> = <span class="php-quote">''</span></span>, <span>string <var>$context</var> = <span class="php-quote">'side'</span></span>, <span>string <var>$priority</var> = <span class="php-quote">'high'</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Registers the metabox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Registers the metabox</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post_type</var></dt>
+						<dd><code>string</code><br>$post_type The type of Write screen on which to show the edit screen section
+('post', 'page', 'dashboard', 'link', 'attachment' or 'custom_post_type' where
+custom_post_type is the custom post type slug)</dd>
+						<dt><var>$context</var></dt>
+						<dd><code>string</code><br>$context The part of the page where the edit screen section should be shown
+('normal', 'advanced', or 'side'). (Note that 'side' doesn't exist before 2.7)</dd>
+						<dt><var>$priority</var></dt>
+						<dd><code>string</code><br>$priority The priority within the context where the boxes should show ('high',
+'core', 'default' or 'low')</dd>
+					</dl></div>
+
+
+
+					<h4>Uses</h4>
+					<div class="list">
+							add_meta_box<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_template" id="_get_template">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_template">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#248-257" title="Go to source code">get_template</a>( <span>mixed <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the template name for the current page</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the template name for the current page</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>template name<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="metabox_html" id="_metabox_html">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_metabox_html">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#259-388" title="Go to source code">metabox_html</a>( <span>mixed <var>$post</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Prints the HTML markup for the metabox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints the HTML markup for the metabox</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="save_metabox_data" id="_save_metabox_data">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_save_metabox_data">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#390-432" title="Go to source code">save_metabox_data</a>( <span>integer <var>$post_id</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Saves the metabox data while saving the page</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Saves the metabox data while saving the page</p>
+
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							using ajax instead<br>
+					</div>
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post_id</var></dt>
+						<dd><code>integer</code><br>$post_id the post id</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="set_media_list" id="_set_media_list">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_set_media_list">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#434-448" title="Go to source code">set_media_list</a>( <span>string <var>$id</var></span>, <span>array <var>$parms</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Adds or edits a set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Adds or edits a set</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd><code>string</code><br>$id identifier for the set</dd>
+						<dt><var>$parms</var></dt>
+						<dd><code>array</code><br>$parms additional parameters such as the label showed in wp admin page</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_media" id="_get_media">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_media">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#450-461" title="Go to source code">get_media</a>( <span>string <var>$set</var></span>, <span>integer <var>$post_id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the shortcode for the given set.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the shortcode for the given set.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd><code>string</code><br>$set identifier of the set of elements</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID to be queried</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the shortcode fot the media set<br>
+					</div>
+
+
+					<h4>Uses</h4>
+					<div class="list">
+							<code><code><a href="class-WPTU.Core.Metaboxes.MediaManager.html#_get_meta">WPTU\Core\Metaboxes\MediaManager::get_meta()</a></code></code> <br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_option" id="_get_option">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_option">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#463-470" title="Go to source code">get_option</a>( <span>string <var>$set</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves configuration for given set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves configuration for given set</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd><code>string</code><br>$set identifier of the set of elements</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>mixed</code><br>list of options<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_meta" id="_get_meta">
+
+			<td class="attributes"><code>
+				 protected static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_meta">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#472-516" title="Go to source code">get_meta</a>( <span>string <var>$set</var></span>, <span>integer <var>$post_id</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Utitlity to retrieve the post meta for the given media set.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Utitlity to retrieve the post meta for the given media set.</p>
+
+<p>If WPML is available and notthing is retrieved from the given $post_id, this
+method will search for the same post meta in the corresponding post in default
+language.</p>
+
+<p>It is protected cause it can be overloaded by child classes but it's for
+internal use only. MediaManager::get_media() is the public method.</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd><code>string</code><br>$set identifier of the set of elements</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID to be queried</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the meta<br>
+					</div>
+
+
+					<h4>Uses</h4>
+					<div class="list">
+							icl_object_id() (WPML) if available<br>
+					</div>
+					<h4>Used by</h4>
+					<div class="list">
+							<code><code><a href="class-WPTU.Core.Metaboxes.MediaManager.html#_get_media">WPTU\Core\Metaboxes\MediaManager::get_media()</a></code></code> <br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_gallery" id="_get_gallery">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_gallery">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#518-526" title="Go to source code">get_gallery</a>( <span>string <var>$set</var></span>, <span>integer <var>$post_id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the markup for the given set</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the markup for the given set</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd><code>string</code><br>$set identifier of the set of elements</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>integer</code><br>$post_id the post ID to be queried</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>html markup<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="has_images" id="_has_images">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_has_images">#</a>
+			<code><a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#528-537" title="Go to source code">has_images</a>( <span>string <var>$set</var></span>, <span>string <var>$post_id</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Checks if the given media set has images</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Checks if the given media set has images</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd><code>string</code><br>$set the set name</dd>
+						<dt><var>$post_id</var></dt>
+						<dd><code>string</code><br>$post_id the post ID</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>true if there are some images<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="META_KEY_NAME" id="META_KEY_NAME">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#67-71" title="Go to source code"><b>META_KEY_NAME</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'_custom_media_manager'</span></code></td>
+			<td class="description"><div>
+				<a href="#META_KEY_NAME" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Postmeta name to identify a single hotel</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Postmeta name to identify a single hotel</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="enabled" id="$enabled">
+			<td class="attributes"><code>
+				public static 
+				unknown
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#55-59" title="Go to source code"><var>$enabled</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$enabled" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Maintains the status of this feature</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Maintains the status of this feature</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="media_list" id="$media_list">
+			<td class="attributes"><code>
+				protected static 
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.Core.Metaboxes.MediaManager.html#61-65" title="Go to source code"><var>$media_list</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$media_list" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Stores the list of needed media types</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Stores the list of needed media types</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

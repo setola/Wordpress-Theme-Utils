@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+	<meta name="robots" content="noindex">
+
+	<title>File WPTU/Core/Assets/DefaultAssets.class.php | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.Core.Assets.html" title="Summary of WPTU\Core\Assets"><span>Namespace</span></a>
+						</li>
+						<li>
+							<a href="class-WPTU.Core.Assets.DefaultAssets.html" title="Summary of WPTU\Core\Assets\DefaultAssets"><span>Class</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.Core.Assets.Assets.html">Assets</a></li>
+				<li><a href="class-WPTU.Core.Assets.AutomaticAssetsManager.html">AutomaticAssetsManager</a></li>
+				<li class="active"><a href="class-WPTU.Core.Assets.DefaultAssets.html">DefaultAssets</a></li>
+				<li><a href="class-WPTU.Core.Assets.DefaultAssetsCDN.html">DefaultAssetsCDN</a></li>
+				<li><a href="class-WPTU.Core.Assets.EmptyAssets.html">EmptyAssets</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<pre id="source"><code><span id="1" class="l"><a class="l" href="#1">  1 </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2">  2 </a>
+</span><span id="3" class="l"><a class="l" href="#3">  3 </a><span class="php-keyword1">namespace</span> WPTU\Core\Assets;
+</span><span id="4" class="l"><a class="l" href="#4">  4 </a>
+</span><span id="5" class="l"><a class="l" href="#5">  5 </a><span class="php-comment">/**
+</span></span><span id="6" class="l"><a class="l" href="#6">  6 </a><span class="php-comment"> * Contains the DefaultAssets class
+</span></span><span id="7" class="l"><a class="l" href="#7">  7 </a><span class="php-comment"> */</span>
+</span><span id="8" class="l"><a class="l" href="#8">  8 </a>
+</span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment">/**
+</span></span><span id="10" class="l"><a class="l" href="#10"> 10 </a><span class="php-comment"> * Register some useful assets in WordPress
+</span></span><span id="11" class="l"><a class="l" href="#11"> 11 </a><span class="php-comment"> * @author etessore
+</span></span><span id="12" class="l"><a class="l" href="#12"> 12 </a><span class="php-comment"> * @version 1.0.1
+</span></span><span id="13" class="l"><a class="l" href="#13"> 13 </a><span class="php-comment"> * @package classes
+</span></span><span id="14" class="l"><a class="l" href="#14"> 14 </a><span class="php-comment"> */</span>
+</span><span id="15" class="l"><a class="l" href="#15"> 15 </a><span class="php-keyword1">class</span> <a id="DefaultAssets" href="#DefaultAssets">DefaultAssets</a> <span class="php-keyword1">extends</span> Assets{
+</span><span id="16" class="l"><a class="l" href="#16"> 16 </a>
+</span><span id="17" class="l"><a class="l" href="#17"> 17 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(){
+</span><span id="18" class="l"><a class="l" href="#18"> 18 </a>        parent::__construct(AutomaticAssetsManager::getInstance());
+</span><span id="19" class="l"><a class="l" href="#19"> 19 </a>    }
+</span><span id="20" class="l"><a class="l" href="#20"> 20 </a>
+</span><span id="21" class="l"><a class="l" href="#21"> 21 </a>    
+</span><span id="22" class="l"><a class="l" href="#22"> 22 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_register_standard" href="#_register_standard">register_standard</a>(){
+</span><span id="23" class="l"><a class="l" href="#23"> 23 </a>        
+</span><span id="24" class="l"><a class="l" href="#24"> 24 </a>        <span class="php-comment">/**
+</span></span><span id="25" class="l"><a class="l" href="#25"> 25 </a><span class="php-comment">         * Jquery UI replacement for the conflicting simlinked js in the wp installation
+</span></span><span id="26" class="l"><a class="l" href="#26"> 26 </a><span class="php-comment">         */</span>
+</span><span id="27" class="l"><a class="l" href="#27"> 27 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery'</span>, <span class="php-quote">'/js/jquery.min.js'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'1.7.2'</span>, <span class="php-keyword1">true</span>);
+</span><span id="28" class="l"><a class="l" href="#28"> 28 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery-ui-core'</span>, <span class="php-quote">'/js/jquery.ui.core.min.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'1.8.20'</span>, <span class="php-keyword1">true</span>);
+</span><span id="29" class="l"><a class="l" href="#29"> 29 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery.ui.selectmenu'</span>, <span class="php-quote">'/js/jquery.ui.selectmenu.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'jquery-ui-core'</span>,<span class="php-quote">'jquery-ui-position'</span>,<span class="php-quote">'jquery-ui-widget'</span>), <span class="php-quote">'1.2.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="30" class="l"><a class="l" href="#30"> 30 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery-ui-position'</span>, <span class="php-quote">'/js/jquery.ui.position.min.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'jquery-ui-core'</span>), <span class="php-quote">'1.8.20'</span>, <span class="php-keyword1">true</span>);
+</span><span id="31" class="l"><a class="l" href="#31"> 31 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery-ui-widget'</span>, <span class="php-quote">'/js/jquery.ui.widget.min.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'jquery-ui-core'</span>), <span class="php-quote">'1.8.20'</span>, <span class="php-keyword1">true</span>);
+</span><span id="32" class="l"><a class="l" href="#32"> 32 </a>        
+</span><span id="33" class="l"><a class="l" href="#33"> 33 </a>        
+</span><span id="34" class="l"><a class="l" href="#34"> 34 </a>        <span class="php-comment">/**
+</span></span><span id="35" class="l"><a class="l" href="#35"> 35 </a><span class="php-comment">         * Some usefull jquery libraries
+</span></span><span id="36" class="l"><a class="l" href="#36"> 36 </a><span class="php-comment">         */</span>
+</span><span id="37" class="l"><a class="l" href="#37"> 37 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery.imagesloaded'</span>, <span class="php-quote">'/js/jquery.imagesloaded.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'2.0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="38" class="l"><a class="l" href="#38"> 38 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery.cycle'</span>, <span class="php-quote">'/js/jquery.cycle.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'2.0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="39" class="l"><a class="l" href="#39"> 39 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery.scrollto'</span>, <span class="php-quote">'/js/jquery.scrollTo.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'1.4.2'</span>, <span class="php-keyword1">true</span>);
+</span><span id="40" class="l"><a class="l" href="#40"> 40 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery-fancybox'</span>, <span class="php-quote">'/js/jquery.fancybox.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'2.1.0'</span>, <span class="php-keyword1">true</span>);
+</span><span id="41" class="l"><a class="l" href="#41"> 41 </a>        
+</span><span id="42" class="l"><a class="l" href="#42"> 42 </a>        <span class="php-comment">/**
+</span></span><span id="43" class="l"><a class="l" href="#43"> 43 </a><span class="php-comment">         * Add This javascript
+</span></span><span id="44" class="l"><a class="l" href="#44"> 44 </a><span class="php-comment">         */</span>
+</span><span id="45" class="l"><a class="l" href="#45"> 45 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'addthis'</span>, <span class="php-quote">'http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5142f4961c6fb998'</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">null</span>, <span class="php-keyword1">true</span>);
+</span><span id="46" class="l"><a class="l" href="#46"> 46 </a>        
+</span><span id="47" class="l"><a class="l" href="#47"> 47 </a>        <span class="php-comment">/**
+</span></span><span id="48" class="l"><a class="l" href="#48"> 48 </a><span class="php-comment">         * Fblib, remember to fill the fbcallback.js in your child theme!
+</span></span><span id="49" class="l"><a class="l" href="#49"> 49 </a><span class="php-comment">         */</span>
+</span><span id="50" class="l"><a class="l" href="#50"> 50 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'fbqs'</span>, <span class="php-quote">'http://static.fbwebprogram.com/fbcdn/fastqs/fastbooking_loader.php?v=1&amp;callbackScriptURL='</span>
+</span><span id="51" class="l"><a class="l" href="#51"> 51 </a>                .get_stylesheet_directory_uri().<span class="php-quote">'/js/fbcallback.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="52" class="l"><a class="l" href="#52"> 52 </a>        
+</span><span id="53" class="l"><a class="l" href="#53"> 53 </a>        <span class="php-comment">/**
+</span></span><span id="54" class="l"><a class="l" href="#54"> 54 </a><span class="php-comment">         * HTML5 Boiler Plate
+</span></span><span id="55" class="l"><a class="l" href="#55"> 55 </a><span class="php-comment">         */</span>
+</span><span id="56" class="l"><a class="l" href="#56"> 56 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'h5bp.normalize'</span>, <span class="php-quote">'/html5-boilerplate/css/normalize.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'1.0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="57" class="l"><a class="l" href="#57"> 57 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'h5bp.main'</span>, <span class="php-quote">'/html5-boilerplate/css/main.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'1.0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="58" class="l"><a class="l" href="#58"> 58 </a>        
+</span><span id="59" class="l"><a class="l" href="#59"> 59 </a>        
+</span><span id="60" class="l"><a class="l" href="#60"> 60 </a>        
+</span><span id="61" class="l"><a class="l" href="#61"> 61 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="62" class="l"><a class="l" href="#62"> 62 </a>    }
+</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    
+</span><span id="64" class="l"><a class="l" href="#64"> 64 </a>    
+</span><span id="65" class="l"><a class="l" href="#65"> 65 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_register_custom" href="#_register_custom">register_custom</a>(){
+</span><span id="66" class="l"><a class="l" href="#66"> 66 </a>        
+</span><span id="67" class="l"><a class="l" href="#67"> 67 </a>        <span class="php-comment">/**
+</span></span><span id="68" class="l"><a class="l" href="#68"> 68 </a><span class="php-comment">         * Initialization scripts
+</span></span><span id="69" class="l"><a class="l" href="#69"> 69 </a><span class="php-comment">         */</span>
+</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'slideshow'</span>, <span class="php-quote">'/js/slideshow.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.imagesloaded'</span>, <span class="php-quote">'jquery.cycle'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>        <span class="php-comment">// same thing but using cycle2</span>
+</span><span id="72" class="l"><a class="l" href="#72"> 72 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'slideshow2'</span>, <span class="php-quote">'/js/slideshow2.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.cycle2'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="73" class="l"><a class="l" href="#73"> 73 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'slideshow-fullscreen'</span>, <span class="php-quote">'/js/slideshow-fullscreen.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.imagesloaded'</span>, <span class="php-quote">'jquery.cycle'</span>, <span class="php-quote">'jquery.scrollto'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="74" class="l"><a class="l" href="#74"> 74 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'social'</span>, <span class="php-quote">'/js/social.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="75" class="l"><a class="l" href="#75"> 75 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'cycle'</span>, <span class="php-quote">'/js/cycle.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.imagesloaded'</span>, <span class="php-quote">'jquery.cycle'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="76" class="l"><a class="l" href="#76"> 76 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'crs'</span>, <span class="php-quote">'/js/crs.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="77" class="l"><a class="l" href="#77"> 77 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'open-details'</span>, <span class="php-quote">'/js/open-details.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="78" class="l"><a class="l" href="#78"> 78 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'open-close'</span>, <span class="php-quote">'/js/open-close.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="79" class="l"><a class="l" href="#79"> 79 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'snippet-com'</span>, <span class="php-quote">'http://hotelsitecontents.fastbooking.com/js/com.js'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="80" class="l"><a class="l" href="#80"> 80 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'offers-cycle'</span>, <span class="php-quote">'/js/offers-cycle.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.cycle'</span>, <span class="php-quote">'snippet-com'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="81" class="l"><a class="l" href="#81"> 81 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'navbar-fixed'</span>, <span class="php-quote">'/js/navbar-fixed.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="82" class="l"><a class="l" href="#82"> 82 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'photogallery'</span>, <span class="php-quote">'/js/photogallery.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'jquery-fancybox'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="83" class="l"><a class="l" href="#83"> 83 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'tabs'</span>, <span class="php-quote">'/js/tabs.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="84" class="l"><a class="l" href="#84"> 84 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'modernizr'</span>, <span class="php-quote">'/html5-boilerplate/js/vendor/modernizr-2.6.1.min.js'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'2.6.1'</span>, <span class="php-keyword1">false</span>);
+</span><span id="85" class="l"><a class="l" href="#85"> 85 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'minigallery-thumbs-link-to-big'</span>, <span class="php-quote">'/js/minigallery-thumbs-link-to-big.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery-fancybox'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">false</span>);
+</span><span id="86" class="l"><a class="l" href="#86"> 86 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'minigallery-big-image-with-thumbs'</span>, <span class="php-quote">'/js/minigallery-big-image-with-thumbs.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.cycle'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">false</span>);
+</span><span id="87" class="l"><a class="l" href="#87"> 87 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'slideshow-oneimageforall'</span>, <span class="php-quote">'/js/slideshow-oneimageforall.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.cycle'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">false</span>);
+</span><span id="88" class="l"><a class="l" href="#88"> 88 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'jquery.showcase'</span>, <span class="php-quote">'/js/jquery.showcase.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>), <span class="php-quote">'1.0.0'</span>, <span class="php-keyword1">true</span>);
+</span><span id="89" class="l"><a class="l" href="#89"> 89 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'showcase'</span>, <span class="php-quote">'/js/showcase.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery.showcase'</span>), <span class="php-quote">'1.0'</span>, <span class="php-keyword1">true</span>);
+</span><span id="90" class="l"><a class="l" href="#90"> 90 </a>        
+</span><span id="91" class="l"><a class="l" href="#91"> 91 </a>        
+</span><span id="92" class="l"><a class="l" href="#92"> 92 </a>        <span class="php-comment">/**
+</span></span><span id="93" class="l"><a class="l" href="#93"> 93 </a><span class="php-comment">         * Google Map
+</span></span><span id="94" class="l"><a class="l" href="#94"> 94 </a><span class="php-comment">         */</span>
+</span><span id="95" class="l"><a class="l" href="#95"> 95 </a>        <span class="php-var">$lang</span> = (<span class="php-keyword2">defined</span>(<span class="php-quote">'ICL_LANGUAGE_CODE'</span>)) ? ICL_LANGUAGE_CODE : get_bloginfo(<span class="php-quote">'language'</span>);
+</span><span id="96" class="l"><a class="l" href="#96"> 96 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'gmaps.api'</span>, <span class="php-quote">'http://maps.google.com/maps/api/js?sensor=false&amp;language='</span>.<span class="php-var">$lang</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'3'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'map'</span>, <span class="php-quote">'/js/gmap.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'gmaps.api'</span>), <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="98" class="l"><a class="l" href="#98"> 98 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-quote">'map-directions'</span>, <span class="php-quote">'/js/map-directions.js'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'jquery'</span>,<span class="php-quote">'map'</span>), <span class="php-quote">'0.1'</span>, <span class="php-keyword1">true</span>);
+</span><span id="99" class="l"><a class="l" href="#99"> 99 </a>        
+</span><span id="100" class="l"><a class="l" href="#100">100 </a>
+</span><span id="101" class="l"><a class="l" href="#101">101 </a>        
+</span><span id="102" class="l"><a class="l" href="#102">102 </a>        <span class="php-comment">/**
+</span></span><span id="103" class="l"><a class="l" href="#103">103 </a><span class="php-comment">         * Theme Specific CSS for part of page
+</span></span><span id="104" class="l"><a class="l" href="#104">104 </a><span class="php-comment">         */</span>
+</span><span id="105" class="l"><a class="l" href="#105">105 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'reset'</span>, <span class="php-quote">'/css/reset.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'2.0'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="106" class="l"><a class="l" href="#106">106 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'sprite'</span>, <span class="php-quote">'/css/sprite.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="107" class="l"><a class="l" href="#107">107 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'grid-960'</span>, <span class="php-quote">'/css/grid-960.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="108" class="l"><a class="l" href="#108">108 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'fbqs'</span>, <span class="php-quote">'/css/fbqs.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="109" class="l"><a class="l" href="#109">109 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'standard-style'</span>, <span class="php-quote">'/css/standard-style.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="110" class="l"><a class="l" href="#110">110 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'slideshow'</span>, <span class="php-quote">'/css/slideshow.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="111" class="l"><a class="l" href="#111">111 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'controls'</span>, <span class="php-quote">'/css/controls.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="112" class="l"><a class="l" href="#112">112 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'room'</span>, <span class="php-quote">'/css/room.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="113" class="l"><a class="l" href="#113">113 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'offers'</span>, <span class="php-quote">'/css/offers.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="114" class="l"><a class="l" href="#114">114 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'location'</span>, <span class="php-quote">'/css/location.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="115" class="l"><a class="l" href="#115">115 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'photogallery'</span>, <span class="php-quote">'/css/photogallery.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="116" class="l"><a class="l" href="#116">116 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'minigallery-big-image-with-thumbs'</span>, <span class="php-quote">'/css/minigallery-big-image-with-thumbs.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="117" class="l"><a class="l" href="#117">117 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'open-details'</span>, <span class="php-quote">'/css/open-details.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="118" class="l"><a class="l" href="#118">118 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'open-close'</span>, <span class="php-quote">'/css/open-close.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="119" class="l"><a class="l" href="#119">119 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'jquery-fancybox'</span>, <span class="php-quote">'/css/jquery.fancybox.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'2.1.0'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="120" class="l"><a class="l" href="#120">120 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'linear-menu'</span>, <span class="php-quote">'/css/linear-menu.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'0.1'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="121" class="l"><a class="l" href="#121">121 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'showcase'</span>, <span class="php-quote">'/css/showcase.css'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'1.0'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="122" class="l"><a class="l" href="#122">122 </a>        
+</span><span id="123" class="l"><a class="l" href="#123">123 </a>        <span class="php-comment">/**
+</span></span><span id="124" class="l"><a class="l" href="#124">124 </a><span class="php-comment">         * Default style.css
+</span></span><span id="125" class="l"><a class="l" href="#125">125 </a><span class="php-comment">         */</span>
+</span><span id="126" class="l"><a class="l" href="#126">126 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-quote">'style'</span>, <span class="php-quote">'/style.css'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'reset'</span>, <span class="php-quote">'grid-960'</span>, <span class="php-quote">'standard-style'</span>), <span class="php-quote">'1.0'</span>, <span class="php-quote">'screen'</span>);
+</span><span id="127" class="l"><a class="l" href="#127">127 </a>        
+</span><span id="128" class="l"><a class="l" href="#128">128 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="129" class="l"><a class="l" href="#129">129 </a>    }
+</span><span id="130" class="l"><a class="l" href="#130">130 </a>    
+</span><span id="131" class="l"><a class="l" href="#131">131 </a>    <span class="php-comment">/**
+</span></span><span id="132" class="l"><a class="l" href="#132">132 </a><span class="php-comment">     * Adds a javascript to the current set
+</span></span><span id="133" class="l"><a class="l" href="#133">133 </a><span class="php-comment">     * @see @link http://codex.wordpress.org/Function_Reference/wp_register_script
+</span></span><span id="134" class="l"><a class="l" href="#134">134 </a><span class="php-comment">     * @param string $handle Script name
+</span></span><span id="135" class="l"><a class="l" href="#135">135 </a><span class="php-comment">     * @param string $src Script url
+</span></span><span id="136" class="l"><a class="l" href="#136">136 </a><span class="php-comment">     * @param array $deps (optional) Array of script names on which this script depends
+</span></span><span id="137" class="l"><a class="l" href="#137">137 </a><span class="php-comment">     * @param string|bool $ver (optional) Script version (used for cache busting), set to NULL to disable
+</span></span><span id="138" class="l"><a class="l" href="#138">138 </a><span class="php-comment">     * @param bool $in_footer (optional) Whether to enqueue the script before &lt;/head&gt; or before &lt;/body&gt;
+</span></span><span id="139" class="l"><a class="l" href="#139">139 </a><span class="php-comment">     * @return DefaultAssets $this for chainability
+</span></span><span id="140" class="l"><a class="l" href="#140">140 </a><span class="php-comment">     */</span>
+</span><span id="141" class="l"><a class="l" href="#141">141 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_js" href="#_add_js">add_js</a>(<span class="php-var">$handle</span>, <span class="php-var">$src</span>, <span class="php-var">$deps</span> = <span class="php-keyword1">array</span>(), <span class="php-var">$ver</span> = <span class="php-keyword1">null</span>, <span class="php-var">$in_footer</span> = <span class="php-keyword1">false</span>){
+</span><span id="142" class="l"><a class="l" href="#142">142 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_js(<span class="php-var">$handle</span>, <span class="php-var">$src</span>, <span class="php-var">$deps</span>, <span class="php-var">$ver</span>, <span class="php-var">$in_footer</span>);
+</span><span id="143" class="l"><a class="l" href="#143">143 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="144" class="l"><a class="l" href="#144">144 </a>    }
+</span><span id="145" class="l"><a class="l" href="#145">145 </a>    
+</span><span id="146" class="l"><a class="l" href="#146">146 </a>    <span class="php-comment">/**
+</span></span><span id="147" class="l"><a class="l" href="#147">147 </a><span class="php-comment">     * Adds a css to the current set
+</span></span><span id="148" class="l"><a class="l" href="#148">148 </a><span class="php-comment">     * @see @link http://codex.wordpress.org/Function_Reference/wp_register_style
+</span></span><span id="149" class="l"><a class="l" href="#149">149 </a><span class="php-comment">     * @param string $handle Name of the stylesheet.
+</span></span><span id="150" class="l"><a class="l" href="#150">150 </a><span class="php-comment">     * @param string|bool $src Path to the stylesheet from the root directory of WordPress. Example: '/css/mystyle.css'.
+</span></span><span id="151" class="l"><a class="l" href="#151">151 </a><span class="php-comment">     * @param array $deps Array of handles of any stylesheet that this stylesheet depends on.
+</span></span><span id="152" class="l"><a class="l" href="#152">152 </a><span class="php-comment">     *  (Stylesheets that must be loaded before this stylesheet.) Pass an empty array if there are no dependencies.
+</span></span><span id="153" class="l"><a class="l" href="#153">153 </a><span class="php-comment">     * @param string|bool $ver String specifying the stylesheet version number. Set to NULL to disable.
+</span></span><span id="154" class="l"><a class="l" href="#154">154 </a><span class="php-comment">     *  Used to ensure that the correct version is sent to the client regardless of caching.
+</span></span><span id="155" class="l"><a class="l" href="#155">155 </a><span class="php-comment">     * @param string $media The media for which this stylesheet has been defined.
+</span></span><span id="156" class="l"><a class="l" href="#156">156 </a><span class="php-comment">     * @return DefaultAssets $this for chainability
+</span></span><span id="157" class="l"><a class="l" href="#157">157 </a><span class="php-comment">     */</span>
+</span><span id="158" class="l"><a class="l" href="#158">158 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_css" href="#_add_css">add_css</a>(<span class="php-var">$handle</span>, <span class="php-var">$src</span>, <span class="php-var">$deps</span> = <span class="php-keyword1">array</span>(), <span class="php-var">$ver</span> = <span class="php-keyword1">null</span>, <span class="php-var">$media</span> = <span class="php-keyword1">false</span>){
+</span><span id="159" class="l"><a class="l" href="#159">159 </a>        <span class="php-var">$this</span>-&gt;assets_manager-&gt;add_css(<span class="php-var">$handle</span>, <span class="php-var">$src</span>, <span class="php-var">$deps</span>, <span class="php-var">$ver</span>, <span class="php-var">$media</span>);
+</span><span id="160" class="l"><a class="l" href="#160">160 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="161" class="l"><a class="l" href="#161">161 </a>    }
+</span><span id="162" class="l"><a class="l" href="#162">162 </a>    
+</span><span id="163" class="l"><a class="l" href="#163">163 </a>    
+</span><span id="164" class="l"><a class="l" href="#164">164 </a></span>}</code></pre>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class WPTU\FastBooking\HotelManager | Wordpress Theme Utils Developer Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?1467300313"></script>
+	<script type="text/javascript" src="elementlist.js?2515591489"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822">
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">Wordpress Theme Utils Developer Documentation</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-WPTU.FastBooking.html" title="Summary of WPTU\FastBooking"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="wordpress-theme-utils-developer-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Abraham.html">Abraham<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.html">TwitterOAuth<span></span></a>
+						<ul>
+				<li><a href="namespace-Abraham.TwitterOAuth.Test.html">Test</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Tests.html">Tests</a>
+						</li>
+				<li><a href="namespace-Abraham.TwitterOAuth.Util.html">Util</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li class="active"><a href="namespace-WPTU.html">WPTU<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.html">Core<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Autoloader.html">Autoloader</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.html">Helpers<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Core.Helpers.DevUtils.html">DevUtils</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.ImageGenerators.html">ImageGenerators</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.LoremIpsum.html">LoremIpsum</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Helpers.Social.html">Social</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Core.Metaboxes.html">Metaboxes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Shortcodes.html">Shortcodes</a>
+						</li>
+				<li><a href="namespace-WPTU.Core.Walkers.html">Walkers</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-WPTU.FastBooking.html">FastBooking<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.FastBooking.Assets.html">Assets</a>
+						</li>
+				<li><a href="namespace-WPTU.FastBooking.Offers.html">Offers</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-WPTU.Views.html">Views<span></span></a>
+						<ul>
+				<li><a href="namespace-WPTU.Views.Galleries.html">Galleries</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WPTU.FastBooking.GMapDataRetriever.html">GMapDataRetriever</a></li>
+				<li><a href="class-WPTU.FastBooking.Hotel.html">Hotel</a></li>
+				<li class="active"><a href="class-WPTU.FastBooking.HotelManager.html">HotelManager</a></li>
+				<li><a href="class-WPTU.FastBooking.NewBlogInitializator.html">NewBlogInitializator</a></li>
+				<li><a href="class-WPTU.FastBooking.SimpleFieldsQuickConfig.html">SimpleFieldsQuickConfig</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class HotelManager</h1>
+
+
+	<div class="description">
+	
+<p>Manages multiple hotels in a single website</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-WPTU.html">WPTU</a>\<a href="namespace-WPTU.FastBooking.html">FastBooking</a><br>
+		
+
+				<b>Author:</b>
+				mcanever<br>
+				<b>Version:</b>
+				1.0.0<br>
+		<b>Located at</b> <a href="source-class-WPTU.FastBooking.HotelManager.html#6-232" title="Go to source code">WPTU/FastBooking/HotelManager.class.php</a><br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped" id="methods">
+		<tr data-order="enable" id="_enable">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_enable">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#44-51" title="Go to source code">enable</a>( )</code>
+
+			<div class="description short">
+				
+<p>Enable the feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Enable the feature</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="disable" id="_disable">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_disable">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#53-60" title="Go to source code">disable</a>( )</code>
+
+			<div class="description short">
+				
+<p>Disables the feature</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Disables the feature</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="register_metaboxes" id="_register_metaboxes">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register_metaboxes">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#62-74" title="Go to source code">register_metaboxes</a>( )</code>
+
+			<div class="description short">
+				
+<p>Registers the 'Is This An Hotel?' metabox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Registers the 'Is This An Hotel?' metabox</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="metabox_html" id="_metabox_html">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_metabox_html">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#76-88" title="Go to source code">metabox_html</a>( <span>mixed <var>$post</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Prints the HTML markup for the 'Is This An Hotel?' metabox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Prints the HTML markup for the 'Is This An Hotel?' metabox</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="save_metabox_data" id="_save_metabox_data">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_save_metabox_data">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#90-118" title="Go to source code">save_metabox_data</a>( <span>mixed <var>$post_id</var></span> )</code>
+
+			<div class="description short">
+				
+<p>Saves the metabox data while saving the page</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Saves the metabox data while saving the page</p>
+
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotels" id="_get_hotels">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotels">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#120-131" title="Go to source code">get_hotels</a>( )</code>
+
+			<div class="description short">
+				
+<p>Get all Hotels in the current website</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Get all Hotels in the current website</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>a list of posts that are main hotel page<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotels_ids" id="_get_hotels_ids">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotels_ids">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#133-152" title="Go to source code">get_hotels_ids</a>( )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the hotels page ids</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the hotels page ids</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array</code><br>list of ids<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_haystack" id="_get_haystack">
+
+			<td class="attributes"><code>
+				 protected static
+				array:
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_haystack">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#154-163" title="Go to source code">get_haystack</a>( <span>object <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Merges post anchestors and post id</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Merges post anchestors and post id</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>object</code><br>$post</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>array:</code><br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="is_group" id="_is_group">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_is_group">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#165-172" title="Go to source code">is_group</a>( <span>integer|object <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Tests if the given $post is from the group website</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Tests if the given $post is from the group website</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>integer|object</code><br>$post the post you need to check, default is the current one</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>true if $post is from group website<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="is_hotel" id="_is_hotel">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_is_hotel">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#174-181" title="Go to source code">is_hotel</a>( <span>integer|object <var>$post</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$hotel_name</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Test if the given $post is from a single hotel</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Test if the given $post is from a single hotel</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>integer|object</code><br>$post the post you need to check, default is the current one</dd>
+						<dt><var>$hotel_name</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>boolean</code><br>true if $post is from the hotel website<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotel" id="_get_hotel">
+
+			<td class="attributes"><code>
+				 public static
+				Ambigous
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotel">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#183-190" title="Go to source code">get_hotel</a>( <span>string <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>string</code><br>$post</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>Ambigous</code><br>&lt;multitype:, multitype:Ambigous &lt;string, NULL&gt; &gt;<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotel_title" id="_get_hotel_title">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotel_title">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#192-199" title="Go to source code">get_hotel_title</a>( <span>integer|object <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the hotel title for the given $post</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the hotel title for the given $post</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>integer|object</code><br>$post the post you want to know</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>string</code><br>the hotel title<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotel_slug" id="_get_hotel_slug">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotel_slug">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#201-208" title="Go to source code">get_hotel_slug</a>( <span>string <var>$post</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the hotel slug</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the hotel slug</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>string</code><br>$post the slug</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_hotel_id" id="_get_hotel_id">
+
+			<td class="attributes"><code>
+				 public static
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_hotel_id">#</a>
+			<code><a href="source-class-WPTU.FastBooking.HotelManager.html#210-230" title="Go to source code">get_hotel_id</a>( <span>integer|object <var>$post</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$default_language</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+<p>Retrieves the hotel post id</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Retrieves the hotel post id</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$post</var></dt>
+						<dd><code>integer|object</code><br>$post the post you want to check</dd>
+						<dt><var>$default_language</var></dt>
+						<dd><code>boolean</code><br>$default_language true if you want the id of the default language translation</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code>integer</code><br>the hotel post id<br>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped" id="constants">
+		<tr data-order="META_KEY_NAME" id="META_KEY_NAME">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name"><code>
+					<a href="source-class-WPTU.FastBooking.HotelManager.html#38-42" title="Go to source code"><b>META_KEY_NAME</b></a>
+			</code></td>
+			<td class="value"><code><span class="php-quote">'_this_is_an_hotel'</span></code></td>
+			<td class="description"><div>
+				<a href="#META_KEY_NAME" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Postmeta name to identify a single hotel</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Postmeta name to identify a single hotel</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped" id="properties">
+		<tr data-order="hotels" id="$hotels">
+			<td class="attributes"><code>
+				public  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.FastBooking.HotelManager.html#14-18" title="Go to source code"><var>$hotels</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$hotels" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Maintains the list of othels</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Maintains the list of othels</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		<tr data-order="enabled" id="$enabled">
+			<td class="attributes"><code>
+				public static 
+				unknown
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-WPTU.FastBooking.HotelManager.html#20-24" title="Go to source code"><var>$enabled</var></a>
+			</td>
+			<td class="description"><div>
+				<a href="#$enabled" class="anchor">#</a>
+
+				<div class="description short">
+					
+<p>Maintains the status of this feature</p>
+
+				</div>
+
+				<div class="description detailed hidden">
+					
+<p>Maintains the status of this feature</p>
+
+
+				</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Wordpress Theme Utils Developer Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>
